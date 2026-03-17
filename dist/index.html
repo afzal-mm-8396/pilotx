@@ -28,6 +28,17 @@
 	<script type="text/javascript" src="addons/@zoho/lyte-ui-component/dist/components/lyte-card.js"> </script>
 	<link rel="stylesheet" href="addons/@zoho/lyte-ui-component/dist/theme/compiledCSS/default/ltr/lyte-ui-card.css"> </link>
 
+	<!-- Zoho CRM Widget SDK (provides ZOHO.CRM.FUNCTIONS.execute) -->
+	<script src="https://live.zwidgets.com/js-sdk/1.5/ZohoEmbededAppSDK.min.js"></script>
+	<script>
+		// Initialize the Zoho Embedded App SDK
+		document.addEventListener('DOMContentLoaded', function() {
+			if (typeof ZOHO !== 'undefined' && ZOHO.embeddedApp) {
+				ZOHO.embeddedApp.init();
+			}
+		});
+	</script>
+
 	<script src="app.js"></script>
 </head>
 <body>
