@@ -565,74 +565,70 @@ _dynamicNodes : [],
     // Calls ZOHO.CRM.FUNCTIONS.execute or REST API to get AI-generated cscript
     var _lastPrompt = '';
 
-    // async function callCRMFunction(prompt) {
-    //     _lastPrompt = prompt;
+    async function callCRMFunction(prompt) {
+        _lastPrompt = prompt;
 
-    //     // Try ZOHO.CRM.FUNCTIONS.execute first (widget context)
-    //     try {
-    //         if (typeof ZOHO !== 'undefined' && ZOHO.CRM && ZOHO.CRM.FUNCTIONS && typeof ZOHO.CRM.FUNCTIONS.execute === 'function') {
-    //             var req_data = {
-    //                 arguments: JSON.stringify({ prompt: prompt })
-    //             };
-    //             var data = await ZOHO.CRM.FUNCTIONS.execute(CRM_FUNC_NAME, req_data);
-    //             console.log('[WorkPilot] ZOHO.CRM.FUNCTIONS response:', data);
+        // Try ZOHO.CRM.FUNCTIONS.execute first (widget context — no proxy needed)
+        try {
+            if (typeof ZOHO !== 'undefined' && ZOHO.CRM && ZOHO.CRM.FUNCTIONS && typeof ZOHO.CRM.FUNCTIONS.execute === 'function') {
+                var req_data = {
+                    arguments: JSON.stringify({ prompt: prompt })
+                };
+                var data = await ZOHO.CRM.FUNCTIONS.execute(CRM_FUNC_NAME, req_data);
+                console.log('[WorkPilot] ZOHO.CRM.FUNCTIONS response:', data);
 
-    //             // pyfunction wraps its response in details.output as a JSON string
-    //             var parsed = null;
-    //             if (data && data.details && data.details.output) {
-    //                 parsed = typeof data.details.output === 'string' ? JSON.parse(data.details.output) : data.details.output;
-    //             } else if (data && data.response) {
-    //                 // Direct response format
-    //                 parsed = data;
-    //             }
+                var parsed = null;
+                if (data && data.details && data.details.output) {
+                    parsed = typeof data.details.output === 'string' ? JSON.parse(data.details.output) : data.details.output;
+                } else if (data && data.response) {
+                    parsed = data;
+                }
 
-    //             if (parsed) {
-    //                 var edits = (parsed && Array.isArray(parsed.edits)) ? parsed.edits : [];
-    //                 var hasScript = edits.length > 0 && edits.some(function(e) { return e && e.content; });
-    //                 if (hasScript || (parsed.response && parsed.response.content)) {
-    //                     return parsed;
-    //                 }
-    //             }
-    //             console.warn('[WorkPilot] ZOHO.CRM.FUNCTIONS returned no usable data.');
-    //         }
-    //     } catch (sdkErr) {
-    //         console.warn('[WorkPilot] ZOHO.CRM.FUNCTIONS.execute failed:', sdkErr.message || sdkErr);
-    //     }
+                if (parsed) {
+                    var edits = (parsed && Array.isArray(parsed.edits)) ? parsed.edits : [];
+                    var hasScript = edits.length > 0 && edits.some(function(e) { return e && e.content; });
+                    if (hasScript || (parsed.response && parsed.response.content)) {
+                        return parsed;
+                    }
+                }
+                console.warn('[WorkPilot] ZOHO.CRM.FUNCTIONS returned no usable data.');
+            }
+        } catch (sdkErr) {
+            console.warn('[WorkPilot] ZOHO.CRM.FUNCTIONS.execute failed:', sdkErr.message || sdkErr);
+        }
 
-    //     // Fallback: REST API with API key (pyfunction returns direct JSON response)
-    //     try {
-    //         var response = await fetch(CRM_FUNC_URL, {
-    //             method: 'POST',
-    //             headers: { 'Content-Type': 'application/json' },
-    //             body: JSON.stringify({ prompt: prompt, model: 'gpt-5.1', mode: 'agent', feature: 'cscript' })
-    //         });
-    //         var text = await response.text();
-    //         var result = JSON.parse(text);
-    //         console.log('[WorkPilot] CRM Function REST response:', result);
+        // Fallback: REST API via proxy (works locally, may fail on Render due to mTLS)
+        try {
+            var response = await fetch(CRM_FUNC_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt: prompt, model: 'gpt-5.1', mode: 'agent', feature: 'cscript' })
+            });
+            var text = await response.text();
+            var result = JSON.parse(text);
+            console.log('[WorkPilot] CRM Function REST response:', result);
 
-    //         // Check for timeout or error from Zoho wrapper
-    //         if (result && result.code && result.status === 'error') {
-    //             console.warn('[WorkPilot] CRM Function returned error:', result.message);
-    //             return null;
-    //         }
+            if (result && result.code && result.status === 'error') {
+                console.warn('[WorkPilot] CRM Function returned error:', result.message);
+                return null;
+            }
 
-    //         // pyfunction returns direct format: { response, model, edits, ... }
-    //         if (result && (result.response || result.edits)) {
-    //             var edits = (result && Array.isArray(result.edits)) ? result.edits : [];
-    //             var hasScript = edits.length > 0 && edits.some(function(e) { return e && e.content; });
-    //             if (hasScript || (result.response && result.response.content)) {
-    //                 return result;
-    //             }
-    //         }
+            if (result && (result.response || result.edits)) {
+                var edits = (result && Array.isArray(result.edits)) ? result.edits : [];
+                var hasScript = edits.length > 0 && edits.some(function(e) { return e && e.content; });
+                if (hasScript || (result.response && result.response.content)) {
+                    return result;
+                }
+            }
 
-    //         console.warn('[WorkPilot] CRM Function REST returned no usable data:', result);
-    //     } catch (restErr) {
-    //         console.warn('[WorkPilot] CRM Function REST call failed:', restErr.message || restErr);
-    //     }
+            console.warn('[WorkPilot] CRM Function REST returned no usable data:', result);
+        } catch (restErr) {
+            console.warn('[WorkPilot] CRM Function REST call failed:', restErr.message || restErr);
+        }
 
-    //     // If CRM function fails entirely, return null to trigger callAPI backup
-    //     return null;
-    // }
+        // If both fail, return null to trigger callAPI fallback (mock data)
+        return null;
+    }
 
     // ─── FETCH API CALL (backup) ───────────────────────────
 
@@ -650,7 +646,7 @@ _dynamicNodes : [],
             const text = await response.text();
             var parsed = JSON.parse(text);
             console.log("parsed response:", parsed);
-            if(!parsed || parsed.error) {
+            if(!parsed || !parsed.error) {
                 return parsed;
             }
             
@@ -839,12 +835,13 @@ _dynamicNodes : [],
         showThinkingLoader();
 
         try {
-            // // 1) Call CRM Function (primary), fall back to callAPI (backup)
-            // var apiResult = await callCRMFunction(text.trim());
-            // if (!apiResult) {
-            //     console.warn('[WorkPilot] CRM Function failed, falling back to callAPI.');
-            var apiResult = await callAPI(text.trim());
-            // }
+            // 1) Call CRM Function (primary: ZOHO SDK → REST proxy)
+            var apiResult = await callCRMFunction(text.trim());
+            if (!apiResult) {
+                // 2) Fallback to callAPI (uses mock data when proxy fails)
+                console.warn('[WorkPilot] CRM Function failed, falling back to callAPI.');
+                apiResult = await callAPI(text.trim());
+            }
             removeThinkingLoader();
 
             // 2) Safely extract response parts
