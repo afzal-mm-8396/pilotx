@@ -1,31 +1,14 @@
 {
-    "name": "pilotx-lyte-app",
+    "name": "workpilot",
     "version": "1.0.0",
     "description": "WorkPilot - AI CRM Assistant",
     "main": "server.js",
     "scripts": {
-      "start": "node server.js",
-      "test": "echo \"Error: no test specified\" && exit 1"
+      "start": "node server.js"
     },
     "engines": {
       "node": ">=18.0.0"
     },
-    "author": "",
-    "license": "ISC",
-   
-    "dependencies" : {
-      "@zoho/lyte" : "3.5.3",
-      "@zoho/lyte-ui-component" : "3.122.3",
-      "@zoho/lyte-dom" : "3.1.7",
-      "@zohocharts/d3": "3.2.0",
-      "@zohocharts/zc": "1.9.5"
-    },
-    "addons" : [
-      "@zoho/lyte-ui-component"
-    ],
-    "devDependencies" : {
-     
-    }
-  
+    "dependencies": {}
 }
   
