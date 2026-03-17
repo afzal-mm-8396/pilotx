@@ -4,6 +4,9 @@ const fs = require('fs');
 const path = require('path');
 const url = require('url');
 
+// Skip SSL cert verification for internal Zoho domains
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 const PORT = process.env.PORT || 3000;
 const ZOHO_HOST = 'crmdx5.localzoho.com';
 
