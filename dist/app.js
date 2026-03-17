@@ -518,37 +518,44 @@ _dynamicNodes : [],
     async function callCRMFunction(prompt) {
         _lastPrompt = prompt;
 
-        // Try ZOHO.CRM.FUNCTIONS.execute first (only works inside CRM widget iframe)
+        var isInIframe = window.parent !== window;
+
+        // 1) Try ZOHO.CRM.HTTP.post (routes through Zoho's proxy — no CORS/mTLS issues)
         try {
-            var isInIframe = window.parent !== window;
-            if (isInIframe && typeof ZOHO !== 'undefined' && ZOHO.CRM && ZOHO.CRM.FUNCTIONS && typeof ZOHO.CRM.FUNCTIONS.execute === 'function') {
-                var req_data = {
-                    arguments: JSON.stringify({ prompt: prompt, model: 'gpt-5.1', mode: 'agent', feature: 'cscript' })
-                };
-                var data = await ZOHO.CRM.FUNCTIONS.execute(CRM_FUNC_NAME, req_data);
-                console.log('[WorkPilot] ZOHO.CRM.FUNCTIONS response:', data);
+            if (isInIframe && typeof ZOHO !== 'undefined' && ZOHO.CRM && ZOHO.CRM.HTTP && typeof ZOHO.CRM.HTTP.post === 'function') {
+                var apiUrl = 'https://crmdx5.localzoho.com/crm/v7/functions/' + CRM_FUNC_NAME + '/actions/execute?auth_type=apikey&zapikey=' + CRM_FUNC_API_KEY;
+                var httpData = await ZOHO.CRM.HTTP.post({
+                    url: apiUrl,
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt: prompt, model: 'gpt-5.1', mode: 'agent', feature: 'cscript' })
+                });
+                console.log('[WorkPilot] ZOHO.CRM.HTTP.post response:', httpData);
 
                 var parsed = null;
-                if (data && data.details && data.details.output) {
-                    parsed = typeof data.details.output === 'string' ? JSON.parse(data.details.output) : data.details.output;
-                } else if (data && data.response) {
-                    parsed = data;
+                if (typeof httpData === 'string') {
+                    try { parsed = JSON.parse(httpData); } catch(e) { parsed = null; }
+                } else {
+                    parsed = httpData;
                 }
 
                 if (parsed) {
+                    // Handle Zoho wrapper: details.output contains the actual response
+                    if (parsed.details && parsed.details.output) {
+                        parsed = typeof parsed.details.output === 'string' ? JSON.parse(parsed.details.output) : parsed.details.output;
+                    }
                     var edits = (parsed && Array.isArray(parsed.edits)) ? parsed.edits : [];
                     var hasScript = edits.length > 0 && edits.some(function(e) { return e && e.content; });
                     if (hasScript || (parsed.response && parsed.response.content)) {
                         return parsed;
                     }
                 }
-                console.warn('[WorkPilot] ZOHO.CRM.FUNCTIONS returned no usable data.');
+                console.warn('[WorkPilot] ZOHO.CRM.HTTP.post returned no usable data.');
             }
-        } catch (sdkErr) {
-            console.warn('[WorkPilot] ZOHO.CRM.FUNCTIONS.execute failed:', sdkErr.message || sdkErr);
+        } catch (httpErr) {
+            console.warn('[WorkPilot] ZOHO.CRM.HTTP.post failed:', httpErr.message || httpErr);
         }
 
-        // Fallback: REST API via proxy (works locally, may fail on Render due to mTLS)
+        // 2) Fallback: REST API via proxy (works locally, may fail on Render due to mTLS)
         try {
             var response = await fetch(CRM_FUNC_URL, {
                 method: 'POST',

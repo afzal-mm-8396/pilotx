@@ -5,18 +5,18 @@ Finding the diff for /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-ly
 Finding the diff for /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/package.json
 Finding the diff for /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/proxy.js
 Finding the diff for /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/server.js
-filePath changed index.html
-filePath changed proxy.js
 filePath changed server.js
+filePath changed proxy.js
+filePath changed index.html
 ModifiedList {
  "components": [
   "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/components/javascript/pilotx-chat.js"
  ],
  "routes": [],
  "copyAppDir": [
-  "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/index.html",
+  "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/server.js",
   "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/proxy.js",
-  "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/server.js"
+  "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/index.html"
  ],
  "models": [],
  "styles": [],
@@ -25,52 +25,54 @@ ModifiedList {
 }
 JSONContent {
  "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app": {
-  "app.js": []
+  "app.js": [
+   "components/javascript/pilotx-chat.js"
+  ]
  }
 }
-Time taken to generate the diff report 0.013 s
-Timing to complete init function0.015 s
+Time taken to generate the diff report 0.015 s
+Timing to complete init function0.017 s
 /* START CLI DETAILS */ 
 {"cliVersion":"3.6.18","outputPath":"dist","mode":"development","cliLocation":"/usr/local/lib/node_modules/@zoho/lyte-cli"}
 /* END CLI DETAILS */
-Building time of copyAppDir : 0.221 s
+Building time of copyAppDir : 0.211 s
 Cache copy compilation triggered forroutes
 Building time of routes : 0 s
 Building components ....
 Component compilation served from cache
 Searching for syntax errors.....
 Finding the unclosed tags compilation over
-[Time] => find unclosedTags => 0.026 s
+[Time] => find unclosedTags => 0.022 s
 Running compilerule ...
-[Time] => Convert Lyte syntax => 0.016 s
+[Time] => Convert Lyte syntax => 0.017 s
 Creating new browser instance 
 New browser instance launched
-browser Endpoint ws://127.0.0.1:54580/devtools/browser/f982f655-ff5a-430a-9bad-10082355b103
+browser Endpoint ws://127.0.0.1:60533/devtools/browser/56c1f3be-1ceb-4b13-890f-6f092b08108e
 Browser launched
 page opened
 Post method request get caught with url/post
-Time taken for end call back be 3.421 s
-Callback function called 0.001 spilotx-chat
-Time to end the dynamic nodes3.422 s
+Time taken for end call back be 3.602 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes3.602 s
 Generating dist components...
 
-Time to end processing template0.026 s
-Building time of components : 3.496 s
+Time to end processing template0.022 s
+Building time of components : 3.664 s
 Building models ..............
 
 Building time of models : 0 s
 Cache copy compilation triggered forhelpers
 Building time of helpers : 0 s
 Cache copy compilation triggered formixins
-Building time of mixins : 0 s
+Building time of mixins : 0.001 s
 Cache copy compilation triggered forservices
 Building time of services : 0 s
 build file exists on addons building
 Cache output exists for /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/node_modules/@zoho/lyte-ui-component
-Building time of addons : 1.301 s
+Building time of addons : 0.975 s
 Consolidated file created in the dist/app.js
 
 Time for consolidation and minify 0.003 s
 Minified Count : 0
-Total Building Time : 5.022 s
+Total Building Time : 4.856 s
 Building completed
