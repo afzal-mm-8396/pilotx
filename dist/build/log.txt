@@ -1,9 +1,9 @@
 No cache as changes detected in package.json and build.js
-Timing to complete init function0.014 s
+Timing to complete init function0.003 s
 /* START CLI DETAILS */ 
 {"cliVersion":"3.6.18","outputPath":"dist","mode":"development","cliLocation":"/usr/local/lib/node_modules/@zoho/lyte-cli"}
 /* END CLI DETAILS */
-Building time of copyAppDir : 0.226 s
+Building time of copyAppDir : 0.201 s
 Building time of routes : 0 s
 Building components ....
 Full component compilation triggered
@@ -12,35 +12,35 @@ Searching for syntax errors.....
 Finding the unclosed tags compilation over
 [Time] => find unclosedTags => 0.012 s
 Running compilerule ...
-[Time] => Convert Lyte syntax => 0.017 s
+[Time] => Convert Lyte syntax => 0.015 s
 Creating new browser instance 
 New browser instance launched
-browser Endpoint ws://127.0.0.1:49306/devtools/browser/09aa6954-0694-409a-b824-b7f9c524fdb9
+browser Endpoint ws://127.0.0.1:64248/devtools/browser/b2269b44-c1a5-4714-aa36-3b4fee5ab624
 Browser launched
 page opened
 Post method request get caught with url/post
-Time taken for end call back be 1.195 s
-Callback function called 0.001 swelcome-comp,pilotx-chat,data-view-table,data-view-kanban,data-view-chart
-Time to end the dynamic nodes1.196 s
+Time taken for end call back be 1.639 s
+Callback function called 0 swelcome-comp,data-view-table,data-view-chart,pilotx-chat,data-view-kanban
+Time to end the dynamic nodes1.639 s
 Generating dist components...
 
 Time to end processing template0.025 s
-Building time of components : 1.256 s
+Building time of components : 1.696 s
 Building models ..............
 
 Building time of models : 0 s
 Building helpers .....
 [Copy] components/helpers => dist/components/helpers
 
-Building time of helpers : 0 s
-Building time of mixins : 0.001 s
+Building time of helpers : 0.001 s
+Building time of mixins : 0 s
 Building time of services : 0 s
 build file exists on addons building
 Cache output exists for /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/node_modules/@zoho/lyte-ui-component
-Building time of addons : 0.973 s
+Building time of addons : 1.162 s
 Consolidated file created in the dist/app.js
 
 Time for consolidation and minify 0.003 s
 Minified Count : 0
-Total Building Time : 2.461 s
+Total Building Time : 3.065 s
 Building completed

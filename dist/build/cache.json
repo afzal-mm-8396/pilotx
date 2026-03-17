@@ -55,18 +55,18 @@
   "errors": [],
   "imports": [],
   "build/build.js": "a94a3c55aaab777508e3972685558aef",
-  "dist/build/buildConf.json": "f09673a90ce4590956680b5e6b5c7819",
-  "dist/build/cache.json": "9384e49256bc07c46adf66ceeb224500",
-  "package.json": "2a3e88e5e2f893a46598fffc680386a9",
+  "dist/build/buildConf.json": "a3e09b16e1f685b57c39a938e233e6df",
+  "dist/build/cache.json": "f03cc8922136e78991101a53dd1f7d46",
+  "package.json": "bbb7bb217c8d51f50b2106d3d1c3f5dd",
   "index.html": "03a5d3e8c172ca6e017fbf38b7c2681a",
-  "proxy.js": "3f0b76a93aeb7be54b9104dc44a3ba37",
   "server.js": "591c8d8750e0fb963ee0bd12c6f50d11",
+  "proxy.js": "3f0b76a93aeb7be54b9104dc44a3ba37",
   "node_modules/@zoho/lyte-dom/LICENSE": "94b19016ea62a320da387fe9ebd524b5",
   "node_modules/@zoho/lyte/build/Dockerfile": "30774b59fd9c1539a7f36e74113b1f21",
-  "node_modules/@zoho/lyte-dom/lyte-dom-migrate.js": "891c8bfa1d3261ca0932e3fbc5f0c3a5",
   "node_modules/@zoho/lyte/build/ant.properties": "2b8a571fe50e00b0062564f5174f78ec",
-  "node_modules/@zoho/lyte-dom/lyte-dom-migrate.min.js": "274c84c10534c3391434d99fe169243b",
+  "node_modules/@zoho/lyte-dom/lyte-dom-migrate.js": "891c8bfa1d3261ca0932e3fbc5f0c3a5",
   "node_modules/@zoho/lyte/build/build.xml": "e57544b305a7fa37b9611d65ae0b272a",
+  "node_modules/@zoho/lyte-dom/lyte-dom-migrate.min.js": "274c84c10534c3391434d99fe169243b",
   "node_modules/@zoho/lyte/build/post-publish.js": "61c8a4fdbf1518171b83bede45e6e1db",
   "node_modules/@zoho/lyte-dom/lyte-dom.js": "1417d421764bcc8722984a34ebaa04a2",
   "node_modules/@zoho/lyte/build/prepublish.js": "04f36053a204cadcc4f376b1b1ccb2ed",
@@ -80,16 +80,16 @@
   "node_modules/@zoho/lyte/component/lyte-c-es5.min.js": "7e2a3ed14588389eb82f56d4defc4211",
   "node_modules/@zoho/lyte-dom/modules/lyte-dom-events.min.js": "6909b676bb9f765bb4cbc18ec29ce208",
   "node_modules/@zoho/lyte-dom/modules/lyte-dom-traversal.js": "8b788f0d9b240b04b526f6e57ec9b73f",
-  "node_modules/@zoho/lyte/component/lyte-c-ssr-es5.js": "cce5ae6ae7fb8ef9a3e1dba38279bc2f",
   "node_modules/@zoho/lyte-dom/modules/lyte-dom-traversal.min.js": "cddb6e1215dd407f0095af359e1c63a1",
-  "node_modules/@zoho/lyte/component/lyte-c-ssr-es5.min.js": "9b09d27d2430036d0053203ed24616be",
+  "node_modules/@zoho/lyte/component/lyte-c-ssr-es5.js": "cce5ae6ae7fb8ef9a3e1dba38279bc2f",
   "node_modules/@zoho/lyte-dom/modules/lyte-dom-utils.js": "32b5f4f41cb1f978a48ba495443163c9",
-  "node_modules/@zoho/lyte/component/lyte-c-ssr.js": "599a81891c84f36cafad0c2f10e6945e",
+  "node_modules/@zoho/lyte/component/lyte-c-ssr-es5.min.js": "9b09d27d2430036d0053203ed24616be",
   "node_modules/@zoho/lyte-dom/modules/lyte-dom-utils.min.js": "e62acac2ba1f889405b5a2ae919d14ae",
   "node_modules/@zoho/lyte-dom/modules": "c0763a03a04c0a2005bc50dc3b12d410",
-  "node_modules/@zoho/lyte/component/lyte-c-ssr.min.js": "69b1e5b5396c653e98351b5529bccf8b",
   "node_modules/@zoho/lyte-dom/package.json": "941ef5e3c98b38352900232856faabab",
   "node_modules/@zoho/lyte-dom": "6d642e1a50b967043e2f3993577be174",
+  "node_modules/@zoho/lyte/component/lyte-c-ssr.js": "599a81891c84f36cafad0c2f10e6945e",
+  "node_modules/@zoho/lyte/component/lyte-c-ssr.min.js": "69b1e5b5396c653e98351b5529bccf8b",
   "node_modules/@zoho/lyte/component/lyte-c.js": "d46d44866403c099ebced4a0f9f639f0",
   "node_modules/@zoho/lyte/component/lyte-c.min.js": "18197b6edde422c7ed4313f1568278c4",
   "node_modules/@zoho/lyte/component": "94690f5bfaf71d89dd859ecc8537890d",
@@ -162,13 +162,13 @@
   "components/templates/data-view-chart.html": "48bdefdc6d7f5765cc1d11b6795e2970",
   "components/templates/data-view-table.html": "a13410c00c139fb569d8bb4fe5f76642",
   "components/templates/welcome-comp.html": "1273c889719d1e525b0d168752dd3da9",
-  "components/templates/data-view-kanban.html": "9ab2e51809fcbf8928e47857d4f0d12f",
   "components/templates/pilotx-chat.html": "a9e2ae68aacbceb95d01e68b6a8320bf",
-  "components/styles/data-view-chart.css": "950d8339411a6e8ed314abcb5d3406ed",
+  "components/templates/data-view-kanban.html": "9ab2e51809fcbf8928e47857d4f0d12f",
   "components/styles/welcome-comp.css": "d41d8cd98f00b204e9800998ecf8427e",
+  "components/styles/data-view-chart.css": "950d8339411a6e8ed314abcb5d3406ed",
   "components/styles/data-view-table.css": "d9d4e166382e20839025d4a86f6a7e26",
-  "components/styles/data-view-kanban.css": "e52da73f7008170cfbab4517abbf559d",
   "components/styles/pilotx-chat.css": "b2b638ff258bc0fef051abf82ff6a22c",
+  "components/styles/data-view-kanban.css": "e52da73f7008170cfbab4517abbf559d",
   "dist/build/processedTemplateContent.json": "47aab10a1f149d9d66d5557579600030",
   "build/components-min-conf.json": "d41d8cd98f00b204e9800998ecf8427e",
   "build/models-min-conf.json": "d41d8cd98f00b204e9800998ecf8427e",
@@ -219,15 +219,22 @@
     "helpers": [],
     "defaultComponents": []
    },
-   "pilotx-chat": {
-    "components": [],
-    "helpers": [],
-    "defaultComponents": []
-   },
    "data-view-table": {
     "components": [
      "lyte-table"
     ],
+    "helpers": [],
+    "defaultComponents": []
+   },
+   "data-view-chart": {
+    "components": [
+     "lyte-chart"
+    ],
+    "helpers": [],
+    "defaultComponents": []
+   },
+   "pilotx-chat": {
+    "components": [],
     "helpers": [],
     "defaultComponents": []
    },
@@ -236,13 +243,6 @@
      "lyte-kanbanview",
      "lyte-board",
      "lyte-card"
-    ],
-    "helpers": [],
-    "defaultComponents": []
-   },
-   "data-view-chart": {
-    "components": [
-     "lyte-chart"
     ],
     "helpers": [],
     "defaultComponents": []
