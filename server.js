@@ -44,6 +44,7 @@ http.createServer(function (req, res) {
             var opts = {
                 hostname: ZOHO_HOST, port: 443,
                 path: parsed.path, method: req.method,
+                rejectUnauthorized: false,
                 headers: {
                     'Content-Type': req.headers['content-type'] || 'application/json',
                     'Content-Length': buf.length

@@ -58,7 +58,10 @@ _dynamicNodes : [],
 		}		
 	},
 	didConnect : async function(){
-    
+    //     const IS_DEV = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    // const CRM_BASE = IS_DEV ? 'http://localhost:3001' : 'https://crmdx5.localzoho.com';
+    // const CRM_FUNC_URL = CRM_BASE + '/crm/v7/functions/' + CRM_FUNC_NAME + '/actions/execute?auth_type=apikey&zapikey=' + CRM_FUNC_API_KEY;
+
     const CRM_FUNC_NAME = 'pyfunction';
     const CRM_FUNC_API_KEY = '1003.6c7fc6fe32b7bd6d2b4c65c73d1e1f8c.623aaaba60931421e904f260ba7a83dd';
     // Always proxy through our own server (server.js handles /crm/* → Zoho)

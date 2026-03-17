@@ -1,31 +1,30 @@
-No cache as changes detected in package.json and build.js
-Timing to complete init function0.003 s
+Timing to complete init function0.959 s
 /* START CLI DETAILS */ 
 {"cliVersion":"3.6.18","outputPath":"dist","mode":"development","cliLocation":"/usr/local/lib/node_modules/@zoho/lyte-cli"}
 /* END CLI DETAILS */
-Building time of copyAppDir : 0.201 s
+Building time of copyAppDir : 0.217 s
 Building time of routes : 0 s
 Building components ....
 Full component compilation triggered
 Total no of files in the components going to compile :5
 Searching for syntax errors.....
 Finding the unclosed tags compilation over
-[Time] => find unclosedTags => 0.012 s
+[Time] => find unclosedTags => 0.013 s
 Running compilerule ...
-[Time] => Convert Lyte syntax => 0.015 s
+[Time] => Convert Lyte syntax => 0.016 s
 Creating new browser instance 
 New browser instance launched
-browser Endpoint ws://127.0.0.1:64248/devtools/browser/b2269b44-c1a5-4714-aa36-3b4fee5ab624
+browser Endpoint ws://127.0.0.1:50155/devtools/browser/e9716017-3c60-47a1-9a7e-b9f0907d741a
 Browser launched
 page opened
 Post method request get caught with url/post
-Time taken for end call back be 1.639 s
-Callback function called 0 swelcome-comp,data-view-table,data-view-chart,pilotx-chat,data-view-kanban
-Time to end the dynamic nodes1.639 s
+Time taken for end call back be 2.029 s
+Callback function called 0 spilotx-chat,data-view-table,welcome-comp,data-view-chart,data-view-kanban
+Time to end the dynamic nodes2.03 s
 Generating dist components...
 
-Time to end processing template0.025 s
-Building time of components : 1.696 s
+Time to end processing template0.027 s
+Building time of components : 2.095 s
 Building models ..............
 
 Building time of models : 0 s
@@ -37,10 +36,11 @@ Building time of mixins : 0 s
 Building time of services : 0 s
 build file exists on addons building
 Cache output exists for /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/node_modules/@zoho/lyte-ui-component
-Building time of addons : 1.162 s
+Building time of addons : 1.028 s
 Consolidated file created in the dist/app.js
 
 Time for consolidation and minify 0.003 s
+LiveServer running in 50187
 Minified Count : 0
-Total Building Time : 3.065 s
+Total Building Time : 3.347 s
 Building completed

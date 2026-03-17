@@ -1,0 +1,4 @@
+# Ignore root node_modules but NOT dist/node_modules (needed for deployment)
+/node_modules/
+.DS_Store
+*.log
