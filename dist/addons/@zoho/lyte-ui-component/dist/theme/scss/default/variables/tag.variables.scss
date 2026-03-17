@@ -1,0 +1,46 @@
+@use "../global/global.variables.scss" as global;
+
+$lyteTagLabelMap: (
+	"padding-bottom": 5px
+) !default;
+
+$lyteTagCompDropdownMap: (
+	"width": 100%
+) !default;
+
+$lyteTagDescriptionMap: (
+	"opacity": 0.4,
+	"font-size": 13px
+) !default;
+
+$lyteTagDropdownItemMap: (
+	"padding-left": 10px,
+	"flex-direction": column
+) !default;
+
+$lyteTagInputLiMap: (
+	"background": #fff,
+	"border": 0,
+	"padding": 0,
+	"margin": 0
+) !default;
+
+$lyteTagSingleSelectLiMap: (
+	"background": transparent,
+	"border": none,
+	"width": 100%,
+	"padding": 0,
+	"margin": 0,
+	"padding-right": 30px
+) !default;
+
+$lyteTagSingleSelectCloseIconMap: (
+	"right": 10px,
+	"border-radius": 50%,
+	"height": 18px
+) !default;
+
+$lyteTagSingleSelectCloseIconHoverMap: (
+	"background-color": #e8e8e8
+) !default;
+

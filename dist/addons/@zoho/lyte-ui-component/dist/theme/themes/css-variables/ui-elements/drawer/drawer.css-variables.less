@@ -1,0 +1,136 @@
+/**
+* @component lyte-drawer
+*/
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+
+    /**
+     * @variable --lyte-drawer-active-bg
+     * @selector .lyteDrawerActiveItem
+     * @description Background color of the currently active drawer item
+     * @defaultValue var(--lyte-theme-active-element-bg)
+     * @defaultVariableValue #5ba1e5
+     * @inputType color
+     * @name Active Background Color
+     */
+    --lyte-drawer-active-bg: @themeActiveElementBg;
+
+    /**
+     * @variable --lyte-drawer-item-disabled-bg
+     * @selector .lyteDrawerDisabledItem
+     * @description Background color for disabled drawer items
+     * @defaultValue #d6d6d6
+     * @inputType color
+     * @name Item Disabled Background Color
+     */
+    --lyte-drawer-item-disabled-bg: #d6d6d6;
+
+    /**
+     * @variable --lyte-drawer-freeze-bg
+     * @selector lyte-drawer-freeze
+     * @description Background color for the drawer overlay/freeze layer
+     * @defaultValue #000
+     * @defaultVariableValue #000
+     * @inputType color
+     */
+    --lyte-drawer-freeze-bg: #000;
+
+    /**
+     * @variable --lyte-drawer-text-color
+     * @selector lyte-drawer, lyte-drawer-item
+     * @description Default text color used throughout the drawer component
+     * @defaultValue var(--lyte-common-text-color)
+     * @defaultVariableValue #333
+     * @inputType color
+     * @name Text Color
+     */
+    --lyte-drawer-text-color: @commonTextColor;
+
+    /**
+     * @variable --lyte-drawer-border-color
+     * @selector lyte-drawer
+     * @description Border color of the main drawer panel
+     * @defaultValue #ddd
+     * @inputType color
+     * @name Border Color
+     */
+    --lyte-drawer-border-color: #ddd;
+
+    /**
+     * @variable --lyte-drawer-group-border-color
+     * @selector lyte-drawer-group
+     * @description Border color used between drawer groups
+     * @defaultValue #d6d6d6
+     * @inputType color
+     * @name Group Border Color
+     */
+    --lyte-drawer-group-border-color: #d6d6d6;
+
+    /**
+     * @variable --lyte-drawer-item-hover-bg
+     * @selector .lyteDrawerItemFocused
+     * @description Background color on hover for drawer items
+     * @defaultValue #eee
+     * @inputType color
+     * @name Item Hover Background Color
+        */
+    --lyte-drawer-item-hover-bg: #eee;
+
+    /**
+     * @variable --lyte-drawer-active-item-text-color
+     * @selector .lyteDrawerActiveItem
+     * @description Text color of the currently active drawer item
+     * @defaultValue #fff
+     * @inputType color
+     * @name Active Item Text Color
+     */
+    --lyte-drawer-active-item-text-color: #fff;
+
+    /**
+     * @variable --lyte-drawer-inline-panel-bg
+     * @selector .lyteDrawerInlineBody .lyteDrawerPanel
+     * @description Background color of the inline drawer panel
+     * @defaultValue var(--lyte-theme-body-bg)
+     * @defaultVariableValue #fff
+     * @inputType color
+     * @name Inline Panel Background Color
+     */
+    --lyte-drawer-inline-panel-bg: @drawerPanelBg;
+
+    /**
+     * @variable --lyte-drawer-overlay-bg
+     * @selector .lyteDrawerOverlayShow
+     * @description Background color of the overlay/freeze layer when drawer is open
+     * @defaultValue #fff
+     * @inputType color
+     * @name Overlay Background Color
+     */
+    --lyte-drawer-overlay-bg: #fff;
+
+    /**
+     * @variable --lyte-drawer-label-font-size
+     * @selector lyte-drawer-label
+     * @description Font size for drawer group labels
+     * @defaultValue var(--lyte-font-size-medium)
+     * @defaultVariableValue 15px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Label Font Size
+     */
+    --lyte-drawer-label-font-size: var(--lyte-font-size-medium);
+
+    /**
+     * @variable --lyte-drawer-item-font-size
+     * @selector lyte-drawer-item
+     * @description Font size for individual drawer items
+     * @defaultValue var(--lyte-font-size-medium)
+     * @defaultVariableValue 15px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Item Font Size
+     */
+    --lyte-drawer-item-font-size: var(--lyte-font-size-medium);
+}

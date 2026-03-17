@@ -1,0 +1,144 @@
+/**
+ * @component lyte-progressbar
+ */
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+	/**
+	 * @variable --lyte-progressbar-bg
+	 * @selector .lyteProgressBar
+	 * @description Base background color for all progress bars
+	 * @defaultValue #e5e5e5
+	 * @inputType color
+	 * @name Background Color
+	 */
+	--lyte-progressbar-bg: #e5e5e5;
+
+	/**
+	 * @variable --lyte-progressbar-horizontal-bg
+	 * @selector .lyteProgressBar.lyteHorizontal
+	 * @description Background color specifically for horizontal progress bars
+	 * @defaultValue var(--lyte-progressbar-bg)
+	 * @defaultVariableValue #e5e5e5
+	 * @inputType color
+	 * @name Horizontal Background Color
+	 */
+	--lyte-progressbar-horizontal-bg: var(--lyte-progressbar-bg);
+
+	/**
+	 * @variable --lyte-progress-status-bg
+	 * @selector .lyteProgressStatus, .lyteProgressStatusStack, .lyteProgressStatusVertical
+	 * @description Background color for the progress indicator (filled area)
+	 * @defaultValue #51a2ee
+	 * @inputType color
+	 * @name Status Background Color
+	 */
+	--lyte-progress-status-bg: #51a2ee;
+
+	/**
+	 * @variable --lyte-progress-status-text-color
+	 * @selector .lyteProgressStatus, .lyteProgressStatusStack
+	 * @description Text color inside the filled portion of the progress bar
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @name Status Text Color
+	 */
+	--lyte-progress-status-text-color: #fff;
+
+	/**
+	 * @variable --lyte-progressbar-horizon-completed-bg
+	 * @selector .lyteProgressBar.lyteProgressCompleted
+	 * @description Background color when progress is completed in horizontal bars
+	 * @defaultValue #3fbd5f
+	 * @inputType color
+	 * @name Horizontal Completed Background Color
+	 */
+	--lyte-progressbar-horizon-completed-bg: #3fbd5f;
+
+	/**
+	 * @variable --lyte-progressbar-circle-text-color
+	 * @selector .lyteProgressBar.lyteCircle .CircleType
+	 * @description Text color inside circular progress bars
+	 * @defaultValue var(--lyte-common-text-color)
+	 * @defaultVariableValue #333
+	 * @inputType color
+	 * @name Circle Text Color
+	 */
+	--lyte-progressbar-circle-text-color: @commonTextColor;
+
+	/**
+	 * @variable --lyte-progressbar-circle-bg
+	 * @selector .lyteProgressBar.lyteCircle circle:first-child
+	 * @description Stroke color for the background circle in radial progress bars
+	 * @defaultValue #DCE0E3
+	 * @inputType color
+	 * @name Circle Background Color
+	 */
+	--lyte-progressbar-circle-bg: #DCE0E3;
+
+	/**
+	 * @variable --lyte-progressbar-percentage-font-size
+	 * @selector .lyteProgressPercentage
+	 * @description Font size used for percentage text shown over progress bars
+	 * @defaultValue var(--lyte-font-size-xs)
+	 * @defaultVariableValue 12px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Percentage Font Size
+	 */
+	--lyte-progressbar-percentage-font-size: var(--lyte-font-size-xs);
+
+	/**
+	 * @variable --lyte-progressbar-circle-font-size
+	 * @selector .lyteProgressBar.lyteCircle .CircleType
+	 * @description Font size used for text inside circular progress bars
+	 * @defaultValue 17px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Circle Font Size
+	 */
+	--lyte-progressbar-circle-font-size: 17px;
+
+	/**
+	 * @variable --lyte-progressbar-vertical-bg
+	 * @selector .lyteProgressBar.lyteVertical
+	 * @description Background color for vertical progress bars
+	 * @defaultValue var(--lyte-progressbar-bg)
+	 * @defaultVariableValue #e5e5e5
+	 * @inputType color
+	 * @name Vertical Background Color
+	 */
+	--lyte-progressbar-vertical-bg: var(--lyte-progressbar-bg);
+
+	/**
+	 * @variable --lyte-progressbar-vertical-status-box-shadow-color
+	 * @selector .lyteProgressStatusVertical
+	 * @description Box shadow color for the status bar in vertical progress
+	 * @defaultValue rgba(0, 0, 0, 0.075)
+	 * @inputType color
+	 * @name Vertical Status Box Shadow Color
+	 */
+	--lyte-progressbar-vertical-status-box-shadow-color: rgba(0,0,0,.075);
+
+	/**
+	 * @variable --lyte-progressbar-circle-status-stroke
+	 * @selector .ltProgressFillCircle
+	 * @description Stroke color for the filled portion in circular progress
+	 * @defaultValue #51a2ee
+	 * @inputType color
+	 * @name Circle Status Stroke Color
+	 */
+	--lyte-progressbar-circle-status-stroke: #51a2ee;
+
+	/**
+	 * @variable --lyte-progressbar-circle-completed-stroke
+	 * @selector .lyteProgressCompleted.lyteCircle .ltProgressFillCircle
+	 * @description Stroke color for completed circular progress bars
+	 * @defaultValue #3fbd5f
+	 * @inputType color
+	 * @name Circle Completed Stroke Color
+	 */
+	--lyte-progressbar-circle-completed-stroke: #3fbd5f;
+}

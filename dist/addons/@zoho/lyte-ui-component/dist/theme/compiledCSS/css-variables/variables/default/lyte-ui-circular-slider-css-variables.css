@@ -1,0 +1,76 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-circular-slider
+*/
+:root,
+:host {
+  /**
+    * @variable --lyte-circular-slider-handler-bg-color
+    * @selector .lyteCirSliderHandler
+    * @description Background color of the circular slider handler
+    * @defaultValue #fff
+    * @inputType color
+    * @name Handler Background Color
+    */
+  --lyte-circular-slider-handler-bg-color: #fff;
+  /**
+    * @variable --lyte-circular-slider-handler-border-color
+    * @selector .lyteCirSliderHandler
+    * @description Border color of the circular slider handler in default state
+    * @defaultValue #3094D6
+    * @inputType color
+    * @name Handler Border Color
+    */
+  --lyte-circular-slider-handler-border-color: #3094D6;
+  /**
+    * @variable --lyte-circular-slider-disabled-outer-circle-stroke-color
+    * @selector .lyteCircularSliderDisabled .lyteCirSliderOuterCircle
+    * @description Stroke color of the outer circle when the circular slider is disabled
+    * @defaultValue #D7DBDE
+    * @inputType color
+    * @name Disabled Outer Circle Stroke Color
+    */
+  --lyte-circular-slider-disabled-outer-circle-stroke-color: #D7DBDE;
+  /**
+    * @variable --lyte-circular-slider-disabled-inner-circle-stroke-color
+    * @selector .lyteCircularSliderDisabled .lyteCirSliderStrokeCircle
+    * @description Stroke color of the progress circle when disabled
+    * @defaultValue #BABDBF
+    * @inputType color
+    * @name Disabled Inner Circle Stroke Color
+    */
+  --lyte-circular-slider-disabled-inner-circle-stroke-color: #BABDBF;
+  /**
+    * @variable --lyte-circular-slider-disabled-handler-border-color
+    * @selector .lyteCircularSliderDisabled .lyteCirSliderHandler
+    * @description Border color of the handler when the slider is disabled
+    * @defaultValue #979797
+    * @inputType color
+    * @name Disabled Handler Border Color
+    */
+  --lyte-circular-slider-disabled-handler-border-color: #979797;
+  /**
+    * @variable --lyte-circular-slider-handler-box-shadow-color
+    * @selector .lyteCircularSliderDrag .lyteCirSliderHandler
+    * @description Box shadow color applied to the handler while dragging
+    * @defaultValue #0000002E
+    * @inputType color
+    * @name Handler Box Shadow Color
+    */
+  --lyte-circular-slider-handler-box-shadow-color: #0000002E;
+  /**
+    * @variable --lyte-circular-slider-value-color
+    * @selector .lyteCircularSliderValue
+    * @description Text color of the displayed value inside the circular slider
+    * @defaultValue #000
+    * @inputType color
+    * @name Value Color
+    */
+  --lyte-circular-slider-value-color: #000;
+}

@@ -1,0 +1,210 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/*	Icon Colors */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+:root,
+:host {
+  --lyte-rating-empty-color: #c7c7c7;
+  --lyte-rating-fill-color: #f00;
+  --lyte-rating-hover-color: #FF7778;
+}
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+lyte-rating {
+  display: inline-flex;
+  white-space: nowrap;
+}
+lyte-rate-icon {
+  display: inline-flex;
+  cursor: pointer;
+  padding-right: 5px;
+  background-image: url(../../images/sprite_lyte_night.svg);
+}
+lyte-rate-icon:last-child {
+  padding-right: 0px;
+}
+lyte-rating.star lyte-rate-icon {
+  background-image: none;
+}
+lyte-rating.heart lyte-rate-icon {
+  background-image: none;
+}
+lyte-rating.lineStar lyte-rate-icon {
+  background-image: none;
+}
+lyte-rating.lineHeart lyte-rate-icon {
+  background-image: none;
+}
+.lyteRatingReadOnly {
+  cursor: not-allowed;
+}
+.lyteRatingReadOnly lyte-rate-icon {
+  pointer-events: none;
+}
+.lyteRatingSmiley lyte-rate-icon {
+  width: 22px;
+  height: 22px;
+}
+.lyteRatingSmiley lyte-rate-icon:nth-child(1) {
+  background-position: -67px -275px;
+}
+.lyteRatingSmiley.five lyte-rate-icon:nth-child(2) {
+  background-position: -99px -275px;
+}
+.lyteRatingSmiley.three lyte-rate-icon:nth-child(2),
+.lyteRatingSmiley.five lyte-rate-icon:nth-child(3) {
+  background-position: -130px -275px;
+}
+.lyteRatingSmiley.five lyte-rate-icon:nth-child(4) {
+  background-position: -36px -275px;
+}
+.lyteRatingSmiley.three lyte-rate-icon:nth-child(3),
+.lyteRatingSmiley.five lyte-rate-icon:nth-child(5) {
+  background-position: -5px -275px;
+}
+.lyteRatingSmiley lyte-rate-icon.lyteRatingHover:nth-child(1),
+.lyteRatingSmiley lyte-rate-icon.lyteRated:nth-child(1) {
+  background-position: -226px -275px;
+}
+.lyteRatingSmiley.five lyte-rate-icon.lyteRatingHover:nth-child(2),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRated:nth-child(2) {
+  background-position: -258px -275px;
+}
+.lyteRatingSmiley.three lyte-rate-icon.lyteRatingHover:nth-child(2),
+.lyteRatingSmiley.three lyte-rate-icon.lyteRated:nth-child(2),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRatingHover:nth-child(3),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRated:nth-child(3) {
+  background-position: -289px -275px;
+}
+.lyteRatingSmiley.five lyte-rate-icon.lyteRatingHover:nth-child(4),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRated:nth-child(4) {
+  background-position: -195px -275px;
+}
+.lyteRatingSmiley.three lyte-rate-icon.lyteRatingHover:nth-child(3),
+.lyteRatingSmiley.three lyte-rate-icon.lyteRated:nth-child(3),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRatingHover:nth-child(5),
+.lyteRatingSmiley.five lyte-rate-icon.lyteRated:nth-child(5) {
+  background-position: -164px -275px;
+}
+.lyteRatingCustomSmileyBadIcon {
+  background-position: -67px -275px;
+}
+.lyteRatingCustomSmileyPoorIcon {
+  background-position: -99px -275px;
+}
+.lyteRatingCustomSmileyAverageIcon {
+  background-position: -130px -275px;
+}
+.lyteRatingCustomSmileyGoodIcon {
+  background-position: -36px -275px;
+}
+.lyteRatingCustomSmileyHappyIcon {
+  background-position: -5px -275px;
+}
+.lyteRatingCustomSmileyBadHoverIcon,
+.lyteRatingCustomSmileyBadRatedIcon {
+  background-position: -226px -275px;
+}
+.lyteRatingCustomSmileyPoorHoverIcon,
+.lyteRatingCustomSmileyPoorRatedIcon {
+  background-position: -258px -275px;
+}
+.lyteRatingCustomSmileyAverageHoverIcon,
+.lyteRatingCustomSmileyAverageRatedIcon {
+  background-position: -289px -275px;
+}
+.lyteRatingCustomSmileyGoodHoverIcon,
+.lyteRatingCustomSmileyGoodRatedIcon {
+  background-position: -195px -275px;
+}
+.lyteRatingCustomSmileyHappyHoverIcon,
+.lyteRatingCustomSmileyHappyRatedIcon {
+  background-position: -164px -275px;
+}
+.lrcSwitchDislikeEmpty,
+.lrcSwitchLikeEmpty {
+  width: 20px;
+  height: 20px;
+}
+.lrcSwitchLikeEmpty {
+  background-position: -268px -232px;
+}
+.lrcSwitchDislikeEmpty {
+  background-position: -332px -237px;
+}
+.lrcSwitchHoverLike,
+.lrcSwitchLikeEmpty:hover {
+  background-position: -300px -232px;
+  opacity: 0.8;
+}
+.lrcSwitchHoverDislike,
+.lrcSwitchDislikeEmpty:hover {
+  background-position: -363px -237px;
+  opacity: 0.8;
+}
+.lrcSwitchLikeRated,
+.lrcSwitchLike.lyteRated {
+  background-position: -300px -232px;
+  opacity: 1;
+}
+.lrcSwitchDisLikeRated,
+.lrcSwitchDislike.lyteRated {
+  background-position: -363px -237px;
+  opacity: 1;
+}
+.lrcToggleEmpty {
+  width: 21px;
+  height: 21px;
+  background-position: -5px -232px;
+}
+.lrcToggleEmpty:hover,
+.lrcToggleFill {
+  width: 21px;
+  height: 21px;
+  background-position: -71px -232px;
+}
+.lyteRatingHeartHoverHalfIcon,
+.lyteRatingHeartRatedHalfIcon,
+.lyteRatingHeartEmptyIcon,
+.lyteRatingHeartRatedIcon,
+.lyteRatingHeartHoverRatedIcon {
+  background-image: unset;
+  -webkit-mask-image: url(../../images/sprite_lyte.svg);
+  mask-image: url(../../images/sprite_lyte.svg);
+  width: 21px;
+  height: 21px;
+}
+.lyteRatingHeartEmptyIcon {
+  -webkit-mask-position: -41px -239px;
+  mask-position: -41px -239px;
+  background-color: #C7C7C7;
+}
+.lyteRatingHeartRatedIcon {
+  -webkit-mask-position: -74px -239px;
+  mask-position: -74px -239px;
+  background-color: #f00;
+}
+.lyteRatingHeartHoverRatedIcon.lyteRatingHeartRatedHalfIcon,
+.lyteRatingHeartHoverRatedIcon {
+  -webkit-mask-position: -8px -239px;
+  mask-position: -8px -239px;
+  background-color: #FF7778;
+}
+.lyteRatingHeartRatedHalfIcon,
+.lyteRatingHeartHoverHalfIcon {
+  -webkit-mask-position: -110px -239px;
+  mask-position: -110px -239px;
+}
+.lyteRatingHeartHoverHalfIcon.lyteRatingHeartRatedHalfIcon,
+.lyteRatingHeartHoverHalfIcon {
+  background-color: #FF7778;
+}
+.lyteRatingHeartRatedHalfIcon {
+  background-color: #f00;
+}

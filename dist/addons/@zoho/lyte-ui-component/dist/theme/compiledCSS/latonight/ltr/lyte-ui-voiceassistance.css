@@ -1,0 +1,121 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+.lyteVoAssMicIcon {
+  -webkit-mask-image: url(../../images/audio_recorder_sprite.svg);
+  mask-image: url(../../images/audio_recorder_sprite.svg);
+  width: 12px;
+  height: 17px;
+  background-color: #fff;
+  -webkit-mask-position: -22px -34px;
+  mask-position: -22px -34px;
+}
+.lyteVoAssModalWrap .lyteModal {
+  background: #10203b;
+  border: 0;
+  border-radius: 10px;
+}
+.lyteVoAssModalWrap .lyteModalClose {
+  opacity: 1;
+  filter: invert(1);
+  top: 20px;
+  right: 15px;
+}
+.lyteVoAssFooterAction {
+  color: #fff;
+  cursor: pointer;
+}
+.lyteVoAssFooterSep {
+  display: inline-block;
+  height: 14px;
+  width: 1px;
+  opacity: 0.3;
+  background: #C5C4D3;
+  margin: 0 5px;
+}
+.lyteVoAssModalHeader {
+  font-family: 15px;
+  color: #fff;
+  padding: 15px;
+  border-bottom: 1px solid rgba(192, 198, 204, 0.2);
+}
+.lyteVoAssModalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 15px;
+}
+.lyteVoAssMicIconWrapper {
+  background: linear-gradient(#fb7648, #ea598d);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 10px 0;
+}
+.lyteVoAssModalFooter {
+  padding: 15px;
+}
+.lyteVoAssModalWrap .lytePopover .ac_voiceAssFooter {
+  padding: 0px 20px 20px !important;
+}
+.lyteVoAssListeningGif {
+  background: url(../../images/voice_assitant_loader.gif) no-repeat;
+  background-size: contain;
+  height: 25px;
+  width: 25px;
+  margin-top: 3px;
+}
+.lyteVoAssListCont,
+.lyteVoAssFinalSearchCont {
+  color: #fff;
+  margin-top: 20px;
+  min-height: 30px;
+}
+.lyteVoAssListCont {
+  opacity: 0.5;
+}
+.lyteVoAssInfoText {
+  color: #8b9ab9;
+  min-height: 17px;
+}
+.lyteVoAssInfoTextHidden {
+  display: none;
+}
+.lyteVoAssNumberElement {
+  position: absolute;
+  background: #C55DE2;
+  padding: 1px 3px 1px 6px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 1100;
+  border: 1px solid #fff;
+}
+.lyteVoAssNumberElement::after {
+  content: "";
+  position: absolute;
+  border-radius: 0;
+  border: 0;
+  border-right: 1px solid #fff;
+  border-top: 1px solid #fff;
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  background: inherit;
+  transform: translateX(calc(5px * 1.414)) rotate(45deg);
+  top: 1.5px;
+  right: 1px;
+  z-index: -1;
+}

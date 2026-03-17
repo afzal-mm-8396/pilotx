@@ -1,0 +1,24 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component lyte-tag
+ */
+:root,
+:host {
+  /**
+    * @variable --lyte-tag-description-font-size
+    * @selector lyte-tag-description
+    * @description Font size used for the tag description text inside the tag component.
+    * @defaultValue var(--lyte-font-size-small)
+    * @defaultVariableValue 13px
+    * @allowedSuffixes px
+    * @inputType dimension
+    * @name Description Font Size
+    */
+  --lyte-tag-description-font-size: var(--lyte-font-size-small);
+}

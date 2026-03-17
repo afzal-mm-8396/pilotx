@@ -1,0 +1,160 @@
+.lyteOrgTreeWrapperMixin() {
+	@max-w: 100%;
+}
+.lyteOrgTreeColumnMixin() {
+	@h: 500px;
+	@margin: 0 -1px;
+}
+.lyteOrgTreeExpandedColumnMixin() {
+	@w: 300px;
+}
+.lyteOrgTreeShrinkedColumnMixin() {
+	@w: 150px;
+}
+.lyteOrgTreeElementsWrapMixin() {
+	@padding: 20px 0;
+	@border-left: 1px solid @lyteOrgtreeBorderColor;
+}
+.lyteOrgTreeChildDropZoneMixin() {
+	@w: 100%;
+}
+.lyteOrgTreeElementsMixin() {
+	@w: 60%;
+	@h: 50px;
+	@border-radius: 15px;
+	@margin: 0px auto;
+	@border: solid 1px @lyteOrgtreeBorderColor;
+	@z-index: 1;
+	@background-color: @lyteOrgTreeBgColor;
+}
+.lyteOrgTreeShrinkedColumnElementsMixin() {
+	@w: 50px;
+}
+.lyteOrgTreeActiveElementMixin() {
+	@border: 1px solid @lyteOrgtreeActiveBorderColor;
+	@z-index: 50;
+}
+.lyteOrgTreeBadgeWrapperMixin() {
+	@min-w: 30px;
+	@right: 15px;
+}
+.lyteOrgTreeChildrenCountBadgeMixin() {
+	@h: 20px;
+	@min-w: 30px;
+	@margin: 0px auto;
+	@border: solid 1px @lyteOrgtreeBorderColor;
+	@z-index: 1;
+	@background-color: @lyteOrgTreeBgColor;
+}
+.lyteOrgTreeActiveWrapMixin() {
+	@background-color: @lyteOrgtreeActiveBorderColor;
+    @border-color: @lyteOrgtreeActiveBorderColor;
+	@color: @lyteOrgtreeActiveBadgeTextColor;
+	@z-index: 100;
+}
+.lyteOrgTreeVerticalConnectMixin() {
+	@w: 2px;
+	@background-color: @lyteOrgtreeActiveBorderColor;
+	@z-index: 10;
+}
+.lyteOrgTreeVerticalBorderMixin() {
+	@w: 1px;
+	@top: 20px;
+	@bottom: 0;
+}
+.lyteOrgTreeLeftRightHorizontalConnectMixin() {
+	@h: 1px;
+	@top: calc(50% - 1px);
+	@z-index: -1;
+}
+.lyteOrgTreeLeftHorizontalConnectMixin() {
+	@left: 0;
+	@background-color: @lyteOrgtreeBorderColor;
+}
+.lyteOrgTreeRightHorizontalConnectMixin() {
+	@right: 0;
+}
+.lyteOrgTreeLoadScrollTopWrapMixin() {
+	@z-index: 100;
+}
+.lyteOrgTreeLoadMoreWrapMixin() {
+	@bottom: 0;
+	@top: unset;
+	@margin-top: auto;
+}
+.lyteOrgTreeScrollTopWrapMixin() {
+	@margin-top: 0;
+	@top: 0;
+}
+.lyteOrgTreeTopScrollMixin() {
+	@w: 100%;
+	@h: 20px;
+	@top: 0;
+	@left: 50%;
+	@transform: translateX(-50%);
+	@background-color: @lyteOrgTreeBgColor;
+}
+.lyteOrgTreeLoadMoreMixin() {
+	@top: unset;
+	@bottom: 0;
+}
+.lyteOrgTreeChildPlaceHolderMixin() {
+	@w: 100%;
+	@h: 100%;
+	@bg: @lyteOrgTreeChildPlaceholderBgColor;
+	@z-index: 10000;
+}
+.lyteOrgTreeSiblingPlaceHolderMixin() {
+	@w: 100%;
+	@h: 50px;
+	@bg: #f5deb3;
+}
+.clonedElemMixin() {
+	@margin:0;
+	@z-index: 10000;
+}
+.orgTreeWrapMixin() {
+	@margin-top: 100px;
+}
+.lyteOrgTreeTopScrollAfterMixin() {
+	@w: 10px;
+	@h: 10px;
+	@transform: rotate(45deg);
+	@border-left: 1px solid @lyteOrgtreeArrowBorderColor;
+	@border-top: 1px solid @lyteOrgtreeArrowBorderColor;
+}
+.lyteOrgTreeLoadMoreAfterMixin() {
+	@transform: rotate(-135deg);
+}
+.lyteOrgTreeBadgeWrapperRightHorizontalConnectMixin() {
+	@background-color: @lyteOrgtreeBorderColor;
+	@margin-right: 15px;
+}
+.lyteOrgTreeActiveWrapHorizontalConnectMixin() {
+	@background-color: @lyteOrgtreeActiveBorderColor;
+	@h: 2px;
+	@margin-right: 0;
+	@border-color: @lyteOrgtreeActiveBorderColor;
+}
+.lyteOrgTreeScrollWrapAfterBeforeMixin() {
+	@w: 1px;
+	@h: calc(50% - .5px);
+	@z-index: 10;
+	@background-color: @lyteOrgTreeBgColor;
+	@left: -1px;
+}
+.lyteOrgTreeScrollTopWrapElementsWrapBeforeMixin() {
+	@top: 0;
+}
+.lyteOrgTreeColumnLastForthChildAfterMixin() {
+	@bottom: 0;
+}
+.lyteOrgTreeWrapperFirstElementMixin() {
+	@border-left: 0;
+}
+.LyteOrgtreeColumnFirstOfTypeMixin() {
+	@margin-left: 0;
+}
+.LyteOrgtreeColumnLastOfTypeMixin() {
+	@margin-right: 0;
+}

@@ -1,0 +1,106 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component sortable
+ */
+:root,
+:host {
+  /**
+   * @variable --lyte-sortable-placeholder-bg
+   * @selector .lyteSortablePlaceholder
+   * @description Background color of the sortable placeholder while dragging
+   * @defaultValue #f6fad2
+   * @inputType color
+   * @name Sortable Placeholder Background Color
+   */
+  --lyte-sortable-placeholder-bg: #f6fad2;
+  /**
+   * @variable --lyte-sortable-placeholder-border-color
+   * @selector .lyteSortablePlaceholder
+   * @description Border color of the sortable placeholder while dragging
+   * @defaultValue #edf2c3
+   * @inputType color
+   * @name Sortable Placeholder Border Color
+   */
+  --lyte-sortable-placeholder-border-color: #edf2c3;
+  /**
+   * @variable --lyte-sortable-placeholder-disabled-bg
+   * @selector .lyteSortableDisabledPlaceholder
+   * @description Background color of the disabled sortable placeholder
+   * @defaultValue #f5c7c7
+   * @inputType color
+   * @name Disabled Sortable Placeholder Background Color
+   */
+  --lyte-sortable-placeholder-disabled-bg: #f5c7c7;
+  /**
+   * @variable --lyte-sortable-placeholder-disabled-border-color
+   * @selector .lyteSortableDisabledPlaceholder
+   * @description Border color of the disabled sortable placeholder
+   * @defaultValue #f4a7a7
+   * @inputType color
+   * @name Disabled Sortable Placeholder Border Color
+   */
+  --lyte-sortable-placeholder-disabled-border-color: #f4a7a7;
+}
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+.lyteSortableParent .lyteSortablePlaceholder:hover,
+.lyteSortableParent .lyteSortablePlaceholder {
+  background: var(--lyte-sortable-placeholder-bg);
+  border: 1px solid var(--lyte-sortable-placeholder-border-color);
+  box-sizing: border-box;
+}
+.lyteSortableParent .lyteSortableDisabledPlaceholder:hover,
+.lyteSortableParent .lyteSortableDisabledPlaceholder {
+  background: var(--lyte-sortable-placeholder-disabled-bg);
+  border: 1px solid var(--lyte-sortable-placeholder-disabled-border-color);
+}
+.nullifyTransition {
+  transition-duration: 0s;
+}
+.lyteSortableDisablePE {
+  pointer-events: none;
+}
+.lyteSortableDummyTr {
+  opacity: 0 !important;
+  box-sizing: border-box !important;
+  pointer-events: none !important;
+}
+.lyteSortableDropLine {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.lytePinIcon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 10px;
+}
+.lytePinIcon::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border: 2px solid #5ba1e5;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.lytePinIcon::after {
+  content: '';
+  width: 2px;
+  flex-grow: 1;
+  background-color: #5ba1e5;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */

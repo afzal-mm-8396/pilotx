@@ -1,0 +1,759 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/**
+ * @component lyte-listview
+ */
+:root,
+:host {
+  /**
+	* @variable --lyte-listview-wrapper-sticky-table-bg
+	* @selector .lyteListviewWrapper .lyteStickyTable lyte-th
+	* @description Background color for sticky table header cells
+	* @defaultValue #fff
+	* @inputType color
+	* @name Sticky Table Header Background Color
+	*/
+  --lyte-listview-wrapper-sticky-table-bg: #fff;
+  /**
+	* @variable --lyte-listview-wrapper-sticky-table-border-bottom-color
+	* @selector .lyteListviewWrapper .lyteStickyTable lyte-th
+	* @description Border bottom color for sticky table header
+	* @defaultValue #d6d6d6
+	* @inputType color
+	* @name Sticky Table Header Border Bottom Color
+	*/
+  --lyte-listview-wrapper-sticky-table-border-bottom-color: #d6d6d6;
+  /**
+	* @variable --lyte-listview-wrapper-table-sticky-table-border-color
+	* @selector .lyteListviewWrapper lyte-table.lyteStickyTable
+	* @description Border color of sticky ListView table
+	* @defaultValue #d6d6d6
+	* @inputType color
+	* @name Sticky Table Border Color
+	*/
+  --lyte-listview-wrapper-table-sticky-table-border-color: #d6d6d6;
+  /**
+	* @variable --lyte-listview-fake-header-bg
+	* @selector .lyteListFakeHeader
+	* @description Background color for fake header row
+	* @defaultValue #fff
+	* @inputType color
+	* @name Fake Header Background Color
+	*/
+  --lyte-listview-fake-header-bg: #fff;
+  /**
+	* @variable --lyte-listview-fake-cell-odd-bg
+	* @selector .lyteListFakeCell:nth-child(odd)
+	* @description Background color for odd fake header cells
+	* @defaultValue #fff
+	* @inputType color
+	* @name Fake Cell Odd Background Color
+	*/
+  --lyte-listview-fake-cell-odd-bg: #fff;
+  /**
+	* @variable --lyte-listview-fake-cell-even-bg
+	* @selector .lyteListFakeCell:nth-child(even)
+	* @description Background color for even fake header cells
+	* @defaultValue #f7f7f7
+	* @inputType color
+	* @name Fake Cell Even Background Color
+	*/
+  --lyte-listview-fake-cell-even-bg: #f7f7f7;
+  /**
+	* @variable --lyte-listview-fixed-bg
+	* @selector .lyteListFixed
+	* @description Background color for fixed ListView columns
+	* @defaultValue #fff
+	* @inputType color
+	* @name Fixed Column Background Color
+	*/
+  --lyte-listview-fixed-bg: #fff;
+  /**
+	* @variable --lyte-listview-resizeHandler-after-bg
+	* @selector .lyteListResizeHandler::after
+	* @description Background color for resize handler line
+	* @defaultValue #d7e2ed
+	* @inputType color
+	* @name Resize Handler Line Background Color
+	*/
+  --lyte-listview-resizeHandler-after-bg: #d7e2ed;
+  /**
+	* @variable --lyte-listview-wrapper-td-border-bottom-color
+	* @selector .lyteListviewWrapper td
+	* @description Border color for ListView table cells
+	* @defaultValue #e2e2e2
+	* @inputType color
+	* @name Table Cell Border Bottom Color
+	*/
+  --lyte-listview-wrapper-td-border-bottom-color: #e2e2e2;
+  /**
+	* @variable --lyte-listview-wrapper-td-bg
+	* @selector .lyteListviewWrapper td
+	* @description Background color for ListView table cells
+	* @defaultValue #fff
+	* @inputType color
+	* @name Table Cell Background Color
+	*/
+  --lyte-listview-wrapper-td-bg: #fff;
+  /**
+	* @variable --lyte-listview-wrapper-td-color
+	* @selector .lyteListviewWrapper td
+	* @description Text color for ListView table cells
+	* @defaultValue #111
+	* @inputType color
+	* @name Table Cell Text Color
+	*/
+  --lyte-listview-wrapper-td-color: #111;
+  /**
+	* @variable --lyte-listview-edit-element-border-bg
+	* @selector .lyteListEditElement
+	* @description Border color for editable cells in ListView
+	* @defaultValue #5ba1e5
+	* @inputType color
+	* @name Editable Cell Border Color
+	*/
+  --lyte-listview-edit-element-border-bg: #5ba1e5;
+  /**
+	* @variable --lyte-listview-multiselect-filter-table-border-color
+	* @selector .lyteMultiselectFilterTable
+	* @description Border color for multiselect filter table
+	* @defaultValue #d6d6d6
+	* @inputType color
+	* @name Multiselect Filter Table Border Color
+	*/
+  --lyte-listview-multiselect-filter-table-border-color: #d6d6d6;
+  /**
+	* @variable --lyte-listview-dateFilter-disabled-element-bg
+	* @selector .lyteDateFilterDisabledElement
+	* @description Background color for disabled date filter inputs
+	* @defaultValue #eee
+	* @inputType color
+	* @name Disabled Date Filter Background Color
+	*/
+  --lyte-listview-dateFilter-disabled-element-bg: #eee;
+  /**
+	* @variable --lyte-listview-filter-border-color
+	* @selector .lyteListFilters
+	* @description Border color for filter block container
+	* @defaultValue #d6d6d6
+	* @inputType color
+	* @name Filter Border Color
+	*/
+  --lyte-listview-filter-border-color: #d6d6d6;
+  /**
+	* @variable --lyte-listview-filter-key-color
+	* @selector .lyteListFilterKey
+	* @description Font color for filter key labels
+	* @defaultValue #777
+	* @inputType color
+	* @name Filter Key Color
+	*/
+  --lyte-listview-filter-key-color: #777;
+  /**
+	* @variable --lyte-listview-filter-value-wrap-border-color
+	* @selector .lyteListFilterValueWrap .lyteListMultipleSelected
+	* @description Border color for selected filter value chips
+	* @defaultValue #d6d6d6
+	* @inputType color
+	* @name Filter Value Wrap Border Color
+	*/
+  --lyte-listview-filter-value-wrap-border-color: #d6d6d6;
+  /**
+	* @variable --lyte-listview-remove-filter-bg
+	* @selector .lyteListRemoveFilter
+	* @description Background color for remove (close) icon on filter chips
+	* @defaultValue #000
+	* @inputType color
+	* @name Remove Filter Background Color
+	*/
+  --lyte-listview-remove-filter-bg: #000;
+  /**
+	* @variable --lyte-listview-remove-filter-hover-bg
+	* @selector .lyteListRemoveFilter:hover
+	* @description Hover background color for remove (close) icon on filter chips
+	* @defaultValue #f00
+	* @inputType color
+	* @name Remove Filter Hover Background Color
+	*/
+  --lyte-listview-remove-filter-hover-bg: #f00;
+  /**
+	* @variable --lyte-listview-table-accordian-icon-bg
+	* @selector .lyteListViewTableAccordionIcon
+	* @description Background color for accordion icon in list rows
+	* @defaultValue #333
+	* @inputType color
+	* @name Table Accordion Icon Background Color
+	*/
+  --lyte-listview-table-accordian-icon-bg: #333;
+  /**
+	* @variable --lyte-listview-group-heading-hover-bg
+	* @selector .lyteGroupHeading:hover
+	* @description Background color for group heading row on hover
+	* @defaultValue #f7f9fb
+	* @inputType color
+	* @name Group Heading Hover Background Color
+	*/
+  --lyte-listview-group-heading-hover-bg: #f7f9fb;
+  /**
+	* @variable --lyte-listview-group-heading-hover-td-bg
+	* @selector .lyteGroupHeading:hover td
+	* @description Background color for cells in group heading row on hover
+	* @defaultValue transparent
+	* @inputType color
+	* @name Group Heading Hover Cell Background Color
+	*/
+  --lyte-listview-group-heading-hover-td-bg: transparent;
+}
+/* rtl files loading */
+/* Loading custom themes */
+.lyteListUtils {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.lyteListviewWrapper .lyteStickyTable .lyteFixedColumn {
+  position: sticky;
+}
+.lyteListviewWrapper .lyteStickyTable lyte-th.lyteTableFixed {
+  z-index: calc(var(--lyte-listview-nested-total-level, 0) + 15);
+}
+.lyteListviewWrapper .lyteIntersectionDiv {
+  position: absolute;
+  width: 1px;
+  height: 10px;
+  top: var(--lyte-table-intersection);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+.lyteListviewWrapper .lyteStickyTable lyte-th {
+  top: unset;
+  position: sticky;
+  z-index: calc(var(--lyte-listview-nested-total-level, 0) + 10);
+  transform: translateY(var(--lyte-table-intersection));
+  background: var(--lyte-listview-wrapper-sticky-table-bg);
+  border-bottom: 2px solid var(--lyte-listview-wrapper-sticky-table-border-bottom-color);
+}
+.lyteListviewWrapper:not(.lyteListViewInfiniteScroll) .lyteStickyTable lyte-th {
+  top: 0;
+  transform: unset;
+}
+.lyteListviewWrapper:not(.lyteListViewInfiniteScroll).lyteListviewSubHeaderPresent .lyteStickyTable lyte-th {
+  top: 43px;
+}
+.lyteListviewWrapper .lyteTableScroll {
+  position: relative;
+}
+.lyteListviewWrapper lyte-table.lyteStickyTable {
+  --lyte-table-intersection: 0px;
+  border-radius: 3px;
+  border: 1px solid var(--lyte-listview-wrapper-table-sticky-table-border-color);
+}
+.lyteListHeaderName {
+  max-width: 100%;
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.lyteListviewIntersection {
+  height: 53px;
+  pointer-events: none;
+}
+lyte-listview1 {
+  height: 100%;
+  display: block;
+  position: relative;
+}
+.lyteListviewWrapper:not(.lyteListViewInfiniteScroll) .lyteListFakeHeader {
+  position: sticky;
+  top: 0;
+  transform: unset;
+}
+.lyteListviewWrapper {
+  height: 100%;
+}
+.lyteListFakeHeader {
+  display: flex;
+  position: relative;
+  z-index: 30;
+  transform: translateY(var(--lyte-table-intersection));
+  background: var(--lyte-listview-fake-header-bg);
+  border-radius: 3px 3px 0 0;
+}
+.lyteListFakeCell {
+  position: sticky;
+  top: 0;
+  height: 43px;
+  box-sizing: border-box;
+  padding: 12px 15px;
+}
+.lyteListFakeCell:nth-child(odd) {
+  background: var(--lyte-listview-fake-cell-odd-bg);
+}
+.lyteListFakeCell:nth-child(even) {
+  background: var(--lyte-listview-fake-cell-even-bg);
+}
+.lyteListviewWrapper lyte-table-structure {
+  table-layout: fixed;
+}
+.lyteListviewWrapper .lyteTableLayoutAuto {
+  table-layout: auto;
+}
+.lyteListFixed {
+  background: var(--lyte-listview-fixed-bg);
+  z-index: 20;
+}
+.lyteListResizeHandler {
+  position: absolute;
+  right: 0;
+  width: 10px;
+  display: flex;
+  justify-content: flex-end;
+  height: 67%;
+  top: 6px;
+  cursor: ew-resize;
+}
+.lyteListFakeCell .lyteListResizeHandler {
+  visibility: hidden;
+}
+.lyteListResizeHandler::after {
+  content: '';
+  display: block;
+  width: 2px;
+  background: var(--lyte-listview-resizeHandler-after-bg);
+}
+.lyteListviewWrapper lyte-td,
+.lyteListviewWrapper td {
+  cursor: pointer;
+  padding: 8px 10px 7px 11px;
+}
+.lyteListviewWrapper td {
+  display: table-cell;
+  border-bottom: 1px solid var(--lyte-listview-wrapper-td-border-bottom-color);
+  vertical-align: middle;
+  background: var(--lyte-listview-wrapper-td-bg);
+  min-width: 50px;
+  box-sizing: border-box;
+  font-size: 15px;
+  white-space: nowrap;
+  color: var(--lyte-listview-wrapper-td-color);
+}
+.lyteListviewWrapper lyte-td:hover,
+.lyteListviewWrapper td:hover {
+  background: var(--lyte-listview-wrapper-td-bg);
+}
+.lyteListEditElement {
+  position: absolute;
+  display: none;
+  border: 1px solid var(--lyte-listview-edit-element-border-bg);
+  outline: none;
+  box-sizing: border-box;
+  z-index: 50;
+}
+.lyteListEditElement.lyteListActive {
+  display: flex;
+}
+.lyteEditElementWrapper {
+  flex-grow: 1;
+  overflow: auto;
+}
+.lyteEditElementWrapper .lyteInputBox .lyteField {
+  border: 0;
+}
+.lyteListviewEditElement {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+}
+.lyteListEditElement lyte-dropdown {
+  max-width: 100%;
+}
+.lyteListviewEditElement .lyteDummyEventContainer,
+.lyteListviewEditElement input {
+  height: 100%;
+  max-width: 100%;
+}
+.lyteListviewEditElement .lyteDummyEventContainer {
+  flex-grow: 1;
+}
+.lyteListviewEditElement .lyteDateTimeInputWrapper {
+  max-width: 100%;
+  border: 0 !important;
+}
+.lyteListviewEditElement .lyteDateInputDropdown,
+.lyteListviewEditElement .lyteDateTimeInputWrapper > input {
+  max-width: 50%;
+  box-sizing: border-box;
+}
+.lyteListviewEditElement lyte-drop-button {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  max-width: 100%;
+  border: 0 !important;
+  padding: 6px 10px 7px 10px;
+}
+.lyteListviewEditElement .lyteDateInputDropdown lyte-drop-button {
+  padding: 0;
+}
+.lyteListEditElement > lyte-yield {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.lyteListviewWrapper lyte-td > lyte-yield > span,
+.lyteListviewWrapper td > lyte-yield > span {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.lyteListviewWrapper lyte-td > lyte-yield,
+.lyteListviewWrapper td > lyte-yield {
+  display: block;
+}
+/*	Lyte List view filter related CSS Begins	*/
+.lyteFilterType {
+  margin: 10px 0;
+}
+.lyteFilterType lyte-radiobutton:first-child {
+  margin-right: 10px;
+}
+.lyteFilterReset {
+  font-family: 'LatoRegular', sans-serif;
+  color: #777;
+  font-size: 13px;
+  cursor: pointer;
+}
+.lyteFilterContent lyte-accordion-item {
+  border: 0;
+  margin: 0 0 8px;
+}
+.lyteFilterContent lyte-accordion-header {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+.lyteFilterContent lyte-accordion-body {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  padding-right: 0;
+}
+.lyteFilterContent .lyteAccordionArrow {
+  position: static;
+  margin-top: 0;
+  margin-left: 5px;
+}
+.lyteListModalWrapper lyte-modal-header {
+  padding: 15px 25px 10px;
+}
+.lyteListModalWrapper lyte-modal-content {
+  padding: 0 25px;
+}
+.lyteListModalWrapper lyte-modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px 15px;
+}
+.lyteFilterElement {
+  display: flex;
+  margin-top: 8px;
+  padding: 0 10px;
+}
+lyte-multiselect-filter {
+  flex-direction: column;
+}
+.lyteMultiselectFilterTable {
+  max-height: 200px;
+  margin-top: 10px;
+  border-radius: 3px;
+  border: 1px solid var(--lyte-listview-multiselect-filter-table-border-color);
+}
+.lyteMultiselectFilterTable .lyteTableScroll {
+  max-height: inherit;
+}
+.lyteMultiselectFilterTable lyte-table-structure {
+  background: transparent;
+}
+.lyteMultiselectFilterTable lyte-td {
+  border-bottom: 0;
+  padding: 5px;
+  background: transparent;
+}
+.lyteMultiselectFilterTable .lyteMultipleEmail {
+  margin-left: 22px;
+}
+.lyteTextFilterWrapper {
+  margin-left: 8px;
+}
+.lyteNumberFilterWrapper,
+.lyteDateFilterWrapper {
+  margin-left: 8px;
+  display: flex;
+}
+.lyteNumberFilterWrapper lyte-input:nth-child(2),
+.lyteDateFilterWrapper lyte-input:nth-child(2) {
+  margin-left: 5px;
+}
+.lyteDateFilterDisabledElement {
+  padding: 10px 6px 11px;
+  background: var(--lyte-listview-dateFilter-disabled-element-bg);
+  border-radius: 2px;
+}
+/*	Lyte List view filter related CSS Ends	*/
+/*	Lyte List view Filter Summary Begins	*/
+.lyteListFilters {
+  border: 1px solid var(--lyte-listview-filter-border-color);
+  padding: 5px;
+  border-radius: 3px;
+}
+.lyteListFilterItem {
+  display: flex;
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 10px;
+}
+.lyteListFilterKey {
+  color: var(--lyte-listview-filter-key-color);
+  margin-right: 5px;
+}
+.lyteListFilterValueWrap .lyteListMultipleSelected {
+  padding: 1px 3px 3px;
+  border: 1px solid var(--lyte-listview-filter-value-wrap-border-color);
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 13px;
+}
+.lyteListRemoveFilter {
+  content: '';
+  display: block;
+  -webkit-mask-image: var(--lyte-sprite-image);
+  mask-image: var(--lyte-sprite-image);
+  -webkit-mask-position: -54px -2px;
+  mask-position: -54px -2px;
+  background-color: var(--lyte-listview-remove-filter-bg);
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 8px;
+  visibility: hidden;
+}
+.lyteListRemoveFilter:hover {
+  background-color: var(--lyte-listview-remove-filter-hover-bg);
+}
+.lyteListFilterItem:hover .lyteListRemoveFilter {
+  visibility: visible;
+}
+/*	Lyte List view Filter Summary Ends	*/
+/*	Lyte Column Chooser component Related CSS Begins	*/
+lyte-column-chooser {
+  display: block;
+}
+.lyteColumnChooser {
+  display: flex;
+  flex-direction: column;
+}
+.lyteListviewManageColumnPopover lyte-popover-header {
+  padding: 10px 20px;
+}
+.lyteListviewManageColumnPopover lyte-popover-content {
+  max-height: 400px;
+  overflow: auto;
+  padding: 0 20px 10px;
+}
+.lyteColumnChooser lyte-checkbox {
+  margin-bottom: 10px;
+}
+/*	Lyte Column Chooser component Related CSS Ends	*/
+/*	List view Accordion table related CSS Begins	*/
+.lyteListViewTableAccordionIcon {
+  -webkit-mask-image: var(--lyte-sprite-image);
+  -webkit-mask-position: -42px 0;
+  mask-image: var(--lyte-sprite-image);
+  mask-position: -42px 0;
+  background-color: var(--lyte-listview-table-accordian-icon-bg);
+  width: 6px;
+  height: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  transform: rotate(90deg);
+}
+.lyteListViewRowHidden .lyteListViewTableAccordionIcon {
+  transform: rotate(0);
+}
+.lyteListviewWrapper td .lyteListViewTableAccordionIcon + lyte-yield {
+  font-family: "LatoBold", sans-serif;
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+.lyteGroupHeading:hover {
+  background: var(--lyte-listview-group-heading-hover-bg);
+}
+.lyteGroupHeading td,
+.lyteGroupHeading:hover td {
+  background: var(--lyte-listview-group-heading-hover-td-bg);
+}
+.lyteGroupHeading .lyteTableFixed {
+  box-shadow: none;
+}
+/*	List view Accordion table related CSS Ends	*/
+/*	List view footer related CSS Begins	*/
+.lyteListviewFooter {
+  display: flex;
+  padding: 13px 15px;
+  background: #f5f5f5;
+  border-radius: 0 0 3px 3px;
+  align-items: center;
+}
+.lyteListviewNavigator lyte-navigator {
+  margin-left: auto;
+}
+.lyteListviewPerPageContainer {
+  display: flex;
+  align-items: center;
+}
+.lyteListviewPerPageLabel {
+  margin-left: 10px;
+}
+/*	List view footer related CSS Ends	*/
+.lyteListUtils lyte-listview-filter {
+  margin: 0 10px 0 auto;
+}
+.lyteListviewHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+}
+.lyteListviewHeader .lyteListviewPerPageContainer :first-child {
+  margin-right: 30px;
+}
+.lyteListviewHeader .lyteListviewPerPageLabel {
+  margin: 0 10px;
+}
+.lyteListviewWrapper .lyteGroupHeadingData {
+  padding: 0;
+}
+.lyteListviewWrapper .lyteListviewNestedGroupHolder {
+  padding: 0;
+  border-bottom: 0;
+}
+lyte-nested-table {
+  display: table;
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+}
+lyte-nested-table th,
+lyte-nested-table td {
+  text-align: start;
+  cursor: default;
+}
+lyte-nested-table th {
+  font-family: 'LatoBold', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  position: sticky;
+  background: #fff;
+  top: calc(var(--lyte-listview-header-row-height) + (var(--lyte-listview-nested-level) * 35px));
+  z-index: calc(var(--lyte-listview-nested-total-level) - var(--lyte-listview-nested-level) + 5);
+  padding: 7px 10px;
+  border-bottom: 1px solid #d6d6d6;
+}
+lyte-nested-table th.lyteListviewGroupColTh {
+  padding-left: calc((var(--lyte-listview-nested-level) + 1) * 15px);
+}
+.lyteListviewWrapper lyte-nested-table .lyteFixedColumn {
+  z-index: calc(var(--lyte-listview-nested-total-level) - var(--lyte-listview-nested-level) + 7);
+}
+.lyteListviewWrapper lyte-nested-table th.lyteFixedColumn {
+  z-index: calc(var(--lyte-listview-nested-total-level) - var(--lyte-listview-nested-level) + 8);
+}
+.lyteListviewWrapper .lyteListviewNestedGroupHolder.lyteFixedColumn {
+  z-index: 1;
+}
+.lyteNestedTableMainThWrapper {
+  position: sticky;
+  left: calc((var(--lyte-listview-nested-level) + 1) * 15px);
+  display: inline-flex;
+  align-items: center;
+}
+.lyteListviewNestedTableClosed lyte-nested-table th {
+  font-family: 'LatoRegular', sans-serif;
+}
+.lyteListviewNestedTableHandler {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.lyteListviewNestedTableHandler:hover {
+  background: #eee;
+}
+.lyteListviewNestedTableHandler::before {
+  content: "";
+  background-image: var(--lyte-sprite-image);
+  background-position: -14px -2px;
+  width: 9px;
+  height: 5px;
+  transform: rotate(0deg);
+  transition: transform 0.2s linear;
+}
+.lyteListviewNestedTableClosed .lyteListviewNestedTableHandler::before {
+  transform: rotate(-90deg);
+}
+.lyteListviewNestedTableHeading {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 3px;
+}
+.lyteListviewNestedAnimationHappening {
+  transition: height 0.2s linear;
+}
+.lyteListviewIntersectionspan {
+  width: 100%;
+  height: 1px;
+  pointer-events: none;
+  display: block;
+  position: sticky;
+  left: 0;
+}
+.lyteTimeFilterWrapper,
+lyte-duration-filter {
+  display: flex;
+  gap: 10px;
+}
+lyte-duration-filter {
+  flex-direction: column;
+}
+lyte-duration-filter > lyte-dropdown {
+  width: fit-content;
+}
+@supports (overflow: clip) {
+  .lyteListviewTableHolder {
+    overflow: clip;
+  }
+}
+@supports not (overflow: clip) {
+  .lyteListviewNestedTableClosed tbody,
+  .lyteListviewNestedAnimationHappening tbody {
+    opacity: 0;
+  }
+}

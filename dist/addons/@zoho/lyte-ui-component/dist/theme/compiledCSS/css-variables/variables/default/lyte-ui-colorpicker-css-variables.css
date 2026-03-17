@@ -1,0 +1,242 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-colorpicker
+*/
+:root,
+:host {
+  /**
+    * @variable --lyte-colorpicker-border-color
+    * @selector .lyteColorPicker
+    * @description Border color of the main color picker container
+    * @defaultValue #e6e6e6
+    * @inputType color
+    * @name Border Color
+    */
+  --lyte-colorpicker-border-color: #e6e6e6;
+  /**
+    * @variable --lyte-colorpicker-box-shadow-color
+    * @selector .lyteColorPicker
+    * @description Box shadow color of the main container
+    * @defaultValue rgba(0, 0, 0, 0.1)
+    * @inputType color
+    * @name Box Shadow Color
+    */
+  --lyte-colorpicker-box-shadow-color: rgba(0, 0, 0, 0.1);
+  /**
+    * @variable --lyte-colorpicker-colorpan-border-color
+    * @selector .lyteColorPicker__colorpan
+    * @description Border color of each color pan (swatch)
+    * @defaultValue rgba(0, 0, 0, 0.2)
+    * @inputType color
+    * @name Color Pan Border Color
+    */
+  --lyte-colorpicker-colorpan-border-color: rgba(0, 0, 0, 0.2);
+  /**
+    * @variable --lyte-colorpicker-colorpan-hover-border-color
+    * @selector .lyteColorPicker__colorpan:hover
+    * @description Border color of color pan on hover
+    * @defaultValue rgba(0, 0, 0, 0.3)
+    * @inputType color
+    * @name Color Pan Hover Border Color
+    */
+  --lyte-colorpicker-colorpan-hover-border-color: rgba(0, 0, 0, 0.3);
+  /**
+    * @variable --lyte-colorpicker-morelink-hover-bg
+    * @selector .lyteColorPicker__nocolorbutton:hover, .lyteColorPicker__navigatable:hover
+    * @description Background color for hoverable links or buttons
+    * @defaultValue #f5f5f5
+    * @inputType color
+    * @name More Link Hover Background Color
+    */
+  --lyte-colorpicker-morelink-hover-bg: #f5f5f5;
+  /**
+    * @variable --lyte-colorpicker-common-text-color
+    * @selector .lyteColorPicker__paletteheading, .lyteColorPicker__defaultpaletteheading
+    * @description Common text color used in palette headings
+    * @defaultValue var(--lyte-common-text-color2)
+    * @defaultVariableValue #111
+    * @inputType color
+    * @name Common Text Color
+    */
+  --lyte-colorpicker-common-text-color: var(--lyte-common-text-color2);
+  /**
+    * @variable --lyte-colorpicker-advanced-link-text-color
+    * @selector .lyteColorPicker__text
+    * @description Text color for advanced option links
+    * @defaultValue var(--lyte-common-text-color)
+    * @defaultVariableValue #111
+    * @inputType color
+    * @name Advanced Link Text Color
+    */
+  --lyte-colorpicker-advanced-link-text-color: var(--lyte-colorpicker-common-text-color);
+  /**
+    * @variable --lyte-colorpicker-color-slider-handle-border-color
+    * @selector .colorSlider_sliderHandle
+    * @description Border color of the handle in color sliders
+    * @defaultValue #fff
+    * @inputType color
+    * @name Color Slider Handle Border Color
+    */
+  --lyte-colorpicker-color-slider-handle-border-color: #fff;
+  /**
+    * @variable --lyte-colorpicker-input-border-color
+    * @selector .showValueField
+    * @description Border color for input fields in default state
+    * @defaultValue #d6d6d6
+    * @inputType color
+    * @name Input Border Color
+    */
+  --lyte-colorpicker-input-border-color: #d6d6d6;
+  /**
+    * @variable --lyte-colorpicker-input-hover-border-color
+    * @selector .showValue .lyteField:hover, .showValueInputFocus
+    * @description Border color for input fields on hover/focus
+    * @defaultValue #c1c1c1
+    * @inputType color
+    * @name Input Hover Border Color
+    */
+  --lyte-colorpicker-input-hover-border-color: #c1c1c1;
+  /**
+    * @variable --lyte-colorpicker-formatdropdown-text-color
+    * @selector .LCPDropboxItem
+    * @description Text color for items in the format dropdown
+    * @defaultValue #555
+    * @inputType color
+    * @name Format Dropdown Text Color
+    */
+  --lyte-colorpicker-formatdropdown-text-color: #555;
+  /**
+    * @variable --lyte-colorpicker-formatdropdown-active-text-color
+    * @selector .LCPDropItemSelection
+    * @description Active item text color in format dropdown
+    * @defaultValue var(--lyte-common-text-color)
+    * @defaultVariableValue #333
+    * @inputType color
+    * @name Format Dropdown Active Text Color
+    */
+  --lyte-colorpicker-formatdropdown-active-text-color: var(--lyte-common-text-color);
+  /**
+    * @variable --lyte-colorpicker-selectedtick-color
+    * @selector .lyteCPSelectedColor::before
+    * @description Tick color for selected color swatch (non-white bg)
+    * @defaultValue #fff
+    * @inputType color
+    * @name Selected Tick Color
+    */
+  --lyte-colorpicker-selectedtick-color: #fff;
+  /**
+    * @variable --lyte-colorpicker-whitebg-selectedtick-color
+    * @selector .lyteCPSelectedColor[lt-prop-title="#FFFFFF"]::before
+    * @description Tick color for selected white color swatch
+    * @defaultValue #333
+    * @inputType color
+    * @name White Background Selected Tick Color
+    */
+  --lyte-colorpicker-whitebg-selectedtick-color: #333;
+  /**
+    * @variable --lyte-colorpicker-sliderhandle-border-color
+    * @selector .colorSlider_sliderHandle
+    * @description Border color for the slider handle
+    * @defaultValue #000
+    * @inputType color
+    * @name Slider Handle Border Color
+    */
+  --lyte-colorpicker-sliderhandle-border-color: #000;
+  /**
+    * @variable --lyte-colorpicker-sliderhandle-bg
+    * @selector .colorSlider_sliderHandle
+    * @description Background color of the slider handle
+    * @defaultValue #fff
+    * @inputType color
+    * @name Slider Handle Background Color
+    */
+  --lyte-colorpicker-sliderhandle-bg: #fff;
+  /**
+    * @variable --lyte-colorpicker-formatlabel-text-color
+    * @selector .cpValFormatIpSecondRowTd
+    * @description Text color for the format label (below format selector)
+    * @defaultValue #9b9b9b
+    * @inputType color
+    * @name Format Label Text Color
+    */
+  --lyte-colorpicker-formatlabel-text-color: #9b9b9b;
+  /**
+    * @variable --lyte-colorpicker-font-size
+    * @selector .lyteColorPicker__showhidecontainer
+    * @description Default font size used across the component
+    * @defaultValue var(--lyte-font-size-small)
+    * @defaultVariableValue 13px
+    * @allowedSuffixes px
+    * @inputType dimension
+    * @name Font Size
+    */
+  --lyte-colorpicker-font-size: var(--lyte-font-size-small);
+  /**
+    * @variable --lyte-colorpicker-format-dropbtn-font-size
+    * @selector .selectFormatDropbtn
+    * @description Font size of the dropdown button
+    * @defaultValue var(--lyte-font-size-xs)
+    * @defaultVariableValue 12px
+    * @allowedSuffixes px
+    * @inputType dimension
+    * @name Format Dropdown Button Font Size
+    */
+  --lyte-colorpicker-format-dropbtn-font-size: var(--lyte-font-size-xs);
+  /**
+    * @variable --lyte-colorpicker-dropbox-item-font-size
+    * @selector .LCPDropboxItem
+    * @description Font size of items in the dropbox list
+    * @defaultValue var(--lyte-font-size-xs)
+    * @defaultVariableValue 12px
+    * @allowedSuffixes px
+    * @inputType dimension
+    * @name Dropbox Item Font Size
+    */
+  --lyte-colorpicker-dropbox-item-font-size: var(--lyte-font-size-xs);
+  /**
+    * @variable --lyte-colorpicker-formatlabel-font-size
+    * @selector .cpValFormatIpSecondRowTd
+    * @description Font size of the format label row
+    * @defaultValue var(--lyte-font-size-xs)
+    * @defaultVariableValue 12px
+    * @allowedSuffixes px
+    * @inputType dimension
+    * @name Format Label Font Size
+    */
+  --lyte-colorpicker-formatlabel-font-size: var(--lyte-font-size-xs);
+  /**
+    * @variable --lyte-colorpicker-inputvalue-font-size
+    * @selector .showValueInput
+    * @description Font size of the input field where the color value is shown
+    * @defaultValue var(--lyte-font-size-xs)
+    * @defaultVariableValue 12px
+    * @allowedSuffixes px
+    * @inputType dimension
+    * @name Input Value Font Size
+    */
+  --lyte-colorpicker-inputvalue-font-size: var(--lyte-font-size-xs);
+  /**
+    * @variable --lyte-colorpicker-inputvalue-error-border-color
+    * @selector .lyteCp__Invalid .lyteField
+    * @description Border color for input field in error state
+    * @defaultValue #f4a7a7
+    * @inputType color
+    * @name Color input Error Border Color
+    */
+  --lyte-colorpicker-inputvalue-error-border-color: #f4a7a7;
+  /**
+    * @variable --lyte-colorpicker-inputvalue-error-bg
+    * @selector .lyteCp__Invalid input
+    * @description Background color for input field in error state
+    * @defaultValue #f5c7c7
+    * @inputType color
+    * @name Color input Error Background Color
+    */
+  --lyte-colorpicker-inputvalue-error-bg: #f5c7c7;
+}

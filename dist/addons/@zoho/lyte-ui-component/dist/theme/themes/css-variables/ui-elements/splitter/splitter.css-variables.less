@@ -1,0 +1,80 @@
+/**
+ * @component lyte-splitter
+ */
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+  /**
+   * @variable --lyte-splitter-bg
+   * @selector lyte-splitter
+   * @description Background color of the splitter container.
+   * @defaultValue var(--lyte-theme-body-bg)
+   * @defaultVariableValue #fff
+   * @inputType color
+   * @name Background Color
+   */
+  --lyte-splitter-bg: @themeBodyBackground;
+
+  /**
+   * @variable --lyte-splitter-text-color
+   * @selector lyte-splitter
+   * @description Text color used inside the splitter layout.
+   * @defaultValue var(--lyte-common-text-color)
+   * @defaultVariableValue #333
+   * @inputType color
+   * @name Text Color
+   */
+  --lyte-splitter-text-color: @commonTextColor;
+
+  /**
+   * @variable --lyte-splitter-handle-bg
+   * @selector lyte-row-handle, lyte-column-handle
+   * @description Background color of the splitter resize handles.
+   * @defaultValue #eee
+   * @inputType color
+   * @name Handle Background Color
+   */
+  --lyte-splitter-handle-bg: #eee;
+
+  /**
+   * @variable --lyte-splitter-handle-hover-bg
+   * @selector lyte-row-handle:hover, lyte-column-handle:hover
+   * @description Background color of the handles on hover.
+   * @defaultValue #ddd
+   * @inputType color
+   * @name Handle Hover Background Color
+   */
+  --lyte-splitter-handle-hover-bg: #ddd;
+
+  /**
+   * @variable --lyte-splitter-handle-icon-bg
+   * @selector .rowHandleIcon, .columnHandleIcon
+   * @description Background color of the icon displayed inside the splitter handle.
+   * @defaultValue #000
+   * @inputType color
+   * @name Handle Icon Background Color
+   */
+  --lyte-splitter-handle-icon-bg: #000;
+
+  /**
+   * @variable --lyte-splitter-border-color
+   * @selector lyte-splitter, lyte-row-element[lt-resize="false"], lyte-column-element[lt-resize="false"]
+   * @description Border color used between splitter sections when resize is disabled.
+   * @defaultValue #ddd
+   * @inputType color
+   * @name Border Color
+   */
+  --lyte-splitter-border-color: #ddd;
+
+  /**
+   * @variable --lyte-splitter-resizing-handle-icon-bg
+   * @selector .splitResizing .rowHandleIcon, .splitResizing .columnHandleIcon
+   * @description Background color of the handle icon when the splitter is actively being resized.
+   * @defaultValue #fff
+   * @inputType color
+   * @name Resizing Handle Icon Background Color
+   */
+  --lyte-splitter-resizing-handle-icon-bg: #fff;
+}

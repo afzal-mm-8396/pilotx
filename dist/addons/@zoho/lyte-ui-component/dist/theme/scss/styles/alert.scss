@@ -1,0 +1,218 @@
+@use "sass:map";
+
+@use "../default/global/global.variables.scss" as *;
+
+@use "../default/global/rtl.scss" as *;
+
+@forward "../default/variables/alert.variables.scss";
+
+@use "../default/variables/alert.variables.scss" as *;
+
+.lyte-svg {
+	@if $useCssMaskForBg {
+		-webkit-mask-image: map.get($lyteAlertIconsBgMap, "mask-image");
+		mask-image: map.get($lyteAlertIconsBgMap, "mask-image");
+	} @else {
+		background-image: map.get($lyteAlertIconsBgMap, "background-img");
+	}
+    @include addExtraStyles($lyteAlertIconsBgMap);
+}
+lyte-alert {
+	display: none;
+}
+.alertWrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: map.get($lyteAlertWrapperMap, "z-index");
+    @include addExtraStyles($lyteAlertWrapperMap);
+}
+.alertPopup {
+	padding: map.get($lyteAlertPopupMap, "padding");
+	background: map.get($lyteAlertPopupMap, "background");
+	border: map.get($lyteAlertPopupMap, "border");
+	border-radius: map.get($lyteAlertPopupMap, "border-radius");
+	box-shadow: map.get($lyteAlertPopupMap, "box-shadow");
+    display: inline-block;
+    text-align: $value-textalign-left;
+	min-width: map.get($lyteAlertPopupMap, "min-width");
+	max-width: map.get($lyteAlertPopupMap, "max-width");
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    position: relative;
+    z-index: map.get($lyteAlertPopupMap, "z-index");
+    @include addExtraStyles($lyteAlertPopupMap);
+}
+.alertPopup.lyteAlertSlideDown {
+    top: map.get($lyteAlertPopupSlidedownMap, "top");
+    transition-property: top;
+    @include addExtraStyles($lyteAlertPopupSlidedownMap);
+}
+.alertPopup.lyteAlertZoomIn {
+    transition-property: opacity, transform;
+    opacity: map.get($lyteAlertPopupZoomInMap, "opacity");
+    transform: scale(0);
+    @include addExtraStyles($lyteAlertPopupZoomInMap);
+}
+.alertPopup.lyteAlertZoomIn.alertOpened {
+    opacity: map.get($lyteAlertPopupOpenedMap, "opacity");
+    transform: scale(1);
+    @include addExtraStyles($lyteAlertPopupOpenedMap);
+}
+lyte-alert-header,
+.alertHeader,
+.alertPrimaryMsg {
+	font-family: $secondaryFont;
+	font-size: map.get($lyteAlertHeaderMap, "font-size");
+	color: map.get($lyteAlertHeaderMap, "color");
+	margin-bottom: map.get($lyteAlertHeaderMap, "margin-bottom");
+	font-weight: normal;
+	display: block;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    @include addExtraStyles($lyteAlertHeaderMap);
+}
+.alertPrimaryMsg {
+	margin-bottom: map.get($lyteAlertPrimaryMsgMap, "margin-bottom");
+    font-size: map.get($lyteAlertPrimaryMsgMap, "font-size");
+    @include addExtraStyles($lyteAlertPrimaryMsgMap);
+}
+lyte-alert-content,
+.alertSecondaryMsg {
+	font-family: $primaryFont;
+	font-size: map.get($lyteAlertSecondaryMsgMap, "font-size");
+	color: map.get($lyteAlertSecondaryMsgMap, "color");
+    @include addExtraStyles($lyteAlertSecondaryMsgMap);
+}
+lyte-alert-footer,
+.alertFooter {
+	text-align: $value-textalign-right;
+	padding-top: map.get($lyteAlertFooterMap, "padding-top");
+    display: block;
+    @include addExtraStyles($lyteAlertFooterMap);
+}
+.alertFooter lyte-button {
+    #{$property-margin-left}: map.get($lyteAlertFooterBtnMap, "margin-left");
+    @include addExtraStyles($lyteAlertFooterBtnMap);
+}
+.alertFooter lyte-button:first-of-type {
+	#{$property-margin-left}: 0;
+}
+lyte-alert-footer.left,
+.alertFooter.left {
+	text-align: $value-textalign-left;
+}
+lyte-alert-footer.center,
+.alertFooter.center,
+.alertPopup.lyteAlertCenterContent{
+	text-align: center;
+}
+.alertPopup .alertContent {
+    display: flex;
+    align-items: center;
+}
+.lyteAlertCenterContent .alertContent {
+    justify-content: center;
+}
+.alertFreezeLayer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: map.get($lyteAlertFreezeLayerMap, "z-index");
+    background: map.get($lyteAlertFreezeLayerMap, "background");
+    opacity: map.get($lyteAlertFreezeLayerMap, "opacity");
+    @include addExtraStyles($lyteAlertFreezeLayerMap);
+}
+
+.lyteStatusIcon{
+	@if $useCssMaskForBg {
+		-webkit-mask-image: map.get($lyteAlertStatusIconMap, "mask-image");
+		mask-image: map.get($lyteAlertStatusIconMap, "mask-image");
+	} @else {
+		background: map.get($lyteAlertStatusIconMap, "background");
+	}
+	width: map.get($lyteAlertStatusIconMap, "width");
+    height: map.get($lyteAlertStatusIconMap, "height");
+    #{$property-margin-right}: map.get($lyteAlertStatusIconMap, "margin-right");
+    display: block;
+    @include addExtraStyles($lyteAlertStatusIconMap);
+}
+.successAlertIcon {
+    @if $useCssMaskForBg {
+		-webkit-mask-position: map.get($lyteSuccessAlertIconMap, "mask-position");
+		mask-position: map.get($lyteSuccessAlertIconMap, "mask-position");
+		background-color: map.get($lyteSuccessAlertIconMap, "background-color");
+	} @else {
+		background-position: map.get($lyteSuccessAlertIconMap, "background-position");
+	}
+    @include addExtraStyles($lyteSuccessAlertIconMap);
+}
+.errorAlertIcon {
+    @if $useCssMaskForBg {
+		-webkit-mask-position: map.get($lyteErrorAlertIconMap, "mask-position");
+		mask-position: map.get($lyteErrorAlertIconMap, "mask-position");
+		background-color: map.get($lyteErrorAlertIconMap, "background-color");
+	} @else {
+		background-position: map.get($lyteErrorAlertIconMap, "background-position");
+	}
+    @include addExtraStyles($lyteErrorAlertIconMap);
+}
+.warningAlertIcon {
+    @if $useCssMaskForBg {
+		-webkit-mask-position: map.get($lyteWarningAlertIconMap, "mask-position");
+		mask-position: map.get($lyteWarningAlertIconMap, "mask-position");
+		background-color: map.get($lyteWarningAlertIconMap, "background-color");
+	} @else {
+		background-position: map.get($lyteWarningAlertIconMap, "background-position");
+	}
+    @include addExtraStyles($lyteWarningAlertIconMap);
+}
+.infoAlertIcon {
+    @if $useCssMaskForBg {
+		-webkit-mask-position: map.get($lyteInfoAlertIconMap, "mask-position");
+		mask-position: map.get($lyteInfoAlertIconMap, "mask-position");
+		background-color: map.get($lyteInfoAlertIconMap, "background-color");
+	} @else {
+		background-position: map.get($lyteInfoAlertIconMap, "background-position");
+	}
+    @include addExtraStyles($lyteInfoAlertIconMap);
+}
+.confirmAlertIcon {
+    @if $useCssMaskForBg {
+		-webkit-mask-position: map.get($lyteConfirmAlertIconMap, "mask-position");
+		mask-position: map.get($lyteConfirmAlertIconMap, "mask-position");
+		background-color: map.get($lyteConfirmAlertIconMap, "background-color");
+	} @else {
+		background-position: map.get($lyteConfirmAlertIconMap, "background-position");
+	}
+    @include addExtraStyles($lyteConfirmAlertIconMap);
+}
+.alertClose {
+    @if $useCssMaskForBg {
+		-webkit-mask-position: map.get($lyteAlertCloseIconMap, "mask-position");
+		mask-position: map.get($lyteAlertCloseIconMap, "mask-position");
+		background-color: map.get($lyteAlertCloseIconMap, "background-color");
+	} @else {
+		background-position: map.get($lyteAlertCloseIconMap, "background-position");
+	}
+    width: map.get($lyteAlertCloseIconMap, "width");
+    height: map.get($lyteAlertCloseIconMap, "height");
+    opacity: map.get($lyteAlertCloseIconMap, "opacity");
+    cursor: pointer;
+    position: absolute;
+    top: map.get($lyteAlertCloseIconMap, "top");
+    #{$property-right}: map.get($lyteAlertCloseIconMap, "right");
+    display: inline-block;
+    transform: map.get($lyteAlertCloseIconMap, "transform");
+    @include addExtraStyles($lyteAlertCloseIconMap);
+}
+.alertClose:hover {
+    opacity: map.get($lyteAlertCloseIconHoverMap, "opacity");
+    @include addExtraStyles($lyteAlertCloseIconHoverMap);
+}
+

@@ -1,0 +1,118 @@
+/**
+* @component lyte-accordion
+*/
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+		/**
+		* @variable --lyte-accordion-border-color
+		* @selector lyte-accordion-item
+		* @description Border color of accordion item
+		* @defaultValue #e9e9e9
+		* @inputType color
+		* @name Border Color
+		*/
+		--lyte-accordion-border-color: #e9e9e9;
+
+		/**
+		* @variable --lyte-accordion-hover-border-color
+		* @selector lyte-accordion-item:hover
+		* @description Border color on hover
+		* @defaultValue #ccc
+		* @inputType color
+		* @name Hover Border Color
+		*/
+		--lyte-accordion-hover-border-color: #ccc;
+
+		/**
+		* @variable --lyte-accordion-active-border-color
+		* @selector .lyteAccordionActive
+		* @description Border color for active accordion item
+		* @defaultValue #aaa
+		* @inputType color
+		* @name Active Border Color
+		*/
+		--lyte-accordion-active-border-color: #aaa;
+
+		/**
+		* @variable --lyte-accordion-bg
+		* @selector lyte-accordion-item
+		* @description Background color of accordion item
+		* @defaultValue var(--lyte-theme-body-bg)
+		* @defaultVariableValue #fff
+		* @inputType color
+		* @name Background Color
+		*/
+		--lyte-accordion-bg: @themeBodyBackground;
+
+		/**
+		* @variable --lyte-accordion-color
+		* @selector lyte-accordion-body
+		* @description Text color inside accordion body
+		* @defaultValue var(--lyte-common-text-color)
+		* @defaultVariableValue #333
+		* @inputType color
+		* @name Text Color
+		*/
+		--lyte-accordion-color: @commonTextColor;
+
+		/**
+		* @variable --lyte-accordion-header-text-color
+		* @selector lyte-accordion-header, .lyteAccordionNested .lyteAccordionActive lyte-accordion-header
+		* @description Text color of accordion header
+		* @defaultValue #555
+		* @inputType color
+		* @name Header Text Color
+		*/
+		--lyte-accordion-header-text-color: #555;
+
+		/**
+		* @variable --lyte-accordion-header-hover-text-color
+		* @selector lyte-accordion-header:hover, .lyteAccordionNested .lyteAccordionActive lyte-accordion-header:hover
+		* @description Header text color on hover
+		* @defaultValue var(--lyte-common-text-hover-color)
+		* @defaultVariableValue #111
+		* @inputType color
+		* @name Header Hover Text Color
+		*/
+		--lyte-accordion-header-hover-text-color: @commonTextHoverColor;
+
+		/**
+		* @variable --lyte-accordion-header-active-text-color
+		* @selector .lyteAccordionActive lyte-accordion-header, .lyteAccordionNested .lyteAccordionActive lyte-accordion-header, .lyteAccordionNested .lyteAccordionActive lyte-accordion-header:hover
+		* @description Header text color in active state
+		* @defaultValue var(--lyte-theme-active-element-color)
+		* @defaultVariableValue #2c7bd0
+		* @inputType color
+		* @name Header Active Text Color
+		*/
+		--lyte-accordion-header-active-text-color: @themeActiveElementColor;
+
+		/**
+		* @variable --lyte-accordion-header-font-size
+		* @selector lyte-accordion-header, .lyteAccordionNested .lyteAccordionActive lyte-accordion-header
+		* @description Font size of accordion header
+		* @defaultValue var(--lyte-font-size-large)
+		* @defaultVariableValue 16px
+		* @allowedSuffixes px
+		* @inputType dimension
+		* @name Header Font Size
+		*/
+		--lyte-accordion-header-font-size: var(--lyte-font-size-large);
+
+		/**
+		* @variable --lyte-accordion-body-font-size
+		* @selector lyte-accordion-body
+		* @description Font size inside accordion body
+		* @defaultValue var(--lyte-font-size-regular)
+		* @defaultVariableValue 14px
+		* @allowedSuffixes px
+		* @inputType dimension
+		* @name Body Font Size
+		*/
+		--lyte-accordion-body-font-size: var(--lyte-font-size-regular);
+
+
+}

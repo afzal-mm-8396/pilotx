@@ -1,0 +1,88 @@
+/**
+* @component lyte-datetime-input
+*/
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+
+    /**
+     * @variable --lyte-datetime-input-bg
+     * @selector .lyteDateTimeInputWrapper input
+     * @description Background color for the date-time input field
+     * @defaultValue var(--lyte-input-bg)
+     * @defaultVariableValue #fff
+     * @inputType color
+     * @name Input Background Color
+     */
+    --lyte-datetime-input-bg: @lyteInputBg;
+
+    /**
+     * @variable --lyte-datetime-input-text-color
+     * @selector .lyteDateTimeInputWrapper input, .lyteDateTimezone
+     * @description Text color used inside the date-time input field and timezone section
+     * @defaultValue var(--lyte-input-text-color)
+     * @defaultVariableValue #111
+     * @inputType color
+     * @name Input Text Color
+     */
+    --lyte-datetime-input-text-color: @lyteInputTextColor;
+
+    /**
+     * @variable --lyte-datetime-input-border-color
+     * @selector .lyteDateTimeInputBox .lyteDateTimeInputWrapper, .lyteDateTimeInputFlat .lyteDateTimeInputWrapper
+     * @description Border color for the input wrapper in normal state
+     * @defaultValue var(--lyte-input-border-color)
+     * @defaultVariableValue #d6d6d6
+     * @inputType color
+     * @name Input Border Color
+     */
+    --lyte-datetime-input-border-color: @lyteInputBorderColor;
+
+    /**
+     * @variable --lyte-datetime-input-hover-border-color
+     * @selector .lyteDateTimeInputBox:hover .lyteDateTimeInputWrapper, .lyteDateTimeInputFlat:hover .lyteDateTimeInputWrapper
+     * @description Border color when the input wrapper is hovered
+     * @defaultValue var(--lyte-input-border-hover-color)
+     * @defaultVariableValue #c1c1c1
+     * @inputType color
+     * @name Input Hover Border Color
+     */
+    --lyte-datetime-input-hover-border-color: @lyteInputBorderHover;
+
+    /**
+     * @variable --lyte-datetime-input-focus-border-color
+     * @selector .lyteDateInputFocused .lyteDateTimeInputWrapper, .lyteDateInputOpened .lyteDateTimeInputWrapper
+     * @description Border color when the input wrapper is focused or opened
+     * @defaultValue var(--lyte-input-focus-border-color)
+     * @defaultVariableValue #7fceef
+     * @inputType color
+     * @name Input Focus Border Color
+     */
+    --lyte-datetime-input-focus-border-color: @lyteInputBorderFocus;
+
+    /**
+     * @variable --lyte-datetime-input-border-radius
+     * @selector .lyteDateTimeInputBox .lyteDateTimeInputWrapper, .lyteDateTimeInputWrapper > input
+     * @description Border radius applied to the input box and internal elements
+     * @defaultValue var(--lyte-input-border-radius)
+     * @defaultVariableValue 2px
+     * @inputType dimension
+     * @name Input Border Radius
+     */
+    --lyte-datetime-input-border-radius: @lyteInputBorderRadius;
+
+    /**
+     * @variable --lyte-datetime-input-font-size
+     * @selector .lyteDateTimeInputWrapper input
+     * @description Font size used in the input field
+     * @defaultValue var(--lyte-input-font-size)
+     * @defaultVariableValue 15px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Input Font Size
+     */
+    --lyte-datetime-input-font-size: @lyteInputFontSize;
+
+}

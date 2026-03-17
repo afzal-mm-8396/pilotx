@@ -1,0 +1,58 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-csnippet-bg-color: #333;
+  --lyte-csnippet-border-color: #666;
+  --lyte-csnippet-line-number-bg-color: #2f2f2f;
+  --lyte-csnippet-border-radius: 5px;
+  --lyte-csnippet-font-size: 14px;
+  --lyte-csnippet-copy-button-bg: #2f2f2f;
+  --lyte-csnippet-copy-button-border-color: #0984E3;
+  --lyte-csnippet-copy-button-border-radius: 5px;
+  --lyte-csnippet-copy-button-text-color: #0984E3;
+  --lyte-csnippet-line-number-text-color: #70A2C8;
+  --lyte-csnippet-url-text-color: #497AFF;
+  --lyte-csnippet-tagname-text-color: #497AFF;
+  --lyte-csnippet-punctuation-text-color: #497AFF;
+  --lyte-csnippet-content-text-color: 333;
+  --lyte-csnippet-attribute-equals-text-color: #d500d5;
+  --lyte-csnippet-attribute-name-text-color: #d500d5;
+  --lyte-csnippet-attribute-val-quote-text-color: #00aa05;
+  --lyte-csnippet-attribute-value-text-color: #00aa05;
+  --lyte-csnippet-entity-text-color: #ff2f2f;
+  --lyte-csnippet-css-comment-text-color: #737373;
+  --lyte-csnippet-comment-text-color: #737373;
+  --lyte-csnippet-css-selector-text-color: #00aa05;
+  --lyte-csnippet-css-rule-name-text-color: 333;
+  --lyte-csnippet-symbols-text-color: 333;
+  --lyte-csnippet-css-punctuation-text-color: 333;
+  --lyte-csnippet-css-value-function-text-color: #D75900;
+  --lyte-csnippet-css-rule-value-text-color: #D75900;
+  --lyte-csnippet-css-combinator-text-color: #ff00ff;
+  --lyte-csnippet-css-attribute-name-text-color: #d500d5;
+  --lyte-csnippet-css-keyword-important-text-color: #497AFF;
+  --lyte-csnippet-css-attribute-value-text-color: #497AFF;
+  --lyte-csnippet-css-color-value-text-color: orange;
+  --lyte-csnippet-yaml-alias-anchor-text-color: #00aa05;
+  --lyte-csnippet-yaml-keyword-and-datatype-text-color: #d500d5;
+  --lyte-csnippet-keyword-text-color: #d500d5;
+  --lyte-csnippet-plain-text-text-color: 333;
+  --lyte-csnippet-identifier-text-color: 333;
+  --lyte-csnippet-operator-text-color: #d500d5;
+  --lyte-csnippet-punctuator-text-color: #D5D5D5;
+  --lyte-csnippet-number-text-color: #D75900;
+  --lyte-csnippet-string-text-color: #D75900;
+  --lyte-csnippet-comment-text-color: #a6a6a6;
+  --lyte-csnippet-regex-text-color: #00b483;
+  --lyte-csnippet-boolean-text-color: #6c58ff;
+  --lyte-csnippet-js-function-text-color: #00aa05;
+  --lyte-csnippet-undefined-and-null-text-color: #6c58ff;
+  --lyte-csnippet-copy-icon-bg-color: #333;
+  --lyte-csnippet-copy-icon-hover-bg: #666;
+  --lyte-csnippet-copy-icon-position: -343px -276px;
+}

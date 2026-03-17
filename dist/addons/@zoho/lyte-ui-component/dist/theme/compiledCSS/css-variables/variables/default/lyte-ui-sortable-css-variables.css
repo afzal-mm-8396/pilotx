@@ -1,0 +1,49 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component sortable
+ */
+:root,
+:host {
+  /**
+   * @variable --lyte-sortable-placeholder-bg
+   * @selector .lyteSortablePlaceholder
+   * @description Background color of the sortable placeholder while dragging
+   * @defaultValue #f6fad2
+   * @inputType color
+   * @name Sortable Placeholder Background Color
+   */
+  --lyte-sortable-placeholder-bg: #f6fad2;
+  /**
+   * @variable --lyte-sortable-placeholder-border-color
+   * @selector .lyteSortablePlaceholder
+   * @description Border color of the sortable placeholder while dragging
+   * @defaultValue #edf2c3
+   * @inputType color
+   * @name Sortable Placeholder Border Color
+   */
+  --lyte-sortable-placeholder-border-color: #edf2c3;
+  /**
+   * @variable --lyte-sortable-placeholder-disabled-bg
+   * @selector .lyteSortableDisabledPlaceholder
+   * @description Background color of the disabled sortable placeholder
+   * @defaultValue #f5c7c7
+   * @inputType color
+   * @name Disabled Sortable Placeholder Background Color
+   */
+  --lyte-sortable-placeholder-disabled-bg: #f5c7c7;
+  /**
+   * @variable --lyte-sortable-placeholder-disabled-border-color
+   * @selector .lyteSortableDisabledPlaceholder
+   * @description Border color of the disabled sortable placeholder
+   * @defaultValue #f4a7a7
+   * @inputType color
+   * @name Disabled Sortable Placeholder Border Color
+   */
+  --lyte-sortable-placeholder-disabled-border-color: #f4a7a7;
+}

@@ -1,0 +1,161 @@
+@use "../global/global.variables.scss" as global;
+
+$cssMaskIconLyteBetaModalCloseIconColor: global.$lyteIconsThemeColor !default;
+
+$lyteModalWrapperMap: (
+	"z-index": global.$modalzIndex,
+	"left": 0,
+	"top": 0,
+	"bottom": 0,
+	"right": 0
+) !default;
+
+$lyteModalFreezeMap: (
+	"z-index": 5,
+	"background": global.$modalFreezeBg,
+	"opacity": 0.4
+) !default;
+
+$lyteModalWrapperLeftAlignMap: null !default;
+$lyteModalWrapperRightAlignMap: null !default;
+@if (global.$direction == ltr) {
+	$lyteModalWrapperLeftAlignMap: (
+		"justify-content": flex-start
+	) !default;
+	$lyteModalWrapperRightAlignMap: (
+		"justify-content": flex-end
+	) !default;
+} @else {
+	$lyteModalWrapperLeftAlignMap: (
+		"justify-content": flex-end
+	) !default;
+	$lyteModalWrapperRightAlignMap: (
+		"justify-content": flex-start
+	) !default;
+}
+
+$lyteModalFadeAnimationModalElementMap: (
+	"opacity": 0
+) !default;
+
+$lyteModalFadeAnimationShowModalElementMap: (
+	"opacity": 1
+) !default;
+
+$lyteModalZoomAnimationModalElementMap: (
+	"transform": scale(0)
+) !default;
+
+$lyteModalZoomAnimationShowModalElementMap: (
+	"transform": scale(1)
+) !default;
+
+$lyteModalElementMap: (
+	"background": global.$modalBg,
+	"box-shadow": global.$modalBoxShadow,
+	"z-index": 10,
+	"max-height": 100%,
+	"border": 1px solid transparent,
+	"border-radius": 2px
+) !default;
+
+$lyteModalHeaderMap: (
+	"font-size": 18px,
+	"color": global.$modalHeaderColor,
+	"padding": 25px 25px 15px
+) !default;
+
+$lyteModalContentMap: (
+	"padding": 15px 25px,
+	"font-size": 15px,
+	"color": global.$modalContentColor
+) !default;
+
+$lyteModalFooterMap: (
+	"padding": 10px 25px 25px
+) !default;
+
+$lyteModalFooterBtnMap: (
+	"margin-left": 7px
+) !default;
+
+$lyteModalCloseMap: (
+	"background-image": global.$lytesprite,
+	"background-position": -52px 0px,
+	"mask-img": global.$lytesprite,
+	"mask-position": -52px 0px,
+	"background-color": $cssMaskIconLyteBetaModalCloseIconColor,
+	"width": 13px,
+	"height": 13px,
+	"top": 30px,
+	"right": 30px,
+	"opacity": 0.5,
+	"z-index": 5
+) !default;
+
+$lyteModalCloseHoverMap: (
+	"opacity": 1
+) !default;
+
+$lyteModalSlideFromLeftModalElementMap: (
+	"left": 0,
+	"transform": translateX(-100%)
+) !default;
+
+$lyteModalIgnoreDirectionSlideFromLeftModalElementMap: (
+	"left": 0,
+	"transform": translateX(-100%)
+) !default;
+
+$lyteModalSlideFromRightModalElementMap: (
+	"right": 0,
+	"transform": translateX(100%)
+) !default;
+
+$lyteModalIgnoreDirectionSlideFromRightModalElementMap: (
+	"right": 0,
+	"transform": translateX(100%)
+) !default;
+
+$lyteModalSlideFromTopModalElementMap: (
+	"top": 0,
+	"transform": translateY(-100%)
+) !default;
+
+$lyteModalSlideFromBottomModalElementMap: (
+	"bottom": 0,
+	"transform": translateY(100%)
+) !default;
+
+$lyteModalSlideFromTopCenterAlignModalElementMap: (
+	"transform": translateY(calc(-50vh - 50%))
+) !default;
+
+$lyteModalSlideFromBottomCenterAlignModalElementMap: (
+	"transform": translateY(calc(50vh + 50%))
+) !default;
+
+$lyteModalSlideFromLeftCenterAlignModalElementMap: (
+	"transform": translateX(calc(-50vw - 50%))
+) !default;
+
+$lyteModalIgnoreDirectionSlideFromLeftCenterAlignModalElementMap: (
+	"transform": translateX(calc(-50vw - 50%))
+) !default;
+
+$lyteModalSlideFromRightCenterAlignModalElementMap: (
+	"transform": translateX(calc(50vw + 50%))
+) !default;
+
+$lyteModalIgnoreDirectionSlideFromRightCenterAlignModalElementMap: (
+	"transform": translateX(calc(50vw + 50%))
+) !default;
+
+$lyteModalWrapperSlideFromRightWithLeftOffsetMap: (
+	"justify-content": flex-start
+) !default;
+
+$lyteModalWrapperSlideFromLeftWithRightOffsetMap: (
+	"justify-content": flex-end
+) !default;
+

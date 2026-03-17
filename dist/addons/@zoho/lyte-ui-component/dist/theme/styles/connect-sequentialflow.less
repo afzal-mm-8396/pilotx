@@ -1,0 +1,529 @@
+@import "../themes/default/ui-elements/connectsequentialflow/connect-sequentialflow.variables.less";
+
+@import "../config.less";
+
+@import (optional) "../themes/@{connectsequentialflow}/ui-elements/connectsequentialflow/connect-sequentialflow.variables.less";
+
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{connectsequentialflow}/global/@{direction}.less";
+
+.lyteSequentialFlow {
+	.lyteSequentialFlowMixin();
+	background-color: @background-color;
+}
+.lyteSequentialFlow lyte-connect-item {
+	.lyteSequentialFlowItemMixin();
+	display: flex;
+	position: relative;
+	border-radius: @border-radius;
+	overflow: unset;
+	cursor: unset;
+	width: @w;
+	padding: @padding;
+	background-color: @background-color;
+	z-index: @z-index;
+}
+lyte-sequential-condition,
+.lyteSequentialFlow lyte-connect-item {
+	.lyteSequentialFlowConditionItemMixin();
+	padding: @padding;
+	margin: @margin;
+	display: flex;
+	justify-content: center;
+    border: @border;
+	border-radius: @border-radius;
+	color: @color;
+	font-size: @font-size;
+}
+.lyteSequentialDroppableElem {
+	align-items: center;
+}
+.lyteSequentialFlow lyte-connect-item.parentNode {
+	position: absolute;
+}
+.lyteSequentialFlow .lyteSequentialBranchingType.parentNode > lyte-sequential-wrapper {
+	.lyteSequentialFlowParentnodeWrapperMixin();
+	padding: @padding;
+}
+lyte-sequential-group {
+	.lyteSequentialGroupMixin();
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-left: @border-left;
+	border-right: @border-right;
+	flex-shrink: 0;
+	position: relative;
+}
+.lyteSequentialBranchingType > lyte-sequential-group-wrapper > lyte-sequential-group-container > lyte-sequential-group {
+	.lyteSequentialBranchingTypeMixin();
+	border: @border;
+}
+.lyteSequentialBranchingType > lyte-sequential-group-wrapper > lyte-sequential-group-container {
+	.lyteSequentialBranchingTypeGroupContainerMixin();
+	height: @h;
+	position: relative;
+}
+.lyteSequentialBranchingType > lyte-sequential-group-wrapper > lyte-sequential-group-container::after {
+	.lyteSequentialBranchingTypeContainerAfterMixin();
+	content: "";
+	position: absolute;
+	width: @w;
+	border-right: @border-right;
+	height: @h;
+	top: @top;
+	right: @right;
+}
+.lyteSequentialBranchingType > lyte-sequential-group-wrapper > lyte-sequential-group-container:last-child:after {
+	content: none;
+}
+lyte-sequential-icon {
+	.lyteSequentialIconMixin();
+	position: absolute;
+	left: @left;
+	transform: @transform;
+	top: @top;
+	z-index: @z-index;
+}
+.lyteSequentialTryCatchType > lyte-sequential-group-wrapper > lyte-sequential-group-container:nth-of-type(1){
+	.lyteSequentialTryCatchTypeNthChildOneMixin();
+	padding-right: @padding-right;
+}
+.lyteSequentialTryCatchType > lyte-sequential-group-wrapper > lyte-sequential-group-container:nth-of-type(2) {
+	.lyteSequentialTryCatchTypeNthChildTwoMixin();
+	margin-top: @margin-top;
+	margin-left: @margin-left;
+}
+.lyteSequentialTryCatchType > lyte-sequential-group-wrapper > lyte-sequential-group-container,
+.lyteSequentialLoopType > lyte-sequential-group-wrapper > lyte-sequential-group-container > lyte-sequential-group {
+	.lyteSequentialLoopTypeGroupContainerMixin();
+	border: @border;
+}
+lyte-sequential-condition {
+	.lyteSequentialConditionMixin();
+	background-color: @background-color;
+	color: @color;
+	border-radius: @border-radius;
+	white-space: nowrap;
+}
+.lyteSequentialFlow lyte-sequential-group-wrapper > lyte-sequential-group-container > lyte-sequential-group > lyte-sequential-condition {
+	.lyteSequentialFlowGroupConditionMixin();
+	top: @top;
+	position: relative;
+}
+.lyteSequentialTryCatchType > lyte-sequential-group-wrapper > lyte-sequential-group-container > lyte-sequential-group > lyte-sequential-condition {
+	.lyteSequentialTryCatchTypeConditionMixin();
+	border: @border;
+	padding: @padding;
+	background-color: @background-color;
+	border-radius: @border-radius;
+	color: @color;
+    position: absolute;
+	transform: @transform;
+	top: @top;
+	margin: @margin;
+}
+.lyteSequentialFlow lyte-connect-item.lyteSequentialCustomType,
+.lyteSequentialFlow lyte-connect-item.lyteSequentialContainerType,
+.lyteSequentialFlow lyte-connect-item.lyteSequentialLoopType,
+.lyteSequentialFlow lyte-connect-item.lyteSequentialTryCatchType,
+.lyteSequentialFlow lyte-connect-item.lyteSequentialBranchingType {
+	.lyteSequentialFlowTypesMixin();
+	background-color: @background-color;
+	border: @border;
+	padding: @padding;
+}
+.lyteSequentialFlow lyte-connect-item lyte-sequential-wrapper{
+	.lyteSequentialFlowWrapperixin();
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: @border-radius;
+	padding: @padding;
+}
+
+lyte-connect-item.lyteSequentialBranchingType > lyte-sequential-group-wrapper > lyte-sequential-group:last-child {
+	.lytesequentialbranchingtypeGroupLastChildMixin();
+	border: @border;
+}
+
+lyte-connect-item.lyteSequentialTryCatchType > lyte-sequential-group-wrapper > lyte-sequential-group > lyte-sequential-wrapper {
+	.lytesequentialtrycatchtypeWrapperMixin();
+	border: @border;
+	padding-bottom: @padding-bottom;
+}
+lyte-connect-item.lyteSequentialLoopType > lyte-sequential-group-wrapper > lyte-sequential-group-container > lyte-sequential-group > lyte-sequential-wrapper {
+	.lytesequentiallooptypeWrapperMixin();
+	padding-bottom: @padding-bottom;
+}
+.lyteSequentialFlow .lyteSequentialBranchingType > lyte-sequential-group-wrapper > lyte-sequential-group-container > lyte-sequential-group > lyte-sequential-condition {
+	.lyteSequentialFlowBranchingTypeConditionMixin();
+	margin: @margin;
+	padding: @padding;
+}
+.lyteSequentialFlow lyte-sequential-dummylast{
+	.lyteSequentialFlowDummyLastMixin();
+	width: @w;
+	height: @h;
+	display: flex;
+	background-color: @background-color;
+	border-radius: @border-radius;
+	margin: @margin;
+}
+.lyteSequentialFlow .errorClass {
+	.lyteSequentialFlowErrorClassMixin();
+	display: flex;
+	justify-content: center;
+	color: @color;
+	border: @border;
+	padding: @padding;
+	font-size: @font-size;
+	border-radius: @border-radius;
+	background-color: @background-color;
+	white-space: nowrap;
+}
+.lyteSequentialBranchingType > lyte-sequential-group-wrapper > lyte-sequential-group-container > lyte-sequential-group > lyte-sequential-condition .branchIcon {
+	.lyteSequentialBranchingTypeBranchIconMixin();
+	background-color: @background-color;
+	border: @border;
+	min-width: @min-w;
+	display: inline-block;
+	border-radius: @border-radius;
+	padding: @padding;
+}
+lyte-sequential-group.lyteSequentialPlaceholderType > lyte-sequential-condition .branchIcon{
+	.ytesequentialplaceholdertypeBranchIconMixin();
+	border: @border;
+	padding: @padding;
+	background: @bg;
+}
+lyte-condition-icon::before,
+.lyteSequentialFlow .lyteConnectEmpty:before {
+	.yteSequentialFlowEmptyBeforeMixin();
+	content: "";
+	left: @left;
+	top: @top;
+	position: absolute;
+	transform: @transform;
+	-webkit-mask: @mask;
+	mask: @mask;
+	background-color: @background-color;
+	background-image: @bg-img;
+	width: @w;
+	height: @h;
+	display: block;
+} 
+lyte-textbox.lyteSequentialConditionAdd:before {
+	.lytesequentialConditionAddBeforeMixin();
+	background-color: @background-color;
+}
+.lyteSequentialFlow lyte-textbox.lyteConnectEmpty {
+	.lyteSequentialFlowTextboxEmptyMixin();
+	border: @border;
+	border-radius: @border-radius;
+	min-width: @min-w;
+	min-height: @min-height;
+	border: @border;
+}
+.lyteSequentialFlow lyte-textbox.lyteSequentialPlaceholderText,
+.lyteSequentialFlow lyte-textbox.lyteSequentialTextboxShow {
+	.lyteSequentialFlowPlaceholderShowMixin();
+	border: @border;
+	background-color: @background-color;
+}
+.lyteSequentialFlow .lyteSequentialPlaceholderText::before,
+.lyteSequentialFlow .lyteSequentialTextboxShow::before {
+	.lyteSequentialFlowPlaceholderShowBeforeMixin();
+	background-color: @background-color;
+}
+.lyteConnectionFakeContainer,
+.lyteConnectionContainer {
+	pointer-events: auto;
+	position: absolute;
+}
+lyte-sequential-condition,
+lyte-connect-item.lyteSequentialBlockType {
+	.lyteSequentialBlockTypeConditionMixin();
+	z-index: @z-index;
+}
+.lyteSequentialPlaceholderText, .lyteSequentialTextboxHidden{
+	visibility: hidden;
+}
+lyte-sequential-group-wrapper {
+	.lyteSequentialGroupWrapperMixin();
+	display: flex;
+	align-items: flex-start;
+	margin-top: @margin-top;
+}
+.lyteSequentialBranchingType > lyte-sequential-group-wrapper {
+	.lyteSequentialBranchingTypeGroupWrapperMixin();
+	margin-top: @margin-top;
+}
+/* collapse css */
+lyte-sequential-collapsible-item{
+	display: none;
+}
+
+.lyteSequentialFlow lyte-connect-item lyte-sequential-wrapper.lyteSequentialToggle,
+.lyteSequentialFlow lyte-connect-item lyte-sequential-group-wrapper.lyteSequentialToggle {
+	display: none;
+}
+
+.lyteSequentialToggleAnime{
+	transition-property: opacity,transform,height;
+	transition-duration: .3s;
+	transform-origin: top center;
+	overflow: hidden;
+	transition-timing-function: linear;
+}
+
+.lyteSequentialToggleAnimeProps{
+	.lyteSequentialToggleAnimePropsMixin();
+	opacity: @opacity;
+	transform: @transform;
+	height: @h;
+}
+
+.lyteSequentialConnectionAnime{
+	transition-property: opacity;
+	transition-duration: .3s;
+}
+
+.lyteSequentialCloseAnime{
+	.lyteSequentialCloseAnimeMixin();
+	opacity: @opacity;
+}
+
+.lyteFollowupAnime{
+	transition-property: transform;
+	transition-duration: 0.5s;
+}
+
+.lyteSequentialTryCatchType > lyte-sequential-group-wrapper > lyte-sequential-group-container > lyte-sequential-group {
+	.lyteSequentialTryCatchTypeGroupMixin();
+	border: @border;
+	align-self: flex-start;
+}
+lyte-connect-item.lyteSequentialTryCatchType > lyte-sequential-group-wrapper > lyte-sequential-group-container > lyte-sequential-group > lyte-sequential-wrapper {
+	.lyteSequentialTryCatchTypeGroupContainerWrapperMixin();
+	border: @border;
+}
+lyte-connect-item.lyteSequentialTryCatchType > lyte-sequential-group-wrapper > lyte-sequential-group-container {
+	.lyteSequentialTryCatchTypeGroupContainerMixin();
+	margin: @margin;
+}
+.lyteSequentialCollapseVisible{
+	display: flex;
+	flex-direction: column;
+}
+lyte-sequential-collapsible-item.lyteSequentialConnectionAnime{
+	position: absolute;
+}
+
+lyte-sequential-collapsible-item.lyteSequentialConnectionAnime{
+	transition-duration: .1s;
+	transition-delay: 0s;
+}
+lyte-sequential-wrapper:not(.lyteSequentialToggle) + lyte-sequential-collapsible-item.lyteSequentialConnectionAnime{
+	transition-duration: .3s;
+	transition-delay: .1s;
+}
+.lyteSequentialDraggedConnection,
+.lyteSequentialDragged {
+	.lyteSequentialDraggedMixin();
+	opacity: @opacity;
+}
+lyte-connect-item.parentNode.lyteSequentialRollback{
+	transition: transform 0.2s ease-out;
+}
+.lyteSequentialDragging {
+	user-select: none;
+	cursor: move;
+}
+.lyteSequentialCollapseVisible lyte-connect-item {
+	.lyteSequentialCollapseVisibleItemMixin();
+	margin: @margin;
+}
+.lyteConnectionMarker {
+	.lyteConnectionMarkerMixin();
+	z-index: @z-index;
+}
+
+/* animation css */
+
+.lyteSequentialFlow .lyteSequentialToggleAnime {
+    transition-property: opacity,transform,height,width,left;
+    transition-duration: .3s;
+    transform-origin: center center;
+    transition-timing-function: linear;
+}
+.lyteSequentialFlow .lyteSequentialToggleAnimeProps {
+    opacity: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+}
+.lyteSequentialFlow .lyteSequentialCollapseVisible {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.lyteSequentialFlow .lyteFollowupAnime {
+    transition-property: transform;
+    transition-duration: .5s;
+}
+.lyteSequentialFlow .lyteSequentialConnectionAnime {
+    transition-property: opacity;
+    transition-duration: .1s;
+    transition-timing-function: linear;
+}
+.lyteSequentialContainerType lyte-sequential-group {
+    border: none;
+}
+.lyteSequentialContainerType > lyte-sequential-icon {
+	.lyteSequentialContainerTypeIconMixin();
+    width: @w;
+    height: @h;
+    background: @bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: @transform;
+}
+.lyteSequentialCustomType lyte-sequential-icon lyte-yield {
+	.lyteSequentialCustomTypeIconYieldMixin();
+	width: @w;
+	height: @h;
+	font-size: @font-size;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: @border-radius;
+	background-color: @bg-color;
+}
+.lyteSequentialCustomType lyte-sequential-icon lyte-yield::after {
+	.lyteSequentialCustomTypeIconMixin();
+	content: "";
+	display: inline-block;
+	-webkit-mask: @mask-img;
+	mask: @mask-img;
+	background-color: @bg-color;
+	width: @w;
+	height: @h;
+}
+lyte-condition-icon {
+	.lyteConditionIconMixin();
+	position: absolute;
+    right: @right;
+    top: @top;
+    transform: @transform;
+    width: @w;
+    height: @h;
+    border: @border;
+    background-color: @bg-color;
+    border-radius: @border-radius;
+}
+lyte-condition-icon::before {
+	.lyteConditionIconBeforeMixin();
+    background-color: @bg-color;
+}
+.lyteSequentialLoopType > lyte-sequential-icon lyte-yield,
+.lyteSequentialTryCatchType > lyte-sequential-icon lyte-yield,
+.lyteSequentialBranchingType > lyte-sequential-icon lyte-yield {
+	.lyteSequentialLoopTryBranchingTypeYieldMixin();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: @max-w;
+}
+.lyteSequentialLoopType > lyte-sequential-icon lyte-yield .lyteSequentialflowIcon,
+.lyteSequentialTryCatchType > lyte-sequential-icon lyte-yield .lyteSequentialflowIcon,
+.lyteSequentialBranchingType > lyte-sequential-icon lyte-yield .lyteSequentialflowIcon {
+	.lyteSequentialLoopTryBranchingTypeIconMixin();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+}
+.lyteSequentialBranchingType > lyte-sequential-icon lyte-yield .lyteSequentialflowIcon {
+	.lyteSequentialBranchingTypeIconMixin();
+    background-color: @bg-color;
+    transform: @transform;
+    margin: @margin;
+}
+.lyteSequentialTryCatchType > lyte-sequential-icon lyte-yield .lyteSequentialflowIcon {
+	.lyteSequentialTryCatchTypeIconMixin();
+    background-color: @bg-color;
+    transform: @transform;
+}
+.lyteSequentialLoopType > lyte-sequential-icon lyte-yield .lyteSequentialflowIcon {
+	.lyteSequentialLoopTypeIconMixin();
+    position: relative;
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    background: @bg;
+    box-shadow: @box-shadow;
+}
+.lyteSequentialLoopType > lyte-sequential-icon lyte-yield:before,
+.lyteSequentialLoopType > lyte-sequential-icon lyte-yield:after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background: inherit;
+    z-index: -1;
+}
+.lyteSequentialLoopType > lyte-sequential-icon lyte-yield:before {
+	.lyteSequentialLoopTypeIconBeforeMixin();
+    -webkit-transform: @transform;
+    transform: @transform;
+}
+.lyteSequentialLoopType > lyte-sequential-icon lyte-yield:after {
+	.lyteSequentialLoopTypeIconAfterMixin();
+    -webkit-transform: @transform;
+    transform: @transform;
+}
+
+.lyteSequentialFlow .lyteConnectTextbox.lyteSequentialTextboxShow {
+    visibility: unset;
+}
+.lyteSequentialflowIcon + span {
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.lyteSequentialFlow .lyteSequentialBranchingType > lyte-sequential-group-wrapper > lyte-sequential-group-container > lyte-sequential-group > lyte-sequential-condition {
+	.lyteSequentialBranchingTypeConditionMixin();
+    margin: @margin;
+    padding: @padding;
+}
+.lyteSequentialFlow .lyteSequentialPosAbs {
+    position: absolute;
+}
+.lyteSequentialFlow .lyteSequentialOpacityHide {
+    opacity: 0;
+}
+.lyteSequentialFlow .lyteSequentialDragClone {
+	.lyteSequentialDragCloneMixin();
+    transform: @transform;
+}
+.lyteSequentialFlow .lyteSequentialDroppableAnimate{
+	transition: height 0.2s ease-out,
+	padding-top 0.2s ease-out,
+	padding-bottom 0.2s ease-out,
+	margin-top 0.2s ease-out,
+	margin-bottom 0.2s ease-out;
+	opacity: 0.2s ease-out;
+	overflow: hidden;
+}
+
+

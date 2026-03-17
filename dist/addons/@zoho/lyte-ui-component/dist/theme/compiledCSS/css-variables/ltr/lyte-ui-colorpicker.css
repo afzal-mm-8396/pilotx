@@ -1,0 +1,661 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-colorpicker
+*/
+:root,
+:host {
+  /**
+    * @variable --lyte-colorpicker-border-color
+    * @selector .lyteColorPicker
+    * @description Border color of the main color picker container
+    * @defaultValue #e6e6e6
+    * @inputType color
+    * @name Border Color
+    */
+  --lyte-colorpicker-border-color: #e6e6e6;
+  /**
+    * @variable --lyte-colorpicker-box-shadow-color
+    * @selector .lyteColorPicker
+    * @description Box shadow color of the main container
+    * @defaultValue rgba(0, 0, 0, 0.1)
+    * @inputType color
+    * @name Box Shadow Color
+    */
+  --lyte-colorpicker-box-shadow-color: rgba(0, 0, 0, 0.1);
+  /**
+    * @variable --lyte-colorpicker-colorpan-border-color
+    * @selector .lyteColorPicker__colorpan
+    * @description Border color of each color pan (swatch)
+    * @defaultValue rgba(0, 0, 0, 0.2)
+    * @inputType color
+    * @name Color Pan Border Color
+    */
+  --lyte-colorpicker-colorpan-border-color: rgba(0, 0, 0, 0.2);
+  /**
+    * @variable --lyte-colorpicker-colorpan-hover-border-color
+    * @selector .lyteColorPicker__colorpan:hover
+    * @description Border color of color pan on hover
+    * @defaultValue rgba(0, 0, 0, 0.3)
+    * @inputType color
+    * @name Color Pan Hover Border Color
+    */
+  --lyte-colorpicker-colorpan-hover-border-color: rgba(0, 0, 0, 0.3);
+  /**
+    * @variable --lyte-colorpicker-morelink-hover-bg
+    * @selector .lyteColorPicker__nocolorbutton:hover, .lyteColorPicker__navigatable:hover
+    * @description Background color for hoverable links or buttons
+    * @defaultValue #f5f5f5
+    * @inputType color
+    * @name More Link Hover Background Color
+    */
+  --lyte-colorpicker-morelink-hover-bg: #f5f5f5;
+  /**
+    * @variable --lyte-colorpicker-common-text-color
+    * @selector .lyteColorPicker__paletteheading, .lyteColorPicker__defaultpaletteheading
+    * @description Common text color used in palette headings
+    * @defaultValue var(--lyte-common-text-color2)
+    * @defaultVariableValue #111
+    * @inputType color
+    * @name Common Text Color
+    */
+  --lyte-colorpicker-common-text-color: var(--lyte-common-text-color2);
+  /**
+    * @variable --lyte-colorpicker-advanced-link-text-color
+    * @selector .lyteColorPicker__text
+    * @description Text color for advanced option links
+    * @defaultValue var(--lyte-common-text-color)
+    * @defaultVariableValue #111
+    * @inputType color
+    * @name Advanced Link Text Color
+    */
+  --lyte-colorpicker-advanced-link-text-color: var(--lyte-colorpicker-common-text-color);
+  /**
+    * @variable --lyte-colorpicker-color-slider-handle-border-color
+    * @selector .colorSlider_sliderHandle
+    * @description Border color of the handle in color sliders
+    * @defaultValue #fff
+    * @inputType color
+    * @name Color Slider Handle Border Color
+    */
+  --lyte-colorpicker-color-slider-handle-border-color: #fff;
+  /**
+    * @variable --lyte-colorpicker-input-border-color
+    * @selector .showValueField
+    * @description Border color for input fields in default state
+    * @defaultValue #d6d6d6
+    * @inputType color
+    * @name Input Border Color
+    */
+  --lyte-colorpicker-input-border-color: #d6d6d6;
+  /**
+    * @variable --lyte-colorpicker-input-hover-border-color
+    * @selector .showValue .lyteField:hover, .showValueInputFocus
+    * @description Border color for input fields on hover/focus
+    * @defaultValue #c1c1c1
+    * @inputType color
+    * @name Input Hover Border Color
+    */
+  --lyte-colorpicker-input-hover-border-color: #c1c1c1;
+  /**
+    * @variable --lyte-colorpicker-formatdropdown-text-color
+    * @selector .LCPDropboxItem
+    * @description Text color for items in the format dropdown
+    * @defaultValue #555
+    * @inputType color
+    * @name Format Dropdown Text Color
+    */
+  --lyte-colorpicker-formatdropdown-text-color: #555;
+  /**
+    * @variable --lyte-colorpicker-formatdropdown-active-text-color
+    * @selector .LCPDropItemSelection
+    * @description Active item text color in format dropdown
+    * @defaultValue var(--lyte-common-text-color)
+    * @defaultVariableValue #333
+    * @inputType color
+    * @name Format Dropdown Active Text Color
+    */
+  --lyte-colorpicker-formatdropdown-active-text-color: var(--lyte-common-text-color);
+  /**
+    * @variable --lyte-colorpicker-selectedtick-color
+    * @selector .lyteCPSelectedColor::before
+    * @description Tick color for selected color swatch (non-white bg)
+    * @defaultValue #fff
+    * @inputType color
+    * @name Selected Tick Color
+    */
+  --lyte-colorpicker-selectedtick-color: #fff;
+  /**
+    * @variable --lyte-colorpicker-whitebg-selectedtick-color
+    * @selector .lyteCPSelectedColor[lt-prop-title="#FFFFFF"]::before
+    * @description Tick color for selected white color swatch
+    * @defaultValue #333
+    * @inputType color
+    * @name White Background Selected Tick Color
+    */
+  --lyte-colorpicker-whitebg-selectedtick-color: #333;
+  /**
+    * @variable --lyte-colorpicker-sliderhandle-border-color
+    * @selector .colorSlider_sliderHandle
+    * @description Border color for the slider handle
+    * @defaultValue #000
+    * @inputType color
+    * @name Slider Handle Border Color
+    */
+  --lyte-colorpicker-sliderhandle-border-color: #000;
+  /**
+    * @variable --lyte-colorpicker-sliderhandle-bg
+    * @selector .colorSlider_sliderHandle
+    * @description Background color of the slider handle
+    * @defaultValue #fff
+    * @inputType color
+    * @name Slider Handle Background Color
+    */
+  --lyte-colorpicker-sliderhandle-bg: #fff;
+  /**
+    * @variable --lyte-colorpicker-formatlabel-text-color
+    * @selector .cpValFormatIpSecondRowTd
+    * @description Text color for the format label (below format selector)
+    * @defaultValue #9b9b9b
+    * @inputType color
+    * @name Format Label Text Color
+    */
+  --lyte-colorpicker-formatlabel-text-color: #9b9b9b;
+  /**
+    * @variable --lyte-colorpicker-font-size
+    * @selector .lyteColorPicker__showhidecontainer
+    * @description Default font size used across the component
+    * @defaultValue var(--lyte-font-size-small)
+    * @defaultVariableValue 13px
+    * @allowedSuffixes px
+    * @inputType dimension
+    * @name Font Size
+    */
+  --lyte-colorpicker-font-size: var(--lyte-font-size-small);
+  /**
+    * @variable --lyte-colorpicker-format-dropbtn-font-size
+    * @selector .selectFormatDropbtn
+    * @description Font size of the dropdown button
+    * @defaultValue var(--lyte-font-size-xs)
+    * @defaultVariableValue 12px
+    * @allowedSuffixes px
+    * @inputType dimension
+    * @name Format Dropdown Button Font Size
+    */
+  --lyte-colorpicker-format-dropbtn-font-size: var(--lyte-font-size-xs);
+  /**
+    * @variable --lyte-colorpicker-dropbox-item-font-size
+    * @selector .LCPDropboxItem
+    * @description Font size of items in the dropbox list
+    * @defaultValue var(--lyte-font-size-xs)
+    * @defaultVariableValue 12px
+    * @allowedSuffixes px
+    * @inputType dimension
+    * @name Dropbox Item Font Size
+    */
+  --lyte-colorpicker-dropbox-item-font-size: var(--lyte-font-size-xs);
+  /**
+    * @variable --lyte-colorpicker-formatlabel-font-size
+    * @selector .cpValFormatIpSecondRowTd
+    * @description Font size of the format label row
+    * @defaultValue var(--lyte-font-size-xs)
+    * @defaultVariableValue 12px
+    * @allowedSuffixes px
+    * @inputType dimension
+    * @name Format Label Font Size
+    */
+  --lyte-colorpicker-formatlabel-font-size: var(--lyte-font-size-xs);
+  /**
+    * @variable --lyte-colorpicker-inputvalue-font-size
+    * @selector .showValueInput
+    * @description Font size of the input field where the color value is shown
+    * @defaultValue var(--lyte-font-size-xs)
+    * @defaultVariableValue 12px
+    * @allowedSuffixes px
+    * @inputType dimension
+    * @name Input Value Font Size
+    */
+  --lyte-colorpicker-inputvalue-font-size: var(--lyte-font-size-xs);
+  /**
+    * @variable --lyte-colorpicker-inputvalue-error-border-color
+    * @selector .lyteCp__Invalid .lyteField
+    * @description Border color for input field in error state
+    * @defaultValue #f4a7a7
+    * @inputType color
+    * @name Color input Error Border Color
+    */
+  --lyte-colorpicker-inputvalue-error-border-color: #f4a7a7;
+  /**
+    * @variable --lyte-colorpicker-inputvalue-error-bg
+    * @selector .lyteCp__Invalid input
+    * @description Background color for input field in error state
+    * @defaultValue #f5c7c7
+    * @inputType color
+    * @name Color input Error Background Color
+    */
+  --lyte-colorpicker-inputvalue-error-bg: #f5c7c7;
+}
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+/* LYTE-COLORPICKER BEGINS */
+.lyteColorPicker {
+  display: inline-block;
+  border: 1px solid var(--lyte-colorpicker-border-color);
+  box-shadow: 0 0 5px 1px var(--lyte-colorpicker-box-shadow-color);
+  background: var(--lyte-theme-body-bg);
+}
+.lyteColorPicker.popColorPicker {
+  display: none;
+}
+.lyteColorPicker__showhidecontainer {
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-align: left;
+  font-size: var(--lyte-colorpicker-font-size);
+  font-family: var(--lyte-primary-font);
+}
+/*  Colorpicker basic section related code begins    */
+.lyteColorPicker__default {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+}
+.lyteColorPicker__nocolorbutton {
+  padding: 8px 15px;
+  border-bottom: 1px solid var(--lyte-colorpicker-border-color);
+  cursor: pointer;
+}
+.lyteColorPicker__noFill {
+  background-image: var(--lyte-sprite-image);
+  background-position: -43px -79px;
+  width: 11px;
+  height: 11px;
+  opacity: 0.6;
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.lyteColorPicker__nocolorbutton svg {
+  display: none;
+}
+.lyteColorPicker__nocolorbutton:hover {
+  background: var(--lyte-colorpicker-morelink-hover-bg);
+}
+.lyteColorPicker__palettecontainer {
+  border-bottom: 1px solid var(--lyte-colorpicker-border-color);
+  order: 0;
+  padding: 8px 15px 15px;
+}
+.lyteColorPicker__palettecontainer.LCP_DefaultColorCont.default_color {
+  display: flex;
+  padding: 10px 15px 3px;
+  justify-content: left;
+}
+.cpDefault__colors {
+  border-radius: 50%;
+}
+.lyteColorPicker__palette {
+  font-size: 0;
+}
+.lyteColorPickerUsedColors {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 3px 0px;
+}
+.lyteColorPicker__paletteheading {
+  cursor: default;
+  color: var(--lyte-colorpicker-common-text-color);
+  margin-bottom: 10px;
+}
+.lyteColorPicker__defaultpaletteheading {
+  cursor: default;
+  color: var(--lyte-colorpicker-common-text-color);
+  margin: 0 5px 8px 5px;
+}
+.lyteColorPicker__palettecontainer.usedColor__container {
+  order: 1;
+}
+.lyteColorPicker__navigatable {
+  order: 2;
+  padding: 10px 15px;
+  border-radius: 0 0 2px 2px;
+  cursor: pointer;
+}
+.lyteColorPicker__navigatable:hover {
+  background: var(--lyte-colorpicker-morelink-hover-bg);
+}
+.lyteColorPicker__colorfieldcontainer {
+  display: none;
+  order: 3;
+}
+.lyteColorPicker__palette .standard__colors,
+.lyteColorPicker__shades {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+.lyteColorPicker__palette .cpDefault__colors,
+.lyteColorPicker__shades {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  border-radius: 50%;
+}
+.lyteColorPicker__colorpan {
+  width: 15px;
+  height: 15px;
+  margin: 0 2px;
+  padding: 0;
+  border: 1px solid var(--lyte-colorpicker-colorpan-border-color);
+  border-radius: 0;
+  display: inline-block;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+}
+.default__colors .lyteColorPicker__colorpan {
+  border: 1px solid transparent;
+}
+.default__colors:first-child .lyteColorPicker__colorpan {
+  margin-bottom: 5px;
+  border: 1px solid var(--lyte-colorpicker-colorpan-border-color);
+}
+.default__colors:nth-child(2),
+.default__colors:nth-child(3) {
+  display: none;
+}
+.lyteColorPickerShowHiddenColor.default__colors:nth-child(2),
+.lyteColorPickerShowHiddenColor.default__colors:nth-child(3),
+.lyteColorPickerAccentColorPalette .default__colors:nth-child(2),
+.lyteColorPickerAccentColorPalette .default__colors:nth-child(3) {
+  display: block;
+}
+.lyteColorPicker__colorpan:hover {
+  border-color: var(--lyte-colorpicker-colorpan-hover-border-color);
+}
+.default__colors:first-child .lyteColorPicker__colorpan:hover {
+  border-color: rgba(17, 17, 17, 0.3);
+}
+.lyteColorPicker__colorpan.lyteCPSelectedColor::before {
+  content: '';
+  position: absolute;
+  border-left: 1px solid var(--lyte-colorpicker-selectedtick-color);
+  border-bottom: 1px solid var(--lyte-colorpicker-selectedtick-color);
+  width: 8px;
+  height: 4px;
+  top: 2px;
+  left: 2px;
+  transform: rotate(-45deg);
+}
+.lyteColorPicker__colorpan.lyteCPSelectedColor[lt-prop-title="#FFFFFF"]::before {
+  border-left: 1px solid var(--lyte-colorpicker-whitebg-selectedtick-color);
+  border-bottom: 1px solid var(--lyte-colorpicker-whitebg-selectedtick-color);
+}
+.lyteColorPicker__text {
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--lyte-colorpicker-advanced-link-text-color);
+}
+.LCP_rightArrow {
+  background-image: var(--lyte-sprite-image);
+  background-position: -97px -26px;
+  width: 4px;
+  height: 7px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 3px;
+}
+.lyteColorPicker__icon {
+  background-image: var(--lyte-sprite-image);
+  background-position: -110px -58px;
+  width: 14px;
+  height: 11px;
+  opacity: 0.6;
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+/*  Colorpicker basic section related code ends    */
+/*  Colorpicker advanced section related code begins    */
+.lyteColorPicker--advanced {
+  padding: 10px;
+  width: 260px;
+}
+.colorDiv {
+  overflow: hidden;
+  position: relative;
+  cursor: default;
+  touch-action: none;
+  border: 1px solid var(--lyte-colorpicker-input-border-color);
+  border-radius: 2px;
+}
+#lyteCPImgDiv {
+  height: 160px;
+  background-image: url(../../images/lyteCPbgGradient.png);
+  background-repeat: round;
+}
+.colorSlider_palette_circle {
+  border: 2px solid var(--lyte-colorpicker-color-slider-handle-border-color);
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+}
+.lyteColorPicker__previewDiv {
+  padding: 3px 0px;
+  position: relative;
+}
+.lyteColorPicker__opacityslider,
+.colorSlider_hue {
+  position: relative;
+  vertical-align: middle;
+  touch-action: none;
+}
+.lyteColorPicker__sliderDiv {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+.colorSlider_hue {
+  margin-bottom: 15px;
+}
+.opacityslider__circlethumb,
+.colorSlider_sliderHandle {
+  width: 5px;
+  height: 10px;
+  border-radius: 2px;
+  border: 1px solid var(--lyte-colorpicker-sliderhandle-border-color);
+  position: absolute;
+  z-index: 14;
+  top: 0;
+  background: var(--lyte-colorpicker-sliderhandle-bg);
+}
+.lyteColorPicker__transparentbg,
+.colorSlider_hueBar_border {
+  width: 210px;
+  border-radius: 6px;
+}
+.opacityslider__track,
+.colorSlider_hueBar {
+  background-image: linear-gradient(to right, red, #ff00dd, blue, aqua, #00ff00, yellow, red);
+  height: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.opacityslider__track {
+  background-image: none;
+  background-position-x: 1px;
+  background-repeat: repeat-y;
+}
+.opacityPreviewDiv__transparentbg,
+.previewDiv {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+.opacityPreviewDiv__transparentbg1,
+.dynamicDiv {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.lyteColorPicker__commandbar {
+  margin: 10px 0 5px;
+  display: flex;
+}
+.LCP_backbtn {
+  margin-right: auto;
+}
+.selectFormat {
+  width: 70px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+}
+.selectFormat lyte-dropdown {
+  display: block;
+  width: 70px;
+}
+.selectFormat lyte-dropdown lyte-drop-button {
+  font-size: var(--lyte-colorpicker-format-dropbtn-font-size);
+}
+.lyteCPDropbox {
+  width: 70px;
+}
+.lyteCPDropbox .lyteArrow {
+  width: 70px;
+}
+.lyteCPDropbox lyte-drop-item {
+  padding: 5px;
+  font-size: var(--lyte-colorpicker-dropbox-item-font-size);
+  color: var(--lyte-colorpicker-formatdropdown-text-color);
+}
+.lyteCPDropbox lyte-drop-item[selected="true"] {
+  color: var(--lyte-colorpicker-formatdropdown-active-text-color);
+}
+.lyteCPDropbox lyte-drop-item[selected="true"]::before {
+  content: none;
+}
+.selectFormat .colorPickerDD {
+  padding: 5px 20px 5px 5px;
+}
+.selectFormat lyte-dropdown lyte-icon.dropdown {
+  background-position: -14px -2px;
+  width: 9px;
+  height: 5px;
+}
+.showValue {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - 85px);
+}
+.cpValFormatIp {
+  border-spacing: 0;
+}
+.cpValFormatIp lyte-tr:nth-child(2) lyte-td {
+  font-size: var(--lyte-colorpicker-formatlabel-font-size);
+  color: var(--lyte-colorpicker-formatlabel-text-color);
+  text-align: center;
+}
+.cpValFormatIp lyte-td {
+  vertical-align: top;
+  padding: 0;
+  border-bottom: 0;
+  min-width: auto;
+}
+.cpValFormatIp lyte-tr:first-child lyte-td {
+  padding-left: 5px;
+}
+.cpValFormatIp lyte-tr:first-child lyte-td:first-child {
+  padding-left: 0;
+}
+.showValue .lyteField {
+  border: 1px solid var(--lyte-colorpicker-input-border-color);
+}
+.showValue .lyteInputBox input {
+  padding: 5px 4px;
+  font-size: var(--lyte-colorpicker-inputvalue-font-size);
+  min-width: auto;
+  text-align: center;
+}
+.showValue .lyteInputBox .lyteField:hover {
+  border: 1px solid var(--lyte-colorpicker-input-hover-border-color);
+}
+.showValue .lyteInputBox.lyteInputFocus .lyteField {
+  outline: none;
+  border: 1px solid var(--lyte-colorpicker-input-hover-border-color);
+}
+.showValue .lyteInputBox.vertical {
+  width: 40px;
+}
+#lyteCPShowValue {
+  width: 128px;
+}
+#lyteCPShowValue.lyteInputBox input {
+  text-align: left;
+}
+.lyteColorPicker__transparentbg {
+  border-radius: 6px;
+  background: url(../../images/lyteCP_op_slider_bg.png);
+  background-size: cover;
+}
+.lyteCP__transparentbg {
+  background: url(../../images/lyteCP_op_slider_bg.png);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+}
+.lyteCP_PreviewWrapper {
+  margin-left: auto;
+}
+.lyteCP__dynamicColor {
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.lyteCP__dynamicColor .previewDiv,
+.lyteCP__dynamicColor .dynamicDiv {
+  border-radius: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+.lyteCPHexText lyte-td:first-child {
+  visibility: hidden;
+}
+#lyteCPHiddenInput {
+  position: absolute;
+  left: -9999px;
+}
+/*  Colorpicker advanced section related code ends    */
+.lyteColorPicker__pe {
+  pointer-events: none;
+  cursor: default;
+}
+.showValue .lyteInputBox.lyteInputFocus.lyteCp__Invalid .lyteField {
+  border: 1px solid var(--lyte-colorpicker-inputvalue-error-border-color);
+}
+.lyteCp__Invalid input {
+  background: var(--lyte-colorpicker-inputvalue-error-bg);
+}
+.lyteColorPicker__commandbar button {
+  text-transform: capitalize;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* LYTE-COLORPICKER ENDS */

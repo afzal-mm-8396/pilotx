@@ -1,0 +1,60 @@
+/**
+* @component lyte-cropper
+*/
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+
+    /**
+     * @variable --lyte-cropper-crop-area-bg
+     * @selector .lyteCropArea
+     * @description Background color of the cropping area
+     * @defaultValue #eee
+     * @inputType color
+     * @name Crop Area Background Color
+     */
+    --lyte-cropper-crop-area-bg: #eee;
+
+    /**
+     * @variable --lyte-cropper-resize-handle-bg
+     * @selector .lyteCropTopLeftCorner, .lyteCropTopRightCorner, .lyteCropBottomLeftCorner, .lyteCropBottomRightCorner, .lyteCropRightSpan, .lyteCropLeftSpan, .lyteCropBottomSpan, .lyteCropTopSpan
+     * @description Background color for the resize handles on the crop box
+     * @defaultValue #fff
+     * @inputType color
+     * @name Resize Handle Background Color
+     */
+    --lyte-cropper-resize-handle-bg: #fff;
+
+    /**
+     * @variable --lyte-cropper-opacitydiv-bg
+     * @selector .lyteCropOpacityDiv
+     * @description Background color for the overlay area outside the crop box
+     * @defaultValue #333
+     * @inputType color
+     * @name Opacity Div Background Color
+     */
+    --lyte-cropper-opacitydiv-bg: #333;
+
+    /**
+     * @variable --lyte-cropper-gridline-color
+     * @selector .lytecropVerGrid1, .lytecropVerGrid2, .lytecropHorGrid1, .lytecropHorGrid2
+     * @description Color for the dashed grid lines in the crop box
+     * @defaultValue #ccc
+     * @inputType color
+     * @name Gridline Color
+     */
+    --lyte-cropper-gridline-color: #ccc;
+
+    /**
+     * @variable --lyte-cropper-profilesetter-freeze-bg
+     * @selector .lytePSFreezeLayer
+     * @description Background color for the profile setter freeze layer
+     * @defaultValue #333
+     * @inputType color
+     * @name Profile Setter Freeze Layer Background Color
+     */
+    --lyte-cropper-profilesetter-freeze-bg: #333;
+
+}

@@ -1,0 +1,87 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component selector
+ */
+:root,
+:host {
+  /**
+   * @variable --lyte-selector-selectionbox-border-color
+   * @selector .lyteSelectionBox
+   * @description Border color of the selection box
+   * @defaultValue #fff
+   * @inputType color
+   * @name Selection Box Border Color
+   */
+  --lyte-selector-selectionbox-border-color: #fff;
+  /**
+   * @variable --lyte-selector-selectionbox-active-border-color
+   * @selector .lyteSelectorActiveBox
+   * @description Border color of the active selection box
+   * @defaultValue #5ba1e5
+   * @inputType color
+   * @name Active Selection Box Border Color
+   */
+  --lyte-selector-selectionbox-active-border-color: #5ba1e5;
+  /**
+   * @variable --lyte-selector-freezelayer-bg
+   * @selector .lyteSelectionFreezeLayer
+   * @description Background color of the freeze layer while selection is frozen
+   * @defaultValue #000
+   * @inputType color
+   * @name Freeze Layer Background Color
+   */
+  --lyte-selector-freezelayer-bg: #000;
+  /**
+   * @variable --lyte-selector-resize-handle-bg
+   * @selector .lyteSelectorHandles
+   * @description Background color of the resize handles
+   * @defaultValue #fff
+   * @inputType color
+   * @name Resize Handle Background Color
+   */
+  --lyte-selector-resize-handle-bg: #fff;
+  /**
+   * @variable --lyte-selector-resize-handle-border-color
+   * @selector .lyteSelectorHandles
+   * @description Border color of the resize handles
+   * @defaultValue #5ba1e5
+   * @inputType color
+   * @name Resize Handle Border Color
+   */
+  --lyte-selector-resize-handle-border-color: #5ba1e5;
+  /**
+   * @variable --lyte-selector-delete-btn-bg
+   * @selector .lyteSelectorDeleteBtn
+   * @description Background color of the delete button
+   * @defaultValue #fff
+   * @inputType color
+   * @name Delete Button Background Color
+   */
+  --lyte-selector-delete-btn-bg: #fff;
+  /**
+   * @variable --lyte-selector-label-text-color
+   * @selector .lyteSelectorLabel
+   * @description Text color of the selector label
+   * @defaultValue #fff
+   * @inputType color
+   * @name Selector Label Text Color
+   */
+  --lyte-selector-label-text-color: #fff;
+  /**
+   * @variable --lyte-selector-label-font-size
+   * @selector .lyteSelectorLabel
+   * @description Font size of the selector label
+   * @defaultValue var(--lyte-font-size-regular)
+   * @defaultVariableValue 14px
+   * @allowedSuffixes px
+   * @inputType dimension
+   * @name Selector Label Font Size
+   */
+  --lyte-selector-label-font-size: var(--lyte-font-size-regular);
+}

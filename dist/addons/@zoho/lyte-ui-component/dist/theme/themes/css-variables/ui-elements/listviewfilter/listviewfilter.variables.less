@@ -1,0 +1,176 @@
+/**
+* @component lyte-listviewfilter
+*/
+
+:root,
+:host {
+    /**
+     * @variable --lyte-listviewfilters-bg
+     * @selector .lyteListViewFilters
+     * @description Background color of the list view filters container
+     * @defaultValue #fff
+     * @inputType color
+     * @name Filters Background Color
+     */
+    --lyte-listviewfilters-bg: #fff;
+
+    /**
+     * @variable --lyte-listviewfilters-border-color
+     * @selector .lyteListViewFilters
+     * @description Border color of the list view filters container
+     * @defaultValue #d6d6d6
+     * @inputType color
+     * @name Filters Border Color
+     */
+    --lyte-listviewfilters-border-color: #d6d6d6;
+
+    /**
+     * @variable --lyte-listviewfilter-focus-within-border-color
+     * @selector .lyteListViewFilters:focus-within
+     * @description Border color when filters container is focused
+     * @defaultValue #0984e3
+     * @inputType color
+     * @name Focus Within Border Color
+     */
+    --lyte-listviewfilter-focus-within-border-color: #0984e3;
+
+    /**
+     * @variable --lyte-listviewfilter-dropdown-ul-border-color
+     * @selector .lyteListViewDropdownUl
+     * @description Border color of the dropdown list
+     * @defaultValue #e5e8ea
+     * @inputType color
+     * @name Dropdown Border Color
+     */
+    --lyte-listviewfilter-dropdown-ul-border-color: #e5e8ea;
+
+    /**
+     * @variable --lyte-listviewfilter-dropdown-ul-bg
+     * @selector .lyteListViewDropdownUl
+     * @description Background color of the dropdown list
+     * @defaultValue #fff
+     * @inputType color
+     * @name Dropdown Background Color
+     */
+    --lyte-listviewfilter-dropdown-ul-bg: #fff;
+
+    /**
+   * @variable --lyte-listviewfilter-dropdown-ul-box-shadow-color
+   * @selector .lyteListViewDropdownUl
+   * @description Box shadow color of the dropdown list
+   * @defaultValue rgba(0, 0, 0, 0.07)
+   * @inputType color
+   * @name Dropdown Box Shadow Color
+   */
+    --lyte-listviewfilter-dropdown-ul-box-shadow-color: rgba(0, 0, 0, 0.07);
+
+/**
+   * @variable --lyte-listviewfilter-dropdown-ul-color
+   * @selector .lyteListViewDropdownUl
+   * @description Text color of the dropdown list
+   * @defaultValue #152229
+   * @inputType color
+   * @name Dropdown Text Color
+   */
+    --lyte-listviewfilter-dropdown-ul-color: #152229;
+
+    /**
+   * @variable --lyte-listviewfilter-searchwrap-border-color
+   * @selector .lyteFilterSearchWrap
+   * @description Border color of the search wrap container
+   * @defaultValue #AEDAF9
+   * @inputType color
+   * @name Search Wrap Border Color
+   */
+    --lyte-listviewfilter-searchwrap-border-color: #AEDAF9;
+
+    /**
+   * @variable --lyte-listviewfilter-input-filter-label-bg
+   * @selector .lyteInputFilterLabel
+   * @description Background color of the input filter label
+   * @defaultValue #EAF3FA
+   * @inputType color
+   * @name Input Filter Label Background Color
+   */
+    --lyte-listviewfilter-input-filter-label-bg: #EAF3FA;
+
+    /**
+   * @variable --lyte-listviewfilter-column-name-bg
+   * @selector .lyteFilterColumnName
+   * @description Background color of the filter column name
+   * @defaultValue #F6FAFD
+   * @inputType color
+   * @name Column Name Background Color
+   */
+    --lyte-listviewfilter-column-name-bg: #F6FAFD;
+
+    /**
+   * @variable --lyte-listviewfilter-searchwrap-hover-bg
+   * @selector .lyteFilterSearchWrap:hover .lyteListViewFilterClearIcon
+   * @description Background color of search wrap on hover
+   * @defaultValue #0984E3
+   * @inputType color
+   * @name Search Wrap Hover Background Color
+   */
+    --lyte-listviewfilter-searchwrap-hover-bg: #0984E3;
+
+    /**
+   * @variable --lyte-listviewfilter-clearicon-before-bg
+   * @selector .lyteListViewFilterClearIcon::before
+   * @description Background color of the clear icon
+   * @defaultValue #111
+   * @inputType color
+   * @name Clear Icon Background Color
+   */
+    --lyte-listviewfilter-clearicon-before-bg: #111;
+
+    /**
+   * @variable --lyte-listviewfilter-searchWrap-hover-clearIcon-before-bg
+   * @selector .lyteFilterSearchWrap:hover .lyteListViewFilterClearIcon::before
+   * @description Background color of clear icon when search wrap is hovered
+   * @defaultValue #fff
+   * @inputType color
+   * @name Clear Icon Hover Background Color
+   */
+    --lyte-listviewfilter-searchWrap-hover-clearIcon-before-bg: #fff;
+}
+
+.lyteListViewFiltersMixin() {
+	@bg: var(--lyte-listviewfilters-bg);
+	@border: 1px solid var(--lyte-listviewfilters-border-color);
+}
+
+.lyteListViewFiltersFocusWithinMixin() {
+	@border: 1px solid var(--lyte-listviewfilter-focus-within-border-color);
+}
+
+.lyteListViewDropdownUlMixin() {
+	@border: 1px solid var(--lyte-listviewfilter-dropdown-ul-border-color);
+	@bg: var(--lyte-listviewfilter-dropdown-ul-bg);
+	@box-shadow: 0px 0px 8px 3px var(--lyte-listviewfilter-dropdown-ul-box-shadow-color);
+	@color: var(--lyte-listviewfilter-dropdown-ul-color);
+}
+
+.lyteFilterSearchWrapMixin() {
+	@border: 1px solid var(--lyte-listviewfilter-searchwrap-border-color);
+}
+
+.lyteInputFilterLabelMixin() {
+	@bg: var(--lyte-listviewfilter-input-filter-label-bg);
+}
+
+.lyteFilterColumnNameMixin() {
+	@bg: var(--lyte-listviewfilter-column-name-bg);
+}
+
+.lyteFilterSearchWrapHoverMixin() {
+	@bg: var(--lyte-listviewfilter-searchwrap-hover-bg);
+}
+
+.lyteListViewFilterClearIconBeforeMixin() {
+	@bg: var(--lyte-listviewfilter-clearicon-before-bg);
+}
+
+.lyteFilterSearchWrapHoverListViewFilterClearIconBeforeMixin() {
+	@bg: var(--lyte-listviewfilter-searchWrap-hover-clearIcon-before-bg);
+}

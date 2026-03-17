@@ -1,0 +1,119 @@
+/**
+ * @component lyte-table
+ */
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+	/**
+	* @variable --lyte-table-bg
+	* @selector lyte-table-structure, lyte-td
+	* @description Background color of the table and table cells.
+	* @defaultValue var(--lyte-theme-body-bg)
+	* @defaultVariableValue #fff
+	* @inputType color
+	* @name Background Color
+	*/
+	--lyte-table-bg: @themeBodyBackground;
+
+	/**
+	* @variable --lyte-table-th-bg
+	* @selector lyte-th
+	* @description Background color of table header cells.
+	* @defaultValue #f7f7f7
+	* @inputType color
+	* @name Header Background Color
+	*/
+	--lyte-table-th-bg: #f7f7f7;
+
+	/**
+	* @variable --lyte-table-border-color
+	* @selector lyte-td, lyte-th
+	* @description Border color used for table rows and columns.
+	* @defaultValue #e2e2e2
+	* @inputType color
+	* @name Border Color
+	*/
+	--lyte-table-border-color: #e2e2e2;
+
+	/**
+	* @variable --lyte-table-fixed-column-box-shadow-color
+	* @selector .lyteTableFixed
+	* @description Box shadow color used for fixed columns.
+	* @defaultValue rgba(0, 0, 0, 0.2)
+	* @inputType color
+	* @name Fixed Column Box Shadow Color
+	*/
+	--lyte-table-fixed-column-box-shadow-color: rgba(0, 0, 0, 0.2);
+
+	/**
+	* @variable --lyte-table-sort-helper-bg
+	* @selector .lyteTableSortHelper
+	* @description Background color of the sorting helper element.
+	* @defaultValue var(--lyte-theme-active-element-bg)
+	* @defaultVariableValue #5ba1e5
+	* @inputType color
+	* @name Sort Helper Background Color
+	*/
+	--lyte-table-sort-helper-bg: @themeActiveElementBg;
+
+	/**
+	* @variable --lyte-table-th-text-color
+	* @selector lyte-th
+	* @description Text color of the table header cells.
+	* @defaultValue var(--lyte-common-text-color)
+	* @defaultVariableValue #333
+	* @inputType color
+	* @name Table Header Text Color
+	*/
+	--lyte-table-th-text-color: @commonTextColor;
+
+	/**
+	* @variable --lyte-table-td-text-color
+	* @selector lyte-td
+	* @description Text color of the table data cells.
+	* @defaultValue var(--lyte-common-text-color2)
+	* @defaultVariableValue #111
+	* @inputType color
+	* @name Table Data Text Color
+	*/
+	--lyte-table-td-text-color: @commonTextColor2;
+
+	/**
+	* @variable --lyte-table-th-font-size
+	* @selector lyte-th
+	* @description Font size of the table header cells.
+	* @defaultValue var(--lyte-font-size-regular)
+	* @defaultVariableValue 14px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Table Header Font Size
+	*/
+	--lyte-table-th-font-size: var(--lyte-font-size-regular);
+
+	/**
+	* @variable --lyte-table-td-font-size
+	* @selector lyte-td
+	* @description Font size of the table data cells.
+	* @defaultValue var(--lyte-font-size-medium)
+	* @defaultVariableValue 15px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Table Data Font Size
+	*/
+	--lyte-table-td-font-size: var(--lyte-font-size-medium);
+
+	/**
+	* @variable --lyte-table-sort-helper-font-size
+	* @selector .lyteTableSortHelper
+	* @description Font size used in the sort helper popup.
+	* @defaultValue var(--lyte-font-size-regular)
+	* @defaultVariableValue 14px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Sort Helper Font Size
+	*/
+	--lyte-table-sort-helper-font-size: var(--lyte-font-size-regular);
+
+}

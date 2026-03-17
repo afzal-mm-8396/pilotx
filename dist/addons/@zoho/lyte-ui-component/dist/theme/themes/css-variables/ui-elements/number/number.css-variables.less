@@ -1,0 +1,83 @@
+/**
+ * @component lyte-number
+ */
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+	/**
+	 * @variable --lyte-number-label-text-color
+	 * @selector lyte-number .lyteLabel
+	 * @description Text color for the label in the number input component
+	 * @defaultValue #555
+	 * @inputType color
+	 * @name Label Text Color
+	 */
+	--lyte-number-label-text-color: #555;
+
+	/**
+	 * @variable --lyte-number-input-text-color
+	 * @selector lyte-number input
+	 * @description Default text color inside the number input field
+	 * @defaultValue var(--lyte-common-text-color2)
+	 * @defaultVariableValue #333
+	 * @inputType color
+	 * @name Input Text Color
+	 */
+	--lyte-number-input-text-color: @commonTextColor2;
+
+	/**
+	 * @variable --lyte-number-disabled-bg
+	 * @selector lyte-number input:disabled
+	 * @description Background color for disabled number input field
+	 * @defaultValue #f3f3f3
+	 * @inputType color
+	 * @name Disabled Background Color
+	 */
+	--lyte-number-disabled-bg: #f3f3f3;
+
+	/**
+	 * @variable --lyte-number-disabled-text-color
+	 * @selector lyte-number input:disabled
+	 * @description Text color for disabled number input field
+	 * @defaultValue #999
+	 * @inputType color
+	 * @name Disabled Text Color
+	 */
+	--lyte-number-disabled-text-color: #999;
+
+	/**
+	 * @variable --lyte-number-placeholder-text-color
+	 * @selector lyte-number input::placeholder
+	 * @description Text color for placeholder in number input field
+	 * @defaultValue #a6a6a6
+	 * @inputType color
+	 * @name Placeholder Text Color
+	 */
+	--lyte-number-placeholder-text-color: #a6a6a6;
+
+	/**
+	 * @variable --lyte-number-font-size
+	 * @selector lyte-number input, lyte-number .lyteLabel
+	 * @description Font size for both label and number input text
+	 * @defaultValue var(--lyte-font-size-medium)
+	 * @defaultVariableValue 15px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Font Size
+	 */
+	--lyte-number-font-size: var(--lyte-font-size-medium);
+
+	/**
+	 * @variable --lyte-number-error-msg-font-size
+	 * @selector .lyteNumberErrorMessage
+	 * @description Font size for the error message shown under the number input field
+	 * @defaultValue var(--lyte-font-size-small)
+	 * @defaultVariableValue 13px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Error Message Font Size
+	 */
+	--lyte-number-error-msg-font-size: var(--lyte-font-size-small);
+}

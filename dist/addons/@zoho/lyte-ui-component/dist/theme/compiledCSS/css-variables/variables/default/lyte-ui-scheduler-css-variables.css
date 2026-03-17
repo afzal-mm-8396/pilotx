@@ -1,0 +1,391 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component lyte-scheduler
+ */
+:root,
+:host {
+  /**
+   * @variable --lyte-scheduler-event-border-color
+   * @selector lyte-scheduler-event-tag
+   * @description Border color for scheduler event tag
+   * @defaultValue #DEEEF9
+   * @inputType color
+   * @name Event Border Color
+   */
+  --lyte-scheduler-event-border-color: #DEEEF9;
+  /**
+   * @variable --lyte-scheduler-event-selected-border-color
+   * @selector lyte-scheduler-event-tag.selected
+   * @description Border color for selected event
+   * @defaultValue #A5D2EF
+   * @inputType color
+   * @name Selected Event Border Color
+   */
+  --lyte-scheduler-event-selected-border-color: #A5D2EF;
+  /**
+   * @variable --lyte-scheduler-event-selected-bg
+   * @selector lyte-scheduler-event-tag.selected
+   * @description Background color for selected event
+   * @defaultValue #F1F8FC
+   * @inputType color
+   * @name Selected Event Background Color
+   */
+  --lyte-scheduler-event-selected-bg: #F1F8FC;
+  /**
+   * @variable --lyte-scheduler-event-selected-box-shadow-color
+   * @selector lyte-scheduler-event-tag.selected
+   * @description Box shadow color for selected event
+   * @defaultValue #00000014
+   * @inputType color
+   * @name Selected Event Box Shadow Color
+   */
+  --lyte-scheduler-event-selected-box-shadow-color: #00000014;
+  /**
+   * @variable --lyte-scheduler-more-events-close-icon-color
+   * @selector lyte-scheduler-more-events-popup .lyteClose
+   * @description Close icon color for 'more events' popup
+   * @defaultValue #000
+   * @inputType color
+   * @name More Events Close Icon Color
+   */
+  --lyte-scheduler-more-events-close-icon-color: #000;
+  /**
+   * @variable --lyte-scheduler-cal-icon-wrapper-border-color
+   * @selector lyte-scheduler-icon-wrapper
+   * @description Border color of calendar icon wrapper
+   * @defaultValue #C0C6CC
+   * @inputType color
+   * @name Calendar Icon Wrapper Border Color
+   */
+  --lyte-scheduler-cal-icon-wrapper-border-color: #C0C6CC;
+  /**
+   * @variable --lyte-scheduler-cal-icon-wrapper-hover-bg
+   * @selector lyte-scheduler-icon-wrapper:hover
+   * @description Background on calendar icon wrapper hover
+   * @defaultValue #F3F8FC
+   * @inputType color
+   * @name Calendar Icon Wrapper Hover Background Color
+   */
+  --lyte-scheduler-cal-icon-wrapper-hover-bg: #F3F8FC;
+  /**
+   * @variable --lyte-scheduler-cal-icon-color
+   * @selector lyte-scheduler-icon
+   * @description Color of calendar icon
+   * @defaultValue #292C2E
+   * @inputType color
+   * @name Calendar Icon Color
+   */
+  --lyte-scheduler-cal-icon-color: #292C2E;
+  /**
+   * @variable --lyte-scheduler-cal-opened-bg
+   * @selector lyte-scheduler-calendar.opened
+   * @description Background of opened calendar popup
+   * @defaultValue #dcedf9
+   * @inputType color
+   * @name Calendar Opened Background Color
+   */
+  --lyte-scheduler-cal-opened-bg: #dcedf9;
+  /**
+   * @variable --lyte-scheduler-cal-opened-box-shadow-color
+   * @selector lyte-scheduler-calendar.opened
+   * @description Box shadow color of opened calendar popup
+   * @defaultValue #0984e31f
+   * @inputType color
+   * @name Calendar Opened Box Shadow Color
+   */
+  --lyte-scheduler-cal-opened-box-shadow-color: #0984e31f;
+  /**
+   * @variable --lyte-scheduler-title-separator-text-color
+   * @selector lyte-scheduler-title-separator
+   * @description Text color of title separator
+   * @defaultValue #676869
+   * @inputType color
+   * @name Calendar Title Separator Text Color
+   */
+  --lyte-scheduler-title-separator-text-color: #676869;
+  /**
+   * @variable --lyte-scheduler-view-table-header-bg
+   * @selector lyte-scheduler-view-table thead
+   * @description Background color of scheduler table header
+   * @defaultValue #f3f8fc
+   * @inputType color
+   * @name Scheduler Table Header Background Color
+   */
+  --lyte-scheduler-view-table-header-bg: #f3f8fc;
+  /**
+   * @variable --lyte-scheduler-multi-user-view-month-view-td-border-color
+   * @selector lyte-scheduler-month-view td
+   * @description Border color of month view cells in multi-user view
+   * @defaultValue #EAF0F5
+   * @inputType color
+   * @name Multi-User View Month View Cell Border Color
+   */
+  --lyte-scheduler-multi-user-view-month-view-td-border-color: #EAF0F5;
+  /**
+   * @variable --lyte-scheduler-month-year-label-text-color
+   * @selector lyte-scheduler-month-year-label
+   * @description Text color of month-year label
+   * @defaultValue #676869
+   * @inputType color
+   * @name Month Year Label Text Color
+   */
+  --lyte-scheduler-month-year-label-text-color: #676869;
+  /**
+   * @variable --lyte-scheduler-current-month-date-hover-bg
+   * @selector lyte-scheduler-date-cell.current:hover
+   * @description Background on hover for current month dates
+   * @defaultValue #fafbfc
+   * @inputType color
+   * @name Current Month Date Hover Background Color
+   */
+  --lyte-scheduler-current-month-date-hover-bg: #fafbfc;
+  /**
+   * @variable --lyte-scheduler-day-view-row-label-text-color
+   * @selector lyte-scheduler-day-row-label
+   * @description Text color for day view row labels
+   * @defaultValue #878889
+   * @inputType color
+   * @name Day View Row Label Text Color
+   */
+  --lyte-scheduler-day-view-row-label-text-color: #878889;
+  /**
+   * @variable --lyte-scheduler-day-view-business-hour-row-label-text-color
+   * @selector lyte-scheduler-business-hour-label
+   * @description Text color for business hour labels
+   * @defaultValue #292C2E
+   * @inputType color
+   * @name Business Hour Row Label Text Color
+   */
+  --lyte-scheduler-day-view-business-hour-row-label-text-color: #292C2E;
+  /**
+   * @variable --lyte-scheduler-day-view-hour-elem-hover-border-color
+   * @selector lyte-scheduler-hour-cell:hover
+   * @description Border color on hover for hour cells
+   * @defaultValue #d2d4d6
+   * @inputType color
+   * @name Hour Element Hover Border Color
+   */
+  --lyte-scheduler-day-view-hour-elem-hover-border-color: #d2d4d6;
+  /**
+   * @variable --lyte-scheduler-day-view-hour-elem-hover-bg
+   * @selector lyte-scheduler-hour-cell:hover
+   * @description Background on hover for hour cells
+   * @defaultValue #fafbfc
+   * @inputType color
+   * @name Hour Element Hover Background Color
+   */
+  --lyte-scheduler-day-view-hour-elem-hover-bg: #fafbfc;
+  /**
+   * @variable --lyte-scheduler-day-number-text-color
+   * @selector lyte-scheduler-day-number
+   * @description Text color for day numbers
+   * @defaultValue #878889
+   * @inputType color
+   * @name Day Number Text Color
+   */
+  --lyte-scheduler-day-number-text-color: #878889;
+  /**
+   * @variable --lyte-scheduler-current-month-day-number-text-color
+   * @selector lyte-scheduler-day-number.current
+   * @description Text color for current month's day number
+   * @defaultValue #5b5d5f
+   * @inputType color
+   * @name Current Month Day Number Text Color
+   */
+  --lyte-scheduler-current-month-day-number-text-color: #5b5d5f;
+  /**
+   * @variable --lyte-scheduler-month-view-td-hover-day-number-bg
+   * @selector lyte-scheduler-month-view td:hover .day-number
+   * @description Background for day number on hover in month view
+   * @defaultValue #ebedf0
+   * @inputType color
+   * @name Month View Day Number Hover Background Color
+   */
+  --lyte-scheduler-month-view-td-hover-day-number-bg: #ebedf0;
+  /**
+   * @variable --lyte-scheduler-week-th-month-label-text-color
+   * @selector lyte-scheduler-week th
+   * @description Text color of week label in header
+   * @defaultValue #676869
+   * @inputType color
+   * @name Week Header Month Label Text Color
+   */
+  --lyte-scheduler-week-th-month-label-text-color: #676869;
+  /**
+   * @variable --lyte-scheduler-month-view-curr-date-bg
+   * @selector lyte-scheduler-month-view .today
+   * @description Background color for current date in month view
+   * @defaultValue #f9ffff
+   * @inputType color
+   * @name Month View Current Date Background Color
+   */
+  --lyte-scheduler-month-view-curr-date-bg: #f9ffff;
+  /**
+   * @variable --lyte-scheduler-month-view-curr-date-hover-bg
+   * @selector lyte-scheduler-month-view .today:hover
+   * @description Hover background for current date in month view
+   * @defaultValue #eef6fc
+   * @inputType color
+   * @name Month View Current Date Hover Background Color
+   */
+  --lyte-scheduler-month-view-curr-date-hover-bg: #eef6fc;
+  /**
+   * @variable --lyte-scheduler-freeze-layer-bg
+   * @selector lyte-scheduler-freeze-layer
+   * @description Background of the freeze layer
+   * @defaultValue #000
+   * @inputType color
+   * @name Freeze Layer Background Color
+   */
+  --lyte-scheduler-freeze-layer-bg: #000;
+  /**
+   * @variable --lyte-scheduler-day-view-wrapper-multi-user-row-th-and-td-border-color
+   * @selector lyte-scheduler-multi-user-view th, td
+   * @description Border color for multi-user view row headers and cells
+   * @defaultValue #E7E8E9
+   * @inputType color
+   * @name Multi-User Row Header and Cell Border Color
+   */
+  --lyte-scheduler-day-view-wrapper-multi-user-row-th-and-td-border-color: #E7E8E9;
+  /**
+   * @variable --lyte-scheduler-day-view-multi-user-row-th-bg
+   * @selector lyte-scheduler-multi-user-view th
+   * @description Background color for multi-user row headers
+   * @defaultValue #fff
+   * @inputType color
+   * @name Multi-User Row Header Background Color
+   */
+  --lyte-scheduler-day-view-multi-user-row-th-bg: #fff;
+  /**
+   * @variable --lyte-scheduler-day-view-multi-user-row-th-td-border-color
+   * @selector lyte-scheduler-multi-user-view th, td
+   * @description Border color for multi-user view headers and cells
+   * @defaultValue #E7E8E9
+   * @inputType color
+   * @name Multi-User Row Header and Cell Border Color
+   */
+  --lyte-scheduler-day-view-multi-user-row-th-td-border-color: #E7E8E9;
+  /**
+   * @variable --lyte-scheduler-view-th-non-businessday-text-color
+   * @selector lyte-scheduler-th.non-businessday
+   * @description Text color for non-business day header
+   * @defaultValue #f25c78
+   * @inputType color
+   * @name Non-Business Day Header Text Color
+   */
+  --lyte-scheduler-view-th-non-businessday-text-color: #f25c78;
+  /**
+   * @variable --lyte-scheduler-view-th-non-businessday-bg
+   * @selector lyte-scheduler-th.non-businessday
+   * @description Background color for non-business day header
+   * @defaultValue #fcf5f6
+   * @inputType color
+   * @name Non-Business Day Header Background Color
+   */
+  --lyte-scheduler-view-th-non-businessday-bg: #fcf5f6;
+  /**
+   * @variable --lyte-scheduler-non-businessday-label-text-color
+   * @selector lyte-scheduler-non-businessday-label
+   * @description Text color for non-business day labels
+   * @defaultValue #f25c78
+   * @inputType color
+   * @name Non-Business Day Label Text Color
+   */
+  --lyte-scheduler-non-businessday-label-text-color: #f25c78;
+  /**
+   * @variable --lyte-scheduler-view-grouper-item-btn-group-wrap-border-color
+   * @selector lyte-scheduler-grouper .btn-group-wrap
+   * @description Border color for button group wrap in view grouper
+   * @defaultValue #e3e3e3
+   * @inputType color
+   * @name View Grouper Button Group Wrap Border Color
+   */
+  --lyte-scheduler-view-grouper-item-btn-group-wrap-border-color: #e3e3e3;
+  /**
+   * @variable --lyte-scheduler-view-grouper-item-btn-group-wrap-bg
+   * @selector lyte-scheduler-grouper .btn-group-wrap
+   * @description Background color for button group wrap in view grouper
+   * @defaultValue #F3F8FC
+   * @inputType color
+   * @name View Grouper Button Group Wrap Background Color
+   */
+  --lyte-scheduler-view-grouper-item-btn-group-wrap-bg: #F3F8FC;
+  /**
+   * @variable --lyte-scheduler-view-button-group-btn-hover-bg
+   * @selector lyte-scheduler-view-button:hover
+   * @description Background color on hover for view switch buttons
+   * @defaultValue #dcedf9
+   * @inputType color
+   * @name View Button Group Hover Background Color
+   */
+  --lyte-scheduler-view-button-group-btn-hover-bg: #dcedf9;
+  /**
+   * @variable --lyte-scheduler-view-button-group-separator-bg
+   * @selector lyte-scheduler-view-button-separator
+   * @description Background color of button group separator
+   * @defaultValue #e3e3e3
+   * @inputType color
+   * @name View Button Group Separator Background Color
+   */
+  --lyte-scheduler-view-button-group-separator-bg: #e3e3e3;
+  /**
+   * @variable --lyte-scheduler-nav-hover-bg
+   * @selector lyte-scheduler-nav:hover
+   * @description Background color on hover for navigation buttons
+   * @defaultValue #edf1f4
+   * @inputType color
+   * @name Scheduler Navigation Hover Background Color
+   */
+  --lyte-scheduler-nav-hover-bg: #edf1f4;
+  /**
+   * @variable --lyte-scheduler-week-number-border-color
+   * @selector lyte-scheduler-week-number
+   * @description Border color of week number label
+   * @defaultValue #FAE472
+   * @inputType color
+   * @name Week Number Border Color
+   */
+  --lyte-scheduler-week-number-border-color: #FAE472;
+  /**
+   * @variable --lyte-scheduler-week-number-bg
+   * @selector lyte-scheduler-week-number
+   * @description Background color of week number label
+   * @defaultValue #FFF1A9
+   * @inputType color
+   * @name Week Number Background Color
+   */
+  --lyte-scheduler-week-number-bg: #FFF1A9;
+  /**
+   * @variable --lyte-scheduler-event-tag-hover-grab-resize-handle-bg
+   * @selector lyte-scheduler-event-tag .resize-handle:hover
+   * @description Background for resize handle on hover
+   * @defaultValue #000
+   * @inputType color
+   * @name Event Tag Resize Handle Hover Background Color
+   */
+  --lyte-scheduler-event-tag-hover-grab-resize-handle-bg: #000;
+  /**
+   * @variable --lyte-scheduler-title-date-text-color
+   * @selector lyte-scheduler-title .date
+   * @description Text color for date in the title
+   * @defaultValue #152229
+   * @inputType color
+   * @name Title Date Text Color
+   */
+  --lyte-scheduler-title-date-text-color: #152229;
+  /**
+   * @variable --lyte-scheduler-title-day-text-color
+   * @selector lyte-scheduler-title .day
+   * @description Text color for day in the title
+   * @defaultValue #5B5D5F
+   * @inputType color
+   * @name Title Day Text Color
+   */
+  --lyte-scheduler-title-day-text-color: #5B5D5F;
+}

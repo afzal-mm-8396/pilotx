@@ -1,0 +1,130 @@
+@use "../global/global.variables.scss" as global;
+
+$lyteMIWrapperMap: (
+	"width": 400px,
+	"background": global.$lyteMIBg,
+	"border-radius": 2px
+) !default;
+
+$lyteMIWrapperTextareaMap: (
+	"font-family": global.$primaryFont,
+	"font-size": 15px,
+	"line-height": 22px,
+	"height": 40px,
+	"min-height": 40px,
+	"padding": 8px,
+	"color": global.$lyteMITextColor,
+	"background": transparent
+) !default;
+
+$lyteMIWrapperTextareaPlaceholderMap: (
+	"color": global.$lyteMIPlaceholderColor
+) !default;
+
+$lyteMIDropdownMap: (
+	"font-family": global.$primaryFont,
+	"background": global.$lyteMIBg,
+	"border": 1px solid global.$lyteMIBorderColor,
+	"z-index": global.$lyteMIzIndex,
+	"margin-top": -2px,
+	"border-radius": 0 0 2px 2px,
+	"box-shadow": 0 2px 5px rgba(0, 0, 0, 0.1),
+	"color": global.$lyteMITextColor
+) !default;
+
+$lyteMIDropdownUlMap: (
+	"padding": 5px 0,
+	"max-height": 300px
+) !default;
+
+$lyteMIDropdownItemMap: (
+	"background": global.$lyteMIBg,
+	"font-family": global.$primaryFont,
+	"font-size": 14px,
+	"padding": 5px 10px
+) !default;
+
+$lyteMIDropdownItemImgMap: (
+	"width": 25px,
+	"height": 25px,
+	"border-radius": 50%,
+	"margin-right": 10px
+) !default;
+
+$lyteMIDropdownItemHoverMap: (
+	"background": global.$lyteMIActiveElemBg
+) !default;
+
+$lyteMIDropdownItemActiveMap: (
+	"background": global.$lyteMIActiveElemBg
+) !default;
+
+$lyteMIDropdownItemBMap: (
+	"background": global.$lyteMIHighlightElemBg
+) !default;
+
+$lyteMIMentionsMap: (
+	"padding": 8px,
+	"color": global.$lyteMIBg,
+	"line-height": 22px
+) !default;
+
+$lyteMIWithCloseIconMentionsMap: (
+	"z-index": 1
+) !default;
+
+$lyteMIInputMentionsMap: (
+	"padding-left": 0
+) !default;
+
+$lyteMIMentionsNormalTextareaMap: (
+	"top": 1px,
+	"left": 1px,
+	"bottom": 1px,
+	"right": 1px
+) !default;
+
+$lyteMIMentionsNormalTextareaTextareaMap: (
+	"border": 1px solid global.$lyteMIBorderColor,
+	"border-radius": 2px
+) !default;
+
+$lyteMIMentionsNormalTextareaTextareaHoverMap: (
+	"border": 1px solid global.$lyteMIHoverBorderColor
+) !default;
+
+$lyteMIMentionsNormalTextareaTextareaFocusMap: (
+	"border": 1px solid global.$lyteMIFocusBorderColor
+) !default;
+
+$lyteMIMentionsInnerDivMap: (
+	"color": transparent
+) !default;
+
+$lyteMIMentionsStrongDivMap: (
+	"background": global.$lyteMISelectedValBg,
+	"padding": 2px 0,
+	"line-height": 16px,
+	"color": global.$lyteMITextColor
+) !default;
+
+$lyteMIMentionsCustomWrapperMap: (
+	"top": -100px,
+	"left": -100px
+) !default;
+
+$lyteMIWrapperCloseIconMap: (
+	"height": 10px,
+	"width": 10px,
+	"background-color": #0984E3,
+	"z-index": 1,
+	"border-radius": 50%,
+	"transform": translate(40%, -40%)
+) !default;
+
+$lyteMIWrapperCloseIconAfterMap: (
+	"mask": $lytesprite no-repeat -3px -15px,
+	"background-color": #fff,
+	"width": 6px,
+	"height": 6px
+) !default;

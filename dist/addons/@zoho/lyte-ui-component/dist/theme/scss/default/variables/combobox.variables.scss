@@ -1,0 +1,41 @@
+@use "../global/global.variables.scss" as global;
+
+$lyteComboboxDropdownMap: (
+	"max-width": unset,
+) !default;
+
+$lyteComboboxButtonSearchDropdownPlaceholderMap: (
+	"z-index": 5,
+	"padding-left": 20px
+) !default;
+
+$lyteComboboxButtonSearchDropdownOpenedLabelMap: (
+	"opacity": 0.5
+) !default;
+
+$lyteComboboxBtnSearchInputOrigIptMap: (
+	"padding": 0,
+	"padding-left": 20px
+) !default;
+
+$lyteComboboxBtnSearchInputSearchIconMap: (
+	"left": 0
+) !default;
+
+$lyteComboboxDropboxSearchCommonMap: (
+	"width": 100%
+) !default;
+
+$lyteComboboxDropboxSearchMap: (
+	"padding": 15px
+) !default;
+
+$lyteComboboxFieldLabelMap: (
+	"margin-bottom": 10px,
+	"color": global.$lyteComboboxFieldLabelTextColor
+) !default;
+
+$lyteComboboxHorizontalLabelMap: (
+	"margin-bottom": 0,
+	"margin-right": 10px
+) !default;

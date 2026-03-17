@@ -1,0 +1,218 @@
+/**
+* @component lyte-colorbox
+*/
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+
+    /**
+     * @variable --lyte-colorbox-freeze-bg
+     * @selector .lyteColorboxFreezeLayer
+     * @description Background color of the ColorBox freeze overlay
+     * @defaultValue #000
+     * @inputType color
+     * @name Overlay Background Color
+     */
+    --lyte-colorbox-freeze-bg: #000;
+
+    /**
+     * @variable --lyte-colorbox-wrapper-bg
+     * @selector .lyteColorboxWrapper
+     * @description Background color of the ColorBox wrapper element
+     * @defaultValue #fff
+     * @inputType color
+     * @name Wrapper Background Color
+     */
+	--lyte-colorbox-wrapper-bg: #fff;
+
+    /**
+     * @variable --lyte-colorbox-text-color
+     * @selector .lyteColorboxTitle
+     * @description Text color for ColorBox
+     * @defaultValue #111
+     * @inputType color
+     * @name Text Color
+     */
+	--lyte-colorbox-text-color: #111;
+
+    /**
+     * @variable --lyte-colorbox-zindex
+     * @selector .lyteColorbox
+     * @description Z-index value for ColorBox element
+     * @defaultValue 1040
+     * @inputType number
+     * @name z-index
+     */
+	--lyte-colorbox-zindex: @Level3zIndex;
+
+    /**
+     * @variable --lyte-colorbox-customtype-header-border-color
+     * @selector .lyteColorboxHeader
+     * @description Border color for header element of colorbox custom type
+     * @defaultValue #ebebeb
+     * @inputType color
+     * @name Header Border Color in Custom Type
+     */
+	--lyte-colorbox-customtype-header-border-color: #ebebeb;
+
+    /**
+     * @variable --lyte-colorbox-customtype-thumb-hover-border-color
+     * @selector .lyteColorboxThumb:hover
+     * @description Border color for thumbnail on hover of colorbox custom type
+     * @defaultValue #ccc
+     * @inputType color
+     * @name Thumbnail Hover Border Color in custom type
+     */
+	--lyte-colorbox-customtype-thumb-hover-border-color: #ccc;
+
+    /**
+     * @variable --lyte-colorbox-thumb-active-border-color
+     * @selector .lyteColorboxThumb.thumb-on
+     * @description Border color for active thumbnail
+     * @defaultValue #fff
+     * @inputType color
+     * @name Thumbnail Active Border Color
+     */
+	--lyte-colorbox-thumb-active-border-color: #fff;
+
+    /**
+     * @variable --lyte-colorbox-thumb-index-text-color
+     * @selector .lyteColorboxThumb.thumb-on::after
+     * @description Text color for thumbnail index
+     * @defaultValue #fff
+     * @inputType color
+     * @name Thumbnail Index Text Color
+     */
+	--lyte-colorbox-thumb-index-text-color: #fff;
+
+    /**
+     * @variable --lyte-colorbox-thumb-iframe-label-text-color
+     * @selector .lyteCBoxIframeLabel
+     * @description Text color for thumbnail iframe label
+     * @defaultValue #fff
+     * @inputType color
+     * @name Thumbnail Iframe Label Text Color
+     */
+	--lyte-colorbox-thumb-iframe-label-text-color: #fff;
+
+    /**
+     * @variable --lyte-colorbox-nav-border-color
+     * @selector lyte-colorbox-next, lyte-colorbox-previous, .lyteColorboxIconDiv
+     * @description Border color for navigation elements of colorbox
+     * @defaultValue #555
+     * @inputType color
+     * @name Navigation Border Color
+     */
+	--lyte-colorbox-nav-border-color: #555;
+
+    /**
+     * @variable --lyte-colorbox-nav-bg
+     * @selector lyte-colorbox-next, lyte-colorbox-previous, .lyteColorboxIconDiv
+     * @description Background color for navigation elements of colorbox
+     * @defaultValue #222
+     * @inputType color
+     * @name Navigation Background Color
+     */
+	--lyte-colorbox-nav-bg: #222;
+
+    /**
+     * @variable --lyte-colorbox-nav-hover-bg
+     * @selector lyte-colorbox-next:hover, lyte-colorbox-previous:hover, .lyteColorboxIconDiv:hover
+     * @description Background color for navigation elements on hover
+     * @defaultValue #000
+     * @inputType color
+     * @name Navigation Hover Background Color
+     */
+	--lyte-colorbox-nav-hover-bg: #000;
+
+    /**
+     * @variable --lyte-colorbox-utilbox-bg
+     * @selector .lyteColorboxUtilDiv
+     * @description Background color for utility box
+     * @defaultValue #000
+     * @inputType color
+     * @name Utility Box Background Color
+     */
+	--lyte-colorbox-utilbox-bg: #000;
+
+    /**
+     * @variable --lyte-colorbox-imagetype-header-bg
+     * @selector lyte-colorbox-header
+     * @description Background color for header element of colorbox image type
+     * @defaultValue #222
+     * @inputType color
+     * @name Header Background Color in image type
+     */
+	--lyte-colorbox-imagetype-header-bg: #222;
+
+    /**
+     * @variable --lyte-colorbox-imagetype-header-text-color
+     * @selector lyte-colorbox-title
+     * @description Text color for header element of colorbox image type
+     * @defaultValue #fff
+     * @inputType color
+     * @name Header Text Color in image type
+     */
+	--lyte-colorbox-imagetype-header-text-color: #fff;
+
+    /**
+     * @variable --lyte-colorbox-font-size
+     * @selector .lyteColorbox
+     * @description Font size for ColorBox element
+     * @defaultValue var(--lyte-font-size-regular)
+     * @defaultVariableValue 14px
+     * @inputType dimension
+     * @name Font Size
+     */
+	--lyte-colorbox-font-size: var(--lyte-font-size-regular);
+
+    /**
+     * @variable --lyte-colorbox-iframe-label-font-size
+     * @selector .lyteCBoxIframeLabel
+     * @description Font size for iframe label
+     * @defaultValue var(--lyte-font-size-small)
+     * @defaultVariableValue 13px
+     * @inputType dimension
+     * @name Iframe Label Font Size
+     */
+	--lyte-colorbox-iframe-label-font-size: var(--lyte-font-size-small);
+
+    /**
+     * @variable --lyte-colorbox-container-font-size
+     * @selector lyte-colorbox-container
+     * @description Font size for container element of colorbox in image type
+     * @defaultValue var(--lyte-font-size-regular)
+     * @defaultVariableValue 14px
+     * @inputType dimension
+     * @name Container Font Size
+     */
+	--lyte-colorbox-container-font-size: var(--lyte-font-size-regular);
+}
+
+.lyteColorbox {
+    /**
+     * @variable --lyte-colorbox-title-font-size
+     * @selector .lyteColorbox
+     * @description Font size for ColorBox title
+     * @defaultValue var(--lyte-font-size-medium)
+     * @defaultVariableValue 15px
+     * @inputType dimension
+     * @name Title Font Size
+     */
+	--lyte-colorbox-title-font-size: var(--lyte-font-size-medium);
+}
+
+.lyte-colorbox-container {
+    /**
+     * @variable --lyte-colorbox-title-font-size
+     * @selector .lyte-colorbox-container
+     * @description Font size for ColorBox container title
+     * @defaultValue var(--lyte-font-size-large)
+     * @defaultVariableValue 16px
+     * @inputType dimension
+     * @name Container Title Font Size
+     */
+	--lyte-colorbox-title-font-size: var(--lyte-font-size-large);
+}

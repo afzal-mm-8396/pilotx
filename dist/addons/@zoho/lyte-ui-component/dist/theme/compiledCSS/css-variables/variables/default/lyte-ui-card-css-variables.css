@@ -1,0 +1,82 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-card
+*/
+:root,
+:host {
+  /**
+	* @variable --lyte-card-bg
+	* @selector lyte-card-box
+	* @description Background color of the card container
+	* @defaultValue var(--lyte-theme-body-bg)
+	* @defaultVariableValue #fff
+	* @inputType color
+	* @name Background Color
+	*/
+  --lyte-card-bg: var(--lyte-theme-body-bg);
+  /**
+	* @variable --lyte-card-box-shadow-color
+	* @selector lyte-card-box
+	* @description Box shadow color for card container
+	* @defaultValue rgba(0, 0, 0, 0.1)
+	* @inputType color
+	* @name Box Shadow Color
+	*/
+  --lyte-card-box-shadow-color: rgba(0, 0, 0, 0.1);
+  /**
+	* @variable --lyte-card-img-bg
+	* @selector lyte-card-image
+	* @description Background color for the image section of the card
+	* @defaultValue #eee
+	* @inputType color
+	* @name Image Background Color
+	*/
+  --lyte-card-img-bg: #eee;
+  /**
+	* @variable --lyte-card-text-color
+	* @selector lyte-card-box
+	* @description Text color used throughout the card
+	* @defaultValue var(--lyte-common-text-color)
+	* @defaultVariableValue #333
+	* @inputType color
+	* @name Text Color
+	*/
+  --lyte-card-text-color: var(--lyte-common-text-color);
+  /**
+	* @variable --lyte-card-render-placeholder-bg
+	* @selector .lyteCardRenderPlaceholder
+	* @description Background color for placeholder shown during card loading
+	* @defaultValue #eee
+	* @inputType color
+	* @name Render Placeholder Background Color
+	*/
+  --lyte-card-render-placeholder-bg: #eee;
+  /**
+	* @variable --lyte-card-header-font-size
+	* @selector lyte-card-header
+	* @description Font size for the card header
+	* @defaultValue var(--lyte-font-size-xl)
+	* @defaultVariableValue 18px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Header Font Size
+	*/
+  --lyte-card-header-font-size: var(--lyte-font-size-xl);
+  /**
+	* @variable --lyte-card-body-font-size
+	* @selector lyte-card-body
+	* @description Font size for the card body text
+	* @defaultValue var(--lyte-font-size-regular)
+	* @defaultVariableValue 14px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Body Font Size
+	*/
+  --lyte-card-body-font-size: var(--lyte-font-size-regular);
+}

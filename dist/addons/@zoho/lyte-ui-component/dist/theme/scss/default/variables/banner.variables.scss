@@ -1,0 +1,46 @@
+@use "../global/global.variables.scss" as global;
+
+$cssMaskIconLyteBannerCloseIconColor: #fff;
+
+$lyteBannerModalContentMap: (
+    "background": #2f363d,
+    "padding": 10px 20px,
+    "color": #fff,
+) !default;
+$lyteBannerModalMap: (
+    "border": 0,
+) !default;
+$lyteBannerModalFromBottomMap: (
+    "box-shadow": 0 -3px 5px 0px rgba(0,0,0,0.1),
+) !default;
+$lyteBannerModalFromTopMap: (
+    "box-shadow": 0 3px 5px 0px rgba(0,0,0,0.1),
+) !default;
+$lyteBannerModalCloseMap: (
+    "background-position": -324px -109px,
+	"mask-pos": -324px -109px,
+	"background-color": $cssMaskIconLyteBannerCloseIconColor,
+    "width": 13px,
+    "height": 13px,
+    "top": 15px,
+    "opacity": 0.8,
+) !default;
+$lyteBannerNonFloatingMap: (
+    "background": #2f363d,
+    "padding": 10px 20px,
+    "color": #fff,
+    "font-size": 15px,
+) !default;
+$lyteBannerNonFloatingCloseMap: (
+    "top": 15px,
+) !default;
+$lyteBannerFloatingMap: (
+    "background": #2f363d,
+    "font-family": global.$primaryFont,
+    "padding": 10px 20px,
+    "color": #fff,
+    "font-size": 15px,
+) !default;
+$lyteBannerInlineFloatingMap: (
+    "width": 100%,
+) !default;

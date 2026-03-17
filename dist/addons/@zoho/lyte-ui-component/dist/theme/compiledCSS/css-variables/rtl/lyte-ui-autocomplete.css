@@ -1,0 +1,265 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-autocomplete
+*/
+:root,
+:host {
+  /**
+   * @variable --lyte-autocomplete-highlight-color
+   * @selector .lyteautocompleteHighlight
+   * @description Text color of the highlighted autocomplete match
+   * @defaultValue #000
+   * @inputType color
+   * @name Highlight Color
+   */
+  --lyte-autocomplete-highlight-color: #000;
+  /**
+   * @variable --lyte-autocomplete-highlight-bg
+   * @selector .lyteautocompleteHighlight
+   * @description Background color of the highlighted autocomplete match
+   * @defaultValue #fff5b0
+   * @inputType color
+   * @name Highlight Background Color
+   */
+  --lyte-autocomplete-highlight-bg: #fff5b0;
+  /**
+   * @variable --lyte-autocomplete-text-color
+   * @selector .lyteAutoComplete
+   * @description Text color of autocomplete dropdown items
+   * @defaultValue #6b6b6b
+   * @inputType color
+   * @name Text Color
+   */
+  --lyte-autocomplete-text-color: #6b6b6b;
+  /**
+   * @variable --lyte-autocomplete-box-shadow-color
+   * @selector .lyteautocompleteDropdown
+   * @description Box shadow of the autocomplete dropdown
+   * @defaultValue rgba(0, 0, 0, 0.15)
+   * @inputType color
+   * @name Box Shadow Color
+   */
+  --lyte-autocomplete-box-shadow-color: rgba(0, 0, 0, 0.15);
+  /**
+   * @variable --lyte-autocomplete-focus-border-color
+   * @selector lyte-autocomplete .lyteField:focus
+   * @description Border color when autocomplete input is focused
+   * @defaultValue var(--lyte-input-focus-border-color)
+   * @defaultVariableValue #7fceef
+   * @inputType color
+   * @name Focus Border Color
+   */
+  --lyte-autocomplete-focus-border-color: var(--lyte-input-focus-border-color);
+  /**
+   * @variable --lyte-autocomplete-icon-separator-color
+   * @selector .iconSeparator
+   * @description Color of the vertical separator between icons
+   * @defaultValue #ddd
+   * @inputType color
+   * @name Icon Separator Color
+   */
+  --lyte-autocomplete-icon-separator-color: #ddd;
+  /**
+   * @variable --lyte-autocomplete-errormsg-color
+   * @selector .lyteautocompleteError
+   * @description Text color of the error message shown in autocomplete
+   * @defaultValue #8a8a8a
+   * @inputType color
+   * @name Error Message Color
+   */
+  --lyte-autocomplete-errormsg-color: #8a8a8a;
+  /**
+   * @variable --lyte-autocomplete-dropbox-border-color
+   * @selector .lyteautocompleteDropdown
+   * @description Border color of the autocomplete dropdown box
+   * @defaultValue #dadada
+   * @inputType color
+   * @name Dropdown Border Color
+   */
+  --lyte-autocomplete-dropbox-border-color: #dadada;
+  /**
+   * @variable --lyte-autocomplete-input-font-size
+   * @selector lyte-autocomplete input
+   * @description Font size of autocomplete input field
+   * @defaultValue var(--lyte-font-size-medium)
+	 * @defaultVariableValue 15px
+	 * @allowedSuffixes px
+   * @inputType dimension
+   * @name Input Font Size
+   */
+  --lyte-autocomplete-input-font-size: var(--lyte-font-size-medium);
+  /**
+   * @variable --lyte-autocomplete-description-font-size
+   * @selector lyte-autocomplete-description
+   * @description Font size of autocomplete secondary description
+   * @defaultValue var(--lyte-font-size-small)
+	 * @defaultVariableValue 13px
+	 * @allowedSuffixes px
+   * @inputType dimension
+   * @name Description Font Size
+   */
+  --lyte-autocomplete-description-font-size: var(--lyte-font-size-small);
+  /**
+   * @variable --lyte-autocomplete-error-font-size
+   * @selector .lyteautocompleteError
+   * @description Font size of the autocomplete error message
+   * @defaultValue var(--lyte-font-size-regular)
+	 * @defaultVariableValue 14px
+	 * @allowedSuffixes px
+   * @inputType dimension
+   * @name Error Font Size
+   */
+  --lyte-autocomplete-error-font-size: var(--lyte-font-size-regular);
+}
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading custom themes */
+/* Make changes to override predefined styles */
+/* Autocomplete styles BEGINS */
+lyte-autocomplete {
+  position: relative;
+  display: inline-block;
+}
+lyte-autocomplete lyte-dropdown {
+  /*  Since this mixin is provided, This mixin can not be removed immediately */
+  display: block;
+}
+lyte-autocomplete lyte-dropdown lyte-drop-button {
+  border: 0;
+  padding: 0;
+}
+lyte-autocomplete lyte-input {
+  display: block;
+}
+lyte-autocomplete lyte-input.lyteInputBox .lyteInputBoxSearch input {
+  padding-right: 10px;
+}
+lyte-autocomplete lyte-input.lyteInputBox input {
+  padding-left: 25px;
+  font-size: var(--lyte-autocomplete-input-font-size);
+}
+lyte-autocomplete.searchPresent lyte-input.lyteInputBox input {
+  padding-left: 60px;
+}
+lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox .lyteField,
+lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox input {
+  border-radius: 2px 2px 0 0;
+}
+lyte-autocomplete .lyteDropButtonUp lyte-input.lyteInputBox .lyteField,
+lyte-autocomplete .lyteDropButtonUp lyte-input.lyteInputBox input {
+  border-radius: 0 0 2px 2px;
+}
+lyte-autocomplete lyte-dropdown lyte-drop-button.lyteDropButtonUp,
+lyte-autocomplete lyte-dropdown lyte-drop-button.lyteDropButtonDown,
+lyte-autocomplete lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button,
+lyte-autocomplete lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button:hover,
+lyte-autocomplete lyte-dropdown lyte-drop-button:hover,
+lyte-autocomplete lyte-dropdown lyte-drop-button.lyteDropButtonDown:hover,
+lyte-autocomplete lyte-dropdown lyte-drop-button.lyteDropButtonUp:hover {
+  border: 0;
+  box-shadow: none;
+}
+lyte-autocomplete lyte-dropdown .lyteDummyEventContainer:focus .lyteField,
+lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox .lyteField,
+lyte-autocomplete .lyteDropButtonUp lyte-input.lyteInputBox .lyteField {
+  border: 1px solid var(--lyte-autocomplete-focus-border-color);
+}
+.lyteAutoCompCloseIcon {
+  background-image: var(--lyte-sprite-image);
+  background-position: -54px -2px;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  vertical-align: top;
+}
+.lyteAutoCompCloseIconWrapper {
+  left: 5px;
+  top: calc(50% - 12px);
+  padding: 8px;
+  height: 8px;
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.5;
+}
+lyte-autocomplete.searchPresent .lyteAutoCompCloseIconWrapper {
+  left: 40px;
+}
+.lyteAutoCompCloseIconWrapper:hover {
+  opacity: 1;
+}
+lyte-autocomplete lyte-input[lt-prop-type="search"] .searchIcon {
+  right: auto;
+  left: 10px;
+  top: calc(50% - 7.5px);
+  z-index: 10;
+  cursor: default;
+  opacity: 0.7;
+}
+.iconSeparator {
+  height: 24px;
+  border-left: 1px solid var(--lyte-autocomplete-icon-separator-color);
+  left: 35px;
+  top: calc(50% - 12px);
+  display: inline-block;
+  position: absolute;
+  z-index: 10;
+}
+lyte-autocomplete-description {
+  opacity: 0.4;
+  font-size: var(--lyte-autocomplete-description-font-size);
+  align-self: center;
+  white-space: nowrap;
+}
+.lyteautocompleteError {
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: var(--lyte-autocomplete-error-font-size);
+  color: var(--lyte-autocomplete-errormsg-color);
+  padding: 5px 15px 15px;
+  overflow-wrap: break-word;
+}
+lyte-drop-item .lyteAutoComplete {
+  color: var(--lyte-autocomplete-text-color);
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+.lyteautocompleteDropdown {
+  border: 1px solid var(--lyte-autocomplete-dropbox-border-color);
+  border-top: 1px solid var(--lyte-autocomplete-dropbox-border-color);
+  box-shadow: 0px 3px 6px 0px var(--lyte-autocomplete-box-shadow-color);
+}
+.lyteautocompleteDropdown.lyteDropdownDown {
+  transform: translateY(5px);
+}
+.lyteautocompleteDropdown.lyteDropdownUp {
+  transform: translateY(-5px);
+}
+.lyteautocompleteDropdown lyte-drop-item {
+  padding-right: 10px;
+  display: flex;
+}
+.lyteautocompleteDropdown lyte-drop-item[selected='true']::before {
+  content: none;
+}
+.lyteautocompleteHighlight {
+  color: var(--lyte-autocomplete-highlight-color);
+  background: var(--lyte-autocomplete-highlight-bg);
+}
+.lyteautocompleteDropdown lyte-drop-item.lyteSearchHidden {
+  display: none;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* Make preferred css changes over here.
+ * This will be added to the end of the styles/autocomplete.less file
+ */
+/* Autocomplete styles ENDS */

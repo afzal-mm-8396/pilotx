@@ -1,0 +1,65 @@
+/**
+* @component lyte-breadcrumb
+*/
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+
+  /**
+   * @variable --lyte-breadcrumb-text-color
+   * @selector lyte-breadcrumb-body
+   * @description Text color of breadcrumb item in normal state
+   * @defaultValue #555
+   * @inputType color
+   * @name Text Color
+   */
+  --lyte-breadcrumb-text-color: #555;
+
+  /**
+   * @variable --lyte-breadcrumb-hover-text-color
+   * @selector lyte-breadcrumb-body:hover
+   * @description Text color of breadcrumb item on hover
+   * @defaultValue var(--lyte-common-text-hover-color)
+	 * @defaultVariableValue #111
+   * @inputType color
+   * @name Hover Text Color
+   */
+  --lyte-breadcrumb-hover-text-color: @commonTextHoverColor;
+
+  /**
+   * @variable --lyte-breadcrumb-active-text-color
+   * @selector .lyteActive lyte-breadcrumb-body
+   * @description Text color of the active breadcrumb item
+   * @defaultValue var(--lyte-theme-active-element-color)
+	 * @defaultVariableValue #2c7bd0
+	 * @inputType color
+   * @name Active Text Color 
+   */
+  --lyte-breadcrumb-active-text-color: @themeActiveElementColor;
+
+  /**
+   * @variable --lyte-breadcrumb-body-font-size
+   * @selector lyte-breadcrumb-body
+   * @description Font size used in breadcrumb body
+   * @defaultValue var(--lyte-font-size-medium)
+   * @defaultVariableValue 14px
+   * @allowedSuffixes px
+   * @inputType dimension
+   * @name Body Font Size
+   */
+  --lyte-breadcrumb-body-font-size: var(--lyte-font-size-medium);
+
+  /**
+   * @variable --lyte-breadcrumb-item-font-size
+   * @selector lyte-breadcrumb-item
+   * @description Font size used in individual breadcrumb items
+   * @defaultValue var(--lyte-font-size-medium)
+   * @defaultVariableValue 14px
+   * @allowedSuffixes px
+   * @inputType dimension
+   * @name Item Font Size
+   */
+  --lyte-breadcrumb-item-font-size: var(--lyte-font-size-medium);
+}

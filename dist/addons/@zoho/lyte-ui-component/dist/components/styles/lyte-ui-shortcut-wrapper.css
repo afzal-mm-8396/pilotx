@@ -1,0 +1,6 @@
+.lyteWrapperContent{
+     font-style: italic;
+}
+.lyteShortcutHcWrapper .lytePopover::before {
+     display: none;
+}

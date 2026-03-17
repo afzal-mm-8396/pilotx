@@ -1,0 +1,110 @@
+@use "sass:map";
+
+@use "../default/global/global.variables.scss" as *;
+
+@use "../default/global/rtl.scss" as *;
+
+@forward "../default/variables/tag.variables.scss";
+
+@use "../default/variables/tag.variables.scss" as *;
+
+lyte-tag {
+	position: relative;
+	display: block;
+}
+
+lyte-tag-label {
+	padding-bottom: map.get($lyteTagLabelMap, "padding-bottom");
+	@include addExtraStyles($lyteTagLabelMap);
+}
+
+lyte-tag lyte-dropdown {
+	width: map.get($lyteTagCompDropdownMap, "width");
+	display: inline-block;
+	@include addExtraStyles($lyteTagCompDropdownMap);
+}
+
+lyte-tag-description {
+	opacity: map.get($lyteTagDescriptionMap, "opacity");
+	font-size: map.get($lyteTagDescriptionMap, "font-size");
+	white-space: nowrap;
+	@include addExtraStyles($lyteTagDescriptionMap);
+}
+
+.lyteTagDropdown lyte-drop-item {
+	#{$property-padding-left}: map.get($lyteTagDropdownItemMap, "padding-left");
+	display: flex;
+	flex-direction: map.get($lyteTagDropdownItemMap, "flex-direction");
+	@include addExtraStyles($lyteTagDropdownItemMap);
+}
+
+.lyteTagDropdown lyte-drop-item.lyteDropdownActive {
+	display: none;
+}
+
+lyte-tag lyte-dropdown .lyteTagInputLi {
+	background: map.get($lyteTagInputLiMap, "background");
+	border: map.get($lyteTagInputLiMap, "border");
+	padding: map.get($lyteTagInputLiMap, "padding");
+	margin: map.get($lyteTagInputLiMap, "margin");
+	width: auto;
+	max-width: 100%;
+	@include addExtraStyles($lyteTagInputLiMap);
+}
+
+lyte-tag lyte-dropdown .lyteTagInputLi input {
+	max-width: 100%;
+}
+
+lyte-tag .lyteTagItem {
+	display: block;
+	max-width: 100%;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+lyte-tag .lyteTagRemoveIcon lyte-drop-button::after {
+	display: none;
+}
+
+.lyteTagDropdown .lyteTagHidden {
+	display: none;
+}
+
+.lyteTagDropdown .lyteTagGroupHidden {
+	display: none;
+}
+
+.lyteTagSingleSelect li {
+	background: map.get($lyteTagSingleSelectLiMap, "background");
+	border: map.get($lyteTagSingleSelectLiMap, "border");
+	width: map.get($lyteTagSingleSelectLiMap, "width");
+	padding: map.get($lyteTagSingleSelectLiMap, "padding");
+	margin: map.get($lyteTagSingleSelectLiMap, "margin");
+	padding-right: map.get($lyteTagSingleSelectLiMap, "padding-right");
+	@include addExtraStyles($lyteTagSingleSelectLiMap);
+}
+
+.lyteTagSingleSelect .lyteCloseIcon {
+	right: map.get($lyteTagSingleSelectCloseIconMap, "right");
+	border-radius: map.get($lyteTagSingleSelectCloseIconMap, "border-radius");
+	height: map.get($lyteTagSingleSelectCloseIconMap, "height");
+	@include addExtraStyles($lyteTagSingleSelectCloseIconMap);
+}
+
+.lyteTagSingleSelect li:hover .lyteCloseIcon {
+	background: transparent;
+}
+
+.lyteTagSingleSelect li .lyteCloseIcon:hover {
+	background-color: map.get($lyteTagSingleSelectCloseIconHoverMap, "background-color");
+	@include addExtraStyles($lyteTagSingleSelectCloseIconHoverMap);
+}
+
+.lyteTagSingleSelect .lyteMultipleSelect {
+	font-size: 0;
+}
+

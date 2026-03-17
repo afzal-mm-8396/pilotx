@@ -1,0 +1,89 @@
+/**
+* @component lyte-carousel
+*/
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+	
+	/**
+	* @variable --lyte-carousel-indicator-item-bg
+	* @selector lyte-carousel-indicator-item
+	* @description Background color of inactive indicator dots
+	* @defaultValue #ddd
+	* @inputType color
+	* @name Indicator Item Background Color
+	*/
+	--lyte-carousel-indicator-item-bg: #ddd;
+
+	/**
+	* @variable --lyte-carousel-indicator-item-hover-bg
+	* @selector lyte-carousel-indicator-item:hover
+	* @description Background color of indicator dots on hover
+	* @defaultValue #bbb
+	* @inputType color
+	* @name Indicator Item Hover Background Color
+	*/
+	--lyte-carousel-indicator-item-hover-bg: #bbb;
+
+	/**
+	* @variable --lyte-carousel-indicator-active-item-bg
+	* @selector lyte-carousel-indicator-item.lyteActive
+	* @description Background color of the active indicator dot
+	* @defaultValue #5ba1e5
+	* @inputType color
+	* @name Indicator Active Item Background Color
+	*/
+	--lyte-carousel-indicator-active-item-bg: #5ba1e5;
+
+	/**
+	* @variable --lyte-carousel-nav-border-color
+	* @selector lyte-carousel-prev, lyte-carousel-next
+	* @description Border color for the carousel navigation arrows
+	* @defaultValue #ddd
+	* @inputType color
+	* @name Navigation Border Color
+	*/
+	--lyte-carousel-nav-border-color: #ddd;
+
+	/**
+	* @variable --lyte-carousel-nav-bg
+	* @selector lyte-carousel-prev, lyte-carousel-next
+	* @description Background color for the navigation arrows
+	* @defaultValue rgba(0, 0, 0, 0.2)
+	* @inputType color
+	* @name Navigation Background Color
+	*/
+	--lyte-carousel-nav-bg: rgba(0, 0, 0, 0.2);
+
+	/**
+	* @variable --lyte-carousel-nav-hover-bg
+	* @selector lyte-carousel-prev:hover, lyte-carousel-next:hover
+	* @description Background color for navigation arrows on hover
+	* @defaultValue rgba(0, 0, 0, 0.4)
+	* @inputType color
+	* @name Navigation Hover Background Color
+	*/
+	--lyte-carousel-nav-hover-bg: rgba(0, 0, 0, 0.4);
+
+	/**
+	* @variable --lyte-carousel-frame-subitem-bg
+	* @selector lyte-carousel-sub-item
+	* @description Background color for carousel sub-items (thumbnail or frame view)
+	* @defaultValue #f5f5f5
+	* @inputType color
+	* @name Frame Subitem Background Color
+	*/
+	--lyte-carousel-frame-subitem-bg: #f5f5f5;
+
+	/**
+	* @variable --lyte-carousel-frame-subitem-border
+	* @selector lyte-carousel-sub-item
+	* @description Border color for carousel sub-items (thumbnail or frame view)
+	* @defaultValue #ddd
+	* @inputType color
+	* @name Frame Subitem Border Color
+	*/
+	--lyte-carousel-frame-subitem-border: #ddd;
+}

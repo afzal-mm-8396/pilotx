@@ -1,0 +1,385 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component lyte-menu
+ */
+:root,
+:host {
+  /**
+	* @variable --lyte-menu-bg
+	* @selector lyte-menu-body, .lytemenufreezelayer
+	* @description Background color for the menu container and freeze layer
+	* @defaultValue var(--lyte-theme-body-bg)
+	* @defaultVariableValue #fff
+	* @inputType color
+	* @name Background Color
+	*/
+  --lyte-menu-bg: var(--lyte-theme-body-bg);
+  /**
+	* @variable --lyte-menu-header-text-color
+	* @selector lyte-menu-header
+	* @description Text color used in the menu header section
+	* @defaultValue var(--lyte-heading-text-color)
+	* @defaultVariableValue #111
+	* @inputType color
+	* @name Header Text Color
+	*/
+  --lyte-menu-header-text-color: var(--lyte-heading-text-color);
+  /**
+	* @variable --lyte-menu-label-text-color
+	* @selector lyte-menu-label
+	* @description Text color used for menu labels
+	* @defaultValue var(--lyte-common-text-color2)
+	* @defaultVariableValue #111
+	* @inputType color
+	* @name Label Text Color
+	*/
+  --lyte-menu-label-text-color: var(--lyte-common-text-color2);
+  /**
+	* @variable --lyte-menu-border-color
+	* @selector lyte-menu-body
+	* @description Border color of the menu body
+	* @defaultValue #d6d6d6
+	* @inputType color
+	* @name Border Color
+	*/
+  --lyte-menu-border-color: #d6d6d6;
+  /**
+	* @variable --lyte-menu-item-hover-bg
+	* @selector .lyteMenuSelection, lyte-menu-item:hover
+	* @description Background color of hovered or selected menu item
+	* @defaultValue #ebebeb
+	* @inputType color
+	* @name Item Hover Background Color
+	*/
+  --lyte-menu-item-hover-bg: #ebebeb;
+  /**
+	* @variable --lyte-menu-desc-text-color
+	* @selector lyte-menu-description
+	* @description Text color used in menu description items
+	* @defaultValue var(--lyte-common-text-color2)
+	* @defaultVariableValue #111
+	* @inputType color
+	* @name Description Text Color
+	*/
+  --lyte-menu-desc-text-color: var(--lyte-common-text-color2);
+  /**
+	* @variable --lyte-menu-group-border-color
+	* @selector lyte-menu-group
+	* @description Border color separating menu groups
+	* @defaultValue #e5e5e5
+	* @inputType color
+	* @name Group Border Color
+	*/
+  --lyte-menu-group-border-color: #e5e5e5;
+  /**
+	* @variable --lyte-menu-zindex
+	* @selector lyte-menu-box, .lytemenufreezelayer
+	* @description Z-index value for menu popup and backdrop
+	* @defaultValue var(--lyte-level4-zindex)
+	* @defaultVariableValue 1060
+	* @inputType number
+	* @name Z-Index
+	*/
+  --lyte-menu-zindex: var(--lyte-level4-zindex);
+  /**
+	* @variable --lyte-menu-box-shadow
+	* @selector lyte-menu-box
+	* @description Box shadow styling applied to menu container
+	* @defaultValue 0px 1px 3px 0px rgba(134, 134, 134, 0.4)
+	* @inputType boxShadow
+	* @name Box Shadow
+	*/
+  --lyte-menu-box-shadow: 0px 1px 3px 0px rgba(134, 134, 134, 0.4);
+  /**
+	* @variable --lyte-menu-item-font-size
+	* @selector lyte-menu-item
+	* @description Font size for individual menu items
+	* @defaultValue var(--lyte-font-size-medium)
+	* @defaultVariableValue 15px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Item Font Size
+	*/
+  --lyte-menu-item-font-size: var(--lyte-font-size-medium);
+  /**
+	* @variable --lyte-menu-label-font-size
+	* @selector lyte-menu-label
+	* @description Font size used for labels inside the menu
+	* @defaultValue var(--lyte-font-size-regular)
+	* @defaultVariableValue 14px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Label Font Size
+	*/
+  --lyte-menu-label-font-size: var(--lyte-font-size-regular);
+  /**
+	* @variable --lyte-menu-header-font-size
+	* @selector lyte-menu-header
+	* @description Font size for the menu header
+	* @defaultValue var(--lyte-font-size-regular)
+	* @defaultVariableValue 14px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Header Font Size
+	*/
+  --lyte-menu-header-font-size: var(--lyte-font-size-regular);
+  /**
+	* @variable --lyte-menu-description-font-size
+	* @selector lyte-menu-description
+	* @description Font size used for the menu item descriptions
+	* @defaultValue var(--lyte-font-size-regular)
+	* @defaultVariableValue 14px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Description Font Size
+	*/
+  --lyte-menu-description-font-size: var(--lyte-font-size-regular);
+}
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading custom themes */
+/* Menu CSS BEGINS  */
+lyte-menu-box {
+  box-sizing: border-box;
+  z-index: var(--lyte-menu-zindex);
+  vertical-align: middle;
+  width: auto;
+  position: absolute;
+  top: -9999px;
+  right: -9999px;
+  outline: none;
+  font-family: var(--lyte-primary-font);
+  box-shadow: var(--lyte-menu-box-shadow);
+  border-radius: 2px;
+}
+lyte-menu-body {
+  overflow: auto;
+  display: block;
+  outline: none;
+  background: var(--lyte-menu-bg);
+  border: 1px solid var(--lyte-menu-border-color);
+  border-radius: 2px;
+  padding: 5px 0;
+}
+lyte-menu-item {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  white-space: nowrap;
+  text-align: right;
+  font-size: var(--lyte-menu-item-font-size);
+  padding: 5px 15px;
+  z-index: 1;
+  color: var(--lyte-menu-item-text-color);
+}
+.lyteMenuSelection {
+  background: var(--lyte-menu-item-hover-bg);
+}
+lyte-menu-label {
+  font-size: var(--lyte-menu-label-font-size);
+  color: var(--lyte-menu-label-text-color);
+  margin-left: 30px;
+  white-space: normal;
+  word-break: break-word;
+}
+lyte-menu-header {
+  display: block;
+  height: auto;
+  color: var(--lyte-menu-header-text-color);
+  font-family: var(--lyte-secondary-font);
+  font-size: var(--lyte-menu-header-font-size);
+  text-align: right;
+  cursor: default;
+  padding: 3px 15px 4px 15px;
+}
+lyte-menu-footer {
+  background: var(--lyte-menu-bg);
+  border: 1px solid var(--lyte-menu-border-color);
+  display: block;
+  border-top: 0;
+  padding: 10px 15px;
+  font-size: 15px;
+}
+lyte-menu-description {
+  font-size: var(--lyte-menu-description-font-size);
+  margin-right: auto;
+  opacity: 0.5;
+  color: var(--lyte-menu-desc-text-color);
+}
+lyte-menu-group {
+  border-bottom: 1px solid var(--lyte-menu-group-border-color);
+  display: block;
+  padding: 5px 0;
+}
+lyte-menu-group:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+lyte-menu-group:last-of-type {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+lyte-menu-group:last-of-type + lyte-menu-item {
+  border-top: 1px solid var(--lyte-menu-group-border-color);
+}
+lyte-menu {
+  display: none;
+}
+.lytemenufreezelayer {
+  opacity: 0.1;
+  background: var(--lyte-menu-bg);
+  position: fixed;
+  z-index: calc(var(--lyte-menu-zindex) - 5);
+}
+.lytemenufreezelayer.top {
+  top: 0;
+  width: 100%;
+}
+.lytemenufreezelayer.bottom {
+  bottom: 0;
+  width: 100%;
+}
+.lytemenufreezelayer.left {
+  left: 0;
+}
+.lytemenufreezelayer.right {
+  right: 0;
+  width: 100%;
+}
+.lytemenufreezelayer.nogroup {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.lyteMenuWrapperDiv {
+  overflow: auto;
+}
+lyte-menu-box .lyteArrow {
+  width: 11px;
+  height: 11px;
+  position: absolute;
+  background: var(--lyte-menu-bg);
+  transform: rotate(45deg);
+}
+lyte-menu-box .lyteArrow::after,
+lyte-menu-box .lyteArrow::before {
+  content: none;
+}
+lyte-menu-box .lyteArrow.lyteArrowTop {
+  box-shadow: -1px -1px 0 0 var(--lyte-menu-border-color);
+  top: -4px;
+}
+lyte-menu-box .lyteArrow.lyteArrowBottom {
+  box-shadow: 1px 1px 0 0 var(--lyte-menu-border-color);
+  bottom: -4px;
+}
+lyte-menu-box .lyteArrow.lyteArrowLeft {
+  box-shadow: 1px -1px 0 0 var(--lyte-menu-border-color);
+  right: -4px;
+}
+lyte-menu-box .lyteArrow.lyteArrowRight {
+  box-shadow: -1px 1px 0 0 var(--lyte-menu-border-color);
+  left: -4px;
+  right: unset;
+}
+.lyteMenuHidden {
+  display: none !important;
+}
+lyte-menu-box.lyteAnimate {
+  transition: top 0.4s ease;
+}
+lyte-menu-box.lyteAnimate lyte-menu-body {
+  transition: height 0.4s ease;
+  overflow: hidden;
+}
+.lyteHoverMenu lyte-menu-body::before {
+  content: '';
+  position: absolute;
+}
+.lyteHoverMenu.topPlace lyte-menu-body::before,
+.lyteHoverMenu.bottomPlace lyte-menu-body::before {
+  height: 10px;
+  left: 0;
+  right: 0;
+}
+.lyteHoverMenu.leftPlace lyte-menu-body::before,
+.lyteHoverMenu.rightPlace lyte-menu-body::before {
+  width: 10px;
+  top: 0;
+  bottom: 0;
+}
+.lyteHoverMenu.bottomPlace lyte-menu-body::before {
+  top: -10px;
+}
+.lyteHoverMenu.topPlace lyte-menu-body::before {
+  bottom: -10px;
+}
+.lyteHoverMenu.leftPlace lyte-menu-body::before {
+  right: -10px;
+}
+.lyteHoverMenu.rightPlace lyte-menu-body::before {
+  left: -10px;
+}
+.lyteBodyWrapper {
+  overflow: hidden;
+}
+.lyteMenuItemDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.lyteMenuAccordionContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.lyteMenuAccordionItem {
+  transition: height 0.5s linear;
+  overflow: hidden;
+}
+.lyteMenuAccordionItem lyte-menu-item {
+  padding-right: 25px;
+}
+.lyteMenuAccordionClosed .lyteMenuAccordionItem {
+  height: 0;
+}
+.lyteMenuAccordionContainer.lyteMenuSelection {
+  background: transparent;
+}
+.lyteMenuAccordionContainer > lyte-menu-label {
+  padding: 5px 15px;
+  margin-left: 0;
+  position: relative;
+}
+.lyteMenuAccordionContainer.lyteMenuSelection > lyte-menu-label {
+  background: #ebebeb;
+}
+.lyteMenuAccordionContainer > lyte-menu-label::after {
+  content: '';
+  display: inline-block;
+  background-image: var(--lyte-sprite-image);
+  background-position: -1px -2px;
+  width: 8px;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%) rotate(360deg);
+  transition: transform 0.3s ease;
+}
+.lyteMenuAccordionOpened.lyteMenuAccordionContainer > lyte-menu-label::after {
+  transform: translate(0%, -50%) rotate(180deg);
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* Make preferred css changes over here.
+ * This will be added to the end of the styles/menu.less file
+ */
+/* Menu CSS ENDS  */

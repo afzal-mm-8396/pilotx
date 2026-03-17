@@ -1,0 +1,545 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-button
+*/
+:root,
+:host {
+  /**
+	 * @variable --lyte-button-border-width
+	 * @selector lyte-button button
+	 * @description Width of the button border
+	 * @defaultValue 1px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Border Width
+	 */
+  --lyte-button-border-width: 1px;
+  /**
+	 * @variable --lyte-button-border-style
+	 * @selector lyte-button button
+	 * @description Style of the button border (e.g., solid, dashed)
+	 * @defaultValue solid
+	 * @allowedValues none, solid, dashed, dotted
+	 * @inputType toggle
+	 * @name Border Style
+	 */
+  --lyte-button-border-style: solid;
+  /**
+	 * @variable --lyte-button-border-radius
+	 * @selector lyte-button button
+	 * @description Border radius of the button
+	 * @defaultValue 2px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Border Radius
+	 */
+  --lyte-button-border-radius: 2px;
+  /* ===== Default Button ===== */
+  /**
+	 * @variable --lyte-button-default-bg
+	 * @selector .lyteDefaultBtn
+	 * @description Background color of the default button
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=default
+	 * @name Default Background Color
+	 */
+  --lyte-button-default-bg: #fff;
+  /**
+	 * @variable --lyte-button-default-text-color
+	 * @selector .lyteDefaultBtn
+	 * @description Text color of the default button
+	 * @defaultValue #3c3c3c
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=default
+	 * @name Default Text Color
+	 */
+  --lyte-button-default-text-color: #3c3c3c;
+  /**
+	 * @variable --lyte-button-default-border-color
+	 * @selector .lyteDefaultBtn
+	 * @description Border color of the default button
+	 * @defaultValue #c4c4c4
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=default
+	 * @name Default Border Color
+	 */
+  --lyte-button-default-border-color: #c4c4c4;
+  /**
+	 * @variable --lyte-button-default-hover-border-color
+	 * @selector .lyteDefaultBtn:hover
+	 * @description Border color of the default button on hover
+	 * @defaultValue #abaaaa
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=default
+	 * @name Default Hover Border Color
+	 */
+  --lyte-button-default-hover-border-color: #abaaaa;
+  /* ===== Primary Button ===== */
+  /**
+	 * @variable --lyte-button-primary-bg
+	 * @selector .lytePrimaryBtn
+	 * @description Background color of the primary button
+	 * @defaultValue var(--lyte-theme-active-element-bg)
+	 * @defaultVariableValue #5ba1e5
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=primary
+	 * @name Primary Background Color
+	 */
+  --lyte-button-primary-bg: var(--lyte-theme-active-element-bg);
+  /**
+	 * @variable --lyte-button-primary-text-color
+	 * @selector .lytePrimaryBtn
+	 * @description Text color of the primary button
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=primary
+	 * @name Primary Text Color
+	 */
+  --lyte-button-primary-text-color: #fff;
+  /**
+	 * @variable --lyte-button-primary-border-color
+	 * @selector .lytePrimaryBtn
+	 * @description Border color of the primary button
+	 * @defaultValue var(--lyte-theme-active-element-bg)
+	 * @defaultVariableValue #5ba1e5
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=primary
+	 * @name Primary Border Color
+	 */
+  --lyte-button-primary-border-color: var(--lyte-theme-active-element-bg);
+  /**
+	 * @variable --lyte-button-primary-hover-bg
+	 * @selector .lytePrimaryBtn:hover
+	 * @description Background color of the primary button on hover
+	 * @defaultValue #3c98dd
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=primary
+	 * @name Primary Hover Background Color
+	 */
+  --lyte-button-primary-hover-bg: #3c98dd;
+  /**
+	 * @variable --lyte-button-primary-hover-text-color
+	 * @selector .lytePrimaryBtn:hover
+	 * @description Text color of the primary button on hover
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=primary
+	 * @name Primary Hover Text Color
+	 */
+  --lyte-button-primary-hover-text-color: #fff;
+  /**
+	 * @variable --lyte-button-primary-hover-border-color
+	 * @selector .lytePrimaryBtn:hover
+	 * @description Border color of the primary button on hover
+	 * @defaultValue #3c98dd
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=primary
+	 * @name Primary Hover Border Color
+	 */
+  --lyte-button-primary-hover-border-color: #3c98dd;
+  /* ===== Secondary Button ===== */
+  /**
+	 * @variable --lyte-button-secondary-bg
+	 * @selector .lyteSecondary
+	 * @description Background color of the secondary button
+	 * @defaultValue #555
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=secondary
+	 * @name Secondary Background Color
+	 */
+  --lyte-button-secondary-bg: #555;
+  /**
+	 * @variable --lyte-button-secondary-text-color
+	 * @selector .lyteSecondary
+	 * @description Text color of the secondary button
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=secondary
+	 * @name Secondary Text Color
+	 */
+  --lyte-button-secondary-text-color: #fff;
+  /**
+	 * @variable --lyte-button-secondary-border-color
+	 * @selector .lyteSecondary
+	 * @description Border color of the secondary button
+	 * @defaultValue #555
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=secondary
+	 * @name Secondary Border Color
+	 */
+  --lyte-button-secondary-border-color: #555;
+  /**
+	 * @variable --lyte-button-secondary-hover-bg
+	 * @selector .lyteSecondary:hover
+	 * @description Background color of the secondary button on hover
+	 * @defaultValue #474747
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=secondary
+	 * @name Secondary Hover Background Color
+	 */
+  --lyte-button-secondary-hover-bg: #474747;
+  /**
+	 * @variable --lyte-button-secondary-hover-color
+	 * @selector .lyteSecondary:hover
+	 * @description Text color of the secondary button on hover
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=secondary
+	 * @name Secondary Hover Text Color
+	 */
+  --lyte-button-secondary-hover-color: #fff;
+  /**
+	 * @variable --lyte-button-secondary-hover-border-color
+	 * @selector .lyteSecondary:hover
+	 * @description Border color of the secondary button on hover
+	 * @defaultValue #444
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=secondary
+	 * @name Secondary Hover Border Color
+	 */
+  --lyte-button-secondary-hover-border-color: #444;
+  /* ===== Success Button ===== */
+  /**
+	 * @variable --lyte-button-success-bg
+	 * @selector .lyteSuccess
+	 * @description Background color of the success button
+	 * @defaultValue #19bc7d
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=success
+	 * @name Success Background Color
+	 */
+  --lyte-button-success-bg: #19bc7d;
+  /**
+	 * @variable --lyte-button-success-text-color
+	 * @selector .lyteSuccess
+	 * @description Text color of the success button
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=success
+	 * @name Success Text Color
+	 */
+  --lyte-button-success-text-color: #fff;
+  /**
+	 * @variable --lyte-button-success-border-color
+	 * @selector .lyteSuccess
+	 * @description Border color of the success button
+	 * @defaultValue #19bc7d
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=success
+	 * @name Success Border Color
+	 */
+  --lyte-button-success-border-color: #19bc7d;
+  /**
+	 * @variable --lyte-button-success-hover-bg
+	 * @selector .lyteSuccess:hover
+	 * @description Background color of the success button on hover
+	 * @defaultValue #10ab6f
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=success
+	 * @name Success Hover Background Color
+	 */
+  --lyte-button-success-hover-bg: #10ab6f;
+  /**
+	 * @variable --lyte-button-success-hover-border-color
+	 * @selector .lyteSuccess:hover
+	 * @description Border color of the success button on hover
+	 * @defaultValue #10ab6f
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=success
+	 * @name Success Hover Border Color
+	 */
+  --lyte-button-success-hover-border-color: #10ab6f;
+  /* ===== Outline Success Button ===== */
+  /**
+	 variable --lyte-button-outline-success-bg
+	 * @selector .lyteDefaultBtn.lyteSuccess
+	 * @description Background color of the outline success button
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=outline-success
+	 * @name Outline Success Background Color
+	 */
+  --lyte-button-outline-success-bg: #fff;
+  /**
+	 variable --lyte-button-outline-success-text-color
+	 * @selector .lyteDefaultBtn.lyteSuccess
+	 * @description Text color of the outline success button
+	 * @defaultValue #19bc7d
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=outline-success
+	 * @name Outline Success Text Color
+	 */
+  --lyte-button-outline-success-text-color: #19bc7d;
+  /**
+	 variable --lyte-button-outline-success-border-color
+	 * @selector .lyteDefaultBtn.lyteSuccess
+	 * @description Border color of the outline success button
+	 * @defaultValue #19bc7d
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=outline-success
+	 * @name Outline Success Border Color
+	 */
+  --lyte-button-outline-success-border-color: #19bc7d;
+  /**
+	 variable --lyte-button-outline-success-hover-bg
+	 * @selector .lyteDefaultBtn.lyteSuccess:hover
+	 * @description Background color on hover for outline success button
+	 * @defaultValue #19bc7d
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=outline-success
+	 * @name Outline Success Hover Background Color
+	 */
+  --lyte-button-outline-success-hover-bg: #19bc7d;
+  /**
+	 variable --lyte-button-outline-success-hover-text-color
+	 * @selector .lyteDefaultBtn.lyteSuccess:hover
+	 * @description Text color on hover for outline success button
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=outline-success
+	 * @name Outline Success Hover Text Color
+	 */
+  --lyte-button-outline-success-hover-text-color: #fff;
+  /**
+	 variable --lyte-button-outline-success-hover-border-color
+	 * @selector .lyteDefaultBtn.lyteSuccess:hover
+	 * @description Border color on hover for outline success button
+	 * @defaultValue #19bc7d
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=outline-success
+	 * @name Outline Success Hover Border Color
+	 */
+  --lyte-button-outline-success-hover-border-color: #19bc7d;
+  /* ===== Failure Button ===== */
+  /**
+	 * @variable --lyte-button-failure-bg
+	 * @selector .lyteFailure
+	 * @description Background color of the failure button
+	 * @defaultValue #ec4844
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=failure
+	 * @name Failure Background Color
+	 */
+  --lyte-button-failure-bg: #ec4844;
+  /**
+	 * @variable --lyte-button-failure-text-color
+	 * @selector .lyteFailure
+	 * @description Text color of the failure button
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=failure
+	 * @name Failure Text Color
+	 */
+  --lyte-button-failure-text-color: #fff;
+  /**
+	 * @variable --lyte-button-failure-border-color
+	 * @selector .lyteFailure
+	 * @description Border color of the failure button
+	 * @defaultValue #ec4844
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=failure
+	 * @name Failure Border Color
+	 */
+  --lyte-button-failure-border-color: #ec4844;
+  /**
+	 * @variable --lyte-button-failure-hover-bg
+	 * @selector .lyteFailure:hover
+	 * @description Background color of the failure button on hover
+	 * @defaultValue #da3e3e
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=failure
+	 * @name Failure Hover Background Color
+	 */
+  --lyte-button-failure-hover-bg: #da3e3e;
+  /**
+	 * @variable --lyte-button-failure-hover-border-color
+	 * @selector .lyteFailure:hover
+	 * @description Border color of the failure button on hover
+	 * @defaultValue #da3e3e
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=failure
+	 * @name Failure Hover Border Color
+	 */
+  --lyte-button-failure-hover-border-color: #da3e3e;
+  /* ===== Outline Failure Button ===== */
+  /**
+	 variable --lyte-button-outline-failure-bg
+	 * @selector .lyteDefaultBtn.lyteFailure
+	 * @description Background color of the outline failure button
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=outline-failure
+	 * @name Outline Failure Background Color
+	 */
+  --lyte-button-outline-failure-bg: #fff;
+  /**
+	 variable --lyte-button-outline-failure-text-color
+	 * @selector .lyteDefaultBtn.lyteFailure
+	 * @description Text color of the outline failure button
+	 * @defaultValue #ec4844
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=outline-failure
+	 * @name Outline Failure Text Color
+	 */
+  --lyte-button-outline-failure-text-color: #ec4844;
+  /**
+	 variable --lyte-button-outline-failure-border-color
+	 * @selector .lyteDefaultBtn.lyteFailure
+	 * @description Border color of the outline failure button
+	 * @defaultValue #ec4844
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=outline-failure
+	 * @name Outline Failure Border Color
+	 */
+  --lyte-button-outline-failure-border-color: #ec4844;
+  /**
+	 variable --lyte-button-outline-failure-hover-bg
+	 * @selector .lyteDefaultBtn.lyteFailure:hover
+	 * @description Background color on hover for outline failure button
+	 * @defaultValue #ec4844
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=outline-failure
+	 * @name Outline Failure Hover Background Color
+	 */
+  --lyte-button-outline-failure-hover-bg: #ec4844;
+  /**
+	 variable --lyte-button-outline-failure-hover-text-color
+	 * @selector .lyteDefaultBtn.lyteFailure:hover
+	 * @description Text color on hover for outline failure button
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=outline-failure
+	 * @name Outline Failure Hover Text Color
+	 */
+  --lyte-button-outline-failure-hover-text-color: #fff;
+  /**
+	 variable --lyte-button-outline-failure-hover-border-color
+	 * @selector .lyteDefaultBtn.lyteFailure:hover
+	 * @description Border color on hover for outline failure button
+	 * @defaultValue #ec4844
+	 * @inputType color
+	 * @componentProperty ltPropAppearance=outline-failure
+	 * @name Outline Failure Hover Border Color
+	 */
+  --lyte-button-outline-failure-hover-border-color: #ec4844;
+  /* ===== Warning Button ===== */
+  /**
+	 * @variable --lyte-button-warning-bg
+	 * @selector .lyteWarningBtn
+	 * @description Background color of the warning button
+	 */
+  --lyte-button-warning-bg: #FF9318;
+  /**
+	  * @variable --lyte-button-warning-text-color
+	  * @selector .lyteWarningBtn
+	  * @description Text color of the warning button
+	  */
+  --lyte-button-warning-text-color: #fff;
+  /**
+	  * @variable --lyte-button-warning-border-color
+	  * @selector .lyteWarningBtn
+	  * @description Border color of the warning button
+	  */
+  --lyte-button-warning-border-color: #FF9318;
+  /**
+	  * @variable --lyte-button-warning-hover-bg
+	  * @selector .lyteWarningBtn:hover
+	  * @description Background color of the warning button on hover
+	  */
+  --lyte-button-warning-hover-bg: #FF8800;
+  /**
+	  * @variable --lyte-button-warning-hover-border-color
+	  * @selector .lyteWarningBtn:hover
+	  * @description Border color of the warning button on hover
+	  */
+  --lyte-button-warning-hover-border-color: #FF8800;
+  /* ===== Outline Warning Button ===== */
+  /**
+	  * @variable --lyte-button-outline-warning-bg
+	  * @selector .lyteDefaultBtn.lyteWarningBtn
+	  * @description Background color of the outline warning button
+	  */
+  --lyte-button-outline-warning-bg: #fff;
+  /**
+	  * @variable --lyte-button-outline-warning-text-color
+	  * @selector .lyteDefaultBtn.lyteWarningBtn
+	  * @description Text color of the outline warning button
+	  */
+  --lyte-button-outline-warning-text-color: #FF9318;
+  /**
+	  * @variable --lyte-button-outline-warning-border-color
+	  * @selector .lyteDefaultBtn.lyteWarningBtn
+	  * @description Border color of the outline warning button
+	  */
+  --lyte-button-outline-warning-border-color: #FF9318;
+  /**
+	  * @variable --lyte-button-outline-warning-hover-bg
+	  * @selector .lyteDefaultBtn.lyteWarningBtn:hover
+	  * @description Background color on hover for outline warning button
+	  */
+  --lyte-button-outline-warning-hover-bg: #FF9318;
+  /**
+	  * @variable --lyte-button-outline-warning-hover-text-color
+	  * @selector .lyteDefaultBtn.lyteWarningBtn:hover
+	  * @description Text color on hover for outline warning button
+	  */
+  --lyte-button-outline-warning-hover-text-color: #fff;
+  /**
+	  * @variable --lyte-button-outline-warning-hover-border-color
+	  * @selector .lyteDefaultBtn.lyteWarningBtn:hover
+	  * @description Border color on hover for outline warning button
+	  */
+  --lyte-button-outline-warning-hover-border-color: #FF9318;
+  /* ===== Font Sizes ===== */
+  /**
+	 * @variable --lyte-button-font-size
+	 * @selector lyte-button button
+	 * @description Default font size of button
+	 * @defaultValue var(--lyte-font-size-medium)
+	 * @defaultVariableValue 15px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Font Size
+	 */
+  --lyte-button-font-size: var(--lyte-font-size-medium);
+  /**
+	 * @variable --lyte-button-lg-font-size
+	 * @selector .lyteLg
+	 * @description Font size of large buttons
+	 * @defaultValue var(--lyte-font-size-medium)
+	 * @defaultVariableValue 15px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Large Font Size
+	 */
+  --lyte-button-lg-font-size: var(--lyte-font-size-medium);
+  /**
+	 * @variable --lyte-button-sm-font-size
+	 * @selector .lyteSm
+	 * @description Font size of small buttons
+	 * @defaultValue var(--lyte-font-size-small)
+	 * @defaultVariableValue 13px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Small Font Size
+	 */
+  --lyte-button-sm-font-size: var(--lyte-font-size-small);
+  /**
+	 * @variable --lyte-button-exsm-font-size
+	 * @selector .lyteExsm
+	 * @description Font size of extra small buttons
+	 * @defaultValue var(--lyte-font-size-xs)
+	 * @defaultVariableValue 12px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Extra Small Font Size
+	 */
+  --lyte-button-exsm-font-size: var(--lyte-font-size-xs);
+}

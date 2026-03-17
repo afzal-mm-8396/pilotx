@@ -1,0 +1,42 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-banner
+*/
+:root,
+:host {
+  /**
+   * @variable --lyte-banner-bg
+   * @selector .lyteBannerNonFloating, .lyteBannerFloating, .lyteBannerModalContent
+   * @description Background color of the banner (used in both floating and non-floating types)
+   * @defaultValue #2f363d
+   * @inputType color
+   * @name Background Color
+   */
+  --lyte-banner-bg: #2f363d;
+  /**
+   * @variable --lyte-banner-color
+   * @selector .lyteBannerNonFloating, .lyteBannerFloating, .lyteBannerModalContent
+   * @description Text color used inside the banner
+   * @defaultValue #fff
+   * @inputType color
+   * @name Text Color
+   */
+  --lyte-banner-color: #fff;
+  /**
+   * @variable --lyte-banner-font-size
+   * @selector .lyteBannerNonFloating, .lyteBannerFloating
+   * @description Font size of the banner text
+   * @defaultValue var(--lyte-font-size-medium)
+   * @defaultVariableValue 14px
+   * @allowedSuffixes px
+   * @inputType dimension
+   * @name Font Size
+   */
+  --lyte-banner-font-size: var(--lyte-font-size-medium);
+}

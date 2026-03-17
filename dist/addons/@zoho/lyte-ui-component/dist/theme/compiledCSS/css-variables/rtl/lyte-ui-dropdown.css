@@ -1,0 +1,917 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-dropdown
+*/
+:root,
+:host {
+  /**
+     * @variable --lyte-dropdown-bg
+     * @selector lyte-dropdown, lyte-drop-box
+     * @description Background color for the dropdown and its box
+     * @defaultValue var(--lyte-theme-body-bg)
+     * @defaultVariableValue #fff
+     * @inputType color
+     * @name Background Color
+     */
+  --lyte-dropdown-bg: var(--lyte-theme-body-bg);
+  /**
+     * @variable --lyte-dropdown-text-color
+     * @selector lyte-drop-button, lyte-drop-item
+     * @description Text color used in dropdown buttons and items
+     * @defaultValue var(--lyte-common-text-color2)
+     * @defaultVariableValue #111
+     * @inputType color
+     * @name Text Color
+     */
+  --lyte-dropdown-text-color: var(--lyte-common-text-color2);
+  /**
+     * @variable --lyte-dropdown-btn-border-color
+     * @selector lyte-drop-button
+     * @description Border color for the dropdown button
+     * @defaultValue #d6d6d6
+     * @inputType color
+     * @name Button Border Color
+     */
+  --lyte-dropdown-btn-border-color: #d6d6d6;
+  /**
+     * @variable --lyte-dropdown-btn-hover-border-color
+     * @selector lyte-drop-button:hover
+     * @description Border color for the dropdown button on hover
+     * @defaultValue #c1c1c1
+     * @inputType color
+     * @name Button Hover Border Color
+     */
+  --lyte-dropdown-btn-hover-border-color: #c1c1c1;
+  /**
+     * @variable --lyte-dropbox-border-color
+     * @selector lyte-drop-box
+     * @description Border color for the dropdown box
+     * @defaultValue var(--lyte-dropdown-btn-border-color)
+     * @defaultVariableValue #d6d6d6
+     * @inputType color
+     * @name Dropbox Border Color
+     */
+  --lyte-dropbox-border-color: var(--lyte-dropdown-btn-border-color);
+  /**
+     * @variable --lyte-dropbox-box-shadow-color
+     * @selector lyte-drop-box
+     * @description Box shadow color for dropdown box
+     * @defaultValue rgba(0, 0, 0, 0.15)
+     * @inputType color
+     * @name Dropbox Box Shadow Color
+     */
+  --lyte-dropbox-box-shadow-color: rgba(0, 0, 0, 0.15);
+  /**
+     * @variable --lyte-dropbox-item-hover-bg
+     * @selector lyte-drop-item:hover
+     * @description Background color for dropdown items on hover
+     * @defaultValue #ededed
+     * @inputType color
+     * @name Item Hover Background Color
+     */
+  --lyte-dropbox-item-hover-bg: #ededed;
+  /**
+     * @variable --lyte-dropbox-arrow-border-color
+     * @selector .lyteArrow
+     * @description Border color used in dropdown arrow pointer
+     * @defaultValue var(--lyte-dropdown-btn-border-color)
+     * @defaultVariableValue #d6d6d6
+     * @inputType color
+     * @name Arrow Border Color
+     */
+  --lyte-dropbox-arrow-border-color: var(--lyte-dropdown-btn-border-color);
+  /**
+     * @variable --lyte-dropbox-border-radius
+     * @selector lyte-drop-box
+     * @description Border radius for the dropdown box
+     * @defaultValue 2px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Border Radius
+     */
+  --lyte-dropbox-border-radius: 2px;
+  /**
+     * @variable --lyte-dropbox-translate-width
+     * @selector lyte-drop-box
+     * @description Initial off-screen position to hide dropdown box
+     * @defaultValue 8px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Translate Width
+     */
+  --lyte-dropbox-translate-width: 8px;
+  /**
+     * @variable --lyte-dropbox-zindex
+     * @selector lyte-drop-box
+     * @description Z-index value for dropdown box
+     * @defaultValue var(--lyte-level4-zindex)
+     * @defaultVariableValue 1060
+     * @inputType number
+     * @name Z-Index
+     */
+  --lyte-dropbox-zindex: var(--lyte-level4-zindex);
+  /**
+     * @variable --lyte-dropdown-multiselect-li-bg
+     * @selector .lyteMultipleSelect li
+     * @description Background color for multi-select selected items
+     * @defaultValue #f1f1f1
+     * @inputType color
+     * @name Multi-Select Item Background Color
+     */
+  --lyte-dropdown-multiselect-li-bg: #f1f1f1;
+  /**
+     * @variable --lyte-dropdown-multiselect-li-border-color
+     * @selector .lyteMultipleSelect li
+     * @description Border color for multi-select selected items
+     * @defaultValue #e8e8e8
+     * @inputType color
+     * @name Multi-Select Item Border Color
+     */
+  --lyte-dropdown-multiselect-li-border-color: #e8e8e8;
+  /**
+     * @variable --lyte-dropdown-multiselect-li-selected-bg
+     * @selector .lyteDropMark
+     * @description Background color for selected multi-select item
+     * @defaultValue #eef5fa
+     * @inputType color
+     * @name Multi-Select Item Selected Background Color
+     */
+  --lyte-dropdown-multiselect-li-selected-bg: #eef5fa;
+  /**
+     * @variable --lyte-dropdown-multiselect-li-selected-border-color
+     * @selector .lyteDropMark
+     * @description Border color for selected multi-select item
+     * @defaultValue #3ea7fc
+     * @inputType color
+     * @name Multi-Select Item Selected Border Color
+     */
+  --lyte-dropdown-multiselect-li-selected-border-color: #3ea7fc;
+  /**
+     * @variable --lyte-dropdown-multiselect-li-selected-hover-bg
+     * @selector .lyteDropMark:hover
+     * @description Background color on hover for selected multi-select item
+     * @defaultValue #daebf7
+     * @inputType color
+     * @name Multi-Select Item Selected Hover Background Color
+     */
+  --lyte-dropdown-multiselect-li-selected-hover-bg: #daebf7;
+  /**
+     * @variable --lyte-dropdown-multiselect-placeholder-text-color
+     * @selector .lyteDropPlaceholderMultiple
+     * @description Text color for the multi-select placeholder
+     * @defaultValue #999
+     * @defaultVariableValue #999
+     * @inputType color
+     * @name Multi-Select Placeholder Text Color
+     */
+  --lyte-dropdown-multiselect-placeholder-text-color: #999;
+  /**
+     * @variable --lyte-dropdown-multiselect-remove-hover-bg
+     * @selector .lyteCloseIcon:hover
+     * @description Background color on hover for multi-select close icon
+     * @defaultValue #e8e8e8
+     * @inputType color
+     * @name Multi-Select Remove Hover Background Color
+     */
+  --lyte-dropdown-multiselect-remove-hover-bg: #e8e8e8;
+  /**
+     * @variable --lyte-dropdown-no-result-text-color
+     * @selector .lyteDropdownNoResult
+     * @description Text color for the "No result found" label
+     * @defaultValue #8a8a8a
+     * @defaultVariableValue #8a8a8a
+     * @inputType color
+     * @name No Result Text Color
+     */
+  --lyte-dropdown-no-result-text-color: #8a8a8a;
+  /**
+     * @variable --lyte-dropbox-button-overlap-bg
+     * @selector .lyteArrow
+     * @description Background color for overlap element above dropdown box
+     * @defaultValue #ededed
+     * @inputType color
+     * @name Dropbox Button Overlap Background Color
+     */
+  --lyte-dropbox-button-overlap-bg: #ededed;
+  /**
+     * @variable --lyte-dropbox-footer-border-color
+     * @selector .lyteDropdownFooter
+     * @description Border color for the footer section in dropdown box
+     * @defaultValue #ddd
+     * @inputType color
+     * @name Footer Border Color
+     */
+  --lyte-dropbox-footer-border-color: #ddd;
+  /**
+     * @variable --lyte-dropdown-freeze-layer-bg
+     * @selector #lytedropdownfreezelayer
+     * @description Background color for the freeze layer used in dropdowns
+     * @defaultValue #fff
+     * @inputType color
+     * @name Freeze Layer Background Color
+     */
+  --lyte-dropdown-freeze-layer-bg: #fff;
+  /**
+     * @variable --lyte-dropdown-button-disabled-bg
+     * @selector .lyteDropdown-disabled lyte-drop-button
+     * @description Background color for a disabled dropdown button
+     * @defaultValue #f3f3f3
+     * @inputType color
+     * @name Button Disabled Background Color
+     */
+  --lyte-dropdown-button-disabled-bg: #f3f3f3;
+  /**
+     * @variable --lyte-dropdown-button-disabled-text-color
+     * @selector .lyteDropdown-disabled lyte-drop-button
+     * @description Text color for a disabled dropdown button
+     * @defaultValue #999
+     * @inputType color
+     * @name Button Disabled Text Color
+     */
+  --lyte-dropdown-button-disabled-text-color: #999;
+  /**
+     * @variable --lyte-dropdown-multiple-disabled-li-bg
+     * @selector .lyteDropdownDisabled .lyteMultipleSelect li
+     * @description Background color for disabled multi-select items
+     * @defaultValue #ebe9e9
+     * @inputType color
+     * @name Multi-Select Disabled Item Background Color
+     */
+  --lyte-dropdown-multiple-disabled-li-bg: #ebe9e9;
+  /**
+     * @variable --lyte-dropdown-multiple-disabled-li-border-color
+     * @selector .lyteDropdownDisabled .lyteMultipleSelect li
+     * @description Border color for disabled multi-select items
+     * @defaultValue #d3d3d3
+     * @inputType color
+     * @name Multi-Select Disabled Item Border Color
+     */
+  --lyte-dropdown-multiple-disabled-li-border-color: #d3d3d3;
+  /**
+     * @variable --lyte-dropdown-placeholder-text-color
+     * @selector .lyteDropPlaceholderNormal
+     * @description Text color for normal dropdown placeholder
+     * @defaultValue #828282
+     * @inputType color
+     * @name Placeholder Text Color
+     */
+  --lyte-dropdown-placeholder-text-color: #828282;
+  /**
+     * @variable --lyte-dropdown-deselect-icon-hover-bg
+     * @selector .lyteDropdownDeselectIcon:hover
+     * @description Background color for the deselect icon on hover
+     * @defaultValue #eee
+     * @inputType color
+     * @name Deselect Icon Hover Background Color
+     */
+  --lyte-dropdown-deselect-icon-hover-bg: #eee;
+  /**
+     * @variable --lyte-dropdown-dropbox-font-size
+     * @selector lyte-drop-box
+     * @description Font size used in dropdown box
+     * @defaultValue var(--lyte-font-size-medium)
+     * @defaultVariableValue 15px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Dropbox Font Size
+     */
+  --lyte-dropdown-dropbox-font-size: var(--lyte-font-size-medium);
+  /**
+     * @variable --lyte-dropdown-dropitem-font-size
+     * @selector lyte-drop-item
+     * @description Font size used in dropdown items
+     * @defaultValue var(--lyte-font-size-medium)
+     * @defaultVariableValue 15px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Drop Item Font Size
+     */
+  --lyte-dropdown-dropitem-font-size: var(--lyte-font-size-medium);
+  /**
+     * @variable --lyte-dropdown-multiselect-li-font-size
+     * @selector .lyteMultipleSelect li
+     * @description Font size for multi-select selected items
+     * @defaultValue var(--lyte-font-size-medium)
+     * @defaultVariableValue 15px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Multi-Select Item Font Size
+     */
+  --lyte-dropdown-multiselect-li-font-size: var(--lyte-font-size-medium);
+  /**
+     * @variable --lyte-dropdown-multiselect-placeholder-font-size
+     * @selector .lyteDropPlaceholderMultiple
+     * @description Font size for multi-select placeholder text
+     * @defaultValue var(--lyte-font-size-regular)
+     * @defaultVariableValue 14px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Multi-Select Placeholder Font Size
+     */
+  --lyte-dropdown-multiselect-placeholder-font-size: var(--lyte-font-size-regular);
+  /**
+     * @variable --lyte-dropdown-no-result-font-size
+     * @selector .lyteDropdownNoResult
+     * @description Font size for the no result text
+     * @defaultValue var(--lyte-font-size-regular)
+     * @defaultVariableValue 14px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name No Result Font Size
+     */
+  --lyte-dropdown-no-result-font-size: var(--lyte-font-size-regular);
+  /**
+     * @variable --lyte-dropdown-dropbtn-input-font-size
+     * @selector lyte-drop-button input
+     * @description Font size for input field inside dropdown button
+     * @defaultValue var(--lyte-font-size-regular)
+     * @defaultVariableValue 14px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Drop Button Input Font Size
+     */
+  --lyte-dropdown-dropbtn-input-font-size: var(--lyte-font-size-regular);
+  /**
+     * @variable --lyte-dropdown-action-font-size
+     * @selector .lyteDropdownAction
+     * @description Font size for the dropdown footer action buttons
+     * @defaultValue var(--lyte-font-size-regular)
+     * @defaultVariableValue 14px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Action Font Size
+     */
+  --lyte-dropdown-action-font-size: var(--lyte-font-size-regular);
+  /**
+     * @variable --lyte-dropdown-drop-label-font-size
+     * @selector lyte-drop-label
+     * @description Font size for dropdown section labels
+     * @defaultValue var(--lyte-font-size-medium)
+     * @defaultVariableValue 15px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Drop Label Font Size
+     */
+  --lyte-dropdown-drop-label-font-size: var(--lyte-font-size-medium);
+}
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+/* Make changes to override predefined styles */
+/*  Dropdown related style BEGINS   */
+lyte-dropdown,
+lyte-drop-box {
+  font-family: var(--lyte-primary-font);
+  font-size: var(--lyte-dropdown-dropbox-font-size);
+  color: var(--lyte-dropdown-text-color);
+  display: inline-block;
+  max-width: 430px;
+}
+lyte-dropdown {
+  max-width: 330px;
+}
+lyte-drop-button {
+  border: 1px solid var(--lyte-dropdown-btn-border-color);
+  border-radius: var(--lyte-dropbox-border-radius);
+  cursor: pointer;
+  text-align: right;
+  position: relative;
+  display: inline-block;
+  padding: 7px 10px 7px 25px;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--lyte-dropdown-text-color);
+  background: var(--lyte-dropdown-bg);
+}
+lyte-dropdown lyte-drop-button:hover {
+  border: 1px solid var(--lyte-dropdown-btn-hover-border-color);
+}
+lyte-drop-button.lyteDropButtonUp {
+  border-radius: 0 0 var(--lyte-dropbox-border-radius) var(--lyte-dropbox-border-radius);
+  box-shadow: 0px 0px 6px 0px var(--lyte-dropbox-box-shadow-color);
+}
+lyte-drop-button.lyteDropButtonDown {
+  border-radius: var(--lyte-dropbox-border-radius) var(--lyte-dropbox-border-radius) 0 0;
+  box-shadow: 0px 0px 6px 0px var(--lyte-dropbox-box-shadow-color);
+}
+.lyteMultiSearchDropButtonFocused:hover,
+.lyteMultiSearchDropButtonFocused,
+lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button,
+lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button:hover {
+  border: 1px solid var(--lyte-dropdown-btn-border-color);
+  box-shadow: 0px 0px 6px 0px var(--lyte-dropbox-box-shadow-color);
+}
+lyte-drop-button.lyteDropButtonUp:hover,
+lyte-drop-button.lyteDropButtonDown:hover {
+  border: 1px solid var(--lyte-dropdown-btn-border-color);
+}
+lyte-dropdown.calloutDrop lyte-drop-button {
+  box-shadow: none;
+  border-radius: var(--lyte-dropbox-border-radius);
+}
+.lyteDropPlaceholderNormal,
+.lyteDropdownLabel {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+.lyteDummyEventContainer {
+  outline: none;
+}
+lyte-drop-item {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  text-align: right;
+  color: var(--lyte-dropdown-text-color);
+  padding: 7px 25px 7px 15px;
+  font-size: var(--lyte-dropdown-dropitem-font-size);
+  max-width: 100%;
+  -ms-word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+lyte-drop-item.lyteDropdownActive,
+lyte-drop-item.lyteSearchHidden {
+  display: none;
+}
+.lyteDropdownSelection {
+  background: var(--lyte-dropbox-item-hover-bg);
+}
+lyte-drop-item[selected="true"]::before {
+  content: '';
+  background-image: var(--lyte-sprite-image);
+  background-position: -33px -15px;
+  width: 9px;
+  height: 7px;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+lyte-dropdown lyte-icon.dropdown {
+  background-image: var(--lyte-sprite-image);
+  background-position: -1px -2px;
+  width: 8px;
+  height: 4px;
+  top: calc(50% - 2px);
+  display: inline-block;
+  opacity: 0.5;
+  position: absolute;
+  left: 10px;
+}
+/*  Multi select releated CSS--BEGINS   */
+lyte-dropdown[lt-prop-type="multisearch"] lyte-drop-button,
+lyte-dropdown[lt-prop-type="multiple"] lyte-drop-button {
+  padding-left: 17px;
+  min-height: 25px;
+  white-space: normal;
+}
+lyte-dropdown[lt-prop-type="multisearch"] lyte-drop-button::after,
+lyte-dropdown[lt-prop-type="multiple"] lyte-drop-button::after {
+  content: '';
+  background-image: var(--lyte-sprite-image);
+  background-position: -1px -2px;
+  width: 8px;
+  height: 4px;
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  opacity: 0.5;
+}
+lyte-dropdown lyte-drop-button.ltDropdownIconNodePresent::after {
+  content: none;
+}
+.lyteMultipleSelect li {
+  background: var(--lyte-dropdown-multiselect-li-bg);
+  color: var(--lyte-dropdown-text-color);
+  border: 1px solid var(--lyte-dropdown-multiselect-li-border-color);
+  margin: 3px 1px;
+  border-radius: var(--lyte-dropbox-border-radius);
+  font-size: var(--lyte-dropdown-multiselect-li-font-size);
+  padding: 1px 7px 3px 25px;
+  display: inline-block;
+  position: relative;
+  cursor: default;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.lyteMultipleSelect .lyteDropdownVisible {
+  display: block;
+  max-width: 100%;
+  -ms-word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+lyte-dropdown[lt-prop-remove-multiple="true"] .lyteMultipleSelect li {
+  cursor: pointer;
+}
+lyte-dropdown[lt-prop-type="multisearch"] .lyteMultipleSelect li.lyteMultiselectInput {
+  background: var(--lyte-dropdown-bg);
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 150px;
+}
+lyte-dropdown[lt-prop-type="multisearch"] .lyteMultipleSelect .lyteMultiselectInput:only-of-type {
+  width: 100%;
+}
+.lyteDropPlaceholderMultiple {
+  padding-right: 0;
+  font-size: var(--lyte-dropdown-multiselect-placeholder-font-size);
+  color: var(--lyte-dropdown-multiselect-placeholder-text-color);
+  vertical-align: top;
+}
+.lyteMultipleSelect .lyteCloseIcon {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 18px;
+  border-radius: var(--lyte-dropbox-border-radius) 0 0 var(--lyte-dropbox-border-radius);
+}
+.lyteMultipleSelect li:hover .lyteCloseIcon {
+  background: var(--lyte-dropdown-multiselect-remove-hover-bg);
+}
+.lyteMultipleSelect .lyteCloseIcon::before {
+  content: '';
+  background-image: var(--lyte-sprite-image);
+  background-position: -54px -2px;
+  width: 8px;
+  height: 8px;
+  top: calc(50% - 4px);
+  left: 5px;
+  opacity: 0.7;
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+}
+.lyteMultipleSelect .lyteCloseIcon:hover::before {
+  opacity: 1;
+}
+.lyteDropdownNoResult {
+  padding: 5px 15px 15px;
+  text-align: center;
+  font-size: var(--lyte-dropdown-no-result-font-size);
+  color: var(--lyte-dropdown-no-result-text-color);
+}
+lyte-drop-button input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: var(--lyte-dropdown-dropbtn-input-font-size);
+  color: var(--lyte-dropdown-text-color);
+  padding: 0;
+  box-sizing: border-box;
+}
+lyte-drop-button input:focus {
+  outline: none;
+}
+.lyte-dropdown-filtered {
+  display: none !important;
+}
+.lyteMultiSelectDropdown lyte-drop-item {
+  padding: 7px 10px;
+}
+/*  Multi select releated CSS--ENDS   */
+/*lyte-list-box dropbox related css--BEGINS     */
+lyte-drop-box {
+  background: var(--lyte-dropdown-bg);
+  box-sizing: border-box;
+  border: 1px solid var(--lyte-dropbox-border-color);
+  box-shadow: 0px 2px 6px 0px var(--lyte-dropbox-box-shadow-color);
+  z-index: var(--lyte-dropbox-zindex);
+  position: absolute;
+  border-radius: 0 0 var(--lyte-dropbox-border-radius) var(--lyte-dropbox-border-radius);
+  display: block;
+  width: auto;
+  transform: translate(-1000px, -1000px);
+}
+lyte-drop-box[lyte-drop-hidden] {
+  visibility: hidden;
+}
+lyte-drop-box.lyteDropdownCurve {
+  border-radius: var(--lyte-dropbox-border-radius) 0 var(--lyte-dropbox-border-radius) var(--lyte-dropbox-border-radius);
+}
+lyte-drop-box.lyteDropdownDown {
+  transform: translateY(-1px);
+}
+lyte-drop-box.lyteDropdownUp {
+  border-radius: var(--lyte-dropbox-border-radius) var(--lyte-dropbox-border-radius) 0 0;
+  box-shadow: 0px -2px 6px 0px var(--lyte-dropbox-box-shadow-color);
+  transform: translateY(1px);
+}
+lyte-drop-box.lyteDropdownRight,
+lyte-drop-box.lyteDropdownLeft {
+  transform: none;
+}
+lyte-drop-box.lyteDropBodyCallout {
+  border-radius: var(--lyte-dropbox-border-radius);
+  box-shadow: 0 0 3px 0 var(--lyte-dropbox-box-shadow-color);
+}
+lyte-drop-box:not(.lyteDropBodyCallout) .lyteArrow {
+  background: var(--lyte-dropbox-button-overlap-bg);
+  width: 328px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+}
+.lyteDropdownUp:not(.lyteDropBodyCallout) .lyteArrow {
+  top: unset;
+  bottom: -1px;
+}
+.lyteDropdownUp.lyteDropdownCurve {
+  border-radius: var(--lyte-dropbox-border-radius) var(--lyte-dropbox-border-radius) 0 var(--lyte-dropbox-border-radius);
+}
+lyte-drop-box lyte-input.lyteInput .lyteSearch {
+  padding-right: 35px;
+}
+lyte-drop-box.lyteDropdownUp lyte-input.lyteInput .lyteSearch {
+  border-radius: var(--lyte-dropbox-border-radius) var(--lyte-dropbox-border-radius) 0 0;
+}
+lyte-drop-box.lyteDropdownHidden {
+  display: none;
+  transform: translate(-1000px, -1000px);
+}
+lyte-drop-footer,
+lyte-drop-header {
+  display: block;
+}
+lyte-drop-footer {
+  border-top: 1px solid var(--lyte-dropbox-footer-border-color);
+  text-align: center;
+}
+lyte-drop-body {
+  padding: 5px 0;
+  display: block;
+  max-height: 210px;
+  overflow-y: auto;
+  position: relative;
+}
+lyte-drop-header lyte-search .searchIcon {
+  top: 10px;
+  right: 10px;
+}
+lyte-drop-box .lyteDropdownFooter {
+  border-top: 1px solid var(--lyte-dropbox-footer-border-color);
+}
+lyte-drop-box .lyteDropdownFooter .lyteDropdownAction {
+  padding: 7px 10px;
+  font-size: var(--lyte-dropdown-action-font-size);
+}
+lyte-drop-label {
+  display: block;
+  height: auto;
+  padding: 10px 10px 3px;
+  text-align: right;
+  font-size: var(--lyte-dropdown-drop-label-font-size);
+  font-family: var(--lyte-secondary-font);
+  overflow-wrap: break-word;
+}
+lyte-drop-label:first-child {
+  padding-top: 5px;
+}
+/*lyte-list-box dropbox related css--ENDS     */
+.lyteDropdownFiltered {
+  display: none!important;
+}
+#lytedropdownfreezelayer {
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--lyte-dropdown-freeze-layer-bg);
+  opacity: 0.1;
+  position: fixed;
+  overflow: hidden;
+  display: none;
+}
+.lyteDropdownZIndex {
+  z-index: calc(var(--lyte-dropbox-zindex) - 5);
+}
+/*Dropdown element disabled option -- BEGINS*/
+.lyteDropdown-disabled lyte-drop-button {
+  background: var(--lyte-dropdown-button-disabled-bg);
+  color: var(--lyte-dropdown-button-disabled-text-color);
+  cursor: not-allowed;
+}
+.lyteDropdownDisabled lyte-drop-button:hover {
+  border: 1px solid var(--lyte-dropdown-btn-border-color);
+}
+.lyteDropdownDisabled .lyteDummyEventContainer:focus lyte-drop-button:hover,
+.lyteDropdownDisabled .lyteDummyEventContainer:focus lyte-drop-button {
+  box-shadow: none;
+  border: 1px solid var(--lyte-dropdown-btn-border-color);
+}
+.lyteDropdownDisabled .lyteMultipleSelect li {
+  background: var(--lyte-dropdown-multiple-disabled-li-bg);
+  border: 1px solid var(--lyte-dropdown-multiple-disabled-li-border-color);
+  cursor: not-allowed;
+}
+.lyteDropdownDisabled .lyteCloseIcon {
+  pointer-events: none;
+}
+.lyteDropdownDisabled .lyteMultipleSelect li:hover .lyteCloseIcon {
+  background: transparent;
+}
+lyte-dropdown .lyteDropdown-disabled lyte-icon.dropdown {
+  opacity: 0.3;
+}
+/*Dropdown element disabled option -- ENDS*/
+/*  Dropdown item disabled CSS -- BEGINS    */
+lyte-drop-item.lyteDropdown-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+/*  Dropdown item disabled CSS -- ENDS    */
+.lyteDropPlaceholderNormal {
+  margin-left: 20px;
+  color: var(--lyte-dropdown-placeholder-text-color);
+}
+.lyteMultipleSelect li.lyteDropMark {
+  background: var(--lyte-dropdown-multiselect-li-selected-bg);
+  border: 1px solid var(--lyte-dropdown-multiselect-li-selected-border-color);
+}
+.lyteMultipleSelect li.lyteDropMark:hover .lyteCloseIcon {
+  background: var(--lyte-dropdown-multiselect-li-selected-hover-bg);
+}
+/*  Callout hook related CSS -- BEGINS    */
+/*Dropdown with arrow */
+lyte-drop-box .lyteArrowIcon {
+  width: 0;
+  height: 0;
+  border-bottom: 8px solid var(--lyte-dropdown-bg);
+  position: absolute;
+}
+lyte-drop-box .lyteArrowTop::after,
+lyte-drop-box .lyteArrowTop::before,
+lyte-drop-box .lyteArrowBottom::after,
+lyte-drop-box .lyteArrowBottom::before,
+lyte-drop-box .lyteArrowRight::after,
+lyte-drop-box .lyteArrowRight::before,
+lyte-drop-box .lyteArrowLeft::after,
+lyte-drop-box .lyteArrowLeft::before {
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border: 8px solid transparent;
+}
+/*Arrow Top*/
+lyte-drop-box .lyteArrowTop {
+  top: 0;
+}
+lyte-drop-box .lyteArrowTop::after,
+lyte-drop-box .lyteArrowTop::before {
+  bottom: 0;
+  right: 0;
+}
+lyte-drop-box .lyteArrowTop::after {
+  border-bottom-color: var(--lyte-dropdown-bg);
+  margin-right: -8px;
+}
+lyte-drop-box .lyteArrowTop::before {
+  border-bottom-color: var(--lyte-dropbox-arrow-border-color);
+  border-width: 10px;
+  margin-right: -10px;
+}
+/*Arrow bottom*/
+lyte-drop-box .lyteArrowBottom {
+  bottom: -8px;
+  top: unset;
+}
+lyte-drop-box .lyteArrowBottom::after,
+lyte-drop-box .lyteArrowBottom::before {
+  top: 0;
+  left: 0;
+}
+lyte-drop-box .lyteArrowBottom::after {
+  border-top-color: var(--lyte-dropdown-bg);
+  margin-left: -8px;
+}
+lyte-drop-box .lyteArrowBottom::before {
+  border-top-color: var(--lyte-dropbox-arrow-border-color);
+  border-width: 10px;
+  margin-left: -10px;
+}
+/*Arrow Right*/
+lyte-drop-box .lyteArrowRight {
+  right: 0;
+}
+lyte-drop-box .lyteArrowRight::after,
+lyte-drop-box .lyteArrowRight::before {
+  left: 0;
+  top: 0;
+}
+lyte-drop-box .lyteArrowRight::after {
+  border-left-color: var(--lyte-dropdown-bg);
+  margin-top: -8px;
+}
+lyte-drop-box .lyteArrowRight::before {
+  border-left-color: var(--lyte-dropbox-arrow-border-color);
+  border-width: 10px;
+  margin-top: -10px;
+}
+/*Arrow Left*/
+lyte-drop-box .lyteArrowLeft {
+  left: 0;
+}
+lyte-drop-box .lyteArrowLeft::after,
+lyte-drop-box .lyteArrowLeft::before {
+  right: 0;
+  top: 0;
+}
+lyte-drop-box .lyteArrowLeft::after {
+  border-right-color: var(--lyte-dropdown-bg);
+  margin-top: -8px;
+}
+lyte-drop-box .lyteArrowLeft::before {
+  border-right-color: var(--lyte-dropbox-arrow-border-color);
+  border-width: 10px;
+  margin-top: -10px;
+}
+/*  Callout hook related CSS -- ENDS    */
+lyte-drop-box.lyteAnimate {
+  transition: top 0.4s ease;
+}
+lyte-drop-box.lyteDropBoxAnimate {
+  transition-property: top, height;
+  overflow: hidden;
+}
+lyte-drop-box.lyteAnimate lyte-drop-body {
+  transition: height 0.4s ease;
+  overflow: hidden;
+}
+.lyteBodyWrapper {
+  overflow: hidden;
+}
+.lyteDropdownFFScroll {
+  overflow-y: scroll;
+}
+.lyteDropdownFFZeroScroll {
+  overflow-y: hidden;
+}
+.lyteDropdownHideGroup {
+  display: none;
+}
+.lyteDropdownWithDeselectIcon lyte-drop-button {
+  padding-left: 70px;
+}
+.lyteDropdownDeselectIcon {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.lyteDropdownDeselectIcon:hover {
+  background: var(--lyte-dropdown-deselect-icon-hover-bg);
+}
+.lyteDropdownDeselectIcon::after {
+  content: '';
+  background-image: var(--lyte-sprite-image);
+  background-position: -54px -2px;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+}
+.lyteDropdownFieldLabel {
+  margin-bottom: 10px;
+  color: #555;
+}
+.lyteDropdownHorizontal {
+  display: inline-flex;
+  align-items: center;
+}
+.lyteDropdownHorizontal .lyteDropdownFieldLabel {
+  margin-bottom: 0;
+  margin-left: 10px;
+}
+@media only screen and (max-device-width: 650px) {
+  lyte-drop-body {
+    max-height: 70px;
+  }
+}
+/* import theme overrides - styles */
+/* import custom css */
+/* Make preferred css changes over here.
+ * This will be added to the end of the styles/dropdown.less file
+ */
+/*  Dropdown related style ENDS   */

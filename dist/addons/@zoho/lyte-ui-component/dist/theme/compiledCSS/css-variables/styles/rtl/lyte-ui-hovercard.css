@@ -1,0 +1,106 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+.lyteHovercardPopover.popoverWrapper {
+  z-index: var(--lyte-hover-card-zindex);
+}
+.lyteHovercardPopover .lytePopover {
+  background: var(--lyte-hover-card-bg);
+  color: var(--lyte-hover-card-text-color);
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+.lyteHovercardPopover .lytePopoverArrowIcon {
+  background: var(--lyte-hover-card-bg);
+}
+.lyteHovercardPopover .lytePopoverArrowIcon.lytePopoverArrowTop {
+  box-shadow: -1px -1px 0 0 var(--lyte-hover-card-bg);
+}
+.lyteHovercardPopover .lytePopoverArrowIcon.lytePopoverArrowBottom {
+  box-shadow: 1px 1px 0 0 var(--lyte-hover-card-bg);
+}
+.lyteHovercardPopover .lytePopoverArrowIcon.lytePopoverArrowRight {
+  box-shadow: 1px -1px 0 0 var(--lyte-hover-card-bg);
+}
+.lyteHovercardPopover .lytePopoverArrowIcon.lytePopoverArrowLeft {
+  box-shadow: -1px 1px 0 0 var(--lyte-hover-card-bg);
+}
+.lyteHovercardWrapperElem {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+}
+lyte-hovercard-content {
+  padding: 15px;
+  display: block;
+  max-width: 500px;
+  overflow-wrap: break-word;
+  max-height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.lyteHovercardWithMaxHeight [yield-name="hoverCardYield"],
+.lyteHovercardWithMaxHeight lyte-hovercard-content {
+  max-height: inherit;
+}
+.lyteHovercardPopover .lytePopoverTopRight.lytePopover::before,
+.lyteHovercardPopover .lytePopoverTopLeft.lytePopover::before,
+.lyteHovercardPopover .lytePopoverTop.lytePopover::before,
+.lyteHovercardPopover .lytePopoverBottomRight.lytePopover::before,
+.lyteHovercardPopover .lytePopoverBottomLeft.lytePopover::before,
+.lyteHovercardPopover .lytePopoverBottom.lytePopover::before,
+.lyteHovercardPopover.lytePopTopToOrig .lytePopover::before,
+.lyteHovercardPopover.lytePopBottomToOrig .lytePopover::before {
+  content: '';
+  width: 100%;
+  height: 11px;
+  background: transparent;
+  position: absolute;
+}
+.lyteHovercardPopover .lytePopoverBottomRight.lytePopover::before,
+.lyteHovercardPopover .lytePopoverBottomLeft.lytePopover::before,
+.lyteHovercardPopover .lytePopoverBottom.lytePopover::before,
+.lyteHovercardPopover.lytePopBottomToOrig .lytePopover::before {
+  top: -11px;
+}
+.lyteHovercardPopover .lytePopoverTopRight.lytePopover::before,
+.lyteHovercardPopover .lytePopoverTopLeft.lytePopover::before,
+.lyteHovercardPopover .lytePopoverTop.lytePopover::before,
+.lyteHovercardPopover.lytePopTopToOrig .lytePopover::before {
+  bottom: -12px;
+}
+.lyteHovercardPopover .lytePopoverRightBottom.lytePopover::before,
+.lyteHovercardPopover .lytePopoverRightCenter.lytePopover::before,
+.lyteHovercardPopover .lytePopoverRight.lytePopover::before,
+.lyteHovercardPopover .lytePopoverLeftBottom.lytePopover::before,
+.lyteHovercardPopover .lytePopoverLeftCenter.lytePopover::before,
+.lyteHovercardPopover .lytePopoverLeft.lytePopover::before,
+.lyteHovercardPopover.lytePopLeftToOrig .lytePopover::before,
+.lyteHovercardPopover.lytePopRightToOrig .lytePopover::before {
+  content: '';
+  height: 100%;
+  width: 11px;
+  background: transparent;
+  position: absolute;
+}
+.lyteHovercardPopover .lytePopoverRightBottom.lytePopover::before,
+.lyteHovercardPopover .lytePopoverRightCenter.lytePopover::before,
+.lyteHovercardPopover .lytePopoverRight.lytePopover::before,
+.lyteHovercardPopover.lytePopRightToOrig .lytePopover::before {
+  right: -11px;
+}
+.lyteHovercardPopover .lytePopoverLeftBottom.lytePopover::before,
+.lyteHovercardPopover .lytePopoverLeftCenter.lytePopover::before,
+.lyteHovercardPopover .lytePopoverLeft.lytePopover::before,
+.lyteHovercardPopover.lytePopLeftToOrig .lytePopover::before {
+  left: -11px;
+}

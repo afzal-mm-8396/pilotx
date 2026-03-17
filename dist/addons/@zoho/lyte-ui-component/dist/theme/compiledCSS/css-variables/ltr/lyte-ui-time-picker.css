@@ -1,0 +1,297 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/**
+ * @component lyte-time-picker
+ */
+:root,
+:host {
+  /**
+	* @variable --lyte-timepicker-bg
+	* @selector lyte-time-picker
+	* @description Background color for the time picker input and dropdown.
+	* @defaultValue var(--lyte-theme-body-bg)
+	* @defaultVariableValue #fff
+	* @inputType color
+	* @name Background Color
+	*/
+  --lyte-timepicker-bg: var(--lyte-theme-body-bg);
+  /**
+	* @variable --lyte-timepicker-text-color
+	* @selector lyte-time-picker
+	* @description Text color used inside the time picker input and dropdown.
+	* @defaultValue var(--lyte-common-text-color2)
+	* @defaultVariableValue #111
+	* @inputType color
+	* @name Text Color
+	*/
+  --lyte-timepicker-text-color: var(--lyte-common-text-color2);
+  /**
+	* @variable --lyte-timepicker-border-color
+	* @selector .lyteTimePickerField
+	* @description Default border color for the time picker input field and dropdown.
+	* @defaultValue #d6d6d6
+	* @inputType color
+	* @name Border Color
+	*/
+  --lyte-timepicker-border-color: #d6d6d6;
+  /**
+	* @variable --lyte-timepicker-hover-border-color
+	* @selector .lyteTimePickerField:hover
+	* @description Border color when the time picker input field is hovered.
+	* @defaultValue #c1c1c1
+	* @inputType color
+	* @name Hover Border Color
+	*/
+  --lyte-timepicker-hover-border-color: #c1c1c1;
+  /**
+	* @variable --lyte-timepicker-focus-border-color
+	* @selector .lyteTimePickerField:focus-within
+	* @description Border color when the time picker field is focused or opened.
+	* @defaultValue #7fceef
+	* @inputType color
+	* @name Focus Border Color
+	*/
+  --lyte-timepicker-focus-border-color: #7fceef;
+  /**
+	* @variable --lyte-timepicker-border-radius
+	* @selector .lyteTimePickerField, .lytetimePickerButton
+	* @description Border radius for the time picker input and its associated button.
+	* @defaultValue 2px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Border Radius
+	*/
+  --lyte-timepicker-border-radius: 2px;
+  /**
+	* @variable --lyte-timepicker-disabled
+	* @selector .lyteTimePickerDisabled
+	* @description Background color for the time picker input when disabled.
+	* @defaultValue #f3f3f3
+	* @inputType color
+	* @name Disabled Background Color
+	*/
+  --lyte-timepicker-disabled: #f3f3f3;
+  /**
+	* @variable --lyte-timepicker-dropbox-text-color
+	* @selector .lyteTimePickerDropdownValues li
+	* @description Text color used for time options listed in the dropdown.
+	* @defaultValue var(--lyte-common-text-color2)
+	* @defaultVariableValue #111
+	* @inputType color
+	* @name Dropdown Text Color
+	*/
+  --lyte-timepicker-dropbox-text-color: var(--lyte-common-text-color2);
+  /**
+	* @variable --lyte-timepicker-font-size
+	* @selector .lyteTimePickerInput, .lyteTimePickerDropdownValues li
+	* @description Font size used inside the time picker input and dropdown list.
+	* @defaultValue var(--lyte-font-size-medium)
+	* @defaultVariableValue 15px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Font Size
+	*/
+  --lyte-timepicker-font-size: var(--lyte-font-size-medium);
+  /**
+	* @variable --lyte-timepicker-zIndex
+	* @selector lyte-time-picker-dropdown
+	* @description z-index value to control the stacking order of the time picker dropdown.
+	* @defaultValue var(--lyte-level4-zindex)
+	* @defaultVariableValue 1060
+	* @inputType number
+	* @name Z-Index
+	*/
+  --lyte-timepicker-zIndex: var(--lyte-level4-zindex);
+  /**
+	* @variable --lyte-timepicker-error-border-color
+	* @selector .lyteTimePickerInvalidTime .lyteTimePickerField
+	* @description Border color used when the time picker value is invalid.
+	* @defaultValue #E74C3C
+	* @inputType color
+	* @name Error Border Color
+	*/
+  --lyte-timepicker-error-border-color: #E74C3C;
+  /**
+	* @variable --lyte-timepicker-error-box-shadow
+	* @selector .lyteTimePickerInvalidTime .lyteTimePickerField
+	* @description Box-shadow applied to the time picker input when in an error state.
+	* @defaultValue 0px 0px 5px 3px #E74C3C1F
+	* @inputType boxShadow
+	* @name Error Shadow
+	*/
+  --lyte-timepicker-error-box-shadow: 0px 0px 5px 3px #E74C3C1F;
+}
+/* rtl files loading */
+lyte-time-picker {
+  position: relative;
+  display: inline-block;
+}
+.lyteTimePickerField {
+  display: inline-flex;
+  border: 1px solid var(--lyte-timepicker-border-color);
+  border-radius: var(--lyte-timepicker-border-radius);
+}
+.lyteTimePickerField:hover {
+  border: 1px solid var(--lyte-timepicker-hover-border-color);
+}
+.lyteTimePickerDropdownOpened .lyteTimePickerField,
+.lyteTimePickerField:focus-within {
+  border: 1px solid var(--lyte-timepicker-focus-border-color);
+}
+.lyteTimePickerInput {
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 1px 0 0 1px;
+  outline: 0;
+  font-size: var(--lyte-timepicker-font-size);
+  background: var(--lyte-timepicker-bg);
+  color: var(--lyte-timepicker-text-color);
+}
+.lyteTimePickerInput::placeholder {
+  font-family: var(--lyte-primary-font);
+  color: #a6a6a6;
+}
+.lytetimePickerButton {
+  padding: 5px;
+  background: #eee;
+  border-radius: 0 1px 1px 0;
+  cursor: pointer;
+  border: 0;
+}
+.lyteTimePickerBtnIcon {
+  -webkit-mask-image: var(--lyte-sprite-image);
+  mask-image: var(--lyte-sprite-image);
+  -webkit-mask-position: -176px -132px;
+  mask-position: -176px -132px;
+  background-color: #555;
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+.lyteTimePickerDropdownNone {
+  display: none;
+}
+lyte-time-picker-dropdown {
+  font-family: var(--lyte-primary-font);
+  display: block;
+  position: absolute;
+  border: 1px solid var(--lyte-timepicker-border-color);
+  z-index: var(--lyte-timepicker-zIndex);
+  background: var(--lyte-timepicker-bg);
+}
+.lyteTimePickerDropdownValues {
+  display: flex;
+  height: 200px;
+}
+.lyteTimePickerUl {
+  list-style-type: none;
+  width: 55px;
+  overflow-y: hidden;
+  padding: 5px 0;
+  margin: 0;
+  border-right: 1px solid var(--lyte-timepicker-border-color);
+}
+.lyteTimePickerUl:last-of-type {
+  border-right: 0;
+}
+.lyteTimePickerUl:hover {
+  overflow-y: scroll;
+}
+.lyteTimePickerDropdownValues li {
+  font-size: 15px;
+  padding: 7px;
+  color: var(--lyte-timepicker-dropbox-text-color);
+  cursor: pointer;
+  box-sizing: border-box;
+  scroll-margin: 5px;
+}
+.lyteTimePickerItemFocused {
+  background: #e6f3fd;
+  outline: 0;
+}
+li.lyteTimePickerItemSelected {
+  background-color: #5ba1e5;
+  color: #fff;
+}
+.lyteTimePickerDropdownButton {
+  padding: 10px;
+  border-top: 1px solid var(--lyte-timepicker-border-color);
+  text-align: right;
+}
+li.lyteTimePickerBlur {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.lyteTimePickerDisabled .lytetimePickerButton,
+.lyteTimePickerDisabled .lyteTimePickerInput {
+  background: var(--lyte-timepicker-disabled);
+  cursor: not-allowed;
+  color: #999;
+}
+.lyteTimePickerDisabled .lyteTimePickerField:hover {
+  border: 1px solid var(--lyte-timepicker-border-color);
+}
+#lyteTimePickerFreezeLayer {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #fff;
+  opacity: 0.1;
+  position: fixed;
+  overflow: hidden;
+  display: none;
+}
+.lyteTimePickerOpenFreeze {
+  overflow: hidden;
+}
+.lyteTimePickerOpenFreeze #lyteTimePickerFreezeLayer {
+  display: block;
+}
+.lyteTimePickerScrollBehavior {
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+.lytetimePickerCounterButtons {
+  display: flex;
+  flex-direction: column;
+}
+.lytetimePickerIncButton,
+.lytetimePickerDecButton {
+  border: 0;
+  border-left: 1px solid #C4C9CC;
+  padding: 0 7px;
+  background-color: transparent;
+  flex-grow: 1;
+  cursor: pointer;
+}
+.lytetimePickerIncButton {
+  border-bottom: 1px solid #C4C9CC;
+}
+.lyteTimePickerDecIcon,
+.lyteTimePickerIncIcon {
+  display: block;
+  -webkit-mask: var(--lyte-sprite-image) no-repeat -14px -2px;
+  mask: var(--lyte-sprite-image) no-repeat -14px -2px;
+  background-color: #5B5D5F;
+  width: 9px;
+  height: 5px;
+}
+.lyteTimePickerIncIcon {
+  transform: rotate(180deg);
+}
+.lytetimePickerIncButton:hover,
+.lytetimePickerDecButton:hover {
+  background-color: #eee;
+}
+.lyteTimePickerInvalidTime .lyteTimePickerField {
+  border-color: var(--lyte-timepicker-error-border-color);
+  box-shadow: var(--lyte-timepicker-error-box-shadow);
+}

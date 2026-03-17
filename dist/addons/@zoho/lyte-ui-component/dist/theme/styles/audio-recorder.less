@@ -1,0 +1,418 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/audiorecorder/audio-recorder.variables.less";
+
+
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{audiorecorder}/ui-elements/audiorecorder/audio-recorder.variables.less";
+
+/* rtl files loading */
+
+@import (multiple, optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple, optional) "../themes/@{audiorecorder}/global/@{direction}.less";
+
+/* Loading final tweaks to your variables */
+@import (optional) "../overrides/ui-elements/audiorecorder.variables.less";
+
+
+.lyteAudioRecorderPause .lyteRecordingControlButtons,
+.lyteAudioRecorderRecording .lyteRecordingControlButtons {
+	.lyteAudioRecorderRecordingMixin();
+	display: flex;
+	align-items: center;
+	margin: @margin;
+	gap: @gap;
+}
+
+// .lyteAudioRecorderPauseButton {
+// 	.lyteAudioRecorderPauseButtonMixin();
+// 	-webkit-mask-image: @mask-img;
+// 	-webkit-mask-size: @mask-size;
+// 	-webkit-mask-repeat: @mask-repeat;
+// 	mask-image: @mask-img;
+// 	mask-size: @mask-size;
+// 	mask-repeat: @mask-repeat;
+// 	width: @w;
+// 	height: @h;
+// 	scale: @scale;
+// 	cursor: pointer;
+// 	background-color: @bg-color;
+// 	order: @order;
+// }
+
+.lyteRecordingControlButtons .lyteCancelButton,
+.lyteVoiceNoteClearButton {
+	.lyteVoiceNoteClearButtonMixin();
+	background-image: @bg-img;
+	background-repeat: no-repeat;
+	display: inline-block;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	cursor: pointer;
+}
+
+.lyteRecordingControlButtons .lyteStopButton {
+	.lyteRecordingControlButtonsMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	height: @h;
+	width: @w;
+	cursor: pointer;
+}
+
+.lyteRecordingControlButtons .lyteResumeButton,
+.lyteRecordingControlButtons .lytePauseButton {
+	.lyteRecordingControlResumePauseButtonsMixin();
+	width: @w;
+	height: @h;
+	cursor: pointer;
+}
+
+.lyteRecordingControlButtons .lyteResumeButton {
+	.lyteRecordingControlResumeButtonsMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+}
+
+.lyteRecordingControlButtons .lytePauseButton {
+	.lyteRecordingControlPauseButtonsMixin();
+	mask-image: @mask-img;
+	mask-position: @mask-position;
+	background-color: @bg-color;
+}
+
+.audioRecorderWrap,
+lyte-audio-recorder .lyteVoiceNotePrefetchSuccess {
+	.lyteVoiceNotePrefetchSuccessMixin();
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: @border;
+	border-radius: @border-radius;
+	width: @w;
+	background: @bg
+}
+
+.lyteRecordingCanvas {
+	.lyteRecordingCanvasMixin();
+	height: @h;
+	width: @w;
+	background-color: @bg-color;
+	margin: @margin;
+	border: @border;
+	background-image: @bg-img;
+}
+
+.lyteRecordButton {
+	.lyteRecordButtonMixin();
+	margin: @margin;
+}
+
+.lyteRecordingControlButtons .lyteRecordButton .lytePrimaryBtn {
+	.lyteRecordingControlRecordPrimaryButtonsMixin();
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: @gap;
+}
+
+.lyteRecordingControlButtons .lyteRecordButton .lytePrimaryBtn::before {
+	.lyteRecordingControlRecordPrimaryButtonsbeforeMixin();
+	content: "";
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	height: @h;
+	width: @w;
+}
+
+lyte-audio-recorder {
+
+	.lyteVoiceNoteBackwardButton,
+	.lyteVoiceNoteForwardButton {
+		.lyteAudioRecorderVoiceNoteBackwardAndForwardButtonCommonMixin();
+		position: relative;
+		width: @w;
+		height: @h;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.lyteVoiceNoteForwardButton::before,
+	.lyteVoiceNoteBackwardButton::before {
+		.lyteAudioRecorderVoiceForwardAndBackwardButtonBeforeMixin();
+		content: "";
+		display: block;
+		-webkit-mask-image: @mask-img;
+		mask-image: @mask-img;
+		width: @w;
+		height: @h;
+		background: @bg;
+	}
+
+	.lyteVoiceNoteForwardButton::before {
+		.lyteAudioRecorderVoiceNoteForwardButtonBeforeMixin();
+		-webkit-mask-position: @mask-pos;
+		mask-position: @mask-pos;
+	}
+
+	.lyteVoiceNoteBackwardButton::before {
+	.lyteAudioRecorderVoiceNoteBackwardButtonBeforeMixin();
+		-webkit-mask-position: @mask-pos;
+		mask-position: @mask-pos;
+	}
+
+	.lyteVoiceNotePrefetchPlayIcon::after, 
+	.lyteVoiceNotePausePlayIcon.paused::after {
+		.lyteAudioRecorderVoiceNotePrefetchPlayIconAndPausedAfterMixin();
+		-webkit-mask-position: @mask-pos;
+		mask-position: @mask-pos;
+		width: @w;
+		height: @h;
+		margin-left: @margin-left;
+	}
+
+
+	.lyteVoiceNoteForwardButton::after,
+	.lyteVoiceNoteBackwardButton::after {
+		.lyteAudioRecorderVoiceNoteForwardAndBackwardButtonAfterCommonMixin();
+		content: attr(skip-time);
+		position: absolute;
+		top: @top;
+		left: @left;
+		transform: @transform;
+		color: @color;
+	}
+
+	.lyteTimePreview {
+		.lyteTimePreviewMixin();
+		padding: @padding;
+		border-bottom: @border-bottom;
+		width: @w;
+		text-align: end;
+	}
+
+	.lyteVoiceNoteDownloadIcon {
+		.lyteAudioRecorderVoiceNoteDownloadIconMixin();
+		display: block;
+		background-image: @bg-img;
+		background-position: @bg-pos;
+		height: @h;
+		width: @w;
+		cursor: pointer;
+	}
+
+	.lyteVoiceNoteDownloadIcon a {
+		.lyteAudioRecorderVoiceNoteDownloadIconAMixin();
+		display: block;
+		height: @h;
+		width: @w;
+	}
+
+	lyte-voicenote {
+		.lyteAudioRecorderVoicenoteMixin();
+		display: block;
+		width: @w;
+	}
+
+	.lyteVoiceNoteProgress {
+		.lyteAudioRecorderVoiceNoteProgressMixin();
+		margin: @margin;
+		position: relative;
+		background: @bg;
+	}
+
+	.lyteVoiceNotePrefetchLoadingBar::before,
+	.lyteVoiceNoteHandler {
+		.lyteAudioRecorderVoiceNotePrefetchLoadingBarBeforeMixin();
+		width: @w;
+		height: @h;
+		position: absolute;
+		background: @bg;
+		border-radius: @border-radius;
+		top: @top;
+		transform: @transform;
+	}
+
+	.lyteVoiceNoteMetaLoaded .lyteVoiceNoteHandler {
+		.lyteAudioRecorderVoiceNoteMetaLoadedNoteHandlerMixin();
+		background: @bg;
+		cursor: ew-resize;
+		left: @left;
+	}
+
+	.lyteVoiceNoteMetaLoaded .lyteVoiceNoteHandler::before,
+	.lyteVoiceNoteMetaLoaded .lyteVoiceNoteHandler::after {
+		.lyteAudioRecorderVoiceNoteMetaLoadedlHandlerBeforeAfterMixin();
+		content: "";
+		display: block;
+		position: absolute;
+		height: @h;
+		width: @w;
+		border-radius: @border-radius;
+		background: @bg;
+		left: @left;
+	}
+
+	.lyteVoiceNoteMetaLoaded .lyteVoiceNoteHandler::before {
+		.lyteAudioRecorderVoiceNoteMetaLoadedlyteVoiceNoteHandlerBeforeMixin();
+		bottom: @bottom;
+	}
+
+	.lyteVoiceNoteMetaLoaded .lyteVoiceNoteHandler::after {
+		.lyteAudioRecorderVoiceNoteMetaLoadedlyteVoiceNoteHandlerAfterMixin();
+		top: @top;
+	}
+
+	.lyteVoiceNoteRefreshButton {
+		.lyteAudioRecorderVoiceNoteRefreshButtonMixin();
+		display: inline-block;
+		background-image: @bg-img;
+		background-position: @bg-pos;
+		width: @w;
+		height: @h;
+		cursor: pointer;
+	}
+
+	.lyteVoiceNotePausePlayIcon {
+		.lyteAudioRecorderVoiceNotePausePlayIconMixin();
+		display: inline-block;
+		background-image: @bg-img;
+		width: @w;
+		height: @h;
+		cursor: pointer;
+		background-position: @bg-pos;
+	}
+
+	.lyteVoiceNotePausePlayIcon.paused {
+		.lyteAudioRecorderVoiceNotePausePlayIconPausedMixin();
+		display: inline-block;
+		background-image: @bg-img;
+		width: @w;
+		height: @h;
+		cursor: pointer;
+		background-position: @bg-pos;
+	}
+
+	.lyteVoiceNotePrefetchPlayIcon, 
+	.lyteVoiceNotePausePlayIcon {
+		border: none;
+		background-color: transparent;
+		box-shadow: none
+	}
+
+	.lyteVoiceNoteCanvas {
+		.lyteAudioRecorderVoiceNoteCanvasMixin();
+		width: @w;
+		height: @h;
+		border: @border;
+		background-image: @bg-img;
+	}
+
+	.lyteVoiceNoteCenterControls {
+		.lyteAudioRecorderVoiceNoteCenterControlsMixin();
+		// width: @w;
+		/* height: 43px; */
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: @margin;
+		justify-self: center;
+		grid-column: 1 / 3;
+		grid-row: 1;
+		gap: @gap;
+		position: relative;
+	}
+
+	.lyteVoiceNoteControlsWrapper {
+		.lyteAudioRecorderVoiceNoteControlsWrapperMixin();
+		display: grid;
+		align-items: center;
+		width: @w;
+		padding: @padding;
+		box-sizing: border-box;
+		grid-template-columns: auto auto;
+	}
+
+	.lyteVoiceNoteRightSideControls {
+		.lyteAudioRecorderVoiceNoteRightSideControlsMixin();
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: @gap;
+		margin-left: @margin-left;
+		justify-self: flex-end;
+		grid-column: 2;
+		grid-row: 1;
+	}
+
+	.lyteTimePreview {
+		.lyteTimePreviewMixin();
+		display: flex;
+		padding: @padding;
+		width: @w;
+		justify-content: right;
+	}
+
+	.lyteVoicenoteTimeInfo {
+		.lyteAudioRecorderVoicenoteTimeInfoMixin();
+		gap: @gap;
+		padding: @padding;
+		background-color: @bg-color;
+		color: @color;
+		border-radius: @border-radius;
+		border: @border;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: @margin;
+		font-size: @font-size;
+	}
+
+	.lyteCancelButton .lyteDefaultBtn,
+	.lyteStopButton .lyteDefaultBtn,
+	.lytePauseButton .lyteDefaultBtn,
+	.lyteResumeButton .lyteDefaultBtn {
+		.lyteAudioRecorderActionButtonsCommonMixin();
+		background: @bg;
+		border: @border;
+	}
+
+	.lyteVoiceNotePlaybackRate .lyteDummyEventContainer lyte-drop-button {
+		.lyteAudioRecorderVoiceNotePlaybackRateDropButtonMixin();
+		padding: @padding;
+	}
+
+
+	.lyteVoiceNotePlaybackRate lyte-icon.dropdown {
+		display: block;
+	}
+
+	.lyteVoiceNoteLeftSideControls {
+		grid-column: 1 / 3;
+		grid-row: 1;
+	}
+
+	.lyteVoiceNoteVolumeIcon,
+	.lyteVoiceNoteVolumeControl {
+		.lyteAudioRecorderVoiceNoteVolumeIconAndControlMixin();
+		-webkit-mask-image: @mask-img;
+		mask-image: @mask-img;
+		-webkit-mask-position: @mask-pos;
+		mask-position: @mask-pos;
+		background-color: @bg-color;
+		width: @w;
+		height: @h;
+		display: block;
+		cursor: pointer;
+	}
+
+	.lyteVoiceNoteFullVolumeIcon {
+		.lyteAudioRecorderVoiceNoteFullVolumeIconMixin();
+		-webkit-mask-position: @mask-pos;
+		mask-position: @mask-pos;
+	}
+}

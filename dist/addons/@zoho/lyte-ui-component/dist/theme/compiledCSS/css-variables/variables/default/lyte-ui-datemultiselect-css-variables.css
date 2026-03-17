@@ -1,0 +1,168 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-datemultiselect
+*/
+:root,
+:host {
+  /**
+     * @variable --lyte-dms-button-border-color
+     * @selector .lyteDMSButton
+     * @description Border color of the date multiselect button
+     * @defaultValue #d6d6d6
+     * @inputType color
+     * @name Button Border Color
+     */
+  --lyte-dms-button-border-color: #d6d6d6;
+  /**
+     * @variable --lyte-dms-button-bg
+     * @selector .lyteDMSButton
+     * @description Background color of the date multiselect button
+     * @defaultValue #fff
+     * @inputType color
+     * @name Button Background Color
+     */
+  --lyte-dms-button-bg: #fff;
+  /**
+     * @variable --lyte-dms-button-hover-border-color
+     * @selector .lyteDMSButton:hover
+     * @description Border color of the date multiselect button on hover
+     * @defaultValue #c1c1c1
+     * @inputType color
+     * @name Button Hover Border Color
+     */
+  --lyte-dms-button-hover-border-color: #c1c1c1;
+  /**
+     * @variable --lyte-dms-wrap-box-shadow-color
+     * @selector .lyteDmsWrap
+     * @description Box shadow for the date multiselect wrapper
+     * @defaultValue rgba(0, 0, 0, 0.05)
+     * @inputType color
+     * @name Wrapper Box Shadow Color
+     */
+  --lyte-dms-wrap-box-shadow-color: rgba(0, 0, 0, 0.05);
+  /**
+     * @variable --lyte-dms-wrap-border-color
+     * @selector .lyteDmsWrap
+     * @description Border color of the date multiselect wrapper
+     * @defaultValue #E5E8EA
+     * @inputType color
+     * @name Wrapper Border Color
+     */
+  --lyte-dms-wrap-border-color: #E5E8EA;
+  /**
+     * @variable --lyte-dms-selection-container-bg
+     * @selector .lyteDmsSelectionContainer
+     * @description Background color of the selection container
+     * @defaultValue #fff
+     * @inputType color
+     * @name Selection Container Background Color
+     */
+  --lyte-dms-selection-container-bg: #fff;
+  /**
+     * @variable --lyte-dms-selection-container-border-left-color
+     * @selector .lyteDmsSelectionContainer
+     * @description Left border color of the selection container
+     * @defaultValue #E5E8EA
+     * @inputType color
+     * @name Selection Container Border Left Color
+     */
+  --lyte-dms-selection-container-border-left-color: #E5E8EA;
+  /**
+     * @variable --lyte-dms-calc-wrap-border-bottom-color
+     * @selector .lyteDmsCalcWrap
+     * @description Bottom border color of the calculation wrapper
+     * @defaultValue #BABDBF
+     * @inputType color
+     * @name Calculation Wrapper Border Bottom Color
+     */
+  --lyte-dms-calc-wrap-border-bottom-color: #BABDBF;
+  /**
+     * @variable --lyte-dms-date-calc-color
+     * @selector .lyteDmsDateCalc
+     * @description Text color of the selected date range values
+     * @defaultValue #0984E3
+     * @inputType color
+     * @name Date Range Values Color
+     */
+  --lyte-dms-date-calc-color: #0984E3;
+  /**
+     * @variable --lyte-dms-date-calc-border-color
+     * @selector .lyteDmsDateCalc
+     * @description Border color of the selected date range values
+     * @defaultValue #0984E3
+     * @inputType color
+     * @name Date Range Values Border Color
+     */
+  --lyte-dms-date-calc-border-color: #0984E3;
+  /**
+     * @variable --lyte-dms-day-calc-color
+     * @selector .lyteDmsDayCalc
+     * @description Color of the day count in the date range
+     * @defaultValue #152229
+     * @inputType color
+     * @name Day Count Color
+     */
+  --lyte-dms-day-calc-color: #152229;
+  /**
+     * @variable --lyte-dms-selected-days-color
+     * @selector .lyteDmsSelectedDays
+     * @description Text color for the list of selected days
+     * @defaultValue #292C2E
+     * @inputType color
+     * @name Selected Days Color
+     */
+  --lyte-dms-selected-days-color: #292C2E;
+  /**
+     * @variable --lyte-dms-remove-icon-bg
+     * @selector .lyteDMSRemoveIcon
+     * @description Background color for the remove (X) icon
+     * @defaultValue #6D6E70
+     * @inputType color
+     * @name Remove Icon Background Color
+     */
+  --lyte-dms-remove-icon-bg: #6D6E70;
+  /**
+     * @variable --lyte-dms-remove-all-color
+     * @selector .lyteDMSRemoveAll
+     * @description Text color for the “Remove All” action
+     * @defaultValue #E74C3C
+     * @inputType color
+     * @name Remove All Text Color
+     */
+  --lyte-dms-remove-all-color: #E74C3C;
+  /**
+     * @variable --lyte-dms-calender-popup-border-right-color
+     * @selector .lyteDmsWrap .lyteCalendarPopup
+     * @description Right border color of the calendar popup
+     * @defaultValue #E5E8EA
+     * @inputType color
+     * @name Calendar Popup Right Border Color
+     */
+  --lyte-dms-calender-popup-border-right-color: #E5E8EA;
+  /**
+     * @variable --lyte-dms-button-placeholder-color
+     * @selector .lyteDMSButtonPlaceholder
+     * @description Placeholder text color in the multiselect button
+     * @defaultValue #808080
+     * @inputType color
+     * @name Button Placeholder Color
+     */
+  --lyte-dms-button-placeholder-color: #808080;
+  /**
+     * @variable --lyte-dms-selection-container-font-size
+     * @selector .lyteDmsSelectionContainer
+     * @description Font size used for text in the selection container
+     * @defaultValue var(--lyte-font-size-medium)
+     * @defaultVariableValue 15px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Selection Container Font Size
+     */
+  --lyte-dms-selection-container-font-size: var(--lyte-font-size-medium);
+}

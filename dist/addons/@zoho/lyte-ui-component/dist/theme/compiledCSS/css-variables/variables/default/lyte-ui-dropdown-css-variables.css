@@ -1,0 +1,362 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-dropdown
+*/
+:root,
+:host {
+  /**
+     * @variable --lyte-dropdown-bg
+     * @selector lyte-dropdown, lyte-drop-box
+     * @description Background color for the dropdown and its box
+     * @defaultValue var(--lyte-theme-body-bg)
+     * @defaultVariableValue #fff
+     * @inputType color
+     * @name Background Color
+     */
+  --lyte-dropdown-bg: var(--lyte-theme-body-bg);
+  /**
+     * @variable --lyte-dropdown-text-color
+     * @selector lyte-drop-button, lyte-drop-item
+     * @description Text color used in dropdown buttons and items
+     * @defaultValue var(--lyte-common-text-color2)
+     * @defaultVariableValue #111
+     * @inputType color
+     * @name Text Color
+     */
+  --lyte-dropdown-text-color: var(--lyte-common-text-color2);
+  /**
+     * @variable --lyte-dropdown-btn-border-color
+     * @selector lyte-drop-button
+     * @description Border color for the dropdown button
+     * @defaultValue #d6d6d6
+     * @inputType color
+     * @name Button Border Color
+     */
+  --lyte-dropdown-btn-border-color: #d6d6d6;
+  /**
+     * @variable --lyte-dropdown-btn-hover-border-color
+     * @selector lyte-drop-button:hover
+     * @description Border color for the dropdown button on hover
+     * @defaultValue #c1c1c1
+     * @inputType color
+     * @name Button Hover Border Color
+     */
+  --lyte-dropdown-btn-hover-border-color: #c1c1c1;
+  /**
+     * @variable --lyte-dropbox-border-color
+     * @selector lyte-drop-box
+     * @description Border color for the dropdown box
+     * @defaultValue var(--lyte-dropdown-btn-border-color)
+     * @defaultVariableValue #d6d6d6
+     * @inputType color
+     * @name Dropbox Border Color
+     */
+  --lyte-dropbox-border-color: var(--lyte-dropdown-btn-border-color);
+  /**
+     * @variable --lyte-dropbox-box-shadow-color
+     * @selector lyte-drop-box
+     * @description Box shadow color for dropdown box
+     * @defaultValue rgba(0, 0, 0, 0.15)
+     * @inputType color
+     * @name Dropbox Box Shadow Color
+     */
+  --lyte-dropbox-box-shadow-color: rgba(0, 0, 0, 0.15);
+  /**
+     * @variable --lyte-dropbox-item-hover-bg
+     * @selector lyte-drop-item:hover
+     * @description Background color for dropdown items on hover
+     * @defaultValue #ededed
+     * @inputType color
+     * @name Item Hover Background Color
+     */
+  --lyte-dropbox-item-hover-bg: #ededed;
+  /**
+     * @variable --lyte-dropbox-arrow-border-color
+     * @selector .lyteArrow
+     * @description Border color used in dropdown arrow pointer
+     * @defaultValue var(--lyte-dropdown-btn-border-color)
+     * @defaultVariableValue #d6d6d6
+     * @inputType color
+     * @name Arrow Border Color
+     */
+  --lyte-dropbox-arrow-border-color: var(--lyte-dropdown-btn-border-color);
+  /**
+     * @variable --lyte-dropbox-border-radius
+     * @selector lyte-drop-box
+     * @description Border radius for the dropdown box
+     * @defaultValue 2px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Border Radius
+     */
+  --lyte-dropbox-border-radius: 2px;
+  /**
+     * @variable --lyte-dropbox-translate-width
+     * @selector lyte-drop-box
+     * @description Initial off-screen position to hide dropdown box
+     * @defaultValue 8px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Translate Width
+     */
+  --lyte-dropbox-translate-width: 8px;
+  /**
+     * @variable --lyte-dropbox-zindex
+     * @selector lyte-drop-box
+     * @description Z-index value for dropdown box
+     * @defaultValue var(--lyte-level4-zindex)
+     * @defaultVariableValue 1060
+     * @inputType number
+     * @name Z-Index
+     */
+  --lyte-dropbox-zindex: var(--lyte-level4-zindex);
+  /**
+     * @variable --lyte-dropdown-multiselect-li-bg
+     * @selector .lyteMultipleSelect li
+     * @description Background color for multi-select selected items
+     * @defaultValue #f1f1f1
+     * @inputType color
+     * @name Multi-Select Item Background Color
+     */
+  --lyte-dropdown-multiselect-li-bg: #f1f1f1;
+  /**
+     * @variable --lyte-dropdown-multiselect-li-border-color
+     * @selector .lyteMultipleSelect li
+     * @description Border color for multi-select selected items
+     * @defaultValue #e8e8e8
+     * @inputType color
+     * @name Multi-Select Item Border Color
+     */
+  --lyte-dropdown-multiselect-li-border-color: #e8e8e8;
+  /**
+     * @variable --lyte-dropdown-multiselect-li-selected-bg
+     * @selector .lyteDropMark
+     * @description Background color for selected multi-select item
+     * @defaultValue #eef5fa
+     * @inputType color
+     * @name Multi-Select Item Selected Background Color
+     */
+  --lyte-dropdown-multiselect-li-selected-bg: #eef5fa;
+  /**
+     * @variable --lyte-dropdown-multiselect-li-selected-border-color
+     * @selector .lyteDropMark
+     * @description Border color for selected multi-select item
+     * @defaultValue #3ea7fc
+     * @inputType color
+     * @name Multi-Select Item Selected Border Color
+     */
+  --lyte-dropdown-multiselect-li-selected-border-color: #3ea7fc;
+  /**
+     * @variable --lyte-dropdown-multiselect-li-selected-hover-bg
+     * @selector .lyteDropMark:hover
+     * @description Background color on hover for selected multi-select item
+     * @defaultValue #daebf7
+     * @inputType color
+     * @name Multi-Select Item Selected Hover Background Color
+     */
+  --lyte-dropdown-multiselect-li-selected-hover-bg: #daebf7;
+  /**
+     * @variable --lyte-dropdown-multiselect-placeholder-text-color
+     * @selector .lyteDropPlaceholderMultiple
+     * @description Text color for the multi-select placeholder
+     * @defaultValue #999
+     * @defaultVariableValue #999
+     * @inputType color
+     * @name Multi-Select Placeholder Text Color
+     */
+  --lyte-dropdown-multiselect-placeholder-text-color: #999;
+  /**
+     * @variable --lyte-dropdown-multiselect-remove-hover-bg
+     * @selector .lyteCloseIcon:hover
+     * @description Background color on hover for multi-select close icon
+     * @defaultValue #e8e8e8
+     * @inputType color
+     * @name Multi-Select Remove Hover Background Color
+     */
+  --lyte-dropdown-multiselect-remove-hover-bg: #e8e8e8;
+  /**
+     * @variable --lyte-dropdown-no-result-text-color
+     * @selector .lyteDropdownNoResult
+     * @description Text color for the "No result found" label
+     * @defaultValue #8a8a8a
+     * @defaultVariableValue #8a8a8a
+     * @inputType color
+     * @name No Result Text Color
+     */
+  --lyte-dropdown-no-result-text-color: #8a8a8a;
+  /**
+     * @variable --lyte-dropbox-button-overlap-bg
+     * @selector .lyteArrow
+     * @description Background color for overlap element above dropdown box
+     * @defaultValue #ededed
+     * @inputType color
+     * @name Dropbox Button Overlap Background Color
+     */
+  --lyte-dropbox-button-overlap-bg: #ededed;
+  /**
+     * @variable --lyte-dropbox-footer-border-color
+     * @selector .lyteDropdownFooter
+     * @description Border color for the footer section in dropdown box
+     * @defaultValue #ddd
+     * @inputType color
+     * @name Footer Border Color
+     */
+  --lyte-dropbox-footer-border-color: #ddd;
+  /**
+     * @variable --lyte-dropdown-freeze-layer-bg
+     * @selector #lytedropdownfreezelayer
+     * @description Background color for the freeze layer used in dropdowns
+     * @defaultValue #fff
+     * @inputType color
+     * @name Freeze Layer Background Color
+     */
+  --lyte-dropdown-freeze-layer-bg: #fff;
+  /**
+     * @variable --lyte-dropdown-button-disabled-bg
+     * @selector .lyteDropdown-disabled lyte-drop-button
+     * @description Background color for a disabled dropdown button
+     * @defaultValue #f3f3f3
+     * @inputType color
+     * @name Button Disabled Background Color
+     */
+  --lyte-dropdown-button-disabled-bg: #f3f3f3;
+  /**
+     * @variable --lyte-dropdown-button-disabled-text-color
+     * @selector .lyteDropdown-disabled lyte-drop-button
+     * @description Text color for a disabled dropdown button
+     * @defaultValue #999
+     * @inputType color
+     * @name Button Disabled Text Color
+     */
+  --lyte-dropdown-button-disabled-text-color: #999;
+  /**
+     * @variable --lyte-dropdown-multiple-disabled-li-bg
+     * @selector .lyteDropdownDisabled .lyteMultipleSelect li
+     * @description Background color for disabled multi-select items
+     * @defaultValue #ebe9e9
+     * @inputType color
+     * @name Multi-Select Disabled Item Background Color
+     */
+  --lyte-dropdown-multiple-disabled-li-bg: #ebe9e9;
+  /**
+     * @variable --lyte-dropdown-multiple-disabled-li-border-color
+     * @selector .lyteDropdownDisabled .lyteMultipleSelect li
+     * @description Border color for disabled multi-select items
+     * @defaultValue #d3d3d3
+     * @inputType color
+     * @name Multi-Select Disabled Item Border Color
+     */
+  --lyte-dropdown-multiple-disabled-li-border-color: #d3d3d3;
+  /**
+     * @variable --lyte-dropdown-placeholder-text-color
+     * @selector .lyteDropPlaceholderNormal
+     * @description Text color for normal dropdown placeholder
+     * @defaultValue #828282
+     * @inputType color
+     * @name Placeholder Text Color
+     */
+  --lyte-dropdown-placeholder-text-color: #828282;
+  /**
+     * @variable --lyte-dropdown-deselect-icon-hover-bg
+     * @selector .lyteDropdownDeselectIcon:hover
+     * @description Background color for the deselect icon on hover
+     * @defaultValue #eee
+     * @inputType color
+     * @name Deselect Icon Hover Background Color
+     */
+  --lyte-dropdown-deselect-icon-hover-bg: #eee;
+  /**
+     * @variable --lyte-dropdown-dropbox-font-size
+     * @selector lyte-drop-box
+     * @description Font size used in dropdown box
+     * @defaultValue var(--lyte-font-size-medium)
+     * @defaultVariableValue 15px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Dropbox Font Size
+     */
+  --lyte-dropdown-dropbox-font-size: var(--lyte-font-size-medium);
+  /**
+     * @variable --lyte-dropdown-dropitem-font-size
+     * @selector lyte-drop-item
+     * @description Font size used in dropdown items
+     * @defaultValue var(--lyte-font-size-medium)
+     * @defaultVariableValue 15px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Drop Item Font Size
+     */
+  --lyte-dropdown-dropitem-font-size: var(--lyte-font-size-medium);
+  /**
+     * @variable --lyte-dropdown-multiselect-li-font-size
+     * @selector .lyteMultipleSelect li
+     * @description Font size for multi-select selected items
+     * @defaultValue var(--lyte-font-size-medium)
+     * @defaultVariableValue 15px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Multi-Select Item Font Size
+     */
+  --lyte-dropdown-multiselect-li-font-size: var(--lyte-font-size-medium);
+  /**
+     * @variable --lyte-dropdown-multiselect-placeholder-font-size
+     * @selector .lyteDropPlaceholderMultiple
+     * @description Font size for multi-select placeholder text
+     * @defaultValue var(--lyte-font-size-regular)
+     * @defaultVariableValue 14px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Multi-Select Placeholder Font Size
+     */
+  --lyte-dropdown-multiselect-placeholder-font-size: var(--lyte-font-size-regular);
+  /**
+     * @variable --lyte-dropdown-no-result-font-size
+     * @selector .lyteDropdownNoResult
+     * @description Font size for the no result text
+     * @defaultValue var(--lyte-font-size-regular)
+     * @defaultVariableValue 14px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name No Result Font Size
+     */
+  --lyte-dropdown-no-result-font-size: var(--lyte-font-size-regular);
+  /**
+     * @variable --lyte-dropdown-dropbtn-input-font-size
+     * @selector lyte-drop-button input
+     * @description Font size for input field inside dropdown button
+     * @defaultValue var(--lyte-font-size-regular)
+     * @defaultVariableValue 14px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Drop Button Input Font Size
+     */
+  --lyte-dropdown-dropbtn-input-font-size: var(--lyte-font-size-regular);
+  /**
+     * @variable --lyte-dropdown-action-font-size
+     * @selector .lyteDropdownAction
+     * @description Font size for the dropdown footer action buttons
+     * @defaultValue var(--lyte-font-size-regular)
+     * @defaultVariableValue 14px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Action Font Size
+     */
+  --lyte-dropdown-action-font-size: var(--lyte-font-size-regular);
+  /**
+     * @variable --lyte-dropdown-drop-label-font-size
+     * @selector lyte-drop-label
+     * @description Font size for dropdown section labels
+     * @defaultValue var(--lyte-font-size-medium)
+     * @defaultVariableValue 15px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Drop Label Font Size
+     */
+  --lyte-dropdown-drop-label-font-size: var(--lyte-font-size-medium);
+}

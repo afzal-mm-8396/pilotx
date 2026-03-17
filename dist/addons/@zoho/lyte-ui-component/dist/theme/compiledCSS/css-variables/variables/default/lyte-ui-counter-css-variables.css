@@ -1,0 +1,24 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-counter
+*/
+:root,
+:host {
+  /**
+     * @variable --lyte-counter-font-size
+     * @selector lyte-counter
+     * @description Font size of the counter component
+     * @defaultValue var(--lyte-font-size-xxl)
+     * @defaultVariableValue 20px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Font Size
+     */
+  --lyte-counter-font-size: var(--lyte-font-size-xxl);
+}

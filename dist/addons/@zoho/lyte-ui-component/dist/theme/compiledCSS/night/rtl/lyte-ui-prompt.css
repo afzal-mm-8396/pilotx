@@ -1,0 +1,586 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/*	Icon Colors */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+lyte-prompt {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+lyte-prompt .lyteNavDiv {
+  position: relative;
+}
+.lytePromptRoot {
+  display: flex;
+  width: 100%;
+  background: #f4f6fb;
+  color: #1f2937;
+  box-sizing: border-box;
+  height: 100%;
+}
+.lytePromptSidebar {
+  width: 260px;
+  background: #ffffff;
+  border-right: 1px solid #e3e7ef;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  font-size: 14px;
+  color: #334155;
+}
+.lytePromptSidebarTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+.lytePromptSidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lytePromptSidebarLabel {
+  font-size: 14px;
+  color: #334155;
+  font-weight: 600;
+}
+.lytePromptChatButton {
+  height: 28px;
+}
+.lytePromptChatButton button {
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #d5dbe7;
+  background: #ffffff;
+  font-size: 12px;
+}
+.lytePromptSidebarSearch {
+  margin-top: 4px;
+}
+.lytePromptSidebarSection {
+  font-size: 12px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+.lytePromptHistoryNav {
+  gap: 8px;
+  flex: 1;
+  overflow: auto;
+  padding-right: 4px;
+  min-height: 0;
+  background: transparent;
+}
+.lytePromptHistoryNav lyte-nav-item {
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: transparent;
+}
+.lytePromptHistoryNav lyte-nav-item:hover {
+  background: #eef2f9;
+}
+.lytePromptRecentRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lytePromptHistoryItem {
+  font-size: 14px;
+  color: #334155;
+  text-decoration: none;
+  display: block;
+  flex: 1;
+  min-width: 0;
+  line-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lytePromptHistoryItem:visited,
+.lytePromptHistoryItem:hover,
+.lytePromptHistoryItem:focus {
+  color: #1f2937;
+  text-decoration: none;
+}
+.lytePromptRecentMenuButton {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.lytePromptHistoryNav lyte-nav-item:hover .lytePromptRecentMenuButton,
+.lytePromptHistoryNav lyte-nav-item:focus-within .lytePromptRecentMenuButton {
+  opacity: 1;
+}
+.lytePromptRecentMenuButton button {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  padding: 0;
+  box-shadow: none;
+}
+.lytePromptRecentMenuButton button:hover {
+  background: #e2e8f0;
+  color: #64748b;
+}
+.lytePromptHistoryNav lyte-nav-item.lytePromptRecentLoaderItem {
+  background: transparent;
+  padding: 8px 10px;
+  pointer-events: none;
+}
+.lytePromptHistoryNav lyte-nav-item.lytePromptRecentLoaderItem:hover {
+  background: transparent;
+}
+.lytePromptRecentLoaderSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.lytePromptRecentLoaderLine {
+  display: block;
+  height: 12px;
+  width: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #edf2f8 25%, #e3e9f2 37%, #edf2f8 63%);
+  background-size: 400% 100%;
+  animation: lytePromptRecentSkeletonPulse 1.2s ease-in-out infinite;
+}
+.lytePromptRecentLoaderLine:nth-child(2) {
+  width: 86%;
+}
+.lytePromptRecentLoaderLine:nth-child(3) {
+  width: 72%;
+}
+@keyframes lytePromptRecentSkeletonPulse {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+.lytePromptMain {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.lytePromptTopBar {
+  height: 48px;
+  border-bottom: 1px solid #e3e7ef;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+.lytePromptAgentDropdown {
+  min-width: 140px;
+}
+.lytePromptAgentDropdown .lyteDropButton {
+  border-radius: 8px;
+  border: 1px solid #d5dbe7;
+  background: #ffffff;
+}
+.lytePromptCanvas {
+  flex: 1;
+  position: relative;
+  background: #f8fafc;
+}
+.lytePromptWelcome {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 640px;
+  text-align: center;
+  pointer-events: none;
+  z-index: 1;
+}
+.lytePromptWelcomeHidden {
+  display: none;
+}
+.lytePromptWelcomeTitle {
+  font-size: 30px;
+  line-height: 1.2;
+  color: #0f172a;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.lytePromptWelcomeMessage {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.45;
+}
+.lytePromptChatStream {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+  padding: 28px 36px 20px;
+  box-sizing: border-box;
+}
+.lytePromptChatStreamHidden {
+  visibility: hidden;
+}
+.lytePromptCanvasLoader {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  background: rgba(248, 250, 252, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lytePromptScrollBottomButton {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 186px;
+  z-index: 7;
+}
+.lytePromptRoot .lytePromptScrollBottomButton button {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid #d5dbe7;
+  background: #ffffff;
+  color: #475569;
+  padding: 0;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+}
+.lytePromptRoot .lytePromptScrollBottomButton button:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+.lytePromptChatItem {
+  display: flex;
+  width: 100%;
+  margin-bottom: 14px;
+}
+.lytePromptChatItem.is-user {
+  justify-content: flex-end;
+}
+.lytePromptChatItem.is-agent {
+  justify-content: flex-start;
+}
+.lytePromptChatBubble {
+  max-width: min(760px, 72%);
+  min-width: 140px;
+  background: #ffffff;
+  border: 1px solid #d6dbea;
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: #1f2937;
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: "Lato", "Inter", "Segoe UI", Arial, sans-serif;
+  overflow-wrap: anywhere;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+.lytePromptChatItem.is-user .lytePromptChatBubble {
+  background: #eaf1ff;
+  border-color: #bcd0ff;
+  max-height: max-content;
+}
+.lytePromptChatMessage {
+  width: 100%;
+}
+.lytePromptChatFiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+.lytePromptChatFile {
+  display: inline-flex;
+  max-width: 220px;
+}
+.lytePromptChatFile.is-loading {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  border: 1px solid #d5dbe7;
+  background: #f8fafc;
+  align-items: center;
+  justify-content: center;
+}
+.lytePromptChatFileLoader {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #d5dbe7;
+  border-top-color: #6e8fe8;
+  animation: lytePromptChatFileSpin 0.75s linear infinite;
+}
+@keyframes lytePromptChatFileSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.lytePromptChatFilePreview {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  border: 1px solid #d5dbe7;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  background: #f8fafc;
+}
+.lytePromptChatFileLink {
+  display: inline-flex;
+  align-items: center;
+  max-width: 220px;
+  min-width: 70px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #d5dbe7;
+  background: #ffffff;
+  color: #334155;
+  font-size: 13px;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lytePromptChatItem.is-user .lytePromptChatFileLink {
+  background: #ffffff;
+}
+.lytePromptChatBubble > *:first-child {
+  margin-top: 0;
+}
+.lytePromptChatBubble > *:last-child {
+  margin-bottom: 0;
+}
+.lytePromptChatBubble p {
+  margin: 0 0 8px;
+}
+.lytePromptChatBubble h1,
+.lytePromptChatBubble h2,
+.lytePromptChatBubble h3,
+.lytePromptChatBubble h4,
+.lytePromptChatBubble h5,
+.lytePromptChatBubble h6 {
+  margin: 0 0 8px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0f172a;
+}
+.lytePromptChatBubble h3 {
+  font-size: 18px;
+}
+.lytePromptChatBubble ul,
+.lytePromptChatBubble ol {
+  margin: 0 0 8px 18px;
+  padding: 0;
+}
+.lytePromptChatBubble li {
+  margin: 2px 0;
+}
+.lytePromptChatBubble code {
+  background: #eef2ff;
+  border: 1px solid #d6dfff;
+  border-radius: 4px;
+  padding: 1px 4px;
+  font-size: 0.92em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.lytePromptChatBubble pre {
+  margin: 0 0 8px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  overflow: auto;
+}
+.lytePromptCard {
+  position: absolute;
+  left: 50%;
+  bottom: 36px;
+  transform: translateX(-50%);
+  width: 640px;
+  max-width: calc(100% - 64px);
+  background: #ffffff;
+  border: 1px solid #d6dbea;
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+}
+.lytePromptCard.is-focused {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15), 0 8px 18px rgba(15, 23, 42, 0.12);
+}
+.lytePromptCard.is-dragover {
+  border-style: dashed;
+  background: #eef5ff;
+}
+.lytePromptAttachmentRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.lytePromptAttachment {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  overflow: visible;
+  border: 1px solid #d5dbe7;
+  background: #f1f5f9;
+}
+.lytePromptAttachmentPreview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.lytePromptAttachmentRemove {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  padding: 0;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #d5dbe7;
+  font-size: 11px;
+  line-height: 1;
+  z-index: 2;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.lytePromptInputRow {
+  margin-bottom: 8px;
+}
+.lytePromptTextarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+}
+.lytePromptTextarea textarea {
+  width: 100%;
+  min-height: 54px;
+  border: none !important;
+  outline: none;
+  resize: none;
+  font-size: 14px;
+  color: #111827;
+  background: transparent;
+  padding: 0;
+  line-height: 1.5;
+}
+.lytePromptTextarea textarea::placeholder {
+  color: #9aa3b2;
+}
+.lytePromptFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid #e3e7ef;
+  padding-top: 10px;
+}
+.lytePromptActionsLeft,
+.lytePromptActionsRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lytePromptIconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.lytePromptRoot .lytePromptIconButton button {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  padding: 0;
+  box-shadow: none;
+}
+.lytePromptRoot .lytePromptMicButton button {
+  border-radius: 50%;
+  border: 1px solid #d5dbe7;
+  background: #ffffff;
+  color: #475569;
+}
+.lytePromptRoot .lytePromptMicButton.is-active button {
+  background: #e0edff;
+  border-color: #93c5fd;
+  color: #2563eb;
+}
+.lytePromptIconButton.is-active {
+  color: #2563eb;
+}
+.lytePromptSendButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.lytePromptRoot .lytePromptSendButton button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #3b82f6;
+  color: #ffffff;
+  padding: 0;
+  box-shadow: none;
+}
+.lytePromptCoCreateButton {
+  display: inline-flex;
+  align-items: center;
+}
+.lytePromptRoot .lytePromptCoCreateButton button {
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #d5dbe7;
+  background: #f8fafc;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #334155;
+}
+.lytePromptIcon {
+  width: 16px;
+  height: 16px;
+}
+.lytePromptDropOverlay {
+  position: absolute;
+  inset: 0;
+  border: 2px dashed #8fb4ff;
+  border-radius: 12px;
+  background: rgba(225, 235, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.lytePromptDropText {
+  font-size: 13px;
+  color: #1d4ed8;
+  font-weight: 600;
+}

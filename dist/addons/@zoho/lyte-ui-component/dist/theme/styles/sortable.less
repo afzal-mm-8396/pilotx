@@ -1,0 +1,88 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/sortable/sortable.variables.less";
+
+
+
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{sortable}/ui-elements/sortable/sortable.variables.less";
+
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{sortable}/global/@{direction}.less";
+
+/* Loading final tweaks to your variables */
+@import (optional) "../overrides/ui-elements/sortable.variables.less";
+
+
+
+.lyteSortableParent .lyteSortablePlaceholder:hover,
+.lyteSortableParent .lyteSortablePlaceholder{
+	.SortablePlaceholder();
+	background: @bg;
+	border: @border;
+	box-sizing: border-box;
+}
+.lyteSortableParent .lyteSortableDisabledPlaceholder:hover,
+.lyteSortableParent .lyteSortableDisabledPlaceholder {
+	.SortableDisabledPlaceholder();
+	background: @bg;
+	border: @border;
+}
+.nullifyTransition{
+	transition-duration: 0s;
+}
+.lyteSortableDisablePE{
+    pointer-events: none;
+}
+.lyteSortableDummyTr{
+    opacity: 0 !important;
+    box-sizing: border-box !important;
+    pointer-events: none !important;
+}
+
+.lyteSortableDropLine {
+	display: flex;
+	position: fixed;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}  
+.lytePinIcon {
+	.lytePinIconMixin();
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: @h;
+	width: @w; 
+}
+.lytePinIcon::before {
+	.lytePinIconBeforeMixin();
+	content: '';
+	width: @w;
+	height: @h;
+	border: @border;
+	border-radius: @border-radius;
+	box-sizing: border-box;
+} 
+.lytePinIcon::after {
+	.lytePinIconAfterMixin();
+	content: '';
+	width: @w;
+	flex-grow: 1;
+	background-color: @bg-color;
+}
+
+/* import theme overrides - styles */
+@import (optional) "../themes/@{sortable}/ui-elements/sortable/sortable.styles.less";
+
+
+
+
+/* import custom css - final tweaks by the user */
+@import (optional) "../overrides/ui-elements/sortable.overrides.less";

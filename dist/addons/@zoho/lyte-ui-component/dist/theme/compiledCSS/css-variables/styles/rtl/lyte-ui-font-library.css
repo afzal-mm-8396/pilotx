@@ -1,0 +1,541 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+.lyteFontLibraryModal .lyteModal {
+  border-radius: 6px;
+}
+.lyteFontLibraryDropdownWrap {
+  display: inline-block;
+}
+.lyteFontLibraryDropdown .lyteDropBox {
+  min-width: 280px;
+}
+.lyteFontLibraryDropdown lyte-drop-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lyteFontLibraryVariantChevron {
+  margin-left: auto;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid #6b6b6b;
+}
+.lyteFontLibraryFooterAction {
+  color: #2d7de0;
+  font-size: 12px;
+  cursor: pointer;
+}
+.lyteFontLibraryDropHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+}
+.lyteFontLibraryDropHeader lyte-search {
+  flex: 1;
+}
+.lyteFontLibraryViewToggle {
+  display: inline-flex;
+  gap: 6px;
+}
+.lyteFontLibraryViewButton {
+  width: 30px;
+  height: 28px;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.lyteFontLibraryViewButton.is-active {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 1px #4a90e2 inset;
+}
+.lyteFontLibraryDropGrid {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.lyteFontLibraryHeader {
+  font-size: 14px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #e6e6e6;
+  font-weight: 600;
+}
+.lyteFontLibraryModal lyte-modal-content,
+.lyteFontLibraryModal .lyteModalContent,
+.lyteFontLibraryContent {
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.lyteFontLibraryTabs {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.lyteFontLibraryTabs lyte-tab-head {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 12px 6px;
+  gap: 8px;
+  border-bottom: 1px solid #eee;
+}
+.lyteFontLibraryTabs lyte-tab-title {
+  width: 32px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+  background: #fafafa;
+  cursor: pointer;
+}
+.lyteFontLibraryTabs lyte-tab-title.lyteTabActive {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 1px #4a90e2 inset;
+}
+.lyteFontLibraryTabIcon {
+  width: 14px;
+  height: 14px;
+  position: relative;
+}
+.lyteFontLibraryListIcon::before,
+.lyteFontLibraryListIcon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #666;
+  border-radius: 2px;
+}
+.lyteFontLibraryListIcon::before {
+  top: 2px;
+}
+.lyteFontLibraryListIcon::after {
+  bottom: 2px;
+}
+.lyteFontLibraryGridIcon::before,
+.lyteFontLibraryGridIcon::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #666;
+  border-radius: 2px;
+}
+.lyteFontLibraryGridIcon::before {
+  top: 1px;
+  left: 1px;
+  box-shadow: 8px 0 0 #666, 0 8px 0 #666, 8px 8px 0 #666;
+}
+.lyteFontLibraryTabs lyte-tab-body {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.lyteFontLibraryTabs lyte-tab-content {
+  height: 100%;
+  display: block;
+}
+.lyteFontLibraryListView {
+  display: flex !important;
+  height: 100%;
+  flex: 1;
+}
+.lyteFontLibrarySidebar {
+  width: 190px;
+  padding: 12px;
+  border-right: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.lyteFontLibrarySidebar lyte-input {
+  display: block;
+}
+.lyteFontLibraryNav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+}
+.lyteFontLibraryNavItem {
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lyteFontLibraryNavItem.is-active {
+  background: #e5f1ff;
+  color: #2466c1;
+  font-weight: 600;
+}
+.lyteFontLibraryCount {
+  background: #f0f0f0;
+  border-radius: 10px;
+  padding: 0 6px;
+  font-size: 11px;
+  color: #666;
+}
+.lyteFontLibraryLanguage {
+  margin-top: auto;
+}
+.lyteFontLibraryFontList {
+  flex: 1;
+  padding: 8px 0;
+  border-right: 1px solid #e6e6e6;
+  overflow: auto;
+  min-height: 0;
+}
+.lyteFontLibraryMyFontsHeader {
+  display: flex;
+  justify-content: flex-end;
+  padding: 4px 12px 8px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+}
+.lyteFontLibraryRemoveAll {
+  border: none;
+  background: transparent;
+  color: #d14c4c;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 0;
+}
+.lyteFontLibraryRemoveAll.is-disabled {
+  color: #bfbfbf;
+  cursor: not-allowed;
+}
+.lyteFontLibraryFontRow {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.lyteFontLibraryFontRow:hover {
+  background: #f7f7f7;
+}
+.lyteFontLibraryFontRow.is-selected {
+  background: #f0f0f0;
+  font-weight: 600;
+}
+.lyteFontLibraryFontRow.lyteMyFont .lyteFontLibraryFontName::before {
+  content: '\2713';
+  color: #46a44a;
+  font-weight: 700;
+  display: inline-block;
+  margin-right: 8px;
+}
+.lyteFontLibraryAddIcon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #46a44a;
+  color: #46a44a;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.lyteFontLibraryFontRow:hover .lyteFontLibraryAddIcon {
+  opacity: 1;
+}
+.lyteFontLibraryRemoveIcon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #bfbfbf;
+  color: #666;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.lyteFontLibraryFontRow:hover .lyteFontLibraryRemoveIcon {
+  opacity: 1;
+}
+.lyteFontLibraryDetails {
+  width: 260px;
+  padding: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 0;
+}
+.lyteFontLibraryDetailsHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.lyteFontLibraryDetailsTitle {
+  font-size: 14px;
+  font-weight: 600;
+}
+.lyteFontLibraryDetailsControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lyteFontLibraryAaToggle {
+  font-size: 14px;
+  color: #777;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+.lyteFontLibraryAaToggle.is-active {
+  color: #2d7de0;
+  font-weight: 600;
+}
+.lyteFontLibraryInfoToggle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid #b0b0b0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #777;
+  cursor: pointer;
+}
+.lyteFontLibraryInfoToggle.is-active {
+  border-color: #2d7de0;
+  color: #2d7de0;
+  font-weight: 600;
+}
+.lyteFontLibraryVariantDropdown {
+  min-width: 110px;
+}
+.lyteFontLibraryAa {
+  font-size: 12px;
+  color: #777;
+}
+.lyteFontLibraryContent {
+  position: relative;
+  overflow: hidden;
+}
+.lyteFontLibraryAaPanel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-left: 1px solid #e6e6e6;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+.lyteFontLibraryAaPanel.is-open {
+  transform: translateX(0);
+}
+.lyteFontLibraryInfoPanel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-left: 1px solid #e6e6e6;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+.lyteFontLibraryInfoPanel.is-open {
+  transform: translateX(0);
+}
+.lyteFontLibraryAaPanelHeader {
+  padding: 10px 16px;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.lyteFontLibraryInfoPanelHeader {
+  padding: 10px 16px;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.lyteFontLibraryAaBack {
+  border: none;
+  background: #e6e6e6;
+  color: #666;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.lyteFontLibraryAaPanelAa {
+  color: #2d7de0;
+  font-size: 16px;
+}
+.lyteFontLibraryInfoPanelIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #2d7de0;
+  color: #2d7de0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.lyteFontLibraryAaPanelBody {
+  padding: 16px;
+  overflow: auto;
+}
+.lyteFontLibraryInfoPanelBody {
+  padding: 24px;
+  overflow: auto;
+}
+.lyteFontLibraryInfoRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.lyteFontLibraryInfoLabel {
+  width: 120px;
+  color: #999;
+  font-size: 13px;
+  text-align: right;
+}
+.lyteFontLibraryInfoValue {
+  color: #222;
+  font-size: 14px;
+}
+.lyteFontLibraryAaControls {
+  margin-bottom: 18px;
+}
+.lyteFontLibraryAaVariantDropdown {
+  min-width: 150px;
+}
+.lyteFontLibraryAaRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.lyteFontLibraryAaSize {
+  width: 28px;
+  text-align: right;
+  color: #888;
+  font-size: 12px;
+  line-height: 1.2;
+  padding-top: 6px;
+}
+.lyteFontLibraryAaSample {
+  color: #222;
+  line-height: 1.2;
+}
+.lyteFontLibraryPreview {
+  font-size: 18px;
+  line-height: 1.4;
+  color: #333;
+}
+.lyteFontLibraryPlaceholder {
+  color: #aaa;
+}
+.lyteFontLibraryEmpty {
+  padding: 12px;
+  color: #999;
+  font-size: 12px;
+}
+.lyteFontLibraryGridView {
+  height: 100%;
+  overflow: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+}
+.lyteFontLibraryGridSearch lyte-search {
+  display: block;
+}
+.lyteFontLibrarySectionHeader {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: #6b6b6b;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lyteFontLibraryAddNew {
+  font-size: 12px;
+  color: #2d7de0;
+  cursor: pointer;
+}
+.lyteFontLibraryCardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+.lyteFontLibraryCard {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: #fff;
+  position: relative;
+}
+.lyteFontLibraryCardChevron {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #2d7de0;
+  border-bottom: 2px solid #2d7de0;
+  transform: rotate(-135deg);
+}
+.lyteFontLibraryCardTitle {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.lyteFontLibraryCardPreview {
+  font-size: 13px;
+  color: #666;
+}

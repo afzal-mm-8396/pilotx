@@ -1,0 +1,204 @@
+@cssMaskIconLyteCarouselNavIconColor: #fff;
+
+.carouselMixin() {
+	@w: 100%;
+	@h: 100%;
+	@min-h: 150px;
+}
+.carouselWrapperMixin() {
+	@w: 100%;
+	@h: 100%;
+	@padding: 0 45px;
+}
+.carouselContentMixin() {
+	@w: 100%;
+	@h: 100%;
+}
+.carouselItemMixin() {
+	@w: 100%;
+	@h: 100%;
+	@outline: 0;
+}
+.carouselActiveNextItemMixin() {
+	@transform: translateX(100%);
+	@padding-left: 40px;
+}
+.carouselActivePrevItemMixin() {
+	@transform: translateX(-100%);
+	@padding-right: 40px;
+}
+.carouselItemImgMixin() {
+    @w: 100%;
+	@h: 100%;
+}
+.carouselIndicatorMixin() {
+	@margin: 20px auto 0;
+    @max-w: 100%;
+	@h: fit-content;
+}
+.carouselIndicatorItemMixin() {
+	@w: 10px;
+	@h: 10px;
+	@bg: #ddd;
+	@border-radius: 50%;
+	@margin: 0 10px;
+}
+.carouselIndicatorItemhoverMixin() {
+	@bg: #bbb;
+}
+.carouselIndicatorItemActiveMixin() {
+	@bg: #5ba1e5;
+}
+.carouselPrevMixin() {
+	@w: 30px;
+	@h: 30px;
+	@border: 1px solid #ddd;
+	@top: calc(50% - 25px);
+	@bg: rgba(0, 0, 0, 0.2);
+}
+.carouselPrevHoverMixin() {
+	@bg: rgba(0, 0, 0, 0.4);
+}
+.carouselNextMixin() {
+	@right: 0;
+}
+.carouselNextbeforeMixin() {
+	@bg-img: @lytesprite;
+	@bg-pos: -94px -109px;
+	@mask-img: @bg-img;
+	@mask-pos: @bg-pos;
+	@bg-color: @cssMaskIconLyteCarouselNavIconColor;
+	@w: 9px;
+	@h: 11px;
+}
+.carouselItemFadeEffect() {
+	@opacity: 0;
+	@transition: opacity 0.6s ease-in-out;
+}
+.carouselActiveItemFadeEffect() {
+	@opacity: 1;
+	@z-index: 3;
+}
+.carouselSubItemMixin() {
+	@h: 100%;
+	@margin: 10px;
+}
+.carouselFramesSubItemMixin() {
+	@w: 150px;
+	@h: 200px;
+	@margin: 10px;
+	@bg: #f5f5f5;
+	@border-radius: 5px;
+	@padding: 10px;
+	@border: 1px solid #ddd;
+}
+
+.lyteCarouselVerticalMixin() {
+	@min-h: 300px;
+}
+.lyteCarouselVerticalCarouselIndicatorMixin() {
+	@margin-top: 0;
+	@max-h: 100%;
+    @margin: auto 0;
+	@margin-left: 20px;
+}
+.lyteCarouselVerticalCarouselIndicatorItemMixin() {
+	@margin: 0;
+	@margin-bottom: 10px;
+}
+.lyteCarouselVerticalCarouselNavArrowsCommonMixin() {
+	@left: calc(50% - 15px);
+	@transform: rotate(90deg);
+	@top: 0;
+}
+.lyteCarouselVerticalCarouselNextMixin() {
+	@top: unset;
+	@bottom: 0;
+}
+.lyteCarouselVerticalActiveNextItemMixin() {
+	@transform: translateY(100%);
+}
+.lyteCarouselVerticalActivePrevItemMixin() {
+	@transform: translateY(-100%);
+}
+.lyteCarouselIndicatiorItemImgMixin() {
+	@w: 100px;
+	@h: 60px;
+	@bg: none !important;
+	@margin: 0 5px;
+	@border-radius: 0;
+}
+.lyteCarouselIndicatiorImageMixin() { 
+	@w: 100%;
+	@h: 100%;
+}
+.lyteCarouselIndicatiorWrapperMixin() {
+	@margin: 0 auto;
+	@z-index: 5;
+	@margin-bottom: -10px;
+    @transition: margin 0.3s linear;
+	@padding: 1px;
+}
+.lyteCarouselIndicatorInsideWrapperMixin() {
+	@margin-bottom: -80px;
+}
+.lyteCarouselIndicatiorItemImgAfterMixin() {
+	@bg-color: #71a4e1ba;
+	@top: 0;
+	@bottom: 0;
+	@left: 0;
+	@right: 0;
+}
+.lyteCarouselWrapperIndicatorImgPrevMixin() {
+	@top: calc(50% - 60px);
+}
+.lyteCarouselIndicatorInsideImgPrevMixin() {
+	@top: calc(50% - 20px);
+}
+.lyteCarouselIndicatorInsideHoverMixin() {
+	@margin: auto auto 20px auto;
+}
+.lyteCarouselIndicatiorImgInsideAfterMixix() {
+    @bg: #00000063;
+    @w: calc(100% - 90px);
+    @h: 60px;
+    @z-index: -1;
+    @left: 45px;
+}
+.lyteCarouselVerticalWrapperYieldMixin() {
+    @padding: 45px 0;
+}
+.lyteCarouselVerticalIndicatorInsideMixin() {
+	@margin: auto 0px auto 100%;
+	@w: fit-content;
+}
+.lyteCarouselVerticalIndicatorImgPrevMixin() {
+	@left: calc(50% - 70px);
+	@top: unset;
+}
+.lyteCarouselVerticalIndicatorInsidePrevMixin() {
+	@left: calc(50% - 10px);
+}
+.lyteCarouselVerticalIndicatorInsideAfterMixin() {
+	@w: 100px;
+    @h: calc(100% - 90px);
+	@left: unset;
+    @top: 45px;
+}
+.lyteCarouselVerticalIndicatorItemFirstChildMixin() {
+	@margin-top: 0;
+}
+.lyteCarouselVerticalIndicatorItemLastChildMixin() {
+	@margin-bottom: 0;
+}
+.lyteCarouselVerticalIndicatorInsideHoverMixin() { 
+	@margin: auto 20px auto 0;
+}
+.lyteCarouselVerticalIndicatorImgHoverMixin() {
+	@margin-right: unset;
+	@margin-left: 0;
+}
+.lyteCarouselVerticalYieldMixin() {
+	@padding: 0;
+	@margin: 0;
+}

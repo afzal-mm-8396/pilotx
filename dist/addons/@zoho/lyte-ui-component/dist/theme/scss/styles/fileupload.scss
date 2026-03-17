@@ -1,0 +1,407 @@
+@use "sass:map";
+
+@use "../default/global/global.variables.scss" as *;
+
+@use "../default/global/rtl.scss" as *;
+
+@forward "../default/variables/fileupload.variables.scss";
+
+@use "../default/variables/fileupload.variables.scss" as *;
+
+lyte-file-message,
+lyte-fileupload,
+lyte-file-select-area {
+	font-family: $primaryFont;
+	display: block;
+}
+
+.lyteFileUpdMsgWrap {
+	font-size: map.get($lyteFileUpdMsgWrapMap, "font-size");
+	box-sizing: border-box;
+	cursor: pointer;
+	outline: none;
+	background: map.get($lyteFileUpdMsgWrapMap, "background");
+	text-align: center;
+	color: map.get($lyteFileUpdMsgWrapMap, "color");
+	@include addExtraStyles($lyteFileUpdMsgWrapMap);
+}
+
+.lyteFileUpdBoxType .lyteFileUpdMsgWrap {
+	border-radius: map.get($lyteFileUpdBoxTypeMsgWrapMap, "border-radius");
+	padding: map.get($lyteFileUpdBoxTypeMsgWrapMap, "padding");
+	border: map.get($lyteFileUpdBoxTypeMsgWrapMap, "border");
+	@include addExtraStyles($lyteFileUpdBoxTypeMsgWrapMap);
+}
+
+.lyteFileUpdBoxType .lyteFileUpdMsgWrap:hover {
+	border: map.get($lyteFileUpdBoxTypeMsgWrapHoverMap, "border");
+	@include addExtraStyles($lyteFileUpdBoxTypeMsgWrapHoverMap);
+}
+
+.fileDragEnter.lyteFileUpdInputType .lyteFileUpdMsgWrap,
+.fileDragEnter.lyteFileUpdBoxType .lyteFileUpdMsgWrap {
+	border: map.get($lyteFileDragEnterFileUpdBoxTypeMsgWrapMap, "border");
+	background: map.get($lyteFileDragEnterFileUpdBoxTypeMsgWrapMap, "background");
+	@include addExtraStyles($lyteFileDragEnterFileUpdBoxTypeMsgWrapMap);
+}
+
+.lyteFileUpdMsg {
+	position: relative;
+	line-height: map.get($lyteFileUpdMsgMap, "line-height");
+	@include addExtraStyles($lyteFileUpdMsgMap);
+}
+
+.fileDragEnter .lyteFileUpdMsg {
+	opacity: 0.7;
+}
+
+.lyteFileUpdBoxType .lyteFileUpdMsg {
+	#{$property-padding-left}: map.get($lyteFileUpdBoxTypeMsgMap, "padding-left");
+	@include addExtraStyles($lyteFileUpdBoxTypeMsgMap);
+}
+
+.lyteFileUpdBoxType .lyteFileUpdMsg::before {
+	content: '';
+	@if $useCssMaskForBg {
+		-webkit-mask-image: map.get($lyteFileUpdBoxTypeMsgBeforeMap, "mask-image");
+		mask-image: map.get($lyteFileUpdBoxTypeMsgBeforeMap, "mask-image");
+		-webkit-mask-position: map.get($lyteFileUpdBoxTypeMsgBeforeMap, "mask-position");
+		mask-position: map.get($lyteFileUpdBoxTypeMsgBeforeMap, "mask-position");
+		background-color: map.get($lyteFileUpdBoxTypeMsgBeforeMap, "background-color");
+	} @else {
+		background-image: map.get($lyteFileUpdBoxTypeMsgBeforeMap, "background-image");
+		background-position: map.get($lyteFileUpdBoxTypeMsgBeforeMap, "background-position");
+	}
+	width: map.get($lyteFileUpdBoxTypeMsgBeforeMap, "width");
+	height: map.get($lyteFileUpdBoxTypeMsgBeforeMap, "height");
+	display: inline-block;
+	position: absolute;
+	#{$property-left}: 0;
+	@include addExtraStyles($lyteFileUpdBoxTypeMsgBeforeMap);
+}
+
+.lyteFileUpdThumb {
+	display: block;
+	width: map.get($lyteFileUpdThumbMap, "width");
+	height: map.get($lyteFileUpdThumbMap, "height");
+	border-radius: 50%;
+	border: map.get($lyteFileUpdThumbMap, "border");
+	@include addExtraStyles($lyteFileUpdThumbMap);
+}
+
+.lyteFileUpdList {
+	display: flex;
+	flex-direction: column;
+}
+
+.multiFileupload .lyteFileUpdList {
+	@include addExtraStyles($lyteMultiFileuploadListMap);
+}
+
+.multiFileupload .lyteFileUpdListFile {
+	margin-bottom: map.get($lyteMultiFileuploadListFileMap, "margin-bottom");
+	@include addExtraStyles($lyteMultiFileuploadListFileMap);
+}
+
+.multiFileupload .lyteFileUpdListFile:first-of-type {
+	margin-top: map.get($lyteMultiFileuploadListFileFirstOfTypeMap, "margin-top");
+	@include addExtraStyles($lyteMultiFileuploadListFileFirstOfTypeMap);
+}
+
+.lyteFileUpdListFile {
+	position: relative;
+	display: flex;
+	padding: map.get($lyteFileUpdListFileMap, "padding");
+	background: map.get($lyteFileUpdListFileMap, "background");
+	border: map.get($lyteFileUpdListFileMap, "border");
+	border-radius: map.get($lyteFileUpdListFileMap, "border-radius");
+	align-items: center;
+	@include addExtraStyles($lyteFileUpdListFileMap);
+}
+
+.lyteFileUpdListFile.lyteFileError {
+	background: map.get($lyteMultiFileuploadListFileErrorMap, "background");
+	border: map.get($lyteMultiFileuploadListFileErrorMap, "border");
+	@include addExtraStyles($lyteMultiFileuploadListFileErrorMap);
+}
+
+.lyteFileUpdTypePreview {
+	#{$property-margin-right}: map.get($lyteFileUpdTypePreviewMap, "margin-right");
+	@include addExtraStyles($lyteFileUpdTypePreviewMap);
+}
+
+.lyteFileUpdTypeIcon::after {
+	content: '';
+	@if $useCssMaskForBg {
+		-webkit-mask-image: map.get($lyteFileUpdTypeIconAfterMap, "mask-image");
+		mask-image: map.get($lyteFileUpdTypeIconAfterMap, "mask-image");
+		-webkit-mask-position: map.get($lyteFileUpdTypeIconAfterMap, "mask-position");
+		mask-position: map.get($lyteFileUpdTypeIconAfterMap, "mask-position");
+		background-color: map.get($lyteFileUpdTypeIconAfterMap, "background-color");
+	} @else {
+		background-image: map.get($lyteFileUpdTypeIconAfterMap, "background-image");
+		background-position: map.get($lyteFileUpdTypeIconAfterMap, "background-position");
+	}
+	display: block;
+	width: map.get($lyteFileUpdTypeIconAfterMap, "width");
+	height: map.get($lyteFileUpdTypeIconAfterMap, "height");
+	@include addExtraStyles($lyteFileUpdTypeIconAfterMap);
+}
+
+.lyteFileUpdTypeIcon.pdf::after {
+	@if $useCssMaskForBg {
+		-webkit-mask-position: map.get($lyteFileUpdTypeIconPdfAfterMap, "mask-position");
+		mask-position: map.get($lyteFileUpdTypeIconPdfAfterMap, "mask-position");
+	} @else {
+		background-position: map.get($lyteFileUpdTypeIconPdfAfterMap, "background-position");
+	}
+	@include addExtraStyles($lyteFileUpdTypeIconPdfAfterMap);
+}
+
+.lyteFileUpdTypeIcon.video::after {
+	@if $useCssMaskForBg {
+		-webkit-mask-position: map.get($lyteFileUpdTypeIconAfterVideoMap, "mask-position");
+		mask-position: map.get($lyteFileUpdTypeIconAfterVideoMap, "mask-position");
+	} @else {
+		background-position: map.get($lyteFileUpdTypeIconAfterVideoMap, "background-position");
+	}
+	@include addExtraStyles($lyteFileUpdTypeIconAfterVideoMap);
+}
+
+.lyteFileUpdTypeIcon.image::after {
+	@if $useCssMaskForBg {
+		-webkit-mask-position: map.get($lyteFileUpdTypeIconAfterImageMap, "mask-position");
+		mask-position: map.get($lyteFileUpdTypeIconAfterImageMap, "mask-position");
+	} @else {
+		background-position: map.get($lyteFileUpdTypeIconAfterImageMap, "background-position");
+	}
+	@include addExtraStyles($lyteFileUpdTypeIconAfterImageMap);
+}
+
+.lyteFileUpdTypeIcon.zip::after {
+	@if $useCssMaskForBg {
+		-webkit-mask-position: map.get($lyteFileUpdTypeIconAfterZipMap, "mask-position");
+		mask-position: map.get($lyteFileUpdTypeIconAfterZipMap, "mask-position");
+	} @else {
+		background-position: map.get($lyteFileUpdTypeIconAfterZipMap, "background-position");
+	}
+	@include addExtraStyles($lyteFileUpdTypeIconAfterZipMap);
+}
+
+.lyteFileUpdFileName {
+	color: map.get($lyteFileUpdFileNameMap, "color");
+	font-size: map.get($lyteFileUpdFileNameMap, "font-size");
+	#{$property-margin-right}: map.get($lyteFileUpdFileNameMap, "margin-right");
+	max-width: map.get($lyteFileUpdFileNameMap, "max-width");
+	white-space: nowrap;
+	@include addExtraStyles($lyteFileUpdFileNameMap);
+}
+
+.lyteFileUpdListFile.lyteFileSuccess .lyteFileUpdFileName {
+	max-width: map.get($lyteFileUpdSuccessFileNameMap, "max-width");
+	@include addExtraStyles($lyteFileUpdSuccessFileNameMap);
+}
+
+.lyteFileUpdFileSize {
+	font-size: map.get($lyteFileUpdFileSizeMap, "font-size");
+	color: map.get($lyteFileUpdFileSizeMap, "color");
+	#{$property-margin-right}: auto;
+	white-space: nowrap;
+	@include addExtraStyles($lyteFileUpdFileSizeMap);
+}
+
+.lyteFileUpdFileStatus {
+	display: flex;
+	#{$property-margin-right}: map.get($lyteFileUpdFileStatusMap, "margin-right");
+	@include addExtraStyles($lyteFileUpdFileStatusMap);
+}
+
+.lyteFileUpdProgressBar {
+	height: map.get($lyteFileUpdProgressBarMap, "height");
+	width: map.get($lyteFileUpdProgressBarMap, "width");
+	background: map.get($lyteFileUpdProgressBarMap, "background");
+	flex-grow: 1;
+	border-radius: map.get($lyteFileUpdProgressBarMap, "border-radius");
+	@include addExtraStyles($lyteFileUpdProgressBarMap);
+}
+
+.lyteFileUpdProgressFill {
+	height: map.get($lyteFileUpdProgressFillMap, "height");
+	background: map.get($lyteFileUpdProgressFillMap, "background");
+	width: 0;
+	border-radius: map.get($lyteFileUpdProgressFillMap, "border-radius");
+	transition: width 0.1s linear;
+	@include addExtraStyles($lyteFileUpdProgressFillMap);
+}
+
+lyte-file-retry {
+	display: inline-flex;
+	#{$property-margin-right}: map.get($lyteFileRetryMap, "margin-right");
+	@include addExtraStyles($lyteFileRetryMap);
+}
+
+.lyteFileUpdFailMsg {
+	font-size: map.get($lyteFileUpdFailMsgMap, "font-size");
+	color: map.get($lyteFileUpdFailMsgMap, "color");
+	#{$property-margin-right}: map.get($lyteFileUpdFailMsgMap, "margin-right");
+	cursor: default;
+	@include addExtraStyles($lyteFileUpdFailMsgMap);
+}
+
+.lyteFileUpdRetryMsg {
+	font-size: map.get($lyteFileUpdRetryMsgMap, "font-size");
+	color: map.get($lyteFileUpdRetryMsgMap, "color");
+	text-decoration: underline;
+	cursor: pointer;
+	@include addExtraStyles($lyteFileUpdRetryMsgMap);
+}
+
+.lyteFileUpdRetryMsg:hover {
+	color: map.get($lyteFileUpdRetryMsgHoverMap, "color");
+	@include addExtraStyles($lyteFileUpdRetryMsgHoverMap);
+}
+
+lyte-file-close {
+	cursor: pointer;
+	@if $useCssMaskForBg {
+		-webkit-mask-image: map.get($lyteFileCloseMap, "mask-image");
+		mask-image: map.get($lyteFileCloseMap, "mask-image");
+		-webkit-mask-position: map.get($lyteFileCloseMap, "mask-position");
+		mask-position: map.get($lyteFileCloseMap, "mask-position");
+		background-color: map.get($lyteFileCloseMap, "background-color");
+	} @else {
+		background-image: map.get($lyteFileCloseMap, "background-image");
+		background-position: map.get($lyteFileCloseMap, "background-position");
+	}
+	width: map.get($lyteFileCloseMap, "width");
+	height: map.get($lyteFileCloseMap, "height");
+	opacity: map.get($lyteFileCloseMap, "opacity");
+	display: inline-flex;
+	flex-shrink: 0;
+	@include addExtraStyles($lyteFileCloseMap);
+}
+
+.lyteFileUpdListFile.lyteFileSuccess lyte-file-close {
+	visibility: hidden;
+}
+
+.lyteFileUpdListFile.lyteFileSuccess:hover lyte-file-close {
+	visibility: visible;
+}
+
+lyte-file-close:hover {
+	opacity: 0.7;
+}
+
+.lyteFileUpdBoxType #lyteFileUpdSelectedFile {
+	background: map.get($lyteFileUpdSelectedFileMap, "background");
+	border: map.get($lyteFileUpdSelectedFileMap, "border");
+	@include addExtraStyles($lyteFileUpdSelectedFileMap);
+}
+
+.lyteFileUpdInputType .lyteFileUpdMsgWrap {
+	padding: map.get($lyteFileUpdInputTypeMsgWrapMap, "padding");
+	border-radius: map.get($lyteFileUpdInputTypeMsgWrapMap, "border-radius");
+	border: map.get($lyteFileUpdInputTypeMsgWrapMap, "border");
+	background: map.get($lyteFileUpdInputTypeMsgWrapMap, "background");
+	text-align: $value-textalign-left;
+	@include addExtraStyles($lyteFileUpdInputTypeMsgWrapMap);
+}
+
+.lyteFileUpdInputType .lyteFileUpdMsgWrap:hover {
+	border: map.get($lyteFileUpdInputTypeMsgWrapHoverMap, "border");
+	@include addExtraStyles($lyteFileUpdInputTypeMsgWrapHoverMap);
+}
+
+.lyteFileUpdInputType .lyteFileUpdListFile {
+	padding: map.get($lyteFileUpdInputTypeListFileMap, "padding");
+	border: map.get($lyteFileUpdInputTypeListFileMap, "border");
+	border-radius: map.get($lyteFileUpdInputTypeListFileMap, "border-radius");
+	background: map.get($lyteFileUpdInputTypeListFileMap, "background");
+	@include addExtraStyles($lyteFileUpdInputTypeListFileMap);
+}
+
+.lyteFileUpdInputType .lyteFileUpdListFile.lyteFileError {
+	background: map.get($lyteFileUpdInputTypeListFileErrorMap, "background");
+	border: map.get($lyteFileUpdInputTypeListFileErrorMap, "border");
+	@include addExtraStyles($lyteFileUpdInputTypeListFileErrorMap);
+}
+
+.lyteFileUpdInputType .lyteFileUpdFileName {
+	line-height: map.get($lyteFileUpdInputTypeFileNameMap, "line-height");
+	font-size: map.get($lyteFileUpdInputTypeFileNameMap, "font-size");
+	max-width: map.get($lyteFileUpdInputTypeFileNameMap, "max-width");
+	@include addExtraStyles($lyteFileUpdInputTypeFileNameMap);
+}
+
+.lyteFileUpdInputType .lyteFileUpdListFile.lyteFileSuccess .lyteFileUpdFileName {
+	max-width: map.get($lyteFileUpdInputTypeListFileSuccessFileNameMap, "max-width");
+	@include addExtraStyles($lyteFileUpdInputTypeListFileSuccessFileNameMap);
+}
+
+.lyteFileUpdInputType lyte-file-close {
+	@if $useCssMaskForBg {
+		-webkit-mask-position: map.get($lyteFileUpdInputTypeFileCloseMap, "mask-position");
+		mask-position: map.get($lyteFileUpdInputTypeFileCloseMap, "mask-position");
+	} @else {
+		background-position: map.get($lyteFileUpdInputTypeFileCloseMap, "background-position");
+	}
+	width: map.get($lyteFileUpdInputTypeFileCloseMap, "width");
+	height: map.get($lyteFileUpdInputTypeFileCloseMap, "height");
+	@include addExtraStyles($lyteFileUpdInputTypeFileCloseMap);
+}
+
+.lyteFileUpdBtnType .lyteFileUpdMsgWrap {
+	width: map.get($lyteFileUpdBtnTypeMsgWrapMap, "width");
+	height: map.get($lyteFileUpdBtnTypeMsgWrapMap, "height");
+	background: map.get($lyteFileUpdBtnTypeMsgWrapMap, "background");
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include addExtraStyles($lyteFileUpdBtnTypeMsgWrapMap);
+}
+
+.lyteFileUpdBtnType .lyteFileUpdMsgWrap::after {
+	content: '';
+	@if $useCssMaskForBg {
+		-webkit-mask-image: map.get($lyteFileUpdBtnTypeMsgWrapAfterMap, "mask-image");
+		mask-image: map.get($lyteFileUpdBtnTypeMsgWrapAfterMap, "mask-image");
+		-webkit-mask-position: map.get($lyteFileUpdBtnTypeMsgWrapAfterMap, "mask-position");
+		mask-position: map.get($lyteFileUpdBtnTypeMsgWrapAfterMap, "mask-position");
+		background-color: map.get($lyteFileUpdBtnTypeMsgWrapAfterMap, "background-color");
+	} @else {
+		background-image: map.get($lyteFileUpdBtnTypeMsgWrapAfterMap, "background-image");
+		background-position: map.get($lyteFileUpdBtnTypeMsgWrapAfterMap, "background-position");
+	}
+	width: map.get($lyteFileUpdBtnTypeMsgWrapAfterMap, "width");
+	height: map.get($lyteFileUpdBtnTypeMsgWrapAfterMap, "height");
+	display: block;
+	@include addExtraStyles($lyteFileUpdBtnTypeMsgWrapAfterMap);
+}
+
+.lyteFileUpdListFile.lyteFileError .lyteFileUpdFileStatus,
+.lyteFileUpdListFile.lyteFileSuccess .lyteFileUpdFileStatus,
+.lyteFileUpdBtnType .lyteFileUpdMsg,
+.fileuploadInput,
+.lyteFileUpdInputType .lyteFileUpdTypePreview,
+.lyteFileUpdBoxType .lyteFileUpdMsgWrap.lyteHide,
+lyte-fileupload .lyteHide {
+	display: none;
+}
+
+.lyteFileUpdDisabled {
+	pointer-events: none;
+	opacity: 0.6;
+}
+
+.lyteFileDragWrapper {
+	position: absolute;
+	left: map.get($lyteFileDragWrapperMap, "left");
+	right: map.get($lyteFileDragWrapperMap, "right");
+	top: map.get($lyteFileDragWrapperMap, "top");
+	bottom: map.get($lyteFileDragWrapperMap, "bottom");
+	z-index: map.get($lyteFileDragWrapperMap, "z-index");
+	@include addExtraStyles($lyteFileDragWrapperMap);
+}
+

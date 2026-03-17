@@ -1,0 +1,94 @@
+/**
+ * @component lyte-nav
+ */
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+	/**
+	 * @variable --lyte-navbar-bg
+	 * @selector lyte-nav
+	 * @description Background color of the navbar
+	 * @defaultValue #edf4f9
+	 * @inputType color
+	 * @name Background Color
+	 */
+	--lyte-navbar-bg: #edf4f9;
+
+	/**
+	 * @variable --lyte-navbar-hover-bg
+	 * @selector lyte-nav-item:hover, .lyteNavIconContainer:hover
+	 * @description Background color on navbar item hover
+	 * @defaultValue #dfeaf5
+	 * @inputType color
+	 * @name Hover Background Color
+	 */
+	--lyte-navbar-hover-bg: #dfeaf5;
+
+	/**
+	 * @variable --lyte-navbar-text-color
+	 * @selector lyte-nav-item
+	 * @description Text color of the navbar items
+	 * @defaultValue #222
+	 * @inputType color
+	 * @name Text Color
+	 */
+	--lyte-navbar-text-color: #222;
+
+	/**
+	 * @variable --lyte-navbar-active-bg
+	 * @selector lyte-nav-item.lyteNavActive
+	 * @description Background color of the active navbar item
+	 * @defaultValue #5ba1e5
+	 * @inputType color
+	 * @name Active Background Color
+	 */
+	--lyte-navbar-active-bg: #5ba1e5;
+
+	/**
+	 * @variable --lyte-navbar-active-text-color
+	 * @selector lyte-nav-item.lyteNavActive
+	 * @description Text color of the active navbar item
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @name Active Text Color
+	 */
+	--lyte-navbar-active-text-color: #fff;
+
+	/**
+	 * @variable --lyte-navbar-box-shadow-color
+	 * @selector lyte-arrow
+	 * @description Box shadow color applied to the navbar arrow
+	 * @defaultValue rgba(0, 0, 0, 0.1)
+	 * @inputType color
+	 * @name Box Shadow Color
+	 */
+	--lyte-navbar-box-shadow-color: rgba(0, 0, 0, 0.1);
+
+	/**
+	 * @variable --lyte-navbar-triangle-bg
+	 * @selector .arrow-up, .arrow-down
+	 * @description Background color of the triangle arrow used in navbar
+	 * @defaultValue #555
+	 * @inputType color
+	 * @name Triangle Background Color
+	 */
+	--lyte-navbar-triangle-bg: #555;
+
+	/**
+	 * @variable --lyte-nav-item-font-size
+	 * @selector lyte-nav-item
+	 * @description Font size for the navbar items
+	 * @defaultValue var(--lyte-font-size-medium)
+	 * @defaultVariableValue 15px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Item Font Size
+	 */
+	--lyte-nav-item-font-size: var(--lyte-font-size-medium);
+
+	/* ===== Icon Positions ===== */
+
+	--lyte-navbar-threedots-icon-position: -294px -165px;
+}

@@ -1,0 +1,387 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/carousel/carousel.variables.less";
+
+
+
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{carousel}/ui-elements/carousel/carousel.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{carousel}/global/@{direction}.less";
+
+/* Loading final tweaks to your variables */
+@import (optional) "../overrides/ui-elements/carousel.variables.less";
+
+
+lyte-carousel {
+    .carouselMixin();
+	display: block;
+	font-family: @primaryFont;
+	width: @w;
+	height: @h;
+	min-height: @min-h;
+	padding: 15px 0;
+}
+.lyteCarouselWrapper lyte-yield,
+.lyteCarouselWrapper {
+    .carouselWrapperMixin();
+	position: relative;
+    display: grid;
+	width: @w;
+	height: @h;
+	min-height: inherit;
+	padding: @padding;
+	box-sizing: border-box;
+	grid-template-rows: 1fr auto;
+	grid-template-columns: 1fr;
+	overflow: hidden;
+}
+lyte-carousel-content {
+    .carouselContentMixin();
+	width: @w;
+	height: @h;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	min-height: inherit;
+	grid-row: 1 / span 2;
+	grid-column: 1 / 2;
+}
+lyte-carousel-item {
+	.carouselItemMixin();
+	width: @w;
+	height: @h;
+	box-sizing: border-box;
+	display: none;
+	transform: translateX(0);
+	transition: transform 0.2s ease;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	outline: @outline;
+}
+lyte-carousel-item.lyteActive {
+	display: flex;
+}
+.lyteActiveNext {
+    .carouselActiveNextItemMixin();
+	display: flex;
+	transform: @transform;
+	@{property-padding-left}: @padding-left;
+}
+.lyteActivePrev {
+    .carouselActivePrevItemMixin();
+	display: flex;
+	transform: @transform;
+	@{property-padding-right}: @padding-right;
+}
+.lyteCarouselVertical .lyteActiveNext,
+.lyteCarouselVertical .lyteActivePrev {
+	padding: 0;
+}
+lyte-carousel-indicator-item:focus-visible {
+	outline-offset: -1px;
+}
+lyte-carousel-item img {
+    .carouselItemImgMixin();
+	width: @w;
+	height: @h;
+	object-fit: contain;
+}
+lyte-carousel-indicator {
+	.carouselIndicatorMixin();
+	display: flex;
+	max-width: @max-w;
+	overflow-x: auto;
+	margin: @margin;
+	height: @h;
+	flex-shrink: 0;
+}
+lyte-carousel-indicator-item {
+	.carouselIndicatorItemMixin();
+	width: @w;
+	height: @h;
+	background: @bg;
+	border-radius: @border-radius;
+	margin: @margin;
+	cursor: pointer;
+	font-size: 0;
+}
+lyte-carousel-indicator-item:hover {
+	.carouselIndicatorItemhoverMixin();
+	background: @bg;
+}
+lyte-carousel-indicator-item li {
+	list-style: none;
+}
+lyte-carousel-indicator-item.lyteActive {
+    .carouselIndicatorItemActiveMixin();
+	background: @bg;
+}
+lyte-carousel-next,
+lyte-carousel-prev {
+	.carouselPrevMixin();
+	display: flex;
+	width: @w;
+	height: @h;
+	border: @border;
+	background: @bg;
+	border-radius: 50%;
+	position: absolute;
+    z-index: 5;
+	top: @top;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: background 0.1s ease;
+    & when (@rtlEnabled = true) {
+        transform: @value-rotate-0deg;
+    }
+}
+lyte-carousel-prev {
+	@{property-left}: 0;
+}
+lyte-carousel-next:hover,
+lyte-carousel-prev:hover {
+    .carouselPrevHoverMixin();
+	background: @bg;
+}
+lyte-carousel-next {
+    .carouselNextMixin();
+    @{property-right}: @right;
+}
+lyte-carousel-prev.lyteDisabled,
+lyte-carousel-next.lyteDisabled {
+	pointer-events: none;
+	opacity: 0.5;
+}
+lyte-carousel-prev::before,
+lyte-carousel-next::before {
+	.carouselNextbeforeMixin();
+	content: '';
+	& when (@useCssMaskForBg = true) {
+		.lyteMaskBgMixin(@mask-img, @mask-pos, @bg-color);
+	}
+	& when not (@useCssMaskForBg = true) {
+		background-image: @bg-img;
+		background-position: @bg-pos;
+	}
+	width: @w;
+	height: @h;
+}
+lyte-carousel-next::before {
+	transform: rotate(180deg);
+}
+.lyteFade lyte-carousel-item {
+    .carouselItemFadeEffect();
+	display: flex;
+	opacity: @opacity;
+	transition: @transition;
+}
+.lyteFade lyte-carousel-item.lyteActive {
+    .carouselActiveItemFadeEffect();
+	opacity: @opacity;
+	z-index: @z-index;
+}
+lyte-carousel-sub-item {
+	.carouselSubItemMixin();
+	height: @h;
+	margin: @margin;
+}
+.lyteCarouselFrames lyte-carousel-item.lyteActive {
+	flex-wrap: wrap;
+	overflow: auto;
+}
+.lyteCarouselFrames lyte-carousel-sub-item {
+	.carouselFramesSubItemMixin();
+	width: @w;
+	height: @h;
+	margin: @margin;
+	background: @bg;
+	border-radius: @border-radius;
+	padding: @padding;
+	border: @border;
+}
+
+lyte-carousel.lyteCarouselVertical {
+	.lyteCarouselVerticalMixin();
+	// min-height: @min-h;
+}
+.lyteCarouselVertical .lyteCarouselWrapper > lyte-yield {
+	flex-direction: row;
+}
+.lyteCarouselVertical lyte-carousel-indicator {
+	.lyteCarouselVerticalCarouselIndicatorMixin();
+	flex-direction: column;
+	margin-top: @margin-top;
+	overflow-y: auto;
+    max-height: @max-h;
+    margin: @margin;
+	@{property-margin-left}: @margin-left;
+}
+.lyteCarouselVertical lyte-carousel-indicator-item {
+	.lyteCarouselVerticalCarouselIndicatorItemMixin();
+	margin: @margin;
+	margin-bottom: @margin-bottom;
+}
+.lyteCarouselVertical lyte-carousel-next,
+.lyteCarouselVertical lyte-carousel-prev {
+	.lyteCarouselVerticalCarouselNavArrowsCommonMixin();
+	@{property-left}: @left;
+	transform: @transform;
+	top: @top;
+}
+.lyteCarouselVertical lyte-carousel-next {
+	.lyteCarouselVerticalCarouselNextMixin();
+	top: @top;
+	bottom: @bottom;
+}
+.lyteCarouselVertical .lyteActiveNext {
+	.lyteCarouselVerticalActiveNextItemMixin();
+	transform: @transform;
+}
+.lyteCarouselVertical .lyteActivePrev {
+	.lyteCarouselVerticalActivePrevItemMixin();
+	transform: @transform;
+}
+.lyteCarouselIndicatiorItemImg {
+	.lyteCarouselIndicatiorItemImgMixin();
+	width: @w;
+	height: @h;
+	background: @bg;
+	margin: @margin;
+	position: relative;
+	flex-shrink: 0;
+	border-radius: @border-radius;
+}
+.lyteCarouselIndicatiorItemImg img{
+	.lyteCarouselIndicatiorImageMixin();
+	width: @w;
+	height: @h;
+	display: block;
+}
+.lyteCarouselIndicatorInside lyte-carousel-indicator {
+	.lyteCarouselIndicatiorWrapperMixin();
+	margin: @margin;
+    grid-row: 2;
+    grid-column: 1 / 2;
+	z-index: @z-index;
+	margin-bottom: @margin-bottom;
+    transition: @transition;
+	padding: @padding;
+}
+.lyteCarouselIndicatorInside .lyteCarouselIndicatiorWrapper { 
+	.lyteCarouselIndicatorInsideWrapperMixin();
+	margin-bottom: @margin-bottom;
+}
+.lyteCarouselIndicatorInside lyte-carousel-item img {
+	object-fit: fill;
+}
+.lyteActive.lyteCarouselIndicatiorItemImg::after {
+	.lyteCarouselIndicatiorItemImgAfterMixin();
+	content: "";
+	background-color: @bg-color;
+	position: absolute;
+	top: @top;
+	bottom: @bottom;
+	@{property-left}: @left;
+	@{property-right}: @right;
+}
+.lyteCarouselWrapper.lyteCarouselIndicatorImg  lyte-carousel-next,
+.lyteCarouselWrapper.lyteCarouselIndicatorImg  lyte-carousel-prev {
+	.lyteCarouselWrapperIndicatorImgPrevMixin();
+	top: @top;
+}
+.lyteCarouselIndicatorInside.lyteCarouselIndicatorImg  lyte-carousel-next,
+.lyteCarouselIndicatorInside.lyteCarouselIndicatorImg  lyte-carousel-prev {
+	.lyteCarouselIndicatorInsideImgPrevMixin();
+	top: @top;
+}
+.lyteCarouselIndicatorInside .lyteCarouselIndicatiorWrapper:hover,
+.lyteCarouselIndicatorInside lyte-carousel-content:hover ~ .lyteCarouselIndicatiorWrapper {
+	margin-bottom: 0;
+}
+.lyteCarouselIndicatorInside lyte-carousel-indicator:hover,
+.lyteCarouselIndicatorInside lyte-carousel-content:hover ~ lyte-carousel-indicator {
+	.lyteCarouselIndicatorInsideHoverMixin();
+	margin: @margin;
+}
+.lyteCarouselIndicatorInside .lyteCarouselIndicatiorWrapper::after {
+	.lyteCarouselIndicatiorImgInsideAfterMixix();
+    content: "";
+    display: block;
+    background: @bg;
+    width: @w;
+    height: @h;
+    position: absolute;
+    z-index: @z-index;
+    @{property-left}: @left;
+}
+.lyteCarouselVertical .lyteCarouselWrapper > lyte-yield,
+.lyteCarouselVertical .lyteCarouselWrapper {
+	.lyteCarouselVerticalWrapperYieldMixin();
+    padding: @padding;
+	grid-template-columns: 1fr auto;
+}
+.lyteCarouselVertical .lyteCarouselIndicatorInside lyte-carousel-content {
+	grid-column: 1 / span 2;
+	grid-row: 1 / 2;
+}
+.lyteCarouselVertical .lyteCarouselIndicatorInside lyte-carousel-indicator {
+	.lyteCarouselVerticalIndicatorInsideMixin();
+	grid-row: 2/1;
+	grid-column: 2;
+	margin: @margin;
+	width: @w;
+}
+.lyteCarouselVertical .lyteCarouselIndicatorImg lyte-carousel-next,
+.lyteCarouselVertical .lyteCarouselIndicatorImg lyte-carousel-prev {
+	.lyteCarouselVerticalIndicatorImgPrevMixin();
+	@{property-left}: @left;
+	top: @top;
+}
+.lyteCarouselVertical .lyteCarouselIndicatorInside lyte-carousel-next,
+.lyteCarouselVertical .lyteCarouselIndicatorInside lyte-carousel-prev {
+	.lyteCarouselVerticalIndicatorInsidePrevMixin();
+	@{property-left}: @left;
+}
+.lyteCarouselVertical .lyteCarouselIndicatorInside .lyteCarouselIndicatiorWrapper::after {
+	.lyteCarouselVerticalIndicatorInsideAfterMixin();
+	width: @w;
+    height: @h;
+	@{property-left}: @left;
+    top: @top;
+}
+.lyteCarouselVertical .lyteCarouselIndicatorInside lyte-carousel-indicator-item:first-child {
+	.lyteCarouselVerticalIndicatorItemFirstChildMixin();
+	margin-top: @margin-top;
+}
+.lyteCarouselVertical .lyteCarouselIndicatorInside lyte-carousel-indicator-item:last-child {
+	.lyteCarouselVerticalIndicatorItemLastChildMixin();
+	margin-bottom: @margin-bottom;
+}
+.lyteCarouselVertical .lyteCarouselIndicatorInside lyte-carousel-indicator:hover,
+.lyteCarouselVertical .lyteCarouselIndicatorInside lyte-carousel-content:hover ~ lyte-carousel-indicator {
+	.lyteCarouselVerticalIndicatorInsideHoverMixin();
+	margin: @margin;
+}
+.lyteCarouselVertical .lyteCarouselIndicatorInside.lyteCarouselIndicatorImg lyte-carousel-indicator:hover,
+.lyteCarouselVertical .lyteCarouselIndicatorInside.lyteCarouselIndicatorImg lyte-carousel-content:hover ~ lyte-carousel-indicator {
+	.lyteCarouselVerticalIndicatorImgHoverMixin();
+	@{property-margin-right}: @margin-right;
+	@{property-margin-left}: @margin-left;
+	box-sizing: border-box;
+}
+lyte-carousel.lyteCarouselVertical .lyteCarouselWrapper > lyte-yield,
+lyte-carousel .lyteCarouselIndicatorInside.lyteCarouselWrapper > lyte-yield {
+	.lyteCarouselVerticalYieldMixin();
+	padding: @padding;
+    position: unset;
+	margin: @margin;
+}

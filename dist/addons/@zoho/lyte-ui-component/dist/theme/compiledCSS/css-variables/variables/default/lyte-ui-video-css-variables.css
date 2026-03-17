@@ -1,0 +1,280 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component lyte-video
+ */
+:root,
+:host {
+  /**
+ * @variable --lyte-video-controls-div-bg
+ * @selector .lyteVideoControls
+ * @description Gradient background for the video controls container.
+ * @defaultValue linear-gradient(to bottom, rgba(0, 0, 0, 0), #000)
+ * @inputType color
+ * @name Controls Background Color
+ */
+  --lyte-video-controls-div-bg: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+  /**
+ * @variable --lyte-video-tooltip-bg
+ * @selector .lyteVideoToolTip
+ * @description Background color for the video progress tooltip.
+ * @defaultValue #333
+ * @inputType color
+ * @name Tooltip Background Color
+ */
+  --lyte-video-tooltip-bg: #333;
+  /**
+ * @variable --lyte-video-tooltip-text-color
+ * @selector .lyteVideoToolTip
+ * @description Text color for the video tooltip.
+ * @defaultValue #fff
+ * @inputType color
+ * @name Tooltip Text Color
+ */
+  --lyte-video-tooltip-text-color: #fff;
+  /**
+ * @variable --lyte-video-progressed-bg
+ * @selector .lyteVideoProgressed
+ * @description Background color indicating watched portion of the video.
+ * @defaultValue #338cf0
+ * @inputType color
+ * @name Progressed Background Color
+ */
+  --lyte-video-progressed-bg: #338cf0;
+  /**
+ * @variable --lyte-video-chapter-bg
+ * @selector .lyteVideoChapter
+ * @description Background for video chapter markers.
+ * @defaultValue rgba(255, 255, 255, .3)
+ * @inputType color
+ * @name Chapter Background Color
+ */
+  --lyte-video-chapter-bg: rgba(255, 255, 255, 0.3);
+  /**
+ * @variable --lyte-video-loaded-bg
+ * @selector .lyteVideoProgressLoad
+ * @description Background color for the buffered portion of the video.
+ * @defaultValue rgba(255, 255, 255, .6)
+ * @inputType color
+ * @name Loaded Background Color
+ */
+  --lyte-video-loaded-bg: rgba(255, 255, 255, 0.6);
+  /**
+ * @variable --lyte-video-progress-bar-bg
+ * @selector .lyteVideoProgressBar
+ * @description Base background color of the video progress bar.
+ * @defaultValue rgba(255, 255, 255, .3)
+ * @inputType color
+ * @name Progress Bar Background Color
+ */
+  --lyte-video-progress-bar-bg: rgba(255, 255, 255, 0.3);
+  /**
+ * @variable --lyte-video-progress-handler-bg
+ * @selector .lyteVideoProgressHandler
+ * @description Background color for the draggable seek handle.
+ * @defaultValue #fff
+ * @inputType color
+ * @name Progress Handler Background Color
+ */
+  --lyte-video-progress-handler-bg: #fff;
+  /**
+ * @variable --lyte-video-progress-handler-box-shadow-color
+ * @selector .lyteVideoProgressHandler
+ * @description Box shadow color for the video progress handler.
+ * @defaultValue rgba(0, 0, 0, 0.69)
+ * @inputType color
+ * @name Progress Handler Box Shadow Color
+ */
+  --lyte-video-progress-handler-box-shadow-color: rgba(0, 0, 0, 0.69);
+  /**
+ * @variable --lyte-video-volume-slider-bg
+ * @selector .lyteRangeSlider
+ * @description Background color of the volume slider track.
+ * @defaultValue rgba(255, 255, 255, 0.3)
+ * @inputType color
+ * @name Volume Slider Background Color
+ */
+  --lyte-video-volume-slider-bg: rgba(255, 255, 255, 0.3);
+  /**
+ * @variable --lyte-video-volume-slider-fill-bg
+ * @selector .lyteSliderFill
+ * @description Background color for the filled portion of volume slider.
+ * @defaultValue #fff
+ * @inputType color
+ * @name Volume Slider Fill Background Color
+ */
+  --lyte-video-volume-slider-fill-bg: #fff;
+  /**
+ * @variable --lyte-video-volume-slider-unfilled-bg
+ * @selector .lyteSliderFill.endFill
+ * @description Background color for the unfilled portion of volume slider.
+ * @defaultValue transparent
+ * @inputType color
+ * @name Volume Slider Unfilled Background Color
+ */
+  --lyte-video-volume-slider-unfilled-bg: transparent;
+  /**
+ * @variable --lyte-video-volume-slider-handler-bg
+ * @selector .lyteSliderHandler
+ * @description Background color for the volume slider knob.
+ * @defaultValue #fff
+ * @inputType color
+ * @name Volume Slider Handler Background Color
+ */
+  --lyte-video-volume-slider-handler-bg: #fff;
+  /**
+ * @variable --lyte-video-show-actions-bg
+ * @selector .lyteVideoAnimatePlay
+ * @description Background overlay for video play/pause animation feedback.
+ * @defaultValue rgba(0, 0, 0, 0.3)
+ * @inputType color
+ * @name Show Actions Background Color
+ */
+  --lyte-video-show-actions-bg: rgba(0, 0, 0, 0.3);
+  /**
+ * @variable --lyte-video-show-backward-action-bg
+ * @selector .lyteVideoAnimateBackArrow
+ * @description Color of the rewind indicator arrow.
+ * @defaultValue #fff
+ * @inputType color
+ * @name Show Backward Action Background Color
+ */
+  --lyte-video-show-backward-action-bg: #fff;
+  /**
+ * @variable --lyte-video-show-forward-action-bg
+ * @selector .lyteVideoAnimateForwardArrow
+ * @description Color of the fast-forward indicator arrow.
+ * @defaultValue #fff
+ * @inputType color
+ * @name Show Forward Action Background Color
+ */
+  --lyte-video-show-forward-action-bg: #fff;
+  /**
+ * @variable --lyte-video-settings-bg
+ * @selector .lyteVideoSettingsWrapper
+ * @description Background color of the settings dropdown panel.
+ * @defaultValue rgba(28, 28, 28, 0.9)
+ * @inputType color
+ * @name Settings Background Color
+ */
+  --lyte-video-settings-bg: rgba(28, 28, 28, 0.9);
+  /**
+ * @variable --lyte-video-settings-text-color
+ * @selector .lyteVideoSettingsWrapper
+ * @description Text color inside the video settings panel.
+ * @defaultValue #fff
+ * @inputType color
+ * @name Settings Text Color
+ */
+  --lyte-video-settings-text-color: #fff;
+  /**
+ * @variable --lyte-video-settings-item-hover-bg
+ * @selector .lyteVideoSettingsItem:hover, .lyteVideoSettingDropItem:hover
+ * @description Background color on hover for video settings options.
+ * @defaultValue rgba(255, 255, 255, 0.1)
+ * @inputType color
+ * @name Settings Item Hover Background Color
+ */
+  --lyte-video-settings-item-hover-bg: rgba(255, 255, 255, 0.1);
+  /**
+ * @variable --lyte-video-settings-dropitem-tick-color
+ * @selector .lyteVideoOptionselected::before
+ * @description Color used for the tick mark on selected settings item.
+ * @defaultValue #fff
+ * @inputType color
+ * @name Settings Drop Item Tick Color
+ */
+  --lyte-video-settings-dropitem-tick-color: #fff;
+  /**
+ * @variable --lyte-video-settings-dropdown-header-border-color
+ * @selector .lyteVideoSettingsDropdownHead
+ * @description Border color for the header in settings dropdown.
+ * @defaultValue #bbb
+ * @inputType color
+ * @name Settings Dropdown Header Border Color
+ */
+  --lyte-video-settings-dropdown-header-border-color: #bbb;
+  /**
+ * @variable --lyte-video-settings-arrow-color
+ * @selector .lyteVideoSettingsKey::after
+ * @description Color for the arrow icon in settings options.
+ * @defaultValue #eee
+ * @inputType color
+ * @name Settings Arrow Color
+ */
+  --lyte-video-settings-arrow-color: #eee;
+  /**
+ * @variable --lyte-video-timer-text-color
+ * @selector .lyteVideoTimer
+ * @description Text color used for video timer (current/total time).
+ * @defaultValue #fff
+ * @inputType color
+ * @name Timer Text Color
+ */
+  --lyte-video-timer-text-color: #fff;
+  /**
+ * @variable --lyte-video-subtitle-bg
+ * @selector .lyteVideoSubtitle
+ * @description Background color of the video subtitles.
+ * @defaultValue #333c
+ * @inputType color
+ * @name Subtitle Background Color
+ */
+  --lyte-video-subtitle-bg: #333c;
+  /**
+ * @variable --lyte-video-subtitle-text-color
+ * @selector .lyteVideoSubtitle
+ * @description Text color of the video subtitles.
+ * @defaultValue #fff
+ * @inputType color
+ * @name Subtitle Text Color
+ */
+  --lyte-video-subtitle-text-color: #fff;
+  /**
+ * @variable --lyte-video-circular-loader-color
+ * @selector .lyteCircleInnerLoader::after
+ * @description Border color for the circular loading spinner.
+ * @defaultValue #fff
+ * @inputType color
+ * @name Circular Loader Color
+ */
+  --lyte-video-circular-loader-color: #fff;
+  /**
+ * @variable --lyte-video-tooltip-font-size
+ * @selector .lyteVideoToolTip
+ * @description Font size of the progress tooltip.
+ * @defaultValue var(--lyte-font-size-small)
+ * @defaultVariableValue 13px
+ * @allowedSuffixes px
+ * @inputType dimension
+ * @name Tooltip Font Size
+ */
+  --lyte-video-tooltip-font-size: var(--lyte-font-size-small);
+  /**
+ * @variable --lyte-video-settings-wrapper-font-size
+ * @selector .lyteVideoSettingsWrapper
+ * @description Font size for content inside settings wrapper.
+ * @defaultValue var(--lyte-font-size-small)
+ * @defaultVariableValue 13px
+ * @allowedSuffixes px
+ * @inputType dimension
+ * @name Settings Wrapper Font Size
+ */
+  --lyte-video-settings-wrapper-font-size: var(--lyte-font-size-small);
+  /**
+ * @variable --lyte-video-timer-font-size
+ * @selector .lyteVideoTimer
+ * @description Font size for the video timer text.
+ * @defaultValue var(--lyte-font-size-xs)
+ * @defaultVariableValue 12px
+ * @allowedSuffixes px
+ * @inputType dimension
+ * @name Timer Font Size
+ */
+  --lyte-video-timer-font-size: var(--lyte-font-size-xs);
+}

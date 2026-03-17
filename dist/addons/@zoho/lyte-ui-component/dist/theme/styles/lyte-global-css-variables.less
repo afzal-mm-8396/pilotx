@@ -1,0 +1,8 @@
+@import "../config.less";
+
+& when ( (@themeName = css-variables) or (@themeName = css-variables-night) ) {
+	:root, 
+	:host {
+		.lyteGlobalCSSVariablesMixin();
+	}
+}

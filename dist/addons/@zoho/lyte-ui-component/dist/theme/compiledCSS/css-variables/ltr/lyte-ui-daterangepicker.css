@@ -1,0 +1,432 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-daterangepicker
+*/
+:root,
+:host {
+  /**
+     * @variable --lyte-daterangepicker-bg
+     * @selector .lyteDateRangePickerRow
+     * @description Background color of the date range picker
+     * @defaultValue var(--lyte-theme-body-bg)
+     * @defaultVariableValue #fff
+     * @inputType color
+     * @name Background Color
+     */
+  --lyte-daterangepicker-bg: var(--lyte-theme-body-bg);
+  /**
+     * @variable --lyte-daterangepicker-inrange-bg
+     * @selector .lyteDateRPTempSelected, .lyteDateRPTempFirstDateSelected, .lyteDateRPTempLastDateSelected
+     * @description Background color for dates within the selected range
+     * @defaultValue #e6f3fd
+     * @inputType color
+     * @name In-Range Background Color
+     */
+  --lyte-daterangepicker-inrange-bg: #e6f3fd;
+  /**
+     * @variable --lyte-daterangepicker-selelem-bg
+     * @selector .lyteDateRPFirstDateSelected, .lyteDateRPLastDateSelected
+     * @description Background color for selected start/end dates
+     * @defaultValue var(--lyte-theme-active-element-bg)
+     * @defaultVariableValue #5ba1e5
+     * @inputType color
+     * @name Selected Start/End Dates Background Color
+     */
+  --lyte-daterangepicker-selelem-bg: var(--lyte-theme-active-element-bg);
+  /**
+     * @variable --lyte-daterangepicker-inrange-text-color
+     * @selector .lyteDateRPTempSelected
+     * @description Text color for dates within the selected range
+     * @defaultValue var(--lyte-common-text-color2)
+     * @defaultVariableValue #111
+     * @inputType color
+     * @name In-Range Text Color
+     */
+  --lyte-daterangepicker-inrange-text-color: var(--lyte-common-text-color2);
+  /**
+     * @variable --lyte-daterangepicker-border-color
+     * @selector .lyteDateRangePickerRow
+     * @description Border color for the main date range picker container
+     * @defaultValue #d1d1d1
+     * @inputType color
+     * @name Border Color
+     */
+  --lyte-daterangepicker-border-color: #d1d1d1;
+  /**
+     * @variable --lyte-daterangepicker-box-shadow-color
+     * @selector .lyteDateRangePickerRow
+     * @description Box shadow color applied to the picker container
+     * @defaultValue rgba(0, 0, 0, 0.1)
+     * @inputType color
+     * @name Box Shadow Color
+     */
+  --lyte-daterangepicker-box-shadow-color: rgba(0, 0, 0, 0.1);
+  /**
+     * @variable --lyte-daterangepicker-calendar-separator-color
+     * @selector .dRPCalendar2
+     * @description Border color between the two calendars in the picker
+     * @defaultValue #f0f0f0
+     * @inputType color
+     * @name Calendar Separator Color
+     */
+  --lyte-daterangepicker-calendar-separator-color: #f0f0f0;
+  /**
+     * @variable --lyte-daterangepicker-selected-date-border-radius
+     * @selector .lyteDateRPFirstDateSelected, .lyteDateRPLastDateSelected
+     * @description Border radius for selected date cells (start/end)
+     * @defaultValue 50%
+     * @allowedSuffixes %
+     * @inputType dimension
+     * @name Selected Date Border Radius
+     */
+  --lyte-daterangepicker-selected-date-border-radius: 50%;
+  /**
+     * @variable --lyte-daterangepicker-selected-date-text-color
+     * @selector .lyteDateRPFirstDateSelected, .lyteDateRPLastDateSelected
+     * @description Text color for selected start and end dates
+     * @defaultValue #fff
+     * @inputType color
+     * @name Selected Date Text Color
+     */
+  --lyte-daterangepicker-selected-date-text-color: #fff;
+  /**
+     * @variable --lyte-daterangepicker-inrange-hover-text-color
+     * @selector .lyteDateRPTempSelected:hover
+     * @description Text color on hover for dates in the selected range
+     * @defaultValue var(--lyte-common-text-color2)
+     * @defaultVariableValue #111
+     * @inputType color
+     * @name In-Range Hover Text Color
+     */
+  --lyte-daterangepicker-inrange-hover-text-color: var(--lyte-common-text-color2);
+  /**
+     * @variable --lyte-daterangepicker-header-font-size
+     * @selector .lyteDateRPMonthHeader
+     * @description Font size for the month-year header
+     * @defaultValue var(--lyte-font-size-small)
+     * @defaultVariableValue 13px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Header Font Size
+     */
+  --lyte-daterangepicker-header-font-size: var(--lyte-font-size-small);
+  /**
+     * @variable --lyte-daterangepicker-month-dropbtn-font-size
+     * @selector .monthDD lyte-drop-button
+     * @description Font size for the month dropdown button
+     * @defaultValue var(--lyte-font-size-xl)
+     * @defaultVariableValue 18px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Month Dropdown Button Font Size
+     */
+  --lyte-daterangepicker-month-dropbtn-font-size: var(--lyte-font-size-xl);
+  /**
+     * @variable --lyte-daterangepicker-year-dropbtn-font-size
+     * @selector .yearDD lyte-drop-button
+     * @description Font size for the year dropdown button
+     * @defaultValue var(--lyte-font-size-large)
+     * @defaultVariableValue 16px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Year Dropdown Button Font Size
+     */
+  --lyte-daterangepicker-year-dropbtn-font-size: var(--lyte-font-size-large);
+  --lyte-daterangepicker-date-focus-outline-color: #333;
+}
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+/* LYTE-DATERANGEPICKER BEGINS  */
+lyte-daterangepicker {
+  display: inline-block;
+}
+lyte-daterangepicker * {
+  box-sizing: content-box;
+}
+lyte-daterangepicker lyte-calendar {
+  display: block;
+}
+.lyteDateRangePickerRow {
+  font-family: var(--lyte-primary-font);
+  display: flex;
+  box-shadow: 0 0 3px 1px var(--lyte-daterangepicker-box-shadow-color);
+  border: 1px solid var(--lyte-daterangepicker-border-color);
+  background: var(--lyte-daterangepicker-bg);
+}
+.lyteDateRangePickerRow .lyteCalendarPopup {
+  box-shadow: none;
+  border: none;
+  background: inherit;
+}
+.lyteDateRangePickerRow lyte-dropdown lyte-drop-button {
+  background: inherit;
+}
+.lyteDateRangePickerCol1,
+.lyteDateRangePickerCol2 {
+  position: relative;
+  flex-grow: 1;
+}
+.lyteDateRangePickerRow .lyteCalBtns {
+  display: none;
+}
+.lyteDateRPMonthHeader {
+  text-align: center;
+  font-size: var(--lyte-daterangepicker-header-font-size);
+  padding: 12px 23px;
+}
+.lyteDateRPWithYearNavigator .lyteDateRangePickerCol1 .lyteDateRPMonthHeader {
+  padding-inline-start: 75px;
+}
+.lyteDateRPWithYearNavigator .lyteDateRangePickerCol2 .lyteDateRPMonthHeader {
+  padding-inline-end: 75px;
+}
+.lyteSeperateDRP.lyteDateRPWithYearNavigator .lyteDateRPMonthHeader {
+  padding-inline: 75px;
+}
+.lyteDateRPLeftNav {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+}
+.lyteDateRPRightNav {
+  top: 17px;
+  right: 20px;
+  position: absolute;
+}
+.monthDD {
+  max-width: 150px;
+  margin-right: 7px;
+  width: auto;
+}
+.monthDD lyte-drop-button {
+  font-size: var(--lyte-daterangepicker-month-dropbtn-font-size);
+}
+.yearDD {
+  width: auto;
+}
+.yearDD lyte-drop-button {
+  font-size: var(--lyte-daterangepicker-year-dropbtn-font-size);
+}
+.dRPCalendar2 .lyteCalTableContainer {
+  border-left: 1px solid var(--lyte-daterangepicker-calendar-separator-color);
+}
+.lyteDateRangePickerRow .lyteCalToday {
+  background: inherit;
+}
+.lyteDateRPMonthStartDate,
+.lyteDateRPMonthEndDate,
+.lyteDateRangePickerRow .lyteDateRPTempSelected {
+  border-radius: 0;
+  background: var(--lyte-daterangepicker-inrange-bg);
+  position: relative;
+  color: var(--lyte-daterangepicker-inrange-text-color);
+}
+.lyteDateRPTempFirstDateSelected.lyteCalTableCell,
+.lyteDateRPTempLastDateSelected,
+.lyteDateRPFirstDateSelected.lyteCalTableCell,
+.lyteDateRPLastDateSelected.lyteCalTableCell,
+.lyteDateRPTempSelected.lyteDateRPTempFirstDateSelected:hover,
+.lyteDateRPTempSelected.lyteDateRPTempLastDateSelected:hover,
+.lyteDateRPTempFirstDateSelected:hover,
+.lyteDateRPTempLastDateSelected:hover,
+.lyteDateRPFirstDateSelected:hover,
+.lyteDateRPLastDateSelected:hover {
+  color: var(--lyte-daterangepicker-selected-date-text-color);
+  position: relative;
+  z-index: 0;
+  background: var(--lyte-daterangepicker-inrange-bg);
+  border-radius: var(--lyte-daterangepicker-selected-date-border-radius) 0 0 var(--lyte-daterangepicker-selected-date-border-radius);
+  border-color: transparent;
+}
+.lyteDateRPTempSelected.lyteDateRPTempLastDateSelected,
+.lyteDateRPTempLastDateSelected.lyteCalTableCell,
+.lyteDateRPLastDateSelected.lyteCalTableCell,
+.lyteDateRPTempLastDateSelected:hover,
+.lyteDateRPLastDateSelected:hover {
+  background: var(--lyte-daterangepicker-inrange-bg);
+  border-radius: 0 var(--lyte-daterangepicker-selected-date-border-radius) var(--lyte-daterangepicker-selected-date-border-radius) 0;
+  color: var(--lyte-daterangepicker-selected-date-text-color);
+}
+.lyteDateRPTempFirstDateSelected::before,
+.lyteDateRPFirstDateSelected::before,
+.lyteDateRPTempLastDateSelected::before,
+.lyteDateRPLastDateSelected::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: var(--lyte-daterangepicker-selelem-bg);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: var(--lyte-daterangepicker-selected-date-border-radius);
+}
+.lyteDateRPTempFirstDateSelected {
+  border-radius: var(--lyte-daterangepicker-selected-date-border-radius) 0 0 var(--lyte-daterangepicker-selected-date-border-radius);
+}
+.lyteDateRPTempFirstDateSelected::after,
+.lyteDateRPFirstDateSelected::after,
+.lyteDateRPMonthStartDate::after,
+.lyteDateRPTempSelected::after {
+  content: '';
+  position: absolute;
+  left: calc(100% + 1px);
+  width: 8px;
+  background: var(--lyte-daterangepicker-inrange-bg);
+  top: -1px;
+  height: 32px;
+}
+.lyteWeekNumberGrid + .lyteDateRPLastDateSelected,
+.lyteWeekNumberGrid + .lyteDateRPTempLastDateSelected,
+.lyteWeekNumberGrid + .lyteDateRPTempLastDateSelected:hover,
+.lyteDateRPFirstDateSelected:last-of-type,
+.lyteDateRPTempFirstDateSelected:last-of-type,
+.lyteDateRPLastDateSelected:first-child,
+.lyteDateRPTempLastDateSelected:first-child,
+.lyteDateRPTempLastDateSelected.lyteCalTableCell:first-child:hover {
+  background: transparent;
+}
+.lyteDateRPTempFirstDateSelected,
+.lyteDateRPTempLastDateSelected,
+.lyteDateRPFirstDateSelected,
+.lyteDateRPLastDateSelected {
+  color: var(--lyte-daterangepicker-selected-date-text-color);
+}
+.lyteDateRPTempSelected:hover {
+  background: var(--lyte-daterangepicker-inrange-bg);
+  color: var(--lyte-daterangepicker-inrange-hover-text-color);
+  border-radius: 0;
+}
+.lyteCalTableCell.lyteDateRPTempLastDateSelected:hover,
+.lyteDateRPMonthEndDate,
+.lyteDateRPTempSelected:last-of-type,
+.lyteCalTableCell.lyteDateRPTempSelected:last-of-type:hover {
+  border-radius: 0 var(--lyte-daterangepicker-selected-date-border-radius) var(--lyte-daterangepicker-selected-date-border-radius) 0;
+}
+.lyteWeekNumberGrid + .lyteDateRPTempSelected,
+.lyteDateRPMonthStartDate,
+.lyteDateRPTempSelected:first-of-type,
+.lyteDateRPTempSelected:first-of-type:hover {
+  border-radius: var(--lyte-daterangepicker-selected-date-border-radius) 0 0 var(--lyte-daterangepicker-selected-date-border-radius);
+}
+.lyteDateRPMonthEndDate:first-of-type {
+  border-radius: var(--lyte-daterangepicker-selected-date-border-radius);
+}
+.lyteDateRPTempSelected:last-of-type::after,
+.lyteDateRPFirstDateSelected:last-of-type::after,
+.lyteDateRPTempFirstDateSelected:last-of-type::after,
+.lyteDateRPTempLastDateSelected::after,
+.lyteDateRPLastDateSelected::after {
+  width: 0;
+}
+.lyteDateRPTempFirstDateSelected.lyteDateRPTempLastDateSelected,
+.lyteDateRPFirstDateSelected.lyteDateRPLastDateSelected {
+  background: var(--lyte-daterangepicker-bg);
+}
+.lyteDateRPTempFirstDateSelected.lyteDateRPMonthEndDate,
+.lyteDateRPMonthEndDate.lyteDateRPFirstDateSelected {
+  background: var(--lyte-daterangepicker-bg);
+  border-radius: var(--lyte-daterangepicker-selected-date-border-radius) 0 0 var(--lyte-daterangepicker-selected-date-border-radius);
+}
+.lyteDateRPInterimEndDate::after,
+.lyteDateRPTempFirstDateSelected.lyteDateRPMonthEndDate::after,
+.lyteDateRPMonthEndDate.lyteDateRPFirstDateSelected::after {
+  content: none;
+}
+.lyteDateRPMonthStartDate.lyteDateRPTempLastDateSelected,
+.lyteDateRPMonthStartDate.lyteDateRPLastDateSelected {
+  background: var(--lyte-daterangepicker-bg);
+}
+.lyteDateRPInterimEndDate:hover,
+.lyteDateRPInterimEndDate.lyteDateRPTempSelected:first-of-type,
+.lyteDateRPInterimEndDate {
+  border-top-right-radius: var(--lyte-daterangepicker-selected-date-border-radius);
+  border-bottom-right-radius: var(--lyte-daterangepicker-selected-date-border-radius);
+}
+.lyteDateRPInterimStartDate.lyteDateRPTempSelected.lyteDateRPTempLastDateSelected,
+.lyteDateRPInterimStartDate.lyteDateRPTempLastDateSelected:hover,
+.lyteDateRPInterimStartDate:hover,
+.lyteDateRPInterimStartDate {
+  border-top-left-radius: var(--lyte-daterangepicker-selected-date-border-radius);
+  border-bottom-left-radius: var(--lyte-daterangepicker-selected-date-border-radius);
+}
+.lyteCalToday.lyteDateRPTempSelected {
+  border-color: transparent;
+}
+.lyteDateRPMonthEndDate:focus-visible,
+.lyteDateRPMonthStartDate:focus-visible,
+.lyteDateRPTempSelected:focus-visible {
+  outline: 2px solid var(--lyte-daterangepicker-date-focus-outline-color);
+  outline-offset: -2px;
+}
+.lyteDateRPTempFirstDateSelected:focus-visible,
+.lyteDateRPFirstDateSelected:focus-visible,
+.lyteDateRPTempLastDateSelected:focus-visible,
+.lyteDateRPLastDateSelected:focus-visible {
+  outline: none;
+}
+.lyteDateRPTempFirstDateSelected:focus-visible::before,
+.lyteDateRPFirstDateSelected:focus-visible::before,
+.lyteDateRPTempLastDateSelected:focus-visible::before,
+.lyteDateRPLastDateSelected:focus-visible::before {
+  outline: 2px solid var(--lyte-daterangepicker-date-focus-outline-color);
+  z-index: 1;
+}
+.lyteDateRPTempFirstDateSelected:focus-visible .lyteCalDateSpan,
+.lyteDateRPFirstDateSelected:focus-visible .lyteCalDateSpan,
+.lyteDateRPTempLastDateSelected:focus-visible .lyteCalDateSpan,
+.lyteDateRPLastDateSelected:focus-visible .lyteCalDateSpan {
+  position: relative;
+  z-index: 5;
+}
+/*------- Added by Sam-------*/
+.lyteDateRPNavDisabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+.lyteSeperateDRP .lyteDateRPFirstDateSelected,
+.lyteSeperateDRP .lyteDateRPLastDateSelected {
+  border-radius: 50%;
+}
+.lyteSeperateDRP .lyteDateRPFirstDateSelected:after {
+  display: none;
+}
+.lyteDateRangePickerRow .lyteCalTableCell {
+  touch-action: none;
+}
+/*------- Added for ltPropHeaderType option -------*/
+.lyteDateRPStringHeader {
+  padding-top: 17px;
+  font-size: 18px;
+  color: #666;
+}
+/*------- Added for ltPropFillRows option -------*/
+lyte-daterangepicker .lyteCalDiffMonth {
+  pointer-events: none;
+  opacity: 0.4;
+}
+/*------- Added by Sam-------*/
+.lyteAllowOtherMonthSelection .lyteCalTableCell.lyteCalDiffMonth {
+  pointer-events: auto;
+}
+.lyteAllowOtherMonthSelection .lyteCalTableCell.lyteCalDisabled {
+  pointer-events: none;
+}
+.lyteAllowOtherMonthSelection .lyteDateRPFirstDateSelected,
+.lyteAllowOtherMonthSelection .lyteDateRPTempSelected,
+.lyteAllowOtherMonthSelection .lyteDateRPLastDateSelected,
+.lyteAllowOtherMonthSelection .lyteCalDiffMonth:hover {
+  opacity: 1;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* LYTE-DATERANGEPICKER ENDS    */

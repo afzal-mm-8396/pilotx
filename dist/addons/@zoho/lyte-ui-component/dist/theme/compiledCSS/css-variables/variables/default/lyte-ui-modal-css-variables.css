@@ -1,0 +1,102 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component lyte-modal
+ */
+:root,
+:host {
+  /**
+	 * @variable --lyte-modal-bg
+	 * @selector .lyteModalElement
+	 * @description Background color of the modal container
+	 * @defaultValue var(--lyte-theme-body-bg)
+	 * @defaultVariableValue #fff
+	 * @inputType color
+	 * @name Background Color
+	 */
+  --lyte-modal-bg: var(--lyte-theme-body-bg);
+  /**
+	 * @variable --lyte-modal-box-shadow
+	 * @selector .lyteModalElement
+	 * @description Box shadow color used around the modal container
+	 * @defaultValue 0px 1px 5px rgba(0, 0, 0, 0.4)
+	 * @inputType boxShadow
+	 * @name Box Shadow
+	 */
+  --lyte-modal-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);
+  /**
+	 * @variable --lyte-modal-header-text-color
+	 * @selector lyte-modal-header
+	 * @description Text color used in the modal header
+	 * @defaultValue var(--lyte-heading-text-color)
+	 * @defaultVariableValue #111
+	 * @inputType color
+	 * @name Header Text Color
+	 */
+  --lyte-modal-header-text-color: var(--lyte-heading-text-color);
+  /**
+	 * @variable --lyte-modal-content-text-color
+	 * @selector lyte-modal-content
+	 * @description Text color used in the modal content section
+	 * @defaultValue var(--lyte-common-text-color)
+	 * @defaultVariableValue #333
+	 * @inputType color
+	 * @name Content Text Color
+	 */
+  --lyte-modal-content-text-color: var(--lyte-common-text-color);
+  /**
+	 * @variable --lyte-modal-freeze-bg
+	 * @selector lyte-modal-freeze
+	 * @description Background color of the freeze layer behind the modal
+	 * @defaultValue #000
+	 * @inputType color
+	 * @name Freeze Background Color
+	 */
+  --lyte-modal-freeze-bg: #000;
+  /**
+	 * @variable --lyte-modal-zindex
+	 * @selector .lyteModalWrapper
+	 * @description Z-index of the modal container for stacking order
+	 * @defaultValue var(--lyte-level3-zindex)
+	 * @defaultVariableValue 1040
+	 * @inputType number
+	 * @name Z-Index
+	 */
+  --lyte-modal-zindex: var(--lyte-level3-zindex);
+  /**
+	 * @variable --lyte-modal-freeze-opacity
+	 * @selector lyte-modal-freeze
+	 * @description Opacity level for the freeze overlay behind the modal
+	 * @defaultValue 0.4
+	 * @inputType number
+	 * @name Freeze Opacity
+	 */
+  --lyte-modal-freeze-opacity: 0.4;
+  /**
+	 * @variable --lyte-modal-header-font-size
+	 * @selector lyte-modal-header
+	 * @description Font size used for the modal header
+	 * @defaultValue var(--lyte-font-size-xl)
+	 * @defaultVariableValue 18px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Header Font Size
+	 */
+  --lyte-modal-header-font-size: var(--lyte-font-size-xl);
+  /**
+	 * @variable --lyte-modal-content-font-size
+	 * @selector lyte-modal-content
+	 * @description Font size used for the modal content
+	 * @defaultValue var(--lyte-font-size-medium)
+	 * @defaultVariableValue 15px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Content Font Size
+	 */
+  --lyte-modal-content-font-size: var(--lyte-font-size-medium);
+}

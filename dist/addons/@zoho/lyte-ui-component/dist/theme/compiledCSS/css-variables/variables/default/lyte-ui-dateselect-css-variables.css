@@ -1,0 +1,51 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-dateselect
+*/
+:root,
+:host {
+  /**
+     * @variable --lyte-dateselect-bg
+     * @selector .lyteCalendarSelected, lyteDateSelect lyte-item:hover
+     * @description Background color for selected or hovered items in the date select dropdown
+     * @defaultValue var(--lyte-theme-body-bg)
+     * @defaultVariableValue #fff
+     * @inputType color
+     * @name Date Select Background Color
+     */
+  --lyte-dateselect-bg: var(--lyte-theme-body-bg);
+  /**
+     * @variable --lyte-dateselect-border-color
+     * @selector .specificDateCalendar, .dateSelectArrow, .dateSelectleftArrow
+     * @description Border color used for calendar and directional arrow elements
+     * @defaultValue #d6d6d6
+     * @inputType color
+     * @name Date Select Border Color
+     */
+  --lyte-dateselect-border-color: #d6d6d6;
+  /**
+     * @variable --lyte-dateselect-zindex
+     * @selector .dateSelectcal
+     * @description z-index value for the calendar popover to control stacking order
+     * @defaultValue var(--lyte-level4-zindex)
+     * @defaultVariableValue 1060
+     * @inputType number
+     * @name Date Select Z-Index
+     */
+  --lyte-dateselect-zindex: var(--lyte-level4-zindex);
+  /**
+     * @variable --lyte-dateselect-popover-box-shadow
+     * @selector .specificDateCustomRangeCont
+     * @description Box-shadow for the calendar popup container
+     * @defaultValue 0px 2px 6px 0px rgba(0, 0, 0, 0.15)
+     * @inputType boxShadow
+     * @name Date Select Popover Box Shadow
+     */
+  --lyte-dateselect-popover-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.15);
+}

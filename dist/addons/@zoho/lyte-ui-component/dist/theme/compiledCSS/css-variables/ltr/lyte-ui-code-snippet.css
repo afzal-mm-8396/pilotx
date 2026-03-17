@@ -1,0 +1,298 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root,
+:host {
+  --lyte-csnippet-bg-color: #F6FAFD;
+  --lyte-csnippet-border-color: #DCEDF9;
+  --lyte-csnippet-line-number-bg-color: #eef6fc;
+  --lyte-csnippet-border-radius: 5px;
+  --lyte-csnippet-font-size: 14px;
+  --lyte-csnippet-copy-button-bg: #EEF6FC;
+  --lyte-csnippet-copy-button-border-color: #0984E3;
+  --lyte-csnippet-copy-button-border-radius: 5px;
+  --lyte-csnippet-copy-button-text-color: #0984E3;
+  --lyte-csnippet-line-number-text-color: #496A83;
+  --lyte-csnippet-url-text-color: #04F;
+  --lyte-csnippet-tagname-text-color: #04F;
+  --lyte-csnippet-punctuation-text-color: #04F;
+  --lyte-csnippet-content-text-color: #333;
+  --lyte-csnippet-attribute-equals-text-color: #800080;
+  --lyte-csnippet-attribute-name-text-color: #800080;
+  --lyte-csnippet-attribute-val-quote-text-color: #006203;
+  --lyte-csnippet-attribute-value-text-color: #006203;
+  --lyte-csnippet-entity-text-color: #ff2f2f;
+  --lyte-csnippet-css-comment-text-color: #737373;
+  --lyte-csnippet-comment-text-color: #737373;
+  --lyte-csnippet-css-selector-text-color: #006203;
+  --lyte-csnippet-css-rule-name-text-color: #333;
+  --lyte-csnippet-symbols-text-color: #333;
+  --lyte-csnippet-css-punctuation-text-color: #333;
+  --lyte-csnippet-css-value-function-text-color: #B24A00;
+  --lyte-csnippet-css-rule-value-text-color: #B24A00;
+  --lyte-csnippet-css-combinator-text-color: #ff00ff;
+  --lyte-csnippet-css-attribute-name-text-color: #800080;
+  --lyte-csnippet-css-keyword-important-text-color: #04F;
+  --lyte-csnippet-css-attribute-value-text-color: #04F;
+  --lyte-csnippet-css-color-value-text-color: orange;
+  --lyte-csnippet-yaml-alias-anchor-text-color: #006203;
+  --lyte-csnippet-yaml-keyword-and-datatype-text-color: #800080;
+  --lyte-csnippet-keyword-text-color: #800080;
+  --lyte-csnippet-plain-text-text-color: #333;
+  --lyte-csnippet-identifier-text-color: #333;
+  --lyte-csnippet-operator-text-color: #800080;
+  --lyte-csnippet-punctuator-text-color: #1A1A1A;
+  --lyte-csnippet-number-text-color: #B24A00;
+  --lyte-csnippet-string-text-color: #B24A00;
+  --lyte-csnippet-comment-text-color: #5f5757;
+  --lyte-csnippet-regex-text-color: #00b483;
+  --lyte-csnippet-boolean-text-color: #6c58ff;
+  --lyte-csnippet-js-function-text-color: #006203;
+  --lyte-csnippet-undefined-and-null-text-color: #6c58ff;
+  --lyte-csnippet-copy-icon-bg-color: #F6FAFD;
+  --lyte-csnippet-copy-icon-hover-bg: #dcedf9;
+  --lyte-csnippet-copy-icon-position: -263px -61px;
+}
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+lyte-code-snippet {
+  display: block;
+  position: relative;
+  direction: ltr;
+}
+.lyteCSCopyButton {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+.lyteCSCopyButton .lyteDefaultBtn {
+  background: var(--lyte-csnippet-copy-button-bg);
+  border: 1px solid var(--lyte-csnippet-copy-button-border-color);
+  border-radius: var(--lyte-csnippet-copy-button-border-radius);
+  color: var(--lyte-csnippet-copy-button-text-color);
+  text-transform: capitalize;
+}
+.lyteCSTitle + .lyteCSCopyButton {
+  top: 35px;
+}
+.lyteCSContainer {
+  display: flex;
+  background: var(--lyte-csnippet-bg-color);
+  border: 1px solid var(--lyte-csnippet-border-color);
+  border-radius: var(--lyte-csnippet-border-radius);
+  font-size: var(--lyte-csnippet-font-size);
+  line-height: 18px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.lyteCSLineNumberContainer {
+  padding: 15px;
+}
+.lyteCSLineNumber {
+  display: block;
+  color: var(--lyte-csnippet-line-number-text-color);
+  text-align: right;
+}
+.lyteCSCodeContainer {
+  padding: 15px;
+  white-space: pre;
+  flex-grow: 1;
+}
+.lyteUrl {
+  color: var(--lyte-csnippet-url-text-color);
+}
+.lyteTagNameCls {
+  color: var(--lyte-csnippet-tagname-text-color);
+}
+.lytePunctuationCls {
+  color: var(--lyte-csnippet-punctuation-text-color);
+}
+.lyteContentCls {
+  color: var(--lyte-csnippet-content-text-color);
+}
+.lyteAttributeEqualsCls {
+  color: var(--lyte-csnippet-attribute-equals-text-color);
+}
+.lyteAttributeNameCls {
+  color: var(--lyte-csnippet-attribute-name-text-color);
+}
+.lyteAttributeValQuoteCls {
+  color: var(--lyte-csnippet-attribute-val-quote-text-color);
+}
+.lyteAttributeValueCls {
+  color: var(--lyte-csnippet-attribute-value-text-color);
+}
+.lyteEntityCls {
+  color: var(--lyte-csnippet-entity-text-color);
+}
+.lyteCSSComment {
+  color: var(--lyte-csnippet-css-comment-text-color);
+}
+.lyteCommentCls {
+  color: var(--lyte-csnippet-comment-text-color);
+}
+.lyteCSSSelector {
+  word-spacing: 5px;
+  color: var(--lyte-csnippet-css-selector-text-color);
+}
+.lyteCSSRuleName {
+  color: var(--lyte-csnippet-css-rule-name-text-color);
+}
+.lyteSymbols {
+  color: var(--lyte-csnippet-symbols-text-color);
+}
+.lyteCSSPunctuation {
+  color: var(--lyte-csnippet-css-punctuation-text-color);
+}
+.lyteCSSRuleName + .lyteCSSPunctuation {
+  margin-right: 3px;
+}
+.lyteCSSValueFunction {
+  color: var(--lyte-csnippet-css-value-function-text-color);
+}
+.lyteCSSRuleValue {
+  color: var(--lyte-csnippet-css-rule-value-text-color);
+}
+.lyteCSSCombinator {
+  color: var(--lyte-csnippet-css-combinator-text-color);
+}
+.lyteCSSAttributeName {
+  color: var(--lyte-csnippet-css-attribute-name-text-color);
+}
+.lyteCSSImportant {
+  color: var(--lyte-csnippet-css-keyword-important-text-color);
+}
+.lyteCSSAttributeValue {
+  color: var(--lyte-csnippet-css-attribute-value-text-color);
+}
+.lyteCSSColorValue {
+  color: var(--lyte-csnippet-css-color-value-text-color);
+}
+.lyteYamlAliasPunctuationCls,
+.lyteYamlAnchorPunctuationCls,
+.lyteYamlAliasNameCls,
+.lyteYamlAnchorNameCls {
+  color: var(--lyte-csnippet-yaml-alias-anchor-text-color);
+}
+.lyteYamlDataType,
+.lyteYamlKey {
+  color: var(--lyte-csnippet-yaml-keyword-and-datatype-text-color);
+}
+.lyteJavaKeyword,
+.lytePythonKeyword,
+.lyteJSKeyword {
+  color: var(--lyte-csnippet-keyword-text-color);
+}
+.lytePlainText {
+  color: var(--lyte-csnippet-plain-text-text-color);
+}
+.lyteYamlIdentifier,
+.lyteJavaIdentifier,
+.lytePythonIdentifier,
+.lyteJSIndentifier {
+  color: var(--lyte-csnippet-identifier-text-color);
+}
+.lyteYamlAnchorAlias,
+.lyteJavaOperator,
+.lytePythonOperator,
+.lyteJSOperator {
+  color: var(--lyte-csnippet-operator-text-color);
+}
+.lyteYamlPunctuator,
+.lyteJavaPunctuator,
+.lytePythonPunctuator,
+.lyteJSPunctuator {
+  color: var(--lyte-csnippet-punctuator-text-color);
+}
+.lyteNumbers,
+.lyteYamlInteger,
+.lyteJavaInteger,
+.lytePythonInteger,
+.lyteJavaFloat,
+.lytePythonFloat,
+.lyteJSNumber {
+  color: var(--lyte-csnippet-number-text-color);
+}
+.lyteYamlString,
+.lyteJavaString,
+.lytePythonString,
+.lyteJSStringLiteral {
+  color: var(--lyte-csnippet-string-text-color);
+}
+.lyteYamlComment,
+.lyteJavaComment,
+.lytePythonComment,
+.lyteJSComment {
+  color: var(--lyte-csnippet-comment-text-color);
+}
+.lyteJavaRegex,
+.lytePythonRegex,
+.lyteJSRegex {
+  color: var(--lyte-csnippet-regex-text-color);
+}
+.lyteJavaBoolean,
+.lytePythonBoolean,
+.lyteJSBoolean {
+  color: var(--lyte-csnippet-boolean-text-color);
+}
+.lyteJSFunction {
+  color: var(--lyte-csnippet-js-function-text-color);
+}
+.lyteJavaNull,
+.lyteJSNull,
+.lyteJSUndefined {
+  color: var(--lyte-csnippet-undefined-and-null-text-color);
+}
+.lyteCodeSnippetTransparentBg .lyteCSContainer {
+  background: transparent;
+}
+.lyteCodeSnippetNumberSectionBg .lyteCSLineNumberContainer {
+  background: var(--lyte-csnippet-line-number-bg-color);
+}
+.lyteCSCopyIcon {
+  display: flex;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  right: 8px;
+  top: 8px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.lyteCSCopyIcon:hover {
+  background: var(--lyte-csnippet-copy-icon-hover-bg);
+}
+.lyteCSCopyIcon::after {
+  content: '';
+  background-image: var(--lyte-sprite-image);
+  background-position: var(--lyte-csnippet-copy-icon-position);
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+.lyteCSTitle + .lyteCSCopyIcon {
+  top: 25px;
+}
+.lyteCsShowCopyIconOnHover .lyteCSCopyIcon {
+  visibility: hidden;
+  background: var(--lyte-csnippet-copy-icon-bg-color);
+}
+.lyteCsShowCopyIconOnHover:hover .lyteCSCopyIcon {
+  visibility: visible;
+}
+.lyteCodeSnippetWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.lyteCSCodeClassForWrapping {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}

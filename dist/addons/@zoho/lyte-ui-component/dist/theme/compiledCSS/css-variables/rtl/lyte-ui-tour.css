@@ -1,0 +1,221 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component lyte-tour
+ */
+:root,
+:host {
+  /**
+ * @variable --lyte-tour-bg
+ * @selector .lyteTourStep, .lyteTourArrow, .lyteTourTargetBackground
+ * @description Background color used for the tour step, arrows, and target highlight.
+ * @defaultValue var(--lyte-theme-body-bg)
+ * @defaultVariableValue #fff
+ * @inputType color
+ * @name Background Color
+ */
+  --lyte-tour-bg: var(--lyte-theme-body-bg);
+  /**
+  * @variable --lyte-tour-text-color
+  * @selector lyte-tour-step-head
+  * @description Text color for the heading inside a tour step.
+  * @defaultValue var(--lyte-common-text-color)
+  * @defaultVariableValue #333
+  * @inputType color
+  * @name Text Color
+  */
+  --lyte-tour-text-color: var(--lyte-common-text-color);
+  /**
+  * @variable --lyte-tour-border-color
+  * @selector .lyteTourStep, .lyteTourArrow
+  * @description Border color for the tour step and directional arrows.
+  * @defaultValue #d6d6d6
+  * @inputType color
+  * @name Border Color
+  */
+  --lyte-tour-border-color: #d6d6d6;
+  /**
+  * @variable --lyte-tour-freezelayer-bg
+  * @selector .lyteTourFreezeLayer
+  * @description Background color for the freeze layer behind the tour.
+  * @defaultValue #000
+  * @inputType color
+  * @name Freeze Layer Background Color
+  */
+  --lyte-tour-freezelayer-bg: #000;
+  /**
+  * @variable --lyte-tour-container-box-shadow-color
+  * @selector .lyteTourContainer
+  * @description Box shadow color for the tour container.
+  * @defaultValue rgba(0, 0, 0, 0.1)
+  * @inputType color
+  * @name Container Box Shadow Color
+  */
+  --lyte-tour-container-box-shadow-color: rgba(0, 0, 0, 0.1);
+  /**
+  * @variable --lyte-tour-step-indicator-bg
+  * @selector lyte-tour-step-indicator
+  * @description Background color for the inactive step indicators.
+  * @defaultValue #ddd
+  * @inputType color
+  * @name Step Indicator Background Color
+  */
+  --lyte-tour-step-indicator-bg: #ddd;
+  /**
+  * @variable --lyte-tour-step-indicator-hover-bg
+  * @selector lyte-tour-step-indicator:hover, .lyteCurTourStep
+  * @description Background color for the currently active or hovered step indicator.
+  * @defaultValue #5ba1e5
+  * @inputType color
+  * @name Step Indicator Hover Background Color
+  */
+  --lyte-tour-step-indicator-hover-bg: #5ba1e5;
+  /**
+  * @variable --lyte-tour-step-head-font-size
+  * @selector lyte-tour-step-head
+  * @description Font size of the heading inside the tour step.
+  * @defaultValue var(--lyte-font-size-xxl)
+  * @defaultVariableValue 20px
+  * @allowedSuffixes px
+  * @inputType dimension
+  * @name Step Head Font Size
+  */
+  --lyte-tour-step-head-font-size: var(--lyte-font-size-xxl);
+}
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+.lyteTourFreezeLayer,
+.lyteTourDummyWrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1070;
+}
+.lyteTourFreezeLayer {
+  mix-blend-mode: hard-light;
+  position: fixed;
+  background: var(--lyte-tour-freezelayer-bg);
+  opacity: 0.3;
+}
+.lyteTourClipMask {
+  background: gray;
+}
+.lyteTourContainer {
+  will-change: transform;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-999px, -999px);
+  transition: transform 0.3s linear;
+  z-index: 1072;
+  box-shadow: 0 0 4px 1px var(--lyte-tour-container-box-shadow-color);
+}
+.lyteTourArrow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  background: var(--lyte-tour-bg);
+  display: none;
+  left: 0;
+}
+.lyteTourLeftArrow {
+  border-left: 1px solid var(--lyte-tour-border-color);
+  border-bottom: 1px solid var(--lyte-tour-border-color);
+}
+.lyteTourRightArrow {
+  right: 0;
+  border-top: 1px solid var(--lyte-tour-border-color);
+  border-right: 1px solid var(--lyte-tour-border-color);
+  left: unset;
+}
+.lyteTourTopArrow {
+  top: 0;
+  border-top: 1px solid var(--lyte-tour-border-color);
+  border-left: 1px solid var(--lyte-tour-border-color);
+}
+.lyteTourBottomArrow {
+  bottom: 0;
+  border-bottom: 1px solid var(--lyte-tour-border-color);
+  border-right: 1px solid var(--lyte-tour-border-color);
+}
+.lyteTourStep {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: var(--lyte-tour-bg);
+  border: 1px solid var(--lyte-tour-border-color);
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+lyte-tour-step-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+lyte-tour-step-head {
+  font-family: var(--lyte-secondary-font);
+  font-size: var(--lyte-tour-step-head-font-size);
+  padding: 10px;
+  color: var(--lyte-tour-text-color);
+}
+lyte-tour-step-content {
+  flex-grow: 1;
+}
+lyte-tour-step-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+lyte-tour-step-indicator-wrapper {
+  display: flex;
+}
+lyte-tour-step-indicator {
+  width: 10px;
+  height: 10px;
+  background: var(--lyte-tour-step-indicator-bg);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+lyte-tour-step-indicator.lyteCurTourStep,
+lyte-tour-step-indicator:hover {
+  background: var(--lyte-tour-step-indicator-hover-bg);
+}
+.lyteTourActiveTarget {
+  z-index: 1040;
+}
+.lyteTourTargetBackground {
+  position: absolute;
+  transition: top 0.3s ease, left 0.3s ease;
+  border-radius: 50%;
+}
+.lyteTourDefaultArrow,
+.lyteTourActive,
+.lyteTourActiveStep {
+  display: block;
+}
+.lyteTourResetSpacing {
+  margin: 0;
+}
+.lyteTourDummyTarget {
+  position: absolute;
+  box-sizing: border-box;
+  visibility: hidden;
+}
+.lyteTourDummyTarget.lyteTourActiveTarget {
+  visibility: visible;
+}
+.lyteTourStepHidden {
+  display: none;
+}

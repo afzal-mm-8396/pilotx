@@ -1,0 +1,107 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-avatar-navigator
+*/
+:root,
+:host {
+  /**
+   * @variable --lyte-avatar-item-hover-color
+   * @selector lyte-avatar-navigator-item:hover
+   * @description Background color of avatar item on hover
+   * @defaultValue #d6d6d6
+   * @inputType color
+   * @name Item Hover Background Color
+   */
+  --lyte-avatar-item-hover-color: #d6d6d6;
+  /**
+   * @variable --lyte-avatar-item-selected-color
+   * @selector .lyteAvatarSelectedItem
+   * @description Background color of selected avatar item
+   * @defaultValue #5ba1e5
+   * @inputType color
+   * @name Item Selected Background Color
+   */
+  --lyte-avatar-item-selected-color: #5ba1e5;
+  /**
+   * @variable --lyte-avatar-item-hover-border-color
+   * @selector lyte-avatar-navigator-item:hover
+   * @description Border color of avatar item on hover
+   * @defaultValue var(--lyte-avatar-item-hover-color)
+   * @defaultVariableValue #d6d6d6
+   * @inputType color
+   * @name Item Hover Border Color
+   */
+  --lyte-avatar-item-hover-border-color: var(--lyte-avatar-item-hover-color);
+  /**
+   * @variable --lyte-avatar-item-hover-box-shadow-color
+   * @selector lyte-avatar-navigator-item:hover
+   * @description Box shadow color of avatar item on hover
+   * @defaultValue var(--lyte-avatar-item-hover-color)
+   * @defaultVariableValue #d6d6d6
+   * @inputType color
+   * @name Item Hover Box Shadow Color
+   */
+  --lyte-avatar-item-hover-box-shadow-color: var(--lyte-avatar-item-hover-color);
+  /**
+   * @variable --lyte-avatar-item-selected-border-color
+   * @selector .lyteAvatarSelectedItem
+   * @description Border color of selected avatar item
+   * @defaultValue var(--lyte-avatar-item-selected-color)
+   * @defaultVariableValue #5ba1e5
+   * @inputType color
+   * @name Item Selected Border Color
+   */
+  --lyte-avatar-item-selected-border-color: var(--lyte-avatar-item-selected-color);
+  /**
+   * @variable --lyte-avatar-item-selected-box-shadow-color
+   * @selector .lyteAvatarSelectedItem
+   * @description Box shadow color of selected avatar item
+   * @defaultValue var(--lyte-avatar-item-selected-color)
+   * @defaultVariableValue #5ba1e5
+   * @inputType color
+   * @name Item Selected Box Shadow Color
+   */
+  --lyte-avatar-item-selected-box-shadow-color: var(--lyte-avatar-item-selected-color);
+  /**
+   * @variable --lyte-avatar-item-loading-bg
+   * @selector .lyteAvatarLoadingCont
+   * @description Background color of avatar loading placeholder
+   * @defaultValue #f5f5f5
+   * @inputType color
+   * @name Item Loading Background Color
+   */
+  --lyte-avatar-item-loading-bg: #f5f5f5;
+  /**
+   * @variable --lyte-avatar-nav-border-color
+   * @selector .lyteAvatarArrowCont
+   * @description Border color of the avatar navigator arrow button
+   * @defaultValue #ddd
+   * @inputType color
+   * @name Navigator Border Color
+   */
+  --lyte-avatar-nav-border-color: #ddd;
+  /**
+   * @variable --lyte-avatar-nav-bg
+   * @selector .lyteAvatarArrowCont
+   * @description Background color of avatar navigator arrow button
+   * @defaultValue #ccc
+   * @inputType color
+   * @name Navigator Background Color
+   */
+  --lyte-avatar-nav-bg: #ccc;
+  /**
+   * @variable --lyte-avatar-nav-hover-bg
+   * @selector .lyteAvatarArrowCont:hover
+   * @description Background color of avatar navigator arrow on hover
+   * @defaultValue #aaa
+   * @inputType color
+   * @name Navigator Hover Background Color
+   */
+  --lyte-avatar-nav-hover-bg: #aaa;
+}

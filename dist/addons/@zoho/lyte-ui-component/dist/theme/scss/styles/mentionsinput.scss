@@ -1,0 +1,236 @@
+@use "sass:map";
+
+@use "../default/global/global.variables.scss" as *;
+
+@use "../default/global/rtl.scss" as *;
+
+@forward "../default/variables/mentionsinput.variables.scss";
+
+@use "../default/variables/mentionsinput.variables.scss" as *;
+
+
+.lyteMIWrapper {
+	width: map.get($lyteMIWrapperMap, "width");
+	position: relative;
+	background: map.get($lyteMIWrapperMap, "background");
+	border-radius: map.get($lyteMIWrapperMap, "border-radius");
+}
+
+.lyteMIWrapper textarea {
+	font-family: map.get($lyteMIWrapperTextareaMap, "font-family");
+	font-size: map.get($lyteMIWrapperTextareaMap, "font-size");
+	line-height: map.get($lyteMIWrapperTextareaMap, "line-height");
+	height: map.get($lyteMIWrapperTextareaMap, "height");
+	min-height: map.get($lyteMIWrapperTextareaMap, "min-height");
+	display: block;
+	padding: map.get($lyteMIWrapperTextareaMap, "padding");
+	color: map.get($lyteMIWrapperTextareaMap, "color");
+	overflow: hidden;
+	background: map.get($lyteMIWrapperTextareaMap, "background");
+	position: relative;
+	outline: 0;
+	resize: none;
+	box-sizing: border-box;
+}
+
+.lyteMIWrapper textarea::placeholder {
+	color: map.get($lyteMIWrapperTextareaPlaceholderMap, "color");
+}
+
+.lyteMIOffsetDiv {
+	position: fixed;
+	visibility: hidden;
+	top: -9999px;
+	left: -9999px;
+}
+
+.lyteMIDropdown {
+	font-family: map.get($lyteMIDropdownMap, "font-family");
+	display: none;
+	background: map.get($lyteMIDropdownMap, "background");
+	border: map.get($lyteMIDropdownMap, "border");
+	position: absolute;
+	z-index: map.get($lyteMIDropdownMap, "z-index");
+	margin-top: map.get($lyteMIDropdownMap, "margin-top");
+	border-radius: map.get($lyteMIDropdownMap, "border-radius");
+	box-shadow: map.get($lyteMIDropdownMap, "box-shadow");
+	color: map.get($lyteMIDropdownMap, "color");
+	box-sizing: border-box;
+	overflow: auto;
+}
+
+.lyteMIDropdown ul {
+	margin: 0;
+	padding: map.get($lyteMIDropdownUlMap, "padding");
+	max-height: map.get($lyteMIDropdownUlMap, "max-height");
+}
+
+.lyteMIDropdown lyte-mentions-item {
+	background: map.get($lyteMIDropdownItemMap, "background");
+	margin: 0;
+	font-family: map.get($lyteMIDropdownItemMap, "font-family");
+	overflow: hidden;
+	cursor: pointer;
+	white-space: nowrap;
+	font-size: map.get($lyteMIDropdownItemMap, "font-size");
+	padding: map.get($lyteMIDropdownItemMap, "padding");
+	text-align: start;
+	display: flex;
+	align-items: center;
+}
+
+.lyteMIDropdown lyte-mentions-item img {
+	width: map.get($lyteMIDropdownItemImgMap, "width");
+	height: map.get($lyteMIDropdownItemImgMap, "height");
+	border-radius: map.get($lyteMIDropdownItemImgMap, "border-radius");
+	float: left;
+	margin-right: map.get($lyteMIDropdownItemImgMap, "margin-right");
+}
+
+.lyteMIDropdown lyte-mentions-item em {
+	font-weight: bold;
+	font-style: normal;
+}
+
+.lyteMIDropdown lyte-mentions-item:hover {
+	background: map.get($lyteMIDropdownItemHoverMap, "background");
+}
+
+.lyteMIDropdown lyte-mentions-item.lyteMIActive {
+	background: map.get($lyteMIDropdownItemActiveMap, "background");
+}
+
+.lyteMIDropdown lyte-mentions-item b {
+	background: map.get($lyteMIDropdownItemBMap, "background");
+	font-weight: normal;
+}
+
+.lyteMIDisplayBlock {
+	display: block;
+}
+
+.lyteMIHide {
+	visibility: hidden;
+}
+
+.lyteMIAddOverflow {
+	overflow: auto;
+}
+
+.lyteMentions {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: map.get($lyteMIMentionsMap, "padding");
+	color: map.get($lyteMIMentionsMap, "color");
+	overflow: hidden;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	text-align: left;
+	line-height: map.get($lyteMIMentionsMap, "line-height");
+	pointer-events: none;
+}
+
+.lyteMIWithCloseIcon .lyteMentions {
+	z-index: map.get($lyteMIWithCloseIconMentionsMap, "z-index");
+}
+
+.lyteInput .lyteMentions {
+	padding-left: map.get($lyteMIInputMentionsMap, "padding-left");
+}
+
+.lyteMentionsNormalTextarea {
+	top: map.get($lyteMIMentionsNormalTextareaMap, "top");
+	left: map.get($lyteMIMentionsNormalTextareaMap, "left");
+	bottom: map.get($lyteMIMentionsNormalTextareaMap, "bottom");
+	right: map.get($lyteMIMentionsNormalTextareaMap, "right");
+}
+
+.lyteMentionsNormalTextarea + textarea {
+	border: map.get($lyteMIMentionsNormalTextareaTextareaMap, "border");
+	border-radius: map.get($lyteMIMentionsNormalTextareaTextareaMap, "border-radius");
+	width: 100%;
+}
+
+.lyteMentionsNormalTextarea + textarea:hover {
+	border: map.get($lyteMIMentionsNormalTextareaTextareaHoverMap, "border");
+}
+
+.lyteMentionsNormalTextarea + textarea:focus {
+	border: map.get($lyteMIMentionsNormalTextareaTextareaFocusMap, "border");
+}
+
+.lyteMentions .lyteMentionsInnerDiv {
+	color: map.get($lyteMIMentionsInnerDivMap, "color");
+	white-space: pre-wrap;
+	position: relative;
+}
+
+.lyteMentions .lyteMentionsStrongDiv {
+	font-weight: normal;
+	background: map.get($lyteMIMentionsStrongDivMap, "background");
+	padding: map.get($lyteMIMentionsStrongDivMap, "padding");
+	line-height: map.get($lyteMIMentionsStrongDivMap, "line-height");
+	position: relative;
+	color: map.get($lyteMIMentionsStrongDivMap, "color");
+	pointer-events: all;
+}
+
+.lyteMentionsCustomWrapper {
+	position: absolute;
+	top: map.get($lyteMIMentionsCustomWrapperMap, "top");
+	left: map.get($lyteMIMentionsCustomWrapperMap, "left");
+}
+
+.lyteBodyWrapper {
+	overflow: hidden;
+}
+
+.lyteMIWrapper .lyteCloseIcon {
+	height: map.get($lyteMIWrapperCloseIconMap, "height");
+	width: map.get($lyteMIWrapperCloseIconMap, "width");
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: map.get($lyteMIWrapperCloseIconMap, "background-color");
+	z-index: map.get($lyteMIWrapperCloseIconMap, "z-index");
+	display: none;
+	justify-content: center;
+	align-items: center;
+	border-radius: map.get($lyteMIWrapperCloseIconMap, "border-radius");
+	transform: map.get($lyteMIWrapperCloseIconMap, "transform");
+	cursor: pointer;
+}
+
+.lyteMIWrapper .lyteCloseIcon::after {
+	content: "";
+	-webkit-mask: map.get($lyteMIWrapperCloseIconAfterMap, "mask");
+    mask: map.get($lyteMIWrapperCloseIconAfterMap, "mask");
+	background-color: map.get($lyteMIWrapperCloseIconAfterMap, "background-color");
+	width: map.get($lyteMIWrapperCloseIconAfterMap, "width");
+	height: map.get($lyteMIWrapperCloseIconAfterMap, "height");
+	display: inline-block;
+}
+
+.lyteMentionsStrongDiv:hover .lyteCloseIcon {
+	display: inline-flex;
+}
+
+.lyteMIForInput {
+	overflow: auto;
+	scrollbar-width: none;
+}
+
+.lyteMIForInput::-webkit-scrollbar {
+	display: none;
+}
+
+.lyteMIForInput .lyteMentions {
+	width: max-content;
+}
+
+.lyteMIForInput .lyteMentionsStrongDiv {
+	vertical-align: top;
+}

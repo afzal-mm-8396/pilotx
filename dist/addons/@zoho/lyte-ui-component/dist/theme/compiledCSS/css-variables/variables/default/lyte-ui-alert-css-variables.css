@@ -1,0 +1,119 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-alert
+*/
+:root,
+:host {
+  /**
+	* @variable --lyte-alert-popup-bg
+	* @selector .alertPopup
+	* @description Background color of the alert popup
+	* @defaultValue var(--lyte-theme-body-bg)
+	* @defaultVariableValue #fff
+	* @inputType color
+	* @name Popup Background Color
+	*/
+  --lyte-alert-popup-bg: var(--lyte-theme-body-bg);
+  /**
+	* @variable --lyte-alert-popup-border-color
+	* @selector .alertPopup
+	* @description Border color of the alert popup
+	* @defaultValue #f7f7f7
+	* @inputType color
+	* @name Popup Border Color
+	*/
+  --lyte-alert-popup-border-color: #f7f7f7;
+  /**
+	* @variable --lyte-alert-popup-box-shadow-color
+	* @selector .alertPopup
+	* @description Box shadow color of the alert popup
+	* @defaultValue rgba(0, 0, 0, 0.35)
+	* @inputType color
+	* @name Popup Box Shadow Color
+	*/
+  --lyte-alert-popup-box-shadow-color: rgba(0, 0, 0, 0.35);
+  /**
+	* @variable --lyte-alert-popup-header-color
+	* @selector .alertHeader
+	* @description Header text color in the alert popup
+	* @defaultValue var(--lyte-heading-text-color)
+	* @defaultVariableValue #111
+	* @inputType color
+	* @name Popup Header Text Color
+	*/
+  --lyte-alert-popup-header-color: var(--lyte-heading-text-color);
+  /**
+	* @variable --lyte-alert-popup-content-color
+	* @selector .alertSecondaryMsg
+	* @description Content (secondary message) text color in alert popup
+	* @defaultValue var(--lyte-common-text-color)
+	* @defaultVariableValue #333
+	* @inputType color
+	* @name Popup Content Text Color
+	*/
+  --lyte-alert-popup-content-color: var(--lyte-common-text-color);
+  /**
+	* @variable --lyte-alert-popup-zindex
+	* @selector .alertPopup, .alertFreezeLayer
+	* @description z-index level of the alert popup and freeze layer
+	* @defaultValue var(--lyte-level4-zindex)
+	* @defaultVariableValue 1060
+	* @inputType number
+	* @name Popup Z-Index
+	*/
+  --lyte-alert-popup-zindex: var(--lyte-level4-zindex);
+  /**
+	* @variable --lyte-alert-header-font-size
+	* @selector .alertHeader
+	* @description Font size for the alert header
+	* @defaultValue var(--lyte-font-size-xl)
+	* @defaultVariableValue 18px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Header Font Size
+	*/
+  --lyte-alert-header-font-size: var(--lyte-font-size-xl);
+  /**
+	* @variable --lyte-alert-primarymsg-font-size
+	* @selector .alertPrimaryMsg
+	* @description Font size for the primary message inside alert popup
+	* @defaultValue var(--lyte-font-size-medium)
+	* @defaultVariableValue 15px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Primary Message Font Size
+	*/
+  --lyte-alert-primarymsg-font-size: var(--lyte-font-size-medium);
+  /**
+	* @variable --lyte-alert-secondarymsg-font-size
+	* @selector .alertSecondaryMsg
+	* @description Font size for the secondary message inside alert popup
+	* @defaultValue var(--lyte-font-size-medium)
+	* @defaultVariableValue 15px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Secondary Message Font Size
+	*/
+  --lyte-alert-secondarymsg-font-size: var(--lyte-font-size-medium);
+  /**
+	* @variable --lyte-alert-freeze-bg
+	* @selector .alertFreezeLayer
+	* @description Background color of the freeze overlay behind the alert
+	* @defaultValue #000
+	* @inputType color
+	* @name Freeze Background Color
+	*/
+  --lyte-alert-freeze-bg: #000;
+  /* ===== Icon Positions ===== */
+  --lyte-alert-success-icon-position: -91px -154px;
+  --lyte-alert-error-icon-position: -131px -154px;
+  --lyte-alert-warning-icon-position: -210px -154px;
+  --lyte-alert-info-icon-position: -170px -154px;
+  --lyte-alert-confirm-icon-position: -250px -154px;
+}

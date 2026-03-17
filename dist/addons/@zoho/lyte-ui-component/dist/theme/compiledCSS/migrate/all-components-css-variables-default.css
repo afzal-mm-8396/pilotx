@@ -1,0 +1,35 @@
+/*
+  This file has been added to support CSS variable name changes for default theme.
+  From pacakge version 3.119.9, This file has been introduced.
+*/
+
+:root {
+  --lyte-alert-popup-box-shadow-color: var(--lyte-alert-popup-boxshadow-color, rgba(0, 0, 0, 0.35));
+  --lyte-autocomplete-box-shadow-color: var(--lyte-autocomplete-box-shadow, rgba(0, 0, 0, 0.15));
+  --lyte-avatar-item-hover-box-shadow-color: var(--lyte-avatar-item-hover-boxshadow-color, var(--lyte-avatar-item-hover-color));
+  --lyte-avatar-item-selected-box-shadow-color: var(--lyte-avatar-item-selected-boxshadow-color, var(--lyte-avatar-item-selected-color));
+  --lyte-calendar-popup-box-shadow-color: var(--lyte-calendar-popup-boxshadow-color, rgba(0, 0, 0, 0.1));
+  --lyte-card-box-shadow-color: var(--lyte-card-boxshadow-color, rgba(0, 0, 0, 0.1));
+  --lyte-chbox-default-focus-box-shadow: var(--lyte-chbox-default-focus-boxshadow, 0 0 3px 1px #5aaaf9);
+  --lyte-chbox-primary-focus-box-shadow: var(--lyte-chbox-primary-focus-boxshadow, 0 0 3px 1px #b0b0b0);
+  --lyte-chbox-slider-circle-box-shadow-color: var(--lyte-chbox-slider-circle-boxshadow-color, rgba(34,36,38,.15));
+  --lyte-clock-analog-middle-circle-box-shadow-color: var(--lyte-clock-analog-middle-circle-boxshadow-color, rgba(0, 0, 0, 0.2));
+  --lyte-colorpicker-box-shadow-color: var(--lyte-colorpicker-boxshadow-color, rgba(0,0,0,0.1));
+  --lyte-daterangepicker-box-shadow-color: var(--lyte-daterangepicker-boxshadow-color, rgba(0, 0, 0, 0.1));
+  --lyte-dateselect-popover-box-shadow: var(--lyte-dateselect-popover-boxshadow-color, 0px 2px 6px 0px rgba(0, 0, 0, 0.15));
+  --lyte-dms-wrap-box-shadow-color: var(--lyte-dms-wrap-box-shadow, rgba(0, 0, 0, 0.05));
+  --lyte-express-table-fixed-box-shadow-color: var(--lyte-express-table-fixed-box-shadow, rgba(0, 0, 0, 0.2));
+  --lyte-fileupload-input-type-file-success-border-color: var(--lyte-fileupload-input-type-file-sucess-border-color, #c7c7c7);
+  --lyte-listviewfilter-dropdown-ul-box-shadow-color: var(--lyte-listviewfilter-dropdown-ul-boxshadow-color, rgba(0, 0, 0, 0.07));
+  --lyte-mentionsinput-box-shadow: var(--lyte-mentionsinput-boxshadow-color, 0 2px 5px rgba(0, 0, 0, 0.1));
+  --lyte-menu-box-shadow: var(--lyte-menu-boxshadow-color, 0px 1px 3px 0px rgba(134, 134, 134, 0.4));
+  --lyte-modal-box-shadow: var(--lyte-modal-box-shadow-color, 0px 1px 5px rgba(0, 0, 0, 0.4));
+  --lyte-navbar-active-bg: var(--lyte-navbar-active, #5ba1e5);
+  --lyte-navbar-box-shadow-color: var(--lyte-navbar-boxshadow-color, rgba(0, 0, 0, 0.1));
+  --lyte-popover-box-shadow: var(--lyte-popover-boxshadow-color, 0 0 4px 1px rgba(0, 0, 0, 0.1));
+  --lyte-radio-slider-box-shadow: var(--lyte-radio-slider-boxshadow-color, 0 1px 2px 0 rgba(34,36,38,.15), 0 0 0 1px rgba(34,36,38,.15) inset);
+  --lyte-timepicker-error-box-shadow: var(--lyte-timepicker-error-shadow, 0px 0px 5px 3px #E74C3C1F);
+  --lyte-tour-container-box-shadow-color: var(--lyte-tour-container-boxshadow-color, rgba(0, 0, 0, 0.1));
+  --lyte-tree-collapse-hover-border-color: var(--lyte-tree-collpase-hover-border-color, #333);
+  --lyte-video-progress-handler-box-shadow-color: var(--lyte-video-progress-handler-boxshadow-color, rgba(0, 0, 0, 0.69));
+}

@@ -1,0 +1,244 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-clock
+*/
+:root,
+:host {
+  /**
+	* @variable --lyte-clock-text-color
+	* @selector lyte-clock
+	* @description Text color used in the clock component
+	* @defaultValue var(--lyte-common-text-color)
+	* @defaultVariableValue #333
+	* @inputType color
+	* @name Text Color
+	*/
+  --lyte-clock-text-color: var(--lyte-common-text-color);
+  /**
+	* @variable --lyte-clock-analog-frame-inner-width
+	* @selector .lyteClkFrameInner
+	* @description Width and height of the inner circular frame of the analog clock
+	* @defaultValue 160px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Analog Frame Inner Width
+	*/
+  --lyte-clock-analog-frame-inner-width: 160px;
+  /**
+	* @variable --lyte-clock-analog-middle-circle-bg
+	* @selector .lyteClockMidCircle
+	* @description Background color of the small center circle in the analog clock
+	* @defaultValue #fff
+	* @inputType color
+	* @name Analog Middle Circle Background Color
+	*/
+  --lyte-clock-analog-middle-circle-bg: #fff;
+  /**
+	* @variable --lyte-clock-analog-middle-circle-box-shadow-color
+	* @selector .lyteClockMidCircle
+	* @description Box shadow color of the small center circle
+	* @defaultValue rgba(0, 0, 0, 0.2)
+	* @inputType color
+	* @name Analog Middle Circle Box Shadow Color
+	*/
+  --lyte-clock-analog-middle-circle-box-shadow-color: rgba(0, 0, 0, 0.2);
+  /**
+	* @variable --lyte-clock-analog-dial-bg
+	* @selector .lyteClkHrDialElem, .lyteClkMinDialElem
+	* @description Background color of hour and minute dials in the analog clock
+	* @defaultValue #666
+	* @inputType color
+	* @name Analog Dial Background Color
+	*/
+  --lyte-clock-analog-dial-bg: #666;
+  /**
+	* @variable --lyte-clock-analog-seconds-dial-bg
+	* @selector .lyteClkSecDialElem
+	* @description Background color of the seconds dial in the analog clock
+	* @defaultValue #f00
+	* @inputType color
+	* @name Analog Seconds Dial Background Color
+	*/
+  --lyte-clock-analog-seconds-dial-bg: #f00;
+  /**
+	* @variable --lyte-clock-timer-format-label-text-color
+	* @selector .lyteClkTimerDefLabel
+	* @description Text color for timer label
+	* @defaultValue #777
+	* @inputType color
+	* @name Timer Format Label Text Color
+	*/
+  --lyte-clock-timer-format-label-text-color: #777;
+  /**
+	* @variable --lyte-clock-stopwatch-border-color
+	* @selector .lyteClockStopWatch
+	* @description Border color for stopwatch container
+	* @defaultValue #d6d6d6
+	* @inputType color
+	* @name Stopwatch Border Color
+	*/
+  --lyte-clock-stopwatch-border-color: #d6d6d6;
+  /**
+	* @variable --lyte-clock-stopwatch-startbutton-border-color
+	* @selector .lyteClockSWStart
+	* @description Border color for start button
+	* @defaultValue #5ba1e5
+	* @inputType color
+	* @name Stopwatch Start Button Border Color
+	*/
+  --lyte-clock-stopwatch-startbutton-border-color: #5ba1e5;
+  /**
+	* @variable --lyte-clock-stopwatch-startbutton-text-color
+	* @selector .lyteClockSWStart
+	* @description Text color for start button
+	* @defaultValue #5ba1e5
+	* @inputType color
+	* @name Stopwatch Start Button Text Color
+	*/
+  --lyte-clock-stopwatch-startbutton-text-color: #5ba1e5;
+  /**
+	* @variable --lyte-clock-stopwatch-startbutton-hover-bg
+	* @selector .lyteClockSWStart:hover
+	* @description Background color of start button on hover
+	* @defaultValue #e6f3fd
+	* @inputType color
+	* @name Stopwatch Start Button Hover Background Color
+	*/
+  --lyte-clock-stopwatch-startbutton-hover-bg: #e6f3fd;
+  /**
+	* @variable --lyte-clock-stopwatch-resetbutton-border-color
+	* @selector .lyteClockSWReset
+	* @description Border color for reset/lap buttons
+	* @defaultValue #666
+	* @inputType color
+	* @name Stopwatch Reset Button Border Color
+	*/
+  --lyte-clock-stopwatch-resetbutton-border-color: #666;
+  /**
+	* @variable --lyte-clock-stopwatch-resetbutton-text-color
+	* @selector .lyteClockSWReset
+	* @description Text color for reset/lap buttons
+	* @defaultValue #666
+	* @inputType color
+	* @name Stopwatch Reset Button Text Color
+	*/
+  --lyte-clock-stopwatch-resetbutton-text-color: #666;
+  /**
+	* @variable --lyte-clock-stopwatch-resetbutton-hover-bg
+	* @selector .lyteClockSWReset:hover
+	* @description Background color for reset/lap buttons on hover
+	* @defaultValue #eee
+	* @inputType color
+	* @name Stopwatch Reset Button Hover Background Color
+	*/
+  --lyte-clock-stopwatch-resetbutton-hover-bg: #eee;
+  /**
+	* @variable --lyte-clock-stopwatch-pausebutton-border-color
+	* @selector .lyteClockSWPause
+	* @description Border color for pause button
+	* @defaultValue #ec4844
+	* @inputType color
+	* @name Stopwatch Pause Button Border Color
+	*/
+  --lyte-clock-stopwatch-pausebutton-border-color: #ec4844;
+  /**
+	* @variable --lyte-clock-stopwatch-pausebutton-text-color
+	* @selector .lyteClockSWPause
+	* @description Text color for pause button
+	* @defaultValue #ec4844
+	* @inputType color
+	* @name Stopwatch Pause Button Text Color
+	*/
+  --lyte-clock-stopwatch-pausebutton-text-color: #ec4844;
+  /**
+	* @variable --lyte-clock-stopwatch-pausebutton-hover-bg
+	* @selector .lyteClockSWPause:hover
+	* @description Background color of pause button on hover
+	* @defaultValue #ffe3e3
+	* @inputType color
+	* @name Stopwatch Pause Button Hover Background Color
+	*/
+  --lyte-clock-stopwatch-pausebutton-hover-bg: #ffe3e3;
+  /**
+	* @variable --lyte-clock-watch-font-size
+	* @selector .lyteClkWatch, .lyteClkTimer
+	* @description Font size for the main time display
+	* @defaultValue var(--lyte-font-size-xxl)
+	* @defaultVariableValue 20px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Watch Font Size
+	*/
+  --lyte-clock-watch-font-size: var(--lyte-font-size-xxl);
+  /**
+	* @variable --lyte-clock-watch-ampm-font-size
+	* @selector .lyteClkWatchFrameAMPM
+	* @description Font size for AM/PM display in watch mode
+	* @defaultValue var(--lyte-font-size-regular)
+	* @defaultVariableValue 14px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Watch AM/PM Font Size
+	*/
+  --lyte-clock-watch-ampm-font-size: var(--lyte-font-size-regular);
+  /**
+	* @variable --lyte-clock-timer-default-label-font-size
+	* @selector .lyteClkTimerDefLabel
+	* @description Font size of the default label in timer
+	* @defaultValue var(--lyte-font-size-medium)
+	* @defaultVariableValue 15px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Timer Default Label Font Size
+	*/
+  --lyte-clock-timer-default-label-font-size: var(--lyte-font-size-medium);
+  /**
+	* @variable --lyte-clock-timer-frame-label-font-size
+	* @selector .lyteClkTimerFrameLabel
+	* @description Font size for labels below the timer digits
+	* @defaultValue 10px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Timer Frame Label Font Size
+	*/
+  --lyte-clock-timer-frame-label-font-size: 10px;
+  /**
+	* @variable --lyte-clock-stopwatch-font-size
+	* @selector .lyteClockSwWrap
+	* @description Font size for main stopwatch time
+	* @defaultValue var(--lyte-font-size-xxl)
+	* @defaultVariableValue 20px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Stopwatch Font Size
+	*/
+  --lyte-clock-stopwatch-font-size: var(--lyte-font-size-xxl);
+  /**
+	* @variable --lyte-clock-stopwatch-lap-font-size
+	* @selector .lyteClockSwLap
+	* @description Font size for stopwatch lap entry rows
+	* @defaultValue var(--lyte-font-size-large)
+	* @defaultVariableValue 16px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Stopwatch Lap Font Size
+	*/
+  --lyte-clock-stopwatch-lap-font-size: var(--lyte-font-size-large);
+  /**
+	* @variable --lyte-clock-stopwatch-btn-font-size
+	* @selector .lyteClockSwActionBtn
+	* @description Font size for stopwatch control buttons
+	* @defaultValue var(--lyte-font-size-regular)
+	* @defaultVariableValue 14px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Stopwatch Button Font Size
+	*/
+  --lyte-clock-stopwatch-btn-font-size: var(--lyte-font-size-regular);
+}

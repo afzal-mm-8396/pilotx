@@ -1,0 +1,114 @@
+/**
+ * @component lyte-kanbanview
+ */
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+	/**
+	 * @variable --lyte-kanbanview-bg
+	 * @selector lyte-kanbanview
+	 * @description Background color of the Kanban view board
+	 * @defaultValue var(--lyte-theme-body-bg)
+	 * @defaultVariableValue #fff
+	 * @inputType color
+	 * @name Background Color
+	 */
+	--lyte-kanbanview-bg: @themeBodyBackground;
+
+	/**
+	 * @variable --lyte-kanbanview-text-color
+	 * @selector lyte-kanbanview
+	 * @description Default text color used in the Kanban view
+	 * @defaultValue var(--lyte-common-text-color)
+	 * @defaultVariableValue #333
+	 * @inputType color
+	 * @name Text Color
+	 */
+	--lyte-kanbanview-text-color: @commonTextColor;
+
+	/**
+	 * @variable --lyte-kanbanview-hover-bg
+	 * @selector .lyteBoardItemContentData:hover, .lyteSortablePlaceholder:hover
+	 * @description Background color of items or placeholders on hover
+	 * @defaultValue #f5f5f5
+	 * @inputType color
+	 * @name Hover Background Color
+	 */
+	--lyte-kanbanview-hover-bg: #f5f5f5;
+
+	/**
+	 * @variable --lyte-kanbanview-border-color
+	 * @selector lyte-kanbanview, .lyteBoardWrapper, .lyteBoardItemContentData
+	 * @description Border color used across the Kanban view layout
+	 * @defaultValue #d6d6d6
+	 * @inputType color
+	 * @name Border Color
+	 */
+	--lyte-kanbanview-border-color: #d6d6d6;
+
+	/**
+	 * @variable --lyte-kanbanview-board-header-text-color
+	 * @selector .lyteBoardHeader
+	 * @description Text color of the Kanban board header and footer
+	 * @defaultValue #666
+	 * @inputType color
+	 * @name Board Header Text Color
+	 */
+	--lyte-kanbanview-board-header-text-color: #666;
+
+	/**
+	 * @variable --lyte-kanbanview-loading-placeholder-border-color
+	 * @selector .lyteKVLoadingPlaceholder, .lyteKVLoadingHeaderPlaceholder
+	 * @description Border color of loading placeholders
+	 * @defaultValue #eee
+	 * @inputType color
+	 * @name Loading Placeholder Border Color
+	 */
+	--lyte-kanbanview-loading-placeholder-border-color: #eee;
+
+	/**
+	 * @variable --lyte-kanbanview-loading-placeholder-bg
+	 * @selector .lyteKVLoadingPlaceholder, .lyteKVLoadingHeaderPlaceholder
+	 * @description Background color of loading placeholders
+	 * @defaultValue #f5f5f5
+	 * @inputType color
+	 * @name Loading Placeholder Background Color
+	 */
+	--lyte-kanbanview-loading-placeholder-bg: #f5f5f5;
+
+	/**
+	 * @variable --lyte-kanbanview-no-result-text-color
+	 * @selector .lyteKanbanNoResultMsg
+	 * @description Text color shown when there are no results in Kanban view
+	 * @defaultValue #777
+	 * @inputType color
+	 * @name No Result Text Color
+	 */
+	--lyte-kanbanview-no-result-text-color: #777;
+
+	/**
+	 * @variable --lyte-kanbanview-board-header-font-size
+	 * @selector .lyteBoardHeader
+	 * @description Font size of the board header text
+	 * @defaultValue var(--lyte-font-size-xl)
+	 * @defaultVariableValue 18px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Board Header Font Size
+	 */
+	--lyte-kanbanview-board-header-font-size: var(--lyte-font-size-xl);
+
+	/**
+	 * @variable --lyte-kanbanview-board-footer-font-size
+	 * @selector .lyteBoardFooter
+	 * @description Font size of the board footer text
+	 * @defaultValue var(--lyte-font-size-xl)
+	 * @defaultVariableValue 18px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Board Footer Font Size
+	 */
+	--lyte-kanbanview-board-footer-font-size: var(--lyte-font-size-xl);	
+}

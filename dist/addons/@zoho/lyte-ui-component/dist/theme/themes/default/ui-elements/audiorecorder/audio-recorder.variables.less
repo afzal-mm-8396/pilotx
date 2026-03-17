@@ -1,0 +1,257 @@
+.lyteAudioRecorderRecordingMixin() {
+	@margin: 30px 0;
+	@gap: 20px;
+}
+
+// .lyteAudioRecorderPauseButtonMixin() {
+// 	@mask-img: url(../../images/pause.png);
+// 	@mask-size: 100%;
+// 	@mask-repeat: no-repeat;
+// 	@w: 30px;
+// 	@h: 25px;
+// 	@scale: 1.9;
+// 	@bg-color: #000;
+// 	@order: -1;
+// }
+
+
+.lyteAudioRecorderVoiceForwardAndBackwardButtonBeforeMixin() {
+	@mask-img: @lyteAudioRecorderSprite;
+	@w: 28px;
+	@h: 28px;
+	@bg: #666869;
+}
+.lyteAudioRecorderVoiceNoteForwardButtonBeforeMixin() {
+	@mask-pos: -247px -29px;
+}
+
+.lyteAudioRecorderVoiceNoteBackwardButtonBeforeMixin() {
+	@mask-pos: -211px -29px;
+}
+
+.lyteAudioRecorderVoiceNoteBackwardAndForwardButtonCommonMixin() {
+	@w: 28px;
+	@h: 28px;
+}
+
+
+.lyteAudioRecorderVoiceNotePrefetchPlayIconAndPausedAfterMixin() {
+	@mask-pos: 0;
+	@w: 0;
+	@h: 0;
+	@margin-left: 0;
+}
+
+.lyteAudioRecorderVoiceNoteForwardAndBackwardButtonAfterCommonMixin() {
+	@top: 50%;
+	@left: 50%;
+	@transform: translate(-50%, -50%);
+	@color: #666869;
+}
+
+
+.lyteVoiceNoteClearButtonMixin() {
+	@bg-img: @lyteAudioRecorderSprite;
+	@bg-pos: -55px -30px;
+	@w: 26px;
+	@h: 26px;
+}
+
+.lyteRecordingControlButtonsMixin() {
+	@mask-position: -406px -27px;
+	@bg-img: @lyteAudioRecorderSprite;
+	@bg-pos: -406px -27px;
+	@h: 43px;
+	@w: 43px;
+}
+
+.lyteAudioRecorderVoiceNoteDownloadIconMixin() {
+	@bg-img: @lyteAudioRecorderSprite;
+	@bg-pos: -45px -598px;
+	@h: 26px;
+	@w: 26px;
+}
+
+.lyteAudioRecorderVoiceNoteDownloadIconAMixin() {
+	@h: 100%;
+	@w: 100%;
+}
+
+.lyteRecordingControlResumePauseButtonsMixin() {
+	@w: 27px;
+	@h: 27px;
+}
+
+.lyteRecordingControlResumeButtonsMixin() {
+	@bg-img: @lyteAudioRecorderSprite;
+	@bg-pos: -89px -30px;
+}
+
+.lyteRecordingControlPauseButtonsMixin() {
+	@mask-img: @lyteAudioRecorderSprite;
+	@mask-position: -158px -30px;
+	@bg-color: #676869;
+}
+
+.lyteVoiceNotePrefetchSuccessMixin() {
+	@border: 1px solid #E7E8E9;
+	@border-radius: 10px;
+	@w: 750px;
+	@bg: #fff;
+}
+
+.lyteTimePreviewMixin() {
+	@padding: 10px 20px;
+	@border-bottom: 1px solid #E4E6E8;
+	@w: -webkit-fill-available;
+}
+
+.lyteRecordingCanvasMixin() {
+	@h: 127px;
+	@w: 713px;
+	@bg-color: #f4faff;
+    @border: 1px solid #EBF5FF;
+	@margin: 15px 20px 0;
+    @bg-img: repeating-linear-gradient(to bottom, transparent 0px 8px, #E7E8E9 8px 8.5px), 
+                      repeating-linear-gradient(to bottom, transparent 0px 42px, #E7E8E9 42px 43px),
+                      repeating-linear-gradient(to right, transparent 0px 8px, #E7E8E9 8px 8.5px),
+                      repeating-linear-gradient(to right, transparent 0px 50px, #E7E8E9 50px 51px);
+}
+
+.lyteRecordButtonMixin() {
+	@margin: 25px;
+}
+
+.lyteAudioRecorderVoicenoteMixin() {
+	@w: 350px;
+}
+
+.lyteAudioRecorderVoiceNoteProgressMixin() {
+	@margin: 15px 0;
+	@bg: #f4faff;
+}
+
+.lyteAudioRecorderVoiceNotePrefetchLoadingBarBeforeMixin() {
+	@w: 2px;
+	@h: 124px;
+	@bg: inherit;
+	@border-radius: 0;
+	@top: 50%;
+	@transform: translateY(-51%);
+}
+
+.lyteAudioRecorderVoiceNoteMetaLoadedNoteHandlerMixin() {
+	@bg: red;
+	@left: 0%;
+}
+
+.lyteAudioRecorderVoiceNoteMetaLoadedlHandlerBeforeAfterMixin() {
+    @h: 8px;
+    @w: 8px;
+    @border-radius: 50%;
+    @bg: red;
+    @left: -150%;
+}
+
+.lyteAudioRecorderVoiceNoteMetaLoadedlyteVoiceNoteHandlerBeforeMixin() {
+    @bottom: 100%;
+}
+
+.lyteAudioRecorderVoiceNoteMetaLoadedlyteVoiceNoteHandlerAfterMixin() {
+    @top: 100%;
+}
+
+.lyteAudioRecorderVoiceNoteRefreshButtonMixin() {
+	@bg-img: @lyteAudioRecorderSprite;
+	@bg-pos: -123px -30px;
+	@w: 27px;
+	@h: 27px;
+}
+
+.lyteAudioRecorderVoiceNotePausePlayIconMixin() {
+	@bg-img: @lyteAudioRecorderSprite;
+	@w: 42px;
+	@h: 42px;
+	@bg-pos: -353px -26px;
+}
+
+.lyteAudioRecorderVoiceNotePausePlayIconPausedMixin() {
+	@bg-img: @lyteAudioRecorderSprite;
+	@w: 42px;
+	@h: 42px;
+	@bg-pos: -301px -26px;
+}
+
+.lyteAudioRecorderVoiceNoteCanvasMixin() {
+	@h: 127px;
+	@w: 713px;
+    @border: 1px solid #EBF5FF;
+    @bg-img: repeating-linear-gradient(to bottom, transparent 0px 8px, #E7E8E9 8px 8.5px), 
+                      repeating-linear-gradient(to bottom, transparent 0px 42px, #E7E8E9 42px 43px),
+                      repeating-linear-gradient(to right, transparent 0px 8px, #E7E8E9 8px 8.5px),
+                      repeating-linear-gradient(to right, transparent 0px 50px, #E7E8E9 50px 51px);
+}
+
+.lyteAudioRecorderVoiceNoteCenterControlsMixin() {
+	@margin: 30px 0;
+	@gap: 19px;
+}
+
+.lyteAudioRecorderVoiceNoteControlsWrapperMixin() {
+	@w: 100%;
+	@padding: 0 20px;
+}
+
+.lyteAudioRecorderVoiceNoteRightSideControlsMixin() {
+	@gap: 10px;
+	@margin-left: auto;
+}
+
+.lyteTimePreviewMixin() {
+	@padding: 10px 0px;
+	@w: 100%;
+}
+
+.lyteAudioRecorderVoicenoteTimeInfoMixin() {
+	@gap: 8px;
+	@padding: 4px 10px;
+	@bg-color: #F2F3F4;
+	@color: #292C2E;
+	@border-radius: 5px;
+	@border: 1px solid #E7E8E9;
+	@margin: 0 20px;
+	@font-size: 13px;
+	@gap: 10px;
+}
+
+.lyteAudioRecorderActionButtonsCommonMixin() {
+	@bg: transparent;
+	@border: 0px solid #c4c4c4;
+}
+
+.lyteAudioRecorderVoiceNotePlaybackRateDropButtonMixin() {
+	@padding: 3px 25px 3px 10px;
+}
+
+.lyteRecordingControlRecordPrimaryButtonsMixin() {
+	@gap: 5px;
+}
+
+.lyteRecordingControlRecordPrimaryButtonsbeforeMixin() {
+	@bg-img: @lyteAudioRecorderSprite;
+	@bg-pos: -21px -34px;
+	@h: 17px;
+	@w: 12px;
+}
+
+.lyteAudioRecorderVoiceNoteVolumeIconAndControlMixin() {
+	@mask-img: @lytesprite;
+	@mask-pos: -68px -78px;
+	@bg-color: #555;
+	@w: 20px;
+	@h: 16px;
+}
+
+.lyteAudioRecorderVoiceNoteFullVolumeIconMixin() {
+	@mask-pos: -95px -78px;
+}

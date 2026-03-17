@@ -1,0 +1,441 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component lyte-tabs
+ */
+:root,
+:host {
+  /**
+	* @variable --lyte-tab-bg
+	* @selector lyte-tabs, lyte-tab-title
+	* @description Background color of the entire tab container and individual tab titles.
+	* @defaultValue var(--lyte-theme-body-bg)
+	* @defaultVariableValue #fff
+	* @inputType color
+	* @name Background Color
+	*/
+  --lyte-tab-bg: var(--lyte-theme-body-bg);
+  /**
+	* @variable --lyte-tab-border-color
+	* @selector lyte-tab-head, lyte-tab-body
+	* @description Border color used around tab headers and bodies.
+	* @defaultValue #ddd
+	* @inputType color
+	* @name Border Color
+	*/
+  --lyte-tab-border-color: #ddd;
+  /**
+	* @variable --lyte-tab-active-color
+	* @selector lyte-tab-title.lyteTabActive
+	* @description Text or border color used for the active tab.
+	* @defaultValue var(--lyte-theme-active-element-color)
+	* @defaultVariableValue #2c7bd0
+	* @inputType color
+	* @name Active Color
+	*/
+  --lyte-tab-active-color: var(--lyte-theme-active-element-color);
+  /**
+	* @variable --lyte-tab-title-text-color
+	* @selector lyte-tab-title
+	* @description Text color used for inactive tab titles.
+	* @defaultValue #555
+	* @inputType color
+	* @name Title Text Color
+	*/
+  --lyte-tab-title-text-color: #555;
+  /**
+	* @variable --lyte-tab-content-text-color
+	* @selector lyte-tab-content
+	* @description Text color used inside the tab content area.
+	* @defaultValue var(--lyte-common-text-color2)
+	* @defaultVariableValue #111
+	* @inputType color
+	* @name Content Text Color
+	*/
+  --lyte-tab-content-text-color: var(--lyte-common-text-color2);
+  /**
+	* @variable --lyte-tab-title-border-color
+	* @selector lyte-tab-title (top or bottom alignment)
+	* @description Border color used for tab titles in default or inactive state.
+	* @defaultValue #e5e5e5
+	* @inputType color
+	* @name Title Border Color
+	*/
+  --lyte-tab-title-border-color: #e5e5e5;
+  /**
+	* @variable --lyte-tab-title-hover-border-color
+	* @selector lyte-tab-title:hover
+	* @description Border color when hovering over a tab title.
+	* @defaultValue #666
+	* @inputType color
+	* @name Title Hover Border Color
+	*/
+  --lyte-tab-title-hover-border-color: #666;
+  /**
+	* @variable --lyte-tab-right-left-item-bg
+	* @selector lyte-tab-title (left or right aligned)
+	* @description Background color of left/right-aligned tab items.
+	* @defaultValue #f5f5f5
+	* @inputType color
+	* @name Right/Left Item Background Color
+	*/
+  --lyte-tab-right-left-item-bg: #f5f5f5;
+  /**
+	* @variable --lyte-tab-right-left-item-hover-bg
+	* @selector lyte-tab-title:hover (left or right aligned)
+	* @description Background color when hovering over left/right-aligned tab items.
+	* @defaultValue #fafafa
+	* @inputType color
+	* @name Right/Left Item Hover Background Color
+	*/
+  --lyte-tab-right-left-item-hover-bg: #fafafa;
+  /**
+	* @variable --lyte-tab-title-font-size
+	* @selector lyte-tab-title
+	* @description Font size of the tab titles.
+	* @defaultValue var(--lyte-font-size-medium)
+	* @defaultVariableValue 15px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Title Font Size
+	*/
+  --lyte-tab-title-font-size: var(--lyte-font-size-medium);
+  /**
+	* @variable --lyte-tab-body-font-size
+	* @selector lyte-tab-body
+	* @description Font size of the tab content area.
+	* @defaultValue var(--lyte-font-size-regular)
+	* @defaultVariableValue 14px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Body Font Size
+	*/
+  --lyte-tab-body-font-size: var(--lyte-font-size-regular);
+}
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+/* LYTE-TABS CSS BEGINS */
+lyte-tabs {
+  display: block;
+  background: var(--lyte-tab-bg);
+  position: relative;
+  width: 100%;
+  font-family: var(--lyte-primary-font);
+}
+lyte-tab-head {
+  display: flex;
+  border: 1px solid var(--lyte-tab-border-color);
+  box-sizing: border-box;
+}
+lyte-tab-title {
+  display: inline-block;
+  font-size: var(--lyte-tab-title-font-size);
+  color: var(--lyte-tab-title-text-color);
+  padding: 10px 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background: var(--lyte-tab-bg);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+lyte-tab-title span {
+  display: inline-block;
+  vertical-align: middle;
+}
+lyte-tab-title:hover {
+  color: var(--lyte-tab-content-text-color);
+}
+lyte-tab-title.lyteTabActive,
+lyte-tab-title.lyteTabActive:hover {
+  color: var(--lyte-tab-active-color);
+  font-weight: normal;
+}
+lyte-tab-body {
+  display: block;
+  border: 1px solid var(--lyte-tab-border-color);
+  padding: 15px;
+  font-size: var(--lyte-tab-body-font-size);
+  text-align: left;
+  overflow: auto;
+  box-sizing: border-box;
+}
+lyte-tab-content {
+  color: var(--lyte-tab-content-text-color);
+}
+.lyteTabShow {
+  display: block;
+  flex-grow: 1;
+}
+.lyteTabTitleHide,
+.lyteTabHide {
+  display: none;
+}
+/*  Tab top starts */
+.lyteTabDefaultTop lyte-tab-body {
+  border-top: 0;
+}
+.lyteTabDefaultTop lyte-tab-head {
+  border-bottom-color: var(--lyte-tab-title-border-color);
+}
+.lyteTabDefaultTop lyte-tab-title {
+  margin-bottom: -1px;
+  border-bottom: 1px solid var(--lyte-tab-title-border-color);
+}
+.lyteTabDefaultTop lyte-tab-title.lyteTabActive {
+  border-bottom: 1px solid var(--lyte-tab-active-color);
+}
+.lyteTabDefaultTop lyte-tab-title:hover {
+  border-bottom-color: var(--lyte-tab-title-hover-border-color);
+}
+.lyteTabDefaultTop lyte-tab-title.lyteTabActive:hover {
+  border-bottom-color: var(--lyte-tab-active-color);
+}
+/*  Tab top ends */
+/*  Tab bottom starts */
+.lyteTabDefaultBottom lyte-yield {
+  display: flex;
+  flex-direction: column;
+}
+.lyteTabDefaultBottom lyte-tab-head {
+  order: 2;
+  border-top-color: var(--lyte-tab-title-border-color);
+}
+.lyteTabDefaultBottom lyte-tab-body {
+  order: 1;
+  border-bottom: 0;
+}
+.lyteTabDefaultBottom lyte-tab-title {
+  border-top: 1px solid var(--lyte-tab-title-border-color);
+  margin-top: -1px;
+}
+.lyteTabDefaultBottom lyte-tab-title.lyteTabActive {
+  border-top: 1px solid var(--lyte-tab-active-color);
+}
+.lyteTabDefaultBottom lyte-tab-title:hover {
+  border-top-color: var(--lyte-tab-title-hover-border-color);
+}
+.lyteTabDefaultBottom lyte-tab-title.lyteTabActive:hover {
+  border-top-color: var(--lyte-tab-active-color);
+}
+/*  Tab bottom ends */
+/*  Tab left and right starts */
+.lyteTabDefaultLeft lyte-yield {
+  display: flex;
+}
+.lyteTabDefaultLeft lyte-tab-head,
+.lyteTabDefaultRight lyte-tab-head {
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 10px 0;
+  width: 200px;
+  text-align: left;
+  overflow: auto;
+}
+.lyteTabDefaultLeft lyte-tab-head {
+  border-right: 0;
+}
+.lyteTabDefaultLeft lyte-tab-body,
+.lyteTabDefaultRight lyte-tab-body {
+  flex-grow: 10;
+  width: calc(100% - 200px);
+  padding-top: 18px;
+}
+.lyteTabDefaultLeft lyte-tab-title.lyteTabActive,
+.lyteTabDefaultLeft lyte-tab-title.lyteTabActive:hover,
+.lyteTabDefaultRight lyte-tab-title.lyteTabActive,
+.lyteTabDefaultRight lyte-tab-title.lyteTabActive:hover {
+  border-left: 1px solid var(--lyte-tab-active-color);
+  background: var(--lyte-tab-right-left-item-bg);
+  position: relative;
+  z-index: 10;
+}
+.lyteTabDefaultRight lyte-yield {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.lyteTabDefaultRight lyte-tab-head {
+  border-left: 0;
+}
+.lyteTabDefaultLeft lyte-tab-title,
+.lyteTabDefaultRight lyte-tab-title {
+  margin: 0;
+  padding: 10px 15px;
+  overflow: visible;
+}
+.lyteTabDefaultLeft lyte-tab-title:hover,
+.lyteTabDefaultRight lyte-tab-title:hover {
+  background: var(--lyte-tab-right-left-item-hover-bg);
+}
+/*  Tab left and right ends */
+.lyteTabCloseIcon {
+  background-image: var(--lyte-sprite-image);
+  background-position: -54px -2px;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.lyteTabAlignStart {
+  justify-content: flex-start;
+}
+.lyteTabAlignCenter {
+  justify-content: center;
+}
+.lyteTabAlignEnd {
+  justify-content: flex-end;
+}
+.lyteTabOverflowV lyte-tab-title {
+  overflow: visible;
+}
+.lyteTabForceHide {
+  display: none !important;
+}
+#moreMenu {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  padding: 10px;
+}
+#moreMenu.lyteMenuSelected,
+#moreMenu:hover {
+  opacity: 1;
+}
+#moreMenu span {
+  background-image: var(--lyte-sprite-image);
+  background-position: -294px -165px;
+  width: 17px;
+  height: 5px;
+}
+.lyteTabRightCollapse {
+  flex-flow: row-reverse;
+  justify-content: flex-start;
+}
+.lyteTabVH lyte-tab-title,
+.lyteTabVH .lyteMenuSelected {
+  visibility: hidden;
+}
+lyte-tab-title.lyteTabDisable {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.7;
+}
+/*  Lyte Nested Tabs CSS Begins */
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield {
+  display: block;
+}
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield > lyte-tab-head {
+  flex-direction: row;
+  padding: 0;
+  width: auto;
+  border: 1px solid var(--lyte-tab-border-color);
+  overflow: visible;
+}
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield > lyte-tab-head lyte-tab-title {
+  margin: 0 10px;
+  padding: 10px 5px;
+  overflow: hidden;
+  margin-bottom: -1px;
+  border: 0;
+  border-bottom: 1px solid var(--lyte-tab-title-border-color);
+}
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield > lyte-tab-head lyte-tab-title:hover {
+  background: var(--lyte-tab-bg);
+  border: 0;
+  border-bottom: 1px solid var(--lyte-tab-title-hover-border-color);
+}
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield > lyte-tab-head lyte-tab-title.lyteTabActive {
+  border: 0;
+  border-bottom: 1px solid var(--lyte-tab-active-color);
+  background: var(--lyte-tab-bg);
+}
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield > lyte-tab-body {
+  width: auto;
+  padding: 15px;
+  border: 1px solid var(--lyte-tab-border-color);
+  border-top: 0;
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield {
+  flex-direction: column;
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield > lyte-tab-head {
+  flex-direction: row;
+  padding: 0;
+  width: auto;
+  border: 1px solid var(--lyte-tab-border-color);
+  overflow: visible;
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield > lyte-tab-head lyte-tab-title {
+  margin: 0 10px;
+  padding: 10px 5px;
+  overflow: hidden;
+  margin-top: -1px;
+  border: 0;
+  border-top: 1px solid var(--lyte-tab-title-border-color);
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield > lyte-tab-head lyte-tab-title:hover {
+  background: var(--lyte-tab-bg);
+  border: 0;
+  border-top: 1px solid var(--lyte-tab-title-hover-border-color);
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield > lyte-tab-head lyte-tab-title.lyteTabActive {
+  border: 0;
+  border-top: 1px solid var(--lyte-tab-active-color);
+  background: var(--lyte-tab-bg);
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield > lyte-tab-body {
+  width: auto;
+  padding: 15px;
+  border: 1px solid var(--lyte-tab-border-color);
+  border-bottom: 0;
+}
+.lyteNestedTab .lyteTabDefaultLeft > lyte-yield {
+  flex-direction: row;
+}
+.lyteNestedTab .lyteTabDefaultLeft > lyte-yield > lyte-tab-head {
+  order: 0;
+  border: 1px solid var(--lyte-tab-border-color);
+  border-right: 0;
+}
+.lyteNestedTab .lyteTabDefaultLeft > lyte-yield > lyte-tab-head lyte-tab-title {
+  border: 0;
+}
+.lyteNestedTab .lyteTabDefaultLeft > lyte-yield > lyte-tab-head lyte-tab-title.lyteTabActive {
+  border-bottom: 0;
+  border-left: 1px solid var(--lyte-tab-active-color);
+}
+.lyteNestedTab .lyteTabDefaultLeft > lyte-yield > lyte-tab-body {
+  border: 1px solid var(--lyte-tab-border-color);
+}
+.lyteNestedTab .lyteTabDefaultRight > lyte-yield {
+  flex-direction: row-reverse;
+}
+.lyteNestedTab .lyteTabDefaultRight > lyte-yield > lyte-tab-head {
+  border: 1px solid var(--lyte-tab-border-color);
+  border-left: 0;
+  order: 0;
+}
+.lyteNestedTab .lyteTabDefaultRight > lyte-yield > lyte-tab-head lyte-tab-title {
+  border: 0;
+}
+.lyteNestedTab .lyteTabDefaultRight > lyte-yield > lyte-tab-head lyte-tab-title.lyteTabActive {
+  border: 0;
+  border-left: 1px solid var(--lyte-tab-active-color);
+}
+.lyteNestedTab .lyteTabDefaultRight > lyte-yield > lyte-tab-body {
+  border: 1px solid var(--lyte-tab-border-color);
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* LYTE-TABS CSS ENDS   */

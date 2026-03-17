@@ -1,0 +1,226 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-avatar-navigator
+*/
+:root,
+:host {
+  /**
+   * @variable --lyte-avatar-item-hover-color
+   * @selector lyte-avatar-navigator-item:hover
+   * @description Background color of avatar item on hover
+   * @defaultValue #d6d6d6
+   * @inputType color
+   * @name Item Hover Background Color
+   */
+  --lyte-avatar-item-hover-color: #d6d6d6;
+  /**
+   * @variable --lyte-avatar-item-selected-color
+   * @selector .lyteAvatarSelectedItem
+   * @description Background color of selected avatar item
+   * @defaultValue #5ba1e5
+   * @inputType color
+   * @name Item Selected Background Color
+   */
+  --lyte-avatar-item-selected-color: #5ba1e5;
+  /**
+   * @variable --lyte-avatar-item-hover-border-color
+   * @selector lyte-avatar-navigator-item:hover
+   * @description Border color of avatar item on hover
+   * @defaultValue var(--lyte-avatar-item-hover-color)
+   * @defaultVariableValue #d6d6d6
+   * @inputType color
+   * @name Item Hover Border Color
+   */
+  --lyte-avatar-item-hover-border-color: var(--lyte-avatar-item-hover-color);
+  /**
+   * @variable --lyte-avatar-item-hover-box-shadow-color
+   * @selector lyte-avatar-navigator-item:hover
+   * @description Box shadow color of avatar item on hover
+   * @defaultValue var(--lyte-avatar-item-hover-color)
+   * @defaultVariableValue #d6d6d6
+   * @inputType color
+   * @name Item Hover Box Shadow Color
+   */
+  --lyte-avatar-item-hover-box-shadow-color: var(--lyte-avatar-item-hover-color);
+  /**
+   * @variable --lyte-avatar-item-selected-border-color
+   * @selector .lyteAvatarSelectedItem
+   * @description Border color of selected avatar item
+   * @defaultValue var(--lyte-avatar-item-selected-color)
+   * @defaultVariableValue #5ba1e5
+   * @inputType color
+   * @name Item Selected Border Color
+   */
+  --lyte-avatar-item-selected-border-color: var(--lyte-avatar-item-selected-color);
+  /**
+   * @variable --lyte-avatar-item-selected-box-shadow-color
+   * @selector .lyteAvatarSelectedItem
+   * @description Box shadow color of selected avatar item
+   * @defaultValue var(--lyte-avatar-item-selected-color)
+   * @defaultVariableValue #5ba1e5
+   * @inputType color
+   * @name Item Selected Box Shadow Color
+   */
+  --lyte-avatar-item-selected-box-shadow-color: var(--lyte-avatar-item-selected-color);
+  /**
+   * @variable --lyte-avatar-item-loading-bg
+   * @selector .lyteAvatarLoadingCont
+   * @description Background color of avatar loading placeholder
+   * @defaultValue #f5f5f5
+   * @inputType color
+   * @name Item Loading Background Color
+   */
+  --lyte-avatar-item-loading-bg: #f5f5f5;
+  /**
+   * @variable --lyte-avatar-nav-border-color
+   * @selector .lyteAvatarArrowCont
+   * @description Border color of the avatar navigator arrow button
+   * @defaultValue #ddd
+   * @inputType color
+   * @name Navigator Border Color
+   */
+  --lyte-avatar-nav-border-color: #ddd;
+  /**
+   * @variable --lyte-avatar-nav-bg
+   * @selector .lyteAvatarArrowCont
+   * @description Background color of avatar navigator arrow button
+   * @defaultValue #ccc
+   * @inputType color
+   * @name Navigator Background Color
+   */
+  --lyte-avatar-nav-bg: #ccc;
+  /**
+   * @variable --lyte-avatar-nav-hover-bg
+   * @selector .lyteAvatarArrowCont:hover
+   * @description Background color of avatar navigator arrow on hover
+   * @defaultValue #aaa
+   * @inputType color
+   * @name Navigator Hover Background Color
+   */
+  --lyte-avatar-nav-hover-bg: #aaa;
+}
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+lyte-avatar-navigator {
+  display: flex;
+  position: relative;
+}
+.lyteAvatarSetCont {
+  position: relative;
+  overflow: hidden;
+  margin: 0 20px;
+}
+.lyteAvatarSet {
+  display: flex;
+  position: absolute;
+  transform: translate(-10000px);
+  right: 0;
+}
+.lyteAvatarArrowCont {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--lyte-avatar-nav-border-color);
+  border-radius: 50%;
+  align-self: center;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--lyte-avatar-nav-bg);
+}
+.lyteAvatarArrowCont:hover {
+  background: var(--lyte-avatar-nav-hover-bg);
+}
+.lyteAvatarNextIcon,
+.lyteAvatarPrevIcon {
+  content: '';
+  background-image: var(--lyte-sprite-image);
+  background-position: -94px -109px;
+  width: 9px;
+  height: 11px;
+  transform: rotate(180deg);
+}
+.lyteAvatarNextIcon {
+  transform: rotate(0deg);
+}
+lyte-avatar-navigator-item {
+  margin: 0 5px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+}
+lyte-avatar-navigator-item:hover {
+  border: 2px solid var(--lyte-avatar-item-hover-border-color);
+  box-shadow: 0 0 6px var(--lyte-avatar-item-hover-box-shadow-color);
+}
+.lyteAvatarSelectedItem:hover,
+.lyteAvatarSelectedItem {
+  border: 2px solid var(--lyte-avatar-item-selected-border-color);
+  box-shadow: 0 0 6px var(--lyte-avatar-item-selected-box-shadow-color);
+}
+lyte-avatar-navigator-item[disabled="true"] {
+  cursor: not-allowed;
+}
+lyte-avatar-navigator-item[disabled="true"]:hover {
+  border: 2px solid transparent;
+  box-shadow: none;
+}
+lyte-avatar-navigator-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.lyteAvatarSlideAnim {
+  transition: transform 0.3s ease-in-out;
+}
+.lyteAvatarLoadingCont {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--lyte-avatar-item-loading-bg);
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.lyteAvatarLoadingCont::after {
+  content: attr(img-alt);
+  z-index: 1;
+}
+.lyteAvatarLoading {
+  height: 200%;
+  width: 200%;
+  background: linear-gradient(to bottom left, #eee 0%, #ddd 25%, #eee 50%, #ddd 75%, #eee 100%);
+  animation: lyteAvatarLoadAnim 1s linear infinite;
+  position: absolute;
+}
+.lyteVisuallyHidden {
+  position: absolute;
+  top: auto;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  white-space: nowrap;
+}
+@keyframes lyteAvatarLoadAnim {
+  0% {
+    top: -100%;
+    right: -100%;
+  }
+  100% {
+    top: 0%;
+    right: 0%;
+  }
+}

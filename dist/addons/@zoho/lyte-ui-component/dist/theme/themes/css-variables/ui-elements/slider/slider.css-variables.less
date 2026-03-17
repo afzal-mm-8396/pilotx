@@ -1,0 +1,82 @@
+/**
+ * @component lyte-slider
+ */
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+  /**
+   * @variable --lyte-range-slider-bg
+   * @selector .lyteRangeSlider
+   * @description Background color of the range slider track
+   * @defaultValue #dee2ed
+   * @inputType color
+   * @name Slider Background Color
+   */
+  --lyte-range-slider-bg: #dee2ed;
+
+  /**
+   * @variable --lyte-range-slider-fill-bg
+   * @selector .lyteSliderFill
+   * @description Fill color of the selected range track
+   * @defaultValue var(--lyte-theme-active-element-bg)
+   * @defaultVariableValue #5ba1e5
+   * @inputType color
+   * @name Slider Fill Background Color
+   */
+  --lyte-range-slider-fill-bg: @themeActiveElementBg;
+
+  /**
+   * @variable --lyte-range-slider-handle-bg
+   * @selector .lyteSliderHandler
+   * @description Background color of the slider handle
+   * @defaultValue #fff
+   * @inputType color
+   * @name Slider Handle Background Color
+   */
+  --lyte-range-slider-handle-bg: #fff;
+
+  /**
+   * @variable --lyte-range-slider-handle-border-color
+   * @selector .lyteSliderHandler
+   * @description Border color of the slider handle
+   * @defaultValue #4495e4
+   * @inputType color
+   * @name Slider Handle Border Color
+   */
+  --lyte-range-slider-handle-border-color: #4495e4;
+
+  /**
+   * @variable --lyte-range-slider-tick-bg
+   * @selector .lyteScaleLine span:first-child
+   * @description Background color of the tick marks on the scale line
+   * @defaultValue #c0c0c0
+   * @inputType color
+   * @name Slider Tick Background Color
+   */
+  --lyte-range-slider-tick-bg: #c0c0c0;
+
+  /**
+   * @variable --lyte-range-slider-text-color
+   * @selector .lyteScalLable
+   * @description Text color of the scale labels
+   * @defaultValue var(--lyte-common-text-color2)
+   * @defaultVariableValue #111
+   * @inputType color
+   * @name Scale Label Text Color
+   */
+  --lyte-range-slider-text-color: @commonTextColor2;
+
+  /**
+   * @variable --lyte-slider-scale-label-font-size
+   * @selector .lyteScalLable
+   * @description Font size of the scale labels
+   * @defaultValue var(--lyte-font-size-xs)
+   * @defaultVariableValue 12px
+   * @allowedSuffixes px
+   * @inputType dimension
+   * @name Scale Label Font Size
+   */
+  --lyte-slider-scale-label-font-size: var(--lyte-font-size-xs);
+}

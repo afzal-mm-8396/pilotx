@@ -1,0 +1,50 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-badge
+*/
+:root,
+:host {
+  /**
+   * @variable --lyte-badge-bg
+   * @selector .lyteBadge
+   * @description Background color of the badge
+   * @defaultValue #f06060
+   * @inputType color
+   * @name Background Color
+   */
+  --lyte-badge-bg: #f06060;
+  /**
+   * @variable --lyte-badge-border-color
+   * @selector .lyteBadge
+   * @description Border color of the badge
+   * @defaultValue #fff
+   * @inputType color
+   * @name Border Color
+   */
+  --lyte-badge-border-color: #fff;
+  /**
+   * @variable --lyte-badge-content-color
+   * @selector .lyteBadgeContent
+   * @description Text color inside the badge
+   * @defaultValue #fff
+   * @inputType color
+   * @name Content Text Color
+   */
+  --lyte-badge-content-color: #fff;
+  /**
+   * @variable --lyte-badge-content-font-size
+   * @selector .lyteBadgeContent
+   * @description Font size of the badge content
+   * @defaultValue 8px
+   * @allowedSuffixes px
+   * @inputType dimension
+   * @name Content Font Size
+   */
+  --lyte-badge-content-font-size: 8px;
+}

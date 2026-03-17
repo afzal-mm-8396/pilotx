@@ -1,0 +1,306 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+.lyteAudioRecorderPause .lyteRecordingControlButtons,
+.lyteAudioRecorderRecording .lyteRecordingControlButtons {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+  gap: 20px;
+}
+.lyteRecordingControlButtons .lyteCancelButton,
+.lyteVoiceNoteClearButton {
+  background-image: var(--lyte-audiorecorder-sprite);
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-position: -55px -30px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+.lyteRecordingControlButtons .lyteStopButton {
+  background-image: var(--lyte-audiorecorder-sprite);
+  background-position: -406px -27px;
+  height: 43px;
+  width: 43px;
+  cursor: pointer;
+}
+.lyteRecordingControlButtons .lyteResumeButton,
+.lyteRecordingControlButtons .lytePauseButton {
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+}
+.lyteRecordingControlButtons .lyteResumeButton {
+  background-image: var(--lyte-audiorecorder-sprite);
+  background-position: -89px -30px;
+}
+.lyteRecordingControlButtons .lytePauseButton {
+  mask-image: var(--lyte-audiorecorder-sprite);
+  mask-position: -158px -30px;
+  background-color: #676869;
+}
+.audioRecorderWrap,
+lyte-audio-recorder .lyteVoiceNotePrefetchSuccess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #E7E8E9;
+  border-radius: 10px;
+  width: 750px;
+  background: #fff;
+}
+.lyteRecordingCanvas {
+  height: 127px;
+  width: 713px;
+  background-color: #f4faff;
+  margin: 15px 20px 0;
+  border: 1px solid #EBF5FF;
+  background-image: repeating-linear-gradient(to bottom, transparent 0px 8px, #E7E8E9 8px 8.5px), repeating-linear-gradient(to bottom, transparent 0px 42px, #E7E8E9 42px 43px), repeating-linear-gradient(to right, transparent 0px 8px, #E7E8E9 8px 8.5px), repeating-linear-gradient(to right, transparent 0px 50px, #E7E8E9 50px 51px);
+}
+.lyteRecordButton {
+  margin: 25px;
+}
+.lyteRecordingControlButtons .lyteRecordButton .lytePrimaryBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.lyteRecordingControlButtons .lyteRecordButton .lytePrimaryBtn::before {
+  content: "";
+  background-image: var(--lyte-audiorecorder-sprite);
+  background-position: -21px -34px;
+  height: 17px;
+  width: 12px;
+}
+lyte-audio-recorder .lyteVoiceNoteBackwardButton,
+lyte-audio-recorder .lyteVoiceNoteForwardButton {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+lyte-audio-recorder .lyteVoiceNoteForwardButton::before,
+lyte-audio-recorder .lyteVoiceNoteBackwardButton::before {
+  content: "";
+  display: block;
+  -webkit-mask-image: var(--lyte-audiorecorder-sprite);
+  mask-image: var(--lyte-audiorecorder-sprite);
+  width: 28px;
+  height: 28px;
+  background: #666869;
+}
+lyte-audio-recorder .lyteVoiceNoteForwardButton::before {
+  -webkit-mask-position: -247px -29px;
+  mask-position: -247px -29px;
+}
+lyte-audio-recorder .lyteVoiceNoteBackwardButton::before {
+  -webkit-mask-position: -211px -29px;
+  mask-position: -211px -29px;
+}
+lyte-audio-recorder .lyteVoiceNotePrefetchPlayIcon::after,
+lyte-audio-recorder .lyteVoiceNotePausePlayIcon.paused::after {
+  -webkit-mask-position: 0;
+  mask-position: 0;
+  width: 0;
+  height: 0;
+  margin-left: 0;
+}
+lyte-audio-recorder .lyteVoiceNoteForwardButton::after,
+lyte-audio-recorder .lyteVoiceNoteBackwardButton::after {
+  content: attr(skip-time);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #666869;
+}
+lyte-audio-recorder .lyteTimePreview {
+  padding: 10px 0px;
+  border-bottom: 1px solid #E4E6E8;
+  width: 100%;
+  text-align: end;
+}
+lyte-audio-recorder .lyteVoiceNoteDownloadIcon {
+  display: block;
+  background-image: var(--lyte-audiorecorder-sprite);
+  background-position: -45px -598px;
+  height: 26px;
+  width: 26px;
+  cursor: pointer;
+}
+lyte-audio-recorder .lyteVoiceNoteDownloadIcon a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+lyte-audio-recorder lyte-voicenote {
+  display: block;
+  width: 350px;
+}
+lyte-audio-recorder .lyteVoiceNoteProgress {
+  margin: 15px 0;
+  position: relative;
+  background: #f4faff;
+}
+lyte-audio-recorder .lyteVoiceNotePrefetchLoadingBar::before,
+lyte-audio-recorder .lyteVoiceNoteHandler {
+  width: 2px;
+  height: 124px;
+  position: absolute;
+  background: inherit;
+  border-radius: 0;
+  top: 50%;
+  transform: translateY(-51%);
+}
+lyte-audio-recorder .lyteVoiceNoteMetaLoaded .lyteVoiceNoteHandler {
+  background: red;
+  cursor: ew-resize;
+  left: 0%;
+}
+lyte-audio-recorder .lyteVoiceNoteMetaLoaded .lyteVoiceNoteHandler::before,
+lyte-audio-recorder .lyteVoiceNoteMetaLoaded .lyteVoiceNoteHandler::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: red;
+  left: -150%;
+}
+lyte-audio-recorder .lyteVoiceNoteMetaLoaded .lyteVoiceNoteHandler::before {
+  bottom: 100%;
+}
+lyte-audio-recorder .lyteVoiceNoteMetaLoaded .lyteVoiceNoteHandler::after {
+  top: 100%;
+}
+lyte-audio-recorder .lyteVoiceNoteRefreshButton {
+  display: inline-block;
+  background-image: var(--lyte-audiorecorder-sprite);
+  background-position: -123px -30px;
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+}
+lyte-audio-recorder .lyteVoiceNotePausePlayIcon {
+  display: inline-block;
+  background-image: var(--lyte-audiorecorder-sprite);
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  background-position: -353px -26px;
+}
+lyte-audio-recorder .lyteVoiceNotePausePlayIcon.paused {
+  display: inline-block;
+  background-image: var(--lyte-audiorecorder-sprite);
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  background-position: -301px -26px;
+}
+lyte-audio-recorder .lyteVoiceNotePrefetchPlayIcon,
+lyte-audio-recorder .lyteVoiceNotePausePlayIcon {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+lyte-audio-recorder .lyteVoiceNoteCanvas {
+  width: 713px;
+  height: 127px;
+  border: 1px solid #EBF5FF;
+  background-image: repeating-linear-gradient(to bottom, transparent 0px 8px, #E7E8E9 8px 8.5px), repeating-linear-gradient(to bottom, transparent 0px 42px, #E7E8E9 42px 43px), repeating-linear-gradient(to right, transparent 0px 8px, #E7E8E9 8px 8.5px), repeating-linear-gradient(to right, transparent 0px 50px, #E7E8E9 50px 51px);
+}
+lyte-audio-recorder .lyteVoiceNoteCenterControls {
+  /* height: 43px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0;
+  justify-self: center;
+  grid-column: 1 / 3;
+  grid-row: 1;
+  gap: 19px;
+  position: relative;
+}
+lyte-audio-recorder .lyteVoiceNoteControlsWrapper {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  grid-template-columns: auto auto;
+}
+lyte-audio-recorder .lyteVoiceNoteRightSideControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-left: auto;
+  justify-self: flex-end;
+  grid-column: 2;
+  grid-row: 1;
+}
+lyte-audio-recorder .lyteTimePreview {
+  display: flex;
+  padding: 10px 0px;
+  width: 100%;
+  justify-content: right;
+}
+lyte-audio-recorder .lyteVoicenoteTimeInfo {
+  gap: 10px;
+  padding: 4px 10px;
+  background-color: #F2F3F4;
+  color: #292C2E;
+  border-radius: 5px;
+  border: 1px solid #E7E8E9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+  font-size: 13px;
+}
+lyte-audio-recorder .lyteCancelButton .lyteDefaultBtn,
+lyte-audio-recorder .lyteStopButton .lyteDefaultBtn,
+lyte-audio-recorder .lytePauseButton .lyteDefaultBtn,
+lyte-audio-recorder .lyteResumeButton .lyteDefaultBtn {
+  background: transparent;
+  border: 0px solid #c4c4c4;
+}
+lyte-audio-recorder .lyteVoiceNotePlaybackRate .lyteDummyEventContainer lyte-drop-button {
+  padding: 3px 25px 3px 10px;
+}
+lyte-audio-recorder .lyteVoiceNotePlaybackRate lyte-icon.dropdown {
+  display: block;
+}
+lyte-audio-recorder .lyteVoiceNoteLeftSideControls {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+lyte-audio-recorder .lyteVoiceNoteVolumeIcon,
+lyte-audio-recorder .lyteVoiceNoteVolumeControl {
+  -webkit-mask-image: var(--lyte-sprite-image);
+  mask-image: var(--lyte-sprite-image);
+  -webkit-mask-position: -68px -78px;
+  mask-position: -68px -78px;
+  background-color: #555;
+  width: 20px;
+  height: 16px;
+  display: block;
+  cursor: pointer;
+}
+lyte-audio-recorder .lyteVoiceNoteFullVolumeIcon {
+  -webkit-mask-position: -95px -78px;
+  mask-position: -95px -78px;
+}

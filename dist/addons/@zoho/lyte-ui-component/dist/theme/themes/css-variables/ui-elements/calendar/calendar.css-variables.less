@@ -1,0 +1,287 @@
+/**
+* @component lyte-calendar
+*/
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+
+	/**
+	* @variable --lyte-calendar-popup-bg
+	* @selector .lyteCalendarPopup
+	* @description Background color of the calendar popup
+	* @defaultValue var(--lyte-theme-body-bg)
+	* @defaultVariableValue #fff
+	* @inputType color
+	* @name Popup Background Color
+	*/
+	--lyte-calendar-popup-bg: @themeBodyBackground;
+
+	/**
+	* @variable --lyte-calendar-popup-box-shadow-color
+	* @selector .lyteCalendarPopup
+	* @description Box shadow color of the calendar popup
+	* @defaultValue rgba(0, 0, 0, 0.1)
+	* @inputType color
+	* @name Popup Box Shadow Color
+	*/
+	--lyte-calendar-popup-box-shadow-color: rgba(0, 0, 0, 0.1);
+
+	/**
+	* @variable --lyte-calendar-popup-border-color
+	* @selector .lyteCalendarPopup
+	* @description Border color of the calendar popup
+	* @defaultValue #d1d1d1
+	* @inputType color
+	* @name Popup Border Color
+	*/
+	--lyte-calendar-popup-border-color: #d1d1d1;
+
+	/**
+	* @variable --lyte-calendar-dropdown-text-color
+	* @selector lyte-drop-button
+	* @description Text color of dropdown buttons in the calendar
+	* @defaultValue #666
+	* @inputType color
+	* @name Dropdown Text Color
+	*/
+	--lyte-calendar-dropdown-text-color: #666;
+
+	/**
+	* @variable --lyte-calendar-dropdown-hover-text-color
+	* @selector lyte-drop-button:hover
+	* @description Text color on hover for dropdown buttons in the calendar
+	* @defaultValue #111
+	* @inputType color
+	* @name Dropdown Hover Text Color
+	*/
+	--lyte-calendar-dropdown-hover-text-color: #111;
+
+	/**
+	* @variable --lyte-calendar-text-color
+	* @selector .lyteCalTableCell, .lyteCalsCalMon
+	* @description Default text color used in the calendar body and header
+	* @defaultValue var(--lyte-common-text-color2)
+	* @defaultVariableValue #111
+	* @inputType color
+	* @name Text Color
+	*/
+	--lyte-calendar-text-color: @commonTextColor2;
+
+	/**
+	* @variable --lyte-calendar-horizontal-cell-spacing
+	* @selector .lyteCalTableContainer
+	* @description Horizontal cell spacing in the calendar table
+	* @defaultValue 8px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Horizontal Cell Spacing
+	*/
+	--lyte-calendar-horizontal-cell-spacing: 8px;
+
+	/**
+	* @variable --lyte-calendar-selected-elem-bg
+	* @selector .lyteCalSel, .lyteCalToday, .lyteDrillCalCurrentYear
+	* @description Background color for selected calendar elements
+	* @defaultValue var(--lyte-theme-active-element-bg)
+	* @defaultVariableValue #5ba1e5
+	* @inputType color
+	* @name Selected Element Background Color
+	*/
+	--lyte-calendar-selected-elem-bg: @themeActiveElementBg;
+
+	/**
+	* @variable --lyte-calendar-hover-elem-bg
+	* @selector .lyteCalTableCell:hover
+	* @description Background color on hover for calendar elements
+	* @defaultValue #e6f3fd
+	* @inputType color
+	* @name Hover Element Background Color
+	*/
+	--lyte-calendar-hover-elem-bg: #e6f3fd;
+
+	/**
+	* @variable --lyte-calendar-nav-bg
+	* @selector .lyteCalNav
+	* @description Background color of the calendar navigation arrows
+	* @defaultValue #faf9f9
+	* @inputType color
+	* @name Navigation Background Color
+	*/
+	--lyte-calendar-nav-bg: #faf9f9;
+
+	/**
+	* @variable --lyte-calendar-nav-border-color
+	* @selector .lyteCalNav
+	* @description Border color of the calendar navigation arrows
+	* @defaultValue #999
+	* @inputType color
+	* @name Navigation Border Color
+	*/
+	--lyte-calendar-nav-border-color: #999;
+
+	/**
+	* @variable --lyte-calendar-nav-hover-border-color
+	* @selector .lyteCalNav:hover
+	* @description Border color of navigation arrows on hover
+	* @defaultValue #333
+	* @inputType color
+	* @name Navigation Hover Border Color
+	*/
+	--lyte-calendar-nav-hover-border-color: #333;
+
+	/**
+	* @variable --lyte-calendar-zindex
+	* @selector .lyteCalendarPopup, .lyteCalendarDropdown
+	* @description Z-index level of the calendar popup and dropdown
+	* @defaultValue var(--lyte-level4-zindex)
+	* @defaultVariableValue 1060
+	* @inputType number
+	* @name Z-Index
+	*/
+	--lyte-calendar-zindex: @Level4zIndex;
+
+	/**
+	* @variable --lyte-calendar-datecell-border-radius
+	* @selector .lyteCalTableCell
+	* @description Border radius for each date cell in the calendar
+	* @defaultValue 50%
+	* @allowedSuffixes %
+	* @inputType dimension
+	* @name Date Cell Border Radius
+	*/
+	--lyte-calendar-datecell-border-radius: 50%;
+
+	/**
+	* @variable --lyte-calendar-weeklabel-text-color
+	* @selector .lyteCalTableCellHeader
+	* @description Text color for weekday labels (Sun, Mon...) in the calendar
+	* @defaultValue #777
+	* @inputType color
+	* @name Week Label Text Color
+	*/
+	--lyte-calendar-weeklabel-text-color: #777;
+
+	/**
+	* @variable --lyte-calendar-selected-element-text-color
+	* @selector .lyteCalSel
+	* @description Text color of selected calendar element
+	* @defaultValue #fff
+	* @inputType color
+	* @name Selected Element Text Color
+	*/
+	--lyte-calendar-selected-element-text-color: #fff;
+
+	/**
+	* @variable --lyte-calendar-footer-btn-border-color
+	* @selector .lyteCalBtns
+	* @description Top border color for the footer button section in the calendar
+	* @defaultValue #e0e0e0
+	* @inputType color
+	* @name Footer Button Border Color
+	*/
+	--lyte-calendar-footer-btn-border-color: #e0e0e0;
+
+	/**
+	* @variable --lyte-calendar-drilldown-button-text-color
+	* @selector .lyteDrillCalHeaderButton
+	* @description Text color of drilldown view navigation buttons (e.g., year/month switch)
+	* @defaultValue #777
+	* @inputType color
+	* @name Drilldown Button Text Color
+	*/
+	--lyte-calendar-drilldown-button-text-color: #777;
+
+	/**
+	* @variable --lyte-calendar-drilldown-button-border-color
+	* @selector .lyteDrillCalHeaderButton
+	* @description Border color of drilldown view navigation buttons
+	* @defaultValue #bbb
+	* @inputType color
+	* @name Drilldown Button Border Color
+	*/
+	--lyte-calendar-drilldown-button-border-color: #bbb;
+
+	/**
+	* @variable --lyte-calendar-drilldown-button-hover-bg
+	* @selector .lyteDrillCalHeaderButton:hover
+	* @description Background color for drilldown navigation buttons on hover
+	* @defaultValue #eee
+	* @inputType color
+	* @name Drilldown Button Hover Background Color
+	*/
+	--lyte-calendar-drilldown-button-hover-bg: #eee;
+
+	/**
+	* @variable --lyte-calendar-popup-font-size
+	* @selector .lyteCalendarPopup
+	* @description Font size of the main calendar popup
+	* @defaultValue var(--lyte-font-size-regular)
+	* @defaultVariableValue 14px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Popup Font Size
+	*/
+	--lyte-calendar-popup-font-size: var(--lyte-font-size-regular);
+
+	/**
+	* @variable --lyte-calendar-month-font-size
+	* @selector .lyteCalsCalMonth
+	* @description Font size of the month displayed in the calendar header
+	* @defaultValue var(--lyte-font-size-xl)
+	* @defaultVariableValue 18px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Month Font Size
+	*/
+	--lyte-calendar-month-font-size: var(--lyte-font-size-xl);
+
+	/**
+	* @variable --lyte-calendar-year-font-size
+	* @selector .lyteCalsCalYear
+	* @description Font size of the year displayed in the calendar header
+	* @defaultValue var(--lyte-font-size-large)
+	* @defaultVariableValue 16px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Year Font Size
+	*/
+	--lyte-calendar-year-font-size: var(--lyte-font-size-large);
+
+	/**
+	* @variable --lyte-calendar-weeklabel-font-size
+	* @selector .lyteCalTableCellHeader
+	* @description Font size of the week day labels
+	* @defaultValue var(--lyte-font-size-small)
+	* @defaultVariableValue 13px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Week Label Font Size
+	*/
+	--lyte-calendar-weeklabel-font-size: var(--lyte-font-size-small);
+
+	/**
+	* @variable --lyte-calendar-weeknumber-font-size
+	* @selector .lyteWeekNumberGrid
+	* @description Font size of the week numbers in the calendar
+	* @defaultValue var(--lyte-font-size-regular)
+	* @defaultVariableValue 14px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Week Number Font Size
+	*/
+	--lyte-calendar-weeknumber-font-size: var(--lyte-font-size-regular);
+
+	/**
+	* @variable --lyte-calendar-drill-header-font-size
+	* @selector .lyteDrillCalHeaderButton
+	* @description Font size used in drilldown calendar header buttons
+	* @defaultValue var(--lyte-font-size-large)
+	* @defaultVariableValue 16px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Drilldown Header Font Size
+	*/
+	--lyte-calendar-drill-header-font-size: var(--lyte-font-size-large);
+}

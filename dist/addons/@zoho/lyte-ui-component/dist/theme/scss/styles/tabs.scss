@@ -1,0 +1,392 @@
+@use "sass:map";
+
+@use "../default/global/global.variables.scss" as *;
+
+@use "../default/global/rtl.scss" as *;
+
+@forward "../default/variables/tabs.variables.scss";
+
+@use "../default/variables/tabs.variables.scss" as *;
+
+
+/* LYTE-TABS CSS BEGINS */
+
+lyte-tabs {
+	display: block;
+	background: map.get($lyteTabsMap, "background");
+	position: relative;
+	width: 100%;
+	font-family: $primaryFont;
+    @include addExtraStyles($lyteTabsMap);
+}
+lyte-tab-head {
+	display: flex;
+	border: map.get($lyteTabHeadMap, "border");
+    box-sizing: border-box;
+    @include addExtraStyles($lyteTabHeadMap);
+}
+lyte-tab-title {
+	display: inline-block;
+	font-size: map.get($lyteTabTitleMap, "font-size");
+	color: map.get($lyteTabTitleMap, "color");
+	padding: map.get($lyteTabTitleMap, "padding");
+    margin: map.get($lyteTabTitleMap, "margin");
+	cursor: pointer;
+	box-sizing: border-box;
+	background: map.get($lyteTabTitleMap, "background");
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+    @include addExtraStyles($lyteTabTitleMap);
+}
+lyte-tab-title span {
+    display: inline-block;
+    vertical-align: middle;
+}
+lyte-tab-title:hover {
+	color: map.get($lyteTabTitleHoverMap, "color");
+    @include addExtraStyles($lyteTabTitleHoverMap);
+}
+lyte-tab-title.lyteTabActive,
+lyte-tab-title.lyteTabActive:hover {
+	color: map.get($lyteTabActiveHoverMap, "color");
+	font-weight: normal;
+    @include addExtraStyles($lyteTabActiveHoverMap);
+}
+lyte-tab-body {
+	display: block;
+	border: map.get($lyteTabBodyMap, "border");
+	padding: map.get($lyteTabBodyMap, "padding");
+	font-size: map.get($lyteTabBodyMap, "font-size");
+	text-align: $value-textalign-left;
+    overflow: auto;
+    box-sizing: border-box;
+    @include addExtraStyles($lyteTabBodyMap);
+}
+lyte-tab-content {
+    color: map.get($lyteTabContentMap, "color");
+    @include addExtraStyles($lyteTabContentMap);
+}
+.lyteTabShow {
+	display: block;
+    flex-grow: 1;
+}
+.lyteTabTitleHide,
+.lyteTabHide {
+	display: none;
+}
+/*  Tab top starts */
+.lyteTabDefaultTop lyte-tab-body {
+	border-top: map.get($lyteTabTopBodyMap, "border-top");
+    @include addExtraStyles($lyteTabTopBodyMap);
+}
+.lyteTabDefaultTop lyte-tab-head {
+	border-bottom-color: map.get($lyteTabTopHeadMap, "border-bottom-color");
+    @include addExtraStyles($lyteTabTopHeadMap);
+}
+.lyteTabDefaultTop lyte-tab-title {
+	margin-bottom: map.get($lyteTabTopTitleMap, "margin-bottom");
+	border-bottom: map.get($lyteTabTopTitleMap, "border-bottom");
+    @include addExtraStyles($lyteTabTopTitleMap);
+}
+.lyteTabDefaultTop lyte-tab-title.lyteTabActive {
+	border-bottom: map.get($lyteTabTopActiveTitleMap, "border-bottom");
+    @include addExtraStyles($lyteTabTopActiveTitleMap);
+}
+.lyteTabDefaultTop lyte-tab-title:hover {
+	border-bottom-color: map.get($lyteTabTopTitleHoverMap, "border-bottom-color");
+    @include addExtraStyles($lyteTabTopTitleHoverMap);
+}
+.lyteTabDefaultTop lyte-tab-title.lyteTabActive:hover {
+	border-bottom-color: map.get($lyteTabTopActiveTitleHoverMap, "border-bottom-color");
+    @include addExtraStyles($lyteTabTopActiveTitleHoverMap);
+}
+/*  Tab top ends */
+/*  Tab bottom starts */
+.lyteTabDefaultBottom lyte-yield {
+	display: flex;
+	flex-direction: column;
+}
+.lyteTabDefaultBottom lyte-tab-head {
+	order: 2;
+	border-top-color: map.get($lyteTabBottomTabHeadMap, "border-top-color");
+    @include addExtraStyles($lyteTabBottomTabHeadMap);
+}
+.lyteTabDefaultBottom lyte-tab-body {
+	order: 1;
+	border-bottom: map.get($lyteTabBottomBodyMap, "border-bottom");
+    @include addExtraStyles($lyteTabBottomBodyMap);
+}
+.lyteTabDefaultBottom lyte-tab-title {
+	border-top: map.get($lyteTabBottomTitleMap, "border-top");
+	margin-top: map.get($lyteTabBottomTitleMap, "margin-top");
+    @include addExtraStyles($lyteTabBottomTitleMap);
+}
+.lyteTabDefaultBottom lyte-tab-title.lyteTabActive {
+	border-top: map.get($lyteTabBottomActiveTitleMap, "border-top");
+    @include addExtraStyles($lyteTabBottomActiveTitleMap);
+}
+.lyteTabDefaultBottom lyte-tab-title:hover {
+	border-top-color: map.get($lyteTabBottomTitleHoverMap, "border-top-color");
+    @include addExtraStyles($lyteTabBottomTitleHoverMap);
+}
+.lyteTabDefaultBottom lyte-tab-title.lyteTabActive:hover {
+	border-top-color: map.get($lyteTabBottomActiveTitleHoverMap, "border-top-color");
+    @include addExtraStyles($lyteTabBottomActiveTitleHoverMap);
+}
+/*  Tab bottom ends */
+/*  Tab left and right starts */
+.lyteTabDefaultLeft lyte-yield {
+	display: flex;
+}
+.lyteTabDefaultLeft lyte-tab-head,
+.lyteTabDefaultRight lyte-tab-head {
+	flex-direction: column;
+	flex-grow: 1;
+	padding: map.get($lyteTabDefaultRightMap, "padding");
+	width: map.get($lyteTabDefaultRightMap, "width");
+	text-align: $value-textalign-left;
+    overflow: auto;
+    @include addExtraStyles($lyteTabDefaultRightMap);
+}
+.lyteTabDefaultLeft lyte-tab-head {
+    #{$property-border-right}: map.get($lyteTableLeftHeadMap, "border-right");
+    @include addExtraStyles($lyteTableLeftHeadMap);
+}
+.lyteTabDefaultLeft lyte-tab-body,
+.lyteTabDefaultRight lyte-tab-body {
+	flex-grow: 10;
+	width: map.get($lyteTabDefaultRightBodyMap, "width");
+    padding-top: map.get($lyteTabDefaultRightBodyMap, "padding-top");
+    @include addExtraStyles($lyteTabDefaultRightBodyMap);
+}
+.lyteTabDefaultLeft lyte-tab-title.lyteTabActive,
+.lyteTabDefaultLeft lyte-tab-title.lyteTabActive:hover,
+.lyteTabDefaultRight lyte-tab-title.lyteTabActive,
+.lyteTabDefaultRight lyte-tab-title.lyteTabActive:hover {
+    #{$property-border-left}: map.get($lyteTabDefaultLeftActiveTitleMap, "border-left");
+	background: map.get($lyteTabDefaultLeftActiveTitleMap, "background");
+    position: relative;
+    z-index: 10;
+    @include addExtraStyles($lyteTabDefaultLeftActiveTitleMap);
+}
+.lyteTabDefaultRight lyte-yield {
+	display: flex;
+	flex-direction: row-reverse;
+}
+.lyteTabDefaultRight lyte-tab-head {
+	#{$property-border-left}: map.get($lyteTabRightHeadMap, "border-left");
+    @include addExtraStyles($lyteTabRightHeadMap);
+}
+.lyteTabDefaultLeft lyte-tab-title,
+.lyteTabDefaultRight lyte-tab-title {
+    margin: map.get($lyteTabLeftRightTitleMap, "margin");
+    padding: map.get($lyteTabLeftRightTitleMap, "padding");
+    overflow: visible;
+    @include addExtraStyles($lyteTabLeftRightTitleMap);
+}
+.lyteTabDefaultLeft lyte-tab-title:hover,
+.lyteTabDefaultRight lyte-tab-title:hover {
+	background: map.get($lyteTabDefaultRightTitleHoverMap, "background");
+    @include addExtraStyles($lyteTabDefaultRightTitleHoverMap);
+}
+/*  Tab left and right ends */
+
+.lyteTabCloseIcon {
+    @if $useCssMaskForBg {
+        -webkit-mask-image: map.get($lyteTabCloseIconMap, "mask-image");
+		mask-image: map.get($lyteTabCloseIconMap, "mask-image");	
+		-webkit-mask-position: map.get($lyteTabCloseIconMap, "mask-position");
+		mask-position: map.get($lyteTabCloseIconMap, "mask-position");	
+        background-color: map.get($lyteTabCloseIconMap, "background-color");
+    } @else {
+        background-image: map.get($lyteTabCloseIconMap, "background-image");	
+		background-position: map.get($lyteTabCloseIconMap, "background-position");
+    }
+	width: map.get($lyteTabCloseIconMap, "width");
+	height: map.get($lyteTabCloseIconMap, "height");
+	display: inline-block;
+	vertical-align: middle;
+    #{$property-margin-left}: map.get($lyteTabCloseIconMap, "margin-left");
+    // margin-top: map.get($lyteTabCloseIconMap, "margin-top");
+    @include addExtraStyles($lyteTabCloseIconMap);
+}
+.lyteTabAlignStart {
+    justify-content: flex-start;
+}
+.lyteTabAlignCenter {
+    justify-content: center;
+}
+.lyteTabAlignEnd {
+    justify-content: flex-end;
+}
+.lyteTabOverflowV lyte-tab-title {
+    overflow: visible;
+}
+.lyteTabForceHide {
+    display: none;
+}
+#moreMenu {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: map.get($lyteTabMoreMenuMap, "opacity");
+    padding: map.get($lyteTabMoreMenuMap, "padding");
+    @include addExtraStyles($lyteTabMoreMenuMap);
+}
+#moreMenu.lyteMenuSelected,
+#moreMenu:hover {
+    opacity: map.get($lyteTabMoreMenuHoverMap, "opacity");
+    @include addExtraStyles($lyteTabMoreMenuHoverMap);
+}
+#moreMenu span {
+    @if $useCssMaskForBg {
+        -webkit-mask-image: map.get($lyteTabKebebMenuMap, "mask-image");
+		mask-image: map.get($lyteTabKebebMenuMap, "mask-image");	
+		-webkit-mask-position: map.get($lyteTabKebebMenuMap, "mask-position");
+		mask-position: map.get($lyteTabKebebMenuMap, "mask-position");	
+        background-color: map.get($lyteTabKebebMenuMap, "background-color");
+    } @else {
+        background-image: map.get($lyteTabKebebMenuMap, "background-image");	
+		background-position: map.get($lyteTabKebebMenuMap, "background-position");
+    }
+    width: map.get($lyteTabKebebMenuMap, "width");
+    height: map.get($lyteTabKebebMenuMap, "height");
+    @include addExtraStyles($lyteTabKebebMenuMap);
+}
+.lyteTabRightCollapse {
+    flex-flow: row-reverse;
+    justify-content: flex-start;
+}
+.lyteTabVH lyte-tab-title,.lyteTabVH .lyteMenuSelected{
+	visibility: hidden;
+}
+lyte-tab-title.lyteTabDisable{
+	pointer-events: none;
+	cursor: default;
+	opacity: 0.7;
+}
+
+
+/*  Lyte Nested Tabs CSS Begins */
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield {
+	display: block;
+}
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield > lyte-tab-head {
+	flex-direction: row;
+	padding: 0;
+	width: auto;
+	border: map.get($lyteNestedTabTopTabHeadMap, "border");
+	overflow: visible;
+    @include addExtraStyles($lyteNestedTabTopTabHeadMap);
+}
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield > lyte-tab-head lyte-tab-title {
+	margin: map.get($lyteNestedTabTopTabTitleMap, "margin");
+	padding: map.get($lyteNestedTabTopTabTitleMap, "padding");
+	overflow: hidden;
+	margin-bottom: map.get($lyteNestedTabTopTabTitleMap, "margin-bottom");
+	border: map.get($lyteNestedTabTopTabTitleMap, "border");
+	border-bottom: map.get($lyteNestedTabTopTabTitleMap, "border-bottom");
+    @include addExtraStyles($lyteNestedTabTopTabTitleMap);
+}
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield > lyte-tab-head lyte-tab-title:hover {
+	background: map.get($lyteNestedTabTopTabTitleHoverMap, "background");
+	border: 0;
+	border-bottom: map.get($lyteNestedTabTopTabTitleHoverMap, "border-bottom");
+    @include addExtraStyles($lyteNestedTabTopTabTitleHoverMap);
+}
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield > lyte-tab-head lyte-tab-title.lyteTabActive {
+	border: 0;
+	border-bottom: map.get($lyteNestedTabTopTabTitleActiveMap, "border-bottom");
+	background: map.get($lyteNestedTabTopTabTitleActiveMap, "background");
+    @include addExtraStyles($lyteNestedTabTopTabTitleActiveMap);
+}
+.lyteNestedTab .lyteTabDefaultTop > lyte-yield > lyte-tab-body {
+	width: auto;
+	padding: map.get($lyteNestedTabTopTabBodyMap, "padding");
+	border: map.get($lyteNestedTabTopTabBodyMap, "border");
+	border-top: 0;
+    @include addExtraStyles($lyteNestedTabTopTabBodyMap);
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield {
+	flex-direction: column;
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield > lyte-tab-head {
+	flex-direction: row;
+	padding: 0;
+	width: auto;
+	border: map.get($lyteNestedTabBottomTabHeadMap, "border");
+	overflow: visible;
+    @include addExtraStyles($lyteNestedTabBottomTabHeadMap);
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield > lyte-tab-head lyte-tab-title {
+	margin: map.get($lyteNestedTabBottomTabTitleMap, "margin");
+	padding: map.get($lyteNestedTabBottomTabTitleMap, "padding");
+	overflow: hidden;
+	margin-top: map.get($lyteNestedTabBottomTabTitleMap, "margin-top");
+	border: 0;
+	border-top: map.get($lyteNestedTabBottomTabTitleMap, "border-top");
+    @include addExtraStyles($lyteNestedTabBottomTabTitleMap);
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield > lyte-tab-head lyte-tab-title:hover {
+	background: map.get($lyteNestedTabBottomTabTitleHoverMap, "background");
+	border: 0;
+	border-top: map.get($lyteNestedTabBottomTabTitleHoverMap, "border-top");
+    @include addExtraStyles($lyteNestedTabBottomTabTitleHoverMap);
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield > lyte-tab-head lyte-tab-title.lyteTabActive {
+	border: 0;
+	border-top: map.get($lyteNestedTabBottomTabTitleActiveMap, "border-top");
+	background: map.get($lyteNestedTabBottomTabTitleActiveMap, "background");
+    @include addExtraStyles($lyteNestedTabBottomTabTitleActiveMap);
+}
+.lyteNestedTab .lyteTabDefaultBottom > lyte-yield > lyte-tab-body {
+	width: auto;
+	padding: map.get($lyteNestedTabBottomTabBodyMap, "padding");
+	border: map.get($lyteNestedTabBottomTabBodyMap, "border");
+	border-bottom: 0;
+    @include addExtraStyles($lyteNestedTabBottomTabBodyMap);
+}
+.lyteNestedTab .lyteTabDefaultLeft > lyte-yield {
+	flex-direction: row;
+}
+.lyteNestedTab .lyteTabDefaultLeft > lyte-yield > lyte-tab-head {
+	order: 0;
+	border: map.get($lyteNestedTabLeftTabHeadMap, "border");
+	border-right: 0;
+    @include addExtraStyles($lyteNestedTabLeftTabHeadMap);
+}
+.lyteNestedTab .lyteTabDefaultLeft > lyte-yield > lyte-tab-head lyte-tab-title {
+	border: 0;
+}
+.lyteNestedTab .lyteTabDefaultLeft > lyte-yield > lyte-tab-head lyte-tab-title.lyteTabActive {
+	border-bottom: 0;
+	border-left: map.get($lyteNestedTabLeftTabTitleActiveMap, "border-left");
+    @include addExtraStyles($lyteNestedTabLeftTabTitleActiveMap);
+}
+.lyteNestedTab .lyteTabDefaultLeft > lyte-yield > lyte-tab-body {
+	border: map.get($lyteNestedTabLeftTabBodyMap, "border");
+    @include addExtraStyles($lyteNestedTabLeftTabBodyMap);
+}
+.lyteNestedTab .lyteTabDefaultRight > lyte-yield {
+	flex-direction: row-reverse;
+}
+.lyteNestedTab .lyteTabDefaultRight > lyte-yield > lyte-tab-head {
+	border: map.get($lyteNestedTabRightTabHeadMap, "border");
+	border-left: 0;
+	order: 0;
+    @include addExtraStyles($lyteNestedTabRightTabHeadMap);
+}
+.lyteNestedTab .lyteTabDefaultRight > lyte-yield > lyte-tab-head lyte-tab-title {
+	border: 0;
+}
+.lyteNestedTab .lyteTabDefaultRight > lyte-yield > lyte-tab-head lyte-tab-title.lyteTabActive {
+	border: 0;
+	border-left: map.get($lyteNestedTabRightTabTitleActiveMap, "border-left");
+    @include addExtraStyles($lyteNestedTabRightTabTitleActiveMap);
+}
+.lyteNestedTab .lyteTabDefaultRight > lyte-yield > lyte-tab-body {
+	border: map.get($lyteNestedTabRightTabBodyMap, "border");
+    @include addExtraStyles($lyteNestedTabRightTabBodyMap);
+}

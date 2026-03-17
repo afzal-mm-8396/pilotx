@@ -1,0 +1,126 @@
+/**
+ * @component mentionsInput
+ */
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+	/**
+	* @variable --lyte-mentionsinput-bg
+	* @selector .lyteMIWrapper
+	* @description Background color for the Mentions Input wrapper
+	* @defaultValue var(--lyte-theme-body-bg)
+	* @defaultVariableValue #fff
+	* @inputType color
+	* @name Background Color
+	*/
+	--lyte-mentionsinput-bg: @themeBodyBackground;
+
+	/**
+	* @variable --lyte-mentionsinput-text-color
+	* @selector .lyteMIWrapper textarea, .lyteMIDropdown
+	* @description Text color used inside textarea and dropdown
+	* @defaultValue var(--lyte-common-text-color2)
+	* @defaultVariableValue #333
+	* @inputType color
+	* @name Text Color
+	*/
+	--lyte-mentionsinput-text-color: @commonTextColor2;
+
+	/**
+	* @variable --lyte-mentionsinput-placeholder-text-color
+	* @selector .lyteMIWrapper textarea::placeholder
+	* @description Placeholder text color for the textarea
+	* @defaultValue #777
+	* @inputType color
+	* @name Placeholder Text Color
+	*/
+	--lyte-mentionsinput-placeholder-text-color: #777;
+
+	/**
+	* @variable --lyte-mentionsinput-border-color
+	* @selector .lyteMentionsNormalTextarea + textarea
+	* @description Border color for the normal textarea
+	* @defaultValue #d6d6d6
+	* @inputType color
+	* @name Border Color
+	*/
+	--lyte-mentionsinput-border-color: #d6d6d6;
+
+	/**
+	* @variable --lyte-mentionsinput-active-elem-bg
+	* @selector .lyteMIDropdown lyte-mentions-item:hover, .lyteMIActive
+	* @description Background color for active (hovered) dropdown item
+	* @defaultValue #eaeaea
+	* @inputType color
+	* @name Active Element Background Color
+	*/
+	--lyte-mentionsinput-active-elem-bg: #eaeaea;
+
+	/**
+	* @variable --lyte-mentionsinput-highlight-elem-bg
+	* @selector .lyteMIDropdown lyte-mentions-item b
+	* @description Highlight background for matched mentions
+	* @defaultValue #ffff99
+	* @inputType color
+	* @name Highlight Element Background Color
+	*/
+	--lyte-mentionsinput-highlight-elem-bg: #ffff99;
+
+	/**
+	* @variable --lyte-mentionsinput-selected-val-bg
+	* @selector .lyteMentionsStrongDiv
+	* @description Background for selected mention value in display
+	* @defaultValue #e9f4ff
+	* @inputType color
+	* @name Selected Value Background Color
+	*/
+	--lyte-mentionsinput-selected-val-bg: #e9f4ff;
+
+	/**
+	* @variable --lyte-mentionsinput-zindex
+	* @selector .lyteMIDropdown
+	* @description Z-index level for the mentions dropdown
+	* @defaultValue var(--lyte-level4-zindex)
+	* @defaultVariableValue 1060
+	* @inputType number
+	* @name Z-Index
+	*/
+	--lyte-mentionsinput-zindex: @Level4zIndex;
+
+	/**
+	* @variable --lyte-mentionsinput-box-shadow
+	* @selector .lyteMIDropdown
+	* @description Box shadow used for the mentions dropdown
+	* @defaultValue 0 2px 5px rgba(0, 0, 0, 0.1)
+	* @inputType boxShadow
+	* @name Box Shadow
+	*/
+	--lyte-mentionsinput-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+	/**
+	* @variable --lyte-mentionsinput-textarea-font-size
+	* @selector .lyteMIWrapper textarea
+	* @description Font size used for the textarea
+	* @defaultValue var(--lyte-font-size-medium)
+	* @defaultVariableValue 15px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Textarea Font Size
+	*/
+	--lyte-mentionsinput-textarea-font-size: var(--lyte-font-size-medium);
+
+	/**
+	* @variable --lyte-mentionsinput-dropdown-item-font-size
+	* @selector .lyteMIDropdown lyte-mentions-item
+	* @description Font size used for each dropdown item
+	* @defaultValue var(--lyte-font-size-regular)
+	* @defaultVariableValue 14px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Dropdown Item Font Size
+	*/
+	--lyte-mentionsinput-dropdown-item-font-size: var(--lyte-font-size-regular);
+}
+

@@ -1,0 +1,89 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/buttongroup/buttongroup.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{buttongroup}/ui-elements/buttongroup/buttongroup.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{buttongroup}/global/@{direction}.less";
+
+
+lyte-button-group lyte-button::part(lyte-button) {
+	border-radius: 0;
+	width: 100%;
+}
+lyte-button-group .lyteGroupHorizontal lyte-button:first-child::part(lyte-button) {
+	.buttonGroupHorizontalFirstBtnMixin();
+	border-radius: @border-radius;
+}
+lyte-button-group .lyteGroupHorizontal lyte-button:last-child::part(lyte-button) {
+	.buttonGroupHorizontalLastBtnMixin();
+	border-radius: @border-radius;
+}
+lyte-button-group .lyteGroupVertical lyte-button:first-child::part(lyte-button) {
+	.buttonGroupVerticalFirstBtnMixin();
+	border-radius: @border-radius;
+}
+lyte-button-group .lyteGroupVertical lyte-button:last-child::part(lyte-button) {
+	.buttonGroupVerticalLastBtnMixin();
+	border-radius: @border-radius;
+}
+lyte-button-group .fillType lyte-button::part(lyte-button) {
+	.buttonGroupFillTypeDefaultBtnMixin();
+	border: @border;
+	background: @bg;
+}
+lyte-button-group .fillType lyte-button::part(lyte-button):hover {
+	.buttonGroupFillTypeDefaultBtnHoverMixin();
+	border: @border;
+	background: @bg;
+}
+lyte-button-group .fillType lyte-button::part(lyteBtnGroupSelectedBtn):hover,
+lyte-button-group .fillType lyte-button::part(lyteBtnGroupSelectedBtn) {
+	.buttonGroupFillTypeBtnSelectedMixin();
+	background: @bg;
+	color: @color;
+}
+lyte-button-group .lineType lyte-button::part(lyte-button) {
+	.buttonGroupLineTypeDefaultBtnMixin();
+	border: @border;
+	background: @bg;
+}
+lyte-button-group .lineType.lyteGroupHorizontal lyte-button::part(lyte-button) {
+	border-right: 0;
+}
+lyte-button-group .lineType.lyteGroupVertical lyte-button::part(lyte-button) {
+	border-bottom: 0;
+}
+lyte-button-group .lineType lyte-button::part(lyte-button):hover {
+	.buttonGroupLineTypeDefaultBtnHoverMixin();
+	background: @bg;
+}
+lyte-button-group .lineType.lyteGroupHorizontal lyte-button:last-child::part(lyte-button) {
+	.buttonGroupLineTypeLastBtnMixin();
+	border-right: @border-right;
+}
+lyte-button-group .lineType.lyteGroupVertical lyte-button:last-child::part(lyte-button) {
+	.buttonGroupLineTypeVerticalLastBtnMixin();
+	border-bottom: @border-bottom;
+}
+lyte-button-group .lineType lyte-button::part(lyteBtnGroupSelectedBtn):hover,
+lyte-button-group .lineType lyte-button::part(lyteBtnGroupSelectedBtn) {
+	.buttonGroupLineTypeSelectedBtnMixin();
+	background: @bg;
+	color: @color;
+}
+lyte-button-group .customType lyte-button::part(lyteBtnGroupSelectedBtn) {
+	.buttonGroupCustomTypeSelectedBtnMixin();
+	background: @bg;
+	color: @color;
+	border-color: @border-color;
+}
+
+
+/* import theme overrides - styles */
+@import (optional) "../themes/@{buttongroup}/ui-elements/buttongroup/buttongroup.styles.less";

@@ -1,0 +1,37 @@
+/**
+* @component lyte-follower
+*/
+
+:root,
+:host {
+	/**
+	 * @variable --lyte-follower-bg
+	 * @selector .lyteFollowerWrapper
+	 * @description Background color of the follower tooltip or popover
+	 * @defaultValue #222
+	 * @inputType color
+	 * @name Background Color
+	 */
+	--lyte-follower-bg: #222;
+
+	/**
+	 * @variable --lyte-follower-text-color
+	 * @selector .lyteFollowerWrapper
+	 * @description Text color inside the follower
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @name Text Color
+	 */
+	--lyte-follower-text-color: #fff;
+
+	/**
+	 * @variable --lyte-follower-zindex
+	 * @selector .lyteFollowerWrapper
+	 * @description Z-index for controlling the stacking order of the follower
+	 * @defaultValue var(--lyte-level5-zindex)
+	 * @defaultVariableValue 1080
+	 * @inputType number
+	 * @name Z-Index
+	 */
+	--lyte-follower-zindex: @Level5zIndex;
+}

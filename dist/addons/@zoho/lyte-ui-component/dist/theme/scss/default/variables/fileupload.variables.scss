@@ -1,0 +1,241 @@
+@use "../global/global.variables.scss" as global;
+
+$cssMaskIconLyteFileuploadUploadIconColor: #c7c7c7 !default;
+$cssMaskIconLyteFileuploadTypeIconColor: #999 !default;
+$cssMaskIconLyteFileuploadCloseIconColor: global.$lyteIconsThemeColor !default;
+$cssMaskIconLyteFileuploadBtnTypeIconColor: #fff !default;
+
+$lyteFileUpdMsgWrapMap: (
+	"font-size": 13px,
+	"background": global.$lyteFileUploadBg,
+	"color": global.$lyteFileUploadMsgColor
+) !default;
+
+$lyteFileUpdBoxTypeMsgWrapMap: (
+	"border-radius": 10px,
+	"padding": 30px,
+	"border": 1px dashed #b8bdbe
+) !default;
+
+$lyteFileUpdBoxTypeMsgWrapHoverMap: (
+	"border": 1px dashed #969b9c
+) !default;
+
+$lyteFileDragEnterFileUpdBoxTypeMsgWrapMap: (
+	"border": 1px dashed #6eb0cb,
+	"background": #fafcff
+) !default;
+
+$lyteFileUpdMsgMap: (
+	"line-height": 21px
+) !default;
+
+$lyteFileUpdBoxTypeMsgMap: (
+	"padding-left": 40px
+) !default;
+
+$lyteFileUpdBoxTypeMsgBeforeMap: (
+	"background-image": global.$lytesprite,
+	"background-position": -155px -203px,
+	"mask-image": global.$lytesprite,
+	"mask-position": -155px -203px,
+	"background-color": $cssMaskIconLyteFileuploadUploadIconColor,
+	"width": 30px,
+	"height": 21px
+) !default;
+
+$lyteFileUpdThumbMap: (
+	"width": 23px,
+	"height": 23px,
+	"border": 1px solid #aaa
+) !default;
+
+$lyteMultiFileuploadListMap: (
+) !default;
+
+$lyteMultiFileuploadListFileMap: (
+	"margin-bottom": 10px
+) !default;
+
+$lyteMultiFileuploadListFileFirstOfTypeMap: (
+	"margin-top": 15px
+) !default;
+
+$lyteFileUpdListFileMap: (
+	"padding": 10px 15px,
+	"background": global.$lyteFileUploadListFileBg,
+	"border": 1px solid global.$lyteFileUploadListFileBorderColor,
+	"border-radius": 10px
+) !default;
+
+$lyteMultiFileuploadListFileErrorMap: (
+	"background": global.$lyteFileUploadListFileErrorBg,
+	"border": 1px solid global.$lyteFileUploadListFileErrorBorderColor
+) !default;
+
+$lyteFileUpdTypePreviewMap: (
+	"margin-right": 10px
+) !default;
+
+$lyteFileUpdTypeIconAfterMap: (
+	"background-image": global.$lytesprite,
+	"background-position": -117px -198px,
+	"mask-image": global.$lytesprite,
+	"mask-position": -117px -198px,
+	"background-color": $cssMaskIconLyteFileuploadTypeIconColor,
+	"width": 21px,
+	"height": 26px
+) !default;
+
+$lyteFileUpdTypeIconPdfAfterMap: (
+	"background-position": -8px -198px,
+	"mask-position": -8px -198px
+) !default;
+
+$lyteFileUpdTypeIconAfterVideoMap: (
+	"background-position": -35px -198px,
+	"mask-position": -35px -198px
+) !default;
+
+$lyteFileUpdTypeIconAfterImageMap: (
+	"background-position": -63px -198px,
+	"mask-position": -63px -198px
+) !default;
+
+$lyteFileUpdTypeIconAfterZipMap: (
+	"background-position": -90px -198px,
+	"mask-position": -90px -198px
+) !default;
+
+$lyteFileUpdFileNameMap: (
+	"color": global.$lyteFileUploadFileNameTextColor,
+	"font-size": 14px,
+	"margin-right": 10px,
+	"max-width": calc(100% - 300px)
+) !default;
+
+$lyteFileUpdSuccessFileNameMap: (
+	"max-width": calc(100% - 150px)
+) !default;
+
+$lyteFileUpdFileSizeMap: (
+	"font-size": 12px,
+	"color": global.$lyteFileUploadMsgColor
+) !default;
+
+$lyteFileUpdFileStatusMap: (
+	"margin-right": 10px
+) !default;
+
+$lyteFileUpdProgressBarMap: (
+	"height": 5px,
+	"width": 140px,
+	"background": #dfecfb,
+	"border-radius": 5px
+) !default;
+
+$lyteFileUpdProgressFillMap: (
+	"height": 5px,
+	"background": #4ea2f7,
+	"border-radius": 5px
+) !default;
+
+$lyteFileRetryMap: (
+	"margin-right": 10px
+) !default;
+
+$lyteFileUpdFailMsgMap: (
+	"font-size": 12px,
+	"color": #f00,
+	"margin-right": 10px
+) !default;
+
+$lyteFileUpdRetryMsgMap: (
+	"font-size": 12px,
+	"color": global.$lyteFileUploadRetryColor
+) !default;
+
+$lyteFileUpdRetryMsgHoverMap: (
+	"color": global.$lyteFileUploadFileNameTextColor
+) !default;
+
+$lyteFileCloseMap: (
+	"background-image": global.$lytesprite,
+	"background-position": -347px -157px,
+	"mask-image": global.$lytesprite,
+	"mask-position": -347px -157px,
+	"background-color": $cssMaskIconLyteFileuploadCloseIconColor,
+	"width": 17px,
+	"height": 17px,
+	"opacity": 0.4
+) !default;
+
+$lyteFileUpdSelectedFileMap: (
+	"background": #ddd,
+	"border": 1px solid #ccc
+) !default;
+
+$lyteFileUpdInputTypeMsgWrapMap: (
+	"padding": 7px 10px,
+	"border-radius": 3px,
+	"border": 1px dashed #c7c7c7,
+	"background": global.$lyteFileUploadBg
+) !default;
+
+$lyteFileUpdInputTypeMsgWrapHoverMap: (
+	"border": 1px dashed #969b9c
+) !default;
+
+$lyteFileUpdInputTypeListFileMap: (
+	"padding": 7px 10px,
+	"border": 1px dashed #c7c7c7,
+	"border-radius": 3px,
+	"background": global.$lyteFileUploadBg
+) !default;
+
+$lyteFileUpdInputTypeListFileErrorMap: (
+	"background": global.$lyteFileUploadListFileErrorBg,
+	"border": 1px dashed global.$lyteFileUploadListFileErrorBorderColor
+) !default;
+
+$lyteFileUpdInputTypeFileNameMap: (
+	"line-height": 21px,
+	"font-size": 13px,
+	"max-width": calc(100% - 250px)
+) !default;
+
+$lyteFileUpdInputTypeListFileSuccessFileNameMap: (
+	"max-width": calc(100% - 90px)
+) !default;
+
+$lyteFileUpdInputTypeFileCloseMap: (
+	"background-position": -324px -162px,
+	"mask-position": -324px -162px,
+	"width": 10px,
+	"height": 10px
+) !default;
+
+$lyteFileUpdBtnTypeMsgWrapMap: (
+	"width": 30px,
+	"height": 30px,
+	"background": #4ea2f7
+) !default;
+
+$lyteFileUpdBtnTypeMsgWrapAfterMap: (
+	"background-image": global.$lytesprite,
+	"background-position": -197px -205px,
+	"mask-image": global.$lytesprite,
+	"mask-position": -197px -205px,
+	"background-color": $cssMaskIconLyteFileuploadBtnTypeIconColor,
+	"width": 15px,
+	"height": 19px
+) !default;
+
+$lyteFileDragWrapperMap: (
+	"left": 0,
+	"right": 0,
+	"top": 0,
+	"bottom": 0,
+	"z-index": 15
+) !default;
+

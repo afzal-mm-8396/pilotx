@@ -1,0 +1,105 @@
+/**
+ * @component lyte-messagebox
+ */
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+	/**
+	* @variable --lyte-messagebox-bg
+	* @selector .lyteMessageBox
+	* @description Background color of the message box container
+	* @defaultValue var(--lyte-theme-body-bg)
+	* @defaultVariableValue #fff
+	* @inputType color
+	* @name Background Color
+	*/
+	--lyte-messagebox-bg: @themeBodyBackground;
+
+	/**
+	* @variable --lyte-messagebox-content-text-color
+	* @selector .lyteMessageBoxContent
+	* @description Text color used for the content inside the message box
+	* @defaultValue var(--lyte-common-text-color)
+	* @defaultVariableValue #333
+	* @inputType color
+	* @name Content Text Color
+	*/
+	--lyte-messagebox-content-text-color: @commonTextColor;
+
+	/**
+	* @variable --lyte-messagebox-success-bg
+	* @selector .lyteMessageBox.successMessageIcon .lyteMessageBoxSymbol
+	* @description Background color for the success variant of the message box
+	* @defaultValue #49a251
+	* @inputType color
+	* @name Success Background Color
+	*/
+	--lyte-messagebox-success-bg: #49a251;
+
+	/**
+	* @variable --lyte-messagebox-error-bg
+	* @selector .lyteMessageBox.errorMessageIcon .lyteMessageBoxSymbol
+	* @description Background color for the error variant of the message box
+	* @defaultValue #e64040
+	* @inputType color
+	* @name Error Background Color
+	*/
+	--lyte-messagebox-error-bg: #e64040;
+
+	/**
+	* @variable --lyte-messagebox-warning-bg
+	* @selector .lyteMessageBox.warningMessageIcon .lyteMessageBoxSymbol
+	* @description Background color for the warning variant of the message box
+	* @defaultValue #ea8d42
+	* @inputType color
+	* @name Warning Background Color
+	*/
+	--lyte-messagebox-warning-bg: #ea8d42;
+
+	/**
+	* @variable --lyte-messagebox-info-bg
+	* @selector .lyteMessageBox.infoMessageIcon .lyteMessageBoxSymbol
+	* @description Background color for the info variant of the message box
+	* @defaultValue #188bc7
+	* @inputType color
+	* @name Info Background Color
+	*/
+	--lyte-messagebox-info-bg: #188bc7;
+
+	/**
+	* @variable --lyte-messagebox-zindex
+	* @selector .lyteMessageBox
+	* @description Z-index value for message box display stacking
+	* @defaultValue var(--lyte-level5-zindex)
+	* @defaultVariableValue 1080
+	* @inputType number
+	* @name Z-Index
+	*/
+	--lyte-messagebox-zindex: @Level5zIndex;
+
+	/**
+	* @variable --lyte-messagebox-font-size
+	* @selector .lyteMessageBox
+	* @description Base font size for message box component
+	* @defaultValue var(--lyte-font-size-medium)
+	* @defaultVariableValue 15px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Font Size
+	*/
+	--lyte-messagebox-font-size: var(--lyte-font-size-medium);
+
+	/**
+	* @variable --lyte-messagebox-content-font-size
+	* @selector .lyteMessageBoxContent
+	* @description Font size for the content inside the message box
+	* @defaultValue var(--lyte-font-size-medium)
+	* @defaultVariableValue 15px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Content Font Size
+	*/
+	--lyte-messagebox-content-font-size: var(--lyte-font-size-medium);
+}

@@ -1,0 +1,201 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component lyte-voicenote
+ */
+:root,
+:host {
+  /**
+	* @variable --lyte-voicenote-bg
+	* @selector lyte-voicenote
+	* @description Background color for the voice note container.
+	* @defaultValue #f5f8fb
+	* @inputType color
+	* @name Background Color
+	*/
+  --lyte-voicenote-bg: #f5f8fb;
+  /**
+	* @variable --lyte-voicenote-play-btn-bg
+	* @selector .lyteVoiceNotePausePlayIcon, .lyteVoiceNotePrefetchPlayIcon
+	* @description Background color for the play/pause button.
+	* @defaultValue #8ac0f2
+	* @inputType color
+	* @name Play Button Background Color
+	*/
+  --lyte-voicenote-play-btn-bg: #8ac0f2;
+  /**
+	* @variable --lyte-voicenote-play-btn-border-color
+	* @selector .lyteVoiceNotePausePlayIcon, .lyteVoiceNotePrefetchPlayIcon
+	* @description Border color for the play/pause button.
+	* @defaultValue #fff
+	* @inputType color
+	* @name Play Button Border Color
+	*/
+  --lyte-voicenote-play-btn-border-color: #fff;
+  /**
+	* @variable --lyte-voicenote-play-btn-box-shadow-color
+	* @selector .lyteVoiceNotePausePlayIcon, .lyteVoiceNotePrefetchPlayIcon
+	* @description Box shadow color for the play/pause button.
+	* @defaultValue #00000040
+	* @inputType color
+	* @name Play Button Box Shadow Color
+	*/
+  --lyte-voicenote-play-btn-box-shadow-color: #00000040;
+  /**
+	* @variable --lyte-voicenote-loading-bar-bg
+	* @selector .lyteVoiceNotePrefetchLoadingBar, .lyteVoiceNoteProgress
+	* @description Background color of the loading bar and progress track.
+	* @defaultValue #dce3eb
+	* @inputType color
+	* @name Loading Bar Background Color
+	*/
+  --lyte-voicenote-loading-bar-bg: #dce3eb;
+  /**
+	* @variable lyte-voicenote-prefetch-msg-font-size
+	* @selector .lyteVoiceNotePrefetchMessage
+	* @description font size of loading message for prefetch case.
+	* @defaultValue var(--lyte-font-size-regular)
+	* @defaultVariableValue 14px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Prefetch Message Font Size
+	*/
+  --lyte-voicenote-prefetch-msg-font-size: var(--lyte-font-size-regular);
+  /**
+	* @variable lyte-voicenote-prefetch-msg-text-color
+	* @selector .lyteVoiceNotePrefetchMessage
+	* @description text color of loading message for prefetch case.
+	* @defaultValue #8a8a8a
+	* @inputType color
+	* @name Prefetch Message Text Color
+	*/
+  --lyte-voicenote-prefetch-msg-text-color: #8a8a8a;
+  /**
+	* @variable lyte-voicenote-loading-handler-bg
+	* @selector .lyteVoiceNoteHandler.lyteVoiceNoteMetaLoaded
+	* @description Background color for the draggable progress handler once metadata is loaded.
+	* @defaultValue #59b0ff
+	* @inputType color
+	* @name Loading Handler Background Color
+	*/
+  --lyte-voicenote-loading-handler-bg: #59b0ff;
+  /**
+	* @variable --lyte-voicenote-error-handler-bg
+	* @selector .lyteVoiceNoteHandler in error state
+	* @description Background color for the handler when there's an error.
+	* @defaultValue #dce3eb
+	* @inputType color
+	* @name Error Handler Background Color
+	*/
+  --lyte-voicenote-error-handler-bg: #dce3eb;
+  /**
+	* @variable --lyte-voicenote-completed-bg
+	* @selector .lyteVoiceNoteCompletion
+	* @description Background color shown for completed voice note progress.
+	* @defaultValue #8ac0f2
+	* @inputType color
+	* @name Completed Background Color
+	*/
+  --lyte-voicenote-completed-bg: #8ac0f2;
+  /**
+	* @variable --lyte-voicenote-duration-text-color
+	* @selector .lyteVoiceNoteElapsedTime, .lyteVoiceNoteDurationSpan
+	* @description Text color for elapsed and total duration time.
+	* @defaultValue #949fb5
+	* @inputType color
+	* @name Duration Text Color
+	*/
+  --lyte-voicenote-duration-text-color: #949fb5;
+  /**
+	* @variable --lyte-voicenote-duration-separator-color
+	* @selector .lyteVoiceNoteTimeSeparate
+	* @description Color used for the time separator (e.g., colon between minutes and seconds).
+	* @defaultValue #949fb5
+	* @inputType color
+	* @name Duration Separator Color
+	*/
+  --lyte-voicenote-duration-separator-color: #949fb5;
+  /**
+	* @variable --lyte-voicenote-volume-slider-fill-bg
+	* @selector .lyteVoiceNoteVolumeSlider .lyteSliderFill
+	* @description Background color for the filled part of the volume slider.
+	* @defaultValue #8ac0f2
+	* @inputType color
+	* @name Volume Slider Fill Background Color
+	*/
+  --lyte-voicenote-volume-slider-fill-bg: #8ac0f2;
+  /**
+	* @variable --lyte-voicenote-volume-slider-handler-bg
+	* @selector .lyteVoiceNoteVolumeSlider .lyteSliderHandler
+	* @description Background color of the volume slider handler knob.
+	* @defaultValue #59b0ff
+	* @inputType color
+	* @name Volume Slider Handler Background Color
+	*/
+  --lyte-voicenote-volume-slider-handler-bg: #59b0ff;
+  /**
+	* @variable --lyte-voicenote-playback-speed-text-color
+	* @selector lyte-drop-button inside .lyteVoiceNotePlaybackRate
+	* @description Text color for the displayed playback speed.
+	* @defaultValue #666
+	* @inputType color
+	* @name Playback Speed Text Color
+	*/
+  --lyte-voicenote-playback-speed-text-color: #666;
+  /**
+	* @variable --lyte-voicenote-playback-speed-drop-item-text-color
+	* @selector lyte-drop-item inside lyteVoiceNotePlaybackRateDropbox
+	* @description Text color for the dropdown items inside playback rate selection.
+	* @defaultValue #666
+	* @inputType color
+	* @name Playback Speed Dropdown Item Text Color
+	*/
+  --lyte-voicenote-playback-speed-drop-item-text-color: #666;
+  /**
+	* @variable --lyte-voicenote-circle-loader-color
+	* @selector .lyteCircleInnerLoader::after
+	* @description Border color for the circular loader displayed during buffering.
+	* @defaultValue #fff
+	* @inputType color
+	* @name Circular Loader Color
+	*/
+  --lyte-voicenote-circle-loader-color: #fff;
+  /**
+	* @variable --lyte-voicenote-duration-font-size
+	* @selector .lyteVoiceNoteElapsedTime, .lyteVoiceNoteDurationSpan
+	* @description Font size of the duration timer text.
+	* @defaultValue var(--lyte-font-size-small)
+	* @defaultVariableValue 13px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Duration Font Size
+	*/
+  --lyte-voicenote-duration-font-size: var(--lyte-font-size-small);
+  /**
+	* @variable --lyte-voicenote-playback-speed-font-size
+	* @selector lyte-drop-button inside .lyteVoiceNotePlaybackRate
+	* @description Font size of the current playback speed text.
+	* @defaultValue var(--lyte-font-size-xs)
+	* @defaultVariableValue 12px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Playback Speed Font Size
+	*/
+  --lyte-voicenote-playback-speed-font-size: var(--lyte-font-size-xs);
+  /**
+	* @variable --lyte-voicenote-playback-speed-drop-item-font-size
+	* @selector lyte-drop-item inside lyteVoiceNotePlaybackRateDropbox
+	* @description Font size of each item in the playback speed dropdown list.
+	* @defaultValue var(--lyte-font-size-small)
+	* @defaultVariableValue 13px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Playback Speed Dropdown Item Font Size
+	*/
+  --lyte-voicenote-playback-speed-drop-item-font-size: var(--lyte-font-size-small);
+}

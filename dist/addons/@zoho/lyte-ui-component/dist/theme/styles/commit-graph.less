@@ -1,0 +1,383 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/commitgraph/commit-graph.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+
+@import (optional) "../themes/@{commitgraph}/ui-elements/commitgraph/commit-graph.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{commitgraph}/global/@{direction}.less";
+
+/*  Commit graph related CSS BEGINS    */
+
+lyte-commit-graph{
+    display: block;
+}
+.lyteCommitGraphWrapper{
+    .lyteCommitGraphWrapperMixin();
+    position: relative;
+    overflow: hidden;
+    width: @w;
+    height: @h;
+}
+.lyteCommitsWrapper{
+    .lyteCommitsWrapperMixin();
+    position: relative;
+    overflow: hidden;
+    width: @w !important;
+    height: @h !important;
+}
+.lyteCommitGraphCommits{
+    .lyteCommitGraphCommitsMixin();
+    height: @h;
+    overflow: auto;
+}
+.lyteCommitGraphCard{
+    .lyteCommitGraphCardMixin();
+    height: @h;
+    width: @w;
+    display: block;
+    overflow: hidden;
+}
+lyte-commit-graph .lyteConnectionMarker{
+    .lyteCommitGraphConnectionMarkerMixin();
+    width: @w;
+    height: @h;
+    z-index: @z-index;
+    pointer-events: none;
+}
+lyte-commit-graph .lyteConnectionPath {
+    .lyteCommitGraphConnectionPathMixin();
+    stroke-width: @stroke-w !important;
+}
+.lyteCommitGraphDummyTargets,
+.lyteCommitGraphDummyTargetsTop{
+    .lyteCommitGraphDummyTarTargetsTopMixin();
+    width: @w;
+    height: @h;
+    position: absolute;
+    border: @border;
+}
+.lyteCommitGraphDummyTargetsTop{
+    .lyteCommitGraphDummyTargetsTopMixin();
+    top: @top;
+}
+.lyteCommitGraphDummyTargets{
+    .lyteCommitGraphDummyTargetsMixin();
+    bottom: @bottom;
+}
+
+.lyteCommitGraphLiWrapper{
+    .lyteCommitGraphLiWrapperMixin();
+    cursor: pointer;
+    padding-right: @padding-right;
+    width: @w;
+    height: @h;
+    font-family: "Zoho_Puvi_Medium", sans-serif;
+    font-size: @font-size;
+    display: flex;
+    overflow: hidden;
+    border: @border;
+    border-radius: @border-radius;
+    box-sizing: border-box;
+    padding-left: @padding-left;
+}
+.lyteCommitGraphLiWrapper:hover{
+    .lyteCommitGraphLiWrapperHoverMixin();
+    background: @bg;
+    border-color: @border-color;
+}
+.lyteCommitGraphLi:hover{ 
+    .lyteCommitGraphLiHoverMixin();
+    background-color: @bg-color;
+}
+.lyteCommitGraphLiActive{
+    .lyteCommitGraphLiActiveMixin();
+    background-color: @bg-color;
+}
+.lyteCommitGraphLiHead{
+    .lyteCommitGraphLiHeadMixin();
+    justify-content: space-between;
+    align-items: center;
+    padding: @padding;
+}
+.lyteCommitGraphLiHead .lyteCommitGraphLiAuthor{
+    .lyteCommitGraphLiHeadAuthorMixin();
+    padding-right: @padding-right;
+}
+
+
+
+
+.lyteCommitGraphLinkWrap,
+.lyteCommitGraphLinkDummyWrap {
+    .lyteCommitGraphLinkWrapDummyWrapMixin();
+    margin-right: @margin-right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: @flex-shrink;
+}
+.lyteCommitGraphLinkWrap{
+    .lyteCommitGraphLinkWrapMixin();
+    padding-left: @padding-left;
+}
+.lyteCommitGraphDetailsWrap{
+    .lyteCommitGraphDetailsWrapMixin();
+    position: absolute;
+    height: @h;
+    left: @left;
+    right: @right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.lyteCommitGraphDummyTargets .lyteCommitGraphLinkDummyWrap{
+    .lyteCommitGraphDummyTargetsDummyWrapMixin();
+    bottom: @bottom;
+}
+
+.lyteCommitGraphDummyTargetsTop .lyteCommitGraphLinkDummyWrapTop{
+    .lyteCommitGraphDummyTargetsTopWrapTopMixin();
+    top: @top;
+}
+
+.lyteCommitGraphLinkDummyWrapTop,
+.lyteCommitGraphLinkDummyWrap{
+    .lyteCommitGraphLinkDummyWrapTopDummyWrapMixin();
+    position: absolute;
+    left: @left;
+    margin: @margin;
+}
+.lyteCommitGraphLink,
+.lyteCommitGraphDummyLink,
+.lyteCommitGraphDummyLinkTop{
+    .lyteCommitGraphLinkGraphDummyLinkDummyLinkTopMixin();
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    display: block;
+    background: @bg;
+}
+.lyteCommitGraphDummyLink,
+.lyteCommitGraphDummyLinkTop{
+    .lyteCommitGraphDummyLinkDummyLinkTopMixin();
+    border: @border;
+}
+
+
+
+
+
+
+.lyteCommitGraphLiMessage{
+    .lyteCommitGraphLiMessageMixin();
+    color: @color;
+    margin-left: @margin-left;
+    flex-basis: @flex-basis;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-size: @font-size;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.lyteCommitGraphLiMoreDets{
+    .lyteCommitGraphLiMoreDetsMixin();
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: @flex-basis;
+}
+.lyteCommitGraphLiAuthor,
+.lyteCommitGraphLiDate,
+.lyteCommitGraphLiBranch{
+    .lyteCommitGraphLiAuthorGraphLiDateGraphLiBranchMixin();
+    font-size: @font-size;
+    color: @color;
+}
+.lyteCommitGraphLiBranch{
+    .lyteCommitGraphLiBranchMixin();
+    display: flex;
+    gap: @gap;
+}
+.lyteCommitGraphLiDate{
+    .lyteCommitGraphLiDateMixin();
+    margin-right: @margin-right;
+}
+.lyteCommitGraphLiBranch span{
+	padding: 1px 5px;
+}
+.lyteCommitGraphHead{
+	background: #000;
+}
+.lyteCommitGraphTag{
+	background: #24d5b4;
+	color: #fff;
+}
+
+.lyteCommitGraphCard[graph-intent-level="0"] .lyteCommitGraphOrigin{
+	border-left:solid 2px #000;
+	background: #f2f2f2;
+}
+.lyteCommitGraphCard[graph-intent-level="1"] .lyteCommitGraphOrigin{
+	border-left:solid 2px #0bff75;
+	background: #f2f2f2;
+}
+.lyteCommitGraphCard[graph-intent-level="2"] .lyteCommitGraphOrigin{
+	border-left:solid 2px #ff685f;
+	background: #f2f2f2;
+}
+.lyteCommitGraphCard[graph-intent-level="3"] .lyteCommitGraphOrigin{
+	border-left:solid 2px #56a3eb;
+	background: #f2f2f2;
+}
+.lyteCommitGraphCard[graph-intent-level="4"] .lyteCommitGraphOrigin{
+	border-left:solid 2px #474bb9;
+	background: #f2f2f2;
+}
+.lyteCommitGraphCard[graph-intent-level="5"] .lyteCommitGraphOrigin{
+	border-left:solid 2px #24d5b4;
+	background: #f2f2f2;
+}
+
+
+.lyteCommitBox_0 .lyteCommitGraphLink{
+    .lyteCommitBox0GraphLinkMixin();
+    background-color: @bg-color;
+    border: @border;
+}
+.lyteCommitBox_2 .lyteCommitGraphLink{
+    .lyteCommitBox2GraphLinkMixin();
+    background-color: @bg-color;
+    border: @border;
+}
+.lyteCommitBox_3 .lyteCommitGraphLink{
+    .lyteCommitBox3GraphLinkMixin();
+    background-color: @bg-color;
+    border: @border;
+}
+.lyteCommitBox_4 .lyteCommitGraphLink{
+    .lyteCommitBox4GraphLinkMixin();
+    background-color: @bg-color;
+    border: @border;
+}
+.lyteCommitBox_5 .lyteCommitGraphLink{
+    .lyteCommitBox5GraphLinkMixin();
+    background-color: @bg-color;
+    border: @border;
+}
+.lyteCommitBox_1 .lyteCommitGraphLink{
+    .lyteCommitBox1GraphLinkMixin();
+    background-color: @bg-color;
+    border: @border;
+}
+.lyteCommitBoxLine_0 .lyteConnectionPath{
+    .lyteCommitBoxLine0ConnectionPathMixin();
+    stroke:@stroke;
+}
+.lyteCommitBoxLine_2 .lyteConnectionPath{
+    .lyteCommitBoxLine2ConnectionPathMixin();
+    stroke:@stroke;
+}
+.lyteCommitBoxLine_3 .lyteConnectionPath{
+    .lyteCommitBoxLine3ConnectionPathMixin();
+    stroke:@stroke;
+}
+.lyteCommitBoxLine_4 .lyteConnectionPath{
+    .lyteCommitBoxLine4ConnectionPathMixin();
+    stroke:@stroke;
+}
+.lyteCommitBoxLine_5 .lyteConnectionPath{
+    .lyteCommitBoxLine5ConnectionPathMixin();
+    stroke:@stroke;
+}
+.lyteCommitBoxLine_1 .lyteConnectionPath{
+    .lyteCommitBoxLine1ConnectionPathMixin();
+    stroke:@stroke;
+}
+
+
+
+
+
+
+.lyteCommitConnectBox .lyteCommitGraphLink {
+.lyteCommitConnectBoxGraphLinkMixin();
+    width: @w;
+    height: @h;
+    position: relative;
+	border-radius: @border-radius;
+    background: unset;
+}
+
+.lyteCommitConnectBox .lyteCommitGraphLink::before {
+.lyteCommitConnectBoxGraphLinkbeforeMixin();
+    content: "";
+    position: absolute;
+    top: @top;
+    left: @left;
+    width: @w;
+    height: @h;
+	border-radius: @border-radius;
+}
+
+.lyteCommitBox_0.lyteCommitConnectBox .lyteCommitGraphLink{
+    .lyteCommitBox0ConnectBoxGraphLinkMixin();
+    border: @border;
+}
+.lyteCommitBox_0.lyteCommitConnectBox .lyteCommitGraphLink::before {
+    .lyteCommitBox0ConnectBoxGraphLinkbeforeMixin();
+    background: @bg;
+}
+.lyteCommitBox_2.lyteCommitConnectBox .lyteCommitGraphLink{
+    .lyteCommitBox2ConnectBoxGraphLinkMixin();
+    border: @border;
+}
+.lyteCommitBox_2.lyteCommitConnectBox .lyteCommitGraphLink::before {
+    .lyteCommitBox2ConnectBoxGraphLinkbeforeMixin();
+    background: @bg;
+}
+.lyteCommitBox_3.lyteCommitConnectBox .lyteCommitGraphLink{
+    .lyteCommitBox3ConnectBoxGraphLinkMixin();
+    border: @border;
+}
+.lyteCommitBox_3.lyteCommitConnectBox .lyteCommitGraphLink::before {
+    .lyteCommitBox3ConnectBoxGraphLinkbeforeMixin();
+    background: @bg;
+}
+.lyteCommitBox_4.lyteCommitConnectBox .lyteCommitGraphLink{
+    .lyteCommitBox4ConnectBoxGraphLinkMixin();
+    border: @border;
+}
+.lyteCommitBox_4.lyteCommitConnectBox .lyteCommitGraphLink::before {
+    .lyteCommitBox4ConnectBoxGraphLinkbeforeMixin();
+    background: @bg;
+}
+.lyteCommitBox_5.lyteCommitConnectBox .lyteCommitGraphLink{
+    .lyteCommitBox5ConnectBoxGraphLinkMixin();
+    border: @border;
+}
+.lyteCommitBox_5.lyteCommitConnectBox .lyteCommitGraphLink::before {
+    .lyteCommitBox5ConnectBoxGraphLinkbeforeMixin();
+    background: @bg;
+}
+.lyteCommitBox_1.lyteCommitConnectBox .lyteCommitGraphLink{
+    .lyteCommitBox1ConnectBoxGraphLinkMixin();
+    border: @border;
+}
+.lyteCommitBox_1.lyteCommitConnectBox .lyteCommitGraphLink::before {
+    .lyteCommitBox1ConnectBoxGraphLinkbeforeMixin();
+    background: @bg;
+}
+.lyteCommitBoxDashedLine path {
+	.lyteCommitBoxDashedLinePathMixin();
+	stroke-dasharray: @stroke-dasharray;
+}

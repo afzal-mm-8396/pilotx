@@ -1,0 +1,221 @@
+/**
+ * @component lyte-input
+ */
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+	/**
+	 * @variable --lyte-input-bg
+	 * @selector lyte-input, input
+	 * @description Background color of the input field
+	 * @defaultValue var(--lyte-theme-body-bg)
+	 * @defaultVariableValue #fff
+	 * @inputType color
+	 * @name Background Color
+	 */
+	--lyte-input-bg: @themeBodyBackground;
+
+	/**
+	 * @variable --lyte-input-text-color
+	 * @selector lyte-input, input
+	 * @description Default text color inside the input field
+	 * @defaultValue var(--lyte-common-text-color2)
+	 * @defaultVariableValue #333
+	 * @inputType color
+	 * @name Text Color
+	 */
+	--lyte-input-text-color: @commonTextColor2;
+
+	/**
+	 * @variable --lyte-input-border-color
+	 * @selector lyte-input, input
+	 * @description Border color of the input in default state
+	 * @defaultValue #d6d6d6
+	 * @inputType color
+	 * @name Border Color
+	 */
+	--lyte-input-border-color: #d6d6d6;
+
+	/**
+	 * @variable --lyte-input-hover-border-color
+	 * @selector lyte-input:hover, input:hover
+	 * @description Border color of the input when hovered
+	 * @defaultValue #c1c1c1
+	 * @inputType color
+	 * @name Hover Border Color
+	 */
+	--lyte-input-hover-border-color: #c1c1c1;
+
+	/**
+	 * @variable --lyte-input-focus-border-color
+	 * @selector lyte-input:focus, input:focus
+	 * @description Border color of the input when focused
+	 * @defaultValue #7fceef
+	 * @inputType color
+	 * @name Focus Border Color
+	 */
+	--lyte-input-focus-border-color: #7fceef;
+
+	/**
+	 * @variable --lyte-input-border-radius
+	 * @selector lyte-input, input
+	 * @description Border radius of the input field
+	 * @defaultValue 2px
+	 * @allowedSuffixes px, em, rem
+	 * @inputType dimension
+	 * @name Border Radius
+	 */
+	--lyte-input-border-radius: 2px;
+
+	/**
+	 * @variable --lyte-input-disabled-bg
+	 * @selector lyte-input[disabled], input[disabled]
+	 * @description Background color of the input when disabled
+	 * @defaultValue #f3f3f3
+	 * @inputType color
+	 * @name Disabled Background Color
+	 */
+	--lyte-input-disabled-bg: #f3f3f3;
+
+	/**
+	 * @variable --lyte-input-label-text-color
+	 * @selector label.lyteInputLabel
+	 * @description Text color of the label associated with the input
+	 * @defaultValue #555
+	 * @inputType color
+	 * @name Label Text Color
+	 */
+	--lyte-input-label-text-color: #555;
+
+	/**
+	 * @variable --lyte-input-font-size
+	 * @selector lyte-input, input
+	 * @description Font size inside the input
+	 * @defaultValue var(--lyte-font-size-medium)
+	 * @defaultVariableValue 15px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Font Size
+	 */
+	--lyte-input-font-size: var(--lyte-font-size-medium);
+
+	/**
+	 * @variable --lyte-input-datetime-placeholder-font-size
+	 * @selector lyte-datetime-input ::placeholder
+	 * @description Placeholder font size in datetime input fields
+	 * @defaultValue var(--lyte-font-size-regular)
+	 * @defaultVariableValue 14px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Placeholder Font Size
+	 */
+	--lyte-input-datetime-placeholder-font-size: var(--lyte-font-size-regular);
+
+	/**
+	 * @variable --lyte-input-disabled-text-color
+	 * @selector lyte-input[disabled], input[disabled]
+	 * @description Text color when input is disabled
+	 * @defaultValue #999
+	 * @inputType color
+	 * @name Disabled Text Color
+	 */
+	--lyte-input-disabled-text-color: #999;
+
+	/**
+	 * @variable --lyte-input-placeholder-text-color
+	 * @selector lyte-input::placeholder, input::placeholder
+	 * @description Placeholder text color in input fields
+	 * @defaultValue #a6a6a6
+	 * @inputType color
+	 * @name Placeholder Text Color
+	 */
+	--lyte-input-placeholder-text-color: #a6a6a6;
+
+	/**
+	 * @variable --lyte-input-calendar-icon-color
+	 * @selector .lyteInputCalendarIcon
+	 * @description Default color of the calendar icon in date/time inputs
+	 * @defaultValue #676869
+	 * @inputType color
+	 * @name Calendar Icon Color
+	 */
+	--lyte-input-calendar-icon-color: #676869;
+
+	/**
+	 * @variable --lyte-input-calendar-icon-hover-color
+	 * @selector .lyteInputCalendarIcon:hover
+	 * @description Calendar icon color on hover
+	 * @defaultValue #333
+	 * @inputType color
+	 * @name Calendar Icon Hover Color
+	 */
+	--lyte-input-calendar-icon-hover-color: #333;
+
+	/**
+	 * @variable --lyte-input-calendar-icon-focus-color
+	 * @selector .lyteInputCalendarIcon:focus
+	 * @description Calendar icon color when focused
+	 * @defaultValue var(--lyte-theme-active-element-bg)
+	 * @defaultVariableValue #5ba1e5
+	 * @inputType color
+	 * @name Calendar Icon Focus Color
+	 */
+	--lyte-input-calendar-icon-focus-color: @lyteInputCalendarFocusIcon;
+
+	/**
+	 * @variable --lyte-input-readonly-calendar-icon-hover-color
+	 * @selector .lyteInputCalendarIcon[readonly]:hover
+	 * @description Calendar icon color on hover in readonly state
+	 * @defaultValue #676869
+	 * @inputType color
+	 * @name Readonly Calendar Icon Hover Color
+	 */
+	--lyte-input-readonly-calendar-icon-hover-color: #676869;
+
+	& when (@useCssMaskForBg = true) {
+		/**
+		 * @variable --lyte-mask-input-icons-common-color
+		 * @selector .lyteInputIcon (when CSS mask is used)
+		 * @description Common color for all masked icons inside inputs
+		 * @defaultValue #000
+		 * @inputType color
+		 * @name Masked Icons Common Color
+		 */
+		--lyte-mask-input-icons-common-color: @lyteIconsThemeColor;
+
+		/**
+		 * @variable --lyte-mask-input-resize-icon-color
+		 * @selector .lyteInputResizeIcon
+		 * @description Color for the resize icon (masked)
+		 * @defaultValue var(--lyte-mask-input-icons-common-color)
+		 * @defaultVariableValue #000
+		 * @inputType color
+		 * @name Resize Icon Color
+		 */
+		--lyte-mask-input-resize-icon-color: var(--lyte-mask-input-icons-common-color);
+
+		/**
+		 * @variable --lyte-mask-input-search-icon-color
+		 * @selector .lyteInputSearchIcon
+		 * @description Color for the search icon (masked)
+		 * @defaultValue var(--lyte-mask-input-icons-common-color)
+		 * @defaultVariableValue #000
+		 * @inputType color
+		 * @name Search Icon Color
+		 */
+		--lyte-mask-input-search-icon-color: var(--lyte-mask-input-icons-common-color);
+
+		/**
+		 * @variable --lyte-mask-input-close-icon-color
+		 * @selector .lyteInputCloseIcon
+		 * @description Color for the clear/close icon (masked)
+		 * @defaultValue var(--lyte-mask-input-icons-common-color)
+		 * @defaultVariableValue #000
+		 * @inputType color
+		 * @name Close Icon Color
+		 */
+		--lyte-mask-input-close-icon-color: var(--lyte-mask-input-icons-common-color);
+	}
+}

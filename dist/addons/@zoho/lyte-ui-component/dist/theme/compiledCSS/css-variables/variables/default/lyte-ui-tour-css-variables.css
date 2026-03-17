@@ -1,0 +1,89 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component lyte-tour
+ */
+:root,
+:host {
+  /**
+ * @variable --lyte-tour-bg
+ * @selector .lyteTourStep, .lyteTourArrow, .lyteTourTargetBackground
+ * @description Background color used for the tour step, arrows, and target highlight.
+ * @defaultValue var(--lyte-theme-body-bg)
+ * @defaultVariableValue #fff
+ * @inputType color
+ * @name Background Color
+ */
+  --lyte-tour-bg: var(--lyte-theme-body-bg);
+  /**
+  * @variable --lyte-tour-text-color
+  * @selector lyte-tour-step-head
+  * @description Text color for the heading inside a tour step.
+  * @defaultValue var(--lyte-common-text-color)
+  * @defaultVariableValue #333
+  * @inputType color
+  * @name Text Color
+  */
+  --lyte-tour-text-color: var(--lyte-common-text-color);
+  /**
+  * @variable --lyte-tour-border-color
+  * @selector .lyteTourStep, .lyteTourArrow
+  * @description Border color for the tour step and directional arrows.
+  * @defaultValue #d6d6d6
+  * @inputType color
+  * @name Border Color
+  */
+  --lyte-tour-border-color: #d6d6d6;
+  /**
+  * @variable --lyte-tour-freezelayer-bg
+  * @selector .lyteTourFreezeLayer
+  * @description Background color for the freeze layer behind the tour.
+  * @defaultValue #000
+  * @inputType color
+  * @name Freeze Layer Background Color
+  */
+  --lyte-tour-freezelayer-bg: #000;
+  /**
+  * @variable --lyte-tour-container-box-shadow-color
+  * @selector .lyteTourContainer
+  * @description Box shadow color for the tour container.
+  * @defaultValue rgba(0, 0, 0, 0.1)
+  * @inputType color
+  * @name Container Box Shadow Color
+  */
+  --lyte-tour-container-box-shadow-color: rgba(0, 0, 0, 0.1);
+  /**
+  * @variable --lyte-tour-step-indicator-bg
+  * @selector lyte-tour-step-indicator
+  * @description Background color for the inactive step indicators.
+  * @defaultValue #ddd
+  * @inputType color
+  * @name Step Indicator Background Color
+  */
+  --lyte-tour-step-indicator-bg: #ddd;
+  /**
+  * @variable --lyte-tour-step-indicator-hover-bg
+  * @selector lyte-tour-step-indicator:hover, .lyteCurTourStep
+  * @description Background color for the currently active or hovered step indicator.
+  * @defaultValue #5ba1e5
+  * @inputType color
+  * @name Step Indicator Hover Background Color
+  */
+  --lyte-tour-step-indicator-hover-bg: #5ba1e5;
+  /**
+  * @variable --lyte-tour-step-head-font-size
+  * @selector lyte-tour-step-head
+  * @description Font size of the heading inside the tour step.
+  * @defaultValue var(--lyte-font-size-xxl)
+  * @defaultVariableValue 20px
+  * @allowedSuffixes px
+  * @inputType dimension
+  * @name Step Head Font Size
+  */
+  --lyte-tour-step-head-font-size: var(--lyte-font-size-xxl);
+}

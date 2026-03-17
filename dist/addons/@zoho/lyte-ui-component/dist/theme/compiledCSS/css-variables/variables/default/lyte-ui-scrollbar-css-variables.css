@@ -1,0 +1,49 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component scrollbar
+ */
+:root,
+:host {
+  /**
+   * @variable --lyte-scrollbar-zindex
+   * @selector .lyteScrollContainer
+   * @description Z-index for the scrollbar container
+   * @defaultValue var(--lyte-level1-zindex)
+   * @defaultVariableValue 1000
+   * @inputType number
+   */
+  --lyte-scrollbar-zindex: var(--lyte-level1-zindex);
+  /**
+   * @variable --lyte-scrollbar-container-hover-bg
+   * @selector .lyteScrollContainer:hover
+   * @description Background color of scrollbar container on hover
+   * @defaultValue #eee
+   * @inputType color
+   * @name Scrollbar Container Hover Background Color
+   */
+  --lyte-scrollbar-container-hover-bg: #eee;
+  /**
+   * @variable --lyte-scrollbar-scroller-div-bg
+   * @selector .lyteScrollContainer .lyteScrollDiv
+   * @description Background color of the scrollbar thumb
+   * @defaultValue #aaa
+   * @inputType color
+   * @name Scrollbar Scroller Background Color
+   */
+  --lyte-scrollbar-scroller-div-bg: #aaa;
+  /**
+   * @variable --lyte-scrollbar-scroller-div-hover-bg
+   * @selector .lyteScrollContainer .lyteScrollDiv:hover
+   * @description Background color of the scrollbar thumb on hover
+   * @defaultValue #999
+   * @inputType color
+   * @name Scrollbar Scroller Hover Background Color
+   */
+  --lyte-scrollbar-scroller-div-hover-bg: #999;
+}

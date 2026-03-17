@@ -1,0 +1,318 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component mentionsInput
+ */
+:root,
+:host {
+  /**
+	* @variable --lyte-mentionsinput-bg
+	* @selector .lyteMIWrapper
+	* @description Background color for the Mentions Input wrapper
+	* @defaultValue var(--lyte-theme-body-bg)
+	* @defaultVariableValue #fff
+	* @inputType color
+	* @name Background Color
+	*/
+  --lyte-mentionsinput-bg: var(--lyte-theme-body-bg);
+  /**
+	* @variable --lyte-mentionsinput-text-color
+	* @selector .lyteMIWrapper textarea, .lyteMIDropdown
+	* @description Text color used inside textarea and dropdown
+	* @defaultValue var(--lyte-common-text-color2)
+	* @defaultVariableValue #333
+	* @inputType color
+	* @name Text Color
+	*/
+  --lyte-mentionsinput-text-color: var(--lyte-common-text-color2);
+  /**
+	* @variable --lyte-mentionsinput-placeholder-text-color
+	* @selector .lyteMIWrapper textarea::placeholder
+	* @description Placeholder text color for the textarea
+	* @defaultValue #777
+	* @inputType color
+	* @name Placeholder Text Color
+	*/
+  --lyte-mentionsinput-placeholder-text-color: #777;
+  /**
+	* @variable --lyte-mentionsinput-border-color
+	* @selector .lyteMentionsNormalTextarea + textarea
+	* @description Border color for the normal textarea
+	* @defaultValue #d6d6d6
+	* @inputType color
+	* @name Border Color
+	*/
+  --lyte-mentionsinput-border-color: #d6d6d6;
+  /**
+	* @variable --lyte-mentionsinput-active-elem-bg
+	* @selector .lyteMIDropdown lyte-mentions-item:hover, .lyteMIActive
+	* @description Background color for active (hovered) dropdown item
+	* @defaultValue #eaeaea
+	* @inputType color
+	* @name Active Element Background Color
+	*/
+  --lyte-mentionsinput-active-elem-bg: #eaeaea;
+  /**
+	* @variable --lyte-mentionsinput-highlight-elem-bg
+	* @selector .lyteMIDropdown lyte-mentions-item b
+	* @description Highlight background for matched mentions
+	* @defaultValue #ffff99
+	* @inputType color
+	* @name Highlight Element Background Color
+	*/
+  --lyte-mentionsinput-highlight-elem-bg: #ffff99;
+  /**
+	* @variable --lyte-mentionsinput-selected-val-bg
+	* @selector .lyteMentionsStrongDiv
+	* @description Background for selected mention value in display
+	* @defaultValue #e9f4ff
+	* @inputType color
+	* @name Selected Value Background Color
+	*/
+  --lyte-mentionsinput-selected-val-bg: #e9f4ff;
+  /**
+	* @variable --lyte-mentionsinput-zindex
+	* @selector .lyteMIDropdown
+	* @description Z-index level for the mentions dropdown
+	* @defaultValue var(--lyte-level4-zindex)
+	* @defaultVariableValue 1060
+	* @inputType number
+	* @name Z-Index
+	*/
+  --lyte-mentionsinput-zindex: var(--lyte-level4-zindex);
+  /**
+	* @variable --lyte-mentionsinput-box-shadow
+	* @selector .lyteMIDropdown
+	* @description Box shadow used for the mentions dropdown
+	* @defaultValue 0 2px 5px rgba(0, 0, 0, 0.1)
+	* @inputType boxShadow
+	* @name Box Shadow
+	*/
+  --lyte-mentionsinput-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /**
+	* @variable --lyte-mentionsinput-textarea-font-size
+	* @selector .lyteMIWrapper textarea
+	* @description Font size used for the textarea
+	* @defaultValue var(--lyte-font-size-medium)
+	* @defaultVariableValue 15px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Textarea Font Size
+	*/
+  --lyte-mentionsinput-textarea-font-size: var(--lyte-font-size-medium);
+  /**
+	* @variable --lyte-mentionsinput-dropdown-item-font-size
+	* @selector .lyteMIDropdown lyte-mentions-item
+	* @description Font size used for each dropdown item
+	* @defaultValue var(--lyte-font-size-regular)
+	* @defaultVariableValue 14px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Dropdown Item Font Size
+	*/
+  --lyte-mentionsinput-dropdown-item-font-size: var(--lyte-font-size-regular);
+}
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+/*  Mentions Input Related CSS Begins   */
+.lyteMIWrapper {
+  width: 400px;
+  position: relative;
+  background: var(--lyte-mentionsinput-bg);
+  border-radius: 2px;
+}
+.lyteMIWrapper textarea {
+  font-family: var(--lyte-primary-font);
+  font-size: var(--lyte-mentionsinput-textarea-font-size);
+  line-height: 22px;
+  height: 40px;
+  min-height: 40px;
+  display: block;
+  padding: 8px;
+  color: var(--lyte-mentionsinput-text-color);
+  overflow: hidden;
+  background: transparent;
+  position: relative;
+  outline: 0;
+  resize: none;
+  box-sizing: border-box;
+}
+.lyteMIWrapper textarea::placeholder {
+  color: var(--lyte-mentionsinput-placeholder-text-color);
+}
+.lyteMIOffsetDiv {
+  position: fixed;
+  visibility: hidden;
+  top: -9999px;
+  left: -9999px;
+}
+.lyteMIDropdown {
+  font-family: var(--lyte-primary-font);
+  display: none;
+  background: var(--lyte-mentionsinput-bg);
+  border: 1px solid var(--lyte-mentionsinput-border-color);
+  position: absolute;
+  z-index: var(--lyte-mentionsinput-zindex);
+  margin-top: -2px;
+  border-radius: 0 0 2px 2px;
+  box-shadow: var(--lyte-mentionsinput-box-shadow);
+  color: var(--lyte-mentionsinput-text-color);
+  box-sizing: border-box;
+  overflow: auto;
+}
+.lyteMIDropdown ul {
+  margin: 0;
+  padding: 5px 0;
+  max-height: 300px;
+}
+.lyteMIDropdown lyte-mentions-item {
+  background: var(--lyte-mentionsinput-bg);
+  margin: 0;
+  font-family: var(--lyte-primary-font);
+  overflow: hidden;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: var(--lyte-mentionsinput-dropdown-item-font-size);
+  padding: 5px 10px;
+  text-align: right;
+  display: flex;
+  align-items: center;
+}
+.lyteMIDropdown lyte-mentions-item img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  float: right;
+  margin-left: 10px;
+}
+.lyteMIDropdown lyte-mentions-item em {
+  font-weight: bold;
+  font-style: normal;
+}
+.lyteMIDropdown lyte-mentions-item:hover,
+.lyteMIDropdown lyte-mentions-item.lyteMIActive {
+  background: var(--lyte-mentionsinput-active-elem-bg);
+}
+.lyteMIDropdown lyte-mentions-item b {
+  background: var(--lyte-mentionsinput-highlight-elem-bg);
+  font-weight: normal;
+}
+.lyteMIDisplayBlock {
+  display: block;
+}
+.lyteMIHide {
+  visibility: hidden;
+}
+.lyteMIAddOverflow {
+  overflow: auto;
+}
+.lyteMentions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px;
+  color: var(--lyte-mentionsinput-bg);
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: right;
+  line-height: 22px;
+  pointer-events: none;
+}
+.lyteMIWithCloseIcon .lyteMentions {
+  z-index: 1;
+}
+.lyteInput .lyteMentions {
+  padding-right: 0;
+}
+.lyteMentionsNormalTextarea {
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+.lyteMentionsNormalTextarea + textarea {
+  border: 1px solid var(--lyte-mentionsinput-border-color);
+  border-radius: 2px;
+  width: 100%;
+}
+.lyteMentionsNormalTextarea + textarea:hover {
+  border: 1px solid #c1c1c1;
+}
+.lyteMentionsNormalTextarea + textarea:focus {
+  border: 1px solid #7fceef;
+}
+.lyteMentions .lyteMentionsInnerDiv {
+  color: transparent;
+  white-space: pre-wrap;
+  position: relative;
+}
+.lyteMentions .lyteMentionsStrongDiv {
+  font-weight: normal;
+  background: var(--lyte-mentionsinput-selected-val-bg);
+  padding: 2px 0;
+  line-height: 16px;
+  position: relative;
+  color: #111;
+  pointer-events: all;
+}
+.lyteMentionsCustomWrapper {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+}
+.lyteBodyWrapper {
+  overflow: hidden;
+}
+.lyteMIWrapper .lyteCloseIcon {
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #0984E3;
+  z-index: 1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transform: translate(40%, -40%);
+  cursor: pointer;
+}
+.lyteMIWrapper .lyteCloseIcon::after {
+  content: "";
+  -webkit-mask: var(--lyte-sprite-image) no-repeat -3px -15px;
+  mask: var(--lyte-sprite-image) no-repeat -3px -15px;
+  background-color: #fff;
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+}
+.lyteMentionsStrongDiv:hover .lyteCloseIcon {
+  display: inline-flex;
+}
+.lyteMIForInput {
+  overflow: auto;
+  scrollbar-width: none;
+}
+.lyteMIForInput::-webkit-scrollbar {
+  display: none;
+}
+.lyteMIForInput .lyteMentions {
+  width: max-content;
+}
+.lyteMIForInput .lyteMentionsStrongDiv {
+  vertical-align: top;
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/*  Mentions Input Related CSS ENDS   */

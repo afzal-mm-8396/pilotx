@@ -1,0 +1,314 @@
+/**
+ * @component lyte-listview
+ */
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+
+	/**
+	* @variable --lyte-listview-wrapper-sticky-table-bg
+	* @selector .lyteListviewWrapper .lyteStickyTable lyte-th
+	* @description Background color for sticky table header cells
+	* @defaultValue #fff
+	* @inputType color
+	* @name Sticky Table Header Background Color
+	*/
+	--lyte-listview-wrapper-sticky-table-bg: #fff;
+
+	/**
+	* @variable --lyte-listview-wrapper-sticky-table-border-bottom-color
+	* @selector .lyteListviewWrapper .lyteStickyTable lyte-th
+	* @description Border bottom color for sticky table header
+	* @defaultValue #d6d6d6
+	* @inputType color
+	* @name Sticky Table Header Border Bottom Color
+	*/
+	--lyte-listview-wrapper-sticky-table-border-bottom-color: #d6d6d6;
+
+	/**
+	* @variable --lyte-listview-wrapper-table-sticky-table-border-color
+	* @selector .lyteListviewWrapper lyte-table.lyteStickyTable
+	* @description Border color of sticky ListView table
+	* @defaultValue #d6d6d6
+	* @inputType color
+	* @name Sticky Table Border Color
+	*/
+	--lyte-listview-wrapper-table-sticky-table-border-color: #d6d6d6;
+
+	/**
+	* @variable --lyte-listview-fake-header-bg
+	* @selector .lyteListFakeHeader
+	* @description Background color for fake header row
+	* @defaultValue #fff
+	* @inputType color
+	* @name Fake Header Background Color
+	*/
+	--lyte-listview-fake-header-bg: #fff;
+
+	/**
+	* @variable --lyte-listview-fake-cell-odd-bg
+	* @selector .lyteListFakeCell:nth-child(odd)
+	* @description Background color for odd fake header cells
+	* @defaultValue #fff
+	* @inputType color
+	* @name Fake Cell Odd Background Color
+	*/
+	--lyte-listview-fake-cell-odd-bg: #fff;
+
+	/**
+	* @variable --lyte-listview-fake-cell-even-bg
+	* @selector .lyteListFakeCell:nth-child(even)
+	* @description Background color for even fake header cells
+	* @defaultValue #f7f7f7
+	* @inputType color
+	* @name Fake Cell Even Background Color
+	*/
+	--lyte-listview-fake-cell-even-bg: #f7f7f7;
+
+	/**
+	* @variable --lyte-listview-fixed-bg
+	* @selector .lyteListFixed
+	* @description Background color for fixed ListView columns
+	* @defaultValue #fff
+	* @inputType color
+	* @name Fixed Column Background Color
+	*/
+	--lyte-listview-fixed-bg: #fff;
+
+	/**
+	* @variable --lyte-listview-resizeHandler-after-bg
+	* @selector .lyteListResizeHandler::after
+	* @description Background color for resize handler line
+	* @defaultValue #d7e2ed
+	* @inputType color
+	* @name Resize Handler Line Background Color
+	*/
+	--lyte-listview-resizeHandler-after-bg: #d7e2ed;
+
+	/**
+	* @variable --lyte-listview-wrapper-td-border-bottom-color
+	* @selector .lyteListviewWrapper td
+	* @description Border color for ListView table cells
+	* @defaultValue #e2e2e2
+	* @inputType color
+	* @name Table Cell Border Bottom Color
+	*/
+	--lyte-listview-wrapper-td-border-bottom-color: #e2e2e2;
+
+	/**
+	* @variable --lyte-listview-wrapper-td-bg
+	* @selector .lyteListviewWrapper td
+	* @description Background color for ListView table cells
+	* @defaultValue #fff
+	* @inputType color
+	* @name Table Cell Background Color
+	*/
+	--lyte-listview-wrapper-td-bg: #fff;
+
+	/**
+	* @variable --lyte-listview-wrapper-td-color
+	* @selector .lyteListviewWrapper td
+	* @description Text color for ListView table cells
+	* @defaultValue #111
+	* @inputType color
+	* @name Table Cell Text Color
+	*/
+	--lyte-listview-wrapper-td-color: #111;
+
+	/**
+	* @variable --lyte-listview-edit-element-border-bg
+	* @selector .lyteListEditElement
+	* @description Border color for editable cells in ListView
+	* @defaultValue #5ba1e5
+	* @inputType color
+	* @name Editable Cell Border Color
+	*/
+	--lyte-listview-edit-element-border-bg: #5ba1e5;
+
+	/**
+	* @variable --lyte-listview-multiselect-filter-table-border-color
+	* @selector .lyteMultiselectFilterTable
+	* @description Border color for multiselect filter table
+	* @defaultValue #d6d6d6
+	* @inputType color
+	* @name Multiselect Filter Table Border Color
+	*/
+	--lyte-listview-multiselect-filter-table-border-color: #d6d6d6;
+
+	/**
+	* @variable --lyte-listview-dateFilter-disabled-element-bg
+	* @selector .lyteDateFilterDisabledElement
+	* @description Background color for disabled date filter inputs
+	* @defaultValue #eee
+	* @inputType color
+	* @name Disabled Date Filter Background Color
+	*/
+	--lyte-listview-dateFilter-disabled-element-bg: #eee;
+
+	/**
+	* @variable --lyte-listview-filter-border-color
+	* @selector .lyteListFilters
+	* @description Border color for filter block container
+	* @defaultValue #d6d6d6
+	* @inputType color
+	* @name Filter Border Color
+	*/
+	--lyte-listview-filter-border-color: #d6d6d6;
+
+	/**
+	* @variable --lyte-listview-filter-key-color
+	* @selector .lyteListFilterKey
+	* @description Font color for filter key labels
+	* @defaultValue #777
+	* @inputType color
+	* @name Filter Key Color
+	*/
+	--lyte-listview-filter-key-color: #777;
+
+	/**
+	* @variable --lyte-listview-filter-value-wrap-border-color
+	* @selector .lyteListFilterValueWrap .lyteListMultipleSelected
+	* @description Border color for selected filter value chips
+	* @defaultValue #d6d6d6
+	* @inputType color
+	* @name Filter Value Wrap Border Color
+	*/
+	--lyte-listview-filter-value-wrap-border-color: #d6d6d6;
+
+	/**
+	* @variable --lyte-listview-remove-filter-bg
+	* @selector .lyteListRemoveFilter
+	* @description Background color for remove (close) icon on filter chips
+	* @defaultValue #000
+	* @inputType color
+	* @name Remove Filter Background Color
+	*/
+	--lyte-listview-remove-filter-bg: #000;
+
+	/**
+	* @variable --lyte-listview-remove-filter-hover-bg
+	* @selector .lyteListRemoveFilter:hover
+	* @description Hover background color for remove (close) icon on filter chips
+	* @defaultValue #f00
+	* @inputType color
+	* @name Remove Filter Hover Background Color
+	*/
+	--lyte-listview-remove-filter-hover-bg: #f00;
+
+	/**
+	* @variable --lyte-listview-table-accordian-icon-bg
+	* @selector .lyteListViewTableAccordionIcon
+	* @description Background color for accordion icon in list rows
+	* @defaultValue #333
+	* @inputType color
+	* @name Table Accordion Icon Background Color
+	*/
+	--lyte-listview-table-accordian-icon-bg: #333;
+
+	/**
+	* @variable --lyte-listview-group-heading-hover-bg
+	* @selector .lyteGroupHeading:hover
+	* @description Background color for group heading row on hover
+	* @defaultValue #f7f9fb
+	* @inputType color
+	* @name Group Heading Hover Background Color
+	*/
+	--lyte-listview-group-heading-hover-bg: #f7f9fb;
+
+	/**
+	* @variable --lyte-listview-group-heading-hover-td-bg
+	* @selector .lyteGroupHeading:hover td
+	* @description Background color for cells in group heading row on hover
+	* @defaultValue transparent
+	* @inputType color
+	* @name Group Heading Hover Cell Background Color
+	*/
+	--lyte-listview-group-heading-hover-td-bg: transparent;
+}
+
+
+.lyteListviewWrapperStickyTableThMixin() {
+    @bg: var(--lyte-listview-wrapper-sticky-table-bg);
+    @border-bottom: 2px solid var(--lyte-listview-wrapper-sticky-table-border-bottom-color);
+}
+
+.lyteListviewWrapperTableStickyTableMixin() {
+	@border: 1px solid var(--lyte-listview-wrapper-table-sticky-table-border-color);
+}
+
+.lyteListFakeHeaderMixin() {
+    @bg: var(--lyte-listview-fake-header-bg);
+}
+
+.LytelistfakecellnthchildOddMixin() {
+	@bg: var(--lyte-listview-fake-cell-odd-bg);
+}
+
+.LytelistfakecellnthchildEvenMixin() {
+	@bg: var(--lyte-listview-fake-cell-even-bg);
+}
+
+.lyteListFixedMixin() {
+	@bg: var(--lyte-listview-fixed-bg);
+}
+
+.lyteListResizeHandlerAfterMixin() {
+	@bg: var(--lyte-listview-resizeHandler-after-bg);
+}
+
+.lyteListviewWrapperTdMixin() {
+    @border-bottom: 1px solid var(--lyte-listview-wrapper-td-border-bottom-color);
+	@bg: var(--lyte-listview-wrapper-td-bg);
+	@color: var(--lyte-listview-wrapper-td-color);
+}
+
+.lyteListviewWrapperTdHoverMixin() {
+	@bg: var(--lyte-listview-wrapper-td-bg);
+}
+
+.lyteListEditElementMixin() {
+	@border: 1px solid var(--lyte-listview-edit-element-border-bg);
+}
+
+.lyteMultiselectFilterTableMixin() {
+	@border: 1px solid var(--lyte-listview-multiselect-filter-table-border-color);
+}
+
+.lyteDateFilterDisabledElementMixin() {
+	@bg: var(--lyte-listview-dateFilter-disabled-element-bg);
+}
+
+.lyteListFiltersMixin() {
+	@border: 1px solid var(--lyte-listview-filter-border-color);
+}
+
+.lyteListFilterKeyMixin() {
+	@color: var(--lyte-listview-filter-key-color);
+}
+
+.lyteListFilterValueWrapMixin() {
+	@border: 1px solid var(--lyte-listview-filter-value-wrap-border-color);
+}
+
+.lyteListRemoveFilterMixin() {
+	@bg: var(--lyte-listview-remove-filter-bg);
+}
+
+
+.lyteListRemoveFilterHoverMixin() {
+	@bg: var(--lyte-listview-remove-filter-hover-bg);
+}
+
+.lyteListViewTableAccordionIconMixin() {
+	@bg: var(--lyte-listview-table-accordian-icon-bg);
+}
+
+.lyteGroupHeadingHoverMixin() {
+	@bg: var(--lyte-listview-group-heading-hover-bg);
+}
+
+.lyteGroupHeadingHoverTdMixin() {
+	@bg: var(--lyte-listview-group-heading-hover-td-bg);
+}

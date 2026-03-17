@@ -1,0 +1,124 @@
+@use "../global/global.variables.scss" as global;
+
+$cssMaskIconLyteAlertSuccessIconColor: #73c881;
+$cssMaskIconLyteAlertErrorIconColor: #df5342;
+$cssMaskIconLyteAlertWarningIconColor: #ffa800;
+$cssMaskIconLyteAlertInfoIconColor: #4da4f9;
+$cssMaskIconLyteAlertConfirmIconColor: #4da4f9;
+$cssMaskIconLyteAlertCloseIconColor: global.$lyteIconsThemeColor;
+
+$lyteAlertIconsBgMap: (
+	"background-image": global.$lytesprite,
+	"mask-image": global.$lytesprite,
+) !default;
+
+$lyteAlertWrapperMap: (
+    "z-index": global.$lyteAlertPopupzIndex,
+) !default;
+
+$lyteAlertPopupMap: (
+	"padding": 20px 25px 25px,
+	"background": global.$lyteAlertPopupBg,
+	"border": 1px solid global.$lyteAlertPopBorder,
+	"border-radius": 3px,
+	"box-shadow": 0px 2px 15px 0px global.$lyteAlertPopupBoxShadow,
+	"min-width": 350px,
+	"max-width": 550px,
+    "z-index": 10,
+) !default;
+
+$lyteAlertPopupSlidedownMap: (
+    "top": -100%,
+) !default;
+
+$lyteAlertPopupZoomInMap: (
+    "opacity": 0,
+) !default;
+
+$lyteAlertPopupOpenedMap: (
+    "opacity": 1,    
+) !default;
+
+$lyteAlertHeaderMap: (
+	"font-size": 18px,
+	"color": global.$lyteAlertPopupHeaderColor,
+	"margin-bottom": 15px,
+) !default;
+
+$lyteAlertPrimaryMsgMap: (
+	"margin-bottom": 5px,
+    "font-size": 15px,
+) !default;
+
+$lyteAlertSecondaryMsgMap: (
+	"font-size": 14px,
+	"color": global.$lyteAlertPopupContentColor,
+) !default;
+
+$lyteAlertFooterMap: (
+	"padding-top": 25px,
+) !default;
+
+$lyteAlertFooterBtnMap: (
+	"margin-left": 7px,
+) !default;
+
+$lyteAlertFreezeLayerMap: (
+	"z-index": 5,
+	"background": #000,
+	"opacity": 0,
+) !default;
+
+$lyteAlertStatusIconMap: (
+	"background": global.$lytesprite,
+	"mask-image": global.$lytesprite,
+	"width": 28px,
+    "height": 28px,
+    "margin-right": 10px,
+) !default;
+
+$lyteSuccessAlertIconMap: (
+    "background-position": -91px -154px,
+	"mask-position": -91px -154px,
+	"background-color": $cssMaskIconLyteAlertSuccessIconColor,
+) !default;
+
+$lyteErrorAlertIconMap: (
+    "background-position": -131px -154px,
+	"mask-position": -131px -154px,
+	"background-color": $cssMaskIconLyteAlertErrorIconColor,
+) !default;
+
+$lyteWarningAlertIconMap: (
+    "background-position": -210px -154px,
+	"mask-position": -210px -154px,
+	"background-color": $cssMaskIconLyteAlertWarningIconColor,
+) !default;
+
+$lyteInfoAlertIconMap: (
+    "background-position": -170px -154px,
+	"mask-position": -170px -154px,
+	"background-color": $cssMaskIconLyteAlertInfoIconColor,
+) !default;
+
+$lyteConfirmAlertIconMap: (
+    "background-position": -250px -154px,
+	"mask-position": -250px -154px,
+	"background-color": $cssMaskIconLyteAlertConfirmIconColor,
+) !default;
+
+$lyteAlertCloseIconMap: (
+	"background-position": -52px 0px,
+	"mask-position": -52px 0px,
+	"background-color": $cssMaskIconLyteAlertCloseIconColor,
+	"width": 13px,
+	"height": 13px,
+	"opacity": 0.5,
+	"top": 27px,
+	"right": 23px,
+	"transform": scale(1.3),
+) !default;
+
+$lyteAlertCloseIconHoverMap: (
+	"opacity": 1,
+) !default;

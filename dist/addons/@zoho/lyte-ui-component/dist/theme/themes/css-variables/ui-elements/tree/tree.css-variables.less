@@ -1,0 +1,84 @@
+/**
+ * @component lyte-tree
+ */
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+	/**
+	* @variable --lyte-tree-bg
+	* @selector lyte-tree, .lyteTreeBodyDivLastVisibleElem::after, .treeOpenIconArrow, .treeCloseIconArrow
+	* @description Background color for the tree component and connecting lines.
+	* @defaultValue var(--lyte-theme-body-bg)
+	* @defaultVariableValue #fff
+	* @inputType color
+	* @name Background Color
+	*/
+	--lyte-tree-bg: @themeBodyBackground;
+
+	/**
+	* @variable --lyte-tree-border-color
+	* @selector .mainContainer::before, lyte-tree-content::before
+	* @description Color used for the border lines connecting tree elements.
+	* @defaultValue #aaa
+	* @inputType color
+	* @name Border Color
+	*/
+	--lyte-tree-border-color: #aaa;
+
+	/**
+	* @variable --lyte-tree-collapse-hover-border-color
+	* @selector lyte-tree-icon:hover .collapseBox
+	* @description Border color of the collapse icon box on hover.
+	* @defaultValue #333
+	* @inputType color
+	* @name Collapse Icon Hover Border Color
+	*/
+	--lyte-tree-collapse-hover-border-color: #333;
+
+	/**
+	* @variable --lyte-tree-text-color
+	* @selector .treeValue, .lyteDataTreeNode, .lyteTreeNoChildText
+	* @description Default text color used in the tree node labels.
+	* @defaultValue var(--lyte-common-text-color)
+	* @defaultVariableValue #333
+	* @inputType color
+	* @name Text Color
+	*/
+	--lyte-tree-text-color: @commonTextColor;
+
+	/**
+	* @variable --lyte-tree-text-hover-color
+	* @selector lyte-tree-icon:hover .treeValue
+	* @description Text color used on hover of the tree node labels.
+	* @defaultValue var(--lyte-common-text-hover-color)
+	* @defaultVariableValue #111
+	* @inputType color
+	* @name Text Hover Color
+	*/
+	--lyte-tree-text-hover-color: @commonTextHoverColor;
+
+	/**
+	* @variable --lyte-tree-arrow-bg
+	* @selector .lyteDataTreeClosed::before, .lyteDataTreeOpened::before
+	* @description Background color used for the tree expand/collapse arrows.
+	* @defaultValue #555
+	* @inputType color
+	* @name Arrow Background Color
+	*/
+	--lyte-tree-arrow-bg: #555;
+
+	/**
+	* @variable --lyte-tree-value-font-size
+	* @selector .treeValue
+	* @description Font size of the tree value text.
+	* @defaultValue var(--lyte-font-size-regular)
+	* @defaultVariableValue 14px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Value Font Size
+	*/
+	--lyte-tree-value-font-size: var(--lyte-font-size-regular);
+
+}

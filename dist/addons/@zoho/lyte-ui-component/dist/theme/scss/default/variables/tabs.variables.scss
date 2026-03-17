@@ -1,0 +1,183 @@
+@use "../global/global.variables.scss" as global;
+
+$cssMaskIconLyteTabCloseIconColor: global.$lyteIconsThemeColor;
+$cssMaskIconLyteTabThreeDotsIconColor: #777;
+
+$lyteTabsMap: (
+	"background": global.$lyteTabBg,
+) !default;
+$lyteTabHeadMap: (
+	"border": 1px solid global.$lyteTabBorder,
+) !default;
+$lyteTabTitleMap: (
+	"font-size": 15px,
+	"color": global.$lyteTabTitleColor,
+	"padding": 10px 5px,
+    "margin": 0 10px,
+	"background": global.$lyteTabBg,
+) !default;
+$lyteTabTitleHoverMap: (
+	"color": global.$lyteTabTextColor,
+) !default;
+$lyteTabActiveHoverMap: (
+	"color": global.$lyteTabActiveColor,
+) !default;
+$lyteTabBodyMap: (
+	"border": 1px solid global.$lyteTabBorder,
+	"padding": 15px,
+	"font-size": 14px,
+) !default;
+$lyteTabContentMap: (
+    "color": global.$lyteTabTextColor,
+) !default;
+$lyteTabTopBodyMap: (
+    "border-top": 0,
+) !default;
+$lyteTabTopHeadMap: (
+	"border-bottom-color": global.$lyteTabTitleBorder,
+) !default;
+$lyteTabTopTitleMap: (
+	"margin-bottom": -1px,
+	"border-bottom": 1px solid global.$lyteTabTitleBorder,
+) !default;
+$lyteTabTopActiveTitleMap: (
+	"border-bottom": 1px solid global.$lyteTabActiveColor,
+) !default;
+$lyteTabTopTitleHoverMap: (
+	"border-bottom-color": global.$lyteTabTitleHoverBorder,
+) !default;
+$lyteTabTopActiveTitleHoverMap: (
+	"border-bottom-color": global.$lyteTabActiveColor,
+) !default;
+$lyteTabBottomTabHeadMap: (
+	"border-top-color": global.$lyteTabTitleBorder,
+) !default;
+$lyteTabBottomBodyMap: (
+    "border-bottom": 0,
+) !default;
+$lyteTabBottomTitleMap: (
+	"border-top": 1px solid global.$lyteTabTitleBorder,
+	"margin-top": -1px,
+) !default;
+$lyteTabBottomActiveTitleMap: (
+	"border-top": 1px solid global.$lyteTabActiveColor,
+) !default;
+$lyteTabBottomTitleHoverMap: (
+	"border-top-color": global.$lyteTabTitleHoverBorder,
+) !default;
+$lyteTabBottomActiveTitleHoverMap: (
+	"border-top-color": global.$lyteTabActiveColor,
+) !default;
+$lyteTabDefaultRightMap: (
+	"padding": 10px 0,
+	"width": 200px,
+) !default;
+$lyteTableLeftHeadMap: (
+    "border-right": 0,
+) !default;
+$lyteTabDefaultRightBodyMap: (
+	"width": calc(100% - 200px),
+    "padding-top": 18px,
+) !default;
+$lyteTabDefaultLeftActiveTitleMap: (
+	"border-left": 1px solid global.$lyteTabActiveColor,
+	"background": global.$lyteTabRightLeftItemBg,
+) !default;
+$lyteTabRightHeadMap: (
+    "border-left": 0,
+) !default;
+$lyteTabLeftRightTitleMap: (
+    "margin": 0,
+    "padding": 10px 15px,
+) !default;
+$lyteTabDefaultRightTitleHoverMap: (
+	"background": global.$lyteTabRightLeftItemHoverBg,
+) !default;
+$lyteTabCloseIconMap: (
+	"background-image": global.$lytesprite,
+	"background-position": -54px -2px,
+	"mask-image": global.$lytesprite,
+	"mask-position":-54px -2px,
+	"background-color": $cssMaskIconLyteTabCloseIconColor,
+	"width": 8px,
+	"height": 8px,
+    "margin-left": 10px,
+    "margin-top": 3px,
+) !default;
+$lyteTabMoreMenuMap: (
+    "opacity": 0.7,
+    "padding": 10px,
+) !default;
+$lyteTabMoreMenuHoverMap: (
+    "opacity": 1,
+) !default;
+$lyteTabKebebMenuMap: (
+    "background-image": global.$lytesprite,
+    "background-position": -294px -165px,
+	"mask-image": global.$lytesprite,
+	"mask-position": -294px -165px,
+	"background-color": $cssMaskIconLyteTabThreeDotsIconColor,
+    "width": 17px,
+    "height": 5px,
+) !default;
+$lyteNestedTabTopTabHeadMap: (
+	"border": 1px solid global.$lyteTabBorder,
+) !default;
+$lyteNestedTabTopTabTitleMap: (
+	"margin": 0 10px,
+	"padding": 10px 5px,
+	"margin-bottom": -1px,
+	"border": 0,
+	"border-bottom": 1px solid global.$lyteTabTitleBorder,
+) !default;
+$lyteNestedTabTopTabTitleHoverMap: (
+	"background": global.$lyteTabBg,
+	"border-bottom": 1px solid global.$lyteTabTitleHoverBorder,
+) !default;
+$lyteNestedTabTopTabTitleActiveMap: (
+	"border-bottom": 1px solid global.$lyteTabActiveColor,
+	"background": global.$lyteTabBg,
+) !default;
+$lyteNestedTabTopTabBodyMap: (
+	"padding": 15px,
+	"border": 1px solid global.$lyteTabBorder,
+) !default;
+$lyteNestedTabBottomTabHeadMap: (
+	"border": 1px solid global.$lyteTabBorder,
+) !default;
+$lyteNestedTabBottomTabTitleMap: (
+	"margin": 0 10px,
+	"padding": 10px 5px,
+	"margin-top": -1px,
+	"border-top": 1px solid global.$lyteTabTitleBorder,
+) !default;
+$lyteNestedTabBottomTabTitleHoverMap: (
+	"background": global.$lyteTabBg,
+	"border-top": 1px solid global.$lyteTabTitleHoverBorder,
+) !default;
+$lyteNestedTabBottomTabTitleActiveMap: (
+	"border-top": 1px solid global.$lyteTabActiveColor,
+	"background": global.$lyteTabBg,
+) !default;
+$lyteNestedTabBottomTabBodyMap: (
+	"padding": 15px,
+	"border": 1px solid global.$lyteTabBorder,
+) !default;
+$lyteNestedTabLeftTabHeadMap: (
+	"border": 1px solid global.$lyteTabBorder,
+) !default;
+$lyteNestedTabLeftTabTitleActiveMap: (
+	"border-left": 1px solid global.$lyteTabActiveColor,
+) !default;
+$lyteNestedTabLeftTabBodyMap: (
+	"border": 1px solid global.$lyteTabBorder,
+) !default;
+$lyteNestedTabRightTabHeadMap: (
+	"border": 1px solid global.$lyteTabBorder,
+) !default;
+$lyteNestedTabRightTabTitleActiveMap: (
+	"border-left": 1px solid global.$lyteTabActiveColor,
+) !default;
+$lyteNestedTabRightTabBodyMap: (
+	"border": 1px solid global.$lyteTabBorder,
+) !default;

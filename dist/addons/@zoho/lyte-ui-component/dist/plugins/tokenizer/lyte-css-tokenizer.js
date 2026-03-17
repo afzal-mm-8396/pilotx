@@ -1,0 +1,174 @@
+( function() {
+	$L.snippets.registerLanguage( 'css', {
+		tokenConfig: [ 
+		{
+			'token': 'comment',
+			'class': 'lyteCSSComment',
+			'regex': /\/\*([\s\S]*?)\*\//
+		}, 
+		{
+			'token': 'punctuation',
+			'class': 'lyteCSSPunctuation',
+			'regex': /}/
+		},
+		{
+			'group': 'media-rule',
+			'regex': /@[\s\S]+?{/,
+			'matched-elements': [ {
+				'token': 'punctuation',
+				'regex': /@|{/,
+				'class': 'lyteCSSPunctuation'
+			}, {
+				'token': 'media-words',
+				'regex': /[^(@{]+/,
+				'class': 'lyteCSSMediaWords'
+			}, {
+				'token': 'media-conditions',
+				'regex': /\([\s\S]*?\)/,
+				'class': 'lyteCSSMediaConditions'
+			} ]
+		},
+		{
+			'group': 'ruleset',
+			'regex': /[^@}\s\/][\s\S]+?(?={){[\s\S]*?(?=})}/,
+			'matched-elements': [ {
+				'group': 'selector',
+				// 'regex': /.+?(?={)/,
+				'regex': /[\s\S]+?(?={)/,
+				'matched-elements': [ {
+					'token': 'selector',
+					'class': 'lyteCSSSelector',
+					'regex': /[^+>~\[]*/
+				}, {
+					'token': 'combinator',
+					'class': 'lyteCSSCombinator',
+					'regex': /[+>~]/
+				}, {
+					'group': 'attribute-selector',
+					'regex': /\[.+?(?=\])\]/,
+					'matched-elements': [
+						{
+							'token': 'punctuation',
+							'class': 'lyteCSSPunctuation',
+							'regex': /[\[\]]/
+						},
+						{
+							'token': 'attribute-name',
+							'class': 'lyteCSSAttributeName',
+							// 'regex': /[^\[\]=]+?(?==)/
+							'regex': /[^\[\]=]+|(?<=\[)[^\[\]]+(?=\])/
+						},
+						{
+							'group': 'attribute-value',
+							'regex': /=.*?(?=])]/,
+							'matched-elements': [
+								{
+									'token': 'punctuation',
+									'class': 'lyteCSSPunctuation',
+									'regex': /[=\]]/
+								},
+								{
+									'token': 'attribute-value',
+									'regex': /[^=]*?(?=])/,
+									'class': 'lyteCSSAttributeValue'
+								}
+							]
+						}
+					]
+				} ]
+			}, {
+				'group': 'rulebody',
+				'regex': /{[\s\S]*?(?=})}/,
+				'matched-elements': [ {
+					'class': 'lyteCSSPunctuation',
+					'token': 'punctuation',
+					'regex': /[{}]/
+				}, {
+						'token': 'whitespace',
+						'regex': /\s+/
+					}, {
+						'token': 'comment',
+						'class': 'lyteCSSComment',
+						'regex': /\/\*([\s\S]*?)\*\//
+					}, {
+						'group': 'new-declaration',
+					'regex': /^\{\s*([\w-]+\s*:\s*[\w%#(),.\s-]+(?:\([^\)]+\))?\s*;?\s*)+\}$/,
+						'matched-elements': [{
+							'token': 'rule-name',
+							'regex': /[^\s{}]+?(?=:)/,
+							'class': 'lyteCSSRuleName'
+						}, {
+							'group': 'rule-value',
+							'regex': /:[\s\S]+?(?=[;}]|\/\*);?/,
+							'matched-elements': [{
+								'group': 'rule-value',
+								'regex': /[^:;][^;}]*/,
+								'matched-elements': [{
+									'token': 'color-value',
+									'regex': /\s*#.*/,
+									'class': 'lyteCSSColorValue'
+								}, {
+									'token': 'important-keyword',
+									'regex': /!important/,
+									'class': 'lyteCSSImportant'
+								}, {
+									'token': 'css-function',
+									'regex': /[a-zA-Z0-9-]+\s*\((?:[^()]*|\((?:[^()]*|\([^()]*\))*\))*\)/,
+									'class': 'lyteCSSValueFunction'
+								}, {
+									'token': 'rule-value',
+									'regex': /[a-zA-Z0-9%'"+-./]+/,
+									'class': 'lyteCSSRuleValue'
+								}]
+							}, {
+								'token': 'punctuation',
+								'regex': /[:;}]/,
+								'class': 'lyteCSSPunctuation'
+							}]
+						}, {
+							'class': 'lyteCSSPunctuation',
+							'token': 'punctuation',
+							'regex': /[{}()]/
+						}
+						]
+					}, {
+					'group': 'declaration',
+					'regex': /[^{}\s\/][^{}]*?(?=[;}]|\/\*);?/,
+					'matched-elements': [{
+						'token': 'rule-name',
+						'regex': /[^\s{}]+?(?=:)/,
+						'class': 'lyteCSSRuleName'
+					}, {
+						'group': 'rule-value',
+						'regex': /:[\s\S]+?(?=[;}]|\/\*|$);?/,
+						'matched-elements': [ {
+							'group': 'rule-value',
+							'regex': /[^:;][^;}]*/,
+							'matched-elements': [ {
+								'token': 'color-value',
+								'regex': /\s*#.*/,
+								'class': 'lyteCSSColorValue'
+							}, {
+								'token': 'important-keyword',
+								'regex': /!important/,
+								'class': 'lyteCSSImportant'
+							}, {
+								'token': 'css-function',
+								'regex': /[a-zA-Z0-9-]+\s*\((?:[^()]*|\((?:[^()]*|\([^()]*\))*\))*\)/,
+								'class': 'lyteCSSValueFunction'
+							}, {
+								'token': 'rule-value',
+								'regex': /[a-zA-Z0-9%'"+-./]+/,
+								'class': 'lyteCSSRuleValue'
+							} ]
+						}, {
+							'token': 'punctuation',
+							'regex': /[:;]/,
+							'class': 'lyteCSSPunctuation'
+						} ]
+					} ]
+				} ] 
+			} ]
+		} ]
+	} );
+} )();

@@ -1,0 +1,187 @@
+
+/* Default theme imported */
+@import "../themes/default/ui-elements/treetable/treetable.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+
+@import (optional) "../themes/@{treeTable}/ui-elements/treetable/treetable.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{treeTable}/global/@{direction}.less";
+
+
+lyte-tree-table {
+	.lyteTreeTableMixin();
+	display: block;
+	box-sizing: border-box;
+	overflow: auto;
+	position: relative;
+	border: @border;
+}
+lyte-tree-table-node {
+	display: table;
+	width: 100%;
+}
+
+lyte-tree-table-header {
+	display: table-header-group;
+}
+.lyteTreeTableRow,
+lyte-tree-table-header > lyte-yield {
+	display: table-row;
+}
+lyte-tree-table-th,
+lyte-tree-table-td {
+	.lyteTreeTableThTdCommonMixin();
+	display: table-cell;
+	padding: @padding;
+}
+lyte-tree-table-body {
+	display: table-row-group;
+}
+lyte-tree-table-th {
+	.lyteTreeTableThMixin();
+	background: @bg;
+	border-right: @border-right;
+	position: sticky;
+	top: @top;
+	z-index: @z-index;
+}
+.lyteTreeFixedHeader {
+	.lyteTreeFixedHeaderMixin();
+	left: @left;
+	z-index: @z-index;
+}
+lyte-tree-table-td {
+	.lyteTreeTableTdMixin();
+	border-right: @border-right;
+	border-bottom: @border-bottom;
+}
+.lyteTreeFixedCol {
+	.lyteTreeFixedColMixin();
+	position: sticky;
+	left: @left;
+	background: @bg;
+	z-index: @z-index;
+}
+.lyteTreeTableRow:last-of-type lyte-tree-table-td {
+	.lyteTreeTableRowLastOfTypeTdMixin();
+	border-bottom: @border-bottom;
+}
+lyte-tree-table-td:last-of-type {
+	.lyteTreeTableTdlastoftypeMixin();
+	border-right: @border-right;
+}
+lyte-tree-table-td:first-child {
+	.lyteTreeTableTdfirstchildMixin();
+	padding-left: @padding-left;
+}
+lyte-tree-table-icon {
+	.lyteTreeTableIconMixin();
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+	width: @w;
+	height: @h;
+	vertical-align: middle;
+	margin-left: @margin-left;
+}
+lyte-tree-table-icon::after {
+	.lyteTreeTableIconAfterMixin();
+	content: '';
+	display: inline-block;
+	width: @w;
+	height: @h;
+	border-right: @border-right;
+	border-left: @border-left;
+	border-top: @border-top;
+	transition: transform 0.3s ease;
+}
+.lyteTreeTableClosedRow lyte-tree-table-icon {
+	.lyteTreeTableClosedRowTableIconMixin();
+	transform: @transform;
+}
+.lyteTreeLastFixedCol {
+	.lyteTreeLastFixedColMixin();
+	box-shadow: @box-shadow;
+	background: @bg;
+}
+.lyteTreeTableDispNone {
+	display: none;
+}
+
+lyte-tree-table-node-wrapper {
+	.lyteTreeTableNodeWrapperMixin();
+    display: block;
+    width: @w;
+    height: @h;
+    overflow: scroll;
+}
+lyte-tree-table-infinite-tr.lyteTreeTableInfiniteTr {
+	.lyteTreeTableInfiniteTrMixin();
+    user-select: none;
+    display: table-row;
+    height: @h;
+}
+lyte-tree-table-infinite-tr lyte-tree-table-td {
+    display: table-cell;
+}
+.lyteTreeTableHeaderHidden {
+    display: none;
+}
+.lyteActiveInfiniteRow {
+	.lyteActiveInfiniteRowMixin();
+    background-color: @bg-color;
+}
+.lyteTTtopPlaceHolder {
+	.lyteTTtopPlaceHolderMixin();
+    box-shadow: @box-shadow;
+}
+.lyteTTchildPlaceHolder {
+	.lyteTTchildPlaceHolderMixin();
+	outline: @outline;
+	outline-offset: -2px;
+}
+.lyteTTbottomPlaceHolder {
+	.lyteTTbottomPlaceHolderMixin();
+    box-shadow: @box-shadow;
+}
+.lyteTreeTableSelectedRow {
+	.lyteTreeTableSelectedRowMixin();
+    opacity: @opacity;
+    user-select: none;
+}
+
+lyte-tree-table-infinite-tr .lyteTreeTableRowActionButton {
+	.lyteTreeTableInfiniteRowActionButtonMixin();
+    position: absolute;
+    height: @h;
+    width: @w;
+    border: @border;
+    border-radius: @border-radius;
+    top: @top;
+    margin-left: @margin-left;
+}
+
+lyte-tree-table-infinite-tr .lyteTreeTableCollapseButton::before {
+	.lyteTreeTableInfiniteTrCollapseButtonBeforeMixin();
+    content: "-";
+    font-size: @font-size;
+    line-height: @line-height;
+    position: absolute;
+    top: @top;
+    left: @left;
+}
+lyte-tree-table-infinite-tr .lyteTreeTableExpandButton::before {
+	.lyteTreeTableInfiniteTrExpandButtonBeforeMixin();
+    content: "+";
+    font-size: @font-size;
+    line-height: @line-height;
+    position: absolute;
+    top: @top;
+    left: @left;
+}

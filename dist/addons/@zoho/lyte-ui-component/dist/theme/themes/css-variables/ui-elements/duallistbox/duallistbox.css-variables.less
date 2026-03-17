@@ -1,0 +1,186 @@
+/**
+* @component lyte-dual-listbox
+*/
+
+@import "../../global/global.variables.less";
+
+:root, 
+:host {
+
+	/**
+	 * @variable --lyte-listbox-border-color
+	 * @selector .lyteListboxLeftPanel, .lyteListboxRightPanel
+	 * @description Border color for the left and right listbox panels
+	 * @defaultValue #d6d6d6
+	 * @inputType color
+	 * @name Border Color
+	 */
+	--lyte-listbox-border-color: #d6d6d6;
+
+	/**
+	 * @variable --lyte-listbox-toolbar-icons-color
+	 * @selector .lyteLBTBMoveLeft::after, .lyteLBTBMoveRight::after, .lyteLBTBMoveUp::after, .lyteLBTBMoveDown::after
+	 * @description Color used for toolbar arrow icons
+	 * @defaultValue #555
+	 * @inputType color
+	 * @name Toolbar Icons Color
+	 */
+	--lyte-listbox-toolbar-icons-color: #555;
+
+	/**
+	 * @variable --lyte-listbox-text-color
+	 * @selector .lyteListBoxLeftElement, .lyteListBoxRightElement
+	 * @description Default text color for listbox items
+	 * @defaultValue var(--lyte-common-text-color)
+	 * @defaultVariableValue #333
+	 * @inputType color
+	 * @name Text Color
+	 */
+	--lyte-listbox-text-color: @commonTextColor;
+
+	/**
+	 * @variable --lyte-listbox-active-text-color
+	 * @selector .lyteLBLeftActive, .lyteLBRightActive
+	 * @description Text color for active listbox elements
+	 * @defaultValue var(--lyte-common-text-color2)
+	 * @defaultVariableValue #111
+	 * @inputType color
+	 * @name Active Text Color
+	 */
+	--lyte-listbox-active-text-color: @commonTextColor2;
+
+	/**
+	 * @variable --lyte-listbox-bg
+	 * @selector .lyteListboxLeftPanel, .lyteListboxRightPanel
+	 * @description Background color for listbox panels
+	 * @defaultValue var(--lyte-theme-body-bg)
+	 * @defaultVariableValue #fff
+	 * @inputType color
+	 * @name Background Color
+	 */
+	--lyte-listbox-bg: @themeBodyBackground;
+
+	/**
+	 * @variable --lyte-listbox-toolbar-item-hover-border-color
+	 * @selector .lyteLBToolbarItems:hover
+	 * @description Border color for toolbar items on hover
+	 * @defaultValue #aaa
+	 * @inputType color
+	 * @name Toolbar Item Hover Border Color
+	 */
+	--lyte-listbox-toolbar-item-hover-border-color: #aaa;
+
+	/**
+	 * @variable --lyte-listbox-add-remove-icon-color
+	 * @selector lyte-lb-add::before, lyte-lb-add::after, lyte-lb-remove::before
+	 * @description Background color for the add and remove icons
+	 * @defaultValue #666
+	 * @inputType color
+	 * @name Add/Remove Icon Color
+	 */
+	--lyte-listbox-add-remove-icon-color: #666;
+
+	/**
+	 * @variable --lyte-listbox-element-hover-bg
+	 * @selector .lyteListBoxLeftElement:hover, .lyteListBoxRightElement:hover
+	 * @description Background color for listbox items on hover
+	 * @defaultValue #f5f5f5
+	 * @inputType color
+	 * @name Element Hover Background Color
+	 */
+	--lyte-listbox-element-hover-bg: #f5f5f5;
+
+	/**
+	 * @variable --lyte-listbox-element-active-bg
+	 * @selector .lyteLBLeftActive, .lyteLBRightActive
+	 * @description Background color for selected (active) listbox items
+	 * @defaultValue #f5f5f5
+	 * @inputType color
+	 * @name Element Active Background Color
+	 */
+	--lyte-listbox-element-active-bg: #f5f5f5;
+
+	/**
+	 * @variable --lyte-listbox-collapse-icon-color
+	 * @selector lyte-lb-collapse::before
+	 * @description Color of the collapse/expand icon in the listbox
+	 * @defaultValue #555
+	 * @inputType color
+	 * @name Collapse Icon Color
+	 */
+	--lyte-listbox-collapse-icon-color: #555;
+
+	/**
+	 * @variable --lyte-listbox-badge-content-bg
+	 * @selector .lyteListboxBadge .lyteBadgeContent
+	 * @description Background color for badge content in listbox
+	 * @defaultValue #f00
+	 * @inputType color
+	 * @name Badge Content Background Color
+	 */
+	--lyte-listbox-badge-content-bg: #f00;
+
+	/**
+	 * @variable --lyte-listbox-badge-content-text-color
+	 * @selector .lyteListboxBadge .lyteBadgeContent
+	 * @description Text color inside the badge
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @name Badge Content Text Color
+	 */
+	--lyte-listbox-badge-content-text-color: #fff;
+
+	/**
+	 * @variable --lyte-listbox-leftpanel-dropzone-bg
+	 * @selector .lyteLBLeftPanelDropZone
+	 * @description Background color for the dropzone in the left panel
+	 * @defaultValue #f6fad2
+	 * @inputType color
+	 * @name Left Panel Dropzone Background Color
+	 */
+	--lyte-listbox-leftpanel-dropzone-bg: #f6fad2;
+
+	/**
+	 * @variable --lyte-listbox-leftpanel-dropzone-b-border-color
+	 * @selector .lyteLBLeftPanelDropZoneB
+	 * @description Border color for the dashed dropzone indicator
+	 * @defaultValue #57a5c6
+	 * @inputType color
+	 * @name Left Panel Dropzone Border Color
+	 */
+	--lyte-listbox-leftpanel-dropzone-b-border-color: #57a5c6;
+
+	/**
+	 * @variable --lyte-listbox-noresults-text-color
+	 * @selector .lyteListBoxNoResultsFound
+	 * @description Text color for the "No results found" label
+	 * @defaultValue #777
+	 * @inputType color
+	 * @name No Results Text Color
+	 */
+	--lyte-listbox-noresults-text-color: #777;
+
+	/**
+	 * @variable --lyte-listbox-leftright-element-font-size
+	 * @selector .lyteListBoxLeftElement, .lyteListBoxRightElement
+	 * @description Font size for items inside the left and right panels
+	 * @defaultValue var(--lyte-font-size-medium)
+	 * @defaultVariableValue 15px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Left/Right Element Font Size
+	 */
+	--lyte-listbox-leftright-element-font-size: var(--lyte-font-size-medium);
+
+	/**
+	 * @variable --lyte-listbox-badge-content-font-size
+	 * @selector .lyteListboxBadge .lyteBadgeContent
+	 * @description Font size for badge content in the listbox
+	 * @defaultValue var(--lyte-font-size-small)
+	 * @defaultVariableValue 13px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Badge Content Font Size
+	 */
+	--lyte-listbox-badge-content-font-size: var(--lyte-font-size-small);
+}

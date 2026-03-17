@@ -1,0 +1,49 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component draggable
+*/
+:root,
+:host {
+  /**
+     * @variable --lyte-draggable-placeholder-bg
+     * @selector .lyteSortableParent .lyteDraggablePlaceholder
+     * @description Background color used for the placeholder element while dragging an item
+     * @defaultValue #f6fad2
+     * @inputType color
+     * @name Placeholder Background Color
+     */
+  --lyte-draggable-placeholder-bg: #f6fad2;
+  /**
+     * @variable --lyte-draggable-placeholder-border-color
+     * @selector .lyteSortableParent .lyteDraggablePlaceholder
+     * @description Border color used for the placeholder element while dragging
+     * @defaultValue #edf2c3
+     * @inputType color
+     * @name Placeholder Border Color
+     */
+  --lyte-draggable-placeholder-border-color: #edf2c3;
+  /**
+     * @variable --lyte-draggable-placeholder-disabled-bg
+     * @selector .lyteSortableParent .lyteDraggableDisabledPlaceholder
+     * @description Background color for the placeholder when dragging is disabled
+     * @defaultValue #f5c7c7
+     * @inputType color
+     * @name Placeholder Disabled Background Color
+     */
+  --lyte-draggable-placeholder-disabled-bg: #f5c7c7;
+  /**
+     * @variable --lyte-draggable-placeholder-disabled-border-color
+     * @selector .lyteSortableParent .lyteDraggableDisabledPlaceholder
+     * @description Border color for the placeholder when dragging is disabled
+     * @defaultValue #f4a7a7
+     * @inputType color
+     * @name Placeholder Disabled Border Color
+     */
+  --lyte-draggable-placeholder-disabled-border-color: #f4a7a7;
+}

@@ -1,0 +1,152 @@
+/**
+* @component lyte-daterangepicker
+*/
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+
+    /**
+     * @variable --lyte-daterangepicker-bg
+     * @selector .lyteDateRangePickerRow
+     * @description Background color of the date range picker
+     * @defaultValue var(--lyte-theme-body-bg)
+     * @defaultVariableValue #fff
+     * @inputType color
+     * @name Background Color
+     */
+    --lyte-daterangepicker-bg: @themeBodyBackground;
+
+    /**
+     * @variable --lyte-daterangepicker-inrange-bg
+     * @selector .lyteDateRPTempSelected, .lyteDateRPTempFirstDateSelected, .lyteDateRPTempLastDateSelected
+     * @description Background color for dates within the selected range
+     * @defaultValue #e6f3fd
+     * @inputType color
+     * @name In-Range Background Color
+     */
+    --lyte-daterangepicker-inrange-bg: #e6f3fd;
+
+    /**
+     * @variable --lyte-daterangepicker-selelem-bg
+     * @selector .lyteDateRPFirstDateSelected, .lyteDateRPLastDateSelected
+     * @description Background color for selected start/end dates
+     * @defaultValue var(--lyte-theme-active-element-bg)
+     * @defaultVariableValue #5ba1e5
+     * @inputType color
+     * @name Selected Start/End Dates Background Color
+     */
+    --lyte-daterangepicker-selelem-bg: @themeActiveElementBg;
+
+    /**
+     * @variable --lyte-daterangepicker-inrange-text-color
+     * @selector .lyteDateRPTempSelected
+     * @description Text color for dates within the selected range
+     * @defaultValue var(--lyte-common-text-color2)
+     * @defaultVariableValue #111
+     * @inputType color
+     * @name In-Range Text Color
+     */
+    --lyte-daterangepicker-inrange-text-color: @commonTextColor2;
+
+    /**
+     * @variable --lyte-daterangepicker-border-color
+     * @selector .lyteDateRangePickerRow
+     * @description Border color for the main date range picker container
+     * @defaultValue #d1d1d1
+     * @inputType color
+     * @name Border Color
+     */
+    --lyte-daterangepicker-border-color: #d1d1d1;
+
+    /**
+     * @variable --lyte-daterangepicker-box-shadow-color
+     * @selector .lyteDateRangePickerRow
+     * @description Box shadow color applied to the picker container
+     * @defaultValue rgba(0, 0, 0, 0.1)
+     * @inputType color
+     * @name Box Shadow Color
+     */
+    --lyte-daterangepicker-box-shadow-color: rgba(0, 0, 0, 0.1);
+
+    /**
+     * @variable --lyte-daterangepicker-calendar-separator-color
+     * @selector .dRPCalendar2
+     * @description Border color between the two calendars in the picker
+     * @defaultValue #f0f0f0
+     * @inputType color
+     * @name Calendar Separator Color
+     */
+    --lyte-daterangepicker-calendar-separator-color: #f0f0f0;
+
+    /**
+     * @variable --lyte-daterangepicker-selected-date-border-radius
+     * @selector .lyteDateRPFirstDateSelected, .lyteDateRPLastDateSelected
+     * @description Border radius for selected date cells (start/end)
+     * @defaultValue 50%
+     * @allowedSuffixes %
+     * @inputType dimension
+     * @name Selected Date Border Radius
+     */
+    --lyte-daterangepicker-selected-date-border-radius: 50%;
+
+    /**
+     * @variable --lyte-daterangepicker-selected-date-text-color
+     * @selector .lyteDateRPFirstDateSelected, .lyteDateRPLastDateSelected
+     * @description Text color for selected start and end dates
+     * @defaultValue #fff
+     * @inputType color
+     * @name Selected Date Text Color
+     */
+    --lyte-daterangepicker-selected-date-text-color: #fff;
+
+    /**
+     * @variable --lyte-daterangepicker-inrange-hover-text-color
+     * @selector .lyteDateRPTempSelected:hover
+     * @description Text color on hover for dates in the selected range
+     * @defaultValue var(--lyte-common-text-color2)
+     * @defaultVariableValue #111
+     * @inputType color
+     * @name In-Range Hover Text Color
+     */
+    --lyte-daterangepicker-inrange-hover-text-color: @commonTextColor2;
+
+    /**
+     * @variable --lyte-daterangepicker-header-font-size
+     * @selector .lyteDateRPMonthHeader
+     * @description Font size for the month-year header
+     * @defaultValue var(--lyte-font-size-small)
+     * @defaultVariableValue 13px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Header Font Size
+     */
+    --lyte-daterangepicker-header-font-size: var(--lyte-font-size-small);
+
+    /**
+     * @variable --lyte-daterangepicker-month-dropbtn-font-size
+     * @selector .monthDD lyte-drop-button
+     * @description Font size for the month dropdown button
+     * @defaultValue var(--lyte-font-size-xl)
+     * @defaultVariableValue 18px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Month Dropdown Button Font Size
+     */
+    --lyte-daterangepicker-month-dropbtn-font-size: var(--lyte-font-size-xl);
+
+    /**
+     * @variable --lyte-daterangepicker-year-dropbtn-font-size
+     * @selector .yearDD lyte-drop-button
+     * @description Font size for the year dropdown button
+     * @defaultValue var(--lyte-font-size-large)
+     * @defaultVariableValue 16px
+     * @allowedSuffixes px
+     * @inputType dimension
+     * @name Year Dropdown Button Font Size
+     */
+    --lyte-daterangepicker-year-dropbtn-font-size: var(--lyte-font-size-large);
+
+    --lyte-daterangepicker-date-focus-outline-color: #333;
+}

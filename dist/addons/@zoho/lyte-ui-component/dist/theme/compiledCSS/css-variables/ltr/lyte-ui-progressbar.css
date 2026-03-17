@@ -1,0 +1,329 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component lyte-progressbar
+ */
+:root,
+:host {
+  /**
+	 * @variable --lyte-progressbar-bg
+	 * @selector .lyteProgressBar
+	 * @description Base background color for all progress bars
+	 * @defaultValue #e5e5e5
+	 * @inputType color
+	 * @name Background Color
+	 */
+  --lyte-progressbar-bg: #e5e5e5;
+  /**
+	 * @variable --lyte-progressbar-horizontal-bg
+	 * @selector .lyteProgressBar.lyteHorizontal
+	 * @description Background color specifically for horizontal progress bars
+	 * @defaultValue var(--lyte-progressbar-bg)
+	 * @defaultVariableValue #e5e5e5
+	 * @inputType color
+	 * @name Horizontal Background Color
+	 */
+  --lyte-progressbar-horizontal-bg: var(--lyte-progressbar-bg);
+  /**
+	 * @variable --lyte-progress-status-bg
+	 * @selector .lyteProgressStatus, .lyteProgressStatusStack, .lyteProgressStatusVertical
+	 * @description Background color for the progress indicator (filled area)
+	 * @defaultValue #51a2ee
+	 * @inputType color
+	 * @name Status Background Color
+	 */
+  --lyte-progress-status-bg: #51a2ee;
+  /**
+	 * @variable --lyte-progress-status-text-color
+	 * @selector .lyteProgressStatus, .lyteProgressStatusStack
+	 * @description Text color inside the filled portion of the progress bar
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @name Status Text Color
+	 */
+  --lyte-progress-status-text-color: #fff;
+  /**
+	 * @variable --lyte-progressbar-horizon-completed-bg
+	 * @selector .lyteProgressBar.lyteProgressCompleted
+	 * @description Background color when progress is completed in horizontal bars
+	 * @defaultValue #3fbd5f
+	 * @inputType color
+	 * @name Horizontal Completed Background Color
+	 */
+  --lyte-progressbar-horizon-completed-bg: #3fbd5f;
+  /**
+	 * @variable --lyte-progressbar-circle-text-color
+	 * @selector .lyteProgressBar.lyteCircle .CircleType
+	 * @description Text color inside circular progress bars
+	 * @defaultValue var(--lyte-common-text-color)
+	 * @defaultVariableValue #333
+	 * @inputType color
+	 * @name Circle Text Color
+	 */
+  --lyte-progressbar-circle-text-color: var(--lyte-common-text-color);
+  /**
+	 * @variable --lyte-progressbar-circle-bg
+	 * @selector .lyteProgressBar.lyteCircle circle:first-child
+	 * @description Stroke color for the background circle in radial progress bars
+	 * @defaultValue #DCE0E3
+	 * @inputType color
+	 * @name Circle Background Color
+	 */
+  --lyte-progressbar-circle-bg: #DCE0E3;
+  /**
+	 * @variable --lyte-progressbar-percentage-font-size
+	 * @selector .lyteProgressPercentage
+	 * @description Font size used for percentage text shown over progress bars
+	 * @defaultValue var(--lyte-font-size-xs)
+	 * @defaultVariableValue 12px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Percentage Font Size
+	 */
+  --lyte-progressbar-percentage-font-size: var(--lyte-font-size-xs);
+  /**
+	 * @variable --lyte-progressbar-circle-font-size
+	 * @selector .lyteProgressBar.lyteCircle .CircleType
+	 * @description Font size used for text inside circular progress bars
+	 * @defaultValue 17px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Circle Font Size
+	 */
+  --lyte-progressbar-circle-font-size: 17px;
+  /**
+	 * @variable --lyte-progressbar-vertical-bg
+	 * @selector .lyteProgressBar.lyteVertical
+	 * @description Background color for vertical progress bars
+	 * @defaultValue var(--lyte-progressbar-bg)
+	 * @defaultVariableValue #e5e5e5
+	 * @inputType color
+	 * @name Vertical Background Color
+	 */
+  --lyte-progressbar-vertical-bg: var(--lyte-progressbar-bg);
+  /**
+	 * @variable --lyte-progressbar-vertical-status-box-shadow-color
+	 * @selector .lyteProgressStatusVertical
+	 * @description Box shadow color for the status bar in vertical progress
+	 * @defaultValue rgba(0, 0, 0, 0.075)
+	 * @inputType color
+	 * @name Vertical Status Box Shadow Color
+	 */
+  --lyte-progressbar-vertical-status-box-shadow-color: rgba(0, 0, 0, 0.075);
+  /**
+	 * @variable --lyte-progressbar-circle-status-stroke
+	 * @selector .ltProgressFillCircle
+	 * @description Stroke color for the filled portion in circular progress
+	 * @defaultValue #51a2ee
+	 * @inputType color
+	 * @name Circle Status Stroke Color
+	 */
+  --lyte-progressbar-circle-status-stroke: #51a2ee;
+  /**
+	 * @variable --lyte-progressbar-circle-completed-stroke
+	 * @selector .lyteProgressCompleted.lyteCircle .ltProgressFillCircle
+	 * @description Stroke color for completed circular progress bars
+	 * @defaultValue #3fbd5f
+	 * @inputType color
+	 * @name Circle Completed Stroke Color
+	 */
+  --lyte-progressbar-circle-completed-stroke: #3fbd5f;
+}
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+/* LYTE-PROGRESSBAR BEGINS  */
+.lyteProgressBar {
+  position: relative;
+}
+.lyteProgressBar.lyteHorizontal {
+  height: 14px;
+  width: calc(100% - 200px);
+  background: var(--lyte-progressbar-horizontal-bg);
+  border-radius: 8px;
+  text-align: start;
+}
+.lyteProgressBar .lyteProgressStatus {
+  display: block;
+  height: 100%;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  background: var(--lyte-progress-status-bg);
+  color: var(--lyte-progress-status-text-color);
+  transition: width 0.25s;
+}
+.lyteProgressBar .lyteProgressStatus .progressMovingObj,
+.lyteProgressBar .lyteProgressStatusStack .progressMovingObj {
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  background-image: linear-gradient(-45deg, rgba(221, 221, 221, 0.29) 25%, transparent 25%, transparent 50%, rgba(221, 221, 221, 0.29) 50%, rgba(221, 221, 221, 0.29) 75%, transparent 75%, transparent);
+  background-size: 20px 20px;
+  animation: move 1s linear infinite;
+  border-radius: 20px;
+}
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}
+.lyteProgressBar .lyteProgressPercentage {
+  font-family: var(--lyte-primary-font);
+  font-size: var(--lyte-progressbar-percentage-font-size);
+  line-height: 14px;
+  color: var(--lyte-progress-status-text-color);
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 0px;
+  z-index: 10;
+}
+.lyteProgressBar.lyteProgressCompleted .lyteProgressStatusVertical,
+.lyteProgressBar.lyteProgressCompleted .lyteProgressStatus {
+  background: var(--lyte-progressbar-horizon-completed-bg);
+}
+/*  Radial progress bar related CSS -- BEGINS   */
+.lyteProgressBar.lyteCircle {
+  width: 100px;
+  height: 100px;
+}
+.lyteProgressBar .lyteCircleType {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+}
+.lyteCircleType svg {
+  font-family: var(--lyte-primary-font);
+  font-size: var(--lyte-progressbar-circle-font-size);
+  fill: var(--lyte-progressbar-circle-text-color);
+}
+.lyteProgressBar.lyteCircle .svgValueEle {
+  transform: rotate(-90deg);
+}
+.lyteProgressBar.lyteCircle circle:first-child {
+  stroke: var(--lyte-progressbar-circle-bg);
+}
+.lyteCircle .ltProgressFillCircle {
+  stroke: var(--lyte-progressbar-circle-status-stroke);
+}
+.lyteProgressCompleted.lyteCircle .ltProgressFillCircle {
+  stroke: var(--lyte-progressbar-circle-completed-stroke);
+}
+.lyteProgressBar.lyteCircle circle {
+  transition: stroke-dashoffset 0.25s linear;
+}
+/*  Radial progress bar related CSS -- ENDS   */
+/*  Indeterminate horizontal progress bar related CSS -- BEGINS   */
+.lyteIndeterminate {
+  overflow: hidden;
+}
+.inc {
+  animation: increase 2s infinite;
+}
+.dec {
+  animation: decrease 2s 0.5s infinite;
+}
+@keyframes increase {
+  from {
+    left: -5%;
+    width: 5%;
+  }
+  to {
+    left: 130%;
+    width: 100%;
+  }
+}
+@keyframes decrease {
+  from {
+    left: -80%;
+    width: 80%;
+  }
+  to {
+    left: 110%;
+    width: 10%;
+  }
+}
+/*  Indeterminate horizontal progress bar related CSS -- ENDS   */
+/*  stacked progress bar related CSS -- BEGINS   */
+.lyteStacked,
+.lyteProgressStatusStack {
+  display: flex;
+  overflow: hidden;
+}
+.lyteStacked .lyteProgressStatusStack {
+  flex-direction: column;
+  justify-content: center;
+  color: var(--lyte-progress-status-text-color);
+  text-align: center;
+  white-space: nowrap;
+  background: #007bff;
+  transition: width 2s linear;
+}
+.lyteProgressBarWithLineSeparator.lyteStacked {
+  overflow: visible;
+}
+.lyteProgressBarWithLineSeparator .lyteProgressStatusStack:first-child {
+  border-radius: 8px 0 0 8px;
+}
+.lyteProgressBarWithLineSeparator .lyteProgressStatusStack:last-child {
+  border-radius: 0 8px 8px 0;
+}
+.lyteProgressBarWithLineSeparator .lyteProgressStatusStack:only-child {
+  border-radius: 8px;
+}
+.lyteProgressBarLineSeparator {
+  width: 1px;
+  height: 100%;
+  padding: 5px 0;
+  background: #000;
+  transform: translate(0, -5px);
+}
+/*  stacked progress bar related CSS -- ENDS   */
+/*  vertical progress bar related CSS -- BEGINS   */
+.lyteProgressBar.lyteVertical {
+  background-color: var(--lyte-progressbar-vertical-bg);
+  background-position: 50% 50%;
+  border-radius: 8px;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.lyteProgressBar .lyteProgressStatusVertical {
+  border-radius: 8px;
+  background: var(--lyte-progress-status-bg);
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 0 1px 1px var(--lyte-progressbar-vertical-status-box-shadow-color) inset;
+  transition: height 0.25s;
+  left: 0;
+  height: 0;
+}
+.lyteProgressStatusVertical.up {
+  bottom: 0;
+}
+.lyteProgressStatusVertical.down {
+  top: 0;
+}
+.lyteProgressStatusVertical .lyteProgressPercentage {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/*  vertical progress bar related CSS -- ENDS   */
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* LYTE-PROGRESSBAR END*/

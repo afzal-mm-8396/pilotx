@@ -1,0 +1,126 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/hovercard/hovercard.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{hovercard}/ui-elements/hovercard/hovercard.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{hovercard}/global/@{direction}.less";
+
+/* Loading final tweaks to your variables */
+@import (optional) "../overrides/ui-elements/hovercard.variables.less";
+
+.lyteHovercardPopover.popoverWrapper {
+	.lyteHovercardPopoverWrapperMixin();
+	z-index: @z-index;
+}
+.lyteHovercardPopover .lytePopover {
+    .hovercardPopoverMixin();
+    background: @bg;
+    color: @color;
+    border-radius: @border-radius;
+    border: @border;
+}
+.lyteHovercardPopover .lytePopoverArrowIcon {
+    .hovercardArrowMixin();
+    background: @bg;
+}
+.lyteHovercardPopover .lytePopoverArrowIcon.lytePopoverArrowTop {
+	.hovercardArrowTop();
+	box-shadow: @box-shadow;
+}
+.lyteHovercardPopover .lytePopoverArrowIcon.lytePopoverArrowBottom {
+	.hovercardArrowBottom();
+	box-shadow: @box-shadow;
+}
+.lyteHovercardPopover .lytePopoverArrowIcon.lytePopoverArrowRight {
+	.hovercardArrowRight();
+	box-shadow: @box-shadow;
+}
+.lyteHovercardPopover .lytePopoverArrowIcon.lytePopoverArrowLeft {
+	.hovercardArrowLeft();
+	box-shadow: @box-shadow;
+}
+.lyteHovercardWrapperElem {
+    .lyteHovercardWrapperElemMixin();
+    width: @w;
+    height: @h;
+    overflow: hidden;
+    border-radius: @border-radius;
+}
+lyte-hovercard-content {
+    .hovercardContentMixin();
+    padding: @padding;
+    display: block;
+    max-width: @max-w;
+    overflow-wrap: break-word;
+    max-height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+}
+.lyteHovercardWithMaxHeight [yield-name="hoverCardYield"],
+.lyteHovercardWithMaxHeight lyte-hovercard-content {
+    max-height: inherit;
+}
+.lyteHovercardPopover .lytePopoverTopRight.lytePopover::before,
+.lyteHovercardPopover .lytePopoverTopLeft.lytePopover::before,
+.lyteHovercardPopover .lytePopoverTop.lytePopover::before,
+.lyteHovercardPopover .lytePopoverBottomRight.lytePopover::before,
+.lyteHovercardPopover .lytePopoverBottomLeft.lytePopover::before,
+.lyteHovercardPopover .lytePopoverBottom.lytePopover::before,
+.lyteHovercardPopover.lytePopTopToOrig .lytePopover::before,
+.lyteHovercardPopover.lytePopBottomToOrig .lytePopover::before {
+    .hovercardTopBottomPopoverBefore();
+	content: '';
+	width: @w;
+	height: @h;
+	background: transparent;
+	position: absolute;
+}
+.lyteHovercardPopover .lytePopoverBottomRight.lytePopover::before,
+.lyteHovercardPopover .lytePopoverBottomLeft.lytePopover::before,
+.lyteHovercardPopover .lytePopoverBottom.lytePopover::before,
+.lyteHovercardPopover.lytePopBottomToOrig .lytePopover::before {
+    .hovercardBottomPopoverBefore();
+    top: @top;
+}
+.lyteHovercardPopover .lytePopoverTopRight.lytePopover::before,
+.lyteHovercardPopover .lytePopoverTopLeft.lytePopover::before,
+.lyteHovercardPopover .lytePopoverTop.lytePopover::before,
+.lyteHovercardPopover.lytePopTopToOrig .lytePopover::before {
+    .hovercardTopPopoverBefore();
+    bottom: @bottom;
+}
+.lyteHovercardPopover .lytePopoverRightBottom.lytePopover::before,
+.lyteHovercardPopover .lytePopoverRightCenter.lytePopover::before,
+.lyteHovercardPopover .lytePopoverRight.lytePopover::before,
+.lyteHovercardPopover .lytePopoverLeftBottom.lytePopover::before,
+.lyteHovercardPopover .lytePopoverLeftCenter.lytePopover::before,
+.lyteHovercardPopover .lytePopoverLeft.lytePopover::before,
+.lyteHovercardPopover.lytePopLeftToOrig .lytePopover::before,
+.lyteHovercardPopover.lytePopRightToOrig .lytePopover::before {
+    .hovercardLeftRightPopoverBefore();
+    content: '';
+    height: @h;
+    width: @w;
+    background: transparent;
+    position: absolute;
+}
+.lyteHovercardPopover .lytePopoverRightBottom.lytePopover::before,
+.lyteHovercardPopover .lytePopoverRightCenter.lytePopover::before,
+.lyteHovercardPopover .lytePopoverRight.lytePopover::before,
+.lyteHovercardPopover.lytePopRightToOrig .lytePopover::before {
+    .hovercardRightPopoverBefore();
+    @{property-left}: @left;
+}
+.lyteHovercardPopover .lytePopoverLeftBottom.lytePopover::before,
+.lyteHovercardPopover .lytePopoverLeftCenter.lytePopover::before,
+.lyteHovercardPopover .lytePopoverLeft.lytePopover::before,
+.lyteHovercardPopover.lytePopLeftToOrig .lytePopover::before {
+    .hovercardLeftPopoverBefore();
+    @{property-right}: @right;
+}

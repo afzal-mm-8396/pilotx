@@ -1,0 +1,430 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+* @component lyte-checkbox
+*/
+:root,
+:host {
+  /**
+	* @variable --lyte-chbox-label-text-color
+	* @selector lyte-checkbox
+	* @description Default label text color for checkboxes
+	* @defaultValue var(--lyte-common-text-color)
+	* @defaultVariableValue #333
+	* @inputType color
+	* @name Label Text Color
+	*/
+  --lyte-chbox-label-text-color: var(--lyte-common-text-color);
+  /**
+	* @variable --lyte-chbox-label-hover-text-color
+	* @selector lyte-checkbox:hover
+	* @description Label text color when checkbox is hovered
+	* @defaultValue var(--lyte-common-text-hover-color)
+	* @defaultVariableValue #111
+	* @inputType color
+	* @name Label Hover Text Color
+	*/
+  --lyte-chbox-label-hover-text-color: var(--lyte-common-text-hover-color);
+  /**
+	* @variable --lyte-chbox-font-size
+	* @selector lyte-checkbox
+	* @description Font size for checkbox labels
+	* @defaultValue var(--lyte-font-size-medium)
+	* @defaultVariableValue 15px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Font Size
+	*/
+  --lyte-chbox-font-size: var(--lyte-font-size-medium);
+  /**
+	* @variable --lyte-chbox-label-font-size
+	* @selector lyte-checkbox
+	* @description Font size specifically for checkbox state labels
+	* @defaultValue var(--lyte-font-size-small)
+	* @defaultVariableValue 13px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Label Font Size
+	*/
+  --lyte-chbox-label-font-size: var(--lyte-font-size-small);
+  /**
+	* @variable --lyte-chbox-switch-bg
+	* @selector .lyteCheckSwitch
+	* @description Background color of the checkbox switch (default/off mode)
+	* @defaultValue #d3d3d3
+	* @inputType color
+	* @name Switch Background Color
+	*/
+  --lyte-chbox-switch-bg: #d3d3d3;
+  /**
+	* @variable --lyte-chbox-switch-bg-on-mode
+	* @selector .lyteCheckSwitch.checked
+	* @description Background color of the checkbox switch in checked/on mode
+	* @defaultValue var(--lyte-theme-active-element-bg)
+	* @defaultVariableValue #5ba1e5
+	* @inputType color
+	* @name Switch Background Color On Mode
+	*/
+  --lyte-chbox-switch-bg-on-mode: var(--lyte-theme-active-element-bg);
+  /**
+	* @variable --lyte-chbox-circle-bg
+	* @selector .on-btn
+	* @description Background color of the circular toggle in switches
+	* @defaultValue #fff
+	* @inputType color
+	* @name Circle Background Color
+	*/
+  --lyte-chbox-circle-bg: #fff;
+  /**
+	* @variable --lyte-chbox-default-focus-box-shadow
+	* @selector lyte-checkbox:focus .lyteCheckBoxDefault::before
+	* @description Box-shadow applied to default checkbox when focused
+	* @defaultValue 0 0 3px 1px #5aaaf9
+	* @inputType boxShadow
+	* @name Default Focus Box Shadow Color
+	*/
+  --lyte-chbox-default-focus-box-shadow: 0 0 3px 1px #5aaaf9;
+  /**
+	* @variable --lyte-chbox-primary-focus-box-shadow
+	* @selector lyte-checkbox:focus .lyteCheckBoxPrimary::before
+	* @description Box-shadow applied to primary checkbox when focused
+	* @defaultValue 0 0 3px 1px #b0b0b0
+	* @inputType boxShadow
+	* @name Primary Focus Box Shadow Color
+	*/
+  --lyte-chbox-primary-focus-box-shadow: 0 0 3px 1px #b0b0b0;
+  /**
+	* @variable --lyte-chbox-slider-circle-bg
+	* @selector .lyteCheckSlider::before
+	* @description Background color of the slider circle in toggle-style checkbox
+	* @defaultValue #fff
+	* @inputType color
+	* @name Slider Circle Background Color
+	*/
+  --lyte-chbox-slider-circle-bg: #fff;
+  /**
+	* @variable --lyte-chbox-slider-circle-box-shadow-color
+	* @selector .lyteCheckSlider::before
+	* @description Box-shadow color of the slider circle
+	* @defaultValue rgba(34, 36, 38, 0.15)
+	* @inputType color
+	* @name Slider Circle Box Shadow Color
+	*/
+  --lyte-chbox-slider-circle-box-shadow-color: rgba(34, 36, 38, 0.15);
+  /**
+	* @variable --lyte-chbox-slider-bar-bg
+	* @selector .lyteCheckSlider::after
+	* @description Background color of the slider bar (default state)
+	* @defaultValue #b5b1b1
+	* @inputType color
+	* @name Slider Bar Background Color
+	*/
+  --lyte-chbox-slider-bar-bg: #b5b1b1;
+  /**
+	* @variable --lyte-chbox-slider-checked-bar-bg
+	* @selector input[type="checkbox"]:checked + .lyteCheckSlider::after
+	* @description Background color of the slider bar when checkbox is checked
+	* @defaultValue #000
+	* @inputType color
+	* @name Slider Checked Bar Background Color
+	*/
+  --lyte-chbox-slider-checked-bar-bg: #000;
+  /**
+	* @variable --lyte-chbox-slider-circle-disabled-bg
+	* @selector .lyteCheckDisabled .lyteCheckSlider::before
+	* @description Background color of the slider circle in disabled state
+	* @defaultValue #f5f5f5
+	* @inputType color
+	* @name Slider Circle Disabled Background Color
+	*/
+  --lyte-chbox-slider-circle-disabled-bg: #f5f5f5;
+  /* ===== Icon Positions ===== */
+  --lyte-chbox-primary-icon-position: -35px -162px;
+  --lyte-chbox-primary-checked-icon-position: -8px -162px;
+}
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+/* Make changes to override predefined styles */
+/*  Checkbox related CSS BEGINS   */
+lyte-checkbox {
+  color: var(--lyte-chbox-label-text-color);
+  font-family: var(--lyte-primary-font);
+  font-size: var(--lyte-chbox-font-size);
+  display: inline-block;
+  position: relative;
+}
+lyte-checkbox label {
+  display: inline-block;
+  cursor: pointer;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+lyte-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.lyteCheckBoxDefault::before {
+  content: '';
+  background-image: var(--lyte-sprite-image);
+  background-position: -335px -4px;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  border-radius: 2px;
+}
+lyte-checkbox input[type="checkbox"]:active + .lyteCheckBoxDefault::before,
+.lyteCheckBoxDefault:hover::before {
+  background-position: -359px -4px;
+}
+lyte-checkbox input[type="checkbox"]:focus + .lyteCheckBoxDefault::before {
+  background-position: -359px -4px;
+  box-shadow: var(--lyte-chbox-default-focus-box-shadow);
+}
+lyte-checkbox input[type="checkbox"]:disabled + .lyteCheckBoxDefault:hover::before {
+  background-position: -335px -4px;
+}
+lyte-checkbox input[type="checkbox"]:checked + .lyteCheckBoxDefault::before {
+  background-position: -384px -4px;
+}
+lyte-checkbox input[type="checkbox"]:checked:disabled + .lyteCheckBoxDefault:hover::before {
+  background-position: -384px -4px;
+}
+.lyteCheckDisabled label {
+  cursor: not-allowed;
+}
+.lyteCheckBoxPrimary::before {
+  content: '';
+  background-image: var(--lyte-sprite-image);
+  background-position: var(--lyte-chbox-primary-icon-position);
+  width: 14px;
+  height: 14px;
+  margin-right: 3px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+lyte-checkbox input[type="checkbox"]:checked + .lyteCheckBoxPrimary::before {
+  background-position: var(--lyte-chbox-primary-checked-icon-position);
+  width: 17px;
+  margin-right: 0;
+}
+lyte-checkbox input[type="checkbox"]:focus + .lyteCheckBoxPrimary::before {
+  box-shadow: var(--lyte-chbox-primary-focus-box-shadow);
+}
+.lyteCheckBoxPrimary span,
+.lyteCheckBoxDefault span {
+  display: inline-block;
+  vertical-align: middle;
+  -ms-user-select: auto;
+  -moz-user-select: auto;
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+lyte-checkbox:hover span {
+  color: var(--lyte-chbox-label-hover-text-color);
+}
+lyte-checkbox[lt-prop-disabled="true"]:hover span {
+  color: var(--lyte-chbox-label-text-color);
+}
+.lyteCheckSwitch {
+  vertical-align: middle;
+  width: 28px;
+  height: 16px;
+  display: inline-block;
+  border-radius: 10px;
+  position: relative;
+  background: var(--lyte-chbox-switch-bg);
+}
+.lyteCheckSwitch .on-btn {
+  width: 12px;
+  height: 12px;
+  background: var(--lyte-chbox-circle-bg);
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  top: calc(50% - 6px);
+  right: auto;
+  transition: left 200ms ease;
+}
+input[type="checkbox"].on-off-sw:checked + .lyteCheckSwitch {
+  background: var(--lyte-chbox-switch-bg-on-mode);
+}
+input[type="checkbox"].on-off-sw:focus + .lyteCheckSwitch {
+  box-shadow: 0 0 5px 2px #d3d3d3;
+}
+input[type="checkbox"].on-off-sw:checked:focus + .lyteCheckSwitch {
+  box-shadow: 0 0 5px 2px #5aaaf9;
+}
+input[type="checkbox"].on-off-sw:checked + .lyteCheckSwitch .on-btn {
+  left: 14px;
+}
+.lyteCheckSwitch + span {
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 5px;
+}
+.lyteCheckSliderLabel {
+  box-sizing: border-box;
+  position: relative;
+}
+.lyteCheckSlider {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 1.4rem;
+}
+.lyteCheckSlider::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: var(--lyte-chbox-slider-circle-bg);
+  box-shadow: 0 1px 2px 0 var(--lyte-chbox-slider-circle-box-shadow-color), 0 0 0 1px var(--lyte-chbox-slider-circle-box-shadow-color) inset;
+  border-radius: 50%;
+  left: 0;
+  transition: left 200ms ease;
+}
+input[type="checkbox"]:checked + .lyteCheckSlider::before {
+  left: 2.25rem;
+}
+.lyteCheckSlider::after {
+  content: '';
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  z-index: 0;
+  width: 3.5rem;
+  height: 0.2rem;
+  background: var(--lyte-chbox-slider-bar-bg);
+  top: 0.6rem;
+  left: 0;
+}
+input[type="checkbox"]:checked + .lyteCheckSlider::after {
+  background: var(--lyte-chbox-slider-checked-bar-bg);
+}
+.lyteCheckSliderText {
+  padding-left: 4.25rem;
+  vertical-align: middle;
+}
+.lyteCheckDisabled .lyteCheckSlider::after,
+.lyteCheckDisabled .lyteCheckSwitch,
+.lyteCheckDisabled .lyteCheckBoxDefault::before,
+.lyteCheckDisabled .lyteCheckBoxPrimary::before {
+  opacity: 0.5;
+}
+.lyteCheckDisabled .lyteCheckSlider::before {
+  background: var(--lyte-chbox-slider-circle-disabled-bg);
+}
+.lyteCkBoxLabelBiggerCase .lyteCheckbox,
+.lyteCkBoxLabelBiggerCase {
+  max-width: 100%;
+}
+.lyteCkBoxLabelBiggerCase .lyteCheckBoxDefault,
+.lyteCkBoxLabelBiggerCase .lyteCheckBoxPrimary {
+  display: flex;
+  max-width: 100%;
+}
+.lyteCkBoxLabelBiggerCase .lyteCheckBoxDefault::before,
+.lyteCkBoxLabelBiggerCase .lyteCheckBoxPrimary::before {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.lyteCkBoxLabelBiggerCase .lyteCheckBoxDefault span,
+.lyteCkBoxLabelBiggerCase .lyteCheckBoxPrimary span {
+  overflow: auto;
+  overflow-wrap: break-word;
+  white-space: normal;
+  margin-left: 5px;
+}
+.lyteCheckboxLabelEllipsis .lyteCheckbox,
+.lyteCheckboxLabelEllipsis {
+  max-width: 100%;
+}
+.lyteCheckboxLabelEllipsis .lyteCheckBoxDefault,
+.lyteCheckboxLabelEllipsis .lyteCheckBoxPrimary {
+  display: flex;
+  align-items: center;
+}
+.lyteCheckboxLabelEllipsis .lyteCheckBoxDefault::before,
+.lyteCheckboxLabelEllipsis .lyteCheckBoxPrimary::before {
+  flex-shrink: 0;
+}
+.lyteCheckboxLabelEllipsis .lyteCheckBoxPrimary::before {
+  margin-right: 5px;
+}
+lyte-checkbox.lyteCheckboxLabelEllipsis input[type="checkbox"]:checked + .lyteCheckBoxPrimary::before {
+  margin-right: 2px;
+}
+.lyteCheckboxLabelEllipsis .lyteCheckBoxDefault span,
+.lyteCheckboxLabelEllipsis .lyteCheckBoxPrimary span {
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.lyteCheckSwitch.lyteCheckboxSwitchWithStateLabel {
+  min-width: 28px;
+  min-height: 16px;
+  width: auto;
+  height: auto;
+  display: inline-grid;
+  grid-auto-flow: row;
+  padding: 2px;
+}
+input[type="checkbox"].on-off-sw:checked + .lyteCheckSwitch.lyteCheckboxSwitchWithStateLabel .on-btn {
+  left: calc(100% - 14px);
+}
+.lyteCheckboxStateLabel {
+  font-size: var(--lyte-chbox-label-font-size);
+  padding-left: 17px;
+  padding-right: 2px;
+  grid-row: 1;
+  grid-column: 1;
+  transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+input[type="checkbox"].on-off-sw:checked + .lyteCheckboxSwitchWithStateLabel .lyteCheckboxStateLabel {
+  padding-right: 17px;
+  padding-left: 2px;
+  color: #fff;
+}
+.on-off-sw + .lyteCheckSwitch .lyteCheckboxOnStateLabel,
+.on-off-sw:checked + .lyteCheckSwitch .lyteCheckboxOffStateLabel {
+  visibility: hidden;
+  opacity: 0;
+}
+.on-off-sw:checked + .lyteCheckSwitch .lyteCheckboxOnStateLabel {
+  visibility: visible;
+  opacity: 1;
+}
+.lyteCheckboxEmptyLabel .lyteCheckSwitch + span,
+.lyteCheckboxEmptyLabel .lyteCheckBoxDefault span,
+.lyteCheckboxEmptyLabel .lyteCheckBoxPrimary span,
+.lyteCheckboxEmptyLabel .lyteCheckSliderText {
+  display: none;
+}
+.lyteCheckboxEmptyLabel .lyteCheckBoxPrimary::before,
+.lyteCheckboxEmptyLabel .lyteCheckBoxDefault::before {
+  margin-right: 0;
+  display: block;
+}
+/* import theme overrides - styles */
+/* import custom css */
+/* Make preferred css changes over here.
+ * This will be added to the end of the styles/checkbox.less file
+ */
+/*  Checkbox related CSS ENDS   */

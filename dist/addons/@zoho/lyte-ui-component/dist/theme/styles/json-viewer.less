@@ -1,0 +1,255 @@
+@import "../themes/default/ui-elements/jsonviewer/jsonviewer.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+
+@import (optional) "../themes/@{jsonviewer}/ui-elements/jsonviewer/jsonviewer.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{jsonviewer}/global/@{direction}.less";
+
+/* Loading custom themes */
+@import (optional) "../overrides/ui-elements/jsonviewer.variables.less";
+
+lyte-json-viewer {
+	.lyteJsonViewerMixin();
+	display: block;
+	color: @color;
+	font-size: @font-size;
+}
+
+.lyteJsonVrTreeNodeWrap {
+	.lyteJsonVrTreeNodeWrapMixin();
+	position: relative;
+	padding-inline-start: @padding-inline-start;
+}
+
+.lyteJsonVrTopParent > .lyteJsonVrTreeNodeWrap {
+	.lyteJsonVrTopParentTreeNodeWrapMixin();
+	padding-inline-start: @padding-inline-start;
+}
+
+.lyteJsonVrTreeNodeWrap::before {
+	.lyteJsonVrTreeNodeWrapBeforeMixin();
+	content: "";
+	position: absolute;
+	width: @width;
+	background: @background;
+	display: block;
+	left: @left;
+	top: @top;
+	bottom: @bottom;
+}
+
+.lyteJsonVrHideConnectingLines .lyteJsonVrTreeNodeWrap::before,
+.lyteJsonVrTopParent > .lyteJsonVrTreeNodeWrap::before {
+	.lyteJsonVrHideConnectingLinesTreeNodeWrapBeforeMixin();
+	content: none;
+}
+
+.lyteJsonVrTreeNode {
+	.lyteJsonVrTreeNodeMixin();
+	display: flex;
+	align-items: flex-start;
+	margin: @margin;
+	line-height: @line-height;
+}
+
+.lyteJsonVrTreeOpened {
+	.lyteJsonVrTreeOpenedMixin();
+	flex-direction: @flex-direction;
+}
+
+.lyteJsonVrTreeIndex {
+	.lyteJsonVrTreeIndexMixin();
+	color: @color;
+}
+
+.lyteJsonVrTreeTitle {
+	.lyteJsonVrTreeTitleMixin();
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding-inline-start: @padding-inline-start;
+}
+
+.lyteJsonVrObject > .lyteJsonVrTreeTitle,
+.lyteJsonVrArray > .lyteJsonVrTreeTitle,
+.lyteJsonVrFunction .lyteJsonVrCodeSnippetFirstLine {
+	.lyteJsonVrObjectArrayFunctionTitleMixin();
+	cursor: pointer;
+	padding-inline-start: @padding-inline-start;
+}
+
+.lyteJsonVrEmptyObject > .lyteJsonVrTreeTitle,
+.lyteJsonVrEmptyArray > .lyteJsonVrTreeTitle {
+	.lyteJsonVrEmptyObjectArrayTitleMixin();
+	cursor: text;
+	padding-inline-start: @padding-inline-start;
+}
+
+.lyteJsonVrObject > .lyteJsonVrTreeTitle::before,
+.lyteJsonVrArray > .lyteJsonVrTreeTitle::before,
+.lyteJsonVrFunction .lyteJsonVrCodeSnippetFirstLine::before {
+	.lyteJsonVrObjectArrayFunctionTitleBeforeMixin();
+	content: '';
+	border-top: @border-top;
+	border-bottom: @border-bottom;
+	border-left: @border-left;
+	display: inline-block;
+	transition: @transition;
+	transform: @transform;
+	margin-inline-end: @margin-inline-end;
+}
+
+.lyteJsonVrTreeOpened.lyteJsonVrObject > .lyteJsonVrTreeTitle::before,
+.lyteJsonVrTreeOpened.lyteJsonVrArray > .lyteJsonVrTreeTitle::before,
+.lyteJsonVrTreeOpened.lyteJsonVrFunction .lyteJsonVrCodeSnippetFirstLine::before {
+	.lyteJsonVrTreeOpenedObjectArrayFunctionTitleBeforeMixin();
+	transform: @transform;
+}
+
+.lyteJsonVrEmptyObject > .lyteJsonVrTreeTitle::before,
+.lyteJsonVrEmptyArray > .lyteJsonVrTreeTitle::before {
+	.lyteJsonVrEmptyObjectArrayTitleBeforeMixin();
+	content: none;
+}
+
+.lyteJsonVrTreeNodeContent {
+	.lyteJsonVrTreeNodeContentMixin();
+	max-width: @max-width;
+}
+
+.lyteJsonVrEndTag {
+	.lyteJsonVrEndTagMixin();
+	padding-inline-start: @padding-inline-start;
+}
+
+.lyteJsonVrTreeOpened .lyteJsonVrFullData,
+.lyteJsonVrTreeOpened .lyteJsonVrEndTag {
+	.lyteJsonVrTreeOpenedFullDataEndTagMixin();
+	display: flex;
+	align-items: center;
+}
+
+.lyteJsonVrTreeClosed .lyteJsonVrFullData,
+.lyteJsonVrTreeClosed .lyteJsonVrEndTag {
+	.lyteJsonVrTreeClosedFullDataEndTagMixin();
+	display: none;
+}
+
+.lyteJsonVrTreeClosed .lyteJsonVrPreviewData {
+	.lyteJsonVrTreeClosedPreviewDataMixin();
+	display: flex;
+	align-items: center;
+}
+
+.lyteJsonVrTreeOpened>.lyteJsonVrTreeTitle .lyteJsonVrPreviewData {
+	.lyteJsonVrTreeOpenedTitlePreviewDataMixin();
+	display: none;
+}
+
+.lyteJsonVrToolbarYield {
+	.lyteJsonVrToolbarYieldMixin();
+	align-self: @align-self;
+}
+
+.lyteDataTreeKeyword {
+	.lyteDataTreeKeywordMixin();
+	align-items: center;
+}
+
+.lyteDataTreeKeywordText {
+	.lyteDataTreeKeywordTextMixin();
+	background: @background;
+	color: @color;
+	padding: @padding;
+	border-radius: @border-radius;
+}
+
+.lyteJsonVrColon {
+	.lyteJsonVrColonMixin();
+	margin: @margin;
+	color: @color;
+}
+
+.lyteJsonVrComma {
+	.lyteJsonVrCommaMixin();
+	color: @color;
+}
+
+.lyteJsonVrDataType {
+	.lyteJsonVrDataTypeMixin();
+	margin-inline-end: @margin-inline-end;
+	font-size: @font-size;
+	color: @color;
+}
+
+.lyteJsonVrBigInt,
+.lyteJsonVrNumber {
+	.lyteJsonVrBigIntNumberMixin();
+	color: @color;
+}
+
+.lyteJsonVrString {
+	.lyteJsonVrStringMixin();
+	color: @color;
+}
+
+.lyteJsonVrFloat {
+	.lyteJsonVrFloatMixin();
+	color: @color;
+}
+
+.lyteJsonVrFunction {
+	.lyteJsonVrFunctionMixin();
+	color: @color;
+}
+
+.lyteJsonVrHyperlink {
+	.lyteJsonVrHyperlinkMixin();
+	color: @color;
+	text-decoration: @text-decoration;
+}
+
+.lyteJsonVrSuperLongString {
+	.lyteJsonVrSuperLongStringMixin();
+	max-width: @max-width;
+	overflow: @overflow;
+	white-space: @white-space;
+	text-overflow: @text-overflow;
+	cursor: pointer;
+}
+
+.lyteJsonVrItemLength {
+	.lyteJsonVrItemLengthMixin();
+	color: @color;
+	font-size: @font-size;
+	margin-inline-start: @margin-inline-start;
+}
+
+.lyteJsonVrViewFullText {
+	.lyteJsonVrViewFullTextMixin();
+	max-width: @max-width;
+	white-space: @white-space;
+	word-break: @word-break;
+}
+
+.lyteJsonVrCodeSnippetWrapper {
+	.lyteJsonVrCodeSnippetWrapperMixin();
+	display: flex;
+	flex-direction: @flex-direction;
+}
+
+.lyteJsonVrCodeSnippet {
+	.lyteJsonVrCodeSnippetMixin();
+	padding-inline-start: @padding-inline-start;
+}
+
+.lyteJsonVrCodeSnippetFirstLine {
+	.lyteJsonVrCodeSnippetFirstLineMixin();
+	cursor: pointer;
+}

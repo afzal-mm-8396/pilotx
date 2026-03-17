@@ -1,0 +1,155 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component lyte-radiobutton
+ */
+:root,
+:host {
+  /**
+	 * @variable --lyte-radio-text-color
+	 * @selector lyte-radiobutton, .lyteRadioLabel
+	 * @description Default text color for the radio button label
+	 * @defaultValue var(--lyte-common-text-color)
+	 * @defaultVariableValue #333
+	 * @inputType color
+	 * @name Text Color
+	 */
+  --lyte-radio-text-color: var(--lyte-common-text-color);
+  /**
+	 * @variable --lyte-radio-text-hover-color
+	 * @selector lyte-radiobutton:hover .lyteRadioLabel
+	 * @description Text color on hover over the radio label
+	 * @defaultValue var(--lyte-common-text-hover-color)
+	 * @defaultVariableValue #111
+	 * @inputType color
+	 * @name Text Hover Color
+	 */
+  --lyte-radio-text-hover-color: var(--lyte-common-text-hover-color);
+  /**
+	 * @variable --lyte-radio-border-color
+	 * @selector .lyteRadioLayer
+	 * @description Border color for the default (unselected) radio button
+	 * @defaultValue #aaa
+	 * @inputType color
+	 * @name Border Color
+	 */
+  --lyte-radio-border-color: #aaa;
+  /**
+	 * @variable --lyte-radio-bg
+	 * @selector .lyteRadioLayer
+	 * @description Background color of the radio button layer
+	 * @defaultValue var(--lyte-theme-body-bg)
+	 * @defaultVariableValue #fff
+	 * @inputType color
+	 * @name Background Color
+	 */
+  --lyte-radio-bg: var(--lyte-theme-body-bg);
+  /**
+	 * @variable --lyte-radio-default-bg-on-mode
+	 * @selector .lyteRadioCheck, .checkedRadioLayer
+	 * @description Background and border color for the checked state of default radio
+	 * @defaultValue #555
+	 * @inputType color
+	 * @name Default Checked Background Color
+	 */
+  --lyte-radio-default-bg-on-mode: #555;
+  /**
+	 * @variable --lyte-radio-primary-bg-on-mode
+	 * @selector .lytePrimary .lyteRadioCheck, .checkedRadioPrimaryLayer
+	 * @description Background and border color for the primary variant when checked
+	 * @defaultValue var(--lyte-theme-active-element-bg)
+	 * @defaultVariableValue #5ba1e5
+	 * @inputType color
+	 * @name Primary Checked Background Color
+	 */
+  --lyte-radio-primary-bg-on-mode: var(--lyte-theme-active-element-bg);
+  /**
+	 * @variable --lyte-radio-secondary-bg-on-mode
+	 * @selector .lyteSecondary .lyteRadioCheck, .checkedRadioSecondaryLayer
+	 * @description Background and border color for the secondary variant when checked
+	 * @defaultValue #72C98A
+	 * @inputType color
+	 * @name Secondary Checked Background Color
+	 */
+  --lyte-radio-secondary-bg-on-mode: #72C98A;
+  /**
+	 * @variable --lyte-radio-switch-bg
+	 * @selector .lyteRadioSwitch
+	 * @description Background color of the radio switch (toggle) in the default state
+	 * @defaultValue #d3d3d3
+	 * @inputType color
+	 * @name Switch Background Color
+	 */
+  --lyte-radio-switch-bg: #d3d3d3;
+  /**
+	 * @variable --lyte-radio-switch-bg-on-mode
+	 * @selector .on-off-sw:checked + .lyteRadioSwitch
+	 * @description Background color of the radio switch when it's turned on
+	 * @defaultValue var(--lyte-theme-active-element-bg)
+	 * @defaultVariableValue #5ba1e5
+	 * @inputType color
+	 * @name Switch On Background Color
+	 */
+  --lyte-radio-switch-bg-on-mode: var(--lyte-theme-active-element-bg);
+  /**
+	 * @variable --lyte-radio-switch-circle-bg
+	 * @selector .lyteRadioSwitch .on-btn
+	 * @description Background color of the toggle circle inside the switch
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @name Switch Circle Background Color
+	 */
+  --lyte-radio-switch-circle-bg: #fff;
+  /**
+	 * @variable --lyte-radio-slider-circle-bg
+	 * @selector .lyteRadioSlider::before
+	 * @description Background color of the circle in slider-style radio
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @name Slider Circle Background Color
+	 */
+  --lyte-radio-slider-circle-bg: #fff;
+  /**
+	 * @variable --lyte-radio-slider-box-shadow
+	 * @selector .lyteRadioSlider::before
+	 * @description Box shadow applied to the slider circle
+	 * @defaultValue 0 1px 2px 0 rgba(34,36,38,.15), 0 0 0 1px rgba(34,36,38,.15) inset
+	 * @inputType boxShadow
+	 * @name Slider Box Shadow
+	 */
+  --lyte-radio-slider-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15), 0 0 0 1px rgba(34,36,38,.15) inset;
+  /**
+	 * @variable --lyte-radio-slider-bar-bg
+	 * @selector .lyteRadioSlider::after
+	 * @description Background color of the slider bar in default state
+	 * @defaultValue #b5b1b1
+	 * @inputType color
+	 * @name Slider Bar Background Color
+	 */
+  --lyte-radio-slider-bar-bg: #b5b1b1;
+  /**
+	 * @variable --lyte-radio-slider-bar-checked-bg
+	 * @selector input[type="radio"]:checked + .lyteRadioSlider::after
+	 * @description Background color of the slider bar when checked
+	 * @defaultValue #000
+	 * @inputType color
+	 * @name Slider Bar Checked Background Color
+	 */
+  --lyte-radio-slider-bar-checked-bg: #000;
+  /**
+	 * @variable --lyte-radio-button-font-size
+	 * @selector lyte-radiobutton
+	 * @description Font size of the radio label text
+	 * @defaultValue var(--lyte-font-size-regular)
+	 * @defaultVariableValue 14px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Font Size
+	 */
+  --lyte-radio-button-font-size: var(--lyte-font-size-regular);
+}

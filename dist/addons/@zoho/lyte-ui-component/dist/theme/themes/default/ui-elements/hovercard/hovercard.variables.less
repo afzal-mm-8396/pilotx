@@ -1,0 +1,53 @@
+.lyteHovercardPopoverWrapperMixin() {
+	@z-index: @hoverCardzIndex;
+}
+.hovercardPopoverMixin() {
+    @bg: @hoverCardBg;
+    @color: @hoverCardTextColor;
+    @border-radius: 5px;
+    @border: 1px solid transparent;
+}
+.hovercardArrowMixin() {
+    @bg: @hoverCardBg;
+}
+.hovercardArrowTop() {
+	@box-shadow: -1px -1px 0 0 @hoverCardBg;
+}
+.hovercardArrowBottom() {
+	@box-shadow: 1px 1px 0 0 @hoverCardBg;
+}
+.hovercardArrowRight() {
+	@box-shadow: 1px -1px 0 0 @hoverCardBg;
+}
+.hovercardArrowLeft() {
+	@box-shadow: -1px 1px 0 0 @hoverCardBg;
+}
+.lyteHovercardWrapperElemMixin() {
+	@w: 100%;
+	@h: 100%;
+	@border-radius: 4px;
+}
+.hovercardContentMixin() {
+    @padding: 15px;
+    @max-w: 500px;
+}
+.hovercardTopBottomPopoverBefore() {
+	@w: 100%;
+	@h: 11px;
+}
+.hovercardBottomPopoverBefore() {
+    @top: -11px;
+}
+.hovercardTopPopoverBefore() {
+    @bottom: -12px;
+}
+.hovercardLeftRightPopoverBefore() {
+    @h: 100%;
+    @w: 11px;
+}
+.hovercardRightPopoverBefore() {
+    @left: -11px;
+}
+.hovercardLeftPopoverBefore() {
+    @right: -11px;
+}

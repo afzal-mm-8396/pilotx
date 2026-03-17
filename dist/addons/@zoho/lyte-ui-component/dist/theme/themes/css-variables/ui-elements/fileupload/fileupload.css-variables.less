@@ -1,0 +1,278 @@
+/**
+* @component lyte-fileupload
+*/
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+
+	/**
+	 * @variable --lyte-fileupload-bg
+	 * @selector .lyteFileUpdMsgWrap, .lyteFileUpdInputType .lyteFileUpdMsgWrap, .lyteFileUpdInputType .lyteFileUpdListFile 
+	 * @description Background color of the file upload component
+	 * @defaultValue var(--lyte-theme-body-bg)
+	 * @defaultVariableValue #fff
+	 * @inputType color
+	 * @name Background Color
+	 */
+	--lyte-fileupload-bg: @themeBodyBackground;
+
+	/**
+	 * @variable --lyte-fileupload-msg-text-color
+	 * @selector .lyteFileUpdMsgWrap, .lyteFileUpdFileSize
+	 * @description Text color of the message in the file upload component
+	 * @defaultValue #666
+	 * @inputType color
+	 * @name Message Text Color
+	 */
+	--lyte-fileupload-msg-text-color: #666;
+
+	/**
+	 * @variable --lyte-fileupload-file-name-text-color
+	 * @selector .lyteFileUpdFileName, .lyteFileUpdRetryMsg:hover
+	 * @description Text color of the file name in the file upload component
+	 * @defaultValue var(--lyte-common-text-color)
+	 * @defaultVariableValue #333
+	 * @inputType color
+	 * @name File Name Text Color
+	 */
+	--lyte-fileupload-file-name-text-color: @commonTextColor;
+
+	/**
+	 * @variable --lyte-fileupload-list-file-bg
+	 * @selector .lyteFileUpdListFile
+	 * @description Background color of the list file in the file upload component
+	 * @defaultValue #f7f7f7
+	 * @inputType color
+	 * @name List File Background Color
+	 */
+	--lyte-fileupload-list-file-bg: #f7f7f7;
+
+	/**
+	 * @variable --lyte-fileupload-list-file-border-color
+	 * @selector .lyteFileUpdListFile
+	 * @description Border color of the list file in the file upload component
+	 * @defaultValue #f1f1f1
+	 * @inputType color
+	 * @name List File Border Color
+	 */
+	--lyte-fileupload-list-file-border-color: #f1f1f1;
+
+	/**
+	 * @variable --lyte-fileupload-list-file-error-bg
+	 * @selector .lyteFileUpdListFile.lyteFileError, .lyteFileUpdInputType .lyteFileUpdListFile.lyteFileError
+	 * @description Background color for files that have errors in the file upload component
+	 * @defaultValue #ffeeee
+	 * @inputType color
+	 * @name List File Error Background Color
+	 */
+	--lyte-fileupload-list-file-error-bg: #ffeeee;
+
+	/**
+	 * @variable --lyte-fileupload-list-file-error-border-color
+	 * @selector .lyteFileUpdListFile.lyteFileError, .lyteFileUpdInputType .lyteFileUpdListFile.lyteFileError
+	 * @description Border color for files that have errors in input type file upload component
+	 * @defaultValue #f8dcdc
+	 * @inputType color
+	 * @name List File Error Border Color
+	 */
+	--lyte-fileupload-list-file-error-border-color: #f8dcdc;
+
+	/**
+   	 * @variable --lyte-fileupload-retry-color
+     * @selector .lyteFileUpdRetryMsg
+     * @description Text color of the retry message
+     * @defaultValue #555
+	 * @inputType color
+	 * @name Retry Message Color
+	 */
+	--lyte-fileupload-retry-color: #555;
+
+	/**
+	 * @variable --lyte-fileupload-message-wrap-border-color
+	 * @selector .lyteFileUpdBoxType .lyteFileUpdMsgWrap
+	 * @description Border color of the message wrap in box type
+	 * @defaultValue #b8bdbe
+	 * @inputType color
+	 * @name Message Wrap Border Color
+   	 */
+	--lyte-fileupload-message-wrap-border-color: #b8bdbe;
+
+	/**
+	 * @variable --lyte-fileupload-message-wrap-hover-border-color
+	 * @selector .lyteFileUpdBoxType .lyteFileUpdMsgWrap:hover
+	 * @description Border color of the message wrap on hover in box type
+	 * @defaultValue #969b9c
+	 * @inputType color
+	 * @name Message Wrap Hover Border Color
+	 */
+	--lyte-fileupload-message-wrap-hover-border-color: #969b9c;
+
+	/**
+	 * @variable --lyte-fileupload-file-entered-message-wrap-border-color
+	 * @selector .fileDragEnter.lyteFileUpdInputType .lyteFileUpdMsgWrap, .fileDragEnter.lyteFileUpdBoxType .lyteFileUpdMsgWrap
+	 * @description Border color of the message wrap when a file is entered in input type
+	 * @defaultValue #6eb0cb
+	 * @inputType color
+	 * @name File Entered Message Wrap Border Color
+	 */
+	--lyte-fileupload-file-entered-message-wrap-border-color: #6eb0cb;
+
+	/**
+	 * @variable --lyte-fileupload-file-entered-message-wrap-bg
+	 * @selector .fileDragEnter.lyteFileUpdInputType .lyteFileUpdMsgWrap, .fileDragEnter.lyteFileUpdBoxType .lyteFileUpdMsgWrap
+	 * @description Background color of the message wrap when a file is entered in input type
+	 * @defaultValue #fafcff
+	 * @inputType color
+	 * @name File Entered Message Wrap Background Color
+	 */
+	--lyte-fileupload-file-entered-message-wrap-bg: #fafcff;
+
+	/**
+	 * @variable --lyte-fileupload-thumb-border-color
+	 * @selector .lyteFileUpdThumb
+	 * @description Border color of the thumbnail in the file upload component
+	 * @defaultValue #aaa
+	 * @inputType color
+	 * @name Thumbnail Border Color
+	 */
+	--lyte-fileupload-thumb-border-color: #aaa;
+
+	/**
+	 * @variable --lyte-fileupload-progressbar-bg
+	 * @selector .lyteFileUpdProgressBar
+	 * @description Background color of the progress bar in the file upload component
+	 * @defaultValue #dfecfb
+	 * @inputType color
+	 * @name Progress Bar Background Color
+	 */
+	--lyte-fileupload-progressbar-bg: #dfecfb;
+
+	/**
+	 * @variable --lyte-fileupload-progressbar-fill-bg
+	 * @selector .lyteFileUpdProgressFill
+	 * @description Fill color of the progress bar in the file upload component
+	 * @defaultValue #4ea2f7
+	 * @inputType color
+	 * @name Progress Bar Fill Color
+	 */
+	--lyte-fileupload-progressbar-fill-bg: #4ea2f7;
+	
+	/**
+     * @variable --lyte-fileupload-failure-msg-text-color
+     * @selector .lyteFileUpdFailMsg
+     * @description Text color of the failure message
+	 * @defaultValue #f00
+	 * @inputType color
+	 * @name Failure Message Text Color
+	 */
+	--lyte-fileupload-failure-msg-text-color: #f00;
+
+	/**
+     * @variable --lyte-fileupload-input-type-message-wrap-border-color
+     * @selector .lyteFileUpdInputType .lyteFileUpdMsgWrap
+     * @description Border color of message wrap in input type
+	 * @defaultValue #c7c7c7
+	 * @inputType color
+	 * @name Input Type Message Wrap Border Color
+	 */
+	--lyte-fileupload-input-type-message-wrap-border-color: #c7c7c7;
+
+	/**
+	 * @variable --lyte-fileupload-input-type-message-wrap-hover-border-color
+	 * @selector .lyteFileUpdInputType .lyteFileUpdMsgWrap:hover
+	 * @description Border color of message wrap on hover in input type
+	 * @defaultValue #969b9c
+	 * @inputType color
+	 * @name Input Type Message Wrap Hover Border Color
+	 */
+	--lyte-fileupload-input-type-message-wrap-hover-border-color: #969b9c;
+
+	/**
+     * @variable --lyte-fileupload-input-type-file-success-border-color
+     * @selector .lyteFileUpdInputType .lyteFileUpdListFile
+	 * @description Border color of successful file in input type
+	 * @defaultValue #c7c7c7
+	 * @inputType color
+	 * @name Input Type File Success Border Color
+	 */
+	--lyte-fileupload-input-type-file-success-border-color: #c7c7c7;
+
+	/**
+     * @variable --lyte-fileupload-msg-wrap-font-size
+     * @selector .lyteFileUpdMsgWrap
+	 * @description Font size of the message wrap
+	 * @defaultValue var(--lyte-font-size-small)
+	 * @defaultVariableValue 13px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Message Wrap Font Size
+	 */
+	--lyte-fileupload-msg-wrap-font-size: var(--lyte-font-size-small);
+
+	/**
+	 * @variable --lyte-fileupload-file-name-font-size
+	 * @selector .lyteFileUpdFileName
+	 * @description Font size of the file name in the file upload component
+	 * @defaultValue var(--lyte-font-size-regular)
+	 * @defaultVariableValue 14px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name File Name Font Size
+	 */
+	--lyte-fileupload-file-name-font-size: var(--lyte-font-size-regular);
+
+	/**
+	 * @variable --lyte-fileupload-file-size-font-size
+	 * @selector .lyteFileUpdFileSize
+	 * @description Font size of the file size in the file upload component
+	 * @defaultValue var(--lyte-font-size-xs)
+	 * @defaultVariableValue 12px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name File Size Font Size
+	 */
+	--lyte-fileupload-file-size-font-size: var(--lyte-font-size-xs);
+
+	/**
+	 * @variable --lyte-fileupload-failure-msg-font-size
+	 * @selector .lyteFileUpdFailMsg
+	 * @description Font size of the failure message in the file upload component
+	 * @defaultValue var(--lyte-font-size-xs)
+	 * @defaultVariableValue 12px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Failure Message Font Size
+	 */
+	--lyte-fileupload-failure-msg-font-size: var(--lyte-font-size-xs);
+
+	/**
+	 * @variable --lyte-fileupload-retry-msg-font-size
+	 * @selector .lyteFileUpdRetryMsg
+	 * @description Font size of the retry message in the file upload component
+	 * @defaultValue var(--lyte-font-size-xs)
+	 * @defaultVariableValue 12px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Retry Message Font Size
+	 */
+	--lyte-fileupload-retry-msg-font-size: var(--lyte-font-size-xs);
+
+	/**
+	 * @variable --lyte-fileupload-inputtype-file-name-font-size
+	 * @selector .lyteFileUpdInputType .lyteFileUpdFileName
+	 * @description Font size of the file name in input type file upload component
+	 * @defaultValue var(--lyte-font-size-small)
+	 * @defaultVariableValue 13px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Input Type File Name Font Size
+	 */
+	--lyte-fileupload-inputtype-file-name-font-size: var(--lyte-font-size-small);
+
+	/* ===== Icon Positions ===== */
+
+	--lyte-fileupload-boxtype-icon-position: -155px -203px;
+	--lyte-fileupload-buttontype-icon-position: -197px -205px;
+}

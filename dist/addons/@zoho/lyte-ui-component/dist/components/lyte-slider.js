@@ -1,0 +1,1391 @@
+/**
+ * This component is used to select a value from a range of values
+ * @component lyte-slider
+ * @version 1.0.0
+ */
+
+/**
+ * ToDO
+ * 1. taking ltPropMinDiff into account while moving handlers for aria-min and max setting
+ */
+
+/**
+ * @domEvents commonEvents keydown,keyup,keypress,focusin,focusout,wheel
+ */
+
+Lyte.Component.register('lyte-slider',{
+_template:"<template tag-name=\"lyte-slider\" lyte-slider=\"\"> <div class=\"lyteSlide {{if(ltPropDisabled,'lyteSliderDisabled','')}}\"> <div class=\"lyteRangeSlider {{ltPropDirection}}\" onclick=\"{{action('click',event)}}\" tabindex=\"{{ltPropTabIndex}}\" onkeydown=\"{{action('keydown',event)}}\"> <div class=\"lyteSliderFill\"></div> <div id=\"{{ltPropHandlerId[0]}}\" class=\"lyteSliderHandler {{ltPropHandler}} lyteHandler1\" lt-prop-title=\"{{if(expHandlers(ltPropTooltip,'&amp;&amp;',true),if(ltPropRangeHandler,ltPropMinValue,ltPropValue),'')}}\" tabindex=\"{{ltPropHandlerTabIndex}}\" onmousedown=\"{{action('mousedown',event,this)}}\" ontouchstart=\"{{action('mousedown',event,this)}}\" lt-prop-tooltip-config=\"{{ltPropTooltipConfig}}\" lt-prop-tooltip-style=\"{{ltPropTooltipStyle}}\" lt-prop-tooltip-class=\"{{ltPropTooltipClass}}\" style=\"border-color: {{ltPropFillColor}}\" role=\"{{lyteUiAttribute('slider',ltPropAria)}}\" aria-valuemin=\"{{lyteSliderBoundary('Min')}}\" aria-valuemax=\"{{lyteSliderBoundary('Max',ltPropSelectedValue2)}}\" aria-valuenow=\"{{lyteNumericOnly(lyteUiAttribute(ltPropSelectedValue1,ltPropAria))}}\" aria-valuetext=\"{{lyteUiAttribute(ltPropSelectedValue1,ltPropAria,ltPropAriaValueText)}}\" aria-label=\"{{lyteUiAttribute(ltPropSelectedValue1,ltPropAria,ltPropAriaLabel)}}\" aria-orientation=\"{{lyteUiAttribute(orientation,ltPropAria)}}\"></div> <template is=\"if\" value=\"{{ltPropRangeHandler}}\"><template case=\"true\"> <div id=\"{{ltPropHandlerId[1]}}\" class=\"lyteSliderHandler {{ltPropHandler}} lyteHandler2\" tabindex=\"0\" onmousedown=\"{{action('mousedown',event,this)}}\" ontouchstart=\"{{action('mousedown',event,this)}}\" lt-prop-title=\"{{if(ltPropTooltip,ltPropMaxValue,'')}}\" lt-prop-tooltip-config=\"{{ltPropTooltipConfig}}\" lt-prop-tooltip-style=\"{{ltPropTooltipStyle}}\" lt-prop-tooltip-class=\"{{ltPropTooltipClass}}\" style=\"border-color: {{ltPropFillColor}}\" role=\"{{lyteUiAttribute('slider',ltPropAria)}}\" aria-valuemin=\"{{lyteSliderBoundary('Min',ltPropSelectedValue1)}}\" aria-valuemax=\"{{lyteSliderBoundary('Max')}}\" aria-valuenow=\"{{lyteNumericOnly(lyteUiAttribute(ltPropSelectedValue2,ltPropAria))}}\" aria-valuetext=\"{{lyteUiAttribute(ltPropSelectedValue2,ltPropAria,ltPropAriaRangeValueText)}}\" aria-label=\"{{lyteUiAttribute(ltPropSelectedValue2,ltPropAria,ltPropAriaLabel)}}\" aria-orientation=\"{{lyteUiAttribute(orientation,ltPropAria)}}\"></div> </template></template><template is=\"if\" value=\"{{ltPropYield}}\"><template case=\"true\"> <lyte-yield yield-name=\"yield\" lt-prop-scale-value=\"{{scaleVal}}\" lt-prop-scale-style=\"{{divLength}}\"></lyte-yield> </template><template case=\"false\"> <div class=\"lyteScaleOption {{ltPropHandler}}\" role=\"{{lyteUiAttribute('group',ltPropAria,'',ltPropScaleTabindex)}}\"> <template is=\"for\" items=\"{{divLength}}\" index=\"indexVal\"> <span class=\"lyteScaleLine\" style=\"{{item}}\"> <span></span> <span class=\"lyteScalLable\" tabindex=\"{{ltPropScaleTabindex}}\" role=\"{{lyteUiAttribute('button',ltPropAria,'',ltPropScaleTabindex)}}\">{{scaleVal[indexVal]}}</span> </span> </template> </div> </template></template> </div> </div> </template>",
+_dynamicNodes : [{"type":"attr","position":[1]},{"type":"attr","position":[1,1]},{"type":"attr","position":[1,1,3],"attr":{"style":{"name":"style","helperInfo":{"name":"concat","args":["'border-color: '","ltPropFillColor"]}}}},{"type":"attr","position":[1,1,5]},{"type":"if","position":[1,1,5],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[1],"attr":{"style":{"name":"style","helperInfo":{"name":"concat","args":["'border-color: '","ltPropFillColor"]}}}}]}},"default":{}},{"type":"attr","position":[1,1,6]},{"type":"if","position":[1,1,6],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[1]},{"type":"insertYield","position":[1]}]},"false":{"dynamicNodes":[{"type":"attr","position":[1]},{"type":"attr","position":[1,1]},{"type":"for","position":[1,1],"dynamicNodes":[{"type":"attr","position":[1],"attr":{"style":{"name":"style","dynamicValue":"item"}}},{"type":"attr","position":[1,3]},{"type":"text","position":[1,3,0]}]}]}},"default":{}}],
+_observedAttributes :["divLength","scaleVal","ltPropMin","ltPropMax","ltPropScaleInterval","ltPropStep","ltPropHandler","ltPropDirection","ltPropWidth","ltPropFillColor","ltPropNonFillColor","ltPropHeight","ltPropValue","ltPropDiscrete","ltPropContent","ltPropRangeHandler","ltPropMinValue","ltPropMaxValue","ltPropDisabled","ltPropSelectedValue1","ltPropSelectedValue2","ltPropYield","ltPropTooltipStyle","ltPropTooltip","ltPropScaleUnit","ltPropTooltipClass","ltPropTooltipConfig","ltPropMinDiff","ltPropDigits","ltPropAria","ltPropTabIndex","ltPropHandlerTabIndex","ltPropAriaLabel","ltPropAriaValueText","ltPropAriaRangeValueText","ltPropMinDiscrete","ltPropScaleTabindex","ltPropHandlerId","preventObs","orientation"],
+_observedAttributesType :["array","array","string","string","string","string","string","string","string","string","string","string","string","string","array","boolean","string","string","boolean","string","string","boolean","string","boolean","string","string","object","number","number","boolean","number","number","string","string","string","number","number","array","boolean","string"],
+
+        _lyteUtilFunctions : [],
+        init:function(){
+            this._dir = _lyteUiUtils.getRTL();
+            var config = this.getData( 'ltPropTooltipConfig' ), dir = this.getData('ltPropDirection'), style = this.getData('ltPropTooltipStyle');
+            if( !config ) {
+                this._config = true;
+                this.data.ltPropTooltipConfig = { position : ( dir == 'lyteHorizontal' ? 'top' : 'right' ), showdelay : 500, margin : 10 }
+            }
+
+            if( !style ) {
+                this._style = true;
+                if( this.data.ltPropFillColor ) {
+                    this.data.ltPropTooltipStyle = "background-color : " + this.data.ltPropFillColor + ";";
+                }
+            }
+
+            if( [ undefined, '', null ].indexOf( this.getData( 'ltPropScaleInterval' ) ) != -1 ) {
+                this.setData('preventObs', true);
+                var newScale;
+                if( this.getData( 'ltPropHandler' ).indexOf( 'Arrow' ) != -1 ) {
+                    if( this.getData('ltPropContent').length == 0 ) {
+                        newScale = 0.1 * ( parseFloat( this.getData( 'ltPropMax' ) ) - parseFloat( this.getData( 'ltPropMin' ) ) )
+                    }
+                } 
+                if( this.getData('ltPropContent').length ) {
+                    newScale = 'true';
+                }
+                if( newScale ) {
+                    this.setData( 'ltPropScaleInterval', newScale.toString() )
+                }
+                this.setData('preventObs', false);
+            }
+            if(this.getMethods('beforeRender'))
+                {
+                    /**
+                     * This method is called before the slider is rendered.
+                     * @method beforeRender
+                     * @author ponkarthikeyan.t@zohocorp.com
+                     * @version 1.0.1
+                     * @param { object } sliderElement
+                     */
+                    this.executeMethod('beforeRender', this.$node);
+                }
+        },
+
+        rtlfunc : function( lft, bcr, ww ) {
+            if( this._dir && lft != 'top' && lft != 'clientY' ) {
+                if( bcr ) {
+                    if( lft == 'right' ) {
+                        return ww - bcr.left;
+                    } else if( lft == 'clientX' ) {
+                        return ww - bcr.clientX
+                    } else if( lft == 'offsetLeft' ) {
+                        return bcr.offsetParent.offsetWidth - bcr.offsetLeft - bcr.offsetWidth;
+                    }
+                    return ww - bcr.right;
+                } else if( lft == 'left' ) {
+                    return 'right';
+                } 
+            }
+            return bcr ? bcr[ lft ] : lft;
+        },
+
+        heightSetObs : function(){
+            this.heightSet.call(this, arguments[0])
+        }.observes('ltPropWidth','ltPropHeight'),
+
+        heightSet : function (){
+            var width = this.getData('ltPropWidth'), height = this.getData('ltPropHeight')
+            if(this.getData('ltPropDirection').indexOf('Horizontal')!=-1)
+                    {
+                        if(!width) {
+                                this.setData('ltPropWidth','200px')
+                                width = '200px';
+                            }
+                        if(!height) {
+                                this.setData('ltPropHeight','30px')
+                                height = '30px';
+                            }
+                    }
+            else
+                {
+                    if(!width){
+                            this.setData('ltPropWidth','30px')
+                            width = '30px'
+                        }
+                    if(!height){
+                            this.setData('ltPropHeight','200px')
+                            height = '200px';
+                        }
+                }
+            this.$node.style.width = width;
+            this.$node.style.height = height;
+            if(arguments.length){
+                this.didConnectWrk.call(this)   
+            }
+        },
+
+        initialWorkObs : function(){
+            if(this.getData('preventObs')){
+                return;
+            }
+            this.setData('preventObs', true);
+            this.initialWork.call(this, arguments[ 0 ]);
+            this.setData('preventObs', false);
+        }.observes('ltPropContent','ltPropMax','ltPropMin', 'ltPropScaleInterval','ltPropDiscrete','ltPropStep','ltPropValue', 'ltPropScaleUnit').on('init'),
+
+        initialWork : function (arg){
+            var ltPropContent = this.getData('ltPropContent').slice(), direction = this.getData('ltPropDirection'), discrete = this.getData( 'ltPropDiscrete' ), rangeHandler = this.getData( 'ltPropRangeHandler' );
+            if( !ltPropContent.length )
+                {
+                    var min = parseFloat( this.getData( 'ltPropMin' ) ), max = parseFloat( this.getData( 'ltPropMax' ) )
+                    if( !rangeHandler ) {
+                        var value = parseFloat( this.getData( 'ltPropValue' ) );
+                        if( value < min || isNaN( value ))
+                            {   
+                                this.setData('ltPropValue', min.toString());
+                            }
+                        else if( value > max)
+                            {
+                                this.setData('ltPropValue', max.toString());
+                            }
+                        this.setData('ltPropSelectedValue1', this.getData('ltPropValue'));
+                    } else {
+                        var minVal = parseFloat( this.getData( 'ltPropMinValue' ) ), maxVal = parseFloat( this.getData( 'ltPropMaxValue' ) );
+                        if( isNaN( minVal ) || minVal < min || minVal >= max ) {
+                            this.setData( 'ltPropMinValue', min.toString() );
+                        }
+                        if( isNaN( maxVal ) || maxVal > max || maxVal <= min) {
+                            this.setData( 'ltPropMaxValue', max.toString() );
+                        }
+                        this.setData('ltPropSelectedValue1', this.getData('ltPropMinValue'));
+                        this.setData('ltPropSelectedValue2', this.getData('ltPropMaxValue'));
+                    }   
+                    if( discrete ) {
+                        var minDiscrete = this.data.ltPropMinDiscrete * ( parseFloat( this.getData( 'ltPropMax' ) ) - parseFloat( this.getData( 'ltPropMin' ) ) );
+                        discrete = parseFloat( discrete );
+                        discrete = Math.max( isNaN( discrete ) ? 0 : discrete, minDiscrete ).toString();
+                        this.setData( 'ltPropDiscrete', discrete);
+                        this.setData( 'ltPropStep', discrete );
+                        this.setData( 'ltPropScaleInterval', discrete );                    
+                    }
+                }
+            else if(ltPropContent.length)
+                {
+                    this.setData('ltPropMax','100');
+                    this.setData('ltPropStep',this.getData('ltPropScaleInterval'))
+                    if( this.getData( 'ltPropScaleInterval' ) || ( arg && arg.item == 'ltPropContent' ) ) {
+                        this.setData('ltPropScaleInterval', '' + parseFloat( 100 / ( ltPropContent.length - 1 ) ) + '')
+                    }
+                    this.setData('ltPropDiscrete',this.getData('ltPropScaleInterval'))
+                    if( !rangeHandler ) {
+                        if(!this.getData('ltPropValue') ) {
+                            this.setData('ltPropValue',this.getData('ltPropContent')[0]);
+                        }   
+                        this.setData('ltPropSelectedValue1', this.getData('ltPropValue'));  
+                    } else {
+                        var minVal = this.getData( 'ltPropMinValue' ), maxVal = this.getData( 'ltPropMaxValue' );
+                        if( !minVal || ltPropContent.indexOf( minVal ) == -1 || ( ltPropContent.indexOf( minVal ) > ltPropContent.indexOf( maxVal ) ) ) {
+                             this.setData( 'ltPropMinValue', ltPropContent[ 0 ] );
+                        } 
+                        if( !maxVal || ltPropContent.indexOf( maxVal ) == -1 || ( ltPropContent.indexOf( minVal ) > ltPropContent.indexOf( maxVal ) ) ) {
+                             this.setData( 'ltPropMaxValue', ltPropContent[ ltPropContent.length - 1 ] );
+                        } 
+                        this.setData('ltPropSelectedValue1', this.getData('ltPropMinValue'));
+                        this.setData('ltPropSelectedValue2', this.getData('ltPropMaxValue'));
+                    }   
+                }   
+            var array = []
+            var scale = []
+            // if(!this.getData('ltPropYield'))    
+            //     {
+                    var dirFlag = direction.indexOf('Horizontal') != -1 ? true : false, left = "top:", scaleint = parseFloat( this.getData( 'ltPropScaleInterval' ) );
+                    if(dirFlag){
+                        left =  this.rtlfunc.call( this, 'left' ) + ":"
+                    }
+                    if( scaleint && !isNaN( scaleint ) )
+                        {
+    
+                            var __data = this.data,
+                            min = parseFloat( __data.ltPropMin ),
+                            temp = min,
+                            scaleText = __data.ltPropScaleUnit || "",
+                            max = parseFloat( __data.ltPropMax ),
+                            __digits = __data.ltPropDigits,
+                            __content = __data.ltPropContent || [],
+                            __content_len = __content.length;
+
+                            for( var i = 0; temp <= max; i++ ){
+                                array.push(
+                                    left + ( ( temp - min ) / ( max - min ) * 100 ) + "%"
+                                );
+
+                                if( __content_len ){
+                                    scale.push( __content[ i ] + scaleText );
+                                } else{
+                                    scale.push( temp + scaleText );
+                                }
+
+                                if( scaleint < 1 ){
+                                    var __match = /.(\d{1,})$/.exec( scaleint );
+                                    if( __match ){
+                                        __digits = __match[ 1 ].length;
+                                    }
+                                }
+                                
+                                temp = parseFloat( ( temp + scaleint ).toFixed( __digits ) );
+                            }
+
+                            var maxVal = __content_len ? __content[ __content_len - 1 ] : max;
+
+                            if( scale[ scale.length - 1 ] != ( maxVal + scaleText ) ){
+                                array.push( left + "100%" );
+                                if( __content_len ){
+                                    scale.push( __content[ __content_len - 1 ] + scaleText );
+                                } else {
+                                    scale.push( max + scaleText );
+                                }
+                            } 
+                        }
+                    else
+                        {
+                            array.push( left + 0 + '%');
+                            array.push( left + 100 + '%');
+                            scale=this.MaxMinSet.call(this);
+                            this.setData('scaleVal',scale);         
+                        }
+            // }
+            this.setData('scaleVal', scale);
+            this.setData('divLength', array);   
+        },
+
+        colorSetObs : function(arg){
+            this.colorSet.call(this, arg);
+        }.observes('ltPropFillColor','ltPropNonFillColor').on( 'didConnect' ),
+
+        colorSet : function (arg) {
+            if((!arg && this.data.ltPropFillColor) || (arg && arg.item == "ltPropFillColor"))
+                {
+                    this.$node.querySelector( 'div.lyteSliderFill' ).style.backgroundColor=this.data.ltPropFillColor;
+                }
+            if((!arg && this.data.ltPropNonFillColor) || (arg && arg.item == "ltPropNonFillColor"))
+                {
+                    this.$node.querySelector( 'div.lyteRangeSlider' ).style.backgroundColor= this.data.ltPropNonFillColor;
+                }
+        },
+
+        didConnectWrkObs : function(){
+            if(this.getData('preventObs')){
+                return;
+            }
+            this.setData('preventObs', true);
+            this.didConnectWrk.apply(this, arguments);
+            this.setData('preventObs', false);
+
+            this.valueSelected();
+        }.observes('ltPropScaleInterval','ltPropValue','ltPropMin','ltPropMax','ltPropMinValue','ltPropMaxValue','ltPropContent','ltPropHandler','ltPropRangeHandler'),
+
+        didConnectWrk : function () {
+            var handlers = this.$node.querySelectorAll( 'div.lyteSliderHandler' ), rangeHandler = this.getData('ltPropRangeHandler'), direction = this.getData('ltPropDirection');
+            var thisClientRect = this.bcr( this.$node ), handlersClientRect = this.bcr( handlers[0] ), offParent = this.$node.offsetParent, objj = {};
+            var width = "width", handlerWidth = "handlerWidth", left = this.rtlfunc.call( this, 'left' ), left1, left2, actWidth = {}, offsetWidth = 'offsetWidth', node;
+            if( direction.indexOf('Horizontal') == -1) {
+                width = "height"; handlerWidth = "handlerHeight", left = "top", offsetWidth = 'offsetHeight';
+            }
+            if( offParent == null ) {
+                objj.width = parseFloat(this.getData('ltPropWidth'));
+                objj.height = parseFloat(this.getData('ltPropHeight'));
+                objj.handlerWidth = objj.handlerHeight = 12;
+            } else {
+                objj.width = thisClientRect.width;
+                objj.height = thisClientRect.height;
+                objj.handlerWidth = handlersClientRect.width;
+                objj.handlerHeight = handlersClientRect.height;
+            }
+              var lyteSliderFill= this.$node.querySelector( 'div.lyteSliderFill' );
+              if(this.getData('ltPropContent').length)
+                    {
+                        var index1,index2,index = this.data.ltPropContent.indexOf( this.data.ltPropValue );
+                        node= this.$node.querySelectorAll( 'div.lyteSliderHandler' );
+                        index = index > -1 ? index : 0 ;
+                        if(rangeHandler)
+                            {
+                                index1 = this.getData( 'ltPropContent' ).indexOf( this.getData( 'ltPropMinValue' ) );
+                                index1 = index1 != -1 ? index1 : 0;
+                                index2 = this.getData( 'ltPropContent' ).indexOf( this.getData( 'ltPropMaxValue' ) );
+                                index2 = index2 != -1 ? index2 : this.getData( 'ltPropContent' ).length - 1;
+                            }
+                        if(rangeHandler)
+                            {
+                                left1 = this.rangeInitialSet.call(this, offsetWidth, index1)
+                                left2 = this.rangeInitialSet.call(this, offsetWidth, index2)
+                                actWidth = this.rangeSliderFill(left1, left2, objj[handlerWidth])
+                            }
+                        else    
+                            {
+                                left1 = this.rangeInitialSet.call(this, offsetWidth, index)
+                                actWidth.width =  index / ( this.getData( 'ltPropContent' ).length - 1 ) * objj[ width ] ;
+                            }   
+                    }
+                else if(!rangeHandler)
+                    {
+                        left1 = this.initialValueSet.call(this, objj[width], objj[handlerWidth] , parseFloat(this.getData('ltPropValue')))
+                        actWidth.width = ( ( parseFloat( this.getData( 'ltPropValue' ) ) - parseFloat( this.getData( 'ltPropMin' ) ) ) / ( parseFloat( this.getData( 'ltPropMax' ) ) - parseFloat( this.getData( 'ltPropMin' ) ) ) * objj[width] );
+                    }
+                else
+                    {
+                        left1 = this.initialValueSet.call(this, objj[width], objj[handlerWidth], parseFloat( this.getData( 'ltPropMinValue' ) ) )
+                        left2 = this.initialValueSet.call(this, objj[width], objj[handlerWidth], parseFloat( this.getData( 'ltPropMaxValue' ) ) )
+                        actWidth = this.rangeSliderFill(left1, left2, objj[handlerWidth])
+                    }
+            handlers[ 0 ].style[ left ] = left1 + 'px';
+            lyteSliderFill.style[ width ] = actWidth.width + 'px';
+            if( handlers[ 1 ] ) {
+                handlers[ 1 ].style[ left ] = left2 + 'px';
+                lyteSliderFill.style[ left ] = actWidth.left + 'px';
+            }       
+        },  
+
+        directionObsObs : function(){
+            this.directionObs.call(this);
+        }.observes('ltPropDirection'),
+
+        directionObs : function(){
+
+            if( this.data.ltPropAria ){
+                this.setData( 'orientation', this.data.ltPropDirection == "lyteHorizontal" ? 'horizontal' : 'vertical' );
+            }
+            
+            if(this.getData('preventObs')){
+                return;
+            }
+            $L.fastdom.mutate(function(){
+                var lyteSliderHandler = this.$node.querySelector( '.lyteSliderHandler' );
+                lyteSliderHandler.style.removeProperty( this.rtlfunc.call( this, 'left' ) );
+                lyteSliderHandler.style.removeProperty('top');
+                var lyteSliderFill = this.$node.querySelector( '.lyteSliderFill' );
+                lyteSliderFill.style.removeProperty('width');
+                lyteSliderFill.style.removeProperty('height');
+                this.setData('preventObs', true);
+                this.heightSet.call(this);
+                // this.initialWork.call(this);
+                $L.fastdom.measure( function() {
+                    this.didConnectWrk.call(this);
+                    this.setData('preventObs', false);
+                }.bind( this ))
+            }.bind(this))
+        },
+
+        MaxMinSet:function(){
+                var scale=[], scaleText = this.getData( 'ltPropScaleUnit' );
+                if(this.getData('ltPropContent').length)
+                    {
+                        scale.push(this.getData('ltPropContent')[0] + scaleText);
+                        scale.push(this.getData('ltPropContent')[this.getData('ltPropContent').length-1] + scaleText)
+                    }
+                else    
+                    {
+                        scale.push(this.getData('ltPropMin') + scaleText);
+                        scale.push(this.getData('ltPropMax') + scaleText);
+                    }
+                return scale;   
+        },
+        selectedVal:function(clientRect, nodeClientRect,ltPropHeight,node,left){
+
+            var selectedVal,
+            slideClientRect = clientRect[ ltPropHeight ],
+            max = parseFloat( this.data.ltPropMax ),
+            min = parseFloat( this.data.ltPropMin );
+
+            if(node)
+                {
+                    selectedVal = (((parseFloat(node.style[ left ]) + nodeClientRect[ltPropHeight]/2)/slideClientRect)*(parseFloat(this.getData('ltPropMax'))-parseFloat(this.getData('ltPropMin')))+parseFloat(this.getData('ltPropMin'))).toFixed( this.data.ltPropDigits );
+                }
+            else    
+                {
+                    selectedVal = (( parseFloat( this.$node.querySelector( 'div.lyteSliderFill' ).style[ ltPropHeight ] ) / slideClientRect)*(parseFloat(this.getData('ltPropMax'))-parseFloat(this.getData('ltPropMin')))+parseFloat(this.getData('ltPropMin'))).toFixed( this.data.ltPropDigits );
+                }
+            if(this.getData('ltPropContent').length)
+                {
+                    var numb = parseFloat(selectedVal)/parseFloat(this.getData('ltPropScaleInterval'));
+                    if(selectedVal>100)
+                        {
+                            selectedVal=this.getData('ltPropContent')[this.getData('ltPropContent').length - 1];
+                        }
+                    else
+                        {
+                            selectedVal=this.getData('ltPropContent')[parseInt(parseFloat(numb).toFixed(0))];
+                        }
+                }
+            else {
+                selectedVal = Math.max( Math.min( selectedVal, max ), min );
+            }
+            return selectedVal; 
+        },
+        onSelect:function(flag){
+            if(this.getMethods('onChange')||this.getMethods('onSelect'))
+                {
+                    if(!this.getData('ltPropRangeHandler'))
+                        {   
+
+                            /**
+                             * This method is called when the slider value is changed through dragging the handler.
+                             * @method onChange
+                             * @author ponkarthikeyan.t@zohocorp.com
+                             * @version 1.0.1
+                             * @param { string } startValue
+                             * @param { string } endValue
+                             * @param { object } sliderElement
+                             */
+                            if(this.getMethods('onChange')) 
+                                {
+                                    this.executeMethod('onChange',this.getData('ltPropSelectedValue1'), this.$node) 
+                                }
+
+
+                            /**
+                             * This method is called when the slider value is selected.
+                             * @method onSelect
+                             * @author ponkarthikeyan.t@zohocorp.com
+                             * @version 1.0.1
+                             * @param { string } startValue
+                             * @param { string } endValue
+                             * @param { object } sliderElement
+                             */
+
+                            if(this.getMethods('onSelect') && flag) 
+                                {
+                                    this.executeMethod('onSelect',this.getData('ltPropSelectedValue1'), this.$node) 
+                                }
+                        }
+                    else
+                        {
+                            if(this.getMethods('onChange')) 
+                                {
+                                    this.executeMethod('onChange', this.getData('ltPropSelectedValue1'), this.getData('ltPropSelectedValue2'), this.$node); 
+                                }
+                            if(this.getMethods('onSelect') && flag) 
+                                {
+                                    this.executeMethod('onSelect', this.getData('ltPropSelectedValue1'), this.getData('ltPropSelectedValue2'), this.$node); 
+                                }
+                        }
+                }           
+            },
+        scroll:function(widthVal,offWidth){
+                var discrete=parseFloat(this.getData('ltPropDiscrete'));
+                var flag=false,flag1=false,flag2=false;
+                if(widthVal>=parseFloat(this.getData('ltPropMax'))-(parseFloat(this.getData('ltPropMax'))-parseFloat(this.getData('ltPropMin')))%discrete)
+                    {
+                        discrete=(parseFloat(this.getData('ltPropMax'))-parseFloat(this.getData('ltPropMin')))%discrete;
+                        flag1=true;
+                        flag=true;
+                    }
+                else if(widthVal-parseFloat(this.getData('ltPropDiscrete'))/2<(parseFloat(this.getData('ltPropMin'))))
+                    {
+                        flag=true;
+                        flag2=true;
+                    }
+                if(flag)                                    
+                    {
+                        if(widthVal>parseFloat(this.getData('ltPropMax'))-discrete/2)
+                            {
+                                if(flag1)
+                                    {
+                                        widthVal=parseFloat(this.getData('ltPropMax'))
+                                    }
+                                else
+                                    {
+                                        widthVal=widthVal-(widthVal-parseFloat(this.getData('ltPropMin')))%discrete+discrete;
+                                    }
+                            }
+                        else
+                            {
+                                discrete=parseFloat(this.getData('ltPropDiscrete'))
+                                if(flag2)
+                                    {
+                                        widthVal=parseFloat(this.getData('ltPropMin'))
+                                    }
+                                else
+                                    {
+                                        widthVal=widthVal-(widthVal-parseFloat(this.getData('ltPropMin')))%discrete;
+                                    }
+                            }
+                    }
+                else
+                    {
+                        if((widthVal-parseFloat(this.getData('ltPropMin')))%discrete>=parseFloat(this.getData('ltPropDiscrete'))/2)
+                            {
+                                widthVal=widthVal-(widthVal-parseFloat(this.getData('ltPropMin')))%discrete+discrete;
+                            }
+                        else
+                            {
+                                widthVal=widthVal-(widthVal-parseFloat(this.getData('ltPropMin')))%discrete;
+                            }
+                    }       
+                return ((widthVal-parseFloat(this.getData('ltPropMin')))/(parseFloat(this.getData('ltPropMax'))-parseFloat(this.getData('ltPropMin')))*offWidth);
+        },  
+        ScrollCheck:function(node,left1,width1,clientX1,offsetWidth1,ltPropWidth1,offsetLeft1,event){
+            var isTch = event.type == "touchmove", evt = event; 
+            if( isTch && event.touches.length != 1 ) {
+                return
+            } else if( isTch ) {
+                evt = event.touches[ 0 ];
+            }
+            var step, flag = true, lyteHandler2, lyteHandler1, lyteRangeSlider, lyteSlide = this.$node.querySelector( 'div.lyteSlide'  ), handler1Client, handler2Client;
+            var rangeHandler = this.getData( 'ltPropRangeHandler' ), sliderFill = this.$node.querySelector( 'div.lyteSliderFill' ), wwidth = window.innerWidth,
+            evtt = this.rtlfunc.call( this, clientX1, evt, wwidth ), h1left, h2left, width, left;
+            if( !rangeHandler )
+                {   
+                    width = this.get_client( evt, clientX1, wwidth) - this.rtlfunc.call( this, left1, this.bcr( sliderFill ), wwidth );
+                }
+            else
+                {
+                    lyteHandler2 = this.$node.querySelector( 'div.lyteHandler2' ),lyteHandler1= this.$node.querySelector( 'div.lyteHandler1' ), lyteRangeSlider= this.$node.querySelector( 'div.lyteRangeSlider' );
+                    handler1Client = lyteHandler1.getBoundingClientRect(); handler2Client = lyteHandler2.getBoundingClientRect();
+                    h2left = this.rtlfunc.call( this, left1, handler2Client, wwidth ); h1left = this.rtlfunc.call( this, left1, handler1Client, wwidth )
+                    if(( h2left - h1left ) <= 0)    
+                        {
+                            if(this._elem)
+                                {
+                                    if( this._elem.classList.contains( 'lyteHandler1' ) )
+                                        {
+                                            if( evtt < ( h1left + handler1Client[ width1 ] ) && ( h2left - h1left ) == 0 )
+                                                {
+                                                    flag = true;
+                                                }
+                                            else
+                                                {   
+                                                    if(event.type == 'mousemove' || isTch )
+                                                        {
+                                                          flag = false
+                                                        }
+                                                }   
+                                        }
+                                    else if(this._elem.classList.contains('lyteHandler2'))
+                                        {
+                                            if( evtt > ( h2left ) && ( h2left - h1left ) == 0 )
+                                                {   
+                                                    flag=true;
+                                                }
+                                            else
+                                                {
+                                                    if(event.type=='mousemove' || isTch )
+                                                        {
+                                                            flag=false
+                                                        }
+                                                }   
+                                        }
+                                }       
+                            else
+                                {
+                                    if(event.type=='mousemove' || isTch )
+                                        {
+                                            flag=false
+                                        }
+                                }   
+                        }   
+                    else
+                        {
+                            step = this.getData('ltPropDiscrete') ? parseFloat( this.getData( 'ltPropDiscrete' ) ) : 0;
+                        }    
+                    width = this.get_client( evt, clientX1, wwidth) - this.rtlfunc.call( this, left1, this.bcr( lyteRangeSlider ), wwidth );
+                }
+            if( this.getData( 'ltPropContent' ).length && event.type == 'click' )
+                {
+                    if( rangeHandler )
+                        {
+                            if( parseInt( h2left - h1left ) < 1 / ( this.getData( 'ltPropContent' ).length - 1 ) * this.$node[ ltPropWidth1 ] && evtt < ( h2left + handler2Client[ width1 ]) && evtt > ( h1left + handler1Client[ width1 ] ) )
+                                {
+                                    flag = false
+                                }
+                        }
+                }       
+            var lyteSliderHandler= this.$node.querySelector( 'div.lyteSliderHandler' );
+            var nodeClientRect = this.bcr( node ), slideClientRect = this.bcr( lyteSlide );
+            if(this.getData('ltPropDiscrete'))
+                {   
+                    var widthVal=((width/slideClientRect[width1])*(parseFloat(this.getData('ltPropMax'))-parseFloat(this.getData('ltPropMin')))+parseFloat(this.getData('ltPropMin')));
+                    width=this.scroll.call(this,widthVal, slideClientRect[width1]);     
+                }
+                width=width < slideClientRect[width1] ? width : slideClientRect[width1];
+                width=width>0?width:0;  
+                left=(width-nodeClientRect[width1]/2);
+                left=left>(slideClientRect[width1] -lyteSliderHandler[offsetWidth1]/2) ? slideClientRect[width1] - lyteSliderHandler[offsetWidth1]/2:left;
+                left=left>-nodeClientRect[width1]/2?left:-nodeClientRect[width1]/2;
+                if( rangeHandler )
+                    {
+                        if(node.classList.contains('lyteHandler1'))
+                            {   
+                                if( this.rtlfunc.call( this, offsetLeft1, lyteHandler2 ) < left )
+                                    {
+                                        flag=false
+                                    }
+                            }
+                        else
+                            {
+                                if( this.rtlfunc.call( this, offsetLeft1, lyteHandler1 ) > left )
+                                    {
+                                        flag=false
+                                    }
+                            }   
+                    }
+                    // selected node need to be focused for keyboard events
+                    event.type && node.focus();
+                    if(flag)
+                        {
+                            left1 = this.rtlfunc.call( this, left1 );
+                            if( !rangeHandler )
+                                {
+                                    sliderFill.style[width1]=width+'px';
+                                }
+                            else
+                                {
+                                    handler1Client = this.bcr( lyteHandler1 ); 
+                                    handler2Client = this.bcr( lyteHandler2 );
+
+                                    var leftx, lefty;
+                                    if(node.classList.contains( 'lyteHandler1' )) {
+                                        lefty = parseInt( lyteHandler2.style[ left1 ] )
+                                        var co = this.minMaxCheck( slideClientRect, handler1Client, width1 )
+                                        left = Math.min( Math.max( left, co[ 0 ] ), lefty - co[ 1 ] );
+                                        leftx = left;
+                                    } else {
+                                        leftx = parseInt( lyteHandler1.style[ left1 ] )
+                                        var co = this.minMaxCheck( slideClientRect, handler1Client, width1, true );
+                                        left = Math.max( Math.min( left, co[ 0 ] ), leftx + co[ 1 ]);
+                                        lefty = left;
+                                    }
+                                    var acWid = this.rangeSliderFill.call(this, leftx, lefty, handler1Client [ width1 ]);
+                                    sliderFill.style[ left1 ] = acWid.left + 'px';
+                                    sliderFill.style[ width1 ] = acWid.width + 'px';
+
+                                }
+                            node.style[ left1 ] = left + 'px';  
+                        }
+                    $L.fastdom.measure(function(){  
+                        this.selectedValFind.call(this, slideClientRect, nodeClientRect)    
+                        if( event && /mousemove|touchmove/i.test( event.type ) && node.tooltip && node.tooltip.refresh ){
+                            node.tooltip.refresh( { clientX : Math.max( Math.min( event.clientX, slideClientRect.right ), slideClientRect.left ) }, node.tooltip.tooltipSpan );
+                        }
+                    }.bind(this));
+            if( event.type ){
+                event.stopPropagation();
+                event.preventDefault();
+            }
+        },
+
+        minMaxCheck : function( slideClientRect, handler1Client, width1, flag ){
+            var diffVal = this.getData( 'ltPropMinDiff' ) || 0, left1, conv = diffVal * slideClientRect[ width1 ] / ( parseFloat( this.getData( 'ltPropMax' ) ) - parseFloat( this.getData( 'ltPropMin' ) ) );
+            if( !flag ) {
+                left1 = conv - ( handler1Client[ width1 ] / 2 )
+            } else {
+                left1 = slideClientRect[ width1 ] - conv - ( handler1Client[ width1 ] / 2 )
+            }
+            return [ left1, conv ]
+        },
+
+        selectedValFind : function(clientRect, nodeClientRect){
+                this.setData('preventObs', true)
+                if(!this.getData('ltPropRangeHandler'))
+                    {
+                        if(this.getData('ltPropDirection').indexOf('Horizontal')==-1)
+                            {
+                                this.setData('ltPropValue',this.selectedVal.call(this, clientRect, nodeClientRect,'height').toString());
+                            }
+                        else
+                            {
+                                this.setData('ltPropValue',this.selectedVal.call(this, clientRect, nodeClientRect,'width').toString());
+                            }
+                        this.setData('ltPropSelectedValue1',this.getData('ltPropValue'));   
+                    }
+                else
+                    {
+                        if(this.getData('ltPropDirection').indexOf('Horizontal')==-1)
+                            {
+                                this.setData('ltPropMinValue',this.selectedVal.call(this, clientRect, nodeClientRect, 'height', this.$node.querySelector( 'div.lyteHandler1' ), 'top').toString());
+                                this.setData('ltPropMaxValue',this.selectedVal.call(this, clientRect, nodeClientRect, 'height', this.$node.querySelector( 'div.lyteHandler2' ),'top').toString());
+                            }
+                        else
+                            {
+                                var lt = this.rtlfunc.call( this, 'left' );
+                                this.setData('ltPropMinValue', this.selectedVal.call(this, clientRect, nodeClientRect, 'width', this.$node.querySelector( 'div.lyteHandler1' ), lt ).toString());
+                                this.setData('ltPropMaxValue',this.selectedVal.call(this, clientRect, nodeClientRect, 'width', this.$node.querySelector( 'div.lyteHandler2' ), lt ).toString());
+                            }
+                        this.setData('ltPropSelectedValue1',this.getData('ltPropMinValue'));
+                        this.setData('ltPropSelectedValue2',this.getData('ltPropMaxValue'));    
+                    }   
+                this.setData('preventObs', false)
+            // }.bind(this))
+        },
+
+        initialValueSet : function(width, handlerWidth, value){
+            var max = parseFloat( this.getData( 'ltPropMax' ) ), min = parseFloat( this.getData( 'ltPropMin' ) );
+            return ( ( ( value - min ) / ( max - min ) * ( width ) ) - ( handlerWidth ) / 2 )
+        },
+        rangeSliderFill:function(left1, left2, handlerWidth){
+            return {width : left2 - left1, left : left1 + handlerWidth / 2 }
+        },
+        keyCheck:function(event, node,width1,left1,offsetWidth,ltPropWidth){
+            // while keydown action
+            left1 = this.rtlfunc.call( this, left1 );
+            var flag=true, lyteSliderFill = this.$node.querySelector( 'div.lyteSliderFill' ), wwidth = window.innerWidth;
+            var nodeClientRect = this.bcr( node ), left, actWidth = {}, rangeHandler = this.getData('ltPropRangeHandler');
+            var thisRect = this.bcr( this.$node ), fact = 1, handlers = this.$node.querySelectorAll( 'div.lyteSliderHandler' );
+            var direction = this.getData('ltPropDirection').indexOf('Horizontal') != -1;
+            var step = parseFloat(this.getData('ltPropStep')),
+            keyCode = event.keyCode || event.which;
+
+            if( !step ) {
+                step = parseFloat( this.getData( 'ltPropMax' ) ) * .1;
+            }
+            if( this._dir ) {
+                if( keyCode == 39 && direction ) {
+                    fact = -1;
+                }
+            } else {
+                if( keyCode == 37 && direction || keyCode == 38 && !direction ) {
+                    fact = -1
+                }
+            }
+
+            switch( keyCode ){
+                case 34 : {
+                    step *= 5;
+                    fact = -1;
+                }
+                break;
+                case 35 : {
+                    step = parseInt( this.data.ltPropMax );
+                }
+                break;
+                case 36 : {
+                    step = parseInt( this.data.ltPropMax );
+                    fact = -1;
+                }
+                break;
+                case 33 : {
+                    step *= 5;
+                }
+                break;
+            }
+
+            left = parseFloat( node.style[ left1 ] ) + ( step / ( parseFloat( this.getData( 'ltPropMax' ) ) - parseFloat( this.getData( 'ltPropMin' ) ) ) * thisRect[ width1 ] * fact );
+            left  = Math.min( Math.max( -nodeClientRect[ width1 ] / 2, left), thisRect[ width1 ] -nodeClientRect[ width1 ] / 2 )
+            if( !rangeHandler ) {
+                actWidth.width  =  left + nodeClientRect[ width1 ] / 2 ;
+            } else {
+                var leftx, lefty;
+                if(node == handlers[0]){
+                    lefty = parseInt( handlers[ 1 ].style[ left1 ] )
+                    var co = this.minMaxCheck( thisRect, nodeClientRect, width1 )
+                    left = Math.min( Math.max( left, co[ 0 ] ), lefty - co[ 1 ] );
+                    leftx = left;
+                } else {
+                    leftx = parseInt( handlers[ 0 ].style[ left1 ] )
+                    var co = this.minMaxCheck( thisRect, nodeClientRect, width1, true );
+                    left = Math.max( Math.min( left, co[ 0 ] ), leftx + co[ 1 ]);
+                    lefty = left;
+                }
+                if( leftx > lefty ) {
+                    var currLeft = parseInt( handlers[ 0 ].style[ left1 ] );
+                    if( currLeft == lefty ) {
+                        return
+                    } else {
+                        if( event.keyCode == 37 || event.keyCode == 38 ) {
+                            lefty = left = leftx;
+                        } else if( event.keyCode == 39 || event.keyCode == 40 ) {
+                            leftx = left = lefty;
+                        }
+                    }
+                }
+                actWidth = this.rangeSliderFill.call(this, leftx, lefty, nodeClientRect[width1]);
+            }
+            node.style[ left1 ] = left + 'px';
+            lyteSliderFill.style[ width1 ] = actWidth.width + 'px';
+            if(rangeHandler) {
+                lyteSliderFill.style[ left1 ] = actWidth.left + 'px';
+            }
+            $L.fastdom.measure(function(){
+                this.selectedValFind.call(this, thisRect, nodeClientRect)
+            }.bind(this))
+        },
+        mousemove : function(event){
+            this._mousemoved = true;
+            if(!this._flag ) {
+                this._flag = true;
+            }
+            var left, width, clientX, offsetWidth, offsetWidth, ltPropWidth, offsetLeft;
+            if( this.getData( 'ltPropDirection' ).indexOf( 'Horizontal' ) != -1 )
+                {
+                    left = 'left', width = 'width', clientX = 'clientX', offsetWidth = 'offsetWidth', offsetWidth = 'offsetWidth', ltPropWidth = 'ltPropWidth', offsetLeft = 'offsetLeft';
+                }
+            else
+                {
+                    left = 'top', width = 'height', clientX = 'clientY', offsetWidth = 'offsetHeight', offsetWidth = 'offsetHeight', ltPropWidth = 'ltPropHeight', offsetLeft = 'offsetTop';
+                }
+                this.ScrollCheck.call( this, this._elem, left, width, clientX, offsetWidth, ltPropWidth, offsetLeft, event);
+                $L.fastdom.measure(function(){
+                    if( this.getMethods( 'onChange' ) ) {
+                        this.onSelect.call( this ); 
+                    }
+            }.bind(this))           
+        },
+        eventListener:function(event, elem){
+            var isTch = event.type == "touchstart", evt = isTch ? event.touches[ 0 ] : event, wwidth = window.innerWidth, height, xPos = this.get_client( event, "clientX", wwidth ), lyteRangeSlider = this.$node.querySelector( 'div.lyteRangeSlider' );
+            var clientRect = this.bcr( lyteRangeSlider );
+            if( xPos > this.rtlfunc.call( this, 'left', 'clientRect', wwidth ) ) {
+                    var width = xPos - this.rtlfunc.call( this, 'left', 'clientRect', wwidth ) - parseFloat( clientRect.width - parseFloat( clientRect.width / 2 ) );
+                    if( width > 0 ) {
+                            event.preventDefault();
+                        }
+                }
+            else {
+                    event.preventDefault();
+                }
+            var yPos = evt.clientY;
+            if( yPos >= clientRect.top ) {
+                    height = yPos - clientRect.top - parseFloat( clientRect.height - parseFloat( clientRect.height / 2 ) );
+                    if( height > 0 ) {
+                        event.preventDefault();
+                    }
+                }
+            else {
+                    event.preventDefault();
+                }
+            this._mousemove = this.mousemove.bind(this);
+            this._mouseup = this.mouseup.bind(this);
+            this._elem = elem;  
+
+            var ns = "addEventListener" + ( _lyteUiUtils.isWidget ? "Global" : "" );
+
+            document[ ns ]( isTch ? "touchmove" : 'mousemove', this._mousemove,true);
+            document[ ns ]( isTch ? "touchend" : 'mouseup', this._mouseup, true);
+        }, 
+        rangeInitialSet:function(offsetWidth,index){
+            return ( index / ( this.getData( 'ltPropContent' ).length - 1 ) * this.$node[ offsetWidth ] - this.$node.querySelector( 'div.lyteSliderHandler' )[ offsetWidth ] / 2 );
+        },
+        didConnect:function(){            
+            this.directionObs.call(this)
+            this.valueSelected.call(this);
+            $L.fastdom.mutate(function(){
+                if(this.getMethods('afterRender')){
+                   /**
+                    * @method afterRender
+                    * @version 1.0.1
+                    */
+                    this.executeMethod('afterRender', this.$node);
+                }
+            }.bind(this)) 
+            
+            /**
+             * @utility reRender
+             * @author Pon karthikeyan T <ponkarthikeyan.t@zohocorp.com>
+             * @version 3.116.0
+             */
+            
+            this.$node.reRender = function(){
+                this.initialWork();
+                this.didConnectWrk();
+            }.bind( this );
+        },
+        valueSelected : function(){
+            if(this.getData('ltPropRangeHandler'))
+                {
+                    this.setData('ltPropSelectedValue1', this.getData('ltPropMinValue'));
+                    this.setData('ltPropSelectedValue2', this.getData('ltPropMaxValue'));
+                }
+            else
+                {
+                    this.setData('ltPropSelectedValue1', this.getData('ltPropValue'));
+                }   
+        },
+        mouseup : function(event){
+            var handler= this.$node.querySelector( 'div.lyteRangeSlider' ), isTch = event.type == "touchend",
+            ns = "removeEventListener" + ( _lyteUiUtils.isWidget ? "Global" : "" );
+
+            document[ ns ]( isTch ? "touchmove" : 'mousemove', this._mousemove,true);
+            document[ ns ]( isTch ? "touchend" : 'mouseup', this._mouseup, true);
+            delete this._mousemove; delete this._mouseup;
+            delete this._elem;
+            if( this.$node.contains( event.correspondingElement || event.target ) ) {
+                this._prevclick = true;
+            }
+            if( this._mousemoved ){
+                $L.fastdom.measure( this.onSelect.bind( this, true ) ); 
+            }
+            delete this._mousemoved;
+        },
+
+data:function(){
+
+            var default_values = _lyteUiUtils.getDefault( 'lyte-slider' );
+
+            return {
+                divLength:Lyte.attr("array",{"default":[]}),
+                scaleVal:Lyte.attr("array",{"default":[]}),
+                /**
+                 * @componentProperty {string} ltPropMin=0
+                 * @condition ltPropContent []
+                 * @mandatory 
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropMin:Lyte.attr("string",{"default": default_values.min || '0', input : true }),
+                /**
+                 * @componentProperty {string} ltPropMax=''
+                 * @condition ltPropContent []
+                 * @mandatory
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropMax:Lyte.attr("string",{"default": default_values.max || '', input : true }),
+                /**
+                 * @componentProperty {string} ltPropScaleInterval=''
+                 * @condition ltPropDiscrete ""
+                 * @condition ltPropYield false
+                 * @condition ltPropContent []
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropScaleInterval:Lyte.attr("string",{"default": default_values.scaleInterval || '', input : true }),
+                /**
+                 * @componentProperty {string} ltPropStep=''
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropStep:Lyte.attr("string",{"default": default_values.step || '', input : true }),
+                /**
+                 * @componentProperty {lyteArrow | lyteArrowLeft | lyteCircle | lyteSquare} ltPropHandler=lyteArrow
+                 * @allowedValuesDepends ltPropDirection
+                 * @map lyteHorizontal lyteArrow,lyteCircle,lyteSquare
+                 * @map lyteVertical lyteArrow,lyteArrowLeft,lyteCircle,lyteSquare
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropHandler:Lyte.attr("string",{"default": default_values.handler || 'lyteArrow', input : true }),
+                /**
+                 * @componentProperty {lyteHorizontal | lyteVertical} ltPropDirection=lyteHorizontal
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropDirection:Lyte.attr("string",{"default": default_values.direction || 'lyteHorizontal', input : true }),
+                /**
+                 * @componentProperty {string} ltPropWidth=''
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropWidth:Lyte.attr("string",{"default" : default_values.width || '', input : true }),
+                /**
+                 * @componentProperty {colorString} ltPropFillColor=''
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropFillColor:Lyte.attr("string",{"default": default_values.fillColor || '', input : true }),
+                /**
+                 * @componentProperty {colorString} ltPropNonFillColor=''
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropNonFillColor:Lyte.attr("string",{"default": default_values.nonFillColor || '', input : true }),
+                /**
+                 * @componentProperty {string} ltPropHeight=''
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropHeight:Lyte.attr("string",{"default": default_values.height || '', input : true }),
+                /**
+                 * @componentProperty {string} ltPropValue=''
+                 * @version 1.0.0
+                 * @output
+                 * @input
+                 */
+                ltPropValue:Lyte.attr("string",{"default": default_values.value || '', output : true, input : true }),
+                /**
+                 * @componentProperty {string} ltPropDiscrete=''
+                 * @condition ltPropContent []
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropDiscrete:Lyte.attr("string",{"default": default_values.discrete || '', input : true }),
+                /**
+                 * @componentProperty {string[]} ltPropContent
+                 * @default []
+                 * @version 1.0.0
+                 * @mandatory
+                 * @input
+                 */
+                ltPropContent:Lyte.attr("array",{"default":[], input : true }),
+                /**
+                 * @componentProperty {boolean} ltPropRangeHandler=false
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropRangeHandler:Lyte.attr("boolean",{"default": default_values.rangeHandler || false, input : true }),
+                /**
+                 * @componentProperty {string} ltPropMinValue=''
+                 * @condition ltPropRangeHandler true
+                 * @version 1.0.0
+                 * @output
+                 * @input
+                 */
+                ltPropMinValue:Lyte.attr("string",{"default": default_values.minValue || '', output : true, input : true }),
+                /**
+                 * @componentProperty {string} ltPropMaxValue=''
+                 * @condition ltPropRangeHandler true
+                 * @version 1.0.0
+                 * @output
+                 * @input
+                 */
+                ltPropMaxValue:Lyte.attr("string",{"default": default_values.maxValue || '', output : true, input : true }),
+                /**
+                 * @componentProperty {boolean} ltPropDisabled=false
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropDisabled:Lyte.attr("boolean",{"default": default_values.disabled || false, input : true }),
+                /**
+                 * @componentProperty {string} ltPropSelectedValue1=''
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropSelectedValue1 : Lyte.attr('string', {default : '', input : true }),
+                /**
+                 * @componentProperty {string} ltPropSelectedValue2=''
+                 * @condition ltPropRangeHandler true
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropSelectedValue2 : Lyte.attr('string', {default : '', input : true }),
+                /**
+                 * @componentProperty {boolean} ltPropYield=false
+                 * @version 1.0.0
+                 * @input
+                 */
+                ltPropYield : Lyte.attr('boolean', {default : default_values.yield || false, input : true }),
+                /**
+                 * @componentProperty {string} ltPropTooltipStyle=''
+                 * @condition ltPropTooltip true
+                 * @version 1.0.2
+                 * @input
+                 */
+                ltPropTooltipStyle : Lyte.attr('string', { default : default_values.tooltipStyle || '', input : true }),
+                /**
+                 * @componentProperty {boolean} ltPropTooltip=true
+                 * @version 1.0.2
+                 * @input
+                 */
+                ltPropTooltip : Lyte.attr( 'boolean', { default : default_values.tooltip == false ? false : true, input : true }),
+                /**
+                 * @componentProperty {string} ltPropScaleUnit=''
+                 * @condition ltPropYield false
+                 * @version 1.0.2
+                 * @input
+                 */
+                ltPropScaleUnit : Lyte.attr( 'string' , { default : default_values.scaleUnit || '', input : true } ),
+                // /**
+                //  * @componentProperty {string} ltPropTooltipClass=''
+                //  * @condition ltPropTooltip true
+                //  * @version 1.0.2
+                //  * @input
+                //  */
+                ltPropTooltipClass : Lyte.attr('string', { default : default_values.tooltipClass || '' }),
+                
+                /**
+                 * @typedef {object} sliderConfig
+                 * @property {number} margin=5
+                 * @property {left | right | top | bottom | topright | bottomright | topleft | bottomleft} position=top
+                 * @property {box | callout} appearance=callout
+                 * @property {number} showdelay=0
+                 * @property {number} hidedelay=0
+                 * @property {number} maxdisplaytime=5000
+                 * @property {boolean} keeptooltip=false
+                 */
+
+                /**
+                 * @componentProperty {sliderConfig} ltPropTooltipConfig
+                 * @default {}
+                 * @condition ltPropTooltip true
+                 * @version 1.0.2
+                 * @input
+                 */
+                ltPropTooltipConfig : Lyte.attr('object', { default : default_values.tooltipConfig, input : true }),
+                /**
+                 * @componentProperty {number} ltPropMinDiff=0
+                 * @condition ltPropRangeHandler true
+                 * @version 1.0.2
+                 * @input
+                 */
+                ltPropMinDiff : Lyte.attr( 'number', { default : default_values.minDiff || 0, input : true } ),
+                /**
+                 * @componentProperty {number} ltPropDigits=2
+                 * @version 1.0.8
+                 * @input
+                 */
+                ltPropDigits : Lyte.attr( 'number', { default : default_values.digits == void 0 ? 2 : default_values.digits, input : true } ),
+                /**
+                 * @componentProperty {boolean} ltPropAria
+                 * @default false
+                 * @version 3.109.0
+                 * @input
+                 */
+                ltPropAria : Lyte.attr( 'boolean', { default : default_values.aria, input : true } ),
+                /**
+                 * @componentProperty {number} ltPropTabIndex
+                 * @default 0
+                 * @version 3.109.0
+                 * @input
+                 */
+                ltPropTabIndex : Lyte.attr( 'number', { default : default_values.tabIndex || 0, input : true } ),
+                /**
+                 * @componentProperty {number} ltPropHandlerTabIndex
+                 * @default 0
+                 * @version 3.109.0
+                 * @input
+                 */
+                ltPropHandlerTabIndex : Lyte.attr( 'number', { default : default_values.handlerTabIndex || 0, input : true } ),
+                /**
+                 * @componentProperty {string} ltPropAriaLabel
+                 * @default ""
+                 * @condition ltPropAria true
+                 * @version 3.109.0
+                 * @input
+                 */
+                ltPropAriaLabel : Lyte.attr( 'string', { default : default_values.ariaLabel || '', input : true } ),
+
+                /**
+                 * @componentProperty {string} ltPropAriaValueText
+                 * @default ""
+                 * @condition ltPropAria true
+                 * @version 3.115.0
+                 * @input
+                 */
+                ltPropAriaValueText : Lyte.attr( 'string', { default : default_values.ariaValueText || '', input : true } ),
+
+                /**
+                 * @componentProperty {string} ltPropAriaRangeValueText
+                 * @default ""  
+                 * @condition ltPropAria true
+                 * @version 3.115.0
+                 * @input
+                 */
+                ltPropAriaRangeValueText : Lyte.attr( 'string', { default : default_values.ariaRangeValueText || '', input : true } ),
+
+                /**
+                 * @componentProperty {number} ltPropMinDiscrete=0.1
+                 * @condition ltPropDiscrete
+                 * @version 3.107.0
+                 * @input
+                 */
+                ltPropMinDiscrete : Lyte.attr( "number", { default : default_values.minDiscrete == void 0 ? 0.1 : default_values.minDiscrete, input : true } ),
+
+                ltPropScaleTabindex : Lyte.attr( 'number', { default : default_values.scaleTabindex || -1, input : true } ),                
+
+                ltPropHandlerId : Lyte.attr( 'array', { default : default_values.handlerId || [], input : true } ),
+
+                //system data
+                preventObs : Lyte.attr('boolean', { default : false}),
+                orientation : Lyte.attr( 'string', { default : "" } )
+            }
+        },
+
+        click_fn : function( event ){
+            if( this._prevclick || this.data.ltPropDisabled ){      
+                delete this._prevclick;     
+                return;     
+            }
+            var left = 'left', width = "width", clientX = 'clientX', offsetWidth = 'offsetWidth', ltPropWidth = 'ltPropWidth', offsetLeft = 'offsetLeft', wwidth = window.innerWidth;
+            if(this.getData('ltPropDirection').indexOf('Horizontal')==-1)
+                {
+                    left = 'top', width = "height", clientX = 'clientY', offsetWidth = 'offsetHeight', ltPropWidth = 'ltPropHeight', offsetLeft = 'offsetTop'
+                }
+            if(!this.getData('ltPropRangeHandler'))
+                {
+                    this.ScrollCheck.call(this, this.$node.querySelector( 'div.lyteSliderHandler' ), left, width, clientX, offsetWidth, ltPropWidth, offsetLeft, event);
+                }
+            else
+                {
+                    var YPos= this.rtlfunc( clientX, event, wwidth );
+                    var node1= this.$node.querySelector( 'div.lyteHandler1' )
+                    var node2= this.$node.querySelector( 'div.lyteHandler2' )
+                    var node1client = node1.getBoundingClientRect(), node2client = node2.getBoundingClientRect();
+                    if( Math.abs( this.rtlfunc.call( this, left, node1client, wwidth ) - this.rtlfunc.call( this, left, node2client, wwidth ) ) > 0 )
+                        {
+                            if(this.rtlfunc.call( this, left, node1client, wwidth ) + node1client[ width ] + Math.abs(this.rtlfunc.call( this, left, node1client, wwidth ) - this.rtlfunc.call( this, left, node2client, wwidth ) ) / 2 < YPos )
+                                {
+                                    this.ScrollCheck.call(this,node2,left, width, clientX, offsetWidth, ltPropWidth, offsetLeft, event);
+                                }
+                            else if(this.rtlfunc.call( this, left, node1client, wwidth ) + node1client[ width ] + Math.abs(this.rtlfunc.call( this, left, node1client, wwidth ) - this.rtlfunc.call( this, left, node2client, wwidth ) ) / 2 != YPos )
+                                {
+                                    this.ScrollCheck.call(this,node1,left, width, clientX, offsetWidth, ltPropWidth, offsetLeft, event);
+                                }   
+                        }
+                    else if( this.rtlfunc.call( this, left, node1client, wwidth ) == this.rtlfunc.call( this, left, node2client, wwidth ) )     
+                        {   
+                            if( YPos < this.rtlfunc.call( this, left, node1client, wwidth ) )   
+                                {
+                                    this.ScrollCheck.call(this,node1,left, width, clientX, offsetWidth, ltPropWidth, offsetLeft, event);
+                                }
+                            else
+                                {
+                                    this.ScrollCheck.call(this,node2,left, width, clientX, offsetWidth, ltPropWidth, offsetLeft, event);
+                                }   
+                        }
+                }
+            $L.fastdom.measure(function(){
+                this.onSelect.call(this, true); 
+            }.bind(this))
+            if( event.type ){
+                event.stopPropagation();
+                event.stopImmediatePropagation();
+                event.preventDefault();
+            }
+        },
+
+        actions:{
+            "click":function(event){
+                return this.click_fn( event );
+            },
+
+            keydown : function( evt ){
+                var keycode = evt.keyCode || evt.which,
+                data = this.data,
+                is_hori = /horizontal/i.test( data.ltPropDirection ),
+                discrete = data.ltPropDiscrete,
+                node = evt.target,
+                is_label = node.classList.contains( 'lyteScalLable' );
+
+                if( is_label ){
+                    if( data.ltPropDisabled || !/^(13|32)$/.test( keycode ) ){
+                        return;
+                    }
+                    evt.preventDefault();
+                    var bcr = this.bcr( node );
+                    return this.click_fn( { target : node, clientX : bcr.left + bcr.width / 2, clientY : bcr.top + bcr.height / 2 } );
+                } else {
+                    if( data.ltPropDisabled || !/^3(3|4|5|6|7|8|9)|40$/.test( keycode ) || ( /^37|39$/.test( keycode ) && !is_hori ) || ( /^38|40$/.test( keycode ) && is_hori ) ){
+                        return;
+                    }
+                }
+
+                if( discrete ){
+                    this.setData( 'ltPropStep', discrete );
+                }
+
+                var width = 'width',
+                left = 'left',
+                offsetWidth = 'offsetWidth',
+                ltPropWidth = 'ltPropWidth';
+
+                if( !is_hori ){
+                    width = 'height';
+                    left = 'top';
+                    offsetWidth = "offsetHeight";
+                    ltPropWidth = 'ltPropHeight';
+                }
+
+                if( !data.ltPropRangeHandler && !is_label ){
+                    node = this.$node.querySelector( 'div.lyteSliderHandler' );
+                }
+                this.keyCheck( evt, node, width, left, offsetWidth, ltPropWidth );
+
+                $L.fastdom.mutate( this.onSelect.bind( this, true ) );
+                evt.stopPropagation();
+                evt.stopImmediatePropagation();
+                evt.preventDefault();
+            },
+
+            "mousedown" : function( evt , elem) {
+                if( evt.button == 2 ){
+                    return;
+                }
+                this.eventListener.call(this, evt, elem)
+            }
+        },
+
+        bcr : function( node ){
+            var __bcr = node.getBoundingClientRect(),
+            width = node.offsetWidth,
+            rendered_width = __bcr.width,
+            rendered_height = __bcr.height,
+            __scale = width / rendered_width,
+            excess_width = width - rendered_width,
+            excess_height = node.offsetHeight - rendered_height;
+
+            return {
+                left : __bcr.left - ( this._dir ? excess_width : 0 ),
+                top : __bcr.top,
+                width : rendered_width * __scale,
+                height : rendered_height * __scale,
+                right : __bcr.right + ( this._dir ? 0 : excess_width ),
+                bottom : __bcr.bottom + excess_height,
+                scale : __scale
+            };
+        },
+
+        get_client : function( evt, clientX, wwidth ){
+            var bcr = this.bcr( this.$node ),
+            scale = bcr.scale,
+            is_rtl = this._dir;
+
+            if( clientX == "clientX" ){
+                if( is_rtl ){
+                    return wwidth - ( bcr.right - ( bcr.right - evt[ clientX ] ) * scale );
+                } else {
+                    return bcr.left + ( evt[ clientX ] - bcr.left ) * scale;
+                }
+            } else {
+                return bcr.top + ( evt[ clientX ] - bcr.top ) * scale;
+            }
+
+        }
+    });
+
+;( function(){
+    var __fn = function( evt ){
+        var is_resize = evt.type == "resize";
+
+        clearTimeout( window.__slider_time );
+        window.__slider_time = setTimeout( function(){
+            delete  window.__slider_time;
+            
+            var elems = document.body.getElementsByTagName( 'lyte-slider' ),
+            len = elems.length;
+
+            for( var i = 0; i < len; i++ ){
+                var cur = elems[ i ],
+                rgx = /%/;
+                if( rgx.test( cur.ltProp( 'width' ) || "" ) || rgx.test( cur.ltProp( 'height' ) || "" ) ){
+                    cur.component.didConnectWrk();
+                }
+            }
+        }, is_resize ? 5 : 500 );
+    };
+
+    window.addEventListener( 'resize', __fn, true );
+    window.addEventListener( 'orientationchange', __fn, true );
+} )();
+
+/**
+ * @syntax nonYielded
+ * <lyte-slider lt-prop-min="0" lt-prop-max="100" lt-prop-discrete="15" lt-prop-value="45" lt-prop-direction="lyteHorizontal" lt-prop-handler="lyteArrow" ></lyte-slider>
+ */
+
+/**
+ *  @syntax staticBuilder
+ *  <lyte-slider lt-prop-min = "0" lt-prop-max = "100"></lyte-slider>
+ */
+
+ /**
+  * @syntax yielded
+  * @attribute ltPropYield=true
+  * <lyte-slider lt-prop-max = '100' lt-prop-width='600px' lt-prop-value = '50' lt-prop-discrete = '20' lt-prop-yield = true> 
+  *    <template is = "registerYield" yield-name = "yield"> 
+  *        <div class="lyteScaleOption"> 
+  *            <span class="lyteScaleLine" style="left:0%"> 
+  *                <span></span> 
+  *                <span class="lyteScaleLabel">0</span> 
+  *            </span> 
+  *            <span class="lyteScaleLine" style="left:50%"> 
+  *                <span></span> 
+  *                <span class="lyteScaleLabel">50</span> 
+  *            </span> 
+  *            <span class="lyteScaleLine" style="left:100%"> 
+  *                <span></span> 
+  *                <span class="lyteScaleLabel">100</span> 
+  *            </span> 
+  *        </div> 
+  *    </template> 
+  *  </lyte-slider> 
+  */

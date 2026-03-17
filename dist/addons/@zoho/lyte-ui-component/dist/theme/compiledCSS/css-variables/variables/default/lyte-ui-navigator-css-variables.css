@@ -1,0 +1,99 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component lyte-navigator
+ */
+:root,
+:host {
+  /**
+	 * @variable --lyte-navigator-text-color
+	 * @selector .lytepagination .lyteborder, .lytepagination .lytesimple, .textLinkArrowCont
+	 * @description Default text color of pagination numbers and text-based arrows
+	 * @defaultValue var(--lyte-common-text-color)
+	 * @defaultVariableValue #333
+	 * @inputType color
+	 * @name Text Color
+	 */
+  --lyte-navigator-text-color: var(--lyte-common-text-color);
+  /**
+	 * @variable --lyte-navigator-text-hover-color
+	 * @selector .lytepagination .lyteborder:hover, .textLinkArrowCont:hover
+	 * @description Text color when a pagination item or arrow is hovered
+	 * @defaultValue var(--lyte-common-text-hover-color)
+	 * @defaultVariableValue #111
+	 * @inputType color
+	 * @name Text Hover Color
+	 */
+  --lyte-navigator-text-hover-color: var(--lyte-common-text-hover-color);
+  /**
+	 * @variable --lyte-navigator-num-hover-border-color
+	 * @selector .lytepagination .lyteborder:hover
+	 * @description Border color of pagination item on hover
+	 * @defaultValue #aaa
+	 * @inputType color
+	 * @name Number Hover Border Color
+	 */
+  --lyte-navigator-num-hover-border-color: #aaa;
+  /**
+	 * @variable --lyte-navigator-arrow-border-color
+	 * @selector .lytepagination .lyteborder, .lyteNavArrowBorder
+	 * @description Default border color of pagination arrows
+	 * @defaultValue #c4c4c4
+	 * @inputType color
+	 * @name Arrow Border Color
+	 */
+  --lyte-navigator-arrow-border-color: #c4c4c4;
+  /**
+	 * @variable --lyte-navigator-active-color
+	 * @selector .lytepagination .lyteActiveAdd
+	 * @description Color used for active pagination items and arrows
+	 * @defaultValue var(--lyte-theme-active-element-bg)
+	 * @defaultVariableValue #5ba1e5
+	 * @inputType color
+	 * @name Active Color
+	 */
+  --lyte-navigator-active-color: var(--lyte-theme-active-element-bg);
+  /**
+	 * @variable --lyte-navigator-default-middle-text-color
+	 * @selector .lyteNavigatorText
+	 * @description Text color used in default pagination midpoint (e.g., "of 100")
+	 * @defaultValue #a2a2a2
+	 * @inputType color
+	 * @name Default Middle Text Color
+	 */
+  --lyte-navigator-default-middle-text-color: #a2a2a2;
+  /**
+	 * @variable --lyte-navigator-simple-item-hover-bg
+	 * @selector .lytepagination .lytesimple:hover
+	 * @description Background color for simple pagination items on hover
+	 * @defaultValue #e6f3fd
+	 * @inputType color
+	 * @name Simple Item Hover Background Color
+	 */
+  --lyte-navigator-simple-item-hover-bg: #e6f3fd;
+  /**
+	 * @variable --lyte-navigator-simple-active-item-text-color
+	 * @selector .lytepagination .lytesimple.lyteActiveAdd
+	 * @description Text color for active simple pagination items
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @name Simple Active Item Text Color
+	 */
+  --lyte-navigator-simple-active-item-text-color: #fff;
+  /**
+	 * @variable --lyte-navigator-font-size
+	 * @selector lyte-navigator
+	 * @description Font size for navigator component text
+	 * @defaultValue var(--lyte-font-size-regular)
+	 * @defaultVariableValue 14px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Font Size
+	 */
+  --lyte-navigator-font-size: var(--lyte-font-size-regular);
+}

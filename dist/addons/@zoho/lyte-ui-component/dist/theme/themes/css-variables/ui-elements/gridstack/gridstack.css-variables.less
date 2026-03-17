@@ -1,0 +1,110 @@
+/**
+ * @component lyte-gridstack
+ */
+
+@import "../../global/global.variables.less";
+
+:root,
+:host {
+	/**
+	 * @variable --lyte-gridstack-squares-bg
+	 * @selector .lyteGridstackScope
+	 * @description Background color of the grid area where items can be placed
+	 * @defaultValue #ebebeb
+	 * @inputType color
+	 * @name Squares Background Color
+	 */
+	--lyte-gridstack-squares-bg: #ebebeb;
+
+	/**
+	 * @variable --lyte-gridstack-item-border-color
+	 * @selector .lyteGridstackHandler
+	 * @description Default border color of gridstack items
+	 * @defaultValue #e1e0e0
+	 * @inputType color
+	 * @name Item Border Color
+	 */
+	--lyte-gridstack-item-border-color: #e1e0e0;
+
+	/**
+	 * @variable --lyte-gridstack-item-hover-border-color
+	 * @selector .lyteGridstackHandler:hover
+	 * @description Border color of gridstack items on hover
+	 * @defaultValue #ccc
+	 * @inputType color
+	 * @name Item Hover Border Color
+	 */
+	--lyte-gridstack-item-hover-border-color: #ccc;
+
+	/**
+	 * @variable --lyte-gridstack-item-focus-border-color
+	 * @selector .lyteGridstackHandler.gridSelected, .lyteGridstackHandler.lyteGridFocused
+	 * @description Border color for selected/focused gridstack items
+	 * @defaultValue #5ba1e5
+	 * @inputType color
+	 * @name Item Focus Border Color
+	 */
+	--lyte-gridstack-item-focus-border-color: #5ba1e5;
+
+	/**
+	 * @variable --lyte-gridstack-text-color
+	 * @selector lyte-gridstack
+	 * @description Default text color inside the gridstack component
+	 * @defaultValue #333
+	 * @inputType color
+	 * @name Text Color
+	 */
+	--lyte-gridstack-text-color: #333;
+
+	/**
+	 * @variable --lyte-gridstack-item-bg
+	 * @selector .lyteGridstackHandler
+	 * @description Background color of gridstack items
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @name Item Background Color
+	 */
+	--lyte-gridstack-item-bg: #fff;
+
+	/**
+	 * @variable --lyte-gridstack-bestfit-grid-bg
+	 * @selector .lyteBestFit.lyteGrid
+	 * @description Background color of the best-fit placeholder grid
+	 * @defaultValue #b1aeae
+	 * @inputType color
+	 * @name Best Fit Grid Background Color
+	 */
+	--lyte-gridstack-bestfit-grid-bg: #b1aeae;
+
+	/**
+	 * @variable --lyte-gridstack-resize-square-bg
+	 * @selector .lyteGridResize
+	 * @description Background color of the resize handles
+	 * @defaultValue #fff
+	 * @inputType color
+	 * @name Resize Square Background Color
+	 */
+	--lyte-gridstack-resize-square-bg: #fff;
+
+	/**
+	 * @variable --lyte-gridstack-freeze-mode-item-focused-border-color
+	 * @selector .gridFreezeMode .lyteGridstackHandler.lyteGridFocused
+	 * @description Border color for focused items in freeze mode
+	 * @defaultValue #e1e0e0
+	 * @inputType color
+	 * @name Freeze Mode Item Focused Border Color
+	 */
+	--lyte-gridstack-freeze-mode-item-focused-border-color: #e1e0e0;
+
+	/**
+	 * @variable --lyte-gridstack-font-size
+	 * @selector lyte-gridstack
+	 * @description Font size of text inside gridstack
+	 * @defaultValue var(--lyte-font-size-regular)
+	 * @defaultVariableValue 14px
+	 * @allowedSuffixes px
+	 * @inputType dimension
+	 * @name Font Size
+	 */
+	--lyte-gridstack-font-size: var(--lyte-font-size-regular);
+}

@@ -1,0 +1,229 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/**
+ * @component lyte-messagebox
+ */
+:root,
+:host {
+  /**
+	* @variable --lyte-messagebox-bg
+	* @selector .lyteMessageBox
+	* @description Background color of the message box container
+	* @defaultValue var(--lyte-theme-body-bg)
+	* @defaultVariableValue #fff
+	* @inputType color
+	* @name Background Color
+	*/
+  --lyte-messagebox-bg: var(--lyte-theme-body-bg);
+  /**
+	* @variable --lyte-messagebox-content-text-color
+	* @selector .lyteMessageBoxContent
+	* @description Text color used for the content inside the message box
+	* @defaultValue var(--lyte-common-text-color)
+	* @defaultVariableValue #333
+	* @inputType color
+	* @name Content Text Color
+	*/
+  --lyte-messagebox-content-text-color: var(--lyte-common-text-color);
+  /**
+	* @variable --lyte-messagebox-success-bg
+	* @selector .lyteMessageBox.successMessageIcon .lyteMessageBoxSymbol
+	* @description Background color for the success variant of the message box
+	* @defaultValue #49a251
+	* @inputType color
+	* @name Success Background Color
+	*/
+  --lyte-messagebox-success-bg: #49a251;
+  /**
+	* @variable --lyte-messagebox-error-bg
+	* @selector .lyteMessageBox.errorMessageIcon .lyteMessageBoxSymbol
+	* @description Background color for the error variant of the message box
+	* @defaultValue #e64040
+	* @inputType color
+	* @name Error Background Color
+	*/
+  --lyte-messagebox-error-bg: #e64040;
+  /**
+	* @variable --lyte-messagebox-warning-bg
+	* @selector .lyteMessageBox.warningMessageIcon .lyteMessageBoxSymbol
+	* @description Background color for the warning variant of the message box
+	* @defaultValue #ea8d42
+	* @inputType color
+	* @name Warning Background Color
+	*/
+  --lyte-messagebox-warning-bg: #ea8d42;
+  /**
+	* @variable --lyte-messagebox-info-bg
+	* @selector .lyteMessageBox.infoMessageIcon .lyteMessageBoxSymbol
+	* @description Background color for the info variant of the message box
+	* @defaultValue #188bc7
+	* @inputType color
+	* @name Info Background Color
+	*/
+  --lyte-messagebox-info-bg: #188bc7;
+  /**
+	* @variable --lyte-messagebox-zindex
+	* @selector .lyteMessageBox
+	* @description Z-index value for message box display stacking
+	* @defaultValue var(--lyte-level5-zindex)
+	* @defaultVariableValue 1080
+	* @inputType number
+	* @name Z-Index
+	*/
+  --lyte-messagebox-zindex: var(--lyte-level5-zindex);
+  /**
+	* @variable --lyte-messagebox-font-size
+	* @selector .lyteMessageBox
+	* @description Base font size for message box component
+	* @defaultValue var(--lyte-font-size-medium)
+	* @defaultVariableValue 15px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Font Size
+	*/
+  --lyte-messagebox-font-size: var(--lyte-font-size-medium);
+  /**
+	* @variable --lyte-messagebox-content-font-size
+	* @selector .lyteMessageBoxContent
+	* @description Font size for the content inside the message box
+	* @defaultValue var(--lyte-font-size-medium)
+	* @defaultVariableValue 15px
+	* @allowedSuffixes px
+	* @inputType dimension
+	* @name Content Font Size
+	*/
+  --lyte-messagebox-content-font-size: var(--lyte-font-size-medium);
+}
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading final tweaks to your variables */
+/* LYTE-MESSAGEBOX BEGINS   */
+.lyteMessageBoxContent {
+  font-family: var(--lyte-primary-font);
+  font-size: var(--lyte-messagebox-content-font-size);
+  color: var(--lyte-messagebox-content-text-color);
+}
+.lyteMessageBoxContentHidden {
+  z-index: -1;
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+.lyteMessageBox {
+  padding: 0 0 0 50px;
+  z-index: var(--lyte-messagebox-zindex);
+  background: var(--lyte-messagebox-bg);
+  border-radius: 2px;
+  color: var(--lyte-messagebox-content-text-color);
+  font-size: var(--lyte-messagebox-font-size);
+  transition: 0.3s all ease;
+  display: block;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  border: 1px solid transparent;
+  position: absolute;
+  min-width: 200px;
+}
+.lyteMessageBox.successMessageIcon {
+  border-color: var(--lyte-messagebox-success-bg);
+}
+.lyteMessageBox.errorMessageIcon {
+  border-color: var(--lyte-messagebox-error-bg);
+}
+.lyteMessageBox.warningMessageIcon {
+  border-color: var(--lyte-messagebox-warning-bg);
+}
+.lyteMessageBox.infoMessageIcon {
+  border-color: var(--lyte-messagebox-info-bg);
+}
+.lyteMessageBox .lyteMessageBoxSymbol {
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  width: 50px;
+}
+.lyteMessageBox.successMessageIcon .lyteMessageBoxSymbol {
+  background: var(--lyte-messagebox-success-bg);
+}
+.lyteMessageBox.errorMessageIcon .lyteMessageBoxSymbol {
+  background: var(--lyte-messagebox-error-bg);
+}
+.lyteMessageBox.warningMessageIcon .lyteMessageBoxSymbol {
+  background: var(--lyte-messagebox-warning-bg);
+}
+.lyteMessageBox.infoMessageIcon .lyteMessageBoxSymbol {
+  background: var(--lyte-messagebox-info-bg);
+}
+.lyteMessageBox .lyteMessageBoxSymbol::before {
+  content: "";
+  background-image: var(--lyte-sprite-image);
+  position: absolute;
+  display: inline-block;
+  width: 22px;
+  height: 20px;
+  top: calc(50% - 10px);
+  right: calc(50% - 11px);
+}
+.lyteMessageBox.successMessageIcon .lyteMessageBoxSymbol::before {
+  background-position: -287px -58px;
+}
+.lyteMessageBox.errorMessageIcon .lyteMessageBoxSymbol::before {
+  background-position: -317px -60px;
+  width: 24px;
+  right: calc(50% - 12px);
+}
+.lyteMessageBox.warningMessageIcon .lyteMessageBoxSymbol::before {
+  background-position: -347px -58px;
+}
+.lyteMessageBox.infoMessageIcon .lyteMessageBoxSymbol::before {
+  background-position: -377px -58px;
+}
+.lyteMessageBox .lyteMessageBoxContent {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: top;
+  padding: 10px 65px 10px 15px;
+}
+.lyteMessageBox .lyteMessageBoxClose {
+  background-image: var(--lyte-sprite-image);
+  background-position: -54px -2px;
+  top: calc(50% - 4px);
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  left: 15px;
+}
+.lyteMessageBoxFadeIn {
+  animation-name: lyteMsgBoxFadeIn;
+}
+@keyframes lyteMsgBoxFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.lyteMessageBoxFadeOut {
+  animation-name: lyteMsgBoxFadeOut;
+}
+@keyframes lyteMsgBoxFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* LYTE-MESSAGEBOX ENDS   */
