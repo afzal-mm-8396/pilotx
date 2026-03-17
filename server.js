@@ -94,7 +94,14 @@ http.createServer(function (req, res) {
 
     fs.stat(fullPath, function (err, stats) {
         if (err || !stats.isFile()) {
-            // Try index.html fallback
+            // If the request has a file extension, it's an asset — return 404 (not index.html)
+            var reqExt = path.extname(filePath).toLowerCase();
+            if (reqExt) {
+                res.writeHead(404);
+                res.end('Not Found: ' + filePath);
+                return;
+            }
+            // No extension = navigation route → SPA fallback to index.html
             fullPath = path.join(__dirname, 'dist', 'index.html');
         }
 

@@ -58,14 +58,11 @@ _dynamicNodes : [],
 		}		
 	},
 	didConnect : async function(){
-    //     const IS_DEV = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    // const CRM_BASE = IS_DEV ? 'http://localhost:3001' : 'https://crmdx5.localzoho.com';
-    // const CRM_FUNC_URL = CRM_BASE + '/crm/v7/functions/' + CRM_FUNC_NAME + '/actions/execute?auth_type=apikey&zapikey=' + CRM_FUNC_API_KEY;
-
     const CRM_FUNC_NAME = 'pyfunction';
     const CRM_FUNC_API_KEY = '1003.6c7fc6fe32b7bd6d2b4c65c73d1e1f8c.623aaaba60931421e904f260ba7a83dd';
-    // Always proxy through our own server (server.js handles /crm/* → Zoho)
-    const CRM_FUNC_URL = window.location.origin + '/crm/v7/functions/' + CRM_FUNC_NAME + '/actions/execute?auth_type=apikey&zapikey=' + CRM_FUNC_API_KEY;
+    const IS_DEV = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const CRM_BASE = IS_DEV ? 'http://localhost:3001' : window.location.origin;
+    const CRM_FUNC_URL = CRM_BASE + '/crm/v7/functions/' + CRM_FUNC_NAME + '/actions/execute?auth_type=apikey&zapikey=' + CRM_FUNC_API_KEY;
 
     const STORAGE_KEY = 'workpilot_sessions';
     const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#06b6d4', '#f97316'];
@@ -653,7 +650,10 @@ _dynamicNodes : [],
             const text = await response.text();
             var parsed = JSON.parse(text);
             console.log("parsed response:", parsed);
-            return parsed;
+            if(!parsed || parsed.error) {
+                return parsed;
+            }
+            
             // Validate that the API actually returned usable edits with script content
             // var edits = (parsed && Array.isArray(parsed.edits)) ? parsed.edits : [];
             // var hasScript = edits.length > 0 && edits.some(function(e) { return e && e.content; });
