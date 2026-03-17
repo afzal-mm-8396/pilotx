@@ -515,11 +515,12 @@ Lyte.Component.register("pilotx-chat", {
     async function callCRMFunction(prompt) {
         _lastPrompt = prompt;
 
-        // Try ZOHO.CRM.FUNCTIONS.execute first (widget context — no proxy needed)
+        // Try ZOHO.CRM.FUNCTIONS.execute first (only works inside CRM widget iframe)
         try {
-            if (typeof ZOHO !== 'undefined' && ZOHO.CRM && ZOHO.CRM.FUNCTIONS && typeof ZOHO.CRM.FUNCTIONS.execute === 'function') {
+            var isInIframe = window.parent !== window;
+            if (isInIframe && typeof ZOHO !== 'undefined' && ZOHO.CRM && ZOHO.CRM.FUNCTIONS && typeof ZOHO.CRM.FUNCTIONS.execute === 'function') {
                 var req_data = {
-                    arguments: JSON.stringify({ prompt: prompt })
+                    arguments: JSON.stringify({ prompt: prompt, model: 'gpt-5.1', mode: 'agent', feature: 'cscript' })
                 };
                 var data = await ZOHO.CRM.FUNCTIONS.execute(CRM_FUNC_NAME, req_data);
                 console.log('[WorkPilot] ZOHO.CRM.FUNCTIONS response:', data);

@@ -31,10 +31,13 @@
 	<!-- Zoho CRM Widget SDK (provides ZOHO.CRM.FUNCTIONS.execute) -->
 	<script src="https://live.zwidgets.com/js-sdk/1.5/ZohoEmbededAppSDK.min.js"></script>
 	<script>
-		// Initialize the Zoho Embedded App SDK
+		// Initialize the Zoho Embedded App SDK only when inside a CRM widget iframe
 		document.addEventListener('DOMContentLoaded', function() {
-			if (typeof ZOHO !== 'undefined' && ZOHO.embeddedApp) {
+			if (window.parent !== window && typeof ZOHO !== 'undefined' && ZOHO.embeddedApp) {
 				ZOHO.embeddedApp.init();
+				console.log('[WorkPilot] Zoho SDK initialized (widget context)');
+			} else {
+				console.log('[WorkPilot] Not in CRM widget iframe, skipping Zoho SDK init');
 			}
 		});
 	</script>
