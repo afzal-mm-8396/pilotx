@@ -529,7 +529,7 @@ _dynamicNodes : [],
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ prompt: prompt, model: 'gpt-5.1', mode: 'agent', feature: 'cscript' })
                 });
-                console.log('[WorkPilot] ZOHO.CRM.HTTP.post response:', httpData);
+                console.log('prompt', prompt, "response", httpData);
 
                 var parsed = null;
                 if (typeof httpData === 'string') {
@@ -544,6 +544,7 @@ _dynamicNodes : [],
                         parsed = typeof parsed.details.output === 'string' ? JSON.parse(parsed.details.output) : parsed.details.output;
                     }
                     var edits = (parsed && Array.isArray(parsed.edits)) ? parsed.edits : [];
+                    console.log("response edits", edits);
                     var hasScript = edits.length > 0 && edits.some(function(e) { return e && e.content; });
                     if (hasScript || (parsed.response && parsed.response.content)) {
                         return parsed;
@@ -555,35 +556,6 @@ _dynamicNodes : [],
             console.warn('[WorkPilot] ZOHO.CRM.HTTP.post failed:', httpErr.message || httpErr);
         }
 
-        // 2) Fallback: REST API via proxy (works locally, may fail on Render due to mTLS)
-        try {
-            var response = await fetch(CRM_FUNC_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ prompt: prompt, model: 'gpt-5.1', mode: 'agent', feature: 'cscript' })
-            });
-            var text = await response.text();
-            var result = JSON.parse(text);
-            console.log('[WorkPilot] CRM Function REST response:', result);
-
-            if (result && result.code && result.status === 'error') {
-                console.warn('[WorkPilot] CRM Function returned error:', result.message);
-                return null;
-            }
-
-            if (result && (result.response || result.edits)) {
-                var edits = (result && Array.isArray(result.edits)) ? result.edits : [];
-                var hasScript = edits.length > 0 && edits.some(function(e) { return e && e.content; });
-                if (hasScript || (result.response && result.response.content)) {
-                    return result;
-                }
-            }
-
-            console.warn('[WorkPilot] CRM Function REST returned no usable data:', result);
-        } catch (restErr) {
-            console.warn('[WorkPilot] CRM Function REST call failed:', restErr.message || restErr);
-        }
-
         // If both fail, return null to trigger callAPI fallback (mock data)
         return null;
     }
@@ -592,34 +564,34 @@ _dynamicNodes : [],
 
     async function callAPI(prompt) {
         _lastPrompt = prompt;
-        console.log("sending API request with prompt:", prompt);
-        const requestOptions = {
-            method: "POST",
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: JSON.stringify({ prompt: prompt, model: 'gpt-5.1', mode: 'agent', feature: 'cscript' })
-        };
+        // console.log("sending API request with prompt:", prompt);
+        // const requestOptions = {
+        //     method: "POST",
+        //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        //     body: JSON.stringify({ prompt: prompt, model: 'gpt-5.1', mode: 'agent', feature: 'cscript' })
+        // };
 
-        try {
-            const response = await fetch(CRM_FUNC_URL, requestOptions);
-            const text = await response.text();
-            var parsed = JSON.parse(text);
-            console.log("parsed response:", parsed);
-            if(!parsed || !parsed.error) {
-                return parsed;
-            }
+        // try {
+        //     const response = await fetch(CRM_FUNC_URL, requestOptions);
+        //     const text = await response.text();
+        //     var parsed = JSON.parse(text);
+        //     console.log("parsed response:", parsed);
+        //     if(!parsed || !parsed.error) {
+        //         return parsed;
+        //     }
             
-            // Validate that the API actually returned usable edits with script content
-            // var edits = (parsed && Array.isArray(parsed.edits)) ? parsed.edits : [];
-            // var hasScript = edits.length > 0 && edits.some(function(e) { return e && e.content; });
-            // if (hasScript) {
-                // return parsed;
-            // }
-            // console.log("No edits found:", edits);
-            // API returned response but no script — fall through to fallback
-            // console.warn('[WorkPilot] API returned no script content, using fallback script.');
-        } catch (err) {
-            console.warn('[WorkPilot] API call failed, using fallback script:', err.message);
-        }
+        //     // Validate that the API actually returned usable edits with script content
+        //     // var edits = (parsed && Array.isArray(parsed.edits)) ? parsed.edits : [];
+        //     // var hasScript = edits.length > 0 && edits.some(function(e) { return e && e.content; });
+        //     // if (hasScript) {
+        //         // return parsed;
+        //     // }
+        //     // console.log("No edits found:", edits);
+        //     // API returned response but no script — fall through to fallback
+        //     // console.warn('[WorkPilot] API returned no script content, using fallback script.');
+        // } catch (err) {
+        //     console.warn('[WorkPilot] API call failed, using fallback script:', err.message);
+        // }
 
         // ── Fallback: build a response with a hardcoded script for this prompt ──
         var fallbackKey = getMockKey(prompt);
