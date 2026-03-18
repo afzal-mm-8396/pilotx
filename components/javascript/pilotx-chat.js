@@ -1247,6 +1247,75 @@ Lyte.Component.register("pilotx-chat", {
         }
     }
 
+    // ─── CELL VALUE SERIALIZER ───────────────────────────
+    // Converts any value (string, number, nested object, array) into readable text for table/card display.
+    function serializeCellValue(val) {
+        if (val === null || val === undefined) return '—';
+        if (typeof val === 'string') return val;
+        if (typeof val === 'number' || typeof val === 'boolean') return String(val);
+
+        // Arrays
+        if (Array.isArray(val)) {
+            if (val.length === 0) return '—';
+            // Array of primitives → join with comma
+            if (val.every(function(v) { return typeof v !== 'object' || v === null; })) {
+                return val.map(function(v) { return v !== null && v !== undefined ? String(v) : ''; }).join(', ');
+            }
+            // Array of objects → extract labels
+            return val.map(function(v) { return extractObjectLabel(v); }).join(', ');
+        }
+
+        // Object
+        if (typeof val === 'object') {
+            return extractObjectLabel(val);
+        }
+
+        return String(val);
+    }
+
+    // Extracts a human-readable label from an object by checking common CRM identifier fields.
+    function extractObjectLabel(obj) {
+        if (obj === null || obj === undefined) return '—';
+        if (typeof obj !== 'object') return String(obj);
+
+        // Priority order of keys to look for a display label
+        var labelKeys = [
+            'name', 'Name', 'display_name', 'Display_Name',
+            'Full_Name', 'full_name', 'First_Name', 'Last_Name',
+            'title', 'Title', 'label', 'Label',
+            'email', 'Email',
+            'subject', 'Subject',
+            'module', 'Module'
+        ];
+
+        for (var i = 0; i < labelKeys.length; i++) {
+            if (obj[labelKeys[i]] !== null && obj[labelKeys[i]] !== undefined && obj[labelKeys[i]] !== '') {
+                return String(obj[labelKeys[i]]);
+            }
+        }
+
+        // Check for id-only objects (common in CRM lookups)
+        var idVal = obj.id || obj.Id || obj.ID;
+        if (idVal) return 'ID: ' + String(idVal);
+
+        // Fallback: first non-null primitive value
+        var objKeys = Object.keys(obj);
+        for (var j = 0; j < objKeys.length; j++) {
+            var v = obj[objKeys[j]];
+            if (v !== null && v !== undefined && typeof v !== 'object') {
+                return String(v);
+            }
+        }
+
+        // Last resort: compact JSON (truncated)
+        try {
+            var json = JSON.stringify(obj);
+            return json.length > 60 ? json.substring(0, 57) + '…' : json;
+        } catch (e) {
+            return '[Object]';
+        }
+    }
+
     // Transforms raw data array into lyte-table header/content format
     function toLyteTableData(items) {
         if (!Array.isArray(items) || items.length === 0) return { header: [], content: [] };
@@ -1274,12 +1343,12 @@ Lyte.Component.register("pilotx-chat", {
             return { name: formatFieldName(k), body: k };
         });
 
-        // Ensure all values are strings for the table
+        // Serialize all values to readable strings for the table
         var content = normalized.map(function(item) {
             var row = {};
             keys.forEach(function(k) {
                 var val = item[k];
-                row[k] = (val !== null && val !== undefined) ? String(val) : '—';
+                row[k] = serializeCellValue(val);
             });
             return row;
         });
@@ -1306,12 +1375,12 @@ Lyte.Component.register("pilotx-chat", {
             }
 
             // Build card with _title and _fields for template rendering
-            var card = { _title: item[titleKey] || '(No Name)', _fields: [] };
+            var card = { _title: serializeCellValue(item[titleKey]) || '(No Name)', _fields: [] };
             Object.keys(item).forEach(function(k) {
                 if (k === titleKey || k === groupKey) return;
                 var val = item[k];
                 if (val === null || val === undefined) return;
-                card._fields.push({ label: formatFieldName(k), value: String(val) });
+                card._fields.push({ label: formatFieldName(k), value: serializeCellValue(val) });
             });
             // Copy original fields for reference
             Object.keys(item).forEach(function(k) { card[k] = item[k]; });
@@ -1328,6 +1397,10 @@ Lyte.Component.register("pilotx-chat", {
     }
 
     // Transforms raw data into lyte-chart series/meta format
+    // ZC Charts expects:
+    //   seriesData: { chartdata: [{ data: [[[label, val]], ...] }] }
+    //   metaDataAxes: { x: [colIdx], y: [[colIdx]], tooltip: [colIdx, colIdx] }
+    //   metaDataColumns: [{ dataindex: N, columnname: 'Name', datatype: 'ordinal'|'numeric' }]
     function toLyteChartData(data) {
         var chartData = [];
         var columns = [];
@@ -1346,35 +1419,137 @@ Lyte.Component.register("pilotx-chat", {
                     { dataindex: 1, columnname: 'Value', datatype: 'numeric' }
                 ];
             } else if (typeof data[0] === 'string') {
-                // String array → bar chart counting occurrences (each = 1)
-                chartData = data.map(function(val) {
-                    return [[val, 1]];
+                // String array → frequency chart (count occurrences of each unique value)
+                var freqMap = {};
+                var freqOrder = [];
+                data.forEach(function(val) {
+                    var label = val || 'Unknown';
+                    if (!freqMap[label]) {
+                        freqMap[label] = 0;
+                        freqOrder.push(label);
+                    }
+                    freqMap[label]++;
+                });
+                chartData = freqOrder.map(function(label) {
+                    return [[label, freqMap[label]]];
                 });
                 columns = [
                     { dataindex: 0, columnname: 'Item', datatype: 'ordinal' },
                     { dataindex: 1, columnname: 'Count', datatype: 'numeric' }
                 ];
             } else if (typeof data[0] === 'object' && data[0] !== null) {
-                // Object array → find a title key and a numeric key
-                var keys = Object.keys(data[0]);
-                var titleKey = keys.find(function(k) { return /name|title|label/i.test(k); }) || keys[0];
-                var numericKey = keys.find(function(k) { return typeof data[0][k] === 'number'; });
+                // Object array → find label key and numeric keys
+                var allKeys = Object.keys(data[0]);
+                var titleKey = allKeys.find(function(k) { return /name|title|label|subject/i.test(k); }) || allKeys[0];
 
-                if (numericKey) {
-                    chartData = data.map(function(item) {
-                        return [[(item[titleKey] || '').toString(), Number(item[numericKey]) || 0]];
-                    });
+                // Find all numeric keys (check across multiple items, skip id-like fields)
+                var numericKeys = allKeys.filter(function(k) {
+                    if (k === titleKey) return false;
+                    if (/^id$|^Id$|^ID$|_id$/i.test(k)) return false;
+                    var numCount = 0;
+                    var checkCount = Math.min(data.length, 10);
+                    for (var ci = 0; ci < checkCount; ci++) {
+                        var v = data[ci][k];
+                        if (v !== null && v !== undefined && typeof v === 'number' && !isNaN(v)) {
+                            numCount++;
+                        }
+                    }
+                    return numCount > checkCount * 0.4;
+                });
+
+                if (numericKeys.length > 0) {
+                    // Has numeric fields → plot each record as a data point
+                    var primaryNumKey = numericKeys[0];
+
+                    if (numericKeys.length === 1) {
+                        // Single numeric field → simple 2-column chart
+                        chartData = data.map(function(item) {
+                            var label = serializeCellValue(item[titleKey]);
+                            label = label.length > 25 ? label.substring(0, 23) + '…' : label;
+                            return [[label, Number(item[primaryNumKey]) || 0]];
+                        });
+                        columns = [
+                            { dataindex: 0, columnname: formatFieldName(titleKey), datatype: 'ordinal' },
+                            { dataindex: 1, columnname: formatFieldName(primaryNumKey), datatype: 'numeric' }
+                        ];
+                    } else {
+                        // Multiple numeric fields → multi-series chart
+                        var usedNumKeys = numericKeys.slice(0, 4); // max 4 series
+                        chartData = data.map(function(item) {
+                            var label = serializeCellValue(item[titleKey]);
+                            label = label.length > 25 ? label.substring(0, 23) + '…' : label;
+                            var row = [label];
+                            usedNumKeys.forEach(function(nk) {
+                                row.push(Number(item[nk]) || 0);
+                            });
+                            return [row];
+                        });
+                        columns = [{ dataindex: 0, columnname: formatFieldName(titleKey), datatype: 'ordinal' }];
+                        var yIndices = [];
+                        usedNumKeys.forEach(function(nk, ni) {
+                            columns.push({ dataindex: ni + 1, columnname: formatFieldName(nk), datatype: 'numeric' });
+                            yIndices.push(ni + 1);
+                        });
+                        axes = { x: [0], y: [yIndices], tooltip: [0].concat(yIndices) };
+                    }
                 } else {
-                    // No numeric key — count items per title
-                    chartData = data.map(function(item, idx) {
-                        return [[(item[titleKey] || 'Item ' + (idx + 1)).toString(), data.length - idx]];
+                    // No numeric fields → group by a categorical field and count frequency
+                    var groupKey = allKeys.find(function(k) {
+                        return k !== titleKey && /status|stage|type|source|category|state|priority|group/i.test(k);
+                    }) || titleKey;
+
+                    var gFreqMap = {};
+                    var gFreqOrder = [];
+                    data.forEach(function(item) {
+                        var label = serializeCellValue(item[groupKey]) || 'Unknown';
+                        label = label.length > 25 ? label.substring(0, 23) + '…' : label;
+                        if (!gFreqMap[label]) {
+                            gFreqMap[label] = 0;
+                            gFreqOrder.push(label);
+                        }
+                        gFreqMap[label]++;
                     });
+                    chartData = gFreqOrder.map(function(label) {
+                        return [[label, gFreqMap[label]]];
+                    });
+                    columns = [
+                        { dataindex: 0, columnname: formatFieldName(groupKey), datatype: 'ordinal' },
+                        { dataindex: 1, columnname: 'Count', datatype: 'numeric' }
+                    ];
                 }
-                columns = [
-                    { dataindex: 0, columnname: formatFieldName(titleKey), datatype: 'ordinal' },
-                    { dataindex: 1, columnname: numericKey ? formatFieldName(numericKey) : 'Count', datatype: 'numeric' }
-                ];
             }
+        } else if (typeof data === 'number') {
+            // Single number → single bar
+            chartData = [[[' ', data]]];
+            columns = [
+                { dataindex: 0, columnname: ' ', datatype: 'ordinal' },
+                { dataindex: 1, columnname: 'Value', datatype: 'numeric' }
+            ];
+        } else if (typeof data === 'object' && data !== null && !Array.isArray(data)) {
+            // Key-value object → treat keys as labels, values as numbers
+            var objKeys = Object.keys(data);
+            objKeys.forEach(function(k) {
+                var v = data[k];
+                if (v !== null && v !== undefined && !isNaN(Number(v))) {
+                    chartData.push([[formatFieldName(k), Number(v)]]);
+                }
+            });
+            if (chartData.length === 0) {
+                chartData = [[[' ', 0]]];
+            }
+            columns = [
+                { dataindex: 0, columnname: 'Field', datatype: 'ordinal' },
+                { dataindex: 1, columnname: 'Value', datatype: 'numeric' }
+            ];
+        }
+
+        // Fallback: if no data was built, provide an empty placeholder
+        if (chartData.length === 0) {
+            chartData = [[[' ', 0]]];
+            columns = [
+                { dataindex: 0, columnname: ' ', datatype: 'ordinal' },
+                { dataindex: 1, columnname: ' ', datatype: 'numeric' }
+            ];
         }
 
         return {
@@ -1580,7 +1755,7 @@ Lyte.Component.register("pilotx-chat", {
 
             const keys = Object.keys(item);
             const titleKey = keys.find(k => /name|title|label/i.test(k)) || keys[0];
-            const title = item[titleKey] || '(No Name)';
+            const title = serializeCellValue(item[titleKey]) || '(No Name)';
 
             let fieldsHtml = '';
             keys.forEach(k => {
@@ -1590,7 +1765,7 @@ Lyte.Component.register("pilotx-chat", {
                 fieldsHtml += `
                     <div class="list-card-field">
                         <span class="field-label">${escapeHtml(formatFieldName(k))}</span>
-                        <span class="field-value">${escapeHtml(String(val))}</span>
+                        <span class="field-value">${escapeHtml(serializeCellValue(val))}</span>
                     </div>
                 `;
             });
@@ -1633,7 +1808,7 @@ Lyte.Component.register("pilotx-chat", {
             tbody += '<tr>';
             keys.forEach(k => {
                 const val = item[k];
-                tbody += `<td>${val !== null && val !== undefined ? escapeHtml(String(val)) : '—'}</td>`;
+                tbody += `<td>${escapeHtml(serializeCellValue(val))}</td>`;
             });
             tbody += '</tr>';
         });
@@ -1676,9 +1851,9 @@ Lyte.Component.register("pilotx-chat", {
             groups[groupName].forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'kanban-card';
-                const name = item[titleKey] || '(No Name)';
+                const name = serializeCellValue(item[titleKey]) || '(No Name)';
                 const metaKey = Object.keys(item).find(k => k !== titleKey && item[k]);
-                const meta = metaKey ? `${formatFieldName(metaKey)}: ${item[metaKey]}` : '';
+                const meta = metaKey ? `${formatFieldName(metaKey)}: ${serializeCellValue(item[metaKey])}` : '';
                 card.innerHTML = `
                     <div class="kanban-card-title">${escapeHtml(name)}</div>
                     <div class="kanban-card-meta">${escapeHtml(meta)}</div>
@@ -1703,23 +1878,48 @@ Lyte.Component.register("pilotx-chat", {
         // Handle primitive arrays (number[], string[])
         if (items.length > 0 && typeof items[0] !== 'object') {
             var isNumArr = items.every(function(it) { return typeof it === 'number'; });
-            var maxN = isNumArr ? Math.max.apply(null, items.map(Number)) : items.length;
-            var monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
-            items.forEach(function(item, idx) {
-                var v = isNumArr ? Number(item) : 1;
-                var p = maxN > 0 ? (v / maxN) * 100 : 10;
-                var c = COLORS[idx % COLORS.length];
-                var l = isNumArr && items.length <= 12 ? monthNames[idx] || ('M' + (idx + 1)) : String(item);
-                var g = document.createElement('div');
-                g.className = 'chart-bar-group';
-                g.innerHTML =
-                    '<div class="chart-bar" style="height:' + Math.max(p, 5) + '%;background:' + c + ';">' +
-                        '<span class="chart-bar-value">' + (isNumArr ? v : '') + '</span>' +
-                    '</div>' +
-                    '<span class="chart-bar-label" title="' + escapeHtml(l) + '">' + escapeHtml(l.substring(0, 10)) + '</span>';
-                barsDiv.appendChild(g);
-            });
+            if (isNumArr) {
+                var maxN = Math.max.apply(null, items.map(Number));
+                var monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                items.forEach(function(item, idx) {
+                    var v = Number(item);
+                    var p = maxN > 0 ? (v / maxN) * 100 : 10;
+                    var c = COLORS[idx % COLORS.length];
+                    var l = items.length <= 12 ? monthNames[idx] || ('M' + (idx + 1)) : String(idx + 1);
+                    var g = document.createElement('div');
+                    g.className = 'chart-bar-group';
+                    g.innerHTML =
+                        '<div class="chart-bar" style="height:' + Math.max(p, 5) + '%;background:' + c + ';">' +
+                            '<span class="chart-bar-value">' + v + '</span>' +
+                        '</div>' +
+                        '<span class="chart-bar-label" title="' + escapeHtml(l) + '">' + escapeHtml(l.substring(0, 10)) + '</span>';
+                    barsDiv.appendChild(g);
+                });
+            } else {
+                // String array → frequency chart
+                var strFreq = {};
+                var strOrder = [];
+                items.forEach(function(item) {
+                    var label = String(item);
+                    if (!strFreq[label]) { strFreq[label] = 0; strOrder.push(label); }
+                    strFreq[label]++;
+                });
+                var strMax = Math.max.apply(null, strOrder.map(function(l) { return strFreq[l]; }));
+                strOrder.forEach(function(label, idx) {
+                    var v = strFreq[label];
+                    var p = strMax > 0 ? (v / strMax) * 100 : 10;
+                    var c = COLORS[idx % COLORS.length];
+                    var g = document.createElement('div');
+                    g.className = 'chart-bar-group';
+                    g.innerHTML =
+                        '<div class="chart-bar" style="height:' + Math.max(p, 5) + '%;background:' + c + ';">' +
+                            '<span class="chart-bar-value">' + v + '</span>' +
+                        '</div>' +
+                        '<span class="chart-bar-label" title="' + escapeHtml(label) + '">' + escapeHtml(label.substring(0, 12)) + '</span>';
+                    barsDiv.appendChild(g);
+                });
+            }
 
             chart.appendChild(barsDiv);
             container.appendChild(chart);
@@ -1728,27 +1928,55 @@ Lyte.Component.register("pilotx-chat", {
 
         // Object array chart
         const titleKey = Object.keys(items[0] || {}).find(k => /name|title|label/i.test(k)) || Object.keys(items[0] || {})[0];
-        const numericKey = Object.keys(items[0] || {}).find(k => typeof items[0][k] === 'number');
+        const numericKey = Object.keys(items[0] || {}).find(k => typeof items[0][k] === 'number' && !/^id$|^Id$|^ID$/i.test(k));
 
-        const maxVal = numericKey
-            ? Math.max.apply(null, items.map(function(it) { return Number(it[numericKey]) || 0; }))
-            : items.length;
+        if (numericKey) {
+            // Has numeric field → plot each item
+            const maxVal = Math.max.apply(null, items.map(function(it) { return Number(it[numericKey]) || 0; }));
+            items.forEach(function(item, idx) {
+                const val = Number(item[numericKey]) || 0;
+                const pct = maxVal > 0 ? (val / maxVal) * 100 : 10;
+                const color = COLORS[idx % COLORS.length];
+                const label = serializeCellValue(item[titleKey]) || ('Item ' + (idx + 1));
 
-        items.forEach(function(item, idx) {
-            const val = numericKey ? (Number(item[numericKey]) || 0) : (items.length - idx);
-            const pct = maxVal > 0 ? (val / maxVal) * 100 : 10;
-            const color = COLORS[idx % COLORS.length];
-            const label = (item[titleKey] || 'Item ' + (idx + 1)).toString();
+                const group = document.createElement('div');
+                group.className = 'chart-bar-group';
+                group.innerHTML =
+                    '<div class="chart-bar" style="height:' + Math.max(pct, 5) + '%;background:' + color + ';">' +
+                        '<span class="chart-bar-value">' + val + '</span>' +
+                    '</div>' +
+                    '<span class="chart-bar-label" title="' + escapeHtml(label) + '">' + escapeHtml(label.substring(0, 12)) + '</span>';
+                barsDiv.appendChild(group);
+            });
+        } else {
+            // No numeric field → frequency count by a categorical field
+            var catKey = Object.keys(items[0] || {}).find(function(k) {
+                return k !== titleKey && /status|stage|type|source|category|state|priority|group/i.test(k);
+            }) || titleKey;
 
-            const group = document.createElement('div');
-            group.className = 'chart-bar-group';
-            group.innerHTML =
-                '<div class="chart-bar" style="height:' + Math.max(pct, 5) + '%;background:' + color + ';">' +
-                    '<span class="chart-bar-value">' + (numericKey ? val : '') + '</span>' +
-                '</div>' +
-                '<span class="chart-bar-label" title="' + escapeHtml(label) + '">' + escapeHtml(label.substring(0, 10)) + '</span>';
-            barsDiv.appendChild(group);
-        });
+            var catFreq = {};
+            var catOrder = [];
+            items.forEach(function(item) {
+                var label = serializeCellValue(item[catKey]) || 'Unknown';
+                if (!catFreq[label]) { catFreq[label] = 0; catOrder.push(label); }
+                catFreq[label]++;
+            });
+            var catMax = Math.max.apply(null, catOrder.map(function(l) { return catFreq[l]; }));
+            catOrder.forEach(function(label, idx) {
+                var v = catFreq[label];
+                var pct = catMax > 0 ? (v / catMax) * 100 : 10;
+                var color = COLORS[idx % COLORS.length];
+
+                var group = document.createElement('div');
+                group.className = 'chart-bar-group';
+                group.innerHTML =
+                    '<div class="chart-bar" style="height:' + Math.max(pct, 5) + '%;background:' + color + ';">' +
+                        '<span class="chart-bar-value">' + v + '</span>' +
+                    '</div>' +
+                    '<span class="chart-bar-label" title="' + escapeHtml(label) + '">' + escapeHtml(label.substring(0, 12)) + '</span>';
+                barsDiv.appendChild(group);
+            });
+        }
 
         chart.appendChild(barsDiv);
         container.appendChild(chart);
@@ -1766,7 +1994,7 @@ Lyte.Component.register("pilotx-chat", {
 
         var keys = Object.keys(item);
         var titleKey = keys.find(function(k) { return /name|title|label/i.test(k); }) || keys[0];
-        var title = item[titleKey] || '(No Name)';
+        var title = serializeCellValue(item[titleKey]) || '(No Name)';
 
         // Header with avatar
         var header = document.createElement('div');
@@ -1776,7 +2004,7 @@ Lyte.Component.register("pilotx-chat", {
                 '<i class="fas fa-user"></i>' +
             '</div>' +
             '<div class="detail-title-block">' +
-                '<h3 class="detail-name">' + escapeHtml(String(title)) + '</h3>' +
+                '<h3 class="detail-name">' + escapeHtml(title) + '</h3>' +
                 '<span class="detail-subtitle">' + escapeHtml(formatFieldName(titleKey)) + '</span>' +
             '</div>';
         detail.appendChild(header);
@@ -1788,7 +2016,7 @@ Lyte.Component.register("pilotx-chat", {
         keys.forEach(function(k) {
             if (k === titleKey) return;
             var val = item[k];
-            var displayVal = val !== null && val !== undefined ? String(val) : '—';
+            var displayVal = serializeCellValue(val);
             var isLink = typeof val === 'string' && (/^https?:\/\//i.test(val) || /^[\w.+-]+@[\w-]+\.[\w.]+$/.test(val));
 
             var field = document.createElement('div');
