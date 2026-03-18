@@ -1022,7 +1022,6 @@ Lyte.Component.register("pilotx-chat", {
         if (typeof data === 'boolean') return 'boolean';
         if (Array.isArray(data)) {
             if (data.length === 0) return 'empty';
-            if (data.length === 1 && typeof data[0] === 'object' && data[0] !== null) return 'single';
             if (data.every(function(it) { return typeof it === 'string'; })) return 'string-list';
             if (data.every(function(it) { return typeof it === 'number'; })) return 'number-list';
             if (data.every(function(it) { return typeof it === 'object' && it !== null && !Array.isArray(it); })) return 'records';
@@ -1378,12 +1377,14 @@ Lyte.Component.register("pilotx-chat", {
     }
 
     // Renders the appropriate Lyte UI component into a container element
-    function renderLyteView(containerEl, data, viewKey, dataType) {
+    function renderLyteView(containerEl, data, viewKey, dataType, stableTargetId) {
         // Clear previous content and any rendered Lyte components
         containerEl.innerHTML = '';
 
         var renderTarget = document.createElement('div');
-        renderTarget.id = 'lyteViewTarget_' + (++_lyteViewCounter);
+        // Use a stable ID if provided (from buildLyteView) to avoid race conditions
+        // where Lyte.Component.render references an old incremented ID that was destroyed
+        renderTarget.id = stableTargetId || ('lyteViewTarget_' + (++_lyteViewCounter));
         containerEl.appendChild(renderTarget);
 
         // Helper: safely call Lyte.Component.render only if the target is in the document
@@ -1468,6 +1469,10 @@ Lyte.Component.register("pilotx-chat", {
 
         var normalized = normalizeForRender(data, dataType);
 
+        // Assign a stable render target ID for this view instance
+        // so tab switches and deferred renders reuse the same ID
+        var stableTargetId = 'lyteViewTarget_' + (++_lyteViewCounter);
+
         // Toolbar
         var toolbar = document.createElement('div');
         toolbar.className = 'data-view-toolbar';
@@ -1486,7 +1491,7 @@ Lyte.Component.register("pilotx-chat", {
             btn.addEventListener('click', function() {
                 tabs.querySelectorAll('.view-tab').forEach(function(t) { t.classList.remove('active'); });
                 btn.classList.add('active');
-                renderLyteView(body, normalized, v.key, dataType);
+                renderLyteView(body, normalized, v.key, dataType, stableTargetId);
             });
             tabs.appendChild(btn);
         });
@@ -1509,7 +1514,7 @@ Lyte.Component.register("pilotx-chat", {
         // Defer initial render until the container is attached to the DOM
         // (Lyte.Component.render needs the target element to be queryable in the document)
         container._deferredRender = function() {
-            renderLyteView(body, normalized, defaultView, dataType);
+            renderLyteView(body, normalized, defaultView, dataType, stableTargetId);
         };
         // Poll until the container is actually in the document (handles re-renders)
         var _retries = 0;
