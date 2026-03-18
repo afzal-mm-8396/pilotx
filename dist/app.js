@@ -741,8 +741,13 @@ _dynamicNodes : [],
                 if(result.status !== 'success') {
                     throw new Error('CScript execution failed: ' + (result.error || 'Unknown error'));
                 }
-                console.log('CScript result came');
-                return result.data.data;
+                console.log('CScript result came', result);
+                // Extract data robustly — handle varying response shapes
+                var d = result.data;
+                if (d && typeof d === 'object' && !Array.isArray(d) && d.data !== undefined) {
+                    return d.data;  // unwrap { data: [...] }
+                }
+                return d;
             } else {
                 console.warn('[WorkPilot] CScriptBridge not available, falling back to mock.');
             }
@@ -849,19 +854,27 @@ _dynamicNodes : [],
             await sleep(300 + Math.random() * 400);
         }
 
-        // Done state
-        toggle.innerHTML = `
-            <span class="steps-done-icon"><i class="fas fa-bolt"></i></span>
-            <span class="toggle-label">Script executed (${steps.length} steps)</span>
-            <i class="fas fa-chevron-right toggle-icon expanded"></i>
-        `;
-        // onclick is already set on toggle — no re-bind needed
+        // Keep spinner going — show "Waiting for result…" after steps finish
+        toggle.querySelector('.toggle-label').textContent = 'Waiting for result…';
 
-        await sleep(500);
-        body.classList.add('collapsed');
-        toggle.querySelector('.toggle-icon').classList.remove('expanded');
-
-        return wrapper;
+        // Return wrapper + finalize function so caller completes when CScript returns
+        return {
+            wrapper: wrapper,
+            finalize: function(success) {
+                toggle.innerHTML = `
+                    <span class="steps-done-icon"><i class="fas ${success ? 'fa-bolt' : 'fa-exclamation-circle'}"></i></span>
+                    <span class="toggle-label">${success ? 'Script executed' : 'Script failed'} (${steps.length} steps)</span>
+                    <i class="fas fa-chevron-right toggle-icon expanded"></i>
+                `;
+                toggle.onclick = function() {
+                    var icon = toggle.querySelector('.toggle-icon');
+                    if (icon) icon.classList.toggle('expanded');
+                    body.classList.toggle('collapsed');
+                };
+                body.classList.add('collapsed');
+                toggle.querySelector('.toggle-icon').classList.remove('expanded');
+            }
+        };
     }
 
     // ─── SEND MESSAGE FLOW ─────────────────────────────────
@@ -976,13 +989,19 @@ _dynamicNodes : [],
                 // Run the stepper animation and executeCScript in parallel
                 var cscriptResult;
                 var execError = null;
+                var stepperHandle = null;
                 console.log('Gonna pass cscript content: -- ', scriptContent);
                 await Promise.all([
-                    showExecStepper(contentEl, scriptContent, explanation),
+                    showExecStepper(contentEl, scriptContent, explanation)
+                        .then(function(handle) { stepperHandle = handle; }),
                     executeCScript(scriptContent)
                         .then(function(result) { cscriptResult = result; })
                         .catch(function(err) { execError = err; })
                 ]);
+                // Finalize stepper now that CScript has actually returned
+                if (stepperHandle && stepperHandle.finalize) {
+                    stepperHandle.finalize(!execError);
+                }
 
                 if (execError) {
                     var execErrText = 'Script execution failed: ' + (execError.message || String(execError));
@@ -1325,7 +1344,7 @@ _dynamicNodes : [],
             var row = {};
             keys.forEach(function(k) {
                 var val = item[k];
-                row[k] = (val !== null && val !== undefined) ? String(val) : '—';
+                row[k] = formatCellValue(val);
             });
             return row;
         });
@@ -1345,7 +1364,7 @@ _dynamicNodes : [],
         var groups = {};
         var groupOrder = [];
         items.forEach(function(item) {
-            var groupVal = (item[groupKey] !== null && item[groupKey] !== undefined) ? String(item[groupKey]) : 'Ungrouped';
+            var groupVal = (item[groupKey] !== null && item[groupKey] !== undefined) ? formatCellValue(item[groupKey]) : 'Ungrouped';
             if (!groups[groupVal]) {
                 groups[groupVal] = [];
                 groupOrder.push(groupVal);
@@ -1357,7 +1376,7 @@ _dynamicNodes : [],
                 if (k === titleKey || k === groupKey) return;
                 var val = item[k];
                 if (val === null || val === undefined) return;
-                card._fields.push({ label: formatFieldName(k), value: String(val) });
+                card._fields.push({ label: formatFieldName(k), value: formatCellValue(val) });
             });
             // Copy original fields for reference
             Object.keys(item).forEach(function(k) { card[k] = item[k]; });
@@ -1636,7 +1655,7 @@ _dynamicNodes : [],
                 fieldsHtml += `
                     <div class="list-card-field">
                         <span class="field-label">${escapeHtml(formatFieldName(k))}</span>
-                        <span class="field-value">${escapeHtml(String(val))}</span>
+                        <span class="field-value">${escapeHtml(formatCellValue(val))}</span>
                     </div>
                 `;
             });
@@ -1679,7 +1698,7 @@ _dynamicNodes : [],
             tbody += '<tr>';
             keys.forEach(k => {
                 const val = item[k];
-                tbody += `<td>${val !== null && val !== undefined ? escapeHtml(String(val)) : '—'}</td>`;
+                tbody += `<td>${escapeHtml(formatCellValue(val))}</td>`;
             });
             tbody += '</tr>';
         });
@@ -1834,7 +1853,7 @@ _dynamicNodes : [],
         keys.forEach(function(k) {
             if (k === titleKey) return;
             var val = item[k];
-            var displayVal = val !== null && val !== undefined ? String(val) : '—';
+            var displayVal = formatCellValue(val);
             var isLink = typeof val === 'string' && (/^https?:\/\//i.test(val) || /^[\w.+-]+@[\w-]+\.[\w.]+$/.test(val));
 
             var field = document.createElement('div');
@@ -2056,6 +2075,21 @@ _dynamicNodes : [],
             .replace(/[_-]/g, ' ')
             .replace(/\b\w/g, c => c.toUpperCase())
             .trim();
+    }
+
+    function formatCellValue(val) {
+        if (val === null || val === undefined) return '—';
+        if (typeof val === 'object') {
+            if (Array.isArray(val)) {
+                return val.map(function(v) {
+                    return typeof v === 'object' && v !== null ? (v.name || v.display_value || JSON.stringify(v)) : String(v);
+                }).join(', ');
+            }
+            if (val.name) return String(val.name);
+            if (val.display_value) return String(val.display_value);
+            return JSON.stringify(val);
+        }
+        return String(val);
     }
 
     function formatMarkdown(text) {
