@@ -1391,29 +1391,21 @@ _dynamicNodes : [],
         renderTarget.id = stableTargetId || ('lyteViewTarget_' + (++_lyteViewCounter));
         containerEl.appendChild(renderTarget);
 
-        // Helper: safely call Lyte.Component.render only if the target is in the document
+        // Helper: safely call Lyte.Component.render after DOM is flushed
+        // Lyte's internal selector fails if the element was created in the same frame,
+        // so we always defer the render to the next setTimeout tick.
         function safeRender(componentName, props, targetId) {
-            var el = document.getElementById(targetId);
-            if (!el || !document.body.contains(el)) {
-                console.warn('[WorkPilot] Skipping Lyte render — #' + targetId + ' not in DOM');
-                return;
-            }
-            try {
-                Lyte.Component.render(componentName, props, '#' + targetId);
-            } catch (e) {
-                console.warn('[WorkPilot] Lyte render failed for #' + targetId + ', retrying after rAF:', e.message);
-                // Retry after browser has flushed DOM changes
-                requestAnimationFrame(function() {
-                    var retryEl = document.getElementById(targetId);
-                    if (retryEl && document.body.contains(retryEl)) {
-                        try {
-                            Lyte.Component.render(componentName, props, '#' + targetId);
-                        } catch (e2) {
-                            console.warn('[WorkPilot] Lyte render retry also failed for #' + targetId + ':', e2.message);
-                        }
-                    }
-                });
-            }
+            setTimeout(function() {
+                var el = document.getElementById(targetId);
+                if (!el || !document.body.contains(el)) {
+                    return;
+                }
+                try {
+                    Lyte.Component.render(componentName, props, '#' + targetId);
+                } catch (e) {
+                    console.warn('[WorkPilot] Lyte render failed for #' + targetId + ':', e.message);
+                }
+            }, 0);
         }
 
         switch (viewKey) {
@@ -1536,8 +1528,8 @@ _dynamicNodes : [],
             renderLyteView(body, normalized, defaultView, dataType, stableTargetId);
         };
         // Poll until the container is actually in the document (handles re-renders)
-        // Uses requestAnimationFrame for the first attempt (ensures DOM is flushed)
-        // and for retries (better than setTimeout for DOM-dependent rendering)
+        // Uses setTimeout to ensure the browser has fully flushed DOM changes
+        // before Lyte.Component.render tries to querySelector the target
         var _retries = 0;
         function tryDeferredRender() {
             if (!container._deferredRender) return;
@@ -1546,13 +1538,12 @@ _dynamicNodes : [],
                 container._deferredRender = null;
             } else if (_retries < 20) {
                 _retries++;
-                requestAnimationFrame(tryDeferredRender);
+                setTimeout(tryDeferredRender, 16);
             } else {
-                console.warn('[WorkPilot] Gave up waiting for view container to attach to DOM');
                 container._deferredRender = null;
             }
         }
-        requestAnimationFrame(tryDeferredRender);
+        setTimeout(tryDeferredRender, 0);
 
         return container;
     }
