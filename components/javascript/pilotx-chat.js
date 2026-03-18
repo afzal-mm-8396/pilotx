@@ -888,6 +888,14 @@ Lyte.Component.register("pilotx-chat", {
                         allDataViews.push({ errorText: cscriptErrText });
                         continue;
                     }
+                    // Check if the result is an error object with {error: true, data: "message"}
+                    if (typeof cscriptResult === 'object' && cscriptResult.error === true) {
+                        var objErrText = cscriptResult.data || cscriptResult.message || 'Unknown error';
+                        var objErrHtml = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(String(objErrText)) + '</span></div>';
+                        contentEl.insertAdjacentHTML('beforeend', objErrHtml);
+                        allDataViews.push({ errorText: String(objErrText) });
+                        continue;
+                    }
                     var resultType = detectDataType(cscriptResult);
                     var bestView = getLyteDefaultView(resultType);
                     var viewContainer = buildLyteView(cscriptResult, bestView);
