@@ -684,7 +684,7 @@ Lyte.Component.register("pilotx-chat", {
                     throw new Error('CScript execution failed: ' + (result.error || 'Unknown error'));
                 }
                 console.log('CScript result came');
-                return result.data;
+                return result.data.data;
             } else {
                 console.warn('[WorkPilot] CScriptBridge not available, falling back to mock.');
             }
@@ -1378,31 +1378,41 @@ Lyte.Component.register("pilotx-chat", {
         renderTarget.id = 'lyteViewTarget_' + (++_lyteViewCounter);
         containerEl.appendChild(renderTarget);
 
+        // Helper: safely call Lyte.Component.render only if the target is in the document
+        function safeRender(componentName, props, targetId) {
+            var el = document.getElementById(targetId);
+            if (!el || !document.body.contains(el)) {
+                console.warn('[WorkPilot] Skipping Lyte render — #' + targetId + ' not in DOM');
+                return;
+            }
+            Lyte.Component.render(componentName, props, '#' + targetId);
+        }
+
         switch (viewKey) {
             case 'table': {
                 var tableData = toLyteTableData(Array.isArray(data) ? data : [data]);
-                Lyte.Component.render('data-view-table', {
+                safeRender('data-view-table', {
                     ltPropHeader: tableData.header,
                     ltPropContent: tableData.content
-                }, '#' + renderTarget.id);
+                }, renderTarget.id);
                 break;
             }
             case 'kanban': {
                 var boardDetails = toLyteKanbanData(data);
-                Lyte.Component.render('data-view-kanban', {
+                safeRender('data-view-kanban', {
                     ltPropBoardDetails: boardDetails
-                }, '#' + renderTarget.id);
+                }, renderTarget.id);
                 break;
             }
             case 'chart': {
                 var chartInfo = toLyteChartData(data);
-                Lyte.Component.render('data-view-chart', {
+                safeRender('data-view-chart', {
                     ltPropType: 'bar',
                     ltPropTitle: '',
                     ltPropSeriesData: chartInfo.seriesData,
                     ltPropMetaDataAxes: chartInfo.metaDataAxes,
                     ltPropMetaDataColumns: chartInfo.metaDataColumns
-                }, '#' + renderTarget.id);
+                }, renderTarget.id);
                 break;
             }
             // For non-Lyte views, fall back to the existing DOM-based renderers
@@ -1493,12 +1503,22 @@ Lyte.Component.register("pilotx-chat", {
         container._deferredRender = function() {
             renderLyteView(body, normalized, defaultView, dataType);
         };
-        setTimeout(function() {
-            if (container._deferredRender) {
+        // Poll until the container is actually in the document (handles re-renders)
+        var _retries = 0;
+        function tryDeferredRender() {
+            if (!container._deferredRender) return;
+            if (document.body.contains(container)) {
                 container._deferredRender();
                 container._deferredRender = null;
+            } else if (_retries < 20) {
+                _retries++;
+                setTimeout(tryDeferredRender, 50);
+            } else {
+                console.warn('[WorkPilot] Gave up waiting for view container to attach to DOM');
+                container._deferredRender = null;
             }
-        }, 0);
+        }
+        setTimeout(tryDeferredRender, 0);
 
         return container;
     }

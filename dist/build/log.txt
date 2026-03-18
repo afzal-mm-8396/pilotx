@@ -1,6 +1,7 @@
 Calculating the hash and diff report
 All the files processed
 filePath changed components/javascript/pilotx-chat.js
+Finding the diff for /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/dummy.js
 Finding the diff for /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/index.html
 Finding the diff for /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/package.json
 Finding the diff for /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/proxy.js
@@ -30,14 +31,14 @@ JSONContent {
   ]
  }
 }
-Time taken to generate the diff report 0.025 s
-Timing to complete init function0.029 s
+Time taken to generate the diff report 0.02 s
+Timing to complete init function0.023 s
 /* START CLI DETAILS */ 
 {"cliVersion":"3.6.18","outputPath":"dist","mode":"development","cliLocation":"/usr/local/lib/node_modules/@zoho/lyte-cli"}
 /* END CLI DETAILS */
-Building time of copyAppDir : 0.265 s
+Building time of copyAppDir : 0.233 s
 Cache copy compilation triggered forroutes
-Building time of routes : 0 s
+Building time of routes : 0.001 s
 Building components ....
 Component compilation served from cache
 Searching for syntax errors.....
@@ -47,32 +48,32 @@ Running compilerule ...
 [Time] => Convert Lyte syntax => 0.017 s
 Creating new browser instance 
 New browser instance launched
-browser Endpoint ws://127.0.0.1:64072/devtools/browser/027c6423-1ed0-43d6-9c0e-253e871efb6f
+browser Endpoint ws://127.0.0.1:63033/devtools/browser/76d9032c-0d87-4b75-a6ca-a824ddcf7161
 Browser launched
 page opened
 Post method request get caught with url/post
-Time taken for end call back be 3.232 s
+Time taken for end call back be 3.65 s
 Callback function called 0 spilotx-chat
-Time to end the dynamic nodes3.232 s
+Time to end the dynamic nodes3.651 s
 Generating dist components...
 
-Time to end processing template0.024 s
-Building time of components : 3.295 s
+Time to end processing template0.026 s
+Building time of components : 3.715 s
 Building models ..............
 
 Building time of models : 0 s
 Cache copy compilation triggered forhelpers
-Building time of helpers : 0 s
+Building time of helpers : 0.001 s
 Cache copy compilation triggered formixins
-Building time of mixins : 0.001 s
+Building time of mixins : 0 s
 Cache copy compilation triggered forservices
 Building time of services : 0 s
 build file exists on addons building
 Cache output exists for /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app/node_modules/@zoho/lyte-ui-component
-Building time of addons : 1.236 s
+Building time of addons : 1.088 s
 Consolidated file created in the dist/app.js
 
-Time for consolidation and minify 0.002 s
+Time for consolidation and minify 0.005 s
 Minified Count : 0
-Total Building Time : 4.801 s
+Total Building Time : 5.046 s
 Building completed
