@@ -88,6 +88,7 @@ _dynamicNodes : [],
     let isProcessing = false;
     var _processingSessionId = null;
     var _processingMsgId = null;
+    var _userSwitchedDuringProcessing = false;
 
     // ─── DOM REFS ──────────────────────────────────────────
     const $ = (sel) => document.querySelector(sel);
@@ -160,6 +161,10 @@ _dynamicNodes : [],
     }
 
     function switchSession(id) {
+        // Track if user switched away while a message is still processing
+        if (_processingSessionId && activeSessionId === _processingSessionId && id !== _processingSessionId) {
+            _userSwitchedDuringProcessing = true;
+        }
         activeSessionId = id;
         renderSessionList();
         renderActiveChat();
@@ -984,10 +989,13 @@ _dynamicNodes : [],
             _processingMsgId = null;
             saveSessions();
 
-            // If user switched away and back during processing, re-render
-            if (activeSessionId === session.id) {
+            // Only re-render if user switched away and back during processing
+            // (if they stayed, the DOM is already correct from live rendering)
+            if (_userSwitchedDuringProcessing && activeSessionId === session.id) {
+                _userSwitchedDuringProcessing = false;
                 renderActiveChat();
             }
+            _userSwitchedDuringProcessing = false;
 
         } catch (err) {
             removeThinkingLoader();
