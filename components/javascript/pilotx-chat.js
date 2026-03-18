@@ -619,10 +619,10 @@ Lyte.Component.register("pilotx-chat", {
                         return parsed;
                     }
                 }
-                console.warn('[WorkPilot] ZOHO.CRM.HTTP.post returned no usable data.');
+                console.log('[WorkPilot] ZOHO.CRM.HTTP.post returned no usable data.');
             }
         } catch (httpErr) {
-            console.warn('[WorkPilot] ZOHO.CRM.HTTP.post failed:', httpErr.message || httpErr);
+            console.log('[WorkPilot] ZOHO.CRM.HTTP.post failed:', httpErr.message || httpErr);
         }
 
         // If both fail, return null to trigger callAPI fallback (mock data)
@@ -663,6 +663,7 @@ Lyte.Component.register("pilotx-chat", {
         // }
 
         // ── Fallback: build a response with a hardcoded script for this prompt ──
+        console.log("fallback mockup  execution for prompt:", prompt);
         var fallbackKey = getMockKey(prompt);
         var fb = FALLBACK_SCRIPTS[fallbackKey] || FALLBACK_SCRIPTS.records;
         return {
@@ -677,10 +678,12 @@ Lyte.Component.register("pilotx-chat", {
     async function executeCScript(code) {
         try {
             if (typeof CScriptBridge !== 'undefined' && CScriptBridge && typeof CScriptBridge.run === 'function') {
+                console.log('sent CScript via CScriptBridge…');
                 var result = await CScriptBridge.run(code);
                 if(result.status !== 'success') {
                     throw new Error('CScript execution failed: ' + (result.error || 'Unknown error'));
                 }
+                console.log('CScript result came');
                 return result.data;
             } else {
                 console.warn('[WorkPilot] CScriptBridge not available, falling back to mock.');
@@ -837,8 +840,9 @@ Lyte.Component.register("pilotx-chat", {
             // 1) Call CRM Function (primary: ZOHO SDK → REST proxy)
             var apiResult = await callCRMFunction(text.trim());
             if (!apiResult) {
+                console.log("expected results not received from CRM function, using fallback Mockup call");
                 // 2) Fallback to callAPI (uses mock data when proxy fails)
-                console.warn('[WorkPilot] CRM Function failed, falling back to callAPI.');
+                // console.warn('[WorkPilot] CRM Function failed, falling back to callAPI.');
                 apiResult = await callAPI(text.trim());
             }
             removeThinkingLoader();
@@ -914,7 +918,7 @@ Lyte.Component.register("pilotx-chat", {
                 // Run the stepper animation and executeCScript in parallel
                 var cscriptResult;
                 var execError = null;
-
+                console.log('Gonna pass cscript content: -- ', scriptContent);
                 await Promise.all([
                     showExecStepper(contentEl, scriptContent, explanation),
                     executeCScript(scriptContent)
@@ -932,6 +936,7 @@ Lyte.Component.register("pilotx-chat", {
 
                 // 6) Detect result type and render appropriate Lyte UI view
                 if (cscriptResult !== null && cscriptResult !== undefined) {
+                    console.log('CScript result came');
                     // Check if the result is an Error object
                     if (cscriptResult instanceof Error || (typeof cscriptResult === 'object' && cscriptResult && cscriptResult.message && cscriptResult.constructor && cscriptResult.constructor.name === 'Error')) {
                         var cscriptErrText = cscriptResult.message || String(cscriptResult);
