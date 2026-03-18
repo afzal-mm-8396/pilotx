@@ -741,13 +741,8 @@ _dynamicNodes : [],
                 if(result.status !== 'success') {
                     throw new Error('CScript execution failed: ' + (result.error || 'Unknown error'));
                 }
-                console.log('CScript result came', result);
-                // Extract data robustly — handle varying response shapes
-                var d = result.data;
-                if (d && typeof d === 'object' && !Array.isArray(d) && d.data !== undefined) {
-                    return d.data;  // unwrap { data: [...] }
-                }
-                return d;
+                console.log('CScript result came');
+                return result.data.data;
             } else {
                 console.warn('[WorkPilot] CScriptBridge not available, falling back to mock.');
             }
@@ -854,27 +849,19 @@ _dynamicNodes : [],
             await sleep(300 + Math.random() * 400);
         }
 
-        // Keep spinner going — show "Waiting for result…" after steps finish
-        toggle.querySelector('.toggle-label').textContent = 'Waiting for result…';
+        // Done state
+        toggle.innerHTML = `
+            <span class="steps-done-icon"><i class="fas fa-bolt"></i></span>
+            <span class="toggle-label">Script executed (${steps.length} steps)</span>
+            <i class="fas fa-chevron-right toggle-icon expanded"></i>
+        `;
+        // onclick is already set on toggle — no re-bind needed
 
-        // Return wrapper + finalize function so caller completes when CScript returns
-        return {
-            wrapper: wrapper,
-            finalize: function(success) {
-                toggle.innerHTML = `
-                    <span class="steps-done-icon"><i class="fas ${success ? 'fa-bolt' : 'fa-exclamation-circle'}"></i></span>
-                    <span class="toggle-label">${success ? 'Script executed' : 'Script failed'} (${steps.length} steps)</span>
-                    <i class="fas fa-chevron-right toggle-icon expanded"></i>
-                `;
-                toggle.onclick = function() {
-                    var icon = toggle.querySelector('.toggle-icon');
-                    if (icon) icon.classList.toggle('expanded');
-                    body.classList.toggle('collapsed');
-                };
-                body.classList.add('collapsed');
-                toggle.querySelector('.toggle-icon').classList.remove('expanded');
-            }
-        };
+        await sleep(500);
+        body.classList.add('collapsed');
+        toggle.querySelector('.toggle-icon').classList.remove('expanded');
+
+        return wrapper;
     }
 
     // ─── SEND MESSAGE FLOW ─────────────────────────────────
@@ -989,19 +976,13 @@ _dynamicNodes : [],
                 // Run the stepper animation and executeCScript in parallel
                 var cscriptResult;
                 var execError = null;
-                var stepperHandle = null;
                 console.log('Gonna pass cscript content: -- ', scriptContent);
                 await Promise.all([
-                    showExecStepper(contentEl, scriptContent, explanation)
-                        .then(function(handle) { stepperHandle = handle; }),
+                    showExecStepper(contentEl, scriptContent, explanation),
                     executeCScript(scriptContent)
                         .then(function(result) { cscriptResult = result; })
                         .catch(function(err) { execError = err; })
                 ]);
-                // Finalize stepper now that CScript has actually returned
-                if (stepperHandle && stepperHandle.finalize) {
-                    stepperHandle.finalize(!execError);
-                }
 
                 if (execError) {
                     var execErrText = 'Script execution failed: ' + (execError.message || String(execError));
@@ -1344,7 +1325,7 @@ _dynamicNodes : [],
             var row = {};
             keys.forEach(function(k) {
                 var val = item[k];
-                row[k] = formatCellValue(val);
+                row[k] = (val !== null && val !== undefined) ? String(val) : '—';
             });
             return row;
         });
@@ -1364,7 +1345,7 @@ _dynamicNodes : [],
         var groups = {};
         var groupOrder = [];
         items.forEach(function(item) {
-            var groupVal = (item[groupKey] !== null && item[groupKey] !== undefined) ? formatCellValue(item[groupKey]) : 'Ungrouped';
+            var groupVal = (item[groupKey] !== null && item[groupKey] !== undefined) ? String(item[groupKey]) : 'Ungrouped';
             if (!groups[groupVal]) {
                 groups[groupVal] = [];
                 groupOrder.push(groupVal);
@@ -1376,7 +1357,7 @@ _dynamicNodes : [],
                 if (k === titleKey || k === groupKey) return;
                 var val = item[k];
                 if (val === null || val === undefined) return;
-                card._fields.push({ label: formatFieldName(k), value: formatCellValue(val) });
+                card._fields.push({ label: formatFieldName(k), value: String(val) });
             });
             // Copy original fields for reference
             Object.keys(item).forEach(function(k) { card[k] = item[k]; });
@@ -1655,7 +1636,7 @@ _dynamicNodes : [],
                 fieldsHtml += `
                     <div class="list-card-field">
                         <span class="field-label">${escapeHtml(formatFieldName(k))}</span>
-                        <span class="field-value">${escapeHtml(formatCellValue(val))}</span>
+                        <span class="field-value">${escapeHtml(String(val))}</span>
                     </div>
                 `;
             });
@@ -1698,7 +1679,7 @@ _dynamicNodes : [],
             tbody += '<tr>';
             keys.forEach(k => {
                 const val = item[k];
-                tbody += `<td>${escapeHtml(formatCellValue(val))}</td>`;
+                tbody += `<td>${val !== null && val !== undefined ? escapeHtml(String(val)) : '—'}</td>`;
             });
             tbody += '</tr>';
         });
@@ -1853,7 +1834,7 @@ _dynamicNodes : [],
         keys.forEach(function(k) {
             if (k === titleKey) return;
             var val = item[k];
-            var displayVal = formatCellValue(val);
+            var displayVal = val !== null && val !== undefined ? String(val) : '—';
             var isLink = typeof val === 'string' && (/^https?:\/\//i.test(val) || /^[\w.+-]+@[\w-]+\.[\w.]+$/.test(val));
 
             var field = document.createElement('div');
@@ -2077,21 +2058,6 @@ _dynamicNodes : [],
             .trim();
     }
 
-    function formatCellValue(val) {
-        if (val === null || val === undefined) return '—';
-        if (typeof val === 'object') {
-            if (Array.isArray(val)) {
-                return val.map(function(v) {
-                    return typeof v === 'object' && v !== null ? (v.name || v.display_value || JSON.stringify(v)) : String(v);
-                }).join(', ');
-            }
-            if (val.name) return String(val.name);
-            if (val.display_value) return String(val.display_value);
-            return JSON.stringify(val);
-        }
-        return String(val);
-    }
-
     function formatMarkdown(text) {
         if (!text) return '';
         let html = escapeHtml(text);
@@ -2182,19 +2148,19 @@ _dynamicNodes : [],
             return 'w_' + Array.from(a, function (b) { return b.toString(16).padStart(2, '0'); }).join('');
         }
 
-        function connect() {
-            if (_ok && _token) return Promise.resolve();
-            if (_connectPromise) return _connectPromise;
-            _connectPromise = new Promise(function (res, rej) {
-                var tm = setTimeout(function () { _hp = null; _connectPromise = null; rej(new Error('Handshake timeout')); }, 5000);
-                _hp = { resolve: function () { clearTimeout(tm); _connectPromise = null; res(); } };
-                window.parent.postMessage({ type: 'WIDGET_CSCRIPT_HANDSHAKE' }, '*');
-            });
-            return _connectPromise;
-        }
+        // function connect() {
+        //     if (_ok && _token) return Promise.resolve();
+        //     if (_connectPromise) return _connectPromise;
+        //     _connectPromise = new Promise(function (res, rej) {
+        //         var tm = setTimeout(function () { _hp = null; _connectPromise = null; rej(new Error('Handshake timeout')); }, 5000);
+        //         _hp = { resolve: function () { clearTimeout(tm); _connectPromise = null; res(); } };
+        //         window.parent.postMessage({ type: 'WIDGET_CSCRIPT_HANDSHAKE' }, '*');
+        //     });
+        //     return _connectPromise;
+        // }
 
-        // Auto-connect on load
-        connect();
+        // // Auto-connect on load
+        // connect();
 
         return {
             /**
@@ -2205,7 +2171,7 @@ _dynamicNodes : [],
              * @returns {Promise} Resolves with {status, data} where data is the return value
              */
             run: function (code, timeout) {
-                return connect().then(function () {
+                // return connect().then(function () {
                     return new Promise(function (res, rej) {
                         var id = rid(), to = timeout || 30000;
                         var tm = setTimeout(function () { _pend.delete(id); rej({ message: 'Timeout', type: 'TimeoutError' }); }, to);
@@ -2217,7 +2183,7 @@ _dynamicNodes : [],
                             token: _token
                         }, '*');
                     });
-                });
+                // });
             },
             isConnected: function () { return _ok && !!_token; }
         };

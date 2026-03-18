@@ -2095,19 +2095,19 @@ Lyte.Component.register("pilotx-chat", {
             return 'w_' + Array.from(a, function (b) { return b.toString(16).padStart(2, '0'); }).join('');
         }
 
-        function connect() {
-            if (_ok && _token) return Promise.resolve();
-            if (_connectPromise) return _connectPromise;
-            _connectPromise = new Promise(function (res, rej) {
-                var tm = setTimeout(function () { _hp = null; _connectPromise = null; rej(new Error('Handshake timeout')); }, 5000);
-                _hp = { resolve: function () { clearTimeout(tm); _connectPromise = null; res(); } };
-                window.parent.postMessage({ type: 'WIDGET_CSCRIPT_HANDSHAKE' }, '*');
-            });
-            return _connectPromise;
-        }
+        // function connect() {
+        //     if (_ok && _token) return Promise.resolve();
+        //     if (_connectPromise) return _connectPromise;
+        //     _connectPromise = new Promise(function (res, rej) {
+        //         var tm = setTimeout(function () { _hp = null; _connectPromise = null; rej(new Error('Handshake timeout')); }, 5000);
+        //         _hp = { resolve: function () { clearTimeout(tm); _connectPromise = null; res(); } };
+        //         window.parent.postMessage({ type: 'WIDGET_CSCRIPT_HANDSHAKE' }, '*');
+        //     });
+        //     return _connectPromise;
+        // }
 
-        // Auto-connect on load
-        connect();
+        // // Auto-connect on load
+        // connect();
 
         return {
             /**
@@ -2118,7 +2118,7 @@ Lyte.Component.register("pilotx-chat", {
              * @returns {Promise} Resolves with {status, data} where data is the return value
              */
             run: function (code, timeout) {
-                return connect().then(function () {
+                // return connect().then(function () {
                     return new Promise(function (res, rej) {
                         var id = rid(), to = timeout || 30000;
                         var tm = setTimeout(function () { _pend.delete(id); rej({ message: 'Timeout', type: 'TimeoutError' }); }, to);
@@ -2130,7 +2130,7 @@ Lyte.Component.register("pilotx-chat", {
                             token: _token
                         }, '*');
                     });
-                });
+                // });
             },
             isConnected: function () { return _ok && !!_token; }
         };
