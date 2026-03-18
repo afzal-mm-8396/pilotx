@@ -963,6 +963,7 @@ _dynamicNodes : [],
                     }
                     var resultType = detectDataType(cscriptResult);
                     var bestView = getLyteDefaultView(resultType);
+                    console.log('[WorkPilot] cscriptResult:', cscriptResult, 'isArray:', Array.isArray(cscriptResult), 'resultType:', resultType, 'bestView:', bestView);
                     var viewContainer = buildLyteView(cscriptResult, bestView);
                     contentEl.appendChild(viewContainer);
                     allDataViews.push({ data: cscriptResult, activeView: bestView });
