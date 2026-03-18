@@ -83,6 +83,8 @@ Lyte.Component.register("pilotx-chat", {
     let sessions = [];
     let activeSessionId = null;
     let isProcessing = false;
+    var _processingSessionId = null;
+    var _processingMsgId = null;
 
     // ─── DOM REFS ──────────────────────────────────────────
     const $ = (sel) => document.querySelector(sel);
@@ -251,6 +253,76 @@ Lyte.Component.register("pilotx-chat", {
         } else if (msg.error) {
             contentEl.innerHTML = `<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>${escapeHtml(msg.text)}</span></div>`;
         } else {
+            // If message is still being processed, show partial saved data + loader
+            if (msg.processing) {
+                // Render any agent steps saved so far (collapsed)
+                if (msg.agentSteps) {
+                    var pSteps = parseResponseIntoSteps(msg.agentSteps);
+                    if (pSteps.length > 0) {
+                        var pStepsWrap = document.createElement('div');
+                        pStepsWrap.className = 'agent-steps';
+                        var pToggle = document.createElement('button');
+                        pToggle.className = 'agent-steps-toggle';
+                        pToggle.innerHTML = '<span class="steps-done-icon"><i class="fas fa-check-circle"></i></span><span class="toggle-label">Worked through ' + pSteps.length + ' steps</span><i class="fas fa-chevron-right toggle-icon"></i>';
+                        pStepsWrap.appendChild(pToggle);
+                        var pBody = document.createElement('div');
+                        pBody.className = 'agent-steps-body collapsed';
+                        pSteps.forEach(function(s) {
+                            var stepEl = document.createElement('div');
+                            stepEl.className = 'agent-step';
+                            stepEl.innerHTML = '<span class="step-icon done"><i class="fas fa-check-circle"></i></span><span class="step-text">' + escapeHtml(s) + '</span>';
+                            pBody.appendChild(stepEl);
+                        });
+                        pStepsWrap.appendChild(pBody);
+                        pToggle.addEventListener('click', function() {
+                            this.querySelector('.toggle-icon').classList.toggle('expanded');
+                            pBody.classList.toggle('collapsed');
+                        });
+                        contentEl.appendChild(pStepsWrap);
+                    }
+                }
+                // Render any exec steps saved so far
+                var pExecList = msg.execStepsList || [];
+                pExecList.forEach(function(execStepsArr) {
+                    if (!execStepsArr || execStepsArr.length === 0) return;
+                    var ew = document.createElement('div');
+                    ew.className = 'agent-steps exec-steps';
+                    var et = document.createElement('button');
+                    et.className = 'agent-steps-toggle';
+                    et.innerHTML = '<span class="steps-done-icon"><i class="fas fa-bolt"></i></span><span class="toggle-label">Script executed (' + execStepsArr.length + ' steps)</span><i class="fas fa-chevron-right toggle-icon"></i>';
+                    ew.appendChild(et);
+                    var eb = document.createElement('div');
+                    eb.className = 'agent-steps-body collapsed';
+                    execStepsArr.forEach(function(s) {
+                        var se = document.createElement('div');
+                        se.className = 'agent-step';
+                        se.innerHTML = '<span class="step-icon done"><i class="fas ' + (s.icon || 'fa-check-circle') + '"></i></span><span class="step-text">' + escapeHtml(s.text) + '</span>';
+                        eb.appendChild(se);
+                    });
+                    ew.appendChild(eb);
+                    et.addEventListener('click', function() { this.querySelector('.toggle-icon').classList.toggle('expanded'); eb.classList.toggle('collapsed'); });
+                    contentEl.appendChild(ew);
+                });
+                // Render any data views saved so far
+                if (msg.dataViewList && msg.dataViewList.length > 0) {
+                    msg.dataViewList.forEach(function(dv) {
+                        if (dv.errorText) {
+                            contentEl.insertAdjacentHTML('beforeend', '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(dv.errorText) + '</span></div>');
+                        } else {
+                            var vc = buildLyteView(dv.data, dv.activeView || 'table');
+                            contentEl.appendChild(vc);
+                        }
+                    });
+                }
+                // Show processing indicator
+                var procLoader = document.createElement('div');
+                procLoader.className = 'thinking-loader';
+                procLoader.innerHTML = '<div class="thinking-dots"><span></span><span></span><span></span></div><span class="thinking-label">Processing…</span>';
+                contentEl.appendChild(procLoader);
+                if (animate) scrollToBottom();
+                return;
+            }
+
             // Render agent steps as collapsed summary (on re-render)
             if (msg.agentSteps) {
                 const steps = parseResponseIntoSteps(msg.agentSteps);
@@ -777,8 +849,11 @@ Lyte.Component.register("pilotx-chat", {
             const hasEdits = edits.length > 0 && edits.some(function(e) { return e && e.content; });
 
             // 3) Create assistant message container
-            const assistantMsg = { id: uid(), role: 'assistant', text: '', ts: Date.now() };
+            const assistantMsg = { id: uid(), role: 'assistant', text: '', ts: Date.now(), processing: true };
+            _processingSessionId = session.id;
+            _processingMsgId = assistantMsg.id;
             session.messages.push(assistantMsg);
+            saveSessions();
 
             const msgDiv = document.createElement('div');
             msgDiv.className = 'message assistant';
@@ -808,6 +883,7 @@ Lyte.Component.register("pilotx-chat", {
             // PATH B: Edits present → thinking steps + execute each script
             // ───────────────────────────────────────────────
             assistantMsg.agentSteps = responseText;
+            saveSessions();
 
             // 4) Show response.content as agent thinking steps
             const steps = parseResponseIntoSteps(responseText);
@@ -830,6 +906,10 @@ Lyte.Component.register("pilotx-chat", {
                 // Save exec steps metadata
                 var execStepsMeta = parseScriptIntoExecSteps(scriptContent, explanation);
                 allExecSteps.push(execStepsMeta);
+                // Incrementally save so re-render shows partial progress
+                assistantMsg.execStepsList = allExecSteps.slice();
+                assistantMsg.execSteps = allExecSteps[0];
+                saveSessions();
 
                 // Run the stepper animation and executeCScript in parallel
                 var cscriptResult;
@@ -874,12 +954,15 @@ Lyte.Component.register("pilotx-chat", {
                     contentEl.appendChild(viewContainer);
                     allDataViews.push({ data: cscriptResult, activeView: bestView });
                 }
+                // Incrementally save data views
+                assistantMsg.dataViewList = allDataViews.slice();
+                assistantMsg.dataView = allDataViews[0];
+                saveSessions();
             }
 
-            // Save metadata for re-render on session reload
+            // Save final metadata for re-render on session reload
             if (allExecSteps.length > 0) {
                 assistantMsg.execStepsList = allExecSteps;
-                // Legacy compat — keep first one as execSteps too
                 assistantMsg.execSteps = allExecSteps[0];
             }
             if (allDataViews.length >= 1) {
@@ -887,10 +970,26 @@ Lyte.Component.register("pilotx-chat", {
                 assistantMsg.dataView = allDataViews[0];
             }
 
+            // Mark processing complete
+            assistantMsg.processing = false;
+            _processingSessionId = null;
+            _processingMsgId = null;
             saveSessions();
+
+            // If user switched away and back during processing, re-render
+            if (activeSessionId === session.id) {
+                renderActiveChat();
+            }
 
         } catch (err) {
             removeThinkingLoader();
+            // Clear processing flag on the in-progress message if it exists
+            if (_processingMsgId) {
+                var procMsg = session.messages.find(function(m) { return m.id === _processingMsgId; });
+                if (procMsg) procMsg.processing = false;
+            }
+            _processingSessionId = null;
+            _processingMsgId = null;
             var errMsg = { id: uid(), role: 'assistant', text: 'Something went wrong: ' + err.message, error: true, ts: Date.now() };
             session.messages.push(errMsg);
             appendMessageToDOM(errMsg, true);
