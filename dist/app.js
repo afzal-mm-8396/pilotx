@@ -1397,7 +1397,22 @@ _dynamicNodes : [],
                 console.warn('[WorkPilot] Skipping Lyte render — #' + targetId + ' not in DOM');
                 return;
             }
-            Lyte.Component.render(componentName, props, '#' + targetId);
+            try {
+                Lyte.Component.render(componentName, props, '#' + targetId);
+            } catch (e) {
+                console.warn('[WorkPilot] Lyte render failed for #' + targetId + ', retrying after rAF:', e.message);
+                // Retry after browser has flushed DOM changes
+                requestAnimationFrame(function() {
+                    var retryEl = document.getElementById(targetId);
+                    if (retryEl && document.body.contains(retryEl)) {
+                        try {
+                            Lyte.Component.render(componentName, props, '#' + targetId);
+                        } catch (e2) {
+                            console.warn('[WorkPilot] Lyte render retry also failed for #' + targetId + ':', e2.message);
+                        }
+                    }
+                });
+            }
         }
 
         switch (viewKey) {
@@ -1520,6 +1535,8 @@ _dynamicNodes : [],
             renderLyteView(body, normalized, defaultView, dataType, stableTargetId);
         };
         // Poll until the container is actually in the document (handles re-renders)
+        // Uses requestAnimationFrame for the first attempt (ensures DOM is flushed)
+        // and for retries (better than setTimeout for DOM-dependent rendering)
         var _retries = 0;
         function tryDeferredRender() {
             if (!container._deferredRender) return;
@@ -1528,13 +1545,13 @@ _dynamicNodes : [],
                 container._deferredRender = null;
             } else if (_retries < 20) {
                 _retries++;
-                setTimeout(tryDeferredRender, 50);
+                requestAnimationFrame(tryDeferredRender);
             } else {
                 console.warn('[WorkPilot] Gave up waiting for view container to attach to DOM');
                 container._deferredRender = null;
             }
         }
-        setTimeout(tryDeferredRender, 0);
+        requestAnimationFrame(tryDeferredRender);
 
         return container;
     }
