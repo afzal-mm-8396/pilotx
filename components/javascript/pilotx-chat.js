@@ -685,11 +685,18 @@ Lyte.Component.register("pilotx-chat", {
             if (typeof CScriptBridge !== 'undefined' && CScriptBridge && typeof CScriptBridge.run === 'function') {
                 console.log('sent CScript via CScriptBridge…');
                 var result = await CScriptBridge.run(code);
-                if(result.status !== 'success') {
+                if(result && result.status !== 'success') {
                     throw new Error('CScript execution failed: ' + (result.error || 'Unknown error'));
                 }
                 console.log('CScript result came');
-                return result.data.data;
+                let finalResult;
+                if (result.data && typeof result.data === 'object' && !Array.isArray(result.data)) {
+                    finalResult = result.data.data;
+                } else {
+                    finalResult = result.data;
+                }
+                console.log("final result", finalResult);
+                return finalResult;
             } else {
                 console.warn('[WorkPilot] CScriptBridge not available, falling back to mock.');
             }

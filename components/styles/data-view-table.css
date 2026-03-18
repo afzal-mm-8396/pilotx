@@ -1,0 +1,21 @@
+.lyte-table-wrapper {
+	width: 100%;
+	overflow-x: auto;
+	border-radius: 8px;
+	background: var(--bg-primary, #fff);
+}
+.lyte-table-wrapper lyte-table {
+	width: 100%;
+}
+.lyte-table-wrapper lyte-th {
+	background: var(--bg-tertiary, #f3f4f6);
+	color: var(--text-primary, #1e293b);
+	font-weight: 600;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+.lyte-table-wrapper lyte-td {
+	font-size: 13px;
+	color: var(--text-secondary, #64748b);
+}

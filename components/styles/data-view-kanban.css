@@ -1,0 +1,46 @@
+.lyte-kanban-wrapper {
+	width: 100%;
+	overflow-x: auto;
+	min-height: 200px;
+}
+.lyte-kanban-wrapper lyte-kanbanview {
+	width: 100%;
+}
+.kanban-board-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 8px 12px;
+	font-weight: 600;
+	font-size: 13px;
+	color: var(--text-primary, #1e293b);
+}
+.kanban-board-header .board-count {
+	background: var(--primary, #3b82f6);
+	color: #fff;
+	border-radius: 10px;
+	padding: 2px 8px;
+	font-size: 11px;
+	font-weight: 600;
+}
+.kanban-card-content {
+	padding: 10px;
+}
+.kanban-card-name {
+	font-weight: 600;
+	font-size: 13px;
+	color: var(--text-primary, #1e293b);
+	margin-bottom: 6px;
+}
+.kanban-card-field {
+	display: flex;
+	gap: 6px;
+	font-size: 12px;
+	margin-top: 3px;
+}
+.kfield-label {
+	color: var(--text-tertiary, #94a3b8);
+}
+.kfield-value {
+	color: var(--text-secondary, #64748b);
+}

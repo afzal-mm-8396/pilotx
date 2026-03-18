@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "lyte-docs": {
+      "type": "stdio",
+      "command": "lyte-docs-mcp-server"
+    }
+  }
+}
