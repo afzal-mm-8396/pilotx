@@ -743,7 +743,7 @@ _dynamicNodes : [],
                 }
                 console.log('CScript result came');
                 let finalResult;
-                if (result.data && typeof result.data === 'object' && !Array.isArray(result.data)) {
+                if (result.data && typeof result.data === 'object' && !Array.isArray(result.data) && result.data.data) {
                     finalResult = result.data.data;
                 } else {
                     finalResult = result.data;
