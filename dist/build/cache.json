@@ -15,7 +15,7 @@
     "app.js"
    ],
    "json": [
-    "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app"
+    "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app"
    ]
   },
   "components/javascript/data-view-kanban.js": {
@@ -23,7 +23,7 @@
     "app.js"
    ],
    "json": [
-    "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app"
+    "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app"
    ]
   },
   "components/javascript/data-view-table.js": {
@@ -31,7 +31,7 @@
     "app.js"
    ],
    "json": [
-    "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app"
+    "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app"
    ]
   },
   "components/javascript/pilotx-chat.js": {
@@ -39,7 +39,7 @@
     "app.js"
    ],
    "json": [
-    "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app"
+    "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app"
    ]
   },
   "components/javascript/welcome-comp.js": {
@@ -47,7 +47,7 @@
     "app.js"
    ],
    "json": [
-    "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app"
+    "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app"
    ]
   }
  },
@@ -55,27 +55,27 @@
   "errors": [],
   "imports": [],
   "build/build.js": "a94a3c55aaab777508e3972685558aef",
-  "dist/build/buildConf.json": "9230258d7635a3f0ac078cb8d4429696",
+  "dist/build/buildConf.json": "5ab1bc852419b124bce747941d88ddb8",
   "package.json": "bbb7bb217c8d51f50b2106d3d1c3f5dd",
-  "index.html": "f677fad1a6baa96003b52f60d6725a64",
   "proxy.js": "3f0b76a93aeb7be54b9104dc44a3ba37",
-  "dummy.js": "a9eebfcd4901555bea59f641e6c8f13e",
+  "index.html": "f677fad1a6baa96003b52f60d6725a64",
   "server.js": "eb37b23d0cb0a4a5c0f819689d78b62d",
+  "dummy.js": "94379e2e4a1fd58b4a8924086fccd893",
   "node_modules/@zoho/lyte-dom/LICENSE": "94b19016ea62a320da387fe9ebd524b5",
   "node_modules/@zoho/lyte/build/Dockerfile": "30774b59fd9c1539a7f36e74113b1f21",
-  "node_modules/@zoho/lyte-dom/lyte-dom-migrate.js": "891c8bfa1d3261ca0932e3fbc5f0c3a5",
   "node_modules/@zoho/lyte/build/ant.properties": "2b8a571fe50e00b0062564f5174f78ec",
-  "node_modules/@zoho/lyte-dom/lyte-dom-migrate.min.js": "274c84c10534c3391434d99fe169243b",
+  "node_modules/@zoho/lyte-dom/lyte-dom-migrate.js": "891c8bfa1d3261ca0932e3fbc5f0c3a5",
   "node_modules/@zoho/lyte/build/build.xml": "e57544b305a7fa37b9611d65ae0b272a",
-  "node_modules/@zoho/lyte-dom/lyte-dom.js": "1417d421764bcc8722984a34ebaa04a2",
+  "node_modules/@zoho/lyte-dom/lyte-dom-migrate.min.js": "274c84c10534c3391434d99fe169243b",
   "node_modules/@zoho/lyte/build/post-publish.js": "61c8a4fdbf1518171b83bede45e6e1db",
+  "node_modules/@zoho/lyte-dom/lyte-dom.js": "1417d421764bcc8722984a34ebaa04a2",
   "node_modules/@zoho/lyte/build/prepublish.js": "04f36053a204cadcc4f376b1b1ccb2ed",
-  "node_modules/@zoho/lyte-dom/lyte-dom.min.js": "d65d89a0c623ffd46148fe1fec45f687",
   "node_modules/@zoho/lyte/build/publish.js": "ee12bcc13db45ef7519ceb6d10f462e9",
   "node_modules/@zoho/lyte/build": "d4024c5ea9852a3ca17fb40605a3bace",
+  "node_modules/@zoho/lyte-dom/lyte-dom.min.js": "d65d89a0c623ffd46148fe1fec45f687",
   "node_modules/@zoho/lyte-dom/modules/lyte-dom-ajax.js": "c4f747eef4716a3926dae4669c1635c5",
-  "node_modules/@zoho/lyte-dom/modules/lyte-dom-ajax.min.js": "01ef362e44ab39a5dd2a05eec83d03b7",
   "node_modules/@zoho/lyte/component/lyte-c-es5.js": "a8fa356f661b095b0f486f942838fc92",
+  "node_modules/@zoho/lyte-dom/modules/lyte-dom-ajax.min.js": "01ef362e44ab39a5dd2a05eec83d03b7",
   "node_modules/@zoho/lyte-dom/modules/lyte-dom-events.js": "401df73f8a57e28d8f5c2e947916b06e",
   "node_modules/@zoho/lyte/component/lyte-c-es5.min.js": "7e2a3ed14588389eb82f56d4defc4211",
   "node_modules/@zoho/lyte-dom/modules/lyte-dom-events.min.js": "6909b676bb9f765bb4cbc18ec29ce208",
@@ -156,19 +156,19 @@
   "components/javascript/data-view-chart.js": "e128eeb9263785d14669fc580a9459c7",
   "components/javascript/data-view-kanban.js": "ffcf62cb510b5a61e751bb3fae506e02",
   "components/javascript/data-view-table.js": "0960412a6ef1dc94e7df8fc5f0d31cd8",
-  "components/javascript/pilotx-chat.js": "3883c784d919e17df8f3eb0c86ccb505",
+  "components/javascript/pilotx-chat.js": "cbf4f0cd1ece84705b89cfb250c44c3e",
   "components/javascript/welcome-comp.js": "d461ba7ead9abba528f05474ae5b37b1",
-  "components/javascript": "3398c7aa3f2232392ccee86e6a6859aa",
+  "components/javascript": "63d06a3d0fa4489038a9e30b650ab47e",
   "components/templates/data-view-chart.html": "48bdefdc6d7f5765cc1d11b6795e2970",
   "components/templates/data-view-table.html": "a13410c00c139fb569d8bb4fe5f76642",
+  "components/templates/welcome-comp.html": "1273c889719d1e525b0d168752dd3da9",
   "components/templates/data-view-kanban.html": "9ab2e51809fcbf8928e47857d4f0d12f",
   "components/templates/pilotx-chat.html": "000c277bb68d4d8ba9151b974620dc68",
-  "components/templates/welcome-comp.html": "1273c889719d1e525b0d168752dd3da9",
-  "components/styles/data-view-chart.css": "950d8339411a6e8ed314abcb5d3406ed",
-  "components/styles/data-view-kanban.css": "e52da73f7008170cfbab4517abbf559d",
   "components/styles/welcome-comp.css": "d41d8cd98f00b204e9800998ecf8427e",
+  "components/styles/data-view-chart.css": "950d8339411a6e8ed314abcb5d3406ed",
   "components/styles/data-view-table.css": "d9d4e166382e20839025d4a86f6a7e26",
-  "components/styles/pilotx-chat.css": "b2b638ff258bc0fef051abf82ff6a22c",
+  "components/styles/data-view-kanban.css": "e52da73f7008170cfbab4517abbf559d",
+  "components/styles/pilotx-chat.css": "e6b11dd55add4ad0d604bdfbbdcf0b59",
   "dist/build/processedTemplateContent.json": "511b5e83c6dafb3c7a79bc48d15c6c55",
   "build/components-min-conf.json": "d41d8cd98f00b204e9800998ecf8427e",
   "build/models-min-conf.json": "d41d8cd98f00b204e9800998ecf8427e",
@@ -180,7 +180,7 @@
   "node_modules/@zoho/lyte-ui-component/_cliOutput/build/log.txt": "3ea3b585f19d9986c03f5f6f3e5718f7"
  },
  "keyMappings": {
-  "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/pilotx-lyte-app": [
+  "/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app": [
    "app.js"
   ],
   "autoBundlingCss": [
@@ -219,22 +219,15 @@
     "helpers": [],
     "defaultComponents": []
    },
+   "pilotx-chat": {
+    "components": [],
+    "helpers": [],
+    "defaultComponents": []
+   },
    "data-view-table": {
     "components": [
      "lyte-table"
     ],
-    "helpers": [],
-    "defaultComponents": []
-   },
-   "data-view-chart": {
-    "components": [
-     "lyte-chart"
-    ],
-    "helpers": [],
-    "defaultComponents": []
-   },
-   "pilotx-chat": {
-    "components": [],
     "helpers": [],
     "defaultComponents": []
    },
@@ -243,6 +236,13 @@
      "lyte-kanbanview",
      "lyte-board",
      "lyte-card"
+    ],
+    "helpers": [],
+    "defaultComponents": []
+   },
+   "data-view-chart": {
+    "components": [
+     "lyte-chart"
     ],
     "helpers": [],
     "defaultComponents": []
