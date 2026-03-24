@@ -314,8 +314,30 @@ Lyte.Component.register("pilotx-chat", {
                         if (dv.errorText) {
                             contentEl.insertAdjacentHTML('beforeend', '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(dv.errorText) + '</span></div>');
                         } else {
+                            if (dv.crmPopupView) {
+                                var crmBtnWrapper = document.createElement('div');
+                                crmBtnWrapper.className = 'crm-view-btn-wrapper';
+                                var crmBtn = document.createElement('button');
+                                crmBtn.className = 'crm-view-btn';
+                                crmBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> CRM View';
+                                (function(code) {
+                                    crmBtn.addEventListener('click', function() { executeCScript(code); });
+                                })(dv.crmPopupView);
+                                crmBtnWrapper.appendChild(crmBtn);
+                                contentEl.appendChild(crmBtnWrapper);
+                            }
                             var vc = buildLyteView(dv.data, dv.activeView || 'table');
                             contentEl.appendChild(vc);
+                            if (dv.crmIframeUrl) {
+                                var iframeWrapper = document.createElement('div');
+                                iframeWrapper.className = 'crm-iframe-wrapper';
+                                var iframe = document.createElement('iframe');
+                                iframe.src = dv.crmIframeUrl;
+                                iframe.style.width = '100%';
+                                iframe.style.height = '500px';
+                                iframeWrapper.appendChild(iframe);
+                                contentEl.appendChild(iframeWrapper);
+                            }
                         }
                     });
                 }
@@ -402,13 +424,57 @@ Lyte.Component.register("pilotx-chat", {
                     if (dv.errorText) {
                         contentEl.insertAdjacentHTML('beforeend', '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(dv.errorText) + '</span></div>');
                     } else {
+                        if (dv.crmPopupView) {
+                            var crmBtnWrapper = document.createElement('div');
+                            crmBtnWrapper.className = 'crm-view-btn-wrapper';
+                            var crmBtn = document.createElement('button');
+                            crmBtn.className = 'crm-view-btn';
+                            crmBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> CRM View';
+                            (function(code) {
+                                crmBtn.addEventListener('click', function() { executeCScript(code); });
+                            })(dv.crmPopupView);
+                            crmBtnWrapper.appendChild(crmBtn);
+                            contentEl.appendChild(crmBtnWrapper);
+                        }
                         var viewContainer = buildLyteView(dv.data, dv.activeView || 'table');
                         contentEl.appendChild(viewContainer);
+                        if (dv.crmIframeUrl) {
+                            var iframeWrapper = document.createElement('div');
+                            iframeWrapper.className = 'crm-iframe-wrapper';
+                            var iframe = document.createElement('iframe');
+                            iframe.src = dv.crmIframeUrl;
+                            iframe.style.width = '100%';
+                            iframe.style.height = '500px';
+                            iframeWrapper.appendChild(iframe);
+                            contentEl.appendChild(iframeWrapper);
+                        }
                     }
                 });
             } else if (msg.dataView && msg.dataView.data) {
+                if (msg.dataView.crmPopupView) {
+                    var crmBtnWrapper = document.createElement('div');
+                    crmBtnWrapper.className = 'crm-view-btn-wrapper';
+                    var crmBtn = document.createElement('button');
+                    crmBtn.className = 'crm-view-btn';
+                    crmBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> CRM View';
+                    (function(code) {
+                        crmBtn.addEventListener('click', function() { executeCScript(code); });
+                    })(msg.dataView.crmPopupView);
+                    crmBtnWrapper.appendChild(crmBtn);
+                    contentEl.appendChild(crmBtnWrapper);
+                }
                 var viewContainer = buildLyteView(msg.dataView.data, msg.dataView.activeView || 'table');
                 contentEl.appendChild(viewContainer);
+                if (msg.dataView.crmIframeUrl) {
+                    var iframeWrapper = document.createElement('div');
+                    iframeWrapper.className = 'crm-iframe-wrapper';
+                    var iframe = document.createElement('iframe');
+                    iframe.src = msg.dataView.crmIframeUrl;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '500px';
+                    iframeWrapper.appendChild(iframe);
+                    contentEl.appendChild(iframeWrapper);
+                }
             } else if (msg.text) {
                 contentEl.innerHTML += formatMarkdown(msg.text);
             }
@@ -965,12 +1031,46 @@ Lyte.Component.register("pilotx-chat", {
                         allDataViews.push({ errorText: String(objErrText) });
                         continue;
                     }
+                    // ─── CRM Popup View button (above response component) ───
+                    var crmPopupCode = (typeof cscriptResult === 'object' && !Array.isArray(cscriptResult) && cscriptResult.crmPopupView) ? cscriptResult.crmPopupView : null;
+                    var crmIframeCode = (typeof cscriptResult === 'object' && !Array.isArray(cscriptResult) && cscriptResult.crmIframeView) ? cscriptResult.crmIframeView : null;
+                    if (crmPopupCode) {
+                        var crmBtnWrapper = document.createElement('div');
+                        crmBtnWrapper.className = 'crm-view-btn-wrapper';
+                        var crmBtn = document.createElement('button');
+                        crmBtn.className = 'crm-view-btn';
+                        crmBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> CRM View';
+                        (function(code) {
+                            crmBtn.addEventListener('click', function() { executeCScript(code); });
+                        })(crmPopupCode);
+                        crmBtnWrapper.appendChild(crmBtn);
+                        contentEl.appendChild(crmBtnWrapper);
+                    }
                     var resultType = detectDataType(cscriptResult);
                     var bestView = getLyteDefaultView(resultType);
                     console.log('[WorkPilot] cscriptResult:', cscriptResult, 'isArray:', Array.isArray(cscriptResult), 'resultType:', resultType, 'bestView:', bestView);
                     var viewContainer = buildLyteView(cscriptResult, bestView);
                     contentEl.appendChild(viewContainer);
-                    allDataViews.push({ data: cscriptResult, activeView: bestView });
+                    // ─── CRM Iframe View (render below response component) ───
+                    var resolvedIframeUrl = null;
+                    if (crmIframeCode) {
+                        try {
+                            resolvedIframeUrl = await executeCScript(crmIframeCode);
+                            if (resolvedIframeUrl && typeof resolvedIframeUrl === 'string') {
+                                var iframeWrapper = document.createElement('div');
+                                iframeWrapper.className = 'crm-iframe-wrapper';
+                                var iframe = document.createElement('iframe');
+                                iframe.src = resolvedIframeUrl;
+                                iframe.style.width = '100%';
+                                iframe.style.height = '500px';
+                                iframeWrapper.appendChild(iframe);
+                                contentEl.appendChild(iframeWrapper);
+                            }
+                        } catch (iframeErr) {
+                            console.warn('[WorkPilot] Failed to load crmIframeView:', iframeErr);
+                        }
+                    }
+                    allDataViews.push({ data: cscriptResult, activeView: bestView, crmPopupView: crmPopupCode, crmIframeUrl: resolvedIframeUrl });
                 }
                 // Incrementally save data views
                 assistantMsg.dataViewList = allDataViews.slice();
