@@ -9,6 +9,14 @@
     "engines": {
       "node": ">=18.0.0"
     },
-    "dependencies": {}
+    "dependencies": {
+       "@zoho/lyte": "3.5.3",
+        "@zoho/lyte-dom": "3.1.7",
+        "@zoho/lyte-ui-component": "3.122.3",
+        "@zohocharts/d3": "3.2.0",
+        "@zohocharts/zc": "1.9.5",
+        "@zohocrm/crux-components": "3.229.13"
+    },
+    "addons": ["@zoho/lyte-ui-component","@zohocrm/crux-components"]
 }
   

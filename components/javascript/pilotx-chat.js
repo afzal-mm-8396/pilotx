@@ -745,24 +745,21 @@ Lyte.Component.register("pilotx-chat", {
 
     // ─── executeCScript ────────────────────────────────────
     // Executes the client script code via CScriptBridge and returns data.
+    // Returns { type: 'views', data: [...], crmPopupView, crmIframeUrl } on success
+    // Returns { type: 'errors', data: 'error message' } on error
     // Falls back to mock results if CScriptBridge is unavailable or fails.
     async function executeCScript(code) {
         try {
             if (typeof CScriptBridge !== 'undefined' && CScriptBridge && typeof CScriptBridge.run === 'function') {
                 console.log('sent CScript via CScriptBridge…');
                 var result = await CScriptBridge.run(code);
-                if(result && result.status !== 'success') {
-                    throw new Error('CScript execution failed: ' + (result.error || 'Unknown error'));
+                if (result && result.type === 'errors') {
+                    console.warn('[WorkPilot] CScript returned error:', result.data);
+                    return result;
                 }
                 console.log('CScript result came');
-                let finalResult;
-                if (result.data && typeof result.data === 'object' && !Array.isArray(result.data) && result.data.data) {
-                    finalResult = result.data.data;
-                } else {
-                    finalResult = result.data;
-                }
-                console.log("final result", finalResult);
-                return finalResult;
+                console.log('final result', result);
+                return result;
             } else {
                 console.warn('[WorkPilot] CScriptBridge not available, falling back to mock.');
             }
@@ -777,11 +774,11 @@ Lyte.Component.register("pilotx-chat", {
 
         // Simulate error for error scenario
         if (key === 'error') {
-            throw new Error('Module not found: risk_analysis is not available in your CRM plan.');
+            return { type: 'errors', data: 'Module not found: risk_analysis is not available in your CRM plan.' };
         }
 
-        var result = MOCK_CSCRIPT_RESULTS[key];
-        return result !== undefined ? result : MOCK_CSCRIPT_RESULTS.records;
+        var mockData = MOCK_CSCRIPT_RESULTS[key] !== undefined ? MOCK_CSCRIPT_RESULTS[key] : MOCK_CSCRIPT_RESULTS.records;
+        return { type: 'views', data: [mockData], crmPopupView: null, crmIframeUrl: null };
     }
 
     // Execution steps derived from the script content
@@ -1014,26 +1011,22 @@ Lyte.Component.register("pilotx-chat", {
 
                 // 6) Detect result type and render appropriate Lyte UI view
                 if (cscriptResult !== null && cscriptResult !== undefined) {
-                    console.log('CScript result came');
-                    // Check if the result is an Error object
-                    if (cscriptResult instanceof Error || (typeof cscriptResult === 'object' && cscriptResult && cscriptResult.message && cscriptResult.constructor && cscriptResult.constructor.name === 'Error')) {
-                        var cscriptErrText = cscriptResult.message || String(cscriptResult);
-                        var errHtml = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(cscriptErrText) + '</span></div>';
+                    console.log('CScript result came', cscriptResult);
+
+                    // ─── Error result ───
+                    if (cscriptResult.type === 'errors') {
+                        var cscriptErrText = cscriptResult.data || 'Unknown error';
+                        var errHtml = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(String(cscriptErrText)) + '</span></div>';
                         contentEl.insertAdjacentHTML('beforeend', errHtml);
-                        allDataViews.push({ errorText: cscriptErrText });
+                        allDataViews.push({ errorText: String(cscriptErrText) });
                         continue;
                     }
-                    // Check if the result is an error object with {error: true, data: "message"}
-                    if (typeof cscriptResult === 'object' && cscriptResult.error === true) {
-                        var objErrText = cscriptResult.data || cscriptResult.message || 'Unknown error';
-                        var objErrHtml = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(String(objErrText)) + '</span></div>';
-                        contentEl.insertAdjacentHTML('beforeend', objErrHtml);
-                        allDataViews.push({ errorText: String(objErrText) });
-                        continue;
-                    }
-                    // ─── CRM Popup View button (above response component) ───
-                    var crmPopupCode = (typeof cscriptResult === 'object' && !Array.isArray(cscriptResult) && cscriptResult.crmPopupView) ? cscriptResult.crmPopupView : null;
-                    var crmIframeCode = (typeof cscriptResult === 'object' && !Array.isArray(cscriptResult) && cscriptResult.crmIframeView) ? cscriptResult.crmIframeView : null;
+
+                    // ─── Views result ───
+                    var crmPopupCode = cscriptResult.crmPopupView || null;
+                    var resolvedIframeUrl = cscriptResult.crmIframeUrl || null;
+
+                    // CRM Popup View button (above response component)
                     if (crmPopupCode) {
                         var crmBtnWrapper = document.createElement('div');
                         crmBtnWrapper.className = 'crm-view-btn-wrapper';
@@ -1046,31 +1039,31 @@ Lyte.Component.register("pilotx-chat", {
                         crmBtnWrapper.appendChild(crmBtn);
                         contentEl.appendChild(crmBtnWrapper);
                     }
-                    var resultType = detectDataType(cscriptResult);
-                    var bestView = getLyteDefaultView(resultType);
-                    console.log('[WorkPilot] cscriptResult:', cscriptResult, 'isArray:', Array.isArray(cscriptResult), 'resultType:', resultType, 'bestView:', bestView);
-                    var viewContainer = buildLyteView(cscriptResult, bestView);
-                    contentEl.appendChild(viewContainer);
-                    // ─── CRM Iframe View (render below response component) ───
-                    var resolvedIframeUrl = null;
-                    if (crmIframeCode) {
-                        try {
-                            resolvedIframeUrl = await executeCScript(crmIframeCode);
-                            if (resolvedIframeUrl && typeof resolvedIframeUrl === 'string') {
-                                var iframeWrapper = document.createElement('div');
-                                iframeWrapper.className = 'crm-iframe-wrapper';
-                                var iframe = document.createElement('iframe');
-                                iframe.src = resolvedIframeUrl;
-                                iframe.style.width = '100%';
-                                iframe.style.height = '500px';
-                                iframeWrapper.appendChild(iframe);
-                                contentEl.appendChild(iframeWrapper);
-                            }
-                        } catch (iframeErr) {
-                            console.warn('[WorkPilot] Failed to load crmIframeView:', iframeErr);
-                        }
+
+                    // Render each data item in result.data
+                    var viewDataItems = Array.isArray(cscriptResult.data) ? cscriptResult.data : [cscriptResult.data];
+                    var lastBestView = 'table';
+                    viewDataItems.forEach(function(viewData) {
+                        var resultType = detectDataType(viewData);
+                        lastBestView = getLyteDefaultView(resultType);
+                        console.log('[WorkPilot] viewData:', viewData, 'resultType:', resultType, 'bestView:', lastBestView);
+                        var viewContainer = buildLyteView(viewData, lastBestView);
+                        contentEl.appendChild(viewContainer);
+                    });
+
+                    // CRM Iframe View (render below response component)
+                    if (resolvedIframeUrl && typeof resolvedIframeUrl === 'string') {
+                        var iframeWrapper = document.createElement('div');
+                        iframeWrapper.className = 'crm-iframe-wrapper';
+                        var iframe = document.createElement('iframe');
+                        iframe.src = resolvedIframeUrl;
+                        iframe.style.width = '100%';
+                        iframe.style.height = '500px';
+                        iframeWrapper.appendChild(iframe);
+                        contentEl.appendChild(iframeWrapper);
                     }
-                    allDataViews.push({ data: cscriptResult, activeView: bestView, crmPopupView: crmPopupCode, crmIframeUrl: resolvedIframeUrl });
+
+                    allDataViews.push({ data: cscriptResult.data, activeView: lastBestView, crmPopupView: crmPopupCode, crmIframeUrl: resolvedIframeUrl });
                 }
                 // Incrementally save data views
                 assistantMsg.dataViewList = allDataViews.slice();
