@@ -901,7 +901,7 @@ _dynamicNodes : [],
             if (typeof CScriptBridge !== 'undefined' && CScriptBridge && typeof CScriptBridge.run === 'function') {
                 console.log('sent CScript via CScriptBridge…');
                 var result = await CScriptBridge.run(code);
-                if (result && result.type === 'errors') {
+                if (result.data && result.data.type === 'errors') {
                     console.warn('[WorkPilot] CScript returned error:', result.data);
                     return result.data;
                 }
@@ -1212,15 +1212,34 @@ _dynamicNodes : [],
                     contentEl.appendChild(multiTabsContainer);
 
                     // CRM Iframe View (render below response component)
+                    // resolvedIframeUrl is a script — execute it in the parent CRM to get the actual URL
                     if (resolvedIframeUrl && typeof resolvedIframeUrl === 'string') {
-                        var iframeWrapper = document.createElement('div');
-                        iframeWrapper.className = 'crm-iframe-wrapper';
-                        var iframe = document.createElement('iframe');
-                        iframe.src = resolvedIframeUrl;
-                        iframe.style.width = '100%';
-                        iframe.style.height = '500px';
-                        iframeWrapper.appendChild(iframe);
-                        contentEl.appendChild(iframeWrapper);
+                        try {
+                            var iframeScriptResult = await executeCScript(resolvedIframeUrl);
+                            var actualIframeUrl = null;
+                            if (typeof iframeScriptResult === 'string') {
+                                actualIframeUrl = iframeScriptResult;
+                            } else if (iframeScriptResult && typeof iframeScriptResult === 'object') {
+                                actualIframeUrl = iframeScriptResult.url || iframeScriptResult.iframeUrl || iframeScriptResult.link || null;
+                            }
+                            if (actualIframeUrl) {
+                                var iframeWrapper = document.createElement('div');
+                                iframeWrapper.className = 'crm-iframe-wrapper';
+                                var iframe = document.createElement('iframe');
+                                iframe.src = actualIframeUrl;
+                                iframe.style.width = '100%';
+                                iframe.style.height = '500px';
+                                iframeWrapper.appendChild(iframe);
+                                contentEl.appendChild(iframeWrapper);
+                                resolvedIframeUrl = actualIframeUrl; // store resolved URL for session save
+                            } else {
+                                console.warn('[WorkPilot] Iframe script did not return a valid URL:', iframeScriptResult);
+                                resolvedIframeUrl = null;
+                            }
+                        } catch (iframeErr) {
+                            console.warn('[WorkPilot] Failed to resolve iframe URL via script:', iframeErr);
+                            resolvedIframeUrl = null;
+                        }
                     }
 
                     allDataViews.push({ viewDataItems: viewDataItems, crmPopupView: crmPopupCode, iframeUrl: resolvedIframeUrl });
@@ -1908,20 +1927,42 @@ _dynamicNodes : [],
     // ─── VIEW DATA LABEL ──────────────────────────────────
     // Returns a human-readable tab label for a viewData item.
     function getViewDataLabel(item, idx) {
-        if (item && typeof item === 'object' && !Array.isArray(item) && item.component) {
-            return item.component
+        // Explicit component name supplied in the data item (either shape)
+        var explicitName = item && typeof item === 'object' && !Array.isArray(item)
+            ? (item.component || item.componentName || null)
+            : null;
+        if (explicitName) {
+            // Friendly aliases for well-known component names
+            var friendlyNames = {
+                'lyte-kanbanview':  'Kanban',
+                'data-view-kanban': 'Kanban',
+                'lyte-table':       'Table',
+                'data-view-table':  'Table',
+                'lyte-chart':       'Chart',
+                'data-view-chart':  'Chart'
+            };
+            var lower = explicitName.toLowerCase();
+            if (friendlyNames[lower]) return friendlyNames[lower] + ' ' + (idx + 1);
+            // Generic: strip prefix, title-case
+            return explicitName
                 .replace(/^(data-view-|lyte-)/, '')
                 .replace(/-/g, ' ')
-                .replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+                .replace(/\b\w/g, function(c) { return c.toUpperCase(); })
+                + ' ' + (idx + 1);
         }
+        // Auto-detected: derive label from the best view type, always include index for uniqueness
         var dataType = detectDataType(item);
-        var typeLabels = {
-            records: 'Records', single: 'Record', string: 'Text',
-            number: 'Value', boolean: 'Value',
-            'string-list': 'List', 'number-list': 'Numbers',
-            'mixed-list': 'Mixed', empty: 'Empty'
+        var viewType = getLyteDefaultView(dataType);
+        var viewLabels = {
+            'table':  'Table',
+            'detail': 'Detail',
+            'text':   'Text',
+            'slist':  'List',
+            'chart':  'Chart',
+            'stat':   'Stat'
         };
-        return typeLabels[dataType] || ('Result ' + (idx + 1));
+        var base = viewLabels[viewType] || 'View';
+        return base + ' ' + (idx + 1);
     }
 
     // ─── DIRECT COMPONENT VIEW ────────────────────────────
@@ -1971,12 +2012,53 @@ _dynamicNodes : [],
         return container;
     }
 
+    // ─── COMPONENT ALIAS RESOLVER ─────────────────────────
+    // Maps well-known Lyte UI component names to our custom data-view-* components
+    // and transforms the raw data into the correct prop shape.
+    function resolveComponentAndProps(compName, rawData) {
+        switch ((compName || '').toLowerCase()) {
+            case 'lyte-kanbanview':
+            case 'data-view-kanban': {
+                var boards = toLyteKanbanData(Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []));
+                return { component: 'data-view-kanban', props: { ltPropBoardDetails: boards } };
+            }
+            case 'lyte-table':
+            case 'data-view-table': {
+                var tableData = toLyteTableData(Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []));
+                return { component: 'data-view-table', props: { ltPropHeader: tableData.header, ltPropContent: tableData.content } };
+            }
+            case 'lyte-chart':
+            case 'data-view-chart': {
+                var chartData = toLyteChartData(rawData);
+                return {
+                    component: 'data-view-chart',
+                    props: {
+                        ltPropType: 'bar',
+                        ltPropTitle: '',
+                        ltPropSeriesData: chartData.seriesData,
+                        ltPropMetaDataAxes: chartData.metaDataAxes,
+                        ltPropMetaDataColumns: chartData.metaDataColumns
+                    }
+                };
+            }
+            default:
+                // Unknown component — pass raw data directly as-is
+                return { component: compName, props: rawData };
+        }
+    }
+
     // ─── RENDER SINGLE VIEW DATA ITEM ─────────────────────
-    // If item has { component, props } → buildDirectComponentView
+    // If item has { component, props } → resolve alias → buildDirectComponentView
     // Otherwise → auto-detect type and use buildLyteView
     function renderViewDataItem(item) {
-        if (item && typeof item === 'object' && !Array.isArray(item) && item.component && item.props) {
-            return buildDirectComponentView(item.component, item.props);
+        if (item && typeof item === 'object' && !Array.isArray(item)) {
+            // Support both { component, props } and { componentName, data } shapes
+            var compName = item.component || item.componentName;
+            var rawData  = item.props    || item.data;
+            if (compName) {
+                var resolved = resolveComponentAndProps(compName, rawData);
+                return buildDirectComponentView(resolved.component, resolved.props);
+            }
         }
         var dataType = detectDataType(item);
         var bestView = getLyteDefaultView(dataType);
