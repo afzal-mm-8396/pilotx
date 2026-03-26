@@ -810,7 +810,7 @@ _dynamicNodes : [],
         try {
             if (isInIframe && typeof ZOHO !== 'undefined' && ZOHO.CRM && ZOHO.CRM.HTTP && typeof ZOHO.CRM.HTTP.post === 'function') {
                 // var apiUrl = 'https://crmdx4.localzoho.com/crm/v7/functions/' + CRM_FUNC_NAME + '/actions/execute?auth_type=apikey&zapikey=' + CRM_FUNC_API_KEY;
-                var apiUrl = "http://10.59.2.220:8000/chat";
+                var apiUrl = "http://10.59.0.182:8000/chat";
                 var httpData = await ZOHO.CRM.HTTP.post({
                     url: apiUrl,
                     headers: { 'Content-Type': 'application/json' },
