@@ -1593,8 +1593,27 @@ Lyte.Component.register("pilotx-chat", {
         if (!Array.isArray(items) || items.length === 0) return [];
 
         // Guard: if items are already in board-details format ({ id, title, cards }), return as-is
+        // but ensure each card has _title/_fields that the template requires.
         if (items[0] && items[0].hasOwnProperty('cards') && items[0].hasOwnProperty('title') && items[0].hasOwnProperty('id')) {
-            return items;
+            return items.map(function(board) {
+                var processedCards = Array.isArray(board.cards) ? board.cards.map(function(card) {
+                    // Already processed — skip
+                    if (card._title !== undefined) return card;
+                    var cardKeys = Object.keys(card);
+                    var cardTitleKey = cardKeys.find(function(k) { return /name|title|label/i.test(k); }) || cardKeys[0];
+                    var processed = { _title: serializeCellValue(card[cardTitleKey]) || '(No Name)', _fields: [] };
+                    cardKeys.forEach(function(k) {
+                        if (k === cardTitleKey) return;
+                        var val = card[k];
+                        if (val === null || val === undefined) return;
+                        processed._fields.push({ label: formatFieldName(k), value: serializeCellValue(val) });
+                    });
+                    // Copy original fields for reference
+                    cardKeys.forEach(function(k) { processed[k] = card[k]; });
+                    return processed;
+                }) : [];
+                return { id: board.id, title: board.title, cards: processedCards, moreRecords: !!board.moreRecords };
+            });
         }
 
         // Guard: if items contain a nested ltPropBoardDetails array, flatten and return those boards directly
@@ -1605,7 +1624,10 @@ Lyte.Component.register("pilotx-chat", {
                     item.ltPropBoardDetails.forEach(function(b) { flattened.push(b); });
                 }
             });
-            if (flattened.length > 0) return flattened;
+            if (flattened.length > 0) {
+                // Re-process through guard 1 to ensure cards have _title/_fields
+                return toLyteKanbanData(flattened);
+            }
         }
 
         var groupKey = findGroupKey(items);
@@ -2020,10 +2042,17 @@ Lyte.Component.register("pilotx-chat", {
             var compName = item.component || item.componentName;
             var rawData  = item.props    || item.data;
             if (compName) {
-                // 'cardify' is a DOM-based card list — not a Lyte component
+                // 'cardify' is a DOM-based card list — not a Lyte component.
+                // Render directly without deferred Lyte machinery.
                 if ((compName || '').toLowerCase() === 'cardify') {
                     var cardData = Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []);
-                    return buildLyteView(cardData, 'list');
+                    var cardContainer = document.createElement('div');
+                    cardContainer.className = 'data-view-container';
+                    var cardBody = document.createElement('div');
+                    cardBody.className = 'data-view-body';
+                    cardContainer.appendChild(cardBody);
+                    renderListView(cardBody, cardData);
+                    return cardContainer;
                 }
                 var resolved = resolveComponentAndProps(compName, rawData);
                 return buildDirectComponentView(resolved.component, resolved.props);
