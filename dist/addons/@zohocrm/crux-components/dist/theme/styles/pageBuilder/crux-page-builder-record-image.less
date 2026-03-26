@@ -1,0 +1,85 @@
+
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/pageBuilder/crux-page-builder-record-image.variables.less";
+
+@import "../themes/default/less-variables/crux-page-builder-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+/* Image Section Starts */
+.cxPbDefaultUserImage{
+	.cxPbDefaultUserImageMixin();
+	width: @w;
+	height: @h;
+	background-image: @bg-img;
+	background-size: @bg-size;
+	display: block;
+	border-radius: @border-radius;
+}
+
+.cxPbRecordImageElement{
+	.cxPbRecordImageElementMixin();
+	@{property-margin-left} : @margin-left;
+	padding-bottom : @padding-bottom;
+	height: @h;
+	transition: height 0.3s,visibility 0s linear 0.2s;
+}
+
+.cxPbRecordImageElement .cxPbElemActionIconWrap{
+	.cxPbRecordImageActionIconWrapMixin();
+	position: relative;
+	@{property-left}: @left;
+	@{property-right}: @right;
+}
+
+// .cxPbDefaultUserImageTransition{
+// 	transition: height 0.3s;
+// }
+
+.cxPbImgSecTitleDiv{
+	.cxPbImgSecTitleDivMixin();
+	padding-bottom: @padding-bottom;
+	padding-top: @padding-top;
+	display: flex;
+	align-items: center
+}
+
+.cxPbImgSecTitleDiv .cxPbImgSecTitle{
+	.cxPbImgSecTitleMixin();
+	margin: @margin;
+	max-width: @max-w;
+	font-family: @font-family;
+	font-weight: @font-weight;
+    display: block;
+    white-space: nowrap;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	font-size: @font-size;
+}
+
+.cxPbRecordImageElement.cxPbHideDefaultUserImage{
+	.cxPbHideDefaultUserImageMixin();
+	overflow: hidden;
+	visibility: hidden;
+	height: @h;
+}
+
+crux-page-builder-record-image:hover .cxPbHideDefaultUserImage .cxPbElemMoreIcon,
+.cxPbHideDefaultUserImage .cxPbElemActionIconWrap,
+.cxPbHideDefaultUserImage .cxPbDefaultUserImage{
+	visibility: hidden;
+}
+
+.cxPbRecImgHideTitleDiv{
+	.cxPbRecImgHideTitleDivMixin();
+	padding-bottom: @padding-bottom;
+}
+
+crux-page-builder-record-image:focus-visible .cxPbElemMoreIcon,
+crux-page-builder-record-image:hover .cxPbElemMoreIcon{
+	visibility: visible;
+}
+
+/* Image Section ends */

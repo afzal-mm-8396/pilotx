@@ -1,0 +1,778 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/* Success Message Banner Mixins */
+/* Error Message Banner Mixins */
+.cruxCreateFormComponent .cxcreateTitlebar {
+  background-color: var(--lyte-crux-create-form-title-bg-color);
+  padding: 20px 0px 10px 0px;
+  border-bottom: 1px solid var(--lyte-crux-create-form-title-border-color);
+  font-family: 'LatoRegular', sans-serif;
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  min-width: 769px;
+}
+.cruxCreateFormComponent .cxStickyTitlebar {
+  position: sticky;
+  top: 0;
+}
+.cxCreateLayoutShowLoadingDivWrap {
+  min-width: 500px;
+  min-height: 200px;
+  position: relative;
+}
+.cxCreateLayoutShowLoadingDiv {
+  background: url(../../images/crux-table-loading.svg);
+  width: 70px;
+  height: 70px;
+  background-size: 100%;
+  margin: auto;
+}
+.cxPropLayoutShowErrorDiv {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.cxPropMessageTypeSuccess {
+  color: var(--lyte-crux-create-form-success-msg-color);
+}
+.cxPropMessageTypeFailure {
+  color: var(--lyte-crux-create-form-error-msg-color);
+}
+/* Success Message Banner Starts */
+.cxSuccessMessageWrapper {
+  padding: 16px 20px;
+  border: 1px solid var(--lyte-crux-create-form-success-msg-color);
+  border-left: 4px solid var(--lyte-crux-create-form-success-msg-color);
+  border-radius: 5px;
+  background-color: var(--lyte-crux-create-form-success-banner-bg-color);
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  gap: 12px;
+}
+.cxSuccessTickIcon {
+  background-image: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -229px -177px;
+  mask-position: -229px -177px;
+  background-color: var(--lyte-crux-create-form-success-msg-color);
+  flex-shrink: 0;
+}
+.cxSuccessMsgTextWrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.cxSuccessHeaderMsg {
+  font-size: 0.929rem;
+  font-family: 'LatoBold', sans-serif;
+  color: #111;
+  line-height: 1.4;
+}
+.cxSuccessRecordName {
+  font-size: 0.857rem;
+  font-family: 'LatoRegular', sans-serif;
+  color: #222;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cxSuccessViewRecordBtn {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+.cxSuccessViewRecordArwIcon {
+  background-image: none;
+  width: 11px;
+  height: 7px;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -13px -1px;
+  mask-position: -13px -1px;
+  background-color: #fff;
+  transform: rotate(-90deg);
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+/* Success Message Banner Ends */
+/* Error Message Banner Starts */
+.cxErrorMessageWrapper {
+  padding: 16px 20px;
+  border: 1px solid var(--lyte-crux-create-form-error-msg-color);
+  border-left: 4px solid var(--lyte-crux-create-form-error-msg-color);
+  border-radius: 5px;
+  background-color: var(--lyte-crux-create-form-error-banner-bg-color);
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 80%;
+  gap: 12px;
+}
+.cxErrorAlertIcon {
+  background-image: none;
+  width: 15px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -125px -223px;
+  mask-position: -125px -223px;
+  background-color: var(--lyte-crux-create-form-error-msg-color);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.cxErrorMsgText {
+  font-size: 0.857rem;
+  font-family: 'LatoRegular', sans-serif;
+  color: var(--lyte-crux-create-form-error-msg-color);
+  line-height: 1.4;
+  word-break: break-word;
+}
+.cxErrorMsgText .cxErrorMsgHighlight {
+  color: var(--lyte-crux-create-form-error-msg-color);
+  font-family: 'LatoBold', sans-serif;
+}
+/* Error Message Banner Ends */
+.cxcreateTitleBtns {
+  display: flex;
+  flex: 1;
+  justify-content: end;
+  padding-right: 37px;
+}
+.cruxCreateFormComponent .cxcreateHeadingTitle {
+  padding: 5px 30px 0 15px;
+}
+.cx-layout-header-yield-wrapper .cxcreateHeadingLabel {
+  padding-top: 5px;
+}
+.cruxCreateFormComponent .cxcreateHeadingLabel {
+  word-wrap: break-word;
+  font-size: 2rem;
+  color: var(--lyte-crux-create-form-heading-color);
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxcreateTitlebar lyte-button {
+  margin-bottom: 0.5rem;
+}
+.cruxCreateFormComponent .cxcreateSectionsCont {
+  padding: 30px;
+  box-sizing: border-box;
+  padding-left: 30px;
+  padding-right: 30px;
+  min-width: 769px;
+}
+.cxCreateFormModalContent .cxcreateSectionsCont {
+  min-width: auto !important;
+  padding: 0;
+}
+.cxLookupComponent lyte-autocomplete lyte-dropdown lyte-drop-button {
+  padding: 0 !important;
+}
+.cxCreateFormModalContent .cxcreateSectionsCont {
+  min-width: auto !important;
+  padding: 0;
+}
+.cxLookupComponent lyte-autocomplete lyte-dropdown lyte-drop-button {
+  padding: 0 !important;
+}
+.cxcreateBtnFloatRight {
+  float: right;
+}
+crux-create-button lyte-button {
+  margin-right: 8px;
+}
+/*********************************
+
+	QUICK CREATE Modal Starts 
+*********************************/
+.cxQuickCreateModal .cxCreateSingleContainer .cxElementValue {
+  min-width: 290px;
+  max-width: 390px;
+  width: 100%;
+}
+.cxCreateSingleContainer .cxElementValue .cxElementValue {
+  min-width: auto;
+}
+.cxCreateSingleContainer crux-create-field:last-of-type {
+  margin-bottom: 0;
+}
+crux-create-button {
+  text-align: right;
+  display: block;
+}
+crux-create-button lyte-button {
+  margin-left: 0;
+}
+crux-create-button lyte-button:last-of-type {
+  margin-right: 0;
+}
+crux-create-field crux-date-time-component .lyteField {
+  width: 100%;
+}
+crm-create-form[cx-prop-content-overflow="true"] {
+  height: inherit;
+  overflow: auto;
+  display: block;
+}
+/* QUICK CREATE Modal Ends */
+/* Clubbed Button with Sibling STyling STarts */
+.cxBtnHasShowMore {
+  margin-right: -3px !important;
+  border-right: 1px solid var(--lyte-crux-create-form-show-more-border-color);
+}
+.cxBtnHasShowMore .lyte-button {
+  border-radius: 6px 0 0 6px;
+}
+.cxQcMoreOptionBtn lyte-yield {
+  display: inline-block;
+}
+.cxQcMoreOptionBtn .cxDropdown {
+  opacity: 1;
+  left: 14px;
+}
+.cxQcMoreOptionBtn .lyte-button {
+  border-radius: 0 6px 6px 0;
+}
+.cxCreateFormModalContent,
+.cxCreateFormModalFooter {
+  padding-right: 38px;
+}
+/* Clubbed Button with Sibling STyling Ends */
+/*crmExistingEmailQuickInfoTable*/
+.cxDuplicateInfoTable lyte-td {
+  border-bottom: 0;
+  font-size: 1rem;
+  padding: 5px;
+  white-space: normal;
+  vertical-align: top;
+}
+.cxDuplicateInfoTable .cxRecordLabel {
+  color: var(--lyte-crux-create-form-duplicate-tbl-record-label-color);
+}
+.cxDuplicateInfoTable .cxRecordValue {
+  color: var(--lyte-crux-create-form-duplicate-tbl-record-value-color);
+}
+.cxDuplicateInfoTable .cxDuplicateRecordCard {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: top;
+  border: 1px solid transparent;
+}
+/******************* TEMP Changes Starts *********************/
+/******************* TEMP Changes Ends *********************/
+.cxcreateBtnDropBox .cxcreateDropItemLinkColor {
+  color: var(--lyte-crux-create-dropitem-link-color);
+}
+.cxcreateBtnDropBox lyte-drop-footer lyte-drop-item {
+  padding: 0px !important;
+}
+.cxcreateBtnDropBox .cxcreateFooterDropItem {
+  padding: 8px 25px;
+  cursor: pointer;
+  display: block;
+}
+.cxcreateCBpopoverWrapper .lytePopover {
+  padding: 5px;
+  box-shadow: 0 2px 15px 2px var(--lyte-crux-create-cb-popup-box-shadow-color);
+  word-break: break-all;
+}
+.cxcreateCBpopoverBtnLabel {
+  font-size: 13px;
+  color: var(--lyte-crux-create-popover-btn-label-color);
+}
+.cxcreateCBpopoverBtnDesc {
+  margin-top: 15px;
+}
+/******** common styles for crux dx components starts **********/
+crm-field {
+  display: block;
+}
+crm-criteria-editor,
+crm-field,
+crm-listview,
+crm-relatedlist,
+crm-detailview,
+crm-create-form,
+crm-detailview {
+  position: relative;
+  z-index: 0;
+}
+crm-criteria-editor,
+crm-field,
+crm-listview,
+crm-relatedlist,
+crm-detailview,
+crm-create-form,
+crm-detailview {
+  background: var(--lyte-crux-create-section-base-bg-color);
+}
+lyte-table crm-field {
+  background: transparent !important;
+}
+/********* common styles for crux dx components ends *********/
+.cxcreateSectionTitleCont {
+  color: var(--lyte-crux-create-section-title-color);
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  font-style: normal !important;
+  position: relative;
+  margin: 10px 0px 25px;
+  text-align: left;
+}
+.cxcreateSectionInnerCont {
+  max-width: 1440px;
+}
+.cruxCreateFormComponent .cxCreateSectionDetailsContainer {
+  width: 100%;
+}
+.cruxCreateFormComponent .cxCreateSingleContainer {
+  width: 100%;
+}
+.cxcreateSectionTwoColumn {
+  display: flex;
+  align-content: space-between;
+  column-gap: 20px;
+  justify-content: space-between;
+}
+.cxcreateSectionTwoColumn .cxCreateContainer1,
+.cxcreateSectionTwoColumn .cxCreateContainer2 {
+  width: 48%;
+}
+/***** AUTO WIDTH ROWS STARTS *******/
+/***** AUTO WIDTH ROWS ENDS *******/
+crux-create-field {
+  display: block;
+  margin-bottom: 20px;
+}
+.cruxFormFieldParentContainer .cxcreateFormComponentRow {
+  position: relative;
+  width: 100%;
+  padding: 0px;
+  border: none;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.cruxFormFieldParentContainer template {
+  display: none !important;
+}
+.cxFormFirstNameDiv crux-picklist-component {
+  min-width: 95px;
+  max-width: 95px;
+}
+.cxSalutationElemWrapper {
+  display: flex;
+}
+.cxSalutationElemWrapper .cxElementValue .cxElementValue {
+  min-width: 0;
+  max-width: 0;
+}
+.cxSalutationElemWrapper {
+  display: flex;
+  min-width: 295px;
+  max-width: 390px;
+  transition: border 0.3s ease-out, box-shadow 0.3s ease-out;
+  position: relative;
+  background: var(--lyte-crux-create-salutation-element-bg-color);
+  box-sizing: border-box;
+  border: 1px solid var(--lyte-crux-create-salutation-element-border-color);
+  border-radius: 6px;
+}
+.cxSalutationElemWrapper:hover {
+  border: 1px solid var(--lyte-crux-create-salutation-element-hover-border-color);
+}
+.cxSalutationElemWrapper.cxSalutationFocused {
+  box-shadow: 0 0 6px var(--lyte-crux-create-salutation-wrap-focus-box-shadow-color);
+  border: 1px solid var(--lyte-crux-create-salutation-wrap-focus-border-color);
+}
+.cxSalutationElemWrapper lyte-dropdown:not([lt-prop-type="multiple"]):not([lt-prop-type="multisearch"]) lyte-drop-button,
+.cxSalutationElemWrapper .cxBoxInput.lyteInputBox .lyteField {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.cxSalutationElemWrapper crux-picklist-component {
+  border-right: 1px solid var(--lyte-crux-create-field-salutation-pick-list-br-color);
+}
+.cxSalutationElemWrapper .cxBoxInput.lyteInputBox .lyteField {
+  padding: 0 !important;
+}
+.cxSalutationElemWrapper lyte-input.cxBoxInput.mandatoryField .lyteField::before {
+  display: none;
+}
+.cxcreateFormComponentRow .cxElementLabel,
+.cxcreateFormComponentRow .cxFieldLabel {
+  min-width: 20px;
+  width: 220px;
+  max-width: 220px;
+  box-sizing: border-box;
+  text-align: right;
+  padding-right: 35px;
+  padding-top: 9px;
+  color: var(--lyte-crux-create-field-element-label-color);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-size: var(--crux-form-label-font-size);
+}
+.cxcreateFormComponentRow .cxElementLabel .cxInfoIcon {
+  position: absolute;
+  top: 10px;
+}
+.cxcreateTitlebar .crux-create-row {
+  display: flex;
+  margin-top: 0px;
+}
+.cxcreateTitlebar .cxElementLabel {
+  width: 220px;
+  max-width: 50%;
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  box-sizing: border-box;
+  text-align: right;
+  padding-right: 20px;
+  color: var(--lyte-crux-create-field-header-label-color);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-family: 'LatoRegular', sans-serif;
+  font-size: var(--crux-form-label-font-size);
+  padding-top: 9px;
+}
+.cxcreateFormComponentRow .cxElementValue {
+  min-width: 230px;
+  max-width: 390px;
+  flex: 1;
+  text-align: left;
+}
+.cxcreateFormComponentRow .cxElementValue .cxElementValue {
+  min-width: initial;
+  max-width: initial;
+}
+.cxCreateSingleContainer .cxcreateFormComponentRow .cxElementValue {
+  flex: 1;
+  max-width: 58%;
+  min-width: 390px;
+}
+.cxCreateSingleContainer .cxElementValue .cxElementValue {
+  max-width: 100%;
+  min-width: auto;
+}
+.cxCreateSingleContainer .cxElementValue .cxBoxDropdown,
+.cxCreateSingleContainer .cxElementValue .cxFlatDropdown {
+  max-width: 100%;
+}
+.cruxFormFieldParentContainer .singlechoice.cxGrouperRadioCont {
+  padding-top: 4px;
+}
+.cruxFormFieldParentContainer .cxGrouperRadioCont lyte-radiobutton-group {
+  display: block;
+}
+/* Loading Gif STyling Starts */
+.cxLoadOnViewElement {
+  width: 100%;
+}
+.cxLoadOnViewElement .cxLoadOnViewLabel {
+  min-width: 190px;
+}
+.cxLoadOnViewElement .cxLoadOnViewValue {
+  max-width: 390px;
+  min-width: 190px;
+}
+.cxCreateSingleContainer .cxLoadOnViewLabel {
+  min-width: 190px;
+}
+.cxCreateSingleContainer .cxLoadOnViewValue {
+  max-width: 58%;
+  min-width: 390px;
+}
+/* Loading Gif STyling Ends */
+/* CRUX User Component - Right Icon disabled for CRUX Create Page and Detailview - based on CRM reference */
+crux-create-field crux-user-component[cx-prop-type="multiple"] .cxBoxRightIcon {
+  display: none !important;
+}
+/*
+crux-create-field crux-boolean-component .lyteCheckbox {
+    .cxCreateCheckboxMixin();
+    padding-top: @padding-top;
+    padding-bottom: @padding-bottom;
+}*/
+.cxcreateFormBooleanRow .cxElementLabel,
+.cxcreateFormBooleanRow .cxFieldLabel {
+  padding-top: 3px !important;
+}
+crux-create-section lyte-input,
+.cxDropbox lyte-drop-header lyte-search {
+  width: 100%;
+  display: block;
+}
+.cxQCModalWrapper .cxCreateSingleContainer .cxcreateFormComponentRow .cxElementValue {
+  max-width: 390px;
+}
+.cxQCModalWrapper crux-create-layout-dropdown {
+  display: inline-block;
+}
+.cxQCModalWrapper .cxcreateSectionsCont {
+  padding-top: 0;
+}
+.cxQCModalWrapper .cxcreateTitlebar .cxFakeDropdownLabel {
+  font-family: 'LatoRegular', sans-serif;
+}
+.cxQCModalWrapper .cxcreateTitlebar .crux-create-row {
+  margin-top: 20px;
+}
+.cxQCModalWrapper .cxcreateTitlebar .cxElementLabel {
+  width: auto;
+  text-align: left;
+}
+.cxSubform lyte-tr:hover .cxSubformTableRowActions {
+  visibility: visible;
+}
+/* Styles For Field Types */
+.cxcreateFormComponentRow .cxElemCompViewWrap {
+  max-width: 100%;
+  word-wrap: break-word;
+  white-space: normal;
+}
+/*******************************
+    AUTO WIDTH ROWS STARTS
+    
+    Crux Label and Field will have Auto Width.
+    =>Label: auto width, Resizable from Slyte UI
+    =>Field: No Max width (390px)
+            Full 100% width for Fields
+ *******************************/
+.cxAutoWidthRow .cxElementLabel,
+.cxAutoWidthRow .cxFieldLabel {
+  min-width: auto;
+  width: auto;
+  max-width: none;
+}
+.cxAutoWidthRow .cxElementValue {
+  min-width: auto;
+  width: 100%;
+  max-width: none;
+}
+/***** AUTO WIDTH ROWS ENDS *******/
+crux-create-comments-component .cx-comments-section {
+  border-bottom: 1px solid #EDF0F4;
+  padding-top: 10px;
+}
+crux-create-comments-component .cx-comments-info {
+  background-color: #F6F4DE;
+  padding: 4px;
+  vertical-align: top;
+  word-wrap: break-word;
+  overflow: hidden;
+  font-family: 'LatoRegular', sans-serif;
+  font-size: var(--crux-form-label-font-size);
+}
+crux-create-comments-component .cx-commented-time {
+  font-family: 'LatoRegular', sans-serif;
+  font-size: var(--crux-form-label-font-size);
+}
+/* $Id$ */
+/*stylelint-disable declaration-property-value-allowed-list*/
+.cxcreateSubFormLabel {
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  color: var(--lyte-crux-create-subform-label-color);
+  position: relative;
+  display: inline-block;
+}
+.cxcreateSFThLabel {
+  position: relative;
+  white-space: nowrap;
+  display: inline-block;
+}
+.cxcreateSubFormMandatory .cxcreateSubFormLabel::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  height: 24px;
+  width: 3px;
+  left: -7px;
+  top: -4px;
+  background: var(--lyte-crux-create-subform-mandatory-label-bg-color);
+}
+.cxcreateSubFTableHeadMandatory {
+  padding-left: 20px;
+}
+.cxcreateSubFTableHeadMandatory::before {
+  content: '';
+  display: inline-block;
+  height: 20px;
+  width: 3px;
+  position: absolute;
+  bottom: initial !important;
+  z-index: 1;
+  left: 10px;
+  top: 6px;
+  background: var(--lyte-crux-create-subform-th-mandatory-before-bg-color);
+}
+.cxcreateSubFormInfoCont {
+  width: auto;
+}
+.cxcreateSubFrmTableWrapper {
+  max-width: 100%;
+  width: auto;
+  overflow: hidden;
+  display: inline-block;
+}
+.cxcreateSFReorderCol {
+  padding: 0px !important;
+  min-width: 20px;
+  border-right: none !important;
+}
+.cxcreateSubFormTable lyte-td {
+  padding: 5px 10px !important;
+  vertical-align: top;
+}
+.cxcreateSubFormTable lyte-td.cxcreateSFReorderColTd {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  min-width: 20px;
+  border-right: none !important;
+}
+.cxcreateSubFormTable lyte-tr:last-of-type lyte-td {
+  padding-bottom: 13px !important;
+}
+.cxcreateSFDragIcon {
+  display: inline-block;
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -325px -176px;
+  width: 7px;
+  height: 13px;
+  margin-left: 7px;
+  margin-top: 11px;
+}
+.cxcreateSFUicon {
+  visibility: hidden;
+  opacity: 0;
+}
+.cxcreateSubFormTable lyte-tr:hover .cxcreateSFUicon {
+  visibility: visible;
+  opacity: 1;
+}
+.cxcreateSubFormTable .lyteSortableParent lyte-td {
+  cursor: move;
+}
+.cxcreateSubFrmAggTableWrapper {
+  margin-top: 15px;
+}
+.cxcreateSubFrmAggTableWrapper::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+.cxcreateSubFormAggTable {
+  float: right;
+  margin-top: 15px;
+  overflow: hidden;
+}
+.cxcreateSubFormAggTable lyte-tr:hover {
+  background: 0 0 !important;
+}
+.cxcreateNewButton:hover,
+.cxcreateNewButton {
+  padding-left: 30px;
+}
+.cxcreateNewButton::after {
+  content: '';
+  display: inline-block;
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -92px -59px;
+  position: absolute;
+  height: 10px;
+  width: 11px;
+  left: 10px;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+}
+crux-create-section .cxcreateCurrentSubRowRemoveIcon {
+  padding-right: 10px;
+  align-items: center;
+  z-index: 5;
+  left: 10px;
+  display: none;
+  height: 35px;
+  position: absolute;
+}
+crux-create-section .cxcreateShowSubRowRemoveIcon {
+  display: flex !important;
+}
+.cxcreateSFDelIconWrap {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.cxcreateSubFTooltipIcon {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -6px -125px;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.cxcreateSubFormTable .cxUserComponent .cxBoxRightIcon,
+.cxcreateSubFormTable .cxLookupComponent .cxLookupIcon {
+  visibility: hidden;
+  display: flex;
+  background: var(--lyte-crux-create-subform-lookup-icon-bg-color);
+}
+.cxcreateSubFormTable lyte-tr:hover .cxUserComponent .cxBoxRightIcon,
+.cxcreateSubFormTable lyte-tr:hover .cxLookupComponent .cxLookupIcon {
+  visibility: visible;
+}
+/*# sourceMappingURL=crux-create-form.css.map */

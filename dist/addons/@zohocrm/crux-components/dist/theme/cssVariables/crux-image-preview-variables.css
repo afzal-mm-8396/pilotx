@@ -1,0 +1,96 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-img-prev-convert-photo-box-shadow-color: rgba(0, 0, 0, 0.38);
+  --lyte-crux-img-prev-name-edit-color: #fff;
+  --lyte-crux-img-prev-name-edit-hover-bg-color: #101010;
+  --lyte-crux-img-prev-name-edit-hover-border-color: #3c3c3c;
+  --lyte-crux-img-prev-file-name-edit-icon-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-img-prev-input-field-color: #fff;
+  --lyte-crux-img-prev-header-action-icon-hover-bg-color: #1b1c1e;
+  --lyte-crux-img-prev-header-crop-icon-bg-color: #fff;
+  --lyte-crux-img-prev-header-download-icon-bg-color: #fff;
+  --lyte-crux-img-prev-header-info-icon-bg-color: #fff;
+  --lyte-crux-img-prev-header-delete-icon-bg-color: #fff;
+  --lyte-crux-img-prev-thumb-wrap-hover-bg-color: rgba(39, 111, 220, 0.2);
+  --lyte-crux-img-prev-thumb-img-selected-bg-color: rgba(39, 111, 220, 0.2);
+  --lyte-crux-img-prev-zoom-in-out-wrap-box-shadow-color: rgba(0, 0, 0, 0.36);
+  --lyte-crux-img-prev-zoom-in-out-wrap-bg-color: #000;
+  --lyte-crux-img-prev-zoom-radio-wrap-text-color: #fff;
+  --lyte-crux-img-prev-zoom-radio-wrap-bg-color: #000;
+  --lyte-crux-img-prev-zoom-radio-wrap-hover-bg-color: #1b1c1e;
+  --lyte-crux-img-prev-zoom-radio-wrap-after-bg-color: #434d5e;
+  --lyte-crux-img-prev-desc-input-box-shadow-color: rgba(0, 0, 0, 0.5);
+  --lyte-crux-img-prev-info-popup-bg-color: #1b1b1b;
+  --lyte-crux-img-prev-info-popup-box-shadow-color: rgba(0, 0, 0, 0.6);
+  --lyte-crux-img-prev-info-popup-text-color: #fff;
+  --lyte-crux-img-prev-scale-menu-text-color: #1e1f22;
+  --lyte-crux-img-prev-scale-menu-item-bg-color: rgba(255, 255, 255, 0.1);
+  --lyte-crux-img-prev-scale-menu-label-color: #fff;
+  --lyte-crux-img-prev-zoom-in-action-hover-bg-color: #1b1c1e;
+  --lyte-crux-img-prev-zoom-in-icon-bg-color: #fdfeff;
+  --lyte-crux-img-prev-zoom-out-icon-bg-color: #fdfeff;
+  --lyte-crux-img-prev-desc-wrap-border-color: rgba(0, 0, 0, 0.2);
+  --lyte-crux-img-prev-count-bg-color: rgba(17, 17, 17, 0.5);
+  --lyte-crux-img-prev-count-text-color: #fff;
+  --lyte-crux-img-prev-crop-input-container-text-color: #fff;
+  --lyte-crux-img-prev-crop-wh-input-color: #d6d6d6;
+  --lyte-crux-img-prev-crop-wh-input-field-color: #8b9ab9;
+  --lyte-crux-img-prev-input-field-border-color: #3e3e3e;
+  --lyte-crux-img-prev-crop-separation-border-color: #313132;
+  --lyte-crux-img-prev-crop-icon-wrap-bg-color: #1b1c1e;
+  --lyte-crux-img-prev-crop-radio-icon-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-img-prev-crop-radio-square-icon-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-img-prev-crop-radio-four-third-icon-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-img-prev-crop-radio-landscape-icon-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-img-prev-crop-swap-icon-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-img-prev-crop-rotate-icon-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-img-prev-crop-load-rotate-icon-bg-color: #d0d0d0b0;
+  --lyte-crux-img-prev-crop-div-border-color: #fff;
+  --lyte-crux-img-prev-contain-after-bg-color: linear-gradient(180deg, #080808 0, rgba(2, 2, 2, 0) 100%);
+  --lyte-crux-img-prev-container-bg-color: rgba(13, 13, 13, 0.9);
+  --lyte-crux-img-prev-header-bg-color: transparent;
+  --lyte-crux-img-prev-desc-placeholder-color: #276fdc;
+  --lyte-crux-img-prev-desc-hover-border-color: #313949;
+  --lyte-crux-img-prev-desc-hover-box-shadow-color: rgba(0, 0, 0, 0.5);
+  --lyte-crux-img-prev-desc-bg-color: #101010;
+  --lyte-crux-img-prev-desc-input-bg-color: #fff;
+  --lyte-crux-img-prev-desc-view-input-color: #A2A9B7;
+  --lyte-crux-img-prev-crop-icon-sel-border-color: #276fdc;
+  --lyte-crux-img-prev-crop-icon-sel-bg-color: #f6f6f61c;
+  --lyte-crux-img-prev-thumb-sel-border-color: #276fdc;
+}
+/*# sourceMappingURL=crux-image-preview-variables.css.map */

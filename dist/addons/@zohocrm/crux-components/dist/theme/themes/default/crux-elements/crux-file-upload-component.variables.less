@@ -1,0 +1,395 @@
+.cxFileUploadButtonMixin() {
+	@w:100%;
+	@margin: 0px;
+}
+
+.cxFileUpCompPlaceholderMixin(){
+	@color: @cxElemPlaceholderColor;
+	@font-family: @cruxPrimaryFont;
+	@padding: .cruxLESSPaddingMixin(8px 30px 8px 10px)[@padding];
+	@max-w: 100%;
+}
+
+.cxFileUploadLyteButtonMixin() {
+	@w: 100%;
+	// @max-w: 390px;
+	// @min-w: 390px;
+	@border: 1px solid @cxBoxInputBorderColor;
+	@border-radius: 6px;
+	@bg: @cxBoxInputBg;
+	@color: @cxBoxInputPlaceholderColor;
+	@padding: 0px;
+}
+.cxFileUploadButtonHoverMixin() {
+	// @bg: #fff;
+	// @color: #b5b5b5;
+	@border: 1px solid @cxBoxInputBorderHoverColor;
+}
+.cxFileUploadMenuSelectedMixin() {
+	@border-color: @cxBoxInputBorderFocusColor;
+	@box-shadow: 0 0 6px @cxBoxInputFocusShadow;
+	@outline: none;
+}
+
+.cxFileUpCompDropBtnLabelMixin(){
+	@padding: .cruxLESSPaddingMixin(8px 30px 8px 10px)[@padding];
+	@color: @cxElemPlaceholderColor;
+}
+.cxFileUplCompBtnYieldMixin() {
+	@w: 100%;
+}
+.cxFileUplCompBtnDropDownIconMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -1px -2px;
+	@w: 8px;
+	@h: 4px;
+	@right: 10px;
+	@top: calc(50% - 2px);
+	@transform: scale(1.3);
+	@opacity: 0.5;
+}
+.cxFileMenuItemMixin() {
+	@display: flex;
+	@position: relative;
+    @padding-left: 25px;
+}
+.cxFileUplCompMenuItemMixin() {
+	@padding: 7px 15px 7px 25px;
+}
+.cxFileUplCompMenuSpriteIconMixin() {
+	@left: 0;
+	@w:17px;
+	@h:17px;
+}
+.cxFileUploadContainerMixin() {
+	@bg: @cxFileUploadCompListBg;
+	@border: 1px solid @cxFileUploadCompListBorder;
+	@border-radius: 6px;
+	@padding: 7px 10px;
+	@margin-top: 10px;
+	@line-height: 16px;
+}
+.cxFileUploadDetailMixin() {
+	@padding-left: 24px;
+	@padding-right: 28px;
+	@max-w: calc(100% - 45px);
+	@margin-right: 5px;
+	@font-size: 13px;
+}
+
+.cxFileUploadDetailOnViewMixin(){
+	@padding-right: 0px;
+}
+
+.cxFileUploadDetailSpriteMixin() {
+	@margin-right: 10px;
+	@left: 0;
+	@w: 17px;
+	// @h: 17px;
+}
+.cxFileUploadSpriteMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -321px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxFileUploadNameMixin() {
+	// @color: #313949;
+	@max-w: calc(100% - 105px);
+}
+.cxFileUploadSizeMixin() {
+	@color: @cxFileUploadSizeColor;
+	// @margin-right: 10px;
+}
+.cxFileUploadStatusMixin() {
+	@h: fit-content;
+	@min-w: 19px;
+	@inset: 0px auto;
+	@margin: auto;
+	@right: 10px;
+}
+.cxFileUploadDriveLogosMixin() {
+	@left: 0;
+}
+.cxFileUploadIcon_uploadfileMixin() {
+	@bg-pos: -111px -176px;
+	@w: 14px;
+	@h: 17px;
+}
+.cxFileUploadIcon_documentsMixin() {
+	@bg-pos:-132px -175px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxFileUploadIcon_zwdriveMixin() {
+	@bg-pos:  -155px -176px;
+	@w: 17px;
+	@h: 15px;
+}
+.cxFileUploadIcon_zdocsMixin() {
+	@bg-pos: -180px -176px;
+	@w: 17px;
+	@h: 15px;
+}
+.cxFileUploadIcon_gdriveMixin() {
+	@bg-pos: -204px -177px;
+	@w: 17px;
+	@h: 15px;
+}
+.cxFileUploadModalLoaderIconMixin() {
+	@w: 32px;
+	@h: 32px;
+	@bg-img: @cruxSprite;
+}
+.cxFileUploadModalAttachmentTypeIconMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -321px -150px;
+	@w: 15px;
+	@h: 17px;
+	@margin-right: 5px;
+}
+// .cxFileUplCompSpriteIconMixin() {
+// 	@bg-img: @cruxSprite;
+// 	@w: 17px;
+// 	@h: 15px;
+// }
+.cxFileUploadIcon_imageMixin() {
+	@bg-pos: -274px -151px;
+	@w: 17px;
+	@h: 15px;
+}
+.cxFileUploadIcon_pdfMixin() {
+	@bg-pos: -181px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxFileUploadIcon_zipMixin() {
+	@bg-pos: -226px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxFileUploadIcon_videoMixin() {
+	@bg-pos: -113px -152px;
+	@w: 17px;
+	@h: 14px;
+}
+.cxFileUploadIcon_audioMixin() {
+	@bg-pos: -205px -150px;
+	@w: 17px;
+	@h: 17px;
+}
+.cxFileUploadIcon_docxMixin() {
+	@bg-pos: -159px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxFileUploadIcon_pptMixin() {
+	@bg-pos: -298px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxFileUploadIcon_notesMixin() {
+	@bg-pos: -137px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxFileUploadIcon_htmlMixin() {
+	@bg-pos: -321px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+
+.cxFileUploadIcon_xlsMixin(){
+	@bg-pos: -251px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+
+.cxFileUploadTickIconMixin() {
+	@bg-img: @cruxSprite;
+    @bg-color:  @cxFileUploadCompSuccessIconBg;
+	@bg-pos: -229px -177px;
+	@w: 14px;
+	@h: 14px;
+}
+.cxFileUploadRemoveIconMixin() {
+	@bg-img: @cruxSprite;
+    @bg-color:  @cxFileUploadCompRemoveIconBg;
+	@bg-pos: -250px -177px;
+	@w: 14px;
+	@h: 14px;
+	@z-index: 1;
+}
+.cxFileDownloadButtonMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -114px -201px;
+	@bg-color: @cxFileUploadCompDownloadIconBg;
+	@w: 12px;
+	@h: 12px;
+	@visibility: hidden;
+	@margin-left: 10px;
+	@padding-right: 0;
+	@margin-right: 5px;
+}
+.cxFileUploadIconMixin() {
+	@bg-pos: -271px -175px;
+	@w: 17px;
+	@h: 16px;
+}
+// .ManualName_13_cxFileDownloadButtonMixin() {
+// 	@margin-left: 10px;
+// }
+.cxFileUploadLoadingIconMixin() {
+	@w: 14px;
+	@h: 14px;
+}
+.mandatoryFieldMixin() {
+	@border-left: 3px solid @cxBoxInputMandatoryColor;
+	@h: 100%;
+	@w: 3px;
+	@bg: 0 0;
+	@top: 0;
+	@left: -1px;
+	@border-radius: if(@direction = ltr,4px 0 0 4px,0px 4px 4px 0px);
+	@z-index: 1;
+}
+// .cxSFileUpCompElemMandatoryMixin(){
+// 	@h: calc(100% - 2px);
+// 	@top: 1px;
+// }
+.cxFileUpldCompErrorButtonMixin() {
+	@box-shadow: none;
+}
+.cxFileUpldCompErrorButtonBorderMixin() {
+	@border:1px solid @cxBoxInputErrorBorderColor;
+}
+.cxFileUpCompReadOnlyBtnMixin() {
+	@box-shadow: none;
+}
+.cxFileUplCompReadOnlyBtnMixin() {
+	@border: 1px solid @cxBoxInputDisabledBorderColor;
+	@bg: @cxBoxInputDisabledBgColor;
+	// @color: #999;
+}
+
+.cxFileUpdCompActionIconWrapBeforeMixin(){
+    @w: 20px;
+    @h: 20px;
+    @border: 1px solid @cxFileUploadCompEditIconHoverEffectBorder;
+    @bg: @cxFileUploadCompEditIconHoverEffectBg;
+    @left: calc(50% - 11px);
+    @top: calc(50% - 11px);
+    @border-radius: 100%;
+    @transform: scale(0.9);
+    @opacity: 0.5;
+    @transition: opacity 0.1s,transform 0.1s;
+}
+
+.cxFileUpdCompActionIconWrapHoverBeforeMixin(){
+    @transform: scale(1);
+    @opacity: 1;
+}
+
+.cxFileUpCompDownloadIconWrapMixin(){
+	@margin: .cruxLESSMarginMixin(0 5px 0px 10px)[@margin];
+}
+
+.cxFileUpCompReadOnlyMixin(){
+	@bg: @cxBoxInputDisabledBgColor;
+	@border-color: @cxBoxInputDisabledBgColor;
+}
+
+/* CRUX Single File Upload Component Mixin Starts */
+
+.cxSFileUpCompElemMixin(){
+	@border: 1px solid @cxBoxInputBorderColor;
+	@border-radius: 6px;
+}
+
+.cxSFileUpCompElemHoverMixin(){
+	@border: 1px solid @cxBoxInputBorderHoverColor;
+}
+
+.cxSFileUpCompElemErrorMixin(){
+	@border-color: @cxBoxInputErrorBorderColor;
+}
+
+.cxSFileUpCompNameWrapperMixin(){
+	@padding: 8px 10px;
+	@min-w: 50px;
+}
+
+.cxSFileUploadIconWrapMixin(){
+	@padding: 8px;
+	@bg-color: @cxBoxInputIconBgColor;
+	@border-radius: if(@direction = rtl,5px 0px 0px 5px,0px 5px 5px 0px);
+}
+
+.cxSFileUploadIconMixin(){
+	@w: 16px;
+    @h: 16px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -272px -175px;
+    @bg-color:  @cxFileUploadCompUploadIconBg;
+}
+
+.cxSFileUpPlaceholderMixin(){
+	@color: @cxSingleFileUploadPlaceholderColor;
+	@padding: .cruxLESSPaddingMixin(0px 10px 0px 12px)[@padding];
+	@min-w: 20px;
+}
+
+.cxSFileRemoveIconWrapMixin(){
+	@w: 16px;
+	@h: 16px;
+	@border-radius: 8px;
+	@bg: @cxFileUploadCompRemoveIconHoverEffectBg;
+}
+
+.cxSFileRemoveIconMixin(){
+	@w: 8px;
+    @h: 8px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -57px -118px;
+    @bg-color:  @cxFileUploadCompRemoveIconBg;
+}
+
+.cxSFileUpNameMixin(){
+	@min-w: 20px;
+	// @padding: 0px 10px;
+}
+
+.cxSFileUploadTypeIconWrapMixin(){
+	@h: 16px;
+}
+
+.cxSFileUpNameWithExtnMixin(){
+	@padding-left: 10px;
+	@padding-right: 10px;
+	@min-w: 10px;
+}
+.cxSFileUpCompElemFocusMixin() {
+	@border: 1px solid @cxBoxInputBorderFocusColor;
+	@box-shadow: @cxBoxInputFocusShadow;
+}
+.cxFileUploadBtnDisabledMixin(){
+	@border: @cxFileUploadDisabledBtnBorder;
+}
+
+.cxFileUploadCompStatusIconMixin(){
+	@right: 11px;
+}
+
+/* CRUX Single File Upload Component Mixin Ends */
+
+.cxFileUploadErrorButtonMixin(){
+	@border: @cxFileUploadErrorButtonBorder;
+}
+
+/* CRUX Single File Upload Component Mixin Starts */
+
+.cxFileUplCompViewListWrapMixin(){
+	@min-w: 10px;
+}
+
+/* CRUX Single File Upload Component Mixin Ends */

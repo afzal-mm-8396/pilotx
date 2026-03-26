@@ -1,0 +1,107 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cxViewUserValueWrap,
+.cxViewUserValue {
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+}
+crux-table-component .cxViewUserValue {
+  max-width: inherit;
+}
+.cxUserComponent crux-user-dropdown {
+  display: flex;
+  flex-grow: 1;
+}
+.cxUserComponent crux-user-dropdown lyte-dropdown {
+  flex-grow: 1;
+}
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown .lyteDummyEventContainer lyte-drop-button,
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button:hover {
+  border: 0;
+  box-shadow: none;
+}
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown .lyteDummyEventContainer lyte-drop-button {
+  border-radius: 5px 0px 0px 5px;
+}
+.cxUserComponent.cxUserCompHiddenLookupIcon lyte-dropdown .lyteDummyEventContainer lyte-drop-button {
+  border-radius: 5px;
+}
+.cxUserComponent.cxBoxWithRightIcon.cxUserCompWithClearIcon .cxUserCompValueSelected lyte-dropdown lyte-drop-button,
+.cxUserComponent.cxUserCompWithClearIcon .cxUserCompValueSelected lyte-dropdown lyte-drop-button {
+  padding-right: 45px;
+}
+.cxUserComponent.cxBoxWithRightIcon.cxBoxContainsDropdown .cxBoxRightIcon {
+  position: relative;
+}
+.cxUserCompIcon {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -359px -87px;
+  width: 15px;
+  height: 16px;
+}
+.cxViewUserTimestamp {
+  font-family: 'LatoRegular', sans-serif;
+  display: block;
+  font-size: 0.786rem;
+  color: var(--lyte-crux-user-time-stamp-color);
+  line-height: 21px;
+}
+crux-user-component lyte-text {
+  vertical-align: top;
+}
+.cxUserComponent lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button {
+  padding-right: 25px;
+}
+/* .cxUserComponent lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button::after{
+    content: '';
+}
+
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button::after{
+    right: 40px;
+} */
+.cxUserComponent.cxBoxWithRightIcon.cxBoxContainsDropdown lyte-icon.dropdown {
+  right: 10px;
+}
+.cxUserComponent.cxBoxWithRightIcon.cxUserCompWithClearIcon .cxBoxCloseIconWrap {
+  right: 60px;
+}
+.cxUserComponent.cxBoxContainsDropdown lyte-drop-button {
+  padding-right: 25px;
+}
+/*# sourceMappingURL=crux-user-component.css.map */

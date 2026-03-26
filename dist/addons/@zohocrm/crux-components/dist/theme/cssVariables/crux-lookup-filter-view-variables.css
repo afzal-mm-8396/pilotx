@@ -1,0 +1,44 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-lookup-filter-column-list-btn-border-color: #c0c6cc;
+  --lyte-crux-lookup-criteria-filter-border-color: #e3e3e3;
+  --lyte-crux-lookup-fetch-load-div-bg-color: #d6d6d6;
+  --lyte-crux-lookup-advance-filter-task-sub-name-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-lookup-count-error-color: #888;
+  --lyte-crux-lookup-filter-tags-list-table-border-color: #ddd;
+}
+/*# sourceMappingURL=crux-lookup-filter-view-variables.css.map */

@@ -1,0 +1,31 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-user-view.variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-user-view";
+
+.cxUserViewModal .lyteModal {
+    .cxUserViewLyteModalMixin();
+	max-height: @max-h;
+	display: flex;
+	flex-direction: column;
+}
+.cxUserViewModal .lyteModal > lyte-yield {
+    .cxUserViewLyteModalYieldMixin();
+	max-height: @max-h;
+	overflow: auto;
+}
+.cxUserViewModal .userLookupTable,
+.cxUserViewModal .lookupModalContent {
+	display: flex;
+	flex-direction: column;
+}
+.cxUserViewModal .cxUserLookupListLoader {
+    .cxUserViewLyteModalLookupListLoaderMixin();
+	top: @top;
+	transform: @transform;
+}

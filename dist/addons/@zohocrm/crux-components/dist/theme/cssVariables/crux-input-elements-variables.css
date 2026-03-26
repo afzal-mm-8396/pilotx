@@ -1,0 +1,60 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-input-border-color: var(--crux-element-border-color);
+  --lyte-crux-input-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-input-placeholder-text-color: var(--crux-placeholder-color);
+  --lyte-crux-input-hover-border-color: var(--crux-element-hover-border-color);
+  --lyte-crux-input-hover-box-shadow-color: var(--crux-element-hover-shadow-color);
+  --lyte-crux-input-focus-border-color: var(--crux-element-focus-border-color);
+  --lyte-crux-input-focus-box-shadow-color: var(--crux-element-focus-shadow-color);
+  --lyte-crux-input-label-color: var(--crux-element-label-color);
+  --lyte-crux-input-mandatory-color: var(--crux-mandatory-color);
+  --lyte-crux-input-icon-bg-color: #f4f5f6;
+  --lyte-crux-input-error-border-color: var(--crux-element-error-border-color);
+  --lyte-crux-input-error-box-shadow-color: var(--crux-element-error-shadow-color);
+  --lyte-crux-input-info-icon-color: #616e88;
+  --lyte-crux-input-loader-bg-color: #eee;
+  --lyte-crux-input-info-popup-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-input-info-popup-border-color: #333;
+  --lyte-crux-input-info-popup-color: var(--crux-element-bg-color);
+  --lyte-crux-input-info-popup-box-shadow-color: rgba(0, 0, 0, 0.3);
+  --lyte-crux-input-disabled-border-color: var(--crux-element-disabled-border-color);
+  --lyte-crux-input-disabled-bg-color: var(--crux-element-disabled-bg-color);
+  --lyte-crux-input-show-more-icon-color: #3c9df7;
+  --lyte-crux-input-lock-icon-color: var(--crux-base-icon-color);
+}
+/*# sourceMappingURL=crux-input-elements-variables.css.map */

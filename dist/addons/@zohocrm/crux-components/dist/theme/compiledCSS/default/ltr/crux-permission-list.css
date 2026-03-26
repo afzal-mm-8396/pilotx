@@ -1,0 +1,116 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cxPermTableTitleTd {
+  width: 100%;
+}
+lyte-dropdown .lyteDummyEventContainer:focus .cxPermTableActionBtn,
+lyte-dropdown .lyteDummyEventContainer:focus .cxPermTableActionBtn:hover,
+.cxPermTableActionBtn,
+.cxPermTableActionBtn.lyteDropButtonDown,
+.cxPermTableActionBtn.lyteDropButtonDown:hover,
+.cxPermTableActionBtn.lyteDropButtonUp,
+.cxPermTableActionBtn.lyteDropButtonUp:hover,
+.cxPermTableActionBtn:hover,
+.cxPermTableActionBtn.lyteDefaultBtn:focus,
+.cxPermTableActionBtn.lyteDefaultBtn:hover,
+.cxPermTableActionBtn.lyteDefaultBtn {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 0px;
+  width: 100%;
+}
+.cxPermTableActionText {
+  flex: 1;
+}
+.cxPermTableActionBtnWrap {
+  width: 100%;
+  max-width: 100%;
+}
+.cxPermTableDownArrowIcon {
+  width: 10px;
+  height: 6px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -14px -1px;
+  mask-position: -14px -1px;
+  background-color: #333;
+  vertical-align: middle;
+  margin-left: 7px;
+  margin-top: 2px;
+}
+.cxPermReadWriteIcon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -29px -362px;
+  mask-position: -29px -362px;
+  background-color: #12AA67;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.cxPermReadOnlyIcon {
+  width: 16px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -78px -363px;
+  mask-position: -78px -363px;
+  background-color: #a4a4a4;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.cxPermHideIcon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -52px -361px;
+  mask-position: -52px -361px;
+  background-color: #FF5D5A;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+/*# sourceMappingURL=crux-permission-list.css.map */

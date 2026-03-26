@@ -1,0 +1,142 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+/*crux comp base class starts*/
+/*crux comp base class ends*/
+.cxDvBodyContent {
+  min-height: 200px;
+}
+.dvSectionContainer {
+  overflow: auto;
+}
+.cxDvNavItem {
+  font-family: 'LatoSemiBold', sans-serif;
+  color: var(--lyte-crux-crux-dv-nav-item-font-color);
+}
+.cxDvFchildContainer {
+  flex: 1;
+}
+.cxDvInfoLabel {
+  text-align: left;
+  padding: 14px 0 13px 17px;
+  flex: 0 0 200px;
+  border: 1px solid transparent;
+}
+.cxDvRecordUserImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: var(--lyte-crux-crux-dv-record-user-img-bg-color);
+  color: var(--lyte-crux-crux-dv-record-user-img-font-color);
+}
+.cxDvRecTag {
+  padding: 4px 12px;
+}
+.cxDvWrapParent {
+  background-color: var(--lyte-crux-crux-dv-wrap-bg-color);
+  padding: 15px 20px;
+}
+/*.dv_details_section,*/
+.cxDvTabContent {
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 3px 4px 0 var(--lyte-crux-crux-dv-tab-content-box-shadow-color);
+  border: 1px solid var(--lyte-crux-crux-dv-tab-content-border-color);
+  padding: 20px;
+  background: var(--lyte-crux-crux-dv-tab-content-bg-color);
+}
+.cxDvBcSection {
+  border-radius: 6px;
+  margin: 0 0 15px 0;
+}
+.cxDvLyteNav {
+  border-radius: 6px 6px 0 0;
+  padding: 5px 20px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: auto;
+}
+crm-detailview[cx-prop-content-overflow="true"] {
+  height: inherit;
+  overflow: auto;
+  display: block;
+}
+.cxDvTagIconPosition {
+  display: flex;
+  align-items: center;
+}
+/*# sourceMappingURL=crux-detailpage-wrapper.css.map */

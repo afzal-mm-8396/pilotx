@@ -1,0 +1,368 @@
+
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/pageBuilder/crux-page-builder-section.variable.less";
+
+@import "../themes/default/less-variables/crux-page-builder-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+
+/***********************************************************
+    CRUX-Page-Builder Section Starts
+    Middle module builder part
+
+***********************************************************/
+
+
+// .cxPageBuilder {
+    
+// }
+
+// .cxPbImageSection,
+.cxPbElementSection,
+.cxPbQuickCreateSection {
+	.cxPbElemSectionMixin();
+	border: @border;
+	border-radius: @border-radius;
+	margin: @margin;
+	position: relative;
+	padding: @padding;
+	width: @w;
+	box-sizing: border-box;
+	background: @bg;
+	max-width: @max-w;
+	min-width: @min-w;
+	display: block;
+}
+
+.cxPbElementSection.cxPbElemSecOnDrag{
+	.cxPbElemSecOnDragMixin();
+	background-color: @bg-color;
+	padding: @padding;
+	max-height: @max-h;
+}
+
+.cxPbTemplateDroppable .lytePbDroppableArea>.cxPbElementSortPlaceholderDiv{
+	.cxPbSectionSortPlaceholderMixin();
+	width: @w;
+	min-width: @min-w;
+	max-width: @max-w;
+	margin: @margin;
+	height: @h;
+}
+
+.cxPbElementSortPlaceholderDiv.cxPbElemSecPlaceholderOnDrag{
+	.cxPbElemSecOnDragMixin();
+	max-height: @max-h;
+}
+
+.cxPbScrollInitial .cxPbElementSection.selected-element{
+	.cxPbElementSectionDragSelMixin();
+	margin: @margin;
+}
+
+.cxPbElementSection.cxPbElementActiveSection,
+.cxPbElementSection:hover{
+	.cxPbElementSectionHoverMixin();
+	border: @border;
+}
+
+// .cxPbElementSection .lytePbTitleSection{
+// 	.cxPbElemSectionHeaderMixin();
+// 	padding-bottom: @padding-bottom;
+// }
+
+.cxPbTitleSection{
+	.cxPbElemSectionHeaderFieldInputMixin();
+	color: @color;
+	font-family: @font-family;
+	font-weight: @font-weight;
+	display: flex;
+	align-items: center;
+}
+
+.cxPbElementSection .cxPbTitleSection crux-text-component{
+	.cxPbTitleSectionInputMixin();
+	width: @w;
+	display: block;
+}
+
+.cxPbTitleSection crux-text-component[cx-prop-from='view']{
+	width: fit-content;
+}
+
+// .cxPbElementSection .lytePbTitleSectionHeader .lyteField 
+.cxPbElementSection .cxPbTitleSection .lyteField{
+	.cxPbElemSectionHeaderFieldMixin();
+	background: @bg;
+	border: @border;
+	border-radius: @border-radius;
+	box-sizing: border-box;
+}
+// cxPbElementSection .lytePbTitleSectionHeader .lyteField input
+.cxPbElementSection .cxPbTitleSection .lyteField input{
+	.cxPbElemSectionHeaderFieldInputMixin();
+	background: @bg;
+	padding: @padding;
+	// box-shadow: @box-shadow;
+	// width: @w;
+	border-radius: @border-radius;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: @color;
+	font-family: @font-family;
+	font-weight: @font-weight;
+}
+
+// .cxPbElementSection .lytePbTitleSectionHeader .lyteField:hover
+.cxPbElementSection .cxPbTitleSection .lyteField:hover{
+	.cxPbElemSecHeaderFieldHoverMixin();
+	border: @border;
+}
+
+// .cxPbElementSection .lytePbTitleSectionHeader .lyteField:hover input,
+// .cxPbElementSection .lytePbTitleSectionHeader .lyteInputFocus .lyteField  input 
+.cxPbElementSection .cxPbTitleSection .lyteInputFocus input,
+.cxPbElementSection .cxPbTitleSection .lyteField:hover input{
+	.cxPbElemSecHeadInputBgMixin();
+	background: @bg;
+}
+
+// .cxPbElementSection .lytePbTitleSectionHeader .lyteInputFocus .lyteField,
+// .cxPbElementSection .lytePbTitleSectionHeader .lyteInputFocus .lyteField:hover 
+.cxPbElementSection .cxPbTitleSection .lyteInputFocus .lyteField,
+.cxPbElementSection .cxPbTitleSection .lyteInputFocus .lyteField:hover{
+	.cxPbElemSecInputFocusMixin();
+	border: @border;
+	box-shadow: @box-shadow;
+}
+.cxPbElementSection .cxPbTitleSection .cxErrorBox.lyteInputFocus .lyteField,
+.cxPbElementSection .cxPbTitleSection .cxErrorBox .lyteField{
+	.cxPbElemSecInputErrorFieldMixin();
+	border: @border;
+	box-shadow: @box-shadow;
+}
+
+.cxPbElementSection .cxPbTitleSection .cxErrorBox input{
+	.cxPbElemSecInputErrorFieldMixin();
+	background-color: @bg;
+}
+
+// .cxPbTitleSectionHighlight.cxPbImgSecTitle,
+// .cxPbTitleSection.cxPbTitleSectionHighlight .cxElemCompViewWrap,
+// .cxPbTitleSection.cxPbTitleSectionHighlight input,
+.cxPbSectionHighlight,
+.cxPbElementHighlight .cxPbElementLabel,
+.cxPbElementHighlight input{
+	animation: cxHighlightAnimation 2s;
+}
+
+.cxPbTitleSection .cxPbInfoIcon{
+	.cxPbTitleSectionInfoIconMixin();
+	@{property-margin-left}: @margin-left;
+	cursor: pointer;
+}
+
+.cxPbElementSection.cxPbSingleColElemSection lyte-pb-column-template{
+	.cxPbSingleColElemSectionMixin();
+	width: @w;
+}
+
+.cxPbQuickCreateSection lyte-pb-row-template{
+	.cxPbQuickCreateSectionRowMixin();
+	padding: @padding;
+}
+
+.cxPbQuickCreateSection lyte-pb-column-template{
+	.cxPbQuickCreateSectionColumnMixin();
+	width: @w;
+	margin: @margin;
+	min-height: @min-h;
+}
+
+
+
+/*Add new Section Starts */
+
+// .cxPbNewSectionBtn {
+// 	.cxPbNewSectionBtnMixin();
+// 	@{property-left} : @left;
+// 	top: @top;
+// 	background: @bg;
+// 	border-radius: @border-radius;
+// 	color: @color;
+// 	font-size: @font-size;
+// 	padding: @padding;
+// 	position: absolute;
+// 	@{property-margin-left}: @margin-left;
+// 	cursor: pointer;
+// }
+// .cxPbNewSectionBtn .cxPbSprite {
+// 	.cxPbNewSecBtnSpriteMixin();
+// 	position: absolute;
+// 	@{property-left}: @left;
+// 	top: @top;
+// }
+// .cxPbNewSectionBtn::after,
+// .cxPbNewSectionBtn::before {
+// 	.cxPbNewSectionBtnAfterBeforeMixin();
+// 	content: '';
+// 	position: absolute;
+// 	@{property-left}: @left;
+// 	@{property-border-left}: @border-left;
+// 	height: @h;
+// 	@{property-margin-left} : @margin-left;
+// }
+// .cxPbNewSectionBtn::after {
+// 	.cxPbNewSectionBtnAfterMixin();
+// 	bottom: @bottom;
+// }
+// .cxPbNewSectionBtn::before{
+// 	.cxPbNewSectionBtnBeforeMixin();
+// 	top: @top;
+// }
+
+// crux-page-builder-section:first-of-type{
+// 	.cxPbSectionFirstChildMixin();
+// 	margin-top: @margin-top;
+// }
+
+// crux-page-builder-section:last-of-type{
+// 	.cxPbSectionLastChildMixin();
+// 	margin-bottom: @margin-bottom;
+// }
+
+crux-page-builder-image-component:last-child .cxPbNewSectionBtn::after,
+crux-page-builder-section:last-of-type .cxPbNewSectionBtn::after {
+	display: none;
+}
+
+.cxPbElementDraggable .cxPbElementIcon{
+	.cxPbElementDraggableIconMixin();
+	margin: @margin;
+	flex-shrink: 0;
+}
+
+.cxPbElementLabelInput input{
+	.cxPbElementLabelInputMixin();
+	padding: @padding;
+	text-overflow: ellipsis;
+}
+
+.cxPbElementLabelInput .lyteField{
+	.cxPbElementLabelInputFieldMixin();
+	box-shadow: @box-shadow;
+}
+
+.cxPbAddressElementComp:not(:hover) .cxPbElementLabelInput .lyteInputBox:not(.lyteInputFocus) .lyteField,
+.cxPbElementDraggable:not(.cxPbAddressElem):not(:hover) .cxPbElementLabelInput .lyteInputBox:not(.lyteInputFocus) .lyteField{
+	.cxPbElemLabelInputDefStateMixin();
+	border-color: @border-color;
+}
+
+.cxPbElemFieldMetaText{
+	.cxPbElemFieldMetaTextMixin();
+	flex:1;
+	text-align: @text-align;
+	color: @color;
+	@{property-margin-left}: @margin-left;
+	white-space: nowrap;
+}
+
+// .cxPbImageSection .cxPbElemSecActionIcons,
+.cxPbElementSection .cxPbElemSecActionIcons{
+	.cxPbElemSecActionIconMixin();
+	position: absolute;
+	@{property-right}: @right;
+	z-index: @z-index;
+	visibility: hidden;
+}
+
+.cxPbElementSection.cxPbElementActiveSection .cxPbElemSecActionIcons,
+.cxPbElementSection:hover .cxPbElemSecActionIcons{
+	visibility: visible;
+}
+
+.cxPbElemSecActionIcons .cxPbElemSecActionIconWrapper{
+	.cxPbElemSecActionIconsWrapMixin();
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	display: inline-flex;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+}
+
+.cxPbElemSecActionIcons .cxPbElemSecActionIconWrapper:not(:first-child){
+	.cxPbElemSecActionIconsWrapNotFirstMixin();
+	@{property-margin-left} : @margin-left;
+}
+
+.cxPbElementSection .cxPbElemSecActionIconWrapper.lyteMenuSelected,
+.cxPbElemSecActionIcons .cxPbElemSecActionIconWrapper:not(.cxPbDisabled):hover{
+	.cxPbElemSecActionIconsWrapHoverMixin();
+	background-color: @background-color;
+}
+
+// .cxPbHideSectionElements .cxPbNewSectionBtn,
+.cxPbHideSectionElements .titleSectionContainer,
+.cxPbHideSectionElements .cxPbElemSecActionIcons{
+	display: none;
+}
+
+.cxPbElemSecActionIcons .cxPbElemSecActionIconWrapper:not(.cxPbDisabled):hover  .cxPbSprite{
+	.cxPbElemSecActionIconWrapperHoverIconMixin();
+	background-color: @bg-color;
+}
+
+.cxPbElemActionIconWrap.cxPbDisabled,
+.cxPbElemSecActionIconWrapper.cxPbDisabled{
+	.cxPbElemSecActionIconDisabledMixin();
+	cursor: default;
+	opacity: @opacity;
+}
+
+/*Add New Section Ends */
+
+.cxPbElementSection lyte-pb-grid-template{
+	.cxPbElementGridTemplateMixin();
+	padding: @padding;
+	min-height: @min-h;
+}
+
+.cxPbElementSection lyte-pb-grid-template .lytePbMessage{
+	.cxPbElementSectionDragMsgMixin();
+	color: @color;
+}
+
+.cxPbElementSection .lytePbMessage.cxdN{
+	display: none;
+}
+
+.cxPbQuickCreateSection lyte-pb-grid-template{
+	.cxPbQuickCreateSecGridTemplateMixin();
+	padding: @padding;
+}
+
+
+.cxPbSectionOnDragHeading{
+	.cxPbSectionOnDragHeadingMixin();
+	font-family: @font-family;
+	font-weight: @font-weight;
+	color: @color;
+}
+
+ @media only screen and (min-width: 1720px){
+	.cxPbElementSection,
+	.cxPbQuickCreateSection {
+		.cxPbElemSectionMixin();
+		max-width: @max-w1;
+	}
+
+	.cxPbTemplateDroppable .lytePbDroppableArea > .cxPbElementSortPlaceholderDiv{
+		.cxPbSectionSortPlaceholderMixin();
+		max-width: @max-w1;
+	}
+}

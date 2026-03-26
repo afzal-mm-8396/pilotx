@@ -1,0 +1,62 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-dropdown-border-color: var(--crux-element-border-color);
+  --lyte-crux-dropdown-text-color: var(--crux-base-text-color);
+  --lyte-crux-dropdown-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-dropdown-placeholder-color: var(--crux-placeholder-color);
+  --lyte-crux-dropdown-hover-border-color: var(--crux-element-hover-border-color);
+  --lyte-crux-dropdown-hover-box-shadow-color: var(--crux-element-hover-shadow-color);
+  --lyte-crux-dropdown-focus-border-color: var(--crux-element-focus-border-color);
+  --lyte-crux-dropdown-focus-box-shadow-color: var(--crux-element-focus-shadow-color);
+  --lyte-crux-multiple-dropdown-item-bg-color: #fafbfc;
+  --lyte-crux-multiple-dropdown-item-border-color: #ddd;
+  --lyte-crux-multiple-dropdown-close-hover-bg-color: #eee;
+  --lyte-crux-dropbox-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-dropbox-border-color: #d6d6d6;
+  --lyte-crux-dropbox-box-shadow-color: rgba(0, 0, 0, 0.15);
+  --lyte-crux-dropbox-text-color: var(--crux-base-text-color);
+  --lyte-crux-dropbox-search-border-color: #4ab4fe;
+  --lyte-crux-dropbox-selected-bg-color: #efefef;
+  --lyte-crux-dropdown-no-result-text-color: var(--crux-no-result-color);
+  --lyte-crux-dropbox-label-text-color: #aaa;
+  --lyte-crux-dropdown-mandatory-color: var(--crux-mandatory-color);
+  --lyte-crux-dropdown-error-border-color: var(--crux-element-error-border-color);
+  --lyte-crux-fake-multi-select-input-txt-color: #fff;
+  --lyte-crux-pick-item-disabled-hover-card-border-color: #DADADA;
+  --lyte-crux-fake-drop-button-error-border-color: var(--crux-element-error-border-color);
+}
+/*# sourceMappingURL=crux-dropdown-variables.css.map */

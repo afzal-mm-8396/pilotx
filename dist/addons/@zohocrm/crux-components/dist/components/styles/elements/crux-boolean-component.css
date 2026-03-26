@@ -1,0 +1,38 @@
+/*.criteria-yes{
+	-webkit-mask-image: url('../images/crux-sprite-icons.svg');
+	mask-image: url('../images/crux-sprite-icons.svg');
+	-webkit-mask-position: -68px -176px;
+	mask-position: -68px -176px;
+	background-color: #313949;
+	display: inline-block; 
+	padding: 0 !important; 
+	width:14px;
+	height: 10px;
+	cursor:default;
+}*/
+.criteria-yes{
+	background-image: url('../images/crux-sprite-icons.svg');
+	background-position: -68px -176px;
+	display: inline-block; 
+	padding: 0 !important; 
+	width:14px;
+	height: 10px;
+	cursor:default;
+}
+/* 
+.cruxBoolColor{
+	color : #444;
+}
+crux-boolean-component .cxBooleanCompCheckbox:not(.cxBooleanCompWithLabel) .lyteCheckBoxDefault::before {
+	margin: 0;
+}
+crux-boolean-component .lyteCheckBoxDefault {
+	display: flex;
+	flex-shrink: 0;
+}
+.cxBooleanCompWithLabel .lyteCheckBoxDefault::before{
+	top: 0px;
+}
+.cxBooleanCompWithLabel input[type=checkbox] + .lyteCheckBoxDefault::after{
+	top: 3px;
+}*/

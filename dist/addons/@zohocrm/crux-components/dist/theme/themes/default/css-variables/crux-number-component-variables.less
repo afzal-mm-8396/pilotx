@@ -1,0 +1,23 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-number-popup-content-color: #333;
+    --@{cssPrefix}-number-info-popup-content-color: var(--crux-heading-color);
+    --@{cssPrefix}-number-expr-color: #2C7BD0;
+    --@{cssPrefix}-number-slider-fill-bg-color: #338CF0;
+    --@{cssPrefix}-number-slider-bg-color: #E5EAF2;
+    --@{cssPrefix}-number-scale-sec-value-color: var(--crux-base-text-color);
+    --@{cssPrefix}-number-box-disabled-label-color: var(--crux-base-text-color);
+    --@{cssPrefix}-number-comp-box-disabled-bg-color: var(--crux-element-disabled-bg-color);
+}

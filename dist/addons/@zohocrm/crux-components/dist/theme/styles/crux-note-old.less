@@ -1,0 +1,428 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-note/crux-note.variables.less";
+
+@import "../themes/default/less-variables/crux-note-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-note-old";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-notes-variables.less";
+}
+
+.notesTextInputBoxWrap {
+    .cxNotesTextInputBoxWrapMixin();
+    padding: @padding;
+    background: @bg;
+}
+.inputBeforeNote, .notesTextInputBox {
+    .cxNotesTextInputBoxMixin();
+    width: @w;
+}
+.notesTextInputBox {
+    height: auto !important;
+}
+.inputBeforeNote .lyteField:hover,
+.notesTextInputBox .lyteField:hover,
+.notesTextInputBox.lyteInputFocus .lyteField {
+	border-bottom: 0;
+}
+.inputBeforeNote .lyteField {
+	background: #fff;
+	border: none;
+	padding: 5px;
+}
+.notesTextInputBox .lyteField {
+	background: #fff;
+	border: none;
+	padding: 5px;
+	box-sizing: border-box;
+}
+.notesTextInputBox .lyteTextareaResize {
+	bottom: 0;
+    cursor: row-resize;
+}
+.notesOtherAction {
+    .cxNotesOtherActionMixin();
+    // @{property-padding-left}: @padding-left;
+	display: inline-block;
+	color: @color;
+	position: relative;
+	vertical-align: middle;
+	margin-top: @margin-top;
+	cursor: pointer;
+}
+.cruxAttachActionArea {
+	cursor: pointer;
+}
+.cruxAttachActionArea::before {
+    .cxNotesAttachActionAreaBefore();
+	content: '';
+	display: block;
+	position: absolute;
+    @{property-left}: @left;
+	top: @top;
+	background: @bg;
+	width: @w;
+	height: @h;
+}
+.notesAddedContent {
+	max-width: calc(100% - 70px);
+	word-break: break-word;
+	white-space: pre-wrap;
+}
+.cruxNotesUploadStatus,
+.cruxNotesList {
+	padding: 0;
+	margin: 0;
+}
+.cruxNotesList .cxNoteTitleSpan {
+    max-width: calc(100% - 70px);
+}
+.cruxNotesLi {
+	padding: 0;
+	margin: 15px 5px;
+    border-bottom: 1px solid #eee;
+}
+.cruxNotesLi:last-child {
+	border: 0;
+}
+.cruxNotesLi:hover .addedNotesActionArea {
+	visibility: visible
+}
+.notesAddedUSerImg {
+    .cxNotesAddedUserImgMixin();
+	width: @w;
+	height: @h;
+	border: @border;
+	border-radius: @border-radius;
+	box-sizing: border-box;
+	position: absolute;
+	top: @top;
+    @{property-left}: @left;
+}
+.notesOtherActionDetails .ellipsistext {
+	max-width: 100px;
+}
+crux-note .addAnotherNoteActionBtn {
+	padding: 0 20px !important;
+}
+.addAnotherNoteActionBtn::after,
+.addAnotherNoteActionBtn::before {
+    .cxAddAnotherNoteActionBtnBeforeAfterMixin();
+	content: '';
+	display: block;
+	position: absolute;
+	border: @border;
+	border-radius: @border-radius;
+	width: @w;
+	height: @h;
+	background: @bg;
+    @{property-left}: @left;
+	top: @top;
+}
+.addAnotherNoteActionBtn:before {
+    .cxAddAnotherNoteActionBtnBeforeMixin();
+	@{property-left}: @left;
+    @{property-right}: @right;
+}
+.addedNotesActionArea {
+    .cxAddedNotesActionAreaMixin();
+	position: absolute;
+	top: @top;
+	@{property-right}: @right;
+	visibility: hidden;
+}
+.deleteAddedNote, .editAddedNote {
+	border-radius: 50%;
+	height: 25px;
+	width: 25px;
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+}
+.editAddedNote {
+	border: 1px solid #4a99e5;
+}
+.editAddedNote::after {
+    .cxEditAddedNoteAfterMixin();
+	content: '';
+	display: block;
+	position: absolute;
+	width: @w;
+	height: @h;
+	top: @top;
+	@{property-left}: @left;
+	background: @bg;
+}
+.deleteAddedNote {
+    .cxDeleteAddedNoteMixin();
+	border: @border;
+    @{property-margin-left}: @margin-left;
+}
+.deleteAddedNote::after {
+    .cxDeleteAddedNoteAfterMixin();
+	content: '';
+	display: block;
+	position: absolute;
+	width: @w;
+	height: @h;
+	top: @top;
+	@{property-left}: @left;
+	background: @bg;
+}
+.deleteAddedNote:hover:after {
+	background-position: -181px -474px!important;
+}
+.deleteAddedNote:hover {
+	border: 1px solid #F78985
+}
+.titleInputSection {
+	width: 180px;
+	border-bottom: 3px solid #eff2f4;
+}
+.titleInputSection .lyteField {
+	background: #fff;
+	padding-top: 3px;
+}
+
+.cruxNotesList .notesAddedUSerImg {
+	width: 32px;
+	height: 32px;
+}
+
+.cruxNotes .noteInputs .noteTitle {
+	display:none;
+}
+
+.notesContentWrap .moduleRecordName, .cruxNotes .cxLink {
+	cursor: pointer;
+	color: #2d7bd1 !important;
+}
+.notesContentWrap{
+	 width: 100%;
+	 display: inline-block;
+	 box-sizing: border-box;
+}
+
+.displayedNotesCount, .totalNotesCount {
+	color: #666;
+}
+
+.showMoreNotes {
+	background: #f8f8f8;
+	margin-top: -1px;
+}
+
+.cruxNoteOwnerNameImg {
+	width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #f8f8f8;
+	color: #111;
+	border: 1px solid #d8d8d8;
+	font-size: 24px;
+	text-align: center;
+	line-height: 48px;
+	text-transform: capitalize;
+}
+
+.cruxNoteOwnerImg img {
+    .cxNoteOwnerImgMixin();
+	width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    max-width: @max-w;
+    max-height: @max-h;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: @margin-top;
+    @{property-margin-right}: @margin-right;
+    margin-bottom: @margin-bottom;
+}
+
+.cruxNoteToggleArrow {
+    .cxNoteToggleArrowMixin();
+	width: @w;
+    height: @h;
+    cursor: pointer;
+    padding: @padding;
+    display: inline-block;
+    position: absolute;
+    @{property-right}: @right;
+    top: @top;
+}
+
+.cruxNoteToggleArrow:hover{
+	background: #f1f1f1;
+}
+
+.cruxNoteToggleArrow::after{
+    .cxNoteToggleArrowAfterMixin();
+	content: '';
+	display: block;
+	position: absolute;
+    background: @bg;
+    width: @w;
+    height: @h;
+    top: @top;
+    @{property-left}: @left;
+    opacity: @opacity;
+}
+.cruxNoteToggleOptions lyte-menu-group {
+	margin: 5px 0;
+	padding-bottom: 5px;
+}
+.cruxNoteToggleOptions lyte-menu-item {
+	padding: 5px 20px;
+	position: relative;
+	line-height: normal;
+}
+
+.cruxNoteToggleOptions .cruxNoteSelectedToggle::before{
+    .cxNoteSelectedToggleBeforeMixin();
+	content: '';
+	position: absolute;
+	display: block;
+	background: @bg;
+	width: @w;
+	height: @h;
+    @{property-left}: @left;
+	top: @top;
+	opacity: @opacity;
+}
+
+
+.cxNotesAttachementList {
+    .cxNotesAttachementListMixin();
+    padding: @padding;
+    float: @value-float-left;
+    margin: @margin;
+}
+.cxNotesAttachElemImg{
+    height: 120px;
+    width: 120px;
+    border: 1px solid #eee;
+    object-fit: cover;
+}
+.cxNotesAttachActions {
+    .cxNotesAttachActionsMixin();
+    background: @bg;
+    position: absolute;
+    width: @w;
+    bottom: @bottom;
+    @{property-margin-left}: @margin-left;
+    height: @h;
+    opacity: @opacity;
+}
+.cxNotePreviewIcon,
+.cxNoteDownloadIcon {
+    vertical-align: middle;
+    cursor: pointer;
+    display: inline-block;
+}
+.cxNotePreviewIcon {
+    .cxNotePreviewIconMixin();
+    background-position: @bg-pos;
+    width: @w;
+    height: @h;
+    @{property-margin-right}: @margin-right;
+}
+.cxNoteDownloadIcon {
+    width: 17px;
+    height: 14px;
+    background-position: -112px -273px;
+}
+.cxImageNameContent{
+	font-size: @cxFontSize13px;
+}
+.cxImageName{
+    color: #555;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding: 0 10px;
+}
+.cxNotesAttachElem {
+    width: 120px;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    height: 120px;
+}
+.cxNotesAttachElemImgWrap{
+	height: 120px;
+}
+.cxNotesAttachNameWrap {
+	height: 100px;
+	line-height: 100px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: calc(100% - 20px);
+	padding: 10px;
+}
+.cxNotesAttachementList:hover .cxNotesAttachActions {
+    height: 25px;
+    opacity: 1;
+}
+.noteMoreFiles > .dz-preview > .dz-details {
+    max-width: 70%;
+    width: inherit;
+}
+.noteMoreFiles .dz-error .dz-error-message,
+.noteMoreFiles .dz-processing .dz-progress,
+.noteMoreFiles > .dz-success > .dz-progress {
+    .cxNoteMoreFilesMarginLeftMixin();
+    @{property-margin-left}: @margin-left;
+}
+.noteMoreFiles > .dz-preview div .dz-filename{
+    max-width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.cxNotesAttachedListName{
+    max-width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.noteTitle.vertical ::-webkit-input-placeholder{
+    font-family: var(--crux-bold-font);
+    font-weight: var(--crux-font-weight-bold);
+}
+.noteTitle.vertical ::-ms-input-input-placeholder{
+    font-family: var(--crux-bold-font);
+    font-weight: var(--crux-font-weight-bold);
+}
+.noteTitle.vertical input::placeholder{
+    font-family: var(--crux-bold-font);
+    font-weight: var(--crux-font-weight-bold);
+}
+
+.cxDisableEditBtn, .cxDisableDeleteBtn {
+	opacity: 0.3;
+}
+.cxNoteCheckbox:hover .cxNoteCkboxLabel {
+    color: #888;
+}
+
+.cxNoteCount {
+    .cxNoteCountMixin();
+	height: @h;
+	padding: @padding;
+	background: @bg;
+	border-radius: @border-radius;
+	line-height: @line-height;
+	display: inline-block;
+	text-align: center;
+	font-size: @font-size;
+	@{property-margin-left}: @margin-left;
+	cursor: default;
+}

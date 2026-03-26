@@ -1,0 +1,33 @@
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+.getRootVariables(){
+    --crux-link-color: #3c9df7;
+    --crux-mandatory-color: #f27b77;
+    --crux-no-result-color: #5a5a5a;
+    --crux-base-text-color: #222;
+    --crux-placeholder-color: #a6a6a6;
+    --crux-element-border-color: #c3c6ca;
+    --crux-element-hover-border-color: #c5c6c7;
+    --crux-element-hover-shadow-color: #b4b5b5;
+    --crux-element-focus-border-color: #3c9df7;
+    --crux-element-focus-shadow-color: #8dc4ff;
+    --crux-element-error-border-color: #f07b79;
+    --crux-element-error-shadow-color: #fff;
+    --crux-element-disabled-border-color: #040404;
+    --crux-element-disabled-bg-color: #e8e8e8;
+    --crux-element-bg-color: #fff;
+    --crux-element-label-color: #555;
+    --crux-base-icon-color: #333;
+    --crux-heading-color: #111;
+    --crux-label-color: #222;
+    --crux-tag-dark-color: #313949;
+    --crux-tag-light-color: #fff;
+}

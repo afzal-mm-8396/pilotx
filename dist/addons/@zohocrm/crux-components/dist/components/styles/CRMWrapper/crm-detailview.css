@@ -1,0 +1,14 @@
+.dv_delRecLytePop .alertSecondaryMsg {
+    background-color: var(--noteBgColor);
+    border: 1px solid var(--noteBrColor);
+    border-radius: 6px;
+    color: var(--noteColor);
+    line-height: 1.5;
+    padding: 4px 10px
+}
+.timerIcon-notes {
+	background: var(--crmSprite) no-repeat -655px -31px;
+	width: 12px;
+	height: 12px;
+	margin-top:4px;
+}

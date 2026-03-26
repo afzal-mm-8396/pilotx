@@ -1,0 +1,55 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-image-preview-overlay-bg-color: rgba(0, 0, 0, 0.5);
+  --lyte-crux-image-camera-icon-color: #fff;
+  --lyte-crux-image-alphabet-text-color: #fff;
+  --lyte-crux-image-loader-bg-color: #e7f2ff;
+  --lyte-crux-image-loader-animation-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-image-loader-animation-box-shadow-color: #fff;
+  --lyte-crux-image-list-border-color: #aaa;
+  --lyte-crux-image-list-hover-bg-color: rgba(0, 0, 0, 0.5);
+  --lyte-crux-image-list-select-border-color: #338CF0;
+  --lyte-crux-image-list-select-box-shadow-color: rgba(0, 0, 0, 0.3);
+  --lyte-crux-image-list-delete-icon-color: #fff;
+  --lyte-crux-image-list-delete-icon-hover-color: #FF5D5A;
+  --lyte-crux-image-list-preview-icon-color: #fff;
+  --lyte-crux-image-hyphen-icon-color: #616E88;
+  --lyte-crux-image-upload-icon-color: #616E88;
+  --lyte-crux-image-list-collapse-text-color: #338CF0;
+  --lyte-crux-image-subform-show-more-icon-bg-color: #338CF0;
+}
+/*# sourceMappingURL=crux-image-component-variables.css.map */

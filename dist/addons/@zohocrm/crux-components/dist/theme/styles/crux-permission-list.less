@@ -1,0 +1,81 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-permission-list/crux-permission-list.variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+.cxPermTableTitleTd{
+    .cxPermTableTitleTdMixin();
+    width: @w;
+}
+
+
+lyte-dropdown .lyteDummyEventContainer:focus .cxPermTableActionBtn, 
+lyte-dropdown .lyteDummyEventContainer:focus .cxPermTableActionBtn:hover,
+.cxPermTableActionBtn,
+.cxPermTableActionBtn.lyteDropButtonDown,
+.cxPermTableActionBtn.lyteDropButtonDown:hover,
+.cxPermTableActionBtn.lyteDropButtonUp,
+.cxPermTableActionBtn.lyteDropButtonUp:hover,
+.cxPermTableActionBtn:hover,
+.cxPermTableActionBtn.lyteDefaultBtn:focus,
+.cxPermTableActionBtn.lyteDefaultBtn:hover,
+.cxPermTableActionBtn.lyteDefaultBtn{
+    .cxPermTableActionBtnMixin();
+    border: @border;
+    box-shadow: @box-shadow;
+    background: @bg;
+    padding: @padding;
+    width: @w;
+}
+
+.cxPermTableActionText{
+    flex: 1;
+}
+
+.cxPermTableActionBtnWrap{
+    .cxPermTableActionBtnWrapMixin();
+    width: @w;
+    max-width: @max-w;
+}
+
+.cxPermTableDownArrowIcon{
+    .cxPermTableDownArrowIconMixin();
+    display: inline-block;
+	width: @w;
+	height: @h;
+	.cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    vertical-align: middle;
+    @{property-margin-left}: @margin-left;
+    margin-top: @margin-top;
+}
+
+.cxPermReadWriteIcon{
+    .cxPermReadWriteIconMixin();
+    display: inline-block;
+	width: @w;
+	height: @h;
+	.cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    vertical-align: middle;
+    @{property-margin-right}: @margin-right;
+}
+
+.cxPermReadOnlyIcon{
+    .cxPermReadOnlyIconMixin();
+    display: inline-block;
+	width: @w;
+	height: @h;
+	.cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    vertical-align: middle;
+    @{property-margin-right}: @margin-right;
+}
+
+.cxPermHideIcon{
+    .cxPermHideIconMixin();
+    display: inline-block;
+	width: @w;
+	height: @h;
+	.cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    vertical-align: middle;
+    @{property-margin-right}: @margin-right;
+}

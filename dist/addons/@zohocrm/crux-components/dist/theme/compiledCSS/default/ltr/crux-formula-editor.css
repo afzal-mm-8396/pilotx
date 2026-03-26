@@ -1,0 +1,747 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/***** Formula Editor Widget Mixin Starts  *****/
+/***** Formula Editor Widget Mixin Ends  *****/
+.cxFrmlaEdtrPanelAccordionFXIcon {
+  min-width: 16px;
+  max-width: 16px;
+}
+:root {
+  --crux-formula-editor-bg-color: #F8FAFF;
+  --crux-formula-editor-line-highlight-bg-color: #F0F4FF;
+  --crux-formula-editor-dark-bg-color: #2B2D32;
+  --crux-formula-editor-dark-line-highlight-bg-color: #3A3C42;
+  --crux-formula-editor-font-family: monospace;
+}
+crux-formula-editor lyte-editor {
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+}
+.cxFrmlHideBtn {
+  display: none !important;
+}
+.cxFrmlaEdtrContainer {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #D2D9E0;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  background-color: #fff;
+}
+.cxFrmlaEdtrSpaceContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+  flex-grow: 1;
+  overflow: hidden;
+  background-color: #F8FAFF;
+}
+.cxFrmlaEdtrTopPanelContainer {
+  border-bottom: 1px solid #D2D9E0;
+  padding: 8px 20px 9px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.857rem;
+  background: #fff;
+  box-sizing: border-box;
+  margin-left: 45px;
+  gap: 15px;
+}
+.cxFrmlaEdtrPanelIsClosed .cxFrmlaEdtrTopPanelContainer {
+  margin-left: 0;
+}
+.cxFrmlaEdtrTopPanelLabel {
+  color: #616E88;
+  margin-right: 4px;
+}
+.cxFrmlaEdtrTopPanelDropdown:not(:last-child) {
+  margin-right: 12px;
+}
+.cxFrmlaEdtrTopPanelDropdown lyte-dropdown.cxBoxDropdown lyte-drop-button,
+.cxFrmlaEdtrTopPanelDropdown .cxFakeDropButton {
+  padding: 5px 25px 5px 10px;
+  font-size: 0.857rem;
+}
+.cxFrmlaEdtrTopPanelDropdown .cxFakeDropPlaceholderNormal,
+.cxFrmlaEdtrTopPanelDropdown lyte-dropdown.cxBoxDropdown .lyteDropPlaceholderNormal {
+  font-size: 0.857rem;
+}
+.cxFrmlaEdtrTopPanelDropdown lyte-drop-button lyte-text {
+  vertical-align: top;
+}
+.cxPropFrmlaEdtrTypeDrop {
+  width: 160px;
+}
+.cxPropFrmlaEdtrNumDrop {
+  width: 120px;
+}
+.cxFrmlaEdtrTopPanelSeparator {
+  display: block;
+  height: 27px;
+  border-right: 1px solid #D2D9E0;
+  margin: 0px 10px;
+}
+.cxFrmlaEdtrRunBtn {
+  color: #338CF0;
+  cursor: pointer;
+  font-family: 'LatoSemiBold', sans-serif;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: var(--crux-font-weight-bold);
+  font-size: 0.857rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.cxFrmlaRunIcon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -305px -831px;
+  mask-position: -305px -831px;
+  background-color: #338CF0;
+}
+/* Widget Styles */
+.cxFrmlaEdtrWidget {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 0.857rem;
+  box-sizing: border-box;
+  margin: 8px 0px;
+}
+.cxFrmlaPopEdtrWidget {
+  font-size: 0.857rem;
+}
+.cxFrmlaEdtrWdgtSytx {
+  display: flex;
+}
+.cxFrmlaEdtrWidget .cxFrmlaLabel,
+.cxFrmlaHelpTitle {
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxFrmlaEdtrWidget .cxFrmlaLabel {
+  margin-bottom: 10px;
+}
+.cxFrmlaHelpValue {
+  margin-left: 20px;
+}
+.cxFrmlaPopEdtrWidget .cxFrmlaLabel {
+  color: #616E88;
+  width: 80px;
+  text-align: right;
+  flex-shrink: 0;
+}
+.cxFrmlaPopEdtrWidget .cxFrmlaHelpTitle {
+  margin-bottom: 12px;
+}
+.cxFrmlaPopEdtrWidget .cxFrmlaHelpSec {
+  margin-bottom: 10px;
+}
+.cxFrmlaEdtrWidget .cxFrmlaHelpSec:not(:last-child) {
+  margin-bottom: 20px;
+}
+.cxFrmlaEdtrResultTitleContainer {
+  height: 45px;
+  border-bottom: 1px solid #D2D9E0;
+  display: flex;
+  align-items: center;
+}
+.cxFrmlaEdtrResultTitle {
+  font-size: 0.786rem;
+  padding: 14px 0px 9px;
+  font-family: 'LatoBold', sans-serif;
+  margin: 0px;
+  margin-left: 20px;
+}
+.cxFrmlaEdtrResultContentContainer {
+  overflow: auto;
+  background-color: #EFF1F5;
+}
+.cxFrmlaEdtrResultContent {
+  display: flex;
+  padding: 6px 12px;
+  margin-bottom: 4px;
+  align-items: center;
+}
+.cxFrmlaEdtrResultContent:last-child {
+  margin-bottom: 6px;
+}
+.cxFrmlaEdtrResultContent:first-child {
+  margin-top: 6px;
+}
+.cxFrmlaEdtrResultContent:hover {
+  background-color: #F8FAFF;
+}
+.cxFrmlaEdtrNoErrorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cxFrmlaEdtrNoErrorContainer .cxFrmlaEdtrResultContent {
+  padding: 0;
+  margin: 0;
+}
+.cxFrmlaEdtrNoErrorContainer .cxFrmlaEdtrResultContent:hover {
+  background-color: transparent;
+}
+.cxFrmlaEdtrNoErrorContainer .cxFrmlaEdtrViewPreview {
+  color: #338CF0;
+  border-bottom: 1px dashed #338CF0;
+  margin-left: 8px;
+  font-size: 0.857rem;
+}
+.cxFrmlaEdtrWarningIcon {
+  width: 15px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -125px -223px;
+  mask-position: -125px -223px;
+  background-color: #FF5D5A;
+  flex-shrink: 0;
+  margin-top: 2px;
+  margin-right: 10px;
+  align-self: flex-start;
+}
+.cxFrmlaEdtrHeader {
+  border-top: 1px solid #D2D9E0;
+  padding: 6px 14px;
+  font-size: 0.857rem;
+  background-color: #fff;
+  justify-content: space-between;
+}
+.cxFrmlaEdtrHeaderDropdowns {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  min-width: 100px;
+}
+.cxFrmlaEdtrHeaderDropWrap {
+  display: flex;
+  align-items: center;
+  font-size: 0.857rem;
+  max-width: 50%;
+}
+.cxFrmlaEdtrHeaderDropWrap:not(:last-child) {
+  margin-right: 30px;
+}
+.cxFrmlaEdtrDDLabel {
+  color: #616E88;
+  margin-right: 12px;
+}
+.cxFrmlaPropIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  flex-shrink: 0;
+}
+.cxFrmlaPropIcon:focus-visible,
+.cxFrmlaPropIcon:hover {
+  border: 1px solid #C0C6CC;
+  background-color: #F0F4FF;
+}
+.cxFrmlaPropIcon:focus-visible .cxFrmlaPropIconSpan,
+.cxFrmlaPropIcon:hover .cxFrmlaPropIconSpan {
+  background-color: #333;
+}
+.cxFrmlaOperMoreIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cxFrmlaOperMoreIcon:focus-visible,
+.cxFrmlaOperMoreIcon:hover {
+  background-color: #F0F4FF;
+}
+.cxFrmlaOperMoreIcon .cxArrowDownLineIcon {
+  background-color: #616E88;
+}
+.cxFrmlaPropWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  overflow: hidden;
+}
+.cxFrmlaEdtrPanelContainer {
+  min-width: 0px;
+  max-width: 0px;
+  box-sizing: border-box;
+  display: flex;
+  overflow: hidden;
+  transition: min-width 0.3s ease, max-width 0.3s ease;
+}
+.cxFrmlaEdtrSpaceContainerEditor {
+  height: fit-content;
+  min-height: 100%;
+}
+.cxFrmlaEdtrSpaceContainerEditor.cxFrmlaEdtrWithFooter {
+  min-height: calc(100% - 165px);
+}
+.cxFrmlaEdtrSpaceContainerEditor.cxFrmlaEdtrWithFooterDD {
+  min-height: calc(100% - 205px);
+}
+.cxFrmlaEdtrPanelContainerTabBody {
+  padding: 0px;
+}
+.cxFrmlaEdtrPanelContainerTabBody lyte-tab-content:not(.lyteTabHide) {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.cxFrmlaEdtrPanelContainerTabHead {
+  padding: 0px !important;
+  min-height: 46px;
+  border-color: #D2D9E0 !important;
+}
+.cxFrmlaEdtrPanelAccordion {
+  flex: 1;
+  overflow: auto;
+  padding: 0px 15px 10px;
+}
+.cxFrmlaEdtrPanelAccordionHeader {
+  padding: 10px 10px 6px 25px;
+  position: relative;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0.857rem;
+}
+.cxFrmlaEdtrPanelSearch {
+  margin: 10px 15px 4px;
+  display: block;
+}
+.cxFrmlaEdtrPanelExitBtn {
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  box-sizing: border-box;
+  z-index: 10;
+  border-right: 1px solid #D2D9E0;
+  border-bottom: 1px solid #D2D9E0;
+  transition: left 0.3s;
+  background-color: #fff;
+}
+.cxFrmlaEdtrPanelAccordionHeaderIcon {
+  display: block;
+  position: absolute;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -1px 0px;
+  mask-position: -1px 0px;
+  background-color: #333;
+  width: 8px;
+  height: 8px;
+  top: 14px;
+  left: 10px;
+  transition: transform 0.2s linear;
+  transform: scale(1.3) rotate(0deg);
+}
+.lyteAccordionActive .cxFrmlaEdtrPanelAccordionHeaderIcon {
+  transform: scale(1.3) rotate(180deg);
+  top: 13px;
+}
+.cxFrmlaEdtrPanelExitIcon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -179px -1002px;
+  mask-position: -179px -1002px;
+  background-color: #616E88;
+}
+.cxFrmlaEdtrPanelIsOpen .cxFrmlaEdtrPanelExitIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -158px -1002px;
+  mask-position: -158px -1002px;
+  background-color: #616E88;
+}
+.cxIconHoverEffect.cxFrmlaEdtrExitIconWrap {
+  width: 30px;
+  height: 30px;
+}
+.cxFrmlaEdtrExitIconWrap:hover .cxFrmlaEdtrPanelExitIcon {
+  background-color: #333;
+}
+.cxFrmlaEdtrPanelAccordionHeader:hover {
+  background-color: #E7F2FF;
+}
+.cxFrmlaEdtrPanelAccordionitem {
+  border: none;
+  margin: 0px;
+}
+.cxFrmlaEdtrPanelAccordionBodyItems {
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+  justify-content: flex-end;
+  border-radius: 4px;
+}
+.cxFrmlaEdtrLeftPanelItemActive,
+.cxFrmlaEdtrPanelAccordionBodyItems:focus-visible,
+.cxFrmlaEdtrPanelAccordionBodyItems:hover {
+  gap: 10px;
+  background-color: #E7F2FF;
+}
+.cxFrmlaEdtrPanelAccordionBody {
+  padding: 0px !important;
+  width: 100%;
+}
+.cxFrmlaEdtrPanelAccordionText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-grow: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.cxFrmlaEdtrPanelAccordionInfoIcon {
+  min-width: 12px;
+  min-height: 12px;
+  visibility: hidden;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -224px -1003px;
+  mask-position: -224px -1003px;
+  background-color: #616E88;
+  display: none;
+  cursor: pointer;
+}
+.cxFrmlaEdtrLeftPanelItemActive .cxFrmlaEdtrPanelAccordionInfoIcon,
+.cxFrmlaEdtrPanelAccordionInfoIcon:hover {
+  background-color: #333;
+}
+.cxFrmlaEdtrLeftPanelItemActive .cxFrmlaEdtrPanelAccordionInfoIcon,
+.cxFrmlaEdtrPanelAccordionBodyItems:focus-visible .cxFrmlaEdtrPanelAccordionInfoIcon,
+.cxFrmlaEdtrPanelAccordionBodyItems:hover .cxFrmlaEdtrPanelAccordionInfoIcon {
+  display: block;
+}
+.cxFrmlaEdtrPanelAccordionInsertBtn {
+  color: #338CF0;
+  font-size: 0.857rem;
+  font-family: 'LatoSemiBold', sans-serif;
+  visibility: hidden;
+  cursor: pointer;
+  max-width: 0px;
+  overflow: hidden;
+}
+.cxFrmlaEdtrLeftPanelItemActive .cxFrmlaEdtrPanelAccordionInsertBtn,
+.cxFrmlaEdtrPanelAccordionBodyItems:focus-visible .cxFrmlaEdtrPanelAccordionInsertBtn,
+.cxFrmlaEdtrPanelAccordionBodyItems:hover .cxFrmlaEdtrPanelAccordionInsertBtn {
+  max-width: unset;
+  flex-shrink: 0;
+}
+.cxFrmlaEdtrPanelAccordionInsertBtn:hover {
+  color: #1D7FED;
+}
+.cxFrmlaEdtrLeftPanelItemActive .cxFrmlaEdtrPanelAccordionInfoIcon,
+.cxFrmlaEdtrLeftPanelItemActive .cxFrmlaEdtrPanelAccordionInsertBtn,
+.cxFrmlaEdtrPanelAccordionBodyItems:hover .cxFrmlaEdtrPanelAccordionInsertBtn,
+.cxFrmlaEdtrPanelAccordionBodyItems:hover .cxFrmlaEdtrPanelAccordionInfoIcon {
+  visibility: visible;
+}
+.cxFrmlaOperatorsHeading {
+  margin-right: 5px;
+  display: block;
+  color: #616E88;
+  font-size: 1rem;
+  font-weight: 'LatoSemiBold', sans-serif;
+}
+.cxFrmlaOperatorsContainer {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.cxFrmlaOperatorsWrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  gap: 10px;
+}
+.cxFrmlaOperatorsMenuListWrap {
+  display: flex;
+  align-items: center;
+}
+.cxFrmlaOperatorsMenuListWrap .cxFrmlaPropIconSpan {
+  margin-right: 8px;
+}
+.cxFrmlaOperatorVisible {
+  display: flex;
+  align-items: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.cxFrmlaOperatorVisible {
+  display: flex;
+}
+.cxFrmlaOperatorHidden {
+  display: none;
+}
+.cxFrmlaEdtrPanelIsOpen .cxFrmlaEdtrPanelContainer {
+  max-width: 250px;
+  min-width: 250px;
+  border-right: 1px solid #D2D9E0;
+}
+.cxFrmlaEdtrPanelIsOpen .cxFrmlaEdtrPanelExitBtn {
+  left: 204px;
+}
+.cxFrmlaEdtrPanelIsOpen .cxFrmlaEdtrTopPanelContainer {
+  margin-left: 0px;
+}
+.cxFrmlaEdtrSpaceContainer .cxForlaEdtrResTabYield {
+  flex: 1;
+  overflow: hidden;
+}
+.cxFrmlaEdtrRunBtn:hover {
+  background-color: #F0F7FF;
+}
+.cxFrmlaEdtrResultContainer {
+  border-top: 1px solid #D2D9E0;
+  height: 100%;
+}
+.cxFrmlaEdtrResultContainer.cxOuterTab lyte-tab-head {
+  border-bottom: 1px solid #D2D9E0;
+}
+.cxFrmlaEdtrResultContainer lyte-tab-body {
+  padding: 0px;
+}
+.cxFrmlaEdtrResultContainer lyte-tab-content,
+.cxFrmlaEdtrResultContainer .cxFrmlaEdtrResultContentContainer {
+  height: 100%;
+}
+.cxFrmlaEdtrResultTabContent {
+  height: 100%;
+  overflow-y: scroll;
+}
+.cxFrmlaEdtrResultTabBody {
+  padding: 0px;
+}
+.cxFrmlaEdtrNoResultDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cxFrmlaEdtrHeaderDropWrap .cxFakeDropdownLabel,
+.cxFrmlaEdtrHeaderDropWrap .cxFrmlaEdtrTopPanelDropdown .lyteDropdownLabel {
+  font-size: 0.857rem;
+}
+.cxFrmlaPropIconSpan {
+  width: 14px;
+  height: 14px;
+}
+.cxFrmlaPlusIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -126px -865px;
+  mask-position: -126px -865px;
+  background-color: #616E88;
+}
+.cxFrmlaMinusIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -144px -865px;
+  mask-position: -144px -865px;
+  background-color: #616E88;
+}
+.cxFrmlaSlashIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -236px -1027px;
+  mask-position: -236px -1027px;
+  background-color: #616E88;
+}
+.cxFrmlaPercentageIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -6px -1028px;
+  mask-position: -6px -1028px;
+  background-color: #616E88;
+}
+.cxFrmlaStarIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -29px -1028px;
+  mask-position: -29px -1028px;
+  background-color: #616E88;
+}
+.cxFrmlaUpArrowIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -50px -1028px;
+  mask-position: -50px -1028px;
+  background-color: #616E88;
+}
+.cxFrmlaOpenBracketIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -69px -1028px;
+  mask-position: -69px -1028px;
+  background-color: #616E88;
+}
+.cxFrmlaCloseBracketIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -81px -1028px;
+  mask-position: -81px -1028px;
+  background-color: #616E88;
+}
+.cxFrmlaNotEqualIcon {
+  width: 16px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -129px -1028px;
+  mask-position: -129px -1028px;
+  background-color: #616E88;
+}
+.cxFrmlaDoubleEqualIcon {
+  width: 18px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -100px -1028px;
+  mask-position: -100px -1028px;
+  background-color: #616E88;
+}
+.cxFrmlaLessThanIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -156px -1028px;
+  mask-position: -156px -1028px;
+  background-color: #616E88;
+}
+.cxFrmlaGreaterThanIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -173px -1028px;
+  mask-position: -173px -1028px;
+  background-color: #616E88;
+}
+.cxFrmlaLessThanOrEqualIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -192px -1028px;
+  mask-position: -192px -1028px;
+  background-color: #616E88;
+}
+.cxFrmlaGreaterThanOrEqualIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -216px -1028px;
+  mask-position: -216px -1028px;
+  background-color: #616E88;
+}
+.cxFrmlaEdtrPanelAccordionFXIcon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -202px -1002px;
+  mask-position: -202px -1002px;
+  background-color: #333;
+}
+crux-formula-editor crux-error-message {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.cxFrmlaNoResText {
+  color: #A2A9B7;
+}
+/*# sourceMappingURL=crux-formula-editor.css.map */

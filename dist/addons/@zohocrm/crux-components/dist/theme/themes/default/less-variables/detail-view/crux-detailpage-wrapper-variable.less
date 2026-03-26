@@ -1,0 +1,46 @@
+/*********************************************
+    Less Variable to CSS Variable Mapping
+    {{@Variable : cssVariable}}
+*********************************************/
+
+// @cxCreateDropItemLinkColor: var(~'--@{cssPrefix}-crux-create-dropitem-link-color');
+@cxCreateCBpopoverBtnLabelColor: var(~'--@{cssPrefix}-crux-create-popover-btn-label-color');
+
+/********* Less Variable to CSS Variable Mapping Ends  ******/
+
+@cxDvNavItemFontColor: #202123;
+@cxDvRecordUserImageBgColor: #9775FA;
+@cxDvRecordUserImageFontColor: #fff;
+@cxDvWrapBgColor: #EDF0F4;
+@cxDvTabContentBoxShadowColor: #000;
+@cxDvTabContentBorderColor:#d7e2ed;
+@cxDvTabContentBgColor: @cxThemeBg;
+
+
+/*********************************************
+    Less Mixins Overriding
+    Properties to be Overridden: 
+    1. @color
+        - All color variables - border color, font-color ...
+    2. @Font-size
+*********************************************/
+
+.cxDvNavItemMixin() {
+	@font-family: @cruxTertiaryFont;
+	@color: @cxDvNavItemFontColor;
+}
+.cxDvRecordUserImageMixin() {
+	@bg: @cxDvRecordUserImageBgColor;
+	@color: @cxDvRecordUserImageFontColor;
+}
+.cxDvWrapParentMixin() {
+	@background-color: @cxDvWrapBgColor;
+}
+.cxDvTabContentMixin() {
+	@box-shadow: 0 3px 4px 0 @cxDvTabContentBoxShadowColor;
+	@border: 1px solid @cxDvTabContentBorderColor;
+	@bg: @cxDvTabContentBgColor;
+	@cxDVTabContentBg
+}
+
+/********* Less Mixins Overriding Ends  ******/

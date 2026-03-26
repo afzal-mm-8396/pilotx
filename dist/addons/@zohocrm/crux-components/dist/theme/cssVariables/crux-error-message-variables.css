@@ -1,0 +1,48 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-field-error-msg-color: #e64c48;
+  --lyte-crux-field-error-border-color: var(--crux-element-error-border-color);
+  --lyte-crux-field-warning-msg-color: #e49000;
+  --lyte-crux-field-error-popup-background: #F14949;
+  --lyte-crux-field-error-popup-color: #fff;
+  --lyte-crux-field-error-popup-box-shadow-color: rgba(0, 0, 0, 0.3);
+  --lyte-crux-error-hover-card-popup-link-color: var(--crux-link-color);
+  --lyte-crux-error-msg-color: #FF5D5A;
+  --lyte-crux-error-field-border-color: #FF5D5A;
+  --lyte-crux-error-hover-card-popup-border-color: #e0e0e0;
+}
+/*# sourceMappingURL=crux-error-message-variables.css.map */

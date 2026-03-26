@@ -1,0 +1,91 @@
+.cxComboBoxViewButtonList {
+	background: #e7f2ff;
+	border: 1px solid #d9e8f9;
+	padding: 2px 10px;
+	border-radius: 12px;
+	font-size: 0.929rem;
+	display: inline-flex;
+	align-items: center;
+	color: #313949;
+	text-transform: capitalize;
+}
+.cxComboBoxViewButtonUserCount {
+	font-family: var(--crux-bold-font);
+	font-weight: var(--crux-font-weight-bold);
+	font-size: 0.725rem;
+	color: #313949;
+	background: #fff;
+	border: 1px solid #b7d6fb;
+	display: inline-block;
+	padding: 0 5px;
+	cursor: pointer;
+	border-radius: 10px;
+	margin-left: 5px;
+}
+.cxComboBoxViewPopover .lytePopover {
+	box-shadow: 0px 2px 8px #b1b1b1;
+	border-radius: 8px;
+}
+.cxComboBoxViewContent {
+	margin: 10px 0;
+	padding: 0 15px;
+	max-width: 350px;
+	min-width: 150px;
+	max-height: 200px;
+	overflow: auto;
+}
+.cxComboBoxViewHeader {
+	color: #202123;
+	font-family: var(--crux-bold-font);
+	font-weight: var(--crux-font-weight-bold);
+	padding-bottom: 5px;
+	font-size: 0.857rem;
+}
+.cxComboBoxViewHeaderText {
+	vertical-align: bottom;
+}
+.cxComboBoxViewUserNameLabel {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 5px;
+	margin-top: 2px;
+	color: #313949;
+	font-size: 0.857rem;
+	max-width: calc(100% - 25px);
+	overflow-wrap: break-word;
+}
+.cxComboBoxViewUsersUlWrapLi {
+	padding-bottom: 10px;
+}
+.cxComboBoxViewContent ul {
+	margin:0;
+	padding: 0;
+}
+.cxComboBoxViewUsersUlWrapLi:last-child {
+	padding-bottom: 0;
+}
+.cxComboBoxViewUserLi {
+	padding: 5px 0;
+	display: flex;
+}
+.cxComboBoxViewUserImage {
+	display: inline-block;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
+	background-size: 100%;
+	vertical-align: middle;
+}
+.cxComboBoxViewNoPhoto {
+	background-image: url('../images/nophoto.png');
+}
+.cxComboBoxViewUserPhoto {
+	object-fit: cover;
+}
+
+.cxComboxViewBtnListCont{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;	
+}

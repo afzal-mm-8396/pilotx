@@ -1,0 +1,71 @@
+.cxAlertWrapperPopupMixin() {
+	@border-radius: 0 0 8px 8px;
+	@padding: 24px 40px 30px 30px;
+}
+.cxAlertWrapperHeaderMixin() {
+	@font-size: 22px;
+	@margin-bottom: 20px;
+}
+.cxAlertWrapperPrimaryMsgMixin() {
+	@font-size: 22px;
+	// @margin-bottom: 0;
+	@margin-top: 5px;
+}
+.cxAlertAlignLeftMixin() {
+    @text-align: @value-textalign-left;
+}
+.cxAlertStatusIconMixin() {
+    @margin-top: 3px;
+}
+.cxAlertSecondaryMsgMixin() {
+	@font-size: @cxFontSize0929rem;
+}
+.cxAlertWrapperFooterMixin() {
+	@border-top: 0;
+	@padding: 0;
+	@border-radius: 0 0 8px 8px;
+}
+.cxAlertOnlyHeadingMixin() {
+	@font-size: @cxFontSize15px;
+	// @font-size: var(--crm-medium-font-size);
+	@padding-top: 3px;
+	@margin-bottom: 0;
+}
+
+
+/********* alert scrollable style starts **********/
+.cxAlertScrollablePopupMixin(){
+	@padding: 0px;
+}
+
+.cxAlertScrollableContainerMixin(){
+	@max-h: 90vh;
+}
+
+.cxAlertScrollableHeaderMixin(){
+	@padding: 25px 30px 10px;
+	@margin-bottom: 0px;	
+}
+
+.cxAlertScrollableContentMixin(){
+	@padding: 25px 30px 10px;
+	@flex: 1;	
+}
+
+.cxAlertScrollableContentWithHeadMixin(){
+	@padding-top: 10px;
+}
+
+.cxAlertScrollableFooterMixin(){
+	@padding: 20px 30px 30px;	
+}
+
+.cxAlertScrollableFooterShadowMixin(){
+	@box-shadow: @cxAlertFooterShadow;
+}
+
+.cxAlertScrollableHeaderShadowMixin(){
+	@box-shadow: @cxAlertHeaderShadow;
+}
+
+/********* alert scrollable style ends **********/

@@ -1,0 +1,111 @@
+@cxMSelModTableHoverBg: #F8FAFF;
+@cxMSelModLabelColor: #616E88;
+@cxMSelModErrorColor: #FF5D5A;
+@cxMSelModNoResultMsgColor: #8B9BB8;
+
+.cxMSelModContentMixin(){
+    @padding-top: 0px;
+    @padding-bottom: 0px;
+}
+// .cxMSelModSearchMixin(){
+//     @w: 369px;
+// }
+.cxMSelModTableStructureMixin(){
+    @border-spacing: 0px 6px;
+    @margin-bottom: -6px;
+}
+.cxMSelModTdMixin(){
+    @padding: 7px 10px;
+}
+// .cxMSelModTrMixin(){
+//     @margin-bottom: 6px;
+// }
+// .cxMSelModTrLastChildMixin(){
+//     @margin-bottom: 0px;
+// }
+.cxMSelModTdHoverMixin(){
+    @bg:@cxMSelModTableHoverBg;
+}
+.cxMSelModTdFristChildBRMixin(){
+    @border-radius: 6px 0 0 6px;
+}
+.cxMSelModTdLastChildBRMixin(){
+    @border-radius: 0 6px 6px 0;
+}
+.cxMSelModTdLastChildMixin(){
+    @width: 400px;
+    @padding-left: 0;
+}
+// .cxMSelModTdLastChildInputMixin(){
+//     @width: 386px;
+//     @top: 7px;
+// }
+// .cxMSelModTdFirsChildCheckBoxMixin(){
+//     @width: calc(100% - 30px);
+// }
+.cxMSelModCheckBoxCheckedLabelMixin(){
+    // @font-family: @cruxSecondaryFont;
+    // @font-weight: @cruxFontWeightBold;
+    @webkit-text-stroke: 0.6px;
+}
+// .cxMSelModCheckBoxLabelMixin(){
+//     @max-width: calc(100% - 20px);
+// }
+.cxMSelModCheckBoxDefaultBeforeMixin(){
+    @flex-shrink: 0;
+    @top: 0px;
+    @margin-right: 8px;
+}
+.cxMSelModCheckBoxDefaultAfterMixin(){
+    @top: 3px !important;
+}
+.cxMSelModLabelMixin(){
+    @color: @cxMSelModLabelColor;
+    @margin-bottom: 8px;
+    @font-size: @cruxBaseFontSize;
+    @font-family: @cruxPrimaryFont;
+    @margin-top: 20px;
+}
+.cxMSelModDropdownMixin(){
+    @width: 120px;
+    // @margin-right: 15px;
+}
+.cxMSelModDropdownSearchMixin(){
+    @margin-bottom: 14px;
+    @margin-top: 20px;
+    @gap: 15px;
+}
+.cxMSelModErrorMsgMixin(){
+    @color: @cxMSelModErrorColor;
+    // @width: 100%;
+    @margin-left: auto;
+    @font-size: 14px;
+    @font-family: var(--crm-font-bold);
+}
+.cxMSelModalHeadingMixin(){
+    @margin-bottom: 20px;
+}
+.cxMSelModHeaderMixin(){
+    @padding-bottom: 0px;
+}
+.cxMSelModNoResultMsgMixin(){
+    @margin-top: 21px;
+    @margin-bottom: 25px;
+    @color: @cxMSelModNoResultMsgColor;
+}
+.cxMSelModErrorIconMixin(){
+    @margin-right: 8px;
+}
+.cxMSelModRefreshBtnWrapMixin(){
+    @left: 0;
+}
+.cxMSelModRefreshCompletedBtnMixin(){
+    @top: -80px;
+}
+.cxMSelModDropdownSearchWithLabelMixin(){
+    @margin-top: 8px;
+}
+
+.cxMSelModErrorMsgOnPopoverOpenMixin(){
+    @border-bottom: 1px solid @cxMSelModErrorColor;
+}

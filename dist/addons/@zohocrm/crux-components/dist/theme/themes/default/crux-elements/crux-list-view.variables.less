@@ -1,0 +1,930 @@
+.cxListViewCompMixin(){
+    @h: 100%;
+}
+
+.cxListVwExpTableMixin(){
+    @z-index: 1;
+}
+
+.cxLvExpTableWrapperMixin(){
+    @border-radius: 6px;
+}
+
+.cxLvExpTableMixin(){
+    @min-w: unset;
+}
+
+.cxLvAutoWidthExpTableMixin(){
+    @w: auto;
+    @min-w: 100%;
+}
+
+.cxLvHeaderMixin(){
+    @padding: 7px 5px;
+}
+
+.cxLvHeaderTextSemiBoldMixin(){
+    @font-family: @cruxTertiaryFont;
+}
+
+.cxLvSeparationCircleMixin(){
+    @w: 5px;
+    @h: 5px;
+    @border-radius: 5px;
+    @margin: 0px 8px;
+    @bg: @cxLvSeparationRadiusBg;
+}
+
+.cxLvHeaderActionBtnMixin(){
+    @margin-left: 8px;
+}
+
+.cxLvHeaderActionBtnAfterMixin(){
+    @w: 100%;
+    @h: 1px;
+    @bottom: -1px;
+    @left: 0px;
+    @bg: @cxLvUnsortBtnBorder;
+}
+
+.cxLvHeaderSelectAllBtnMixin(){
+    @color: @cxLvSelectAllBtnColor;
+    @margin-left: 15px;
+}
+
+.cxLvPageCountLabelMixin(){
+    @font-family: @cruxTertiaryFont;
+    @margin: 0px 10px;
+}
+
+.cxLvPageCountDropdownBtnMixin(){
+    @padding: .cruxLESSPaddingMixin(5px 25px 5px 10px)[@padding];
+    @font-size: @cxFontSize13px; 
+}
+
+.cxLvPageCountDropItemMixin(){
+    @padding: .cruxLESSPaddingMixin(6px 15px 6px 25px)[@padding];
+    @font-size: @cxFontSize13px; 
+}
+
+.cxLvPageCountSelDropItemBeforeMixin(){
+    @top: 0px;
+    @bottom: 0px;
+    @margin: auto;
+}
+
+.cxListVwCustomCheckBoxMixin(){
+    @border: 2px solid @cxLvCheckboxBorder;
+    @bg: @cxLvCheckboxBg;
+    @w: 15px;
+    @h: 15px;
+    @border-radius: 3px;
+    @top: 1px;
+}
+
+.cxListVwCustomCheckBoxHoverMixin(){
+    @border-color: @cxLvCheckboxHoverBorder;
+}
+
+.cxListVwCustomCheckBoxFocusMixin(){
+    @border-color: @cxLvCheckboxFocusBorder;
+}
+
+.cxListVwCustomCheckBoxCheckedMixin(){
+    @border-color: @cxLvCheckboxCheckedBorder;
+    @bg: @cxLvCheckboxCheckedBg;
+}
+
+.cxListVwCustomCheckBoxCheckedAfterMixin(){
+    @w: 11px;
+    @h: 9px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -328px -234px;
+    @bg-color: @cxLvCheckboxTickIconBg; 
+    @inset: 0px;
+    @margin: auto;
+}
+
+.cxListVwPartialselectAfterMixin(){
+    @w: 10px;
+    @h: 3px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -347px -238px;
+    @bg-color: @cxLvCheckboxPartialIconBg;
+    @margin: auto;
+    @inset: 0px;
+}
+
+.cxLvRecPerPageDdBtnMixin(){
+    @padding: .cruxLESSPaddingMixin(5px 25px 5px 10px)[@padding];
+    @border-radius: 5px;
+    @font-size: @cxFontSize13px;
+}
+
+.cxLvRecPerPageDdLabelMixin(){
+    @font-size: @cxFontSize13px;
+}
+
+.cxLvRecPerPageDropBoxItemMixin(){
+    @padding: .cruxLESSPaddingMixin(6px 15px 6px 25px)[@padding];
+    @font-size: @cxFontSize13px;
+}
+
+.cxLvRecPerPageDropBoxIconMixin(){
+    @left: 8px;
+    @top: 0px;
+    @bottom: 0px;
+    @margin: auto;
+    @transform: scale(0.75);
+}
+
+.cxLvTableManageMenuBtnMixin(){
+    @w: 40px;
+    @h: 35px;
+    @border-left: 1px solid @cxLvOptMenuBorder;
+    @right: 1px;
+    @top: 1px;
+    @z-index: 15;
+    @bg: @cxLvTableOptMenuBg;
+    @border-radius: 0px 6px 0px 0px;
+}
+
+.cxLvTableManageMenuBtnHoverMixin(){
+    @bg: @cxLvOptMenuHoverBg;
+}
+
+.cxLvTableManageMenuBtnSelMixin(){
+    @box-shadow: inset 0 2px 6px @cxLvOptMenuSelBoxShadow;
+    @bg: @cxLvOptMenuSelBg;
+}
+
+.cxLvShowOverlayMixin(){
+    @opacity: 0.5;
+}
+
+.cxLvTableManageMenuBtnIconMixin(){
+    @w: 15px;
+    @h: 13px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -282px -233px;
+    @bg-color: @cxIconBaseMaskBg; 
+}
+
+.cxLvTableRowHoverTdMixin(){
+    @bg: @cxLvTableRowHoverBg;
+}
+
+.cxLvTableRowSelectedTdMixin(){
+    @border-color: @cxLvTableSelBorderColor;
+    @bg: @cxLvTableRowSelBg;
+}
+
+.cxLvEditIconWrapContMixin(){
+    @w: 100%;
+    @h: 100%;
+}
+
+.cxLvTableIconWrapMixin(){
+    @w: 29px;
+    @h: 29px;
+    @border-radius: 20px;
+    @inset: 0;
+    @margin: auto;
+}
+
+.cxLvTableIconWrapEffectMixin(){
+    @w: 27px;
+    @h: 27px;
+    @border: 1px solid @cxLvTableIconWrapBorder;
+    @bg: @cxLvTableIconWrapBg;
+    @transform: scale(0);
+    @trasition: transform 0.15s cubic-bezier(0.4,0.0,0.2,1);
+    @border-radius: 50%;
+}
+
+.cxLvTableIconWrapHoverEffectMixin(){
+    @transform: scale(1);
+}
+
+.cxLvMoreIconMixin(){
+    @w: 3px;
+    @h: 13px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -294px -4px;
+    @bg-color: @cxIconBaseMaskBg; 
+    @transform: rotate(90deg);
+    @z-index: 2;
+}
+
+.cxLvEditIconMixin(){
+    @w: 13px;
+    @h: 13px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -69px -153px;
+    @bg-color: @cxIconBaseMaskBg; 
+    @z-index: 2;
+}
+
+.cxLvTickIconMixin(){
+    @w: 14px;
+    @h: 14px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -229px -177px;
+    @bg-color: @cxLvTickIconBg; 
+    @z-index: 2;
+}
+
+// .cxLvActEditIconsMixin(){
+//     @margin-right: 5px;
+// }
+
+.cxLvActEditFirstIconMixin(){
+    @inset: initial;
+    @margin: initial;
+    @top: 4px;
+    @bottom: 0px;
+    @left: 4px;
+}
+
+.cxLvActEditSecondIconMixin(){
+    @inset: initial;
+    @margin: initial;
+    @top: 4px;
+    @bottom: 0px;
+    @left: 38px;
+}
+
+.cxLvActEditSecondIconBeforeMixin(){
+    @w: 8px;
+    @h: 8px;
+    @inset: 0;
+    @margin: auto;
+    @bg: @cxLvTableIconWrapBg;
+}
+
+.cxLvMangeColumnModalContentMixin(){
+    @max-h: calc(100vh - 200px);
+}
+
+.cxLvAlphaSortBtnMixin(){
+    @font-size: @cxFontSize11px;
+    @padding: .cruxLESSPaddingMixin(1px 18px 2px 8px)[@padding];
+    @border-radius: 10px;
+    @bg: @cxLvAlphaSortBtnBg;
+    @border: 1px solid @cxLvAlphaSortBtnBorder;
+    @margin-left: 5px;
+    @font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+}
+
+.cxLvAlphaSortBtnHoverMixin(){
+    @bg: @cxLvAlphaSortBtnActiveBg;
+}
+
+.cxLvAlphaSortBtnSelMixin(){
+    @border-color: @cxLvAlphaSortBtnActiveBorder;
+}
+
+.cxLvAlphaSearchMixin(){
+    @padding-right: 7px;
+}
+
+.cxLvAlphaSortEditMixin(){
+    @top: 0px;
+    @right: 0px;
+    @w: 23px;
+    @h: 100%;
+    @border-radius: if( (@direction = rtl), 10px 0px 0px 10px, 0px 10px 10px 0px);
+}
+
+.cxLvAlphaSortEditIconMixin(){
+    @w: 8px;
+    @h: 8px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -71px -118px;
+    @bg-color: @cxIconBaseMaskBg; 
+}
+
+.cxLvAlphaSortEditHoverMixin(){
+    @bg: @cxLvAlphaSortBtnEditHoverBg;
+}
+
+.cxLvAlphaSortBtnDdIconMixin(){
+    @w: 8px;
+    @h: 4px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -1px -2px;
+    @bg-color: @cxIconBaseMaskBg; 
+    @right: 5px;
+    @top: 0px;
+    @bottom: 0px;
+    @margin: auto;
+}
+
+.cxLvMoreOptDropdownIconMixin(){
+    @transform: rotate(-90deg);
+    @right: 7px;
+}
+
+.cxLvAlphaSortMenuMixin(){
+    @min-w: initial;
+}
+
+.cxLvAlphaSortMenuItemMixin(){
+    @padding: 4px 15px;
+}
+
+.cxLvAlphaSortMenuSelMixin(){
+    @color: @cxLvAlphaSortMenuSelColor;
+}
+
+.cxLvSortMenuItemMixin(){
+    @padding: .cruxLESSPaddingMixin(7px 10px 7px 30px)[@padding];
+}
+
+.cxLvDisabledMixin(){
+    @opacity: 0.4;
+}
+
+.cxLvSortMenuIconMixin(){
+    @left: 11px;
+    @top: 0px;
+    @bottom: 0px;
+    @margin: auto;
+}
+
+.cxLvSortAscIconMixin(){
+    @w: 9px;
+    @h: 11px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -365px -234px;
+    @bg-color: @cxIconBaseMaskBg; 
+}
+
+.cxLvSortDesIconMixin(){
+    @transform: rotate(180deg);
+}
+
+.cxLvSortPinIconMixin(){
+    @w: 16px;
+    @h: 15px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -266px -107px;
+    @bg-color: @cxIconBaseMaskBg; 
+    @left: 9px;
+}
+
+.cxLvSortUnpinIconMixin(){
+    @w: 15px;
+    @h: 15px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -244px -107px;
+    @bg-color: @cxIconBaseMaskBg;
+    @left: 9px;
+}
+
+// .cxLvTableManagePopupMixin(){
+//     @padding: 5px 0px;
+//     @border: 1px solid @cxLvOptMenuPopBorder;
+//     @border-radius: 6px;
+//     @min-w: 200px;
+// }  
+
+// .cxLvTableManagePopLiContMixin(){
+//     @margin: 0px;
+//     @padding: 0px;
+// }
+
+// .cxLvTableManagePopLiMixin(){
+//     @padding: 8px 20px;
+// }
+
+// .cxLvTableManagePopLiHoverMixin(){
+//     @bg: @cxLvOptMenuLiHover;
+// }
+
+.cxLvTableManagePopLiDisabledMixin(){
+    @opacity: 0.3;
+    @bg: none;
+}
+
+.cxLvActivityColMixin(){
+    @w: 140px;
+    @min-w: 140px;
+    @padding: 9px 10px;
+}
+
+.cxLvHideActivityColMixin(){
+    @w: 0px;
+    @min-w: 0px;
+    @max-w: 0px;
+    @padding: 0px;
+}
+
+.cxLvTableCompTdMixin(){
+    @padding: 9px 10px;
+    @line-height: 20px;
+    @max-w: 200px;
+}
+
+.cxLvTableCompHeadElemMixin(){
+    @min-w: 70px;
+    @w: 200px;
+}
+
+.cxLvTableAlphaSearchElemHeadMixin(){
+    @min-w: 120px;
+}
+
+.cxLvAutoWidthTableThMixin(){
+    @min-w: 200px;
+}
+
+
+.cxLvTableHeaderRowThMixin(){
+    @padding: .cruxLESSPaddingMixin(9px 35px 9px 10px)[@padding];
+    @border-bottom: none;
+}
+
+.cxLvActEditIconColMixin(){
+    @padding: 9px 10px;
+    @w: 70px;
+    @min-w: 70px;
+}
+
+.cxLvTableHeaderRowFixedThMixin(){
+    @padding: 9px 10px;
+    @w: 36px;
+    @min-w: 36px;
+}
+
+.cxLvCheckBoxColRadioBtnMixin(){
+    @margin-right: 0px;   
+}
+
+.cxLvLockIconColMixin(){
+    @min-w: 60px !important;
+    @w: 60px !important;
+}
+
+.cxLvActivityIconMixin(){
+    @w: 17px;
+    @h: 17px;
+    @margin-right: 5px;
+}
+
+.cxLvActEventIconMixin(){
+    @bg-img: @cruxSprite;
+    @bg-pos: -327px -253px;
+    @bg-color: @cxIconBaseMaskBg;
+}
+
+.cxLvActTaskIconMixin(){
+    @bg-img: @cruxSprite;
+    @bg-pos: -374px -252px;
+    @bg-color: @cxIconBaseMaskBg; 
+}
+
+.cxLvActCallIconMixin(){
+    @bg-img: @cruxSprite;
+    @bg-pos: -351px -253px;
+    @bg-color: @cxIconBaseMaskBg; 
+}
+
+.cxLvActivityColLinkMixin(){
+    @line-height: 19px;
+    @h: 18px;
+    @padding: .cruxLESSPaddingMixin(0 2px 0 5px)[@padding];
+    @font-size: @cxFontSize11px;
+    @border-radius: 2px;
+    @color: @cxLvActivityTextColor;
+}
+
+.cxLvActivityColLinkAfterMixin(){
+    @border-width: 9px;
+    @border-style: solid inset solid solid;
+    @left: calc(100% - 1px);
+}
+
+.cxLvActTodayTaskMixin(){
+    @bg: @cxLvActivityTodayTaskBg;
+}
+
+.cxLvActTodayTaskAfterMixin(){
+    @border-color: @cxLvActivityTodayTaskBg transparent @cxLvActivityTodayTaskBg @cxLvActivityTodayTaskBg;
+}
+
+.cxLvActOverdueMixin(){
+    @bg: @cxLvActivityOverdueBg;
+}
+
+.cxLvActOverdueAfterMixin(){
+    @border-color: @cxLvActivityOverdueBg transparent @cxLvActivityOverdueBg @cxLvActivityOverdueBg;
+}
+
+.cxLvActLaterTaskMixin(){
+    @bg: @cxLvActivityLaterTaskBg;
+}
+
+.cxLvActLaterTaskAfterMixin(){
+    @border-color: @cxLvActivityLaterTaskBg transparent @cxLvActivityLaterTaskBg @cxLvActivityLaterTaskBg;
+}
+
+.cxLvActivityTooltipMixin(){
+    @font-size: @cxFontSize14px;
+}
+
+.cxLvMoreOptionsMenuBodyMixin(){
+    @min-w: 190px;
+}
+
+.cxLvMoreOptionsMenuItemsMixin(){
+    @padding: 8px 22px;
+}
+
+.cxLvMoreOptionsActivityMenuMixin(){
+    @transform: translate(0,-6px);
+    @z-index: 10025;
+}
+
+.cxLvMoreOptionsCallMenuMixin(){
+    @z-index: 10030;
+}
+
+.cxLvAppointMenuItemSplitMixin(){
+    @border-bottom: 1px solid @cxLvMenuSplitBorder;
+}
+
+.cxLvCustomButtonWrapMixin(){
+    @top: 6px;
+}
+
+.cxLvCustomButtonsMenuListMixin(){
+    @max-h: 165px;
+}
+
+.cxLvOnlineEntityAfterMixin(){
+    @w: 7px;
+    @h: 7px;
+    @border-radius: 7px; 
+    @bg: @cxLvOnlineEntityBg;
+    @right: 0px;
+    @top: 0px;
+}
+
+.cxLvEventColorSpanMixin(){
+    @left: -17px;
+    @top: 4px;
+    @w: 14px;
+    @h: 14px;
+    @border-radius: 14px;
+    @z-index: 1;
+}
+
+.cxLvTaskSyncIconMixin(){
+    @w: 17px;
+    @h: 14px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -303px -255px;
+    @bg-color: @cxIconBaseMaskBg; 
+}
+
+.cxLvLoaderWrapMixin(){
+    @top: 1px;
+    @left: 1px;
+    @w: 100%;
+    @h: 100%;
+    @z-index: 10000;
+    @bg: @cxLvLoaderOverlayBg;
+    @opacity: 0.7;
+}
+
+.cxLvTableLoaderMixin(){
+    @z-index: 1;
+    @top: 50%;
+    @left: 47%;
+    @h: 22px;
+    @w: 22px;
+    @animation: cxLvTableLoaderAnim .6s infinite linear;
+    @border: 2px solid @cxLvLoaderBorder;
+    @border-top: 2px solid @cxLvLoaderBorderGap;
+    @border-radius: 50%;
+}
+
+.cxLvEventTypeColorIndicatorMixin(){
+    @left: 0px;
+    @top: 13px;
+    @w: 8px;
+    @h: 8px;
+    @border-radius: 8px;
+}
+
+.cxLvNotFoundColorMixin(){
+    @color: @cxLvNotFoundColor;
+}
+
+.cxLvBestTimeTagListMixin(){
+    @padding: 3px 5px;
+    @margin-right: 5px;
+}
+
+.cxLvCampignTypeIconMixin(){
+    @w: 17px;
+    @h: 16px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -280px -252px;
+    @bg-color: @cxIconBaseMaskBg; 
+    @margin-left: 8px;
+}
+
+.cxLvCampignTypeTextMixin(){
+    @max-w : calc(100% - 25px); 
+}
+
+.cxLvColorAppliedPicklistMixin(){
+    @padding: 3px 11px;
+    @border-radius: 15px;
+    @border: 1px solid @cxLvColorPicklistBorder;
+    @line-height: 16px;
+    @font-size: @cxFontSize13px;
+    @max-w:  calc(100% - 25px);
+}
+
+.cxLvColorAppliedPKNoneMixin(){
+    @border: 1px solid transparent;
+    @font-size: unset;
+    @padding-left: 0px;
+}
+
+.cxLvCustPopFormDescMixin(){
+    @margin-top: 15px;
+}
+
+.cxLvCustPopLabelMixin(){
+    @margin-right: 8px;
+    @color: @cxLvCustomPopupLabelColor;
+    @w: 100px;
+    @min-w: 100px;
+}
+
+.cxLvSortAppliedFldHeadMixin(){
+    @max-w: calc(100% - 20px);
+}
+
+.cxLvAlphaSearchInclSortApldHeadElemMixin(){
+    @max-w: calc(100% - 64px);
+}
+
+.cxLvAlphaSearchInclHeadElemMixin(){
+    @max-w: calc(100% - 50px);
+}
+
+.cxLvNameLinkColumnTextMixin(){
+    @color: @cxLvBaseColor;
+}
+
+.cxLvTextAreaElemThMixin(){
+    @min-w: 70px;
+    @w: 250px;
+}
+
+.cxLvAutoWTextAreaElemThMixin(){
+    @min-w: 250px;
+}
+
+.cxLvTextAreaElemTdMixin(){
+    @max-w: 250px;
+}
+
+.cxLvFixedLastColMixin(){
+    @min-w: 40px;
+    @max-w: 40px;
+    @w: 40px;
+}
+
+.cxLvTableTagElemAutoThMixin(){
+    @min-w: 400px;
+}
+
+.cxLvTableTagElemThMixin(){
+    @min-w: 150px;
+    @w: 400px;
+}
+
+.cxLvTableTagElemTdMixin(){
+    @max-w: 400px;
+}
+
+.cxLvRecordCountMixin(){
+    @margin-left: 4px;
+}
+
+.cxLvLoadingDivMixin(){
+    @w: 100%;
+    @h: 100%;
+}
+
+.cxLvLoaderMixin(){
+    @w: 32px;
+    @h: 32px;
+    @border-width: 5px;
+}
+
+.cxLvHeaderSortedColNameMixin(){
+    @margin-left: 3px;
+}
+
+.cxLvTableCompNoCustBtnMixin(){
+    @w: 0px !important;
+    @min-w: 0px !important;
+    @padding: 0px !important;
+}
+
+.cxLvNoManageLastColMixin(){
+    @w: 12px !important;
+    @min-w: 12px !important;
+    @padding: 0px !important;
+}
+
+.cxLvTextAreaElemPreMixin(){
+    @min-w: initial !important;
+    @max-w: initial;
+    @font-family: @cruxPrimaryFont;
+}
+
+.cxLvTextAreaElemWrapPreMixin(){
+    @w: calc(100% - 25px);
+    @max-w: inherit !important;
+}
+
+.cxLvTextAreaElemShowMoreBtnMixin(){
+    @w: 20px;
+	@h: 18px;
+	@border: 1px solid @cxLvTextAreaPopToggleBtnBorder;
+	@bg: @cxLvTextAreaPopToggleBtnBg;
+	@border-radius: 4px;
+	// @margin-left: 5px;
+	@right: 0px;
+	@top: 0px;
+}
+
+.cxLvTextAreaElemShowMoreBtnIconMixin(){
+    @bg-image: @cruxSprite;
+	@bg-position: -1px -2px;
+	@w: 8px;
+	@h: 4px;
+}
+
+.cxLvTableCompEmptyRowTdMixin(){
+    @h: 60px;
+}
+
+.cxLvTableCompNoResultMixin(){
+    @w: calc(100% - 10px);
+    @top: 40px;
+    @left: 5px;
+    @padding: 20px;
+    @z-index: 1;
+}
+
+.cxLvRecordCountLoaderMixin(){
+    @h: 10px;
+    @w: 10px;
+    @bg-img: @cxLvRecordLoaderBgImg;
+    @margin-top: 3px;
+}
+
+.cxLvViewContainerMixin(){
+    @w: 100%;
+    @h: 2px;
+    @top: 35px;
+    @bg: @cxLvTableBorder;
+    @z-index: 15;
+    @left: 0px;
+}
+
+.cxLvViewTableResizeHandleMixin(){
+    @bg: @cxLvResizeHandleBg;
+    @right: 12px;
+    @opacity: 1;
+    @top: 6px;
+    @h: 67%;
+    @w: 1px;
+}
+
+.cxLvViewTableResizeHandleHoverMixin(){
+    @bg-color: @cxLvResizeHandleHoverBg;
+    @h: 100%;
+    @top: 0px;
+    @w: 2px;
+}
+
+.cxLvViewTableResizeHeadHoverMixin(){
+    @h: 100vh;
+}
+
+.cxLvViewTableResizeHandleBeforeMixin(){
+    @w: 2px;
+    @right: 12px;
+    @bg: @cxLvResizeHandleHoverBg;
+    @h: 36px;
+    @z-index: 1;
+}
+
+.cxLvViewTableResizeHandleAfterMixin(){
+    @h: 100%;
+    @bg: @cxLvResizeHandleBg;
+    @w: 1px;
+}
+
+.cxLvViewTableSortIconMixin(){
+    @top: 0px;
+}
+
+.cxLvLockIconMixin(){
+    @w: 14px;
+    @h: 16px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -165px -262px;
+    @bg-color: @cxIconBaseMaskBg; 
+    @left: 1px;
+}
+
+.cxLvLockIconWithCBMixin(){
+    @margin-left: 8px;
+}
+
+.cxLvVisionWaitingIconMixin(){
+    @w: 16px;
+    @h: 16px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -119px -382px;
+}
+
+.cxLvVisionProcessIconMixin(){
+    @w: 19px;
+    @h: 16px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -245px -361px;
+    @bg-color: @cxIconBaseMaskBg; 
+}
+
+.cxLvStopProcessIconMixin(){
+    @w: 14px;
+    @h: 14px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -269px -362px;
+    @bg-color: @cxIconBaseMaskBg;
+    @left: 1px;
+}
+
+.cxLvVisionRejectIconMixin(){
+    @bg-color: @cxLvRedIconBg;
+}
+
+
+.cxLvWaitingReviewIconMixin(){
+    @w: 17px;
+    @h: 17px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -289px -361px;
+    @bg-color: @cxIconBaseMaskBg;
+}
+
+.cxLvWaitingApprovalIconMixin(){
+    @w: 16px;
+    @h: 16px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -310px -361px;
+    @bg-color: @cxIconBaseMaskBg;
+}
+
+.cxLvDescMenuBodyMixin(){
+    @padding: 15px 0px;
+}
+
+.cxLvDescContDivMixin(){
+    @padding: .cruxLESSPaddingMixin(0px 43px 0px 15px)[@padding];
+    @font-family: @cruxPrimaryFont;
+    @line-height: 18px;
+}
+
+.cxLvDescCloseIconMixin(){
+    @top: 15px;
+    @right: 9px;
+    @w: 18px;
+    @h: 18px;
+    @border-radius: 18px;
+}
+
+.cxLvDescCloseIconHoverMixin(){
+    @bg: @cxLvTextAreaPopCloseBtnHoverBg;
+}
+
+.cxLvDescCloseIconAfterMixin(){
+	@bg-img: @cruxSprite;
+	@bg-pos: -71px -118px;
+	@bg-color: @cxIconBaseMaskBg;
+	@w: 8px;
+	@h: 8px;
+}

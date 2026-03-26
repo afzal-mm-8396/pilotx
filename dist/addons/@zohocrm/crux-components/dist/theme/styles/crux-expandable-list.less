@@ -1,0 +1,255 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-expandable-list.variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+.cxExpListDefWidth{
+    .cxExpListDefWidthMixin();
+    width: @w;
+}
+
+.cxExpListMoreTagOpt{
+    .cxExpListMoreTagOptMixin();
+    display: inline-block;
+    color: @color;
+}
+
+.cxExpListMoreCount{
+    position: relative;
+    cursor: pointer;
+}
+
+.cxExpListMoreCount::after{
+    .cxExpListMoreCountAfterMixin();
+    content: "";
+    position: absolute;
+    width: @w;
+    height: @h;
+    background: @bg;
+    @{property-left}: @left;
+    bottom: @bottom;
+}
+
+.cxExpListMoreCount::before{
+    .cxExpListMoreCountBeforeMixin();
+    content: "";
+    width: @w;
+    height: @h;
+    position: absolute;
+    background: @bg;
+    @{property-left}: @left;
+    bottom: @bottom;
+    z-index: @z-index;
+    transition: @transition;
+    transform: @transform;
+    transform-origin: @value-textalign-left;
+}
+
+.cxExpListMoreCount:hover::before{
+    .cxExpListMoreCountHoverBeforeMixin();
+    transform: @transform;
+}
+
+.cxExpListPopoverCont{
+    .cxExpListPopoverContMixin();
+    padding: @padding;
+    display: flex;
+    flex-direction: column;
+}
+
+// .cxExpListPopElemWrap{
+//     .cxExpListPopElemWrapMixin();
+//     margin-bottom: @margin-bottom;
+// }
+
+// .cxExpListTag .cxExpListElemText{
+//     .cxExpListElemTextMixin();
+//     position: relative;
+//     top: @top;
+// }
+
+.cxExpListElemText{
+    vertical-align: top;
+}
+
+.cxExpListElementLi{
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.cxExpListPopElemWrap .cxExpListElementLi{
+    .cxExpListPopElemLiMixin();
+    max-width: @max-w;
+    box-sizing: border-box;
+}
+
+.cxExpListPopElemWrap .cxExpListElementLi{
+    .cxExpListPopElemLiMixin();
+    max-width: @max-w;
+    box-sizing: border-box;
+}
+
+.cxExpListImg{
+    .cxExpListImgMixin();
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    border: @border;
+    box-sizing: border-box;
+    position: absolute;
+    @{property-left}: @left;
+}
+
+.cxExpListElemTitle{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+}
+
+.cxExpListTag .cxExpListElementLi{
+    .cxExpListElementLiMixin();
+    padding: @padding;
+    line-height: @line-height;
+    @{property-margin-right}: @margin-right;
+}
+
+.cxExpListTag .cxExpListElementLi::after{
+    .cxExpListElementLiAfterMixin();
+    content: '';
+    position: absolute;
+    width: @w;
+    height: @h;
+    @{property-left}: @left;
+    transform: @transform;
+    border-top: @border-top;
+    @{property-border-right}: @border-right;
+    border-radius: @border-radius;
+    box-sizing: border-box;
+}
+
+.cxExpListTag .cxExpListElementLi::before{
+    .cxExpListElementLiBeforeMixin();
+    content: '';
+    position: absolute;
+    border-radius: @border-radius;
+    inset: @inset;
+    border: @border;
+    @{property-border-right}: @border-right;
+}
+
+.cxExpListTag.cxExpListPopoverCont{
+    .cxExpListTagPopoverContMixin();
+    gap: @gap;
+}
+
+
+.cxExpListDefault .cxExpListElemLiWithImg.cxExpListElementLi,
+.cxExpListTag .cxExpListElemLiWithImg.cxExpListElementLi{
+    .cxExpListElemLiWithImgMixin();
+    @{property-padding-left}: @padding-left;
+}
+
+.cxExpListDefault:not(.cxExpListPopoverCont) .cxExpListElementLi{
+    .cxExpListDefElemLiMixin();
+    padding: @padding;
+    border: @border;
+    border-radius: @border-radius;
+    @{property-margin-right}: @margin-right;
+    background: @bg;
+}
+
+.cxExpListDefault .cxExpListImg{
+    .cxExpListDefLiImgMixin();
+    @{property-left}: @left;
+    border: @border;
+}
+
+.cxExpListPopoverCont.cxExpListDefault{
+    .cxExpListDefPopContMixin();
+    gap: @gap;
+}
+
+.cxExpListPopoverCont.cxExpListDefault .cxExpListImg{
+    .cxExpListDefPopImgMixin();
+    @{property-left}: @left;
+    position: relative;
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+}
+
+.cxExpListDefault.cxExpListPopoverCont .cxExpListElemLiWithImg.cxExpListElementLi{
+    .cxExpListDefPopImgLiMixin();
+    @{property-padding-left}: @padding-left;
+    display: flex;
+    align-items: center;
+}
+
+.cxExpListPopoverCont.cxExpListDefault .cxExpListElemText{
+    .cxExpListDefPopTextMixin();
+    @{property-margin-left}: @margin-left;
+}
+
+.cxExpListDDItemWrap .cxExpListDDItemError{
+    .cxExpListDDItemErrorMixin();
+    border-color: @border-color;
+    background: @bg;
+}
+
+.cxExpListDDItemWrap .cxExpListDDItemError:hover .cxExpListDDCloseIcon{
+    .cxExpListDDCloseIconMixin();
+    background: @bg;
+}
+
+.cxExpListTagWrapMode{
+    .cxExpListTagWrapModeMixin();
+    display: flex;
+    flex-wrap: wrap;
+    gap: @gap;
+}
+
+.cxExpListTagWrapMode .cxExpListElementLi{
+    .cxExpListTagWrapModeLiMixin();
+    @{property-margin-right}: @margin-right;
+}
+
+.cxExpListElemRemoveIconWrap{
+    .cxExpListElemRemoveIconWrapMixin();
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    background-color: @bg;
+    position: absolute;
+    @{property-right}: @right;
+    visibility: hidden;
+    cursor: pointer; 
+}
+
+.cxExpListElemRemoveIconWrap .cxCancelIcon{
+    .cxExpListElemRemoveIconMixin();
+    background-color: @bg-color;
+}
+
+.cxExpListElementLi:hover .cxExpListElemRemoveIconWrap{
+    visibility: visible;
+}
+
+.cxExpListElemLiClickable{
+    .cxExpListElemLiClickableMixin();
+    font-family: @font-family;
+    color: @color;
+}
+
+.cxExpListPopoverCont .cxExpListElemLiClickable{
+    .cxExpListPopElemLiClickableMixin();
+    font-family: @font-family;
+}
+
+.cxExpListPopoverCont .cxExpListElemLiClickable:hover{
+    .cxExpListPopElemLiClickableHoverMixin();
+    color: @color;
+}

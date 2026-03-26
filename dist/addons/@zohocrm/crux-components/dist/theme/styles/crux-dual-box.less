@@ -1,0 +1,171 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-dual-box.variables.less";
+
+@import "../themes/default/less-variables/crux-dual-box-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-dual-box-variables.less";
+}
+
+crux-dual-box .lyteListboxLeftPanel {
+	.cruxDualBoxLeftPanelMixin();
+	@{property-margin-right}: @margin-right;
+	@{property-margin-left}: 0;
+}
+crux-dual-box .lyteLBDragElement,
+crux-dual-box .lyteListBoxLeftWrap,
+crux-dual-box .lyteListBoxRightWrap { 
+	.cxDualBoxLyteBoxResetMixin();
+	// margin: @margin;
+	padding: 0;
+}
+// crux-dual-box .lyteListboxPanels,
+// lyte-dual-listbox {
+// 	max-height: 370px;
+// }
+crux-dual-box .lyteListboxPanels {
+	height: 370px;
+	box-sizing: border-box;
+}
+crux-dual-box lyte-dual-listbox {
+	height: auto !important;
+	max-height: 370px;
+}
+// crux-dual-box .lyteListboxRightPanel .lyteListBoxRightWrap:first-child,
+/*Extra space comes in pinned column */
+crux-dual-box .lyteListboxleftElementWrap,
+crux-dual-box .lyteListboxRightPanel {
+	.cxDualBoxLeftRightPanelMixin();
+	padding-top: @padding-top;
+}
+crux-dual-box .lyteListBoxLeftElement {
+	.cxDualBoxLyteListBoxLeftElementMixin();
+	padding: @padding;
+}
+crux-dual-box .lyteListBoxRightElement {
+	.cxDualBoxLyteListBoxRightElementMixin();
+	padding: @padding;
+	position: relative;
+}
+.cxDualBoxContent {
+	display: flex;
+	width: 100%;
+}
+.cxDualBoxDragIcon {
+	.cxDualBoxDragIconMixin();
+	-webkit-mask-image: @cruxSprite;
+	mask-image: @cruxSprite;
+	-webkit-mask-position: @-webkit-mask-position;
+	mask-position: @mask-position;
+	color: @color;
+	width: @w;
+	height: @h;
+	@{property-margin-right}: @margin-right;
+	cursor: move;
+	visibility: hidden;
+}
+.cxDualBoxLabel {
+	.cxDualBoxLabelMixin();
+	@{property-margin-right}: @margin-right;
+	overflow-wrap: break-word;
+	overflow: hidden;
+	white-space: normal;
+	flex: 1;
+}
+.cxColPinIcon,
+.cxColPinActiveIcon {
+	.cxColPinActiveIconMixin();
+	display: inline-block;
+	background-image: @bg-img;
+	width: @w;
+	height: @h;
+	cursor: pointer;
+	flex-shrink: 0;
+}
+.cxColPinIcon {
+	.cxColPinIconMixin();
+	background-position: @bg-pos;
+}
+.cxColPinActiveIcon {
+	.cxColPinActiveIconMixin();
+	background-position: @bg-pos;
+}
+crux-dual-box .cxColPinIcon {
+	visibility: hidden;
+}
+.lyteListBoxRightElement:hover .cxDualBoxDragIcon,
+.lyteListBoxRightElement:hover .cxColPinIcon {
+	visibility: visible;
+}
+crux-dual-box .lyteListboxLeftPanel, 
+crux-dual-box .lyteListboxRightPanel {
+	.cruxDualBoxMixin();
+	border-radius: @border-radius;
+	flex-grow: unset; /* Added     flex-grow: unset; to override Long Box width issue from lyte component update */
+}
+crux-dual-box lyte-lb-add,
+crux-dual-box lyte-lb-remove {
+	.cruxDualBoxAddRemoveMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	-webkit-mask-image: @cruxSprite;
+	mask-image: @cruxSprite;
+	width: @w;
+	height: @h;
+	background-color: @background-color;
+}
+crux-dual-box lyte-lb-add {
+	.cruxDualBoxAddMixin();
+	-webkit-mask-position: @-webkit-mask-position;
+	mask-position: @mask-position;
+}
+crux-dual-box lyte-lb-remove {
+	.cruxDualBoxRemoveMixin();
+	-webkit-mask-position: @-webkit-mask-position;
+	mask-position: @mask-position;
+	position: absolute;
+    @{property-right}: 10px;
+    top: 6px;
+}
+crux-dual-box lyte-lb-add::after,
+crux-dual-box lyte-lb-remove::before,
+crux-dual-box lyte-lb-add::before {
+	content: none;
+}
+.cxDualBoxMandatorySign {
+	.cxDualBoxMandatorySignMixin();
+	color: @color;
+}
+crux-dual-box .lyteListBoxNoResultsFound {
+	.cruxDualBoxNoResultsFoundMixin();
+	align-items: flex-start;
+	height: @h;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+crux-dual-box .cxPinnedCol .lyteLbAdd {
+	display: none;
+}
+
+.cruxFormViewComponent.cxBoxBg{
+	.cxDualBoxcruxFormViewComponentMixin();
+	min-width: @min-w;
+	box-sizing: border-box;
+}
+.cruxFormViewComponent.boxBg .crmFormComponentRow > .lyteField{
+	.cxDualBoxcruxFormViewLyteFieldMixin();
+	min-width: @min-w;
+	background-color: @background-color;
+	max-width: @max-w;
+}
+.cxColPinDisabled {
+	opacity: 0.3;
+	cursor: default;
+}
+crux-dual-box .lyteListboxYield {
+	@{property-margin-right}: 10px;
+}

@@ -1,0 +1,72 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-related-list-table.variables.less";
+
+@import "../themes/default/less-variables/crux-related-list-table-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-related-list-table-variables.less";
+}
+
+.cx_rl_header{
+	.cx_rl_headerMixin();
+	justify-content: space-between;
+	margin-bottom: @margin-bottom;
+}
+.cx_rl_scroll_header{
+	.cx_rl_scroll_headerMixin();
+	font-family: @font-family;
+	color: @color;
+	font-size: @font-size;
+}
+.cx_rl_table_component{
+	.cx_rl_table_componentMixin();
+	display: block;
+	margin-bottom: @margin-bottom;
+}
+.related_listview_tale lyte-tr:hover .dv_list_table_moreicon,
+.dv_list_table_moreicon.lyteMenuSelected{
+	visibility: visible;
+}
+/*
+.dv_list_table_moreicon_parent{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    visibility: hidden;
+}
+*/
+.dv_list_table_moreicon{
+	.dv_list_table_moreiconMixin();
+	visibility: hidden;
+	position: absolute;
+	top: @top;
+    @{property-left}: @left;
+	transform: @transform;
+}
+.editDeleteIcons{
+	.editDeleteIconsMixin();
+	width: @w;
+}
+
+crm-relatedlist[cx-prop-content-overflow="true"] {
+	height: inherit;
+	overflow: auto;
+	display: block;
+}
+crux-related-list-table .lyteNavigator {
+    justify-content: flex-end;
+    @{property-padding-right}: 20px;
+    margin-top: 10px;
+}
+crux-related-list-table lyte-yield[yield-name="navigatorYield"] {
+	gap:0;
+}
+crux-related-list-table  .lyteNavigatorMidPoint {
+    display: flex;
+    align-items: center;
+}

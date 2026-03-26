@@ -1,0 +1,323 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-lookup-component.variables.less";
+
+@import "../../themes/default/less-variables/crux-input-elements-variables.less";
+
+@import "../../themes/default/less-variables/crux-lookup-component-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-lookup-component";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+	@import "../../themes/default/css-variables/crux-input-elements-variables.less";
+    @import "../../themes/default/css-variables/crux-lookup-component-variables.less";
+}
+
+.cxLookupComponent .cxBoxLeftContent {
+	.cxLookupComponentLeftContentMixin();
+	cursor: text;
+	background: @bg;
+	border-radius: @border-radius;
+}
+
+.cxLookupComponent lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox input,
+.cxLookupComponent lyte-dropdown {
+	.cxLookupComponentDropdownMixin();
+	border-radius: @border-radius;
+}
+.cxLookupComponent lyte-input,
+.cxLookupComponent lyte-autocomplete {
+	.cxLookupComponentAutocompleteMixin();
+	flex-grow: 1;
+	border-radius: @border-radius;
+	display: block;
+	width: @w;
+}
+
+.cxLookupComponent.cxBoxWithoutRightIcon .cxBoxLeftContent {
+	.cxLookupCompNoRightIconLeftContentMixin();
+	border-radius: @border-radius;
+}
+.cxLookupComponent lyte-autocomplete lyte-dropdown lyte-drop-button {
+	.cxLookupComponentAutocompleteDropButtonMixin();
+	padding: @padding;
+	border-radius: @border-radius;
+	display: block;
+}
+.cxLookupComponent lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox .lyteField,
+.cxLookupComponent .lyteInputBox .lyteField {
+	.cxLookupComponentAutocompleteInputFieldMixin();
+	padding: @padding;
+	border: @border;
+	border-radius: @border-radius;
+}
+.cxLookupComponent lyte-autocomplete lyte-input input,
+.cxLookupComponent lyte-input input {
+	.cxLookupComponentAutocompleteInputMixin();
+	outline: @outline;
+	box-shadow: @box-shadow;
+	// text-overflow: ellipsis;
+}
+.cxLookupComponent:hover input {
+	text-overflow: initial; /*On Hover removed ellipsis in input to faciliate input default mouse scroll */
+}
+.cxLookupComponent lyte-autocomplete lyte-input .cxLookupCompInputElem {
+	.cxLookupComponentAutocompleteInputElemMixin();
+	@{property-padding-right}: @padding-right;
+	@{property-padding-left}: @padding-left;
+}
+
+.cxLookupComponent lyte-autocomplete.cxLookupNoValueSel .cxLookupCompInputElem{
+	.cxLookupAutoCompNoValueElemMixin();
+	@{property-padding-right}: @padding-right;
+}
+.cxLookupComponent lyte-autocomplete.cxLookupInputLoading lyte-input input {
+	.cxLookupComponentAutocompleteInputLoadingInputElemMixin();
+	@{property-padding-right}: @padding-right;
+}
+
+.cxLookupComponent .cxBoxSpinWrapper{
+	.cxLookupBoxSpinWrapperMixin();
+	@{property-padding-right}: @padding-right;
+}
+
+.cxLookupComponent .cxBoxCloseIconWrap {
+	.cxLookupComponentCloseIconWrapMixin();
+	width: @w;
+	cursor: pointer;
+	visibility: hidden;
+}
+.cxLookupComponent:hover .cxBoxCloseIconWrap {
+	visibility: visible;
+}
+.cxLookupComponent .cxBoxSpin {
+	.cxLookupComponentBoxSpinMixin();
+	width: @w;
+	height: @h;
+	display: block;
+}
+.cxLookupDropbox .lyteautocompleteHighlight {
+	.cxLookupDropboxAutocompleteHighlightMixin();
+	background: @bg;
+}
+.cxLookupDropboxLabel {
+	.cxLookupDropboxLabelMixin();
+	max-width: @max-w;
+}
+.cxLookupDropbox lyte-autocomplete-label .cxLookupDropboxLabel {
+	.cxLookupDropboxLabelWithACLabelMixin();
+	max-width: @max-w;
+}
+.cxLookupInfoIcon {
+	.cxLookupInfoIconMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	opacity: @opacity;
+	position: @position;
+    @{property-right}: @right;
+	margin: @margin !important;
+}
+.cxLookupDropbox .cxLookupInfoIcon {
+    @{property-margin-left}: 3px !important;
+}
+.cxLookupDropbox lyte-autocomplete-label {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.cxLookupComponent .lyteInputBox[lt-prop-disabled=true] .lyteField:hover {
+	.cxLookupComponentDisabledInputFieldHoverMixin();
+	border: @border;
+	box-shadow: @box-shadow;
+}
+.cxLookupComponent .lyteInputBox input:disabled {
+	.cxLookupComponentInputDisabledMixin();
+	// cursor: text;
+	background: @bg; 
+	/* Commented as disabled field will have gray bg */
+}
+// .cxElementDisabled .lyteInputDisabled input,.cxElementDisabled .lyteDropdown-disabled lyte-drop-button, .cxTextarea textarea:disabled, .cxElementDisabled textarea{
+// 	background-color:#f3f3f3  !important;
+// }
+// .lyteMultipleSelect .lyteMultiselectInput lyte-search lyte-input .lyteField {
+// 	border: none;
+// }
+// .cxElementDisabled .lyteDropdownDisabled .lyteMultipleSelect .lyteMultiselectInput{
+// 	background-color:#f3f3f3 ;
+// }
+lyte-drop-button .lyteMultipleSelect .lyteMultiselectInput lyte-input .lyteField  {
+	border: none;
+}
+.popoverWrapper.cxLookupPopoverWrapper {
+	.cxLookupPopoverWrapperMixin();
+	z-index: @z-index;
+}
+.cxLookupPopoverWrapper .lytePopover {
+	.cxLookupPopoverWrapperPopoverMixin();
+	max-width: @max-w;
+	border-radius: @cxBoxElementsBorderRadius;
+}
+// .cxLookupPopoverWrapper .lytePopoverArrowIcon {
+// 	.cxLookupPopoverWrapperArrowIconMixin();
+// 	background: @bg;
+// }
+.cxLookupPopoverWrapper .cxLookupPopTd {
+	.cxLookupPopoverWrapperLookupPopTdMixin();
+	padding: @padding;
+	font-size: @font-size;
+	// color: @color;
+	// background: @bg;
+	border: @border;
+	word-break: break-word;
+	vertical-align: top;
+}
+
+.cxLookupPopoverWrapper .cxLookupPopTd.cxLookupViewValue{
+	.cxLookupCompViewValueTdMixin();
+	padding: @padding;
+}
+.cxLookupPopoverWrapper .cxLookupPopTd:first-child {
+	.cxLookupPopoverWrapperLookupPopTdFirstChildMixin();
+	// white-space: nowrap; for label - nowrap is not needed
+	text-align: @text-align;
+}
+.cxLookupPopoverWrapper lyte-tr:first-of-type .cxLookupPopTd {
+	.cxLookupCompPopupFirstRowTdMixin();
+    padding-top: @padding-top;
+}
+.cxLookupPopoverWrapper lyte-tr:last-of-type .cxLookupPopTd {
+	.cxLookupCompPopupLastRowTdMixin();
+    padding-bottom: @padding-bottom;
+}
+.cxLookupPopoverWrapper,.cxLookupPopoverWrapper .lytePopover{
+	pointer-events: none;
+}
+.cxLookupPopoverWrapper .lv_data_user {
+	.cxLookupPopoverWrapperDataUserMixin();
+	max-width: @max-w;
+}
+.cxLookupPopoverWrapper lyte-table {
+	.cxLookupPopoverWrapperTableOverrideMixin();
+    border: @border;
+	border-radius: @border-radius;
+}
+// .cxLookupHoverWrapper {
+// 	padding:10px 0;
+// }
+.cxLookupMultiModuleWrap {
+	display: flex;
+	align-items: center;
+}
+.cxLookupMultiModuleWrap .cxMultiModuleCriteriaDropdown {
+	.cxMultiModuleCriteriaDropdownMixin();
+	flex-grow: 1;
+	overflow: auto;
+	min-width: @min-w;
+}
+.cxMultiModuleCriteriaDropdown .lyteDropdownLabel {
+	.cxMultiModuleCriteriaDropdownLabelMixin();
+	max-width: @max-w;
+	@{property-margin-right}: @margin-right;
+}
+.cxMultiModuleDropdown {
+	.cxMultiModuleDropdownMixin();
+	max-width: @max-w;
+	min-width: 100px;
+}
+.cxLookupComponent .cxMultiModuleDropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxMultiModuleDropdown .cxFakeDummyEventContainer:focus .cxFakeDropButton,
+.cxMultiModuleDropdown lyte-drop-button:hover,
+.cxMultiModuleDropdown .cxFakeDropButton,
+.cxMultiModuleDropdown .cxFakeDropButton:hover,
+.cxMultiModuleDropdown lyte-drop-button,
+.cxLookupComponent lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button:hover {
+	.cxMultiModuleDropdownDropButtonMixin();
+	border: @border;
+	@{property-border-right}: @border-right;
+	border-radius: @border-radius;
+	box-shadow: @box-shadow;
+}
+.entityLookupTable lyte-table lyte-tr lyte-td:first-child lyte-radiobutton {
+    .entityLookupTableRadioBtnMixin();
+	@{property-margin-right}: @margin-right;
+}
+.cxLookupViewWrapper {
+	display: flex;
+}
+.cxLookupViewIcon {
+	.cxLookupViewIconMixin();
+	flex-shrink: 0;
+	@{property-margin-right}: @margin-right;
+}
+
+.cxLookupCompMulModValue,
+.cxLookupCompLink{
+	.cxLookupCompViewTextMixin();
+	overflow: hidden;
+	max-width: @max-width;
+}
+
+.cxLookupCompLink{
+	.cxLookupCompLinkMixin();
+	flex: 1;
+	min-width: @min-w;
+}
+
+.cxLookupCompSeparator{
+	.cxLookupCompSeparatorMixin();
+	margin: @margin;
+	flex-shrink: 0;
+}
+
+.cxElementDisabled .cxLookupComponent .lyteDummyEventContainer.lyteDropdown-disabled lyte-drop-button:hover,
+.cxElementDisabled .cxLookupComponent .lyteDummyEventContainer:focus lyte-drop-button{
+    .cxLookuplyteDummyEventContainerHoverAndFocusDropMixin();
+    border:none;
+}
+
+.cxLookupComponent .cxBoxDropdown .lyteDummyEventContainer,
+.cxLookupComponent .cxBoxDropdown .lyteDummyEventContainer lyte-drop-button,
+.cxLookupComponent .cxMultiModuleDropdown lyte-dropdown{
+    .cxLookuplyteDropButtonMixin();
+    height:@h;
+}
+.cxLookupComponent .cxBoxDropdown .lyteDummyEventContainer lyte-drop-button,
+.cxLookupComponent lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button, 
+.cxLookupComponent lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button:hover{
+    .cxLookuplyteDummyEventContainerHoverPlusFocusDropMixin();
+    border: @border;
+    border-radius: @border-radius;
+    @{property-border-right}:@border-right;
+}
+ .cxElementDisabled .cxLookupComponent lyte-drop-button::after{
+    visibility:hidden;
+}
+.cxLookupComponent .cxMultiModuleDropdown .cxFakeDropButton{
+    .cxLookupFakeDropButtomMixin();
+    padding-top:@padding-top;
+    padding-bottom:@padding-buttom;
+}
+crux-lookup-component .cxViewInfoTooltipIcon{
+	.cxLookupCompInfoIconMixin();
+	position: relative;
+	@{property-margin-left}: @margin-left;
+	top: @top;
+}
+
+.cxLookupCompViewWrap {
+	display: inline-flex; /* changed to inline flex - as it overlaps other icons in Related list Table */
+}
+.cxMMLSeperator {
+	@{property-padding-left}: 10px;
+	@{property-padding-right}: 10px;
+}
+.cxLookupCompWsNormal {
+	white-space: normal !important;
+}

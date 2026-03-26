@@ -1,0 +1,532 @@
+// @cxSubformTableBg:#fff; - moved to common css variables
+
+.cxSubformMixin() {
+	@max-w: 1100px;
+}
+.cxSubformAggDivMixin() {
+	@margin-top: 20px;
+}
+// .cxSubformTableThMixin() {
+// 	@padding: 8px;
+// 	@bg: #fff;
+// 	@border-bottom: 2px solid #e5e5e5;
+// 	@border-top: 1px solid #e5e5e5;
+// 	@font-family: @cruxPrimaryFont;
+// }
+.cxSubformTableFilterComponentThMixin() {
+	// @padding: .cruxLESSPaddingMixin(8px 8px 30px 8px)[@padding];
+	@padding: .cruxLESSPaddingMixin(8px 8px 10px 8px)[@padding];
+	// @border-right: 1px solid #ddd;
+	@border-bottom: 1px solid @cxSubformTblFilterThBorder;
+	@font-family: @cruxPrimaryFont;
+	@text-transform:none;
+}
+.cxSubformTableFirstColTdMixin() {
+	/* @padding: 0;*/
+	@padding-right: 0;
+	@padding-left: 0;
+	// @min-w: 80px;
+	@min-w: 50px;
+	@w: 80px;
+	@border-right: none;
+}
+.cxSubformFirstColTdMinWidthMixin() {
+	@w: 60px;
+}
+// .cxSubformTableInputBoxFieldMixin() {
+// 	 @border-color: transparent;
+// 	@border-color: @cxBoxInputBorderColor;
+// }
+// .cxSubformTableInputBoxFieldHoverMixin() {
+// 	@border-color: @cxSubformTbInputHoverBorder;
+// }
+// .cxSubformTableInputBoxFocusFieldHoverMixin() {
+// 	@border-color: @cxSubformITbInputFocusBorder;
+// }
+.cxSubformSerialNoInputFieldMixin() {
+	@border-color: transparent !important;
+	@box-shadow: none !important;
+	@bg: transparent;
+}
+.cxSubformSerialNoInputOriginalInputMixin() {
+	// @padding: 8px 0;
+	@padding-left: 0;
+	@padding-right: 0;
+}
+.cxSubformInputMixin() {
+	@padding: 5px;
+}
+.cxSubFormTdBgColor{
+	@bg:@cxSubformTableBg;
+}
+// .cxSubformDropButtonMixin() {
+	// @padding: .cruxLESSPaddingMixin(4px 25px 4px 5px)[@padding];
+	// @border-color: @cxBoxInputBorderColor;
+// }
+.cxSubformMandatoryDropButtonBeforeMixin() {
+	@opacity: 0;
+}
+.cxSubformLookupFilterButtonWrapMixin() {
+	@bottom: 8px;
+}
+.cxSubformTableTdMixin() {
+	// @padding: 4px 10px;
+	// @padding-top: 4px;
+	// @padding-bottom: 4px;
+	// @border-right: 1px solid #ddd;
+	// @border-right: 1px solid var(--tableListBorder);
+	// @break-word: break-word;
+    // @overflow-wrap: break-word;
+	/*@vertical-align: top;*/
+	@vertical-align: top;
+	@text-overflow: ellipsis;
+    @overflow: hidden;
+}
+.cxSubformAggTableTdMixin() {
+	@padding: .cruxLESSPaddingMixin(18px 10px 8px 5px)[@padding];
+}
+.cxSubformAggTableFirstTrTdMixin() {
+	@padding-top: 8px;
+}
+.cxSubformAggTDLabelMixin() {
+	@font-family: @cruxPrimaryFont;
+	@break-word: break-word;
+    @overflow-wrap: break-word;
+	@text-align: @value-textalign-right;
+	@color: @cxSubformAggTdLabelColor;
+	@padding-top:20px;
+}
+.cxSubformFieldMixin() {
+	@z-index: 1;
+	@w:100%;
+}
+.cxSubformFieldLastChildMixin() {
+	@border-right: 0;
+}
+.cxSubformSortableParentMixin() {
+	@h: auto;
+}
+.cxSubformInfoIconMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -7px -126px;
+	@min-w: 13px;
+	@w: 13px;
+	@h: 14px;
+	@margin-left: 5px;
+	@opacity: 0.5;
+	// @position:absolute;
+}
+.cxSubformAggTableNumberViewMixin() {
+	@text-align:@value-textalign-right;
+}
+.cxSubformAggTableNumberComponentAlignmentMixin() {
+	@text-align:@value-textalign-right;
+}
+.cxSubformLyteNumberDisabledMixin() {
+	@disabledBgColor: @cxSubformLyteNumDisabledBorder;
+	// var(--formBackgroundDisabled);
+}
+/*Commented for code check */
+// .cxSubformShowAllActionLabelHoverMixin() {
+// 	@background-color: var(--bg_F0F4FF);
+// 	@text-decoration: underline;
+// }
+.cxSubformRemoveIconMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -118px -126px;
+	@h: 12px;
+	@w: 12px;
+	@margin: 0 10px 0 5px;
+}
+.cxSubformRemoveIconHoverMixin() {
+	@bg-pos: -140px -126px;
+}
+.cxSubformDragIconMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -165px -123px;
+	@w: 6px;
+	@h: 18px;
+}
+.cxSubformTableSortablePlaceholderMixin() {
+	@bg: inherit;
+}
+.cxSubformEditIconAndMoreActionIconMixin() {
+	@w: 30px;
+	@h: 30px;
+	@border-radius: 50%;
+	@margin-right: 5px;
+}
+.cxSubformEditIconAndMoreActionIconBeforeMixin() {
+	// @w: 100%;
+	// @h: 100%;
+	@w: 30px;
+	@h: 30px;
+	@border-radius: 50%;
+	@transform: scale(0);
+	@bg: @cxSubformEditAndMoreIconBeforeBg;
+	@z-index: 0;
+	@top: 0;
+	@left: 0;
+}
+.cxSubformEditIconAndMoreActionIconHoverBeforeMixin() {
+	@transform: scale(1);
+}
+.cxSubformEditIconAndMoreActionIconAfterMixin() {
+	@bg-img: @cruxSprite;
+	@z-index: 1;
+}
+.cxSubformEditIconAfterMixin() {
+	@bg-pos: -228px -37px;
+	@w: 13px;
+	@h: 13px;
+}
+.cxSubformMoreActionIconAfterMixin() {
+	@bg-pos: -294px -4px;
+	@w: 3px;
+	@h: 13px;
+}
+.cxSubformFooterActionSectionMixin() {
+	@margin-top: 15px;
+}
+.cxSubformScrollTopActionLabelMixin() {
+	// @color: #0078FF;
+	@align-self: flex-start;
+	@color: @cxSubformScrollTopActionLabelColor;
+	@text-decoration: underline;
+}
+	
+.cxSubformShowAllActionLabelMixin() {
+	@color: @cxSubformShowAllLabelColor;
+	@text-align: center;
+	@cursor: pointer;
+	// @background-color: var(--bg_F0F4FF);
+	// @border: 1px solid var(--br_D2D9E0);
+    @box-shadow: 0 -2px 6px @cxSubformShowAllLabelBoxShadow;
+    @border-radius: 0px 0px 6px 6px;
+    @background-color: @cxSubformShowAllLabelBgColor;
+	@border: 1px solid @cxSubformShowAllLabelBorderColor;
+    @border-top: none;
+	@padding:9px;
+	@z-index: 1;
+    @position: relative;
+}
+.cxSubformShowAllActionLabelHoverMixin() {
+	@text-decoration: underline;
+	@background-color: @cxSubformShowAllLabelHoverBg;
+}
+.cxSubformAggTableMixin() {
+	@w: auto;
+	// @max-width:80%;
+	@max-width:95%;
+}
+.cxSubformTableLookupFieldListInputSectionMixin() {
+	@w: auto;
+}
+.cxSubformTableLookupFilterInputSectionMixin() {
+	@margin-top: 10px;
+}
+.cxSubformSaveCancelWrapMixin() {
+	@padding-top: 7px;
+	// @padding-top: 0;
+}
+.cxSubformSaveAndCancelMixin() {
+	@w: 18px;
+	@h: 18px;
+	@border: 1px solid @cxSubformSaveAndCancelBtnBorder;
+	@border-radius: 50%;
+}
+.cxSubformSaveMixin() {
+	@bg: @cxSubformSaveBtnBg;
+	@border: 1px solid @cxSubformSaveBtnBorder;
+}
+.cxSubformCancelMixin() {
+	@margin-left: 10px;
+}
+.cxSubformSaveAndCancelBeforeMixin() {
+	@bg-img: @cruxSprite;
+}
+.cxSubformSaveBeforeMixin() {
+	@bg-pos: -316px -116px;
+	@w: 11px;
+	@h: 8px;
+	@background-color: @cxSubformSaveBeforeBg;
+}
+.cxSubformCancelBeforeMixin() {
+	@bg-pos: -337px -115px;
+	@w: 9px;
+	@h: 10px;
+}
+.cxSubformSortMenuIconMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -1px -2px;
+	@w: 8px;
+	@h: 4px;
+	@margin-right: 5px;
+}
+.cxSubformAscElemMixin() {
+	@transform: rotate(180deg);
+}
+.cxSubformUnsortElemSortMenuIconMixin() {
+	@bg-pos: -71px -118px;
+	@w: 8px;
+	@h: 8px;
+}
+.cxSubformRowEditModeTdMixin() {
+	@border-top: 1px solid @cxSubformRowEditModeTdBorder;
+	@border-bottom: 1px solid @cxSubformRowEditModeTdBorder;
+	// @padding-top: 3px;
+	// @padding-bottom: 2px;
+	@padding-top: 2px;
+	@padding-bottom: 0;
+	@background-color: @cxSubformRowEditModeTdBg;
+}
+.cxSubformRowEditModeTdFirstChildMixin() {
+	@border-left: 1px solid @cxSubformRowEditModeTdFirstChildBorder;
+	@border-bottom-left-radius: 6px;
+}
+.cxSubformRowEditModeTdLastChildMixin() {
+	@border-right: 1px solid @cxSubformRowEditModeTdLastChildBorder;
+	@border-bottom-right-radius: 6px;
+}
+.cxSubformHighlightRowMixin() {
+	@bg: @cxSubformHighlightRowBg;
+}
+.cxSubformHighlightRowAnimMixin() {
+	
+	@bgHighlColor: @cxSubformRowAnimationBgHighlightColor;
+	@bgWhiteColor: @cxSubformRowAnimationBgWhiteColor;
+}
+.cxSubformTopArrowIconMixin() {
+	@cruxUseCssMaskForBg: true;
+	@bg-img: @cruxSprite;
+	@bg-pos: -92px -175px;
+	@mask-img: @bg-img;
+	@mask-pos: @bg-pos;
+	// @bg-color: #4a8de9;
+	@bg-color: @cxIconBaseMaskBg;
+	@w: 9px;
+	@h: 13px;
+}
+.cxSubformTopScrollTopActionLabelArrowIconMixin() {
+	@margin-right: 5px;
+}
+.cxAggFieldOptionsTdMixin() {
+	@min-width: 80px;
+	@w: 80px;
+	@padding-left:0;
+}
+.cxSubformTableRowActionsMixin() {
+	@display: flex;
+	@min-width: 80px;
+    @justify-content: center;
+	@align-items: center;
+	@top:0;
+	@bottom:0;
+	// @position: absolute;
+	@position: relative;
+}
+.cxSubformRowEditModeTdFirstChildRadiusMixin() {
+	@border-bottom-left-radius: 6px;
+}
+.cxSubformRowEditModeTdLastChildRadiusMixin() {
+	@border-bottom-right-radius: 6px;
+}
+.cxSubformProdTxtareaMixin() {
+	@margin-top: 10px;
+}
+.cxSubformTableLyteYeildWidthMixin() {
+	@max-width: inherit;
+	@w: inherit;
+	@display: block;
+}
+.cxSubformYeildResetMixin() {
+	@w: auto;
+}
+.cxSubformCruxTableCompMixin() {
+	@display: inline-block;
+    @w: auto;
+  	@max-width:100%;
+	@margin-bottom: 2rem;
+}
+
+.cxSubformEditColLoaderTdMixin(){
+	@w: 60px;
+}
+
+.cxSubformRowLastChildNoBorderMixin() {
+	@border-right:none;
+}
+.cxSubformErrMsgMixin() {
+	@position: relative;
+    @white-space: normal;
+    @overflow-wrap: break-word;
+    @transform: none;
+}
+.cxSubformRowLastChildNoRightBorderMixin() {
+	@border-right: none;
+}
+.cxSubformValidateFieldQEMixin() {
+    @flex: 1;
+}
+.cxTextareaViewModeSubforMixin() {
+	@min-width: 100%;
+    @max-width: 100%;
+}
+.cxSfCPQYeildContentMixin() {
+	@margin-right: 5px;
+}
+.cxTableNoResultsWrapperRadiusMixin (){
+
+	@border-radius: 6px 6px 0 0;
+}
+.cxSubformRowFreezeMixin() {
+	@opacity: 0.7;
+    @pointer-events: none;
+    @cursor: default;
+}
+.cxSubformTdFreezeMixin() {
+	@opacity: 1;
+    @pointer-events: none;
+    @cursor: default;
+}
+.cxSubformTableShowAllMixin() {
+	@border-bottom-right-radius: 0;
+	@border-bottom-left-radius : 0;
+}
+.cxRemoveSubformTableFirstTdRightBorderMixin() {
+	@border-right : none;
+}
+.cxSubformTableFileUploadBtnMixin() {
+	@width: 100%;
+    @text-align: @value-textalign-left;
+    // @border: 1px solid @cxBoxInputBorderColor;
+	@border:@cxSubformTableFileUploadBtnBorderColor;
+    @padding-left: 10px;
+    @padding-right: 10px;
+	@padding-top: 8px;
+	@padding-bottom:8px;
+    @bg: @cxSubformTblFileUploadBtnBg;
+    @box-shadow: none;
+    @border-radius: 5px;
+    @font-family: @cruxPrimaryFont;
+}
+.cxSubformThMixin() {
+    @padding-right: 35px;
+}
+.cxSubformTableFileUploadBtnDdMixin() {
+	@width: 24px;
+    @position: absolute;
+    @height: auto;
+    @padding: 3px 0;
+    @cursor: pointer;
+	@right: 2px !important;
+    @top: 4px;
+}
+.cxPhoneViewZPBEnabledTableMixin() {
+	@padding-left: 30px;
+    @padding-right: 0;
+    @text-overflow: ellipsis;
+    @max-width: calc(100% - 30px);
+    // @overflow: hidden;
+	@position: relative;
+}
+.cxPhoneViewZPBEnabledIconWrapSubform() {
+	@left: 0;
+    // @top: 2px;
+}
+
+
+/*To be moved to Lyte Table CSS Starts*/
+
+.cxTableNoResultsWrapperMixin() { /* For outer wrapper enclosing empty message */
+	@border: 1px solid @cxSubformTblNoResultBorder;
+    @border-radius: 6px;
+    @box-sizing: border-box;
+}
+.cxTableNoResultsWrapperTableMixin() {
+	@border: none;
+	@border-radius: 6px 6px 0 0;
+}
+.cxSubformRowEditMode .cxSfSaveCancelTd {
+	box-shadow: 1px 0 7px 0px @cxSubformTblStickyColumnBorder;
+}
+
+/*To be moved to Lyte Table CSS Ends */
+
+/*Duplicate code removal*/
+// .cxDotBulletMixin() {
+//     @animation: bouncedelay 1.2s infinite ease-in-out;
+//     @animation-fill-mode: both;
+//     @border-radius: 100%;
+//     @display: inline-block;
+//     @height: 8px;
+//     @width: 8px;
+//     @background-color: @cxSubformDotBulletBg;
+//     @margin: 0 1px;
+// }
+
+// .cxSubformTdLoadingWrapperMixin() {
+
+// }
+.cxLoaderHorTdMixin() {
+	@width: 100%;
+    @height: 35px;
+    @border-radius: 100px;
+    @margin-right: 1.5rem;
+    @min-width: 50px;
+}
+.cxPlaceholderLoaderBeforeMixin() {
+	@animation-duration: 1.5s;
+    @animation-fill-mode: forwards;
+    @animation-iteration-count: infinite;
+    @animation-name: cxPlaceHolderShimmer;
+    @animation-timing-function: linear;
+    @background-color: @cxSubformPlaceholderLoaderBg;
+    @background-gradient: @cxSubformPlaceholderLoaderBgGradient;
+    @background-size: 800px 104px;
+    @position: relative;
+}
+.cxSubformTableHeadingElemMixin() {
+	@max-width: calc(100% - 30px);
+}
+.cxSubformTableBorderRadiusMixin() { 
+	@border-radius: 6px;
+}
+.cxTableCompNoResultsMixin(){
+	@background-color: @cxSubformTableNoResultBg;
+	@border-radius: 0 0 6px 6px;
+}
+.cxSubformAggDivlyteTableScrollMixin(){
+	@border-radius:10px;
+}
+.cxSfMandatoryMixin(){
+    @position: absolute;
+    @left: 0;
+    @color: @cxErrorMsgColor;
+}
+
+.cxSubformTextareaElementDisabledPseudoMixin(){
+    @width: 17px;
+    @height: 17px;
+    @background: @cxSubformTextareaDisabledPseudoBorder;
+    @position: absolute;
+    @right: -1px;
+    @bottom: -1px;
+    @z-index: 5;
+    @border-radius: 0 0 6px;
+}
+.cxSubformMaskElemSpritePositioning() {
+	@top: 3px;
+    @position: relative;
+    @left: -3px;
+}
+.cxSfAggNumberDivNumberViewMaskWrapMixin() {
+	@text-align: @value-textalign-right;
+}
+.cxSubformEditModeMixin() {
+	// @border-right: 1px solid var(--tableListBorder);
+	@border-right: 1px solid @cxSubformEditModeBorderColor;
+}
+.cxSubformTdFreezeInputBtnMixin(){
+	@bg: @cxSubformTdFreezeInputBtnBg;
+}

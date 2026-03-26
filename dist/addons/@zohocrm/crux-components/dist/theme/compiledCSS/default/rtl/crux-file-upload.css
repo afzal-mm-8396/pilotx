@@ -1,0 +1,651 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/* CRUX File Type Icons Mixin Starts*/
+/* CRUX File Type Icons Mixin Ends*/
+/** CRUX Simgle File Upload With Preview Mixin starts **/
+/** CRUX Simgle File Upload With Preview Mixin Ends **/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+.cxSelectAreaWrapperDiv {
+  border: 1px dashed var(--lyte-crux-file-upload-drop-area-border-color);
+  border-radius: 10px;
+  padding: 25px 0px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.cxSelectAreaWrapperDiv.cxTypeFileSelected {
+  padding: 10px 0px 20px 0px;
+}
+.cxSelectAreaWrapperDiv .cxFileUpdList {
+  margin-top: 0px;
+  flex: 1;
+  overflow: auto;
+  padding: 0px 20px;
+}
+.cxFileUpdListFile.lyteSortableElem {
+  background: var(--lyte-crux-file-upload-list-bg-color);
+  box-shadow: 0px 0px 4px 0px var(--lyte-crux-file-upload-list-box-shadow-color);
+}
+.cxSelectAreaWrapperDiv.cxTypeFileSelected .cxFileUpdList {
+  min-height: 32px;
+  padding: 10px 20px;
+}
+.cxSelectAreaWrapperDiv .cxFileUpdList .cruxFileUploadSortableDiv {
+  position: relative;
+  right: -10px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 15px 10px;
+  padding: 0 10px;
+}
+.cxFileUpdList .cruxFileUploadSortableDiv {
+  position: relative;
+  display: grid;
+  grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+  column-gap: 10px;
+}
+.cxFileUpdList.cxSingleFileList .cruxFileUploadSortableDiv {
+  grid-template-columns: 100%;
+  row-gap: 15px;
+}
+.cxFileUploadImageThumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  border: 1px solid var(--lyte-crux-file-upload-image-thumb-border-color);
+  display: block;
+  margin-left: 8px;
+  object-fit: cover;
+}
+.cxFileUpdListFile {
+  box-sizing: border-box;
+  margin: 0px !important;
+  padding: 7px 10px;
+  border-radius: 6px;
+}
+.cxFileUpdListFile.cxFileUpdListSortableSelectedElem {
+  border: 1px dashed var(--lyte-crux-file-upload-list-sort-border-color);
+  box-shadow: 0px 0px 4px 0px var(--lyte-crux-file-upload-list-box-shadow-color);
+}
+.cxFileUpdListFile.sortable-element-selected.cxFileUplListSortableSelectItemOndrag {
+  border: 1px solid var(--lyte-crux-file-upload-list-border-color);
+}
+.cxImgUploadModaHeader {
+  padding-bottom: 20px;
+}
+.cxImgUpModalFileUpdListFile.cxFileUpdListFile,
+.cxImgUploadModalContent .cxSelectAreaWrapperDiv .cxFileUpdListFile {
+  padding: 5px 5px 5px 15px;
+}
+.cxFileUpdFileNameWrap {
+  min-width: 20px;
+}
+.cxFileUpdListFile .cxFileUpdFileName {
+  max-width: calc(100%) !important;
+  font-size: 0.857rem;
+  line-height: 16px;
+  margin-left: 0px;
+  min-width: 20px;
+}
+.fileDragEnter .cxSelectAreaWrapperDiv {
+  border-color: var(--lyte-crux-file-upload-drop-area-active-border-color);
+}
+.fileDragEnter .cxSelectAreaWrapperDiv::after {
+  background-color: var(--lyte-crux-file-upload-drop-area-active-bg-color);
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border-radius: 10px;
+  z-index: -1;
+}
+.fileDragEnter .cxTypeFileSelected.cxSelectAreaWrapperDiv::after {
+  z-index: 1;
+  opacity: 0.7;
+}
+.cxSelectAreaWrapperDiv .selectionAreaDiv {
+  text-align: center;
+  font-size: 0.857rem;
+}
+.cxSelectAreaWrapperDiv.cxTypeFileSelected .typeFilePrimaryMsg {
+  margin-top: 30px;
+  padding: 0px 20px;
+  font-size: 0.857rem;
+}
+.cxSelectAreaWrapperDiv .selectionAreaDiv .typeFilePrimaryMsg {
+  color: var(--lyte-crux-file-upload-primary-msg-color);
+  font-family: 'LatoSemiBold', sans-serif;
+}
+.cxSelectAreaWrapperDiv .selectionAreaDiv .typeFileSecondaryMsg {
+  color: var(--lyte-crux-file-upload-secondary-msg-color);
+  margin-top: 15px;
+}
+/*.cxSelectAreaWrapperDiv .typeFilePrimaryMsg{
+    color: #616e88;
+}*/
+.cxDisableElement {
+  pointer-events: none;
+  opacity: 0.6;
+}
+.cxSelectAreaWrapperDiv .cxFileUploadAttachment {
+  display: inline-block;
+  margin-left: 5px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -356px -179px;
+  mask-position: -356px -179px;
+  background-color: var(--lyte-crux-file-upload-icon-bg-color);
+  width: 15px;
+  height: 13px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.cxSelectAreaWrapperDiv .cxFileUploadHeadIcon_Attachment {
+  width: 14px;
+  height: 16px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -199px -360px;
+  mask-position: -199px -360px;
+  background-color: var(--lyte-crux-file-upload-icon-bg-color);
+}
+.cxSelectAreaWrapperDiv .cxImageUploadHeadIcon_Attachment {
+  width: 16px;
+  height: 16px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -174px -360px;
+  mask-position: -174px -360px;
+  background-color: var(--lyte-crux-file-upload-icon-bg-color);
+}
+.cxSelectAreaWrapperDiv .cxFileUpdHeadCloudIcon_Attachment {
+  width: 16px;
+  height: 14px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -150px -362px;
+  mask-position: -150px -362px;
+  background-color: var(--lyte-crux-file-upload-icon-bg-color);
+}
+.cxSelectAreaWrapperDiv .cxFileUploadHeadIcon {
+  display: inline-block;
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-repeat: no-repeat;
+  background-position: -66px -225px;
+  width: 49px;
+  height: 56px;
+  margin-bottom: 15px;
+}
+.cxFileUploadHeadIconContainer {
+  margin-bottom: 15px;
+  display: inline-block;
+}
+.cxSelectAreaWrapperDiv .cxImageUploadHeadIcon {
+  display: inline-block;
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-repeat: no-repeat;
+  background-position: -3px -224px;
+  width: 51px;
+  height: 45px;
+  margin-bottom: 12px;
+}
+.cxSelectAreaWrapperDiv .cxFileUpdHeadCloudIcon {
+  display: inline-block;
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-repeat: no-repeat;
+  background-position: -4px -385px;
+  width: 51px;
+  height: 37px;
+  margin-bottom: 12px;
+}
+.cxFileSeperatorText {
+  color: var(--lyte-crux-file-upload-secondary-msg-color);
+  margin: 8px 0;
+  font-family: 'LatoSemiBold', sans-serif;
+}
+.cxFileUploadedCount {
+  border: 1px solid var(--lyte-crux-file-upload-count-border-color);
+  border-radius: 20px;
+  padding: 3px 5px;
+  min-width: 22px;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+}
+.cxSelectAreaWrapperDiv .cxFileUpdList.cxSingleFileList .cruxFileUploadSortableDiv {
+  grid-template-columns: 100%;
+  gap: 10px 0px;
+  padding-left: 0;
+  width: 100%;
+}
+.cxUploadedBrowseButton {
+  margin-right: 10px;
+  display: inline-block;
+}
+.cxFileUploadActionIconWrap {
+  position: relative;
+  margin-left: 20px;
+  display: none;
+  cursor: pointer;
+}
+.cxFileUpdLiDownIconWrap.cxFileUploadActionIconWrap,
+.cxFileUploadFileStatus.cxFileUploadPredefinedFileStatus .cxFileUploadActionIconWrap,
+.cxFileUploadActionIconWrap.cxFileUploadEditIconWrap {
+  display: flex;
+  visibility: hidden;
+}
+.cxFileUploadActionIconWrap::before {
+  content: '';
+  display: inline-block;
+  border: 1px solid var(--lyte-crux-file-upload-edit-icon-hover-effect-border-color);
+  background: var(--lyte-crux-file-upload-edit-icon-hover-effect-bg-color);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: calc(50% - 11px);
+  top: calc(50% - 11px);
+  visibility: hidden;
+  border-radius: 100%;
+  transform: scale(0.9);
+  opacity: 0.5;
+  transition: opacity 0.1s, transform 0.1s;
+}
+.cxImgUploadModalContent .cxFileUploadActionIconWrap::before {
+  width: 26px;
+  height: 26px;
+  right: calc(50% - 14px);
+  top: calc(50% - 14px);
+}
+.cxFileUploadActionIconWrap:hover::before {
+  visibility: visible;
+  transform: scale(1);
+  opacity: 1;
+}
+.cxFileUploadRetryIconWrap {
+  display: flex;
+  margin-left: 19px;
+}
+.cxFileUploadEditIcon {
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -69px -153px;
+  mask-position: -69px -153px;
+  background-color: var(--lyte-crux-file-upload-icon-bg-color);
+  width: 13px;
+  height: 13px;
+  vertical-align: middle;
+  z-index: 1;
+}
+.cxFileUploadRemoveIcon {
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -250px -177px;
+  mask-position: -250px -177px;
+  background-color: var(--lyte-crux-file-upload-remove-icon-bg-color);
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  z-index: 1;
+}
+.cxFileUploadSuccessIcon {
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -229px -177px;
+  mask-position: -229px -177px;
+  background-color: var(--lyte-crux-file-upload-success-icon-bg-color);
+  width: 14px;
+  height: 14px;
+}
+.cxFileUploadRetryIcon {
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -149px -223px;
+  mask-position: -149px -223px;
+  background-color: var(--lyte-crux-file-upload-success-icon-bg-color);
+  width: 12px;
+  height: 13px;
+  z-index: 1;
+}
+.cxFileUploadWarningIcon {
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -126px -223px;
+  mask-position: -126px -223px;
+  background-color: var(--lyte-crux-file-upload-remove-icon-bg-color);
+  width: 14px;
+  height: 14px;
+}
+.cxFileUpdLiDownIcon {
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -114px -201px;
+  mask-position: -114px -201px;
+  background-color: var(--lyte-crux-file-upload-icon-bg-color);
+  width: 12px;
+  height: 12px;
+}
+.cxFileUpdListFile:hover .cxFileUploadWarningIcon,
+.cxFileUpdListFile:hover .cxFileUploadSuccessIcon {
+  display: none;
+}
+.cxFileUploadRemoveIconWrap {
+  margin-left: 0px;
+}
+.cxFileUpdListFile:hover .cxFileUploadActionIconWrap {
+  visibility: visible;
+  display: flex;
+}
+.cxSelectAreaWrapperDiv .cxFileUpdListFile:hover .cxFileUploadRetryIconWrap {
+  margin-left: 20px;
+}
+.cxFileAfterUploadedMsg {
+  display: flex;
+  align-items: center;
+}
+.cxFileAfterUploadedSecondaryMsg {
+  margin-top: 15px;
+  color: var(--lyte-crux-file-upload-secondary-msg-color);
+}
+.cxFileScanningTxt {
+  font-size: 0.857rem;
+  color: var(--lyte-crux-file-upload-warning-color);
+  white-space: nowrap;
+  flex: 1;
+}
+.cxFileUploadFileStatus {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  max-width: 45%;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+.cxFileStatusError {
+  border-color: var(--lyte-crux-file-upload-list-error-border-color);
+  background: var(--lyte-crux-file-upload-list-error-bg-color);
+}
+.cxFileUploadListCustMessage {
+  font-size: 0.857rem;
+  margin-left: 10px;
+  flex: 1;
+  overflow: hidden;
+}
+.cxFileUploadListCustMessage lyte-text {
+  vertical-align: top;
+}
+.cxFileUploadListCustMessage.cxFileUploadList_info lyte-text {
+  color: var(--lyte-crux-file-upload-info-color);
+}
+.cxFileUploadListCustMessage.cxFileUploadList_warning lyte-text {
+  color: var(--lyte-crux-file-upload-warning-color);
+}
+.cxFileUploadListCustMessage.cxFileUploadList_error lyte-text {
+  color: var(--lyte-crux-file-upload-error-color);
+}
+.cxFileUploadListCustMessage.cxFileUploadList_success lyte-text {
+  color: var(--lyte-crux-file-upload-success-color);
+}
+.cruxFileUploadSortableDiv .cxFileUpdListFile.lyteFileSuccess .lyteFileUpdFileStatus {
+  display: block;
+}
+.cruxFileUploadSortableDiv .lyteFileSuccess .successIcon {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-repeat: no-repeat;
+  background-position: -229px -177px;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.cxFileUploadFailMsg {
+  margin-left: 12px;
+  white-space: nowrap;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cxFileUploadFailMsg lyte-text {
+  vertical-align: top;
+}
+.cxFileUploadListFileTypeIconWrap {
+  width: 17px;
+  height: 16px;
+  margin-left: 8px;
+}
+.cxSelectAreaWrapperDiv .typeFileSelectionArea lyte-button {
+  margin-left: 0px;
+}
+.cxFileUploadedMsgLableColor {
+  color: var(--lyte-crux-file-upload-secondary-msg-color);
+}
+.cxFileUploadSupportFormatMsg {
+  color: var(--lyte-crux-file-upload-secondary-msg-color);
+  font-size: 0.857rem;
+}
+.cxSelectAreaWrapperDiv .cxFileUpdListFile.sortable-element {
+  cursor: grab;
+}
+.cxSelectAreaWrapperDiv .cxFileUpdListFile.cxFileUpdListSortableSelectedElem,
+.cxSelectAreaWrapperDiv .cxFileUpdListFile.sortable-element-selected,
+.cxFileUpListOnDrag .cxFileUpdListFile.sortable-element,
+.cxFileUpListOnDrag {
+  cursor: grabbing;
+}
+.cxSelectAreaWrapperDiv .cxFileUpdListFile.cxFileUpdListSortableSelectedElem .cxFileUploadActionIconWrap,
+.cxSelectAreaWrapperDiv .cxFileUpdListFile.sortable-element-selected .cxFileUploadActionIconWrap,
+.cxSelectAreaWrapperDiv .cxFileUpListOnDrag .cxFileUpdListFile:hover .cxFileUploadActionIconWrap {
+  visibility: hidden;
+  display: flex;
+}
+.cxSelectAreaWrapperDiv .cxFileUpdListFile.sortable-element-selected .cxFileUploadSuccessIcon,
+.cxSelectAreaWrapperDiv .cxFileUpdListFile.sortable-element-selected .cxFileUploadWarningIcon {
+  display: none;
+}
+.cxFileUpdListFile.lyteSortableElem .cxFileUploadSuccessIcon,
+.cxSelectAreaWrapperDiv .cxFileUpListOnDrag .cxFileUpdListFile .cxFileUploadSuccessIcon,
+.cxSelectAreaWrapperDiv .cxFileUpListOnDrag .cxFileUpdListFile .cxFileUploadWarningIcon {
+  visibility: hidden;
+}
+.cxFileUpdLiNameSeparator {
+  margin: 0px 2px;
+}
+.cxFileUploadedOrSeparator {
+  margin-right: 2px;
+}
+.cxFileUpdLiFileSize {
+  margin-left: 8px;
+}
+.cxFileUpdLiDownIconWrap {
+  margin-left: 10px;
+}
+.cxSelectAreaWrapperDiv.cxFileUpdOuterAreaWrapper.cxTypeFileSelected .typeFilePrimaryMsg {
+  margin-top: 10px;
+}
+.cxFileUpdListOuterWrapper {
+  margin-top: 20px;
+}
+.cxFileUpdLiCircleLoader.cxCircleLoader {
+  width: 13px;
+  height: 13px;
+  margin-right: 3px;
+}
+.cxFileUpdLiCircleLoader .cxCircleLoader2 {
+  height: 9px;
+  width: 9px;
+  background: var(--lyte-crux-file-upload-circle-loader-bg-color);
+}
+.cxFileUpdLiCircleLoader.cxCircleLoader::before {
+  background: rgba(var(--lyte-crux-file-upload-circle-loader-rgb-color));
+}
+.cxFileUpdLiCircleLoader .cxCircleLoader1::after,
+.cxFileUpdLiCircleLoader .cxCircleLoader1::before {
+  background: linear-gradient(rgba(var(--lyte-crux-file-upload-circle-loader-rgb-color)), rgba(var(--lyte-crux-file-upload-circle-loader-rgb-color), 0.5));
+}
+.cxFileUpdLiCircleLoader .cxCircleLoader1::after {
+  background: linear-gradient(rgba(var(--lyte-crux-file-upload-circle-loader-rgb-color), 0.05), rgba(var(--lyte-crux-file-upload-circle-loader-rgb-color), 0.25), rgba(var(--lyte-crux-file-upload-circle-loader-rgb-color), 0.5));
+}
+/* CRUX File Type Icons Starts (this styles already in file-upload-component.less)*/
+.cxFileUploadListSprite {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  display: inline-block;
+  width: 17px;
+  height: 15px;
+}
+.cxFileUploadIcon_allfile,
+.cxFileUploadIcon_html {
+  background-position: -321px -150px;
+  width: 15px;
+  height: 17px;
+}
+.cxFileUploadIcon_image {
+  background-position: -274px -151px;
+  width: 17px;
+  height: 15px;
+}
+.cxFileUploadIcon_pdf {
+  background-position: -181px -150px;
+  width: 15px;
+  height: 17px;
+}
+.cxFileUploadIcon_zip {
+  background-position: -226px -150px;
+  width: 15px;
+  height: 17px;
+}
+.cxFileUploadIcon_video {
+  background-position: -113px -152px;
+  width: 17px;
+  height: 14px;
+}
+.cxFileUploadIcon_audio {
+  background-position: -205px -150px;
+  width: 17px;
+  height: 17px;
+}
+.cxFileUploadIcon_docx {
+  background-position: -159px -150px;
+  width: 15px;
+  height: 17px;
+}
+.cxFileUploadIcon_ppt {
+  background-position: -298px -150px;
+  width: 15px;
+  height: 17px;
+}
+.cxFileUploadIcon_notes {
+  background-position: -137px -150px;
+  width: 15px;
+  height: 17px;
+}
+.cxFileUploadIcon_xlsx,
+.cxFileUploadIcon_csv,
+.cxFileUploadIcon_xls {
+  background-position: -251px -150px;
+  width: 15px;
+  height: 17px;
+}
+/* CRUX File Type Icons Ends*/
+/** CRUX Simgle File Upload With Preview style starts **/
+.cxSelectAreaWrapperDiv.cxFileUpSingleImgSelected {
+  padding: 0px;
+  overflow: hidden;
+}
+.cxFileUpSingleImgView,
+.cxFileUpSingleImgViewCont {
+  width: 100%;
+  height: 100%;
+}
+/** CRUX Simgle File Upload With Preview style ends **/
+.cxFileUploadFreezeLayer {
+  position: relative;
+}
+.cxFileUploadFreezeLayer::after {
+  content: '';
+  position: absolute;
+  inset: 0px;
+}
+/*# sourceMappingURL=crux-file-upload.css.map */

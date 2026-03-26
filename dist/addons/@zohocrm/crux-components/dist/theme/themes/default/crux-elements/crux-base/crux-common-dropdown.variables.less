@@ -1,0 +1,146 @@
+.cxboxdropdownMixin() {
+    @font-family: @cruxPrimaryFont;
+    @font-size: @cxBoxDropdownFontSize;
+	@color: @cxBoxDropdownTextColor;
+    @display: block;
+}
+.cxFlatDropdownButtonMixin() {
+    @text-align: @value-textalign-left;
+}
+.cxboxdropdownDropbutton() {
+	@border: 1px solid @cxBoxDropdownBorderColor;
+	@border-radius: @cxBoxDropdownBorderRadius;
+    @text-align: @value-textalign-left;
+	@padding: 8px 30px 8px 10px;
+	@color: @cxBoxDropdownTextColor;
+	@bg: @cxBoxDropdownBg;
+    @transition: box-shadow 0.1s ease-in-out;
+}
+.cxboxdropdownMultisearchDropbutton() {
+	// @padding: 8px 10px;
+	@padding: 4px 10px 1px 10px;
+}
+.cxBoxDropdownMultisearchTextFieldMixin() {
+    @padding: 0;
+}
+.cxBoxDropdownLabelMixin() {
+    @margin: 0;
+    @padding: 0;
+    @font-size: @cxBoxDropdownFontSize;
+}
+.cxboxdropdownPlaceholderNormal() {
+	@color: @cxBoxDropdownPlaceholderColor;
+    @opacity: 0.7;
+}
+.cxboxdropdownDropdownIcon() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -1px -2px;
+	@w: 8px;
+	@h: 7px;
+	@right: 10px;
+	@top: calc(50% - 2px);
+    @opacity: 0.5;
+}
+.cxboxdropdownDropbuttonHover() {
+	@border: 1px solid @cxBoxDropdownBorderHoverColor;
+	// @box-shadow: @cxBoxDropdownHoverShadow;
+	@box-shadow: none;
+}
+.cxboxdropdownDropbuttonOpened() {
+	@border: 1px solid @cxBoxDropdownBorderFocusColor;
+	@box-shadow: 0 0 6px @cxBoxDropdownFocusShadowColor;
+}
+.cxCommonDropdownMultipleSelectMixin() {
+    @margin: 0;
+    @padding: 0;
+}
+.cxboxdropdownMultipleselectLi() {
+    @margin: 0 5px 5px 0;
+	@padding: 2px 20px 2px 5px;
+	@font-size: 13px;
+	@line-height: 16px;
+	@bg: @cxBoxMultiDropdownItemBg;
+	@border: 1px solid @cxBoxMultiDropdownItemBorderColor;
+	@border-radius: 2px;
+	@max-w: calc(100% - 5px);
+}
+.cxboxdropdownMultipleSelectClose() {
+    @bg: transparent;
+    @top: 0;
+    @bottom: 0;
+    @right: 0;
+    @left: auto;
+	@w: 16px;
+	@border-radius: 0 1px 1px 0;
+    @opacity: 1;
+}
+.cxboxdropdownMultipleSelectCloseHover() {
+	@bg: @cxBoxMultiDropdownCloseHoverBg;
+}
+.cxboxdropdownMultipleSelectCloseAfter() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -54px -2px;
+	@w: 8px;
+	@h: 8px;
+	@top: calc(50% - 4px);
+	@left: calc(50% - 4px);
+    @opacity: 0.9;
+    @transform: scale(0.9);
+}
+.cxBoxDropdownMultiSearchInputPlaceholderMixin() {
+    @font-size: 14px;
+}
+.cxdropboxMixin() {
+    @font-size: @cxBoxDropboxFontSize;
+	@color: @cxBoxDropboxColor;
+	@bg: @cxBoxDropboxBg;
+	@border: 1px solid @cxBoxDropboxBorderColor;
+	@box-shadow: 0 2px 6px 0 @cxBoxDropboxBoxShadowColor;
+	/*@z-index: 10020;*/
+	@max-w: 430px;
+}
+.cxDropboxlyteField() {
+	@border-bottom: 1px solid @cxBoxDropboxSearchInputBorder;
+}
+.cxDropboxDropbody() {
+    @padding: 5px 0;
+}
+.cxDropboxDropitem() {
+	@color: @cxBoxDropboxColor;
+	@padding: 6px 25px;
+    @font-size: @cxBoxDropboxFontSize;
+}
+.cxDropboxMultiselectdropdownDropitem() {
+	@padding: 6px 10px;
+}
+.cxDropboxDropitemSelection() {
+	@bg: @cxBoxDropboxSelectedItemBg;
+	@color: @cxBoxDropboxColor;
+}
+.cxDropboxSelectedItemBefore() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -4px -77px;
+	@w: 11px;
+	@h: 9px;
+	@left: 7px;
+	@top: calc(50% - 5px);
+    @opacity: 0.8;
+}
+.cxDropboxDropdownNoResult() {
+	@padding: 8px 10px;
+    @text-align: center;
+	@color: @cxBoxDropdownNoResultColor;
+}
+.cxDropboxDropGroupMixin() {
+    @margin-bottom: 10px;
+}
+.cxDropboxDropGroupLastElemMixin() {
+    @margin-bottom: 0;
+}
+.cxDropboxDropLabelMixin() {
+    @text-transform: uppercase;
+    @color: @cxBoxDropboxLabelColor;
+    @font-size: @cxFontSize13px;
+    @text-align: @value-textalign-left;
+    @padding: 6px 25px;
+}

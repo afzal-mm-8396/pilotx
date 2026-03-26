@@ -1,0 +1,355 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cxImageViewWrap {
+  width: 70px;
+  height: 70px;
+  border-radius: 25px;
+  cursor: pointer;
+  position: relative;
+}
+.cxImageViewNoImage,
+.cxImageViewImgElem,
+.cxImageViewOverlay {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+.cxImageViewOverlay {
+  position: absolute;
+  background: var(--lyte-crux-image-preview-overlay-bg-color);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+.cxImageViewWrap:hover .cxImageViewOverlay {
+  opacity: 1;
+}
+.cxImageCameraIcon {
+  width: 21px;
+  height: 16px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -180px -124px;
+  mask-position: -180px -124px;
+  background-color: var(--lyte-crux-image-camera-icon-color);
+}
+.cxImageViewImgElem {
+  object-fit: cover;
+}
+.cxImageViewNoImage {
+  background-image: url(../../images/crux-image-preview-sprite.png);
+  background-size: 470px auto;
+  color: var(--lyte-crux-image-alphabet-text-color);
+  text-align: center;
+  line-height: 70px;
+  font-size: 40px;
+  font-family: 'LatoSemiBold', sans-serif;
+}
+.cxImageViewOverlay:hover + .cxImageViewNoImage {
+  color: transparent;
+}
+.cxImageViewNoImage1 {
+  background-position: -20px -20px;
+}
+.cxImageViewNoImage2 {
+  background-position: -110px -20px;
+}
+.cxImageViewNoImage3 {
+  background-position: -200px -20px;
+}
+.cxImageViewNoImage4 {
+  background-position: -290px -20px;
+}
+.cxImageViewNoImage5 {
+  background-position: -380px -20px;
+}
+.cxImageViewNoImage6 {
+  background-position: -20px -110px;
+}
+.cxImageViewNoImage7 {
+  background-position: -110px -110px;
+}
+.cxImageViewNoImage8 {
+  background-position: -200px -110px;
+}
+.cxImageViewNoImage9 {
+  background-position: -290px -110px;
+}
+.cxImageViewNoImage10 {
+  background-position: -380px -110px;
+}
+.cxMultiImageList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.cxImgCompValidationCont ~ .cxMultiImgUploadBtn,
+.cxMultiImageList ~ .cxMultiImgUploadBtn {
+  margin-top: 8px;
+}
+.cxImgCompLoader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: var(--lyte-crux-image-loader-bg-color);
+}
+.cxImgCompLoader::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  transform: rotate(12deg);
+  background: var(--lyte-crux-image-loader-animation-bg-color);
+  box-shadow: 1px 1px 11px 7px var(--lyte-crux-image-loader-animation-box-shadow-color);
+  animation: cxImageLoaderAnimation 0.7s infinite;
+}
+.cxImageElemWrapper {
+  border: 1px solid var(--lyte-crux-input-border-color);
+  padding: 3px 5px;
+  border-radius: 6px;
+  position: relative;
+}
+.cxImageElemWrapper:hover {
+  border: 1px solid var(--lyte-crux-input-hover-border-color);
+}
+.cxImageElemViewWrapper:hover,
+.cxImageElemViewWrapper {
+  border: 1px solid transparent;
+}
+.cxImgElemReadOnly {
+  background: var(--lyte-crux-input-disabled-bg-color);
+  border-color: var(--lyte-crux-input-disabled-border-color);
+}
+.cxImageElemWrapper.cxWrapperElemWithImage {
+  padding: 5px;
+}
+.cxMultiImageListViewCont {
+  width: 62px;
+  height: 62px;
+  border: 1px solid var(--lyte-crux-image-list-border-color);
+  display: block;
+  flex-shrink: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.cxMultiImageListViewCont.sortable-element-selected {
+  border: 1px dashed var(--lyte-crux-image-list-select-border-color);
+  box-shadow: 0px 0px 4px 0px var(--lyte-crux-image-list-select-box-shadow-color);
+}
+.cxMultiImageListViewCont.sortable-element-selected.cxImgListVwSortableSelectElemOndrag {
+  border: 1px solid var(--lyte-crux-image-list-border-color);
+}
+.cxImageContHoverCont {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background: var(--lyte-crux-image-list-hover-bg-color);
+  display: inline-block;
+}
+.cxImgCompDeleteIcon {
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -356px -135px;
+  mask-position: -356px -135px;
+  background-color: var(--lyte-crux-image-list-delete-icon-color);
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+.cxImgCompDeleteIcon:hover {
+  background-color: var(--lyte-crux-image-list-delete-icon-hover-color);
+}
+.cxImgCompPreviewIcon {
+  width: 19px;
+  height: 19px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -165px -198px;
+  mask-position: -165px -198px;
+  background-color: var(--lyte-crux-image-list-preview-icon-color);
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+}
+.cxMultiImageListViewCont .cxListPreviewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cxImgCompValidationWaiting::before,
+.cxImgCompValidationProcessing::before {
+  content: '';
+  display: inline-block;
+  width: 27px;
+  height: 30px;
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -205px -232px;
+  inset: 0px;
+  position: absolute;
+  margin: auto;
+}
+.cxImgCompValidationWaiting::before {
+  width: 29px;
+  height: 30px;
+  background-position: -242px -233px;
+}
+.cxImgCompValidationCont {
+  cursor: pointer;
+}
+.cxImgCompViewEmptyIcon {
+  display: block;
+  width: 11px;
+  height: 1px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -146px -271px;
+  mask-position: -146px -271px;
+  background-color: var(--lyte-crux-image-hyphen-icon-color);
+  margin: 13px 7px 12px;
+}
+@keyframes cxImageLoaderAnimation {
+  0% {
+    left: -20px;
+  }
+  100% {
+    left: calc(100% + 20px);
+  }
+}
+.cxImageElemWrapper.cxSFImgElemWrapper {
+  padding: 0px;
+  display: flex;
+}
+.cxSFImgListCont {
+  flex: 1;
+}
+.cxSFImgListContExpand.cxSFImgListCont {
+  padding: 3px 9px;
+  display: flex;
+  align-items: center;
+}
+.cxSFImgListUploadIconDiv {
+  flex-shrink: 0;
+  padding: 8px;
+  background: var(--lyte-crux-input-icon-bg-color);
+  border-radius: 0px 5px 5px 0px;
+  cursor: pointer;
+}
+.cxSFImgListUploadIcon {
+  display: inline-block;
+  width: 17px;
+  height: 16px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -271px -175px;
+  mask-position: -271px -175px;
+  background-color: var(--lyte-crux-image-upload-icon-color);
+  vertical-align: top;
+}
+.cxSFImgListPlaceholder {
+  color: var(--lyte-crux-input-placeholder-text-color);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  padding: 3px 9px;
+  box-sizing: border-box;
+}
+.cxSFImgListCollapseView {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.cxGalleryImageIcon.cxSFShowMoreImageIcon {
+  margin-right: 5px;
+  background-color: var(--lyte-crux-image-subform-show-more-icon-bg-color);
+}
+.cxImgListLockIcon {
+  display: inline-block;
+  width: 14px;
+  height: 16px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -165px -262px;
+  mask-position: -165px -262px;
+  background-color: var(--lyte-crux-input-lock-icon-color);
+}
+.cxSFImgListLockIcon {
+  position: relative;
+  right: 2px;
+  background-color: var(--lyte-crux-input-lock-icon-color);
+  vertical-align: top;
+}
+.cxImageElemWrapper.cxImgElemReadOnly:not(.cxSFImgElemWrapper) {
+  padding-right: 30px;
+}
+.cxImgListLockIconDefault {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.cxImgHoverContWrapper {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+.cxMultiImageListViewCont:hover .cxImgHoverContWrapper {
+  visibility: visible;
+}
+.cxMultiImageListViewCont.sortable-element {
+  cursor: grab;
+}
+.cxImgPrevListOnDrag,
+.cxMultiImageListViewCont.sortable-element-selected .cxImageContHoverCont,
+.cxMultiImageListViewCont.sortable-element-selected,
+.cxImgPrevListOnDrag .cxMultiImageListViewCont.sortable-element {
+  cursor: grabbing;
+}
+.cxImgPrevListOnDrag .cxMultiImageListViewCont .cxImgHoverContWrapper {
+  visibility: hidden;
+}
+.cxImageElemWrapper.cxImageElemViewWrapper.mandatoryField:before {
+  content: none;
+}
+/*# sourceMappingURL=crux-image-component.css.map */

@@ -1,0 +1,519 @@
+.cxSelectAreaWrapperDivMixin(){
+    @border: 1px dashed @cxFileUploadDropAreaBorder;
+    @border-radius: 10px;
+    @padding: 25px 0px;
+    @font-size: @cxFontSize13px;
+    @min-h: 150px;
+}
+
+.cxTypeFileSelectedMixin(){
+    @padding: 10px 0px 20px 0px;
+}
+.cxLyteFileUpdListMixin(){
+    @margin-top: 0px;
+    @padding: 0px 20px;
+}
+
+.cxFileUpFileListSortableElemMixin(){
+    @bg: @cxFileUploadListBg;
+    @box-shadow: 0px 0px 4px 0px @cxFileUpdListBoxShadow;
+}
+
+.cxLyteFileUpdListOnSelectMixin(){
+    @min-h: 32px;
+    @padding: 10px 20px;
+}
+
+.cxCruxFileUploadSortableDivMixin(){
+    @left: -10px;
+    @grid-template-columns: 50% 50%;
+    @column-gap: 10px;
+    @row-gap: 15px;
+    @padding: 0 10px;
+}
+
+.cxFileUpdListSortableDivMixin(){
+    @grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+    @column-gap: 10px;
+}
+
+.cxFileUpdListSingleColSortableDivMixin{
+    @grid-template-columns: 100%;
+    @row-gap: 15px;
+}
+
+.cxFileUploadImageThumbMixin(){
+    @w: 28px;
+    @h: 28px;
+    @border-radius: 4px;
+    @border: 1px solid @cxFileUploadImgThumbBorder;
+    @margin-right: 8px;
+}
+
+.cxFileUpdListFileMixin(){
+    @margin: 0px !important;
+    @padding: 7px 10px;
+    @border-radius: 6px;
+}
+
+.cxFileUplListSortableSelectItemMixin(){
+    @border: 1px dashed @cxFileUploadListSortElemBorder;
+    @box-shadow: 0px 0px 4px 0px @cxFileUpdListBoxShadow;
+}
+
+.cxFileUplListSortableSelectItemOndragMixin(){
+    @border: 1px solid @cxFileUploadListBorder;
+}
+
+// .cxUnsortableFileUploadListElemMixin(){
+//     @border: 1px solid #D7E2ED;
+//     @bg: #F8FAFF;
+// }
+
+.cxImgUploadModaHeaderMixin(){
+    @padding-bottom: 20px;
+}
+
+.cxFileUploadListOnImageModalMixin(){
+    @padding: .cruxLESSPaddingMixin(5px 15px 5px 5px)[@padding];
+}
+
+.cxFileUpdFileNameWrapMixin(){
+    @min-w: 20px;
+}
+
+.cxcxFileUpdFileNameMixin(){
+    @max-w: calc(100%) !important;
+    @font-size: @cxFontSize13px;
+    @line-height: 16px;
+    @margin-right: 0px;
+    @min-w: 20px;
+}
+.cxFileDragEnterCxSelectAreaWrapperDivMixin(){
+    @border-color: @cxFileUploadDropAreaActiveBorder;
+}
+.cxSelectAreaWrapperDivAfterMixin(){
+    @bg-color: @cxFileUploadDropAreaActiveBg;
+    @w: 100%;
+    @top: 0;
+    @left: 0;
+    @h: 100%;
+    @border-radius: 10px;
+    @z-index: -1;
+}
+.cxTypeFileSelectedCxSelectAreaWrapperDivAfterMixin(){
+    @z-index: 1;
+    @opacity: 0.7;
+}
+
+.cxSelectionAreaDivMixin(){
+    @font-size: @cxFontSize13px;
+}
+
+.cxTypeFilePrimaryMsgMixin(){
+    @margin-top: 30px;
+    @padding: 0px 20px;
+    @font-size: @cxFontSize13px;
+}
+.cxSelectionAreaDivTypeFilePrimaryMsgMixin(){
+    @color: @cxFileUploadPrimaryMsgColor;
+    @font-size: @cxFontSize13px;
+    @font-family: @cruxTertiaryFont;
+}
+.cxTypeFileSecondaryMsgMixin(){
+    @color: @cxFileUploadSecondaryMsgColor;
+    @margin-top: 15px;
+}
+.cxFileUploadAttachmentMixin(){
+    @margin-right: 5px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -356px -179px;
+    @bg-color: @cxFileUploadIconBg;
+    @w: 15px;
+    @h: 13px;
+    @flex-shrink: 0;
+}
+
+.cxFileUploadHeadIconAttachmentMixin(){
+    @w: 14px;
+    @h: 16px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -199px -360px;
+    @bg-color: @cxFileUploadIconBg;
+}
+
+.cxImageUploadHeadIconAttachmentMixin(){
+    @w: 16px;
+    @h: 16px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -174px -360px;
+    @bg-color: @cxFileUploadIconBg;
+}
+
+.cxFileUpdHeadCloudIconAttachmentMixin(){
+    @w: 16px;
+    @h: 14px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -150px -362px;
+    @bg-color: @cxFileUploadIconBg;
+}
+
+.cxFileUploadHeadIconContainerMixin(){
+    @margin-bottom: 15px;
+}
+
+.cxImageUploadHeadIconMixin(){
+    @bg-img: @cruxSprite;
+    @bg-pos: -3px -224px;
+    @w: 51px;
+    @h: 45px;
+    @margin-bottom: 12px;
+}
+
+.cxFileUploadHeadIconMixin(){
+    @bg-img: @cruxSprite;
+    @bg-pos: -66px -225px;
+    @w: 49px;
+    @h: 56px;
+    @margin-bottom: 15px;
+}
+
+.cxFileUpdHeadCloudIconMixin(){
+    @bg-img: @cruxSprite;
+    @bg-pos: -4px -385px;
+    @w: 51px;
+    @h: 37px;
+    @margin-bottom: 12px;
+}
+
+.cxFileUploadSuccessStatusIconMixin() {
+    @bg-img: @cruxSprite;
+    @bg-pos:  -229px -177px;
+    @w: 14px;
+    @h: 14px;
+}
+.cxFileSeperatorTextMixin(){
+    @color: @cxFileUploadSecondaryMsgColor;
+    @margin: 8px 0;
+    @font-family: @cruxTertiaryFont;
+}
+// .cxFileUploadedMixin(){
+//     @margin-bottom: 15px;
+//     @color: @cxFileUploadUploadedYieldColor;
+//     @font-size: @cxFontSize14px;
+//     @font-family: @cruxTertiaryFont;
+// }
+.cxFileUploadedCountMixin(){
+    @border: 1px solid @cxFileUploadedCountBorder;
+    @border-radius: 20px;
+    @padding: 3px 5px;
+    @min-w: 22px;
+}
+.cxSingleFileListCruxFileUploadSortableDivMixin(){
+    @grid-template-columns: 100%;
+    @column-gap: 0px;
+    @row-gap: 10px;
+    @padding-right: 0;
+    @w: 100%;
+}
+// .cxLyteFileUpdListSingleFileListMixin(){
+//     @padding-right: 0;
+// }
+.cxUploadedBrowseButtonMixin(){
+    @margin-left: 10px;
+}
+
+.cxFileUploadActionIconWrapMixin(){
+    @margin-right: 20px;
+    // @margin-left: auto;
+}
+
+.cxFileUploadActionIconWrapBeforeMixin(){
+    @w: 20px;
+    @h: 20px;
+    @border: 1px solid @cxFileUploadEditIconHoverEffectBorder;
+    @bg: @cxFileUploadEditIconHoverEffectBg;
+    @left: calc(50% - 11px);
+    @top: calc(50% - 11px);
+    @border-radius: 100%;
+    @transform: scale(0.9);
+    @opacity: 0.5;
+    @transition: opacity 0.1s,transform 0.1s;
+}
+
+.cxFileUploadActionIconWrapOnImageUploadMixin(){
+    @w: 26px;
+    @h: 26px;
+    @left: calc(50% - 14px);
+    @top: calc(50% - 14px);
+}
+
+.cxFileUploadActionIconWrapHoverBeforeMixin(){
+    @transform: scale(1);
+    @opacity: 1;
+}
+
+.cxFileUploadRetryIconWrapMixin(){
+    @margin-right: 19px;
+}
+
+.cxFileUploadEditIconMixin(){
+    @bg-img:@cruxSprite;
+    @bg-pos: -69px -153px;
+    @bg-color: @cxFileUploadIconBg;
+    @w: 13px;
+    @h: 13px;
+    @z-index: 1;
+}
+
+.cxFileUploadRemoveIconMixin(){
+    @bg-img:@cruxSprite;
+    @bg-pos: -250px -177px;
+    @bg-color: @cxFileUploadRemoveIconBg;
+    @w: 14px;
+    @h: 14px;
+    @z-index: 1;
+}
+
+.cxFileUploadRetryIconMixin(){
+    @bg-img:@cruxSprite;
+    @bg-pos: -149px -223px;
+    @bg-color: @cxFileUploadSuccessIconBg;
+    @w: 12px;
+    @h: 13px;
+    @z-index: 1;
+}
+
+.cxFileUploadWarningIconMixin(){
+    @bg-img:@cruxSprite;
+    @bg-pos: -126px -223px;
+    @bg-color: @cxFileUploadRemoveIconBg;
+    @w: 14px;
+    @h: 14px;
+}
+
+.cxFileUpdLiDownIconMixin(){
+    @bg-img:@cruxSprite;
+    @bg-pos: -114px -201px;
+    @bg-color: @cxFileUploadIconBg;
+    @w: 12px;
+    @h: 12px;
+}
+
+.cxFileUploadSuccessIconMixin(){
+    @bg-img:@cruxSprite;
+    @bg-pos: -229px -177px;
+    @bg-color: @cxFileUploadSuccessIconBg;
+    @w: 14px;
+    @h: 14px;
+    // @top: 0px;
+    // @bottom: 0px;
+    // @margin: auto;
+    // @right: 17px;
+}
+
+.cxFileUploadRemoveIconWrapMixin(){
+    // @margin-left: 0px;
+    @margin-right: 0px;
+}
+
+.cxFileUploadRemoveIconWrapOnEditIconShowMixin{
+    @margin-left: 0px;
+}
+
+// .cxFileUploadActionIconWrapListFileHover(){
+//     @margin-left: auto;
+// }
+
+.cxFileUploadRetryIconOnListHoverMixin(){
+    @margin-right: 20px;
+}  
+
+.cxFileAfterUploadedSecondaryMsgMixin(){
+    @margin-top: 15px;
+    @color: @cxFileUploadSecondaryMsgColor;
+}
+
+.cxFileScanningTxtMixin(){
+    @font-size: @cxFontSize13px;
+    @color: @cxFileUploadWarningColor;
+}
+
+.cxFileUploadFileStatusMixin(){
+    @margin-left: auto;
+    @max-w: 45%;
+    @padding-left: 10px;
+    // @min-w: 30%;
+}
+
+.cxFileStatusErrorMixin(){
+    @border-color: @cxFileUploadListErrorBorder;
+    @bg: @cxFileUploadListErrorBg;
+}
+
+.cxFileUploadListCustMessageMixin(){
+    @font-size: @cxFontSize13px;
+    @margin-right: 10px;
+}
+
+.cxFileUploadListInfoMsgMixin(){
+    @color: @cxFileUploadInfoColor;
+}
+
+.cxFileUploadListWarningMsgMixin(){
+    @color: @cxFileUploadWarningColor;
+}
+
+.cxFileUploadListSuccessMsgMixin(){
+    @color: @cxFileUploadSuccessColor;
+}
+
+.cxFileUploadListErrorMsgMixin(){
+    @color: @cxFileUploadErrorColor;
+}
+
+.cxFileUploadFailMsgMixin(){
+    @margin-right: 12px;
+}
+
+.cxFileUploadListFileTypeIconWrapMixin(){
+    @w: 17px;
+    @h: 16px;
+    @margin-right: 8px;
+}
+
+.cxFileUploadInitialButtonMixin(){
+    @margin-right: 0px;
+}
+
+.cxFileUploadedMsgLableColorMixin(){
+    @color: @cxFileUploadSecondaryMsgColor;
+}
+
+.cxFileUploadSupportFormatMsgMixin(){
+    @color: @cxFileUploadSecondaryMsgColor;
+    @font-size: @cxFontSize13px;
+}
+
+.cxFileUpdLiNameSeparatorMixin(){
+    @margin: 0px 2px;
+}
+
+.cxFileUploadedOrSeparatorMixin(){
+    @margin-left: 2px;
+}
+
+.cxFileUpdLiFileSizeMixin(){
+    @margin-right: 8px;
+}
+
+.cxFileUpdLiDownIconWrapMixin(){
+    @margin-right: 10px;
+}
+
+.cxFileUpdOuterPrimaryMsgMixin(){
+    @margin-top: 10px;
+}
+
+.cxFileUpdListOuterWrapperMixin(){
+    @margin-top: 20px;
+}
+.cxFileUpdLiCircleLoaderMixin(){
+    @w: 13px;
+    @h: 13px;
+    @margin-left: 3px;
+}
+
+.cxFileUpdLiCircleLoaderSecMixin(){
+    @w: 9px;
+    @h: 9px;
+    @bg: @cxFileUploadCircleLoaderBg;
+}
+
+
+/* CRUX File Type Icons Mixin Starts*/ 
+.cxFileUploadListSpriteMixin() {
+	@bg-img: @cruxSprite;
+	@w: 17px;
+	@h: 15px;
+}
+.cxFileUploadIcon_imageMixin() {
+	@bg-pos: -274px -151px;
+	@w: 17px;
+	@h: 15px;
+}
+.cxFileUploadIcon_pdfMixin() {
+	@bg-pos: -181px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxFileUploadIcon_zipMixin() {
+	@bg-pos: -226px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxFileUploadIcon_videoMixin() {
+	@bg-pos: -113px -152px;
+	@w: 17px;
+	@h: 14px;
+}
+.cxFileUploadIcon_audioMixin() {
+	@bg-pos: -205px -150px;
+	@w: 17px;
+	@h: 17px;
+}
+.cxFileUploadIcon_docxMixin() {
+	@bg-pos: -159px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxFileUploadIcon_pptMixin() {
+	@bg-pos: -298px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxFileUploadIcon_notesMixin() {
+	@bg-pos: -137px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxFileUploadIcon_htmlMixin() {
+	@bg-pos: -321px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+
+.cxFileUploadIcon_xlsMixin(){
+	@bg-pos: -251px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+
+/* CRUX File Type Icons Mixin Ends*/ 
+
+
+/** CRUX Simgle File Upload With Preview Mixin starts **/
+
+.cxFileUpSingleImgSelectedMixin(){
+    @padding:0px;
+}
+
+.cxFileUpSingleImgViewContMixin(){
+    @w: 100%;
+    @h: 100%;
+}
+
+/** CRUX Simgle File Upload With Preview Mixin Ends **/
+
+.cxFileUpdLiCircleLoaderBeforeMixin(){
+    @bg: @cxFileUploadCircleLoaderRgb;
+}
+.cxFileUpdLiCircleLoader1Mixin(){
+    @bg: @cxFileUploadCircleLoaderRgb;
+}
+.cxFileUpdLiCircleLoader1AfterMixin(){
+    @bg: @cxFileUploadCircleLoaderRgb;
+}
+.cxFileUploadFreezeLayerAfterMixin(){
+    @inset: 0px;   
+}

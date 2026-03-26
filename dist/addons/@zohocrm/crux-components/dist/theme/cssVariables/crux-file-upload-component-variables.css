@@ -1,0 +1,52 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-file-upload-comp-list-bg-color: #F8FAFF;
+  --lyte-crux-file-upload-comp-list-border-color: #D7E2ED;
+  --lyte-crux-file-upload-comp-size-text-color: var(--crux-element-label-color);
+  --lyte-crux-file-upload-comp-success-icon-color: #338CF0;
+  --lyte-crux-file-upload-comp-remove-icon-color: #FF5D5A;
+  --lyte-crux-file-upload-comp-download-icon-color: #616E88;
+  --lyte-crux-file-upload-comp-upload-icon-color: var(--crux-base-icon-color);
+  --lyte-crux-file-upload-comp-icon-hover-effect-border-color: #C0C6CC;
+  --lyte-crux-file-upload-comp-icon-hover-effect-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-file-upload-comp-remove-icon-hover-effect-bg-color: #E9EEF4;
+  --lyte-crux-file-upload-comp-remove-icon--bg-color: var(--crux-base-icon-color);
+  --lyte-crux-file-upload-disabled-btn-border-color: var(--crux-element-disabled-border-color);
+  --lyte-crux-single-file-upload-placeholder-color: #A2A9B7;
+  --lyte-crux-file-upload-error-btn-border-color: #FF5D5A;
+}
+/*# sourceMappingURL=crux-file-upload-component-variables.css.map */

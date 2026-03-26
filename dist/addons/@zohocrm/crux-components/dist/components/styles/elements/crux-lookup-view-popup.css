@@ -1,0 +1,89 @@
+.cxLookupViewTopSection {
+    display: flex;
+    /* align-items: center; */
+}
+.cxLookupViewTopSection .cxLookupHasSingleRow {
+	display: flex;
+    align-items: center;
+}
+
+.cxLookupViewPopImgCont .cxLookupViewPopRecImg,
+.cxLookupViewPopImgCont{
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+    display: inline-block;
+}
+.cxLookupViewPopImgCont{
+    margin-right: 10px;
+}
+.cxEmptyProfileImage img,
+.cxLookupViewLetterCircle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+.cxLookupViewLetterCircle {
+    box-sizing: border-box;
+    background: #f8f8f8;
+    color: #111;
+    border: 1px solid #d8d8d8;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cxLookupViewTopContentWrap {
+    max-width: 330px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    font-size: 1.3rem;
+}
+.cxLookupViewTopHeading {
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-family: var(--crux-bold-font);
+    font-weight: var(--crux-font-weight-bold);
+}
+.cxLookupViewTopDesc {
+    color: #666;
+}
+
+.cxDivTable {
+    display: table;
+}
+.cxDivTr {
+    display: table-row;
+}
+.cxDivTd {
+    display: table-cell;
+}
+.cxLookupViewLabel {
+    padding : 10px 15px 0px 0px;
+    min-width: 100px;
+    color: #666;
+    font-size: 1.3rem;
+    vertical-align: top;
+    max-width: 170px;
+	overflow-wrap: break-word;
+    margin-right: 15px;
+}
+.cxLookupViewValue {
+    font-family: var(--crux-primary-font);
+    padding-top : 10px;
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+	max-width: 300px;
+    font-size: 1.3rem;
+}
+.cxLookupViewValueWrap {
+	max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cxEmptyProfileImage {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}

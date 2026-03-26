@@ -1,0 +1,110 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-role-component.variables.less";
+
+@import "../../themes/default/less-variables/crux-role-component-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-role-component";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../themes/default/css-variables/crux-role-component-variables.less";
+}
+
+crux-role-component lyte-dropdown[lt-prop-type="multisearch"] lyte-drop-button.lyteMultipleSelect {
+	.cxRoleComponentDropButtonMultipleSelectMixin();
+	@{property-padding-right}: @padding-right;
+	box-shadow: @box-shadow;
+}
+.cx_roleIconPos {
+	.cx_roleIconPosMixin();
+	position: absolute;
+	top: @top;
+	// @{property-right}: @right;
+}
+.cx_roleLookupIcon {
+	.cx_roleLookupIconMixin();
+	background: @bg;
+	width: @w;
+	height: @h;
+	background-position: @bg-pos;
+	display: inline-block;
+	opacity: @opacity;
+	vertical-align: middle;
+}
+.cx_roleLookupIcon:hover {
+	.cx_roleLookupIconHoverMixin();
+	opacity: @opacity;
+}
+
+
+.cxRoleModalWrapper lyte-modal-content {
+	.cxRoleModalWrapperModalContentMixin();
+	max-height: @max-height;
+}
+.cxRoleModalWrapper lyte-modal-content > lyte-tree {
+	.cxRoleModalWrapperOuterLyteTreeMixin();
+	display: inline-block;
+	padding-inline-end: @padding-inline-end;
+}
+.cxRoleModalWrapper lyte-tree-content {
+	display: flex;
+}
+.cxRoleCompLyteTree lyte-tree-icon:hover .treeValue lyte-text,
+.cxRoleCompLyteTree lyte-tree-icon.open .treeValue lyte-text,
+.cxRoleCompLyteTree .treeValue {
+	.cxRoleCompLytetreeValueTextMixin();
+	color: @color;
+	font-size: @font-size;
+	max-width: @max-w;
+}
+.cxRoleCompLyteTree lyte-tree-icon:hover .treeValue:hover lyte-text,
+.cxRoleCompLyteTree lyte-tree-icon.open .treeValue:hover lyte-text,
+.cxRoleCompLyteTree .treeValue:hover lyte-text {
+	.cxRoleCompLytetreeValueHoverTextMixin();
+	color: @color;
+}
+.cxRoleModalWrapper .lyteTreeMaxedChild::before {
+	visibility: hidden;
+}
+.cxRoleCompLyteTree lyte-tree-icon .collapseBox,
+.cxRoleCompLyteTree lyte-tree-icon.open .collapseBox {
+	.cxRoleCompLytetreeIconCollapseBoxMixin();
+	opacity: @opacity;
+	display: block;
+}
+.cxRoleModalWrapper lyte-tree-icon {
+	.cxRoleModalWrapperTreeIconMixin();
+	float: none;
+	margin: @margin;
+	display: inline-block;
+	width: @w;
+	height: @h;
+}
+.cxRoleModalWrapper .lyteTreeHasNoChild lyte-tree-icon {
+	display: none;
+}
+.cxRoleModalWrapper .lyteTreeHasNoChild lyte-tree-icon .arrow {
+	.cxRoleModalWrapperTreeHasNoChildIconArrowMixin();
+	background: @bg;
+	border: @border;
+	box-sizing: border-box;
+	border-radius: @border-radius;
+	cursor: default;
+}
+
+crux-role-component .cxBoxWithRightIcon.cxBoxContainsDropdown lyte-drop-button {
+    @{property-padding-right}: 25px;
+}
+crux-role-component .cxBoxWithRightIcon.cxBoxContainsDropdown .cxBoxRightIcon {
+    position: relative;
+}
+crux-role-component .cxBoxWithRightIcon.cxBoxContainsDropdown lyte-icon.dropdown {
+	.cruxRoleComponentDropIconMixin();
+    @{property-right}: @right;
+	position: absolute;
+}

@@ -1,0 +1,120 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/********* alert scrollable style starts **********/
+/********* alert scrollable style ends **********/
+.cxAlertWrapper .alertPopup {
+  border-radius: 0 0 8px 8px;
+  padding: 24px 40px 30px 30px;
+}
+.cxAlertWrapper .alertHeader {
+  padding: 0;
+  font-family: 'LatoRegular', sans-serif;
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+.cxAlertWrapper .alertPrimaryMsg {
+  padding: 0;
+  font-family: 'LatoRegular', sans-serif;
+  font-size: 22px;
+  font-weight: normal;
+}
+.cxAlertOnlyHeading .alertPrimaryMsg {
+  font-size: 1rem !important;
+  padding-top: 3px;
+  margin-bottom: 0;
+}
+.cxAlertWrapper .alertContent {
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  text-align: center;
+  align-items: flex-start;
+}
+.cxAlertWrapper.cxAlignLeft .alertContent {
+  text-align: left;
+}
+.cxAlertWrapper .lyteStatusIcon {
+  margin-top: 3px;
+}
+.cxAlertWrapper .alertContentMiddle {
+  display: block;
+}
+.cxAlertWrapper .alertSecondaryMsg,
+.cxPermissionDeniedAlert lyte-alert-content {
+  line-height: 20px;
+  overflow-wrap: anywhere;
+}
+.cxAlertWrapper .alertFooter {
+  border-top: 0;
+  padding: 0;
+  border-radius: 0 0 8px 8px;
+}
+.cxAlertWrapper lyte-alert-footer .alertFooter {
+  padding-top: 0;
+}
+/******* Alert scroll styles starts ******/
+.cxAlertScrollable .alertPopup {
+  padding: 0px;
+}
+.cxAlertScrollable .cxAlertContainer {
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+.cxAlertScrollable lyte-alert-header {
+  padding: 25px 30px 10px;
+  margin-bottom: 0px;
+}
+.cxAlertScrollable lyte-alert-content {
+  padding: 25px 30px 10px;
+  flex: 1;
+  overflow: auto;
+}
+.cxAlertScrollable lyte-alert-header + lyte-alert-content {
+  padding-top: 10px;
+}
+.cxAlertScrollable lyte-alert-footer {
+  padding: 20px 30px 30px;
+}
+.cxAlertScrollable lyte-alert-footer.alertBoxSh {
+  box-shadow: 0px -2px 4px rgba(49, 57, 73, 0.24);
+}
+.cxAlertScrollable lyte-alert-header.alertBoxSh {
+  box-shadow: 0px 2px 4px rgba(49, 57, 73, 0.24);
+}
+/******* Alert scroll styles ends ******/
+/*# sourceMappingURL=crux-utils.css.map */

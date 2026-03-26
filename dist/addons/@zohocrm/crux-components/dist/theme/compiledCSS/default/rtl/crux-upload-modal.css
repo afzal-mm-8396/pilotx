@@ -1,0 +1,182 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+.cxFileDropArea {
+  padding: 25px 0px;
+  border: 1px dashed var(--lyte-crux-upload-modal-drop-area-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.cxFileDropArea:hover {
+  background: var(--lyte-crux-upload-modal-drop-area-active-bg-color);
+  border: 1px dashed var(--lyte-crux-upload-modal-drop-area-active-border-color);
+}
+.sizeLimitReached {
+  font-size: 1rem;
+}
+.cxFileDropInnerContent {
+  text-align: center;
+}
+.cxDropFieldText3,
+.cxDropFieldText1 {
+  font-size: 0.857rem;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  color: var(--lyte-crux-upload-modal-primary-msg-color);
+}
+.cxDropFieldText2 {
+  color: var(--lyte-crux-upload-modal-secondary-msg-color);
+  font-size: 0.857rem;
+  padding: 8px 0px;
+}
+.cxDropFieldText3 {
+  text-decoration: underline;
+}
+.cxFileUploadIcon {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -2px -150px;
+  width: 57px;
+  height: 68px;
+  margin: 0 auto 30px;
+  opacity: 0.3;
+}
+.cxImgUploadModalContent .cruxFileUploadSortableDiv.sortable-parent {
+  border: none;
+  height: auto;
+}
+.cxImgUploadModalContent .cxSelectAreaWrapperDiv .lyteFileUpdList .cruxFileUploadSortableDiv {
+  right: 0px;
+  padding: 0px;
+  row-gap: 10px;
+  grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+}
+.cxMulImgUploadCountCont {
+  margin-bottom: 15px;
+  display: inline-flex;
+}
+.cxMulImgUploadCount {
+  display: inline-flex;
+  align-items: center;
+}
+.cxMultImgUploadCountLabel {
+  color: var(--lyte-crux-upload-modal-count-label-color);
+  padding-left: 3px;
+  padding-right: 8px;
+  font-size: 1rem;
+}
+.cxMultImgUploadCountValue {
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxMulImgCountSeparator {
+  padding: 0px 8px;
+  line-height: 1;
+  vertical-align: middle;
+}
+.cxImgUploadSecMsgFirstDiv {
+  margin-bottom: 8px;
+}
+.cxImgUploadSecMsgFirstDiv .cxImgUpFontBold {
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxImgUploadModalContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.cxImgUploadModalContent .cxImgUpldContFileUpldComp {
+  flex: 1;
+  min-height: 32px;
+}
+.cxImgUploadModalContent lyte-fileupload {
+  width: 100%;
+  height: 100%;
+}
+.cxImgUploadModalContent .cxImgUpldContFileUpldComp .cxSelectAreaWrapperDiv,
+.cxImgUploadModalContent .cxImgUpldContFileUpldComp .fileUploadWrapper {
+  height: 100%;
+}
+.cxImgUpdRejectedMoreFilesMsg {
+  font-family: 'LatoSemiBold', sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
+}
+/*# sourceMappingURL=crux-upload-modal.css.map */

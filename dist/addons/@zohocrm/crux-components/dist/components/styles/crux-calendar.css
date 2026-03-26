@@ -1,0 +1,198 @@
+.lyteCalendarPopup {
+/*    width: 255px;*/
+    border-radius: 5px;
+}
+.lyteCalendarNavigator {
+    text-align: center;
+    margin-bottom: -5px;
+    justify-content: space-between;
+    transition: padding 400ms linear ;
+}
+.yearAndMonthNav{
+    padding: 3px 7px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    margin-left: -7px;
+    overflow: auto;
+}
+.yearAndMonthNav:hover {
+    background: #e0e6ea;
+    border: 1px solid #cbc6c6;    
+    cursor: pointer;
+    display: table-cell;
+}
+.cruxCalNav{
+    width:15px;
+    height:15px; 
+    display:inline-block; 
+    cursor:pointer;
+    padding: 4px;
+    border-radius: 40px;
+    border: 1px solid transparent;
+    font-size: 12px;
+}
+.cruxCalNav:hover{
+    background-color: #e0e6ea;
+    border: 1px solid #bdc1c1;
+}
+.cxCalSelMonth{
+    background: #459ee2;
+    color: white;   
+}
+.lyteCalTableContainer {
+    display: block;
+    padding: 10px 12px;
+}
+.lyteCalTableRowGroup{
+    display:table-row-group
+}
+.cruxYearTableCel{
+    font-size:13px; 
+    cursor:pointer;
+    border: 1px solid transparent;
+    text-align:center;  
+    font-family: var(--crux-light-font) !important;
+    display:table-cell; 
+    border-radius: 2px;
+    color: #191A1B;
+    padding-inline-end: 3px;
+    padding-inline-start: 3px;
+    padding-block-start: 3px;
+    padding-block-end: 3px;
+
+}
+.selectedMonth{
+    background: #459ee2;
+    color: white;   
+}
+.cruxYearTableCel:hover:not(.selectedMonth){
+    background:#e8e8e8;
+    border:1px solid #cbc6c6; 
+}
+.cruxCalTableContainer{
+    color:#555; 
+    border-spacing:5px; 
+    width: 100%;
+    display: table;
+}
+.cruxMonthContainer{
+    height: 100%;
+    overflow: auto;
+    position: absolute;
+}
+.cruxCalTableRowHeader{
+    display: table-row;
+}  
+.cruxCalTableCell{ 
+    border: 1px solid transparent;
+    color: #111;
+    cursor: pointer;
+    font-weight: 549;
+    font-size: 11px;
+    display: table-cell;
+    line-height: 25px;
+    padding: 0;
+    text-align: center;
+    width: 22px;
+    min-width: 20px;
+    height: 25px;
+    border-radius: 50%;
+}
+.cruxCalTableCell:hover:not(.cruxCalSel){
+    background: #dce1e6;
+    border: 1px solid #cad4dc;
+}
+.cruxCalTableCellHeader {
+    color: #676C71;
+    cursor: default;
+    display: table-cell;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: none;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-left: 11px;
+    padding-right: 2px;
+}
+.weekTable{
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: -9px;
+    margin-left: -11px;
+}
+.cruxCalSel:hover{
+    color:#fff; 
+    background:#b3b3b3; 
+    border-radius:3px
+}
+.cruxCalSel{
+    box-shadow: 0 0 0 1px #cbcbcb;  
+}
+.cruxCalsCalMonth , .cruxCalsCalYear{
+    font-family: sans-serif;
+    font: 14px bold;
+    font-weight: bold
+}
+.cruxCalContainer{
+    margin-left: -13px;
+    margin-right: -5px;
+    margin-top: 5px;
+    width: 239px;
+    padding-left: 6px;
+    transition:  400ms ease-in-out;
+    overflow: hidden;
+    height : 193px;
+}
+.cruxCalTableRowGroup{
+    display: table-row-group;
+}
+.cruxCalTableRow{
+    display: table-row;
+}
+.cxYearHeader{
+    padding-left: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.cxSingleYear{
+    margin-left: -7px;
+    padding-bottom: 12px;
+    /*border-bottom: 1px solid #cbc6c6;*/
+    padding-top: 12px;
+}
+.cxHeaderBack{
+    background-color : #ebeff0;
+    padding: 7px 24px 5px;
+    transition: background-color 400ms ease, padding 400ms linear;
+}
+/*.scrollBindYearContainer{
+    margin-top: 10px;
+}*/
+.cruxCalYearContainer{
+    height: 272px;
+    overflow: auto;
+    position: relative;
+}
+.cxCalMonthContainer{
+    padding-bottom: 15px;
+}
+.hrLine{
+    opacity: 0.5;
+    margin-top: 13px;
+    margin-bottom: 13px;
+}
+.cxCalCurMonth{
+    border: 1px solid #4fa1e0;
+}
+.cxCalDisableHover{
+    pointer-events: none;
+}
+.dN{
+    display: none;
+}
+.lyteCalendarHidden{
+    display: none;
+}
+.lyteDropdownHidden{
+     display: none;
+}

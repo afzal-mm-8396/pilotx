@@ -1,0 +1,82 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+crux-lookupfilter-component {
+  display: table-row;
+}
+crux-lookupfilter-component lyte-th.lyteFixedColumn.cxLookupFirstCol:not(.lytePreventIcon)::after {
+  content: none;
+}
+crux-lookupfilter-component lyte-th,
+lyte-table.border crux-lookupfilter-component lyte-th {
+  border: 0;
+  padding-bottom: 20px;
+}
+.cxLookupFilterButtonWrap {
+  position: relative;
+  white-space: normal;
+  z-index: 5;
+  margin-top: 20px;
+}
+.cxSFDiscountWrap crux-number-component {
+  max-width: calc(100% - 20px);
+}
+.cxSFDiscountWrap .numberDivNumberView {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cxLookupClearFilter {
+  margin-left: 10px;
+  cursor: pointer;
+  color: var(--lyte-crux-lookup-clear-filter-text-color);
+  display: inline-block;
+}
+.cxLookupFilterButtonWrap .lyte-button {
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+.cxLookupFieldList lyte-dropdown {
+  max-width: 100%;
+}
+crux-lookupfilter-component .cxCriteriaInputSection {
+  margin-top: 20px;
+}
+/* Temp Override styles STarts */
+.cxLookupFilterButtonWrap .lytePrimaryBtn {
+  min-width: 102px;
+  margin-right: 0;
+  margin-bottom: 10px;
+}
+/*# sourceMappingURL=crux-lookupfilter-component.css.map */

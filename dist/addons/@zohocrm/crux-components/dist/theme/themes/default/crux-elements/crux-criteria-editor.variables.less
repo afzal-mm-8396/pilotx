@@ -1,0 +1,780 @@
+.cxCriteriaEditorMixin() {
+    @font-family: @cruxPrimaryFont;
+}
+.cxCriteriaNewPatEdtrMixin() {
+    @w: 100%;
+}
+.cxCriteriaPrefixOrigDropdownMixin(){
+    @w:100%;
+}
+.cx_fieldsDropdownMixin(){
+    @w:100%;
+}
+.cx_compDropdownMixin(){
+    @w:100%;
+}
+.cxCriteriaPtrnLabelMixin() {
+    @color: @cxCriteriaPatternLabelColor;
+    // @font-size: 15px;
+    @font-size: @cxCriteriaCommonFontSize;
+}
+.cxCriteriaBoxPtrnLabelMixin() {
+    // @color: #303a48;
+    @color: @cxCriteriaBoxPatternLabelColor;
+    @margin-right: 5px;
+}
+.cxCriteriaBoxPtrnViewModeLabelMixin() {
+	@margin-top: 0;
+}
+.cxCriteriaPatternTextMixin() {
+	@margin-top: 0;
+	@font-size: @cxCriteriaCommonFontSize;
+}
+.cxCriteriaAutoWidthNumberSpacingMixin() {
+    @padding-right: 15px;
+    @margin-right: 0;
+}
+.cxCriteriaPtrnContViewModePatternTextMixin() {
+	@font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+}
+.cxCriteriaPtrnContEditModeMixin() {
+	@padding-top: 30px;
+	@padding-bottom: 5px;
+}
+.cxCriteriaBoxNewptrnEdtrTdMixin() {
+    @padding-top: 0;
+	@w: auto;
+}
+.cxCriteriaBoxNewptrnEdtrTdFirstElemMixin() {
+	@margin-left: 55px; /* Adjusted as per latest Guidelines */
+	@w: 150px;
+}
+.cxCriteriaContainerMixin(){
+    @border: 1px solid #ddd;
+    @border-radius: 6px;
+}
+.cxCriterEditorWrapperMixin(){   
+     @border: 1px solid @cxCriteriaFlatBorderColor;
+     @height: 92px;	
+     @width: 216px;		
+     @border-radius: 6px;
+     @padding-right:12px;
+     @padding-left:12px;
+     @padding-top:9px;
+     @padding-bottom:9px;
+}
+.cxCriterEditorUnEditiableContentMixin(){
+
+   @color: @cxCriteriaTextLabelColor;
+}
+.cxCriterEditorEditiableContentMixin(){
+    @padding-left: 4px;
+    @color: @cxCriteriaTextColor;
+}
+.cxCriteriaContainerHoverMixin(){
+    @border: 1px solid var(--formBorderHover);
+    @box-shadow: var(--formBoxShadowHover);
+}
+.cxCriteriaContainerFocusMixin(){
+   @border: 1px solid @cxCriteriaFlatFocusBorderColor;
+   @box-shadow: 0px 0px 6px @cxCriteriaFlatFocusBorderColor;
+   @outline: 0;
+}
+.cxCriteriaBoxPatternFirstTdMixin() {
+	@w: auto;
+	@padding-right: 20px;
+    // @padding-top:10px;
+}
+.cxCriteriaPtrnContEditViewModeMixin(){
+    @padding-right: 20px;
+}
+.cxCriteriaEditorPatternValueMixin() {
+    @flex-grow: 1;
+    @padding-right: 0;
+    @margin-right: 7px;
+}
+.cxCriteriaNewPatEdtrLabelInputMixin() {
+    @border-bottom: 1px solid @cxCriteriaPatternInputBorder;
+}
+.cxCriteriaPatternValueMixin() {
+    @color: @cxCriteriaPatternValueColor;
+}
+.cxCriteriaBoxPatternValueMixin() {
+    @padding: 7px 10px 8px;
+    @border: 1px solid transparent;
+}
+.cxCriteriaSaveEditLinkMixin() {
+    @font-size: @cxCriteriaCommonFontSize;
+    @margin-left: 10px;
+    @color: @cxCriteriaBtnLinkColor;
+    @margin-top: 10px;
+}
+.cxCriteriaDeleteLinkMixin() {
+    // @color: var(--formBorderError);
+    @color: @cxCriteriaDeleteLinkColor;
+}
+.cxCriteriaBoxStyleEditLinkMixin() {
+	@margin-left: 0;
+}
+.cxCriteriaBoxSaveCancelMixin() {
+    @w: 18px;
+    @h: 18px;
+    @border: 1px solid @cxCriteriaBoxBtnBorder;
+    @border-radius: 50%;
+    @margin-top: 7px;
+}
+.cxCriteriaBoxSaveMixin() {
+    @bg: @cxCriteriaBoxSaveBtnBg;
+    @border: 1px solid @cxCriteriaBoxSaveBtnBorder;
+    @margin-left: 10px;
+}
+.cxCriteriaBoxSaveLinkBeforeMixin() {
+    @bg: @cruxSprite;
+    @bg-pos: -316px -116px;
+    @w: 11px;
+    @h: 8px;
+}
+.cxCriteriaBoxCancelLinkBeforeMixin() {
+    @bg: @cruxSprite;
+    @bg-pos: -337px -115px;
+    @w: 9px;
+    @h: 10px;
+}
+.cxCriteriaCancelLinkMixin() {
+    @color: @cxCriteriaCancelBtnTextColor;
+}
+.cxCriteriaEditModeLabelMixin() {
+    @border-bottom: 1px solid @cxCriteriaLabelEditModeBorder;
+}
+.cxCriteriaNewPatEdtrViewmodePatternInputMixin() {
+    @border-bottom: 0;
+    @margin-right: 0;
+}
+.cxCriteriaPatternViewmodeTdMixin() {
+	@padding: 0 0 5px;
+	@w: auto;
+}
+.cxCriteriaNewPatEdtrViewModeCriteriaTdFirstMixin() {
+    @margin-left: 0;
+}
+.cxEditPatternInputPatternTextFieldMixin() {
+    @border-bottom: 0;
+    @padding: 0;
+}
+.cxEditPatternInputCriteriaMixin() {
+    @padding: 0;
+    @h: 40px;
+}
+.cxCriteriaBoxPatternButtonsMixin() {
+    @min-w: 60px;
+    @w: 60px;
+}
+.cxCriteriaEditorColorSpanMixin() {
+    @color: @cxCriteriaViewTextColor;
+}
+.cxCriteriaViewComparatorLabelMixin() {
+	@color: @cxCriteriaViewComparatorColor;
+}
+.cxCriteriaBulletSepMixin(){
+    @margin-right: 5px;
+    @margin-left: 5px;
+}
+.cxCriteriaViewIndexSpanMixin() {
+	@color: @cxCriteriaIndexViewSpanColor;
+}
+.cxCriteriaEditorLyteInputMixin() {
+    @w: 100%;
+}
+.cxCriteriaEditorInputDisabledMixin() {
+    @opacity: 0.6;
+}
+.cxCriteriaBoxNumWrapMixin() {
+    @margin-top: 2px;
+}
+.cxCriteriaEditorDropdownLabelMixin() {
+    @margin-right: 12px;
+    @max-w: calc(100% - 20px);
+}
+.cxCriteriaEditorAndorConditionViewMixin() {
+    @w: 35px;
+    @font-size: 12px;
+}
+.cxCriteriaViewRowMixin() {
+    @margin-bottom: 5px;
+}
+.cxCriteriaViewRowFirstRowTdMixin() {
+    // @padding-top: 0;
+    @padding-top: 15px;
+    // @vertical-align: baseline;
+}
+.cxCriteriaViewRowTdMixin() {
+    @padding: 0;
+}
+.cxCriteriaNumberMixin(){
+    @width: 30px;
+    @margin-right: 15px;
+}
+.cxCriteriaTdCriteriaNumberBeforeMixin() {
+    @w: 1px;
+    @bg: @cxCriteriaNumberBg;
+    @left: 15px;
+    @top: 65px;
+    @bottom: -40px;
+}
+.cxCriteriaFirstRowTdCriteriaNumberBeforeMixin() {
+    // @top: 45px;
+    @top: 32px;
+}
+.cxCriteriaTdMixin() {
+    @padding: 35px 10px 0 0;
+    @font-size: @cxCriteriaCommonFontSize;
+    @w: 150px;
+}
+.cxAddRemoveTdMixin(){
+    @width: 50px;
+    @vertical-align: middle;
+}
+.cxCriteriaTdForViewmodeMixin() {
+    @padding-top: 10px; /* changed to 10 to adjust border spacing issue */
+}
+
+.cxCriteriaAgeInDaysCompLabelMixin() {
+    @font-size: @cxCriteriaCommonFontSize;
+    @line-height: 13px;
+}
+.cxCriteriaAgeInDaysValMixin() {
+    @w: auto;
+    @flex-grow: 1;
+}
+.cxCriteriaRowBetweenComponentsMixin() {
+    @min-w: 200px;
+}
+.cxCriteriaRowDatewidthMixin() {
+    @w: 50%;
+    @min-w: 90px;
+}
+.cxCriteriaRowTimeSectionMixin() {
+    @w: 50%;
+    @min-w: 70px;
+}
+.cxCriteriaRowUserDropdownDropButtonMixin() {
+    @border-bottom: 1px solid @cxCriteriaFlatBorderColor !important;
+}
+.cxCriteriaRowDropdownIconMixin() {
+    @bg-img: @cruxSprite;
+    @bg-pos: 0 0;
+    @w: 9px;
+    @h: 7px;
+    @opacity: 0.6;
+}
+.cxCriteriaLyteDropdownButtonMixin() {
+    @color: @cxCriteriaTextColor;
+    @padding: 8px 3px;
+    @border: 0;
+    @border-bottom: 1px solid @cxCriteriaFlatBorderColor;
+    @bg: @cxCriteriaElementsBg;
+}
+.cxCriteriaDropdownMultipleButtonMixin() {
+    @color: @cxCriteriaTextColor;
+    @padding: 0 3px;
+    @border: 0;
+}
+.cxCriteriaRowInputFieldMixin() {
+    @padding: 0;
+    @border: 0;
+    @border-bottom: 1px solid @cxCriteriaFlatBorderColor;
+}
+.cxCriteriaInputDropdownHoverMixin() {
+    @border-bottom: 1px solid @cxCriteriaFlatHoverBorderColor;
+}
+.cxCriteriaRowInputFocusFieldMixin() {
+    @border-bottom: 1px solid @cxCriteriaFlatFocusBorderColor;
+}
+.cxCriteriaRowLyteInputLabelMixin() {
+    @padding: 5px 3px;
+    @font-size: @cxCriteriaCommonFontSize;
+    @line-height: 27px;
+}
+.cxCriteriaBoxPicklistInputMixin() {
+    @line-height: normal;
+    @padding: 0;
+}
+.cxCriteriaRowDisabledTextFieldMixin() {
+    @border-bottom: 1px solid @cxCriteriaDisabledBorder;
+}
+.cxCriteriaAndOrMixin() {
+    @top: 0;
+    @transform : translate(-5px,-29px);
+    @z-index: 2;
+    @bg: @cxCriteriaElementsBg;
+    @w: 40px;
+}
+.cxCriteriaAndOrInBoxMixin() {
+    @bg: var(--bg_F8FAFF);
+}
+.cxCriteriaRowDisabledTextInputMixin() {
+    @bg: @cxCriteriaGrayBg;
+    @color: @cxCriteriaDisabledInputColor;
+    @opacity: 1;
+    @padding: 5px 3px;
+}
+.cxCriteriaRowDisabledTextMixin(){
+    @bg: @cxCriteriaGrayBg;
+    @height: 100%;
+    @min-height: 32px;
+    @border-top-right-radius: @cxCriteriaBoxBorderRadius;
+    @border-bottom-right-radius: @cxCriteriaBoxBorderRadius;
+}
+.cxCriteriaRowAndOrFieldInputMixin() {
+    @color: @cxCriteriaRowAndOrTextColor;
+    @font-size: 12px;
+    @padding: 0;
+}
+.cxCriteriaDropdownMultisearchMultiSelectInputMixin() {
+    @bg: transparent;
+    @max-w: 100%;
+}
+.cxCriteriaPatternNumMixin() {
+    @w: 30px;
+    @h: 30px;
+    @bg: @cxCriteriaPatternNumberBg;
+    @border: 1px solid @cxCriteriaPatternNumberBorder;
+    @border-radius: 50%;
+    @line-height: 30px;
+    @color: @cxCriteriaNumberTextColor;
+    @padding-top: 0px;
+    @z-index: 1;
+    @font-size: @cxCriteriaCommonFontSize;
+}
+.cxCriteriaDropboxLyteInputFieldMixin() {
+    @border-bottom: 1px solid @cxCriteriaFlatBorderColor;
+}
+.cxCriteriaDropboxLyteInputFocusFieldMixin() {
+    @border-bottom: 1px solid @cxCriteriaFlatFocusBorderColor;
+}
+.cxCriteriaDropboxSearchInputMixin() {
+    @padding-left: 25px;
+}
+.cxCriteriaDropboxSearchIconMixin() {
+    @left: 5px;
+}
+.cxCriteriaFlatAddRemoveMixin() {
+    @w: 15px;
+    @h: 18px;
+    @padding: 8px;
+}
+.cxCriteriaAddRemoveBeforeMixin() {
+    @bg: @cruxSprite;
+}
+.cxCriteriaFlatAddRemoveBeforeMixin() {
+    @w: 15px;
+    @h: 18px;
+}
+.cxCriteriaAddBeforeMixin() {
+    @bg-pos: -172px -52px;
+}
+.cxCriteriaRemoveBeforeMixin() {
+    @bg-pos: -151px -51px;
+}
+.cxCriteriaBoxAddRemoveMixin() {
+    @w: 19px;
+    @h: 19px;
+}
+.cxCriteriaBoxRemoveMixin() {
+    @margin-right: 10px;
+}
+.cxCriteriaBoxAddRemoveBeforeMixin() {
+    @w: 19px;
+    @h: 19px;
+}
+.cxCriteriaBoxAddBeforeMixin() {
+    @bg-pos: -333px -86px;
+}
+.cxCriteriaBoxRemoveBeforeMixin() {
+    @bg-pos: -309px -86px;
+}
+.cxCriteriaFieldDropdownLabelMixin() {
+    @padding: 8px 3px;
+    @border-bottom: 1px solid @cxCriteriaFlatBorderColor;
+}
+.cxCriteriaFieldDropdownLabelHoverMixin() {
+    @border-bottom: 1px solid @cxCriteriaFlatHoverBorderColor;
+}
+.cxCriteriaRowNumberCompInputMixin() {
+    @padding-left: 0;
+}
+.cxCriteriaBoxFieldDropdownLabelMixin() {
+    @border: 1px solid @cxCriteriaEditorBorderColor;
+    @border-radius: @cxCriteriaBoxBorderRadius;
+    @padding: 8px 10px;
+    @font-size: @cxCriteriaCommonFontSize;
+    @bg: @cxCriteriaElementsBg;
+}
+.cxCriteriaBoxFieldDropdownLabelHoverMixin() {
+    @border: 1px solid @cxCriteriaEditorBorderColor;
+    @box-shadow: 0 0 6px @cxCriteriaEditorBorderColor;
+}
+.cxCriteriaBoxFieldDropdownOpenLabelMixin() {
+    @border: 1px solid @cxCriteriaEditorFocusBorderColor;
+    @box-shadow: 0 0 6px @cxCriteriaEditorFocusShadowColor;
+}
+.cxCriteriaBoxErrorCellMixin() {
+	@border: 1px solid @cxCriteriaEditorErrorCellBorderColor;
+	// @box-shadow: 0 0 6px @cxCriteriaElementsBg;
+    @box-shadow: none;
+}
+.cxCriteriaBoxDisabledInputMixin() {
+    @padding: 8px 10px 8px 10px;
+    @border: 0;
+    @box-shadow: none;
+}
+/*
+.cxCriteriaBoxStyleAgeInDaysDropButtonMixin() {
+    @border-right: 0;
+    @border-radius: @cxCriteriaBoxBorderRadius 0 0 @cxCriteriaBoxBorderRadius;
+}
+.cxCriteriaBoxStyleAgeInDaysLyteFieldMixin() {
+    @border-radius: 0 @cxCriteriaBoxBorderRadius @cxCriteriaBoxBorderRadius 0;
+}
+*/
+.cxCriteriaBoxAgeInDaysCompMixin() {
+    @w: auto;
+    @min-w: 70px;
+    @margin-right: 10px;
+	@max-w: 130px;
+	@flex-shrink: 0;
+}
+.cxCriteriaAgeSpacingMixin() {
+    @margin-right: 10px;
+}
+.cxCriteriaBoxStyleDisabledInputFieldMixin() {
+    @border: 1px solid @cxCriteriaEditorBorderColor;
+}
+.cxCriteriaInfoIconMixin() {
+    @bg: @cruxSprite;
+    @bg-pos: -222px -99px;
+    @min-w: 15px;
+    @w: 15px;
+    @h: 15px;
+    @margin-left: 10px;
+    @opacity: 0.3;
+}
+.cxCriteriaBoxInfoIconMixin() {
+    @margin-left: 10px;
+    @margin-top: 0;
+}
+.cxCriteriaInitialLoaderWrapMixin() {
+	@padding: 90px 0;
+}
+.cxCriteriaScrollLoaderIconMixin() {
+	@w: 24px;
+	@h: 24px;
+	@bg-img: @cruxSearchLoaderImage;
+	@bg-size: 100%;
+}
+.cxCritPtnNumMixin() {
+	@padding: 5px;
+	@border: 1px solid transparent;
+	@border-radius: 2px;
+}
+.cxCritPtnNumHoverMixin() {
+	@bg: @cxCriteriaPatternNumberHoverBg;
+}
+.cxCritPtnNumSortableElementSelectedMixin() {
+	@bg: @cxCriteriaSelectedSortableNumberBg;
+	@color: @cxCriteriaSelectedSortableNumberTextColor;
+}
+.cxCriteriaPatternDraggableMixin() {
+    @border: 1px solid var(--formBorder);
+    @border-radius: 6px;
+    @padding: 8px 10px !important;
+}
+.cxGroupPatternMixin() {
+	@border: 1px solid transparent;
+}
+.cxCritSortBottomElemMixin() {
+	@border: 1px dashed @cxCriteriaSortBottomBorder;
+	@background-color: @cxCriteriaSortBottomBorder;
+}
+.cxCritPtnNumCursorgrabMixin() {
+	@line-height: 18px;
+}
+.criteriaConditionMixin() {
+	@color: @cxCriteriaPattenEditAndOrTextColor;
+	@margin: 0 3px;
+}
+.cxPatternBraketsMixin() {
+	@color: @cxCriteriaPatternBracketsColor;
+	@margin: 0 3px;
+}
+.cxCriteriaValueColDropInputWrapMixin() {
+	@border: 1px solid @cxCriteriaEditorBorderColor;
+	@border-radius: @cxCriteriaBoxBorderRadius;
+    @min-width:0;
+    @margin-right:10px;
+}
+.cxCriteriaValueColDropInputWrapHoverMixin() {
+	@border: 1px solid @cxCriteriaEditorHoverBorderColor;
+	@box-shadow: 0 0 6px @cxCriteriaEditorHoverShadowColor;
+}
+.cxCriteriaValueColDisabledDropInputWrapHoverMixin() {
+	@box-shadow: none;
+    @border: 1px solid @cxCriteriaEditorBorderColor;
+}
+.cxCriteriaValueColDropInputWrapActiveMixin() {
+	@border: 1px solid @cxCriteriaEditorFocusBorderColor;
+	@box-shadow: 0 0 6px @cxCriteriaEditorFocusShadowColor;
+}
+.cxCriteriaValueColTypeDropdownMixin() {
+	@border-right: 1px solid @cxCriteriaEditorBorderColor;
+	@w: auto;
+	@font-size: @cxCriteriaCommonFontSize;
+}
+.cxCriteriaValueColTypeDropButtonMixin() {
+	@border: 0 !important;
+	@box-shadow: none !important;
+	@border-radius: 4px 0 0 4px;
+	@padding: .cruxLESSPaddingMixin(8px 25px 8px 10px)[@padding];
+}
+.cxCriteriaValueColTypeDropdownDisabledMixin() {
+	@opacity: 1;
+	@border: 0;
+	@border-radius: 4px 0 0 4px;
+}
+.cxCriteriaValueColTypeDropdownDropButtonDisabledMixin() {
+	@bg: @cxCriteriaGrayBg;
+}
+.cxCriteriaValueColTypeDropdownLabelMixin() {
+	@max-w: 100%;
+	@margin-right: 0;
+}
+.cxCriteriaBoxValueColDropFieldInputMixin() {
+	@border: 0;
+	@border-radius: 0 4px 4px 0;
+	@box-shadow: none;
+}
+.cxCriteriaValueColDropInputWrapDateTimeLyteFieldInputFirstChildMixin() {
+	@border-right: 1px solid @cxCriteriaDateInputFirstChildBorder;
+	@border-radius: 0;
+}
+.cxCriteriaValueColFieldLabelMixin() {
+	@min-w: 25px;
+}
+.cxCriteriaValueColModuleLabelMixin() {
+	@color: @cxCriteriaModuleValueTextColor;
+	@margin-left: 5px;
+}
+.cxCriteriaValueColDropFieldLabelMixin() {
+	@border-radius: 3px;
+}
+.cxCriteriaViewModuleBadgeWrapMixin() {
+	@color: @cxCriteriaViewTextColor;
+}
+.cxCriteriaViewModuleBadgeWrapLabelMixin() {
+	@max-w: 370px;
+}
+.cxCriteriaValueColDropInputWrapBoxWithRightIconMixin() {
+	@border: 0 !important;
+	@box-shadow: none !important;
+}
+.cxCriteriaValueColDropInputWrapDropButtonMixin() {
+	@border: 0 !important;
+	@box-shadow: none !important;
+}
+.cxCriteriaValueColDropInputWrapAgeInDaysDropButtonMixin() {
+	@border-right: 1px solid @cxCriteriaAgeInDayDropButtonBorder;
+	@border-radius: 0;
+}
+.cxCriteriaColumnLabelMixin() {
+    @color: @cxCriteriaTextColor;
+}
+.cxCriteriaValueColBetweenCaseDropInputWrapDropButtonMixin() {
+	@border: 0;
+	@box-shadow: none;
+}
+.cxCriteriaValueColBetweenCaseTypeDropdownMixin() {
+	@border-right: 0;
+}
+.cxCriteriaValueColBetweenCaseTypeDropdownDropButtonMixin() {
+	@border: 1px solid @cxCriteriaEditorBorderColor;
+	@border-radius: 5px 0 0 5px;
+}
+.cxCriteriaValueColBetweenCaseHoverTypeDropdownDropButtonMixin() {
+	@border: 1px solid @cxCriteriaEditorHoverBorderColor;
+	@border-right: 1px solid @cxCriteriaEditorHoverBorderColor;
+	@box-shadow: 0 0 6px @cxCriteriaEditorHoverShadowColor;
+}
+.cxCriteriaValueColBetweenCaseDropInputWrapLyteFieldMixin() {
+	@border: 1px solid @cxCriteriaEditorBorderColor;
+	@border-radius: 5px;
+}
+.cxCriteriaValueColBetweenCaseDropInputWrapBetween1LyteFieldMixin() {
+	@border-left: 0;
+	@border-radius: 0 5px 5px 0;
+}
+.cxCriteriaValueColBetweenCaseDropInputWrapHoverBetween1LyteFieldMixin() {
+	@border: 1px solid @cxCriteriaEditorHoverBorderColor;
+	@border-left: 0;
+	@box-shadow: 0 0 6px @cxCriteriaEditorHoverShadowColor;
+}
+.cxCriteriaValueColBetweenCaseDropInputWrapHoverBetween2LyteFieldMixin() {
+	@border: 1px solid @cxCriteriaEditorHoverBorderColor;
+	@box-shadow: 0 0 6px @cxCriteriaEditorHoverShadowColor;
+}
+.cxCriteriaValueColBetweenCaseDropInputWrapActiveTypeDropdownDropButtonMixin() {
+	@border: 1px solid @cxCriteriaEditorFocusBorderColor;
+	@border-right: 1px solid @cxCriteriaEditorBorderColor;
+	@box-shadow: 0 0 6px @cxCriteriaEditorFocusShadowColor;
+}
+.cxCriteriaValueColBetweenCaseDropInputWrapActiveBetween1LyteFieldMixin() {
+	@border: 1px solid @cxCriteriaEditorFocusBorderColor;
+	@border-left: 0;
+	@box-shadow: 0 0 6px @cxCriteriaEditorFocusShadowColor;
+}
+.cxCriteriaValueColDropInputWrapBetween2InputFocusFieldMixin() {
+	@border: 1px solid @cxCriteriaEditorFocusBorderColor;
+	@box-shadow: 0 0 6px @cxCriteriaEditorFocusShadowColor;
+    @margin-top: 9px;
+}
+.cxCriteriaInlineErrorMixin() {
+	@color: var(--formBorderError);
+	@font-size: @cxCriteriaErrorMessage;
+}
+.cxCriteriaDropItemDisabledMixin (){
+    @opacity: 0.4;
+    @background: none;
+    @color: @cxCriteriaDisabledInputColor;
+    @cursor: default;
+}
+.cxCriteriaDynamicFedInputMixin(){
+    @padding: 8px 10px;
+    @box-sizing: border-box;
+    @display: block;
+    @width: 100%;
+}
+.cxElementDivCriteriaValueColMixin() {
+    @flex: 1;
+    @max-width: 100%;
+    @width: 100%;
+}
+
+.cxCriteriaTextareaClampMixin(){
+    @display: -webkit-box;
+    @webkit-line-clamp: 3;
+    @webkit-box-orient: vertical;
+    @overflow: hidden;
+}
+
+.cxCriteriaValueSectionDisabledMixin(){
+    @bg: @cxCriteriaGrayBg;
+}
+
+.cxCriteriaTdTextWrapperMixin(){
+    @padding: 9px 0px;
+    @w: inherit;
+}
+
+.cxCriteriaTdTextMixin(){
+    @max-w: 100%;
+}
+.cxCriteriaErrorPatternTextareaMixin(){
+        @box-shadow: none;
+        @border: 1px solid @cxCriteriaEditorErrorCellBorderColor;
+}
+
+.cxCriteriaPatternErrorMixin() {
+    @color: @cxCriteriaPatternErrorColor;
+    @min-width: inherit;
+    @display: inline-block;
+    @word-wrap: break-word;
+    @width: 100%;
+    @z-index: 2;
+    @font-size: @cxFontSize13px;
+    @position: absolute;
+    @white-space: normal;
+    @overflow-wrap: break-word;
+    @top:100%;
+}
+
+.cxChildCriteriaMixin() {
+    // @margin: 10px 20px 20px 40px;
+    @margin: .cruxLESSMarginMixin(10px 20px 20px 40px)[@margin];
+    @padding: 20px 15px;
+    @border-radius: 8px;
+    @box-sizing: border-box;
+    @background-color: var(--bg_F8FAFF);
+    @border: 1px solid var(--br_d7e2ed);
+}
+.cxChildCriteriaShowCheckMixin(){
+    // @margin: 20px 0 5px 40px;
+    @margin: .cruxLESSMarginMixin(20px 0 5px 40px)[@margin];
+}
+.cxCriteriaBetweenCaseMixin(){
+    @margin: .cruxLESSMarginMixin(0 -8px -8px 0)[@margin];
+}
+.cxCriteriaBoxStyleBetween1Mixin() {
+    @margin: .cruxLESSMarginMixin(0 8px 8px 0)[@margin];
+}
+.cxCriteriaDynamicConfigMixin() {
+    @margin-left: 10px;
+}
+.cruxCriteriaErrorMsgMixin() {
+    @font-size: 12px;
+    @color: @cxCriteriaErrorMsgColor;
+    @font-family: @cruxPrimaryFont;
+}
+    
+.cxViewBoxCriteriaEditorMixin() {
+    @border: 1px solid @cxCriteriaViewBoxBorder;
+    @border-radius: 10px;
+    @padding: 20px;
+    @background: @cxCriteriaViewBoxBg;
+}
+.cxCriteriaTdFieldMixin() {
+    @width: 200px;
+}
+.cxCriteriaAndOrDisabledAndOrMixin() {
+    @color: @cxPlaceholderColor;
+}
+.cxCriteriaTagMixin() {
+    @border: 1px solid @cxCriteriaTagBorder;
+    @padding: 3px 8px 4px;
+    @border-radius: 4px;
+}
+.cxViewModeChildCriteriaBeforeMixin() {
+    @border-left: 1px solid @cxCriteriaViewModeChildBorder;
+    @width: 1px;
+    @display: block;
+    @position: absolute;
+    @top: 5px;
+    @left: 3px;
+    @bottom: -25px;
+}
+.cxViewBoxCriteriaEditorWrapperMixin() {
+    @border: 1px solid @cxCriteriaViewBoxWrapBorder;
+    @padding: 20px;
+    @border-radius: 10px;
+    @background: @cxCriteriaViewBoxWrapBg;
+}
+.cxCriteriaAutoWidthViewModeBoxMixin() {
+    @margin: 0;
+    @border: none;
+    @background: none;
+    @padding: 0;
+}
+.cxCriteriaChildHeaderRowBeforeMixin(){
+    @bg: @cxCriteriaChildHeaderRowBeforeBg;
+}
+.cxCriteriaChildFieldIconShowMixin(){
+    @bg: @cxCriteriaChildFieldIconShowBg;
+}
+.cxCriteriaBoxPatternNumMixin(){
+    @bg: @cxCriteriaBoxPatternNumBg;
+}
+.cxCriteriaEditorNumberFieldInputMixin(){
+    @color: @cxCriteriaInputNumberTextColor;
+}
+.cxCriteriaEditorAndOrInputMixin(){
+    @color: @cxCriteriaAndOrInputTextColor;
+}

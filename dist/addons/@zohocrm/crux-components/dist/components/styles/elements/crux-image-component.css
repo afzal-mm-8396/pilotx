@@ -1,0 +1,75 @@
+.cxImageViewWrap {
+	width: 70px;
+	height: 70px;
+	border-radius: 25px;
+	cursor: pointer;
+	position: relative;
+}
+.cxImageViewNoImage,
+.cxImageViewImgElem,
+.cxImageViewOverlay {
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
+}
+.cxImageViewOverlay {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	opacity: 0;
+	transition: opacity 0.1s ease;
+}
+.cxImageViewWrap:hover .cxImageViewOverlay {
+	opacity: 1;
+}
+.cxImageCameraIcon {
+	background-image: url(../images/crux-sprite-icons.svg);
+	width: 21px;
+	height: 16px;
+	background-position: -180px -124px;
+}
+.cxImageViewImgElem {
+	object-fit: cover;
+}
+.cxImageViewNoImage {
+	background-image: url(../images/crux-image-preview-sprite.png);
+	background-size: 470px auto;
+	color: #fff;
+	text-align: center;
+	line-height: 70px;
+	font-size: 40px;
+	font-family: var(--crux-thin-font);
+}
+.cxImageViewOverlay:hover + .cxImageViewNoImage {
+	color: transparent;
+}
+.cxImageViewNoImage1 {
+	background-position: -20px -20px;
+}
+.cxImageViewNoImage2 {
+	background-position: -110px -20px;
+}
+.cxImageViewNoImage3 {
+	background-position: -200px -20px;
+}
+.cxImageViewNoImage4 {
+	background-position: -290px -20px;
+}
+.cxImageViewNoImage5 {
+	background-position: -380px -20px;
+}
+.cxImageViewNoImage6 {
+	background-position: -20px -110px;
+}
+.cxImageViewNoImage7 {
+	background-position: -110px -110px;
+}
+.cxImageViewNoImage8 {
+	background-position: -200px -110px;
+}
+.cxImageViewNoImage9 {
+	background-position: -290px -110px;
+}
+.cxImageViewNoImage10 {
+	background-position: -380px -110px;
+}

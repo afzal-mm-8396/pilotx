@@ -1,0 +1,2184 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-note/crux-note.variables.less";
+
+@import "../themes/default/less-variables/crux-note-variables.less";
+
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-note";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-notes-variables.less";
+}
+
+.cxNoteNewUI {
+	.cxNoteNewUIMixin();
+	padding: @padding;
+	min-width: 320px;
+	display: block;
+}
+.cxNoteHeadingSection {
+	.cxNoteHeadingSectionMixin();
+	padding: @padding;
+	margin-bottom: @margin-bottom;
+	border-bottom: @border-bottom;
+}
+.cxNoteHeadNoBrdr {
+	border-bottom: none;
+}
+.cxNoteHeadingInnerDiv {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.cxNoteHeading {
+	.cxNoteHeadingMixin();
+	color: @color;
+	font-size: @font-size;
+	cursor: pointer;
+}
+.cruxNotes {
+	.cruxNotesMixin();
+	padding: @padding;
+}
+.cxNoteNewUI .notesTextInputBoxWrap {
+    .cxNoteNewUIWrapMixin();
+	box-sizing: border-box;
+	background: @bg;
+	border: @border;
+	border-radius: @border-radius;
+	padding-top: @padding-top;
+	margin: @margin;
+	min-width:@min-width;
+	position: relative;
+	font-variant-numeric: normal;
+}
+.cxNoteNewUI .notesTextInputBoxWrap:hover {
+    .cxNoteNewUIWrapHoverMixin();
+	border: @border;
+}
+.cxNoteNewUI .cruxNotesList, 
+.cxNoteNewUI .notesTextInputBoxWrap {
+	width: 100%;
+}
+.cxNoteNewUI .inputBeforeNote,
+.cxNoteNewUI .cxNotesTextarea {
+    .cxNoteNewUIInputsMixin();
+	width: @w;
+	box-sizing: border-box;
+}
+.cxNoteNewUI .cxNotesTextarea {
+	.cxNoteNewUITextareaMixin();
+	padding: @padding;
+}
+.cxNoteNewUI .cxNotesTextarea:not(lyte-texteditor) {
+	height: auto !important;
+}
+
+.cxNoteNewUI .cxNoteTitleInput .lyteField,
+.cxNoteNewUI .cxNoteTitleInput.lyteInputFocus .lyteField,
+.cxNoteNewUI .cxNotesTextarea .lyteField,
+.cxNoteNewUI .lyteInputBox .lyteField:hover,
+.cxNoteNewUI .cxNoteTitleInput .lyteField:hover,
+.cxNoteNewUI .inputBeforeNote .lyteField,
+.cxNoteNewUI .lyteInputBox.lyteInputFocus .lyteField {
+    .cxNoteNewUITextareaFieldMixin();
+	padding: @padding;
+	border: @border;
+}
+.cxNoteNewUI .inputBeforeNote .cxNoteBeforeOpenInput {
+	.cxNoteBeforeOpenInputMixin();
+	padding: @padding;
+}
+.cxNoteNewUI .cxNoteTitleInputElem::placeholder, 
+.cxNoteNewUI .lyteEditorPlaceholderDiv {
+    .cxNoteNewUITitlePlaceholderElemMixin();
+	font-size: @font-size;
+    color: @cxPlaceholderColor !important;
+    opacity: 1;
+	font-family: @font-family;
+}
+.cxNoteNewUI .cxNoteTitleInputElem::placeholder,
+.cxNoteNewUI .cxNoteTitleSpan {
+    .cxNoteNewUIlyteEditorPlaceholderDivMixin();
+	font-family: @font-family;
+	font-weight: @font-weight;
+}
+.cxNotesTextareaWrap {
+	.cxNotesTextareaWrapMixin();
+	border-radius: @border-radius;
+    // overflow: @overflow;
+}
+.cxNoteFooterLinkSep::before {
+	.cxNoteFooterLinkSepBeforeMixin();
+	content:'';
+	height: 20px;
+    @{property-border-left}: 1px solid @border;
+	display:block;
+	position:absolute;
+	width:1px;
+	@{property-left}: 0;
+}
+.cxNoteNewUI .cxNoteTitleInputElem,
+.cxNoteNewUI .cxNoteTitleSpan {
+    .cxNoteTitleSpanMixin();
+	font-size: @font-size;
+	padding-top: @padding-top;
+	color: @color;
+	font-family: @font-family;
+	font-weight: @font-weight;
+	display: block;
+}
+.cxNoteNewUI .cxNoteTitleInput {
+	width: 100%;
+	box-sizing: border-box;
+	text-overflow: ellipsis;
+	@{property-padding-right}: 10px;
+} 
+.cxNoteNewUI .cxNoteTitleSpan {
+	.cxNoteNewUITitleSpanMixin();
+	width:100%;
+	// max-width: 680px;
+	white-space: normal;
+    overflow-wrap: anywhere;
+	word-wrap: break-word;
+	max-width: @max-w;
+}
+.cxNoteNewUI .cxNoteTitleInputElem {
+	padding-bottom: 5px;
+	text-overflow: ellipsis;
+}
+.cxNotesUl .cxNoteTitleInputElem {
+	padding-top:0;
+}
+.cxNotesEditorMoreWrapper .lytePopoverClose,
+.cxNotesEditorWrapperClass .lytePopoverClose {
+	display: none;
+}
+.cxNotesFooter {
+    // .cxNotesFooterMixin();
+	.cxNotesFooterBgMixin();
+	padding: @padding;
+	display: @display;
+	align-items: @align-items;
+	flex-wrap: @flex-wrap;
+	position: @position;
+	z-index: @z-index;
+	border-radius:0 0 5px 5px;
+	border-top: @border-top;
+	background:@background;
+}
+// .cxNotesFooter{
+// 	.cxNotesFooterBgMixin();
+// 	border-top: @border-top;
+// 	background:@background;
+// 	z-index: 1;
+// }
+.cxNotesFooterLeft {
+	.cxNotesFooterLeftMixin();
+	display: @display;
+    flex-wrap: @flex-wrap;
+    // margin-bottom: @margin-bottom;
+	// position: relative;
+}
+.cxNotesAttachIcon {
+	.cxNotesAttachIconMixin();
+	display: inline-block;
+    background-image: @bg-img;
+    background-position: @bg-pos;
+    width: @w;
+    height: @h;
+}
+.cxNotesAttachementWrap {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.cxNoteRichTextIcon {
+	.cxNoteRichTextIconMixin();
+    background-image: @mask-img;
+    background-position: @mask-pos;
+    width: @w;
+    height: @h;
+}
+.cxNoteIconSpan {
+	.cxNoteIconSpanMixin();
+	cursor: pointer;
+	vertical-align: middle;
+	display: inline-block;
+}
+.cxNotesFooterIcoWrap {
+	.cxNotesFooterIcoWrapMixin();
+	cursor: pointer;
+	border:1px solid transparent;
+	background-color: transparent;
+    box-shadow: none;
+    border-radius: 6px;
+    width: 33px;
+    height: 33px;
+    box-sizing: border-box;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0 5px 0px 0;
+}
+.cxNotesFooterIcoWrap:hover {
+	.cxNotesFooterIcoWrapHoverMixin();
+	border: @border;
+}
+.cxNotesFooterIconActive,
+.cxNotesFooterIconActive:hover {
+	.cxNotesFooterIconActiveMixin();
+	border-color: @border-color;
+    box-shadow: @box-shadow;
+	background-color: @background-color;
+}
+.cxRtfIconWrap.cxNotesFooterIconActive {
+	z-index: 1;
+}
+// {
+// 	//.cxNotesAttachIconMixin();
+// 	border-right: @border-right;
+// }
+.cxNotesAddTitle { //not using need to check
+	.cxNotesAddTitleMixin();
+    color: @color;
+	@{property-margin-right}: @margin-right;
+	padding-top: 2px;
+	@{property-margin-left}: @margin-left;
+	@{property-border-left}: @border-left;
+	@{property-padding-left}: @padding-left;
+}
+.cxNotesFooter .cxNoteFooterLinkSep {
+	margin: 8px 5px 0;
+	@{property-padding-left}: 15px;
+	position: relative;
+}
+.cxNoteCheckbox,
+.cxNoteCheckbox:hover span {
+	.cxNoteCheckboxColorMixin();
+	color: @color;
+}
+.cxNotesTextarea.lyteInput .cxNotesTextareaElem {
+    .cxNotesTextareaElemMixin();
+	height: @h;
+	padding: @padding;
+	transition: @transition;
+	border: none !important /* @Mentions Input border override */
+}
+.cxNotesTextarea .lyteTextareaResize {
+    .cxNotesTextareaResizeMixin();
+	width: @w;
+	height: @h;
+	cursor: ns-resize;
+}
+.cxNotesTextarea .lyteMentions {
+    .cxNotesTextareaMentionsMixin();
+	padding: @padding;
+}
+.cxNotesTextarea .lyteMIWrapper textarea {
+	@{property-padding-left}:0;
+}
+.cxNotesTextarea .lyteMentionsStrongDiv {
+	.cxNotesTextareaMentionsStrongDivMixin();
+	font-family: @font-family;
+}
+.cxNoteNewUI .lyteMIWrapper lyte-input[lt-prop-type="textarea"] .lyteField::after {
+	@{property-right}: 1px;
+    bottom: 1px;
+}
+.cxNoteNewUI .lyteMentionsNormalTextarea + textarea {
+	border: none !important;  /*Mentions Input border override */
+}
+.cxNotesUl {
+    .cxNotesUlMixin();
+	padding: @padding;
+	margin: @margin;
+	// max-width: 720px;
+}
+.cxNotesLi {
+    .cxNotesLiMixin();
+	display: flex;
+	padding: @padding;
+	margin: @margin;
+	position: relative;
+}
+.cxNotesLi .cxNotesAddedUserImg {
+    .cxNotesLiAddedUserImgMixin();
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	flex-shrink: 0;
+	margin-top: @margin-top;
+}
+.cxPortalErrorNote {
+	.cxPortalErrorNoteMixin();
+	line-height: @line-height;
+}
+.cxNoteDefaultUserImage {
+	.cxNoteDefaultUserImageMixin();
+	background-image: @bg-img;
+	background-size: @bg-size;
+	margin-top: @margin-top;
+}
+.cxNotesContentWrap {
+	.cxNotesContentWrapMixin();
+	position: relative;
+	overflow: auto;
+	flex-grow: 1;
+	padding: @padding;
+	text-align: @value-textalign-left;
+}
+.cruxNoteSeeMore {
+	.cruxNoteSeeMoreMixin();
+	font-size: @font-size;
+	cursor: pointer;
+}
+.cruxNoteSeeMore .zcicn-cssIcons {
+	@{property-margin-left}: 5px;
+}
+
+.notesOtherAction {
+    .cxNotesOtherActionMixin();
+	color: @color;
+	position: relative;
+	vertical-align: top;
+	display: inline-block;
+	// margin-top: @margin-top;
+	cursor: pointer;
+}
+// .cruxAttachActionArea {
+// 	.cruxAttachActionAreaMixin();
+// 	cursor: pointer;
+// 	font-size: @font-size;
+// }
+// .cruxAttachActionArea::before {
+//     .cxNotesAttachActionAreaBefore();
+// 	content: '';
+// 	display: block;
+// 	position: absolute;
+//     @{property-left}: @left;
+// 	top: @top;
+// 	background: @bg;
+// 	width: @w;
+// 	height: @h;
+// }
+
+.cxNotesAddedContent {
+    .notesAddedContentMixin();
+	font-size: @font-size;
+	// color: @color;
+	line-height: @line-height;
+	width: @w;
+	max-width: @max-w;
+	white-space: normal;
+	overflow-wrap: break-word;
+	padding-top: 7px; /*Added this line for removing common class pT7*/
+	color: inherit;
+    background-color: inherit;
+}
+.cxNotesAddedContent:not(.cxNonRTF) {
+	white-space: pre-wrap;
+}
+.cxNotesAddedContent.cxNonRTF { 
+	white-space: pre-wrap;
+}
+// crm-timeline-notes .cxNotesAddedContent {
+// 	.timelineNotesAddedContentMixin();
+// 	max-width: @max-w;
+// }
+.cxNotesGreyColorWithoutHover,
+.cxNotesGreyColor {
+.cxNotesGreyColorMixin();
+	color: @color;
+}
+.cxNotesGreyColor:hover {
+	.cxNotesGreyColorHoverMixin();
+	color: @color;
+}
+.cxNotesNoteActionDetails {
+	.cxNotesNoteActionDetailsMixin();
+	flex-wrap: wrap;
+	margin-top:5px;
+	font-size: @font-size;
+	line-height: @line-height;
+}
+.cxNotesAddAnotherNote,
+.cxNotesModuleRecordName,
+.cxNotesModuleName {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: inline-block;
+    vertical-align: top;
+}
+.cxNotesAddAnotherNote {
+.cxNotesAddAnotherNoteMixin();
+	max-width: @max-w;
+}
+.cxNotesModifiedTimeInfo,
+.cxNotesModifiedName {
+	cursor: default;
+}
+.cxNotesModuleName {
+.cxNotesModuleNameMixin();
+	color: @color;
+	max-width: @max-w;
+	cursor: default;
+}
+.cxNotesModuleRecordName {
+.cxNotesModuleRecordNameMixin();
+	max-width: @max-w;
+	display: inline-block;
+	font-size: @font-size;
+}
+.cxNotesModuleRecordName:hover {
+	text-decoration: underline;
+}
+.cxNotesListDot {
+    .cxNotesListDotMixin();
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	background: @bg;
+	align-self: center;
+	margin: @margin;
+}
+.cxNoteNewUI .cxNotesTimerIcon {
+    .cxNotesTimerIconMixin();
+	background-position: @bg-pos;
+}
+
+.cxNoteEditDeleteWrap {
+    .cxNoteEditDeleteWrapMixin();
+	position: absolute;
+	top: @top;
+    @{property-right}: @right;
+	display: flex;
+	visibility: hidden;
+	// background:@bg;
+	@{property-padding-left}:10px;
+}
+.cxNotesLi:hover .cxNoteEditDeleteWrap {
+	visibility: visible;
+}
+.cxNoteEditIconWrap,
+.cxNoteDeleteIconWrap,
+.cxNotesAttachElem {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cxNoteEditIconWrap,
+.cxNoteDeleteIconWrap {
+	.cxNoteEditDeleteIconWrapCommonMixin();
+	width: @w;
+	height: @h;
+	border: @border;
+	border-radius: @border-radius;
+	cursor: pointer;
+	background-color: @background-color;
+}
+.cxNoteEditIconWrap {
+	@{property-margin-right}:10px;
+}
+
+.cxDisableEditBtn,
+.cxDisableDeleteBtn {
+	.cxNoteDisabledEditDeleteIconWrapCommonMixin();
+	opacity: @opacity !important;
+	cursor: @cursor !important;
+}
+.cxNoteEditIconWrap:hover {
+    .cxNoteEditIconWrapHoverMixin();
+	border: @border;
+}
+.cxNoteDeleteIconWrap:hover {
+    .cxNoteDeleteIconWrapHoverMixin();
+	border: @border;
+}
+.cxDisableEditBtn:hover,
+.cxDisableDeleteBtn:hover {
+	.cxNoteDisabledEditDeleteIconWrapHoverCommonMixin();
+	border: @border;
+}
+/*
+.cruxNoteOwnerNameImg {
+	width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #f8f8f8;
+	color: #111;
+	border: 1px solid #d8d8d8;
+	font-size: 24px;
+	text-align: center;
+	line-height: 48px;
+	font-family: @cruxTertiaryFont;
+	text-transform: capitalize;
+}
+*/
+.cxNoteDeleteIconWrap.cxDisableDeleteBtn:hover .cxNoteDeleteIcon,
+.cxNoteEditIconWrap.cxDisableEditBtn:hover .cxNoteEditIcon,
+.cxNoteDeleteIcon,
+.cxNoteEditIcon {
+    .cxNoteEditDeleteIconMixin();
+	-webkit-mask-image: @mask-img;
+	mask-image: @mask-img;
+	background-color: @bg-color;
+}
+.cxNoteEditIcon {
+    .cxNoteEditIconMixin();
+	-webkit-mask-position: @mask-pos;
+	mask-position: @mask-pos;
+	width: @w;
+	height: @h;
+}
+.cxNoteDeleteIcon {
+    .cxNoteDeleteIconMixin();
+	-webkit-mask-position: @mask-pos;
+	mask-position: @mask-pos;
+	width: @w;
+	height: @h;
+}
+.cxNoteEditIconWrap:hover .cxNoteEditIcon {
+	.cxNoteEditIconWrapHoverEditIconMixin();
+	background-color: @bg-color;
+}
+.cxNoteDeleteIconWrap:hover .cxNoteDeleteIcon {
+    .cxNoteDeleteIconWrapHoverDeleteIconMixin();
+	background-color: @bg-color;
+}
+
+.cxNotesAttachElemImg {
+    .cxNotesAttachElemImgMixin();
+	max-width: @max-w;
+	max-height: @max-h;
+}
+.cxNotesAttachElem {
+	.cxNotesAttachElemMixin();
+	width: @w;
+	height: @h;
+	border: @border;
+	padding: @padding;
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+	display:inline-block;
+	cursor: pointer;
+	border-radius: @border-radius;
+}
+.cxNotesAttachementUl {
+	display: flex;
+	overflow: auto;
+	margin:0;
+	padding:0;
+	flex-wrap: wrap;
+}
+.cxNotesAttachementList {
+    .cxNotesAttachementListMixin();
+	padding: @padding;
+	@{property-margin-right}: @margin-right;
+}
+.cxNotesAttachementList:last-child {
+	.cxNotesAttachementListLastChildMixin();
+	@{property-margin-right}: @margin-right;
+}
+.cxNotesAttachementList::marker {
+	display: none;
+}
+.cxNotesAttachActions {
+    .cxNotesAttachActionsMixin();
+	background: @bg;
+	position: absolute;
+	padding: @padding;
+	bottom: @bottom;
+	@{property-left}: @left;
+	@{property-right}: @right;
+	transform: @transform;
+	transition: @transition;
+	cursor: default;
+}
+.cxNotesAttachActions .cxSprite {
+	@{property-margin-right}: 10px;
+}
+.cxNotesAttachActions .cxSprite:last-of-type {
+	@{property-margin-right}: 0;
+}
+
+.cxNotesAttachementList:hover .cxNotesAttachActions {
+    .cxNotesAttachementListHoverAttachActionsMixin();
+	transform: @transform;
+	height: 25px;
+    opacity: 1;
+}
+.cxNotePreviewIcon,
+.cxNoteDownloadIcon {
+	vertical-align: middle;
+	cursor: pointer;
+	display: inline-block;
+}
+.cxNotePreviewIcon {
+    .cxNotePreviewIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	@{property-margin-right}: @margin-right;
+}
+.cxNoteDownloadIcon {
+    .cxNoteDownloadIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxNoteNewUI .notesTextInputBoxWrap.cxNoteTextareaOpen {
+    .cxNoteNewUITextareaOpenMixin();
+	border:1px solid @border-color;
+	box-shadow: @box-shadow;
+}
+.cxNoteNewUI .notesTextInputBoxWrap.cxErrorBox {
+    .cxNoteNewUITextareaErrorMixin();
+	border-color: @border-color;
+	box-shadow: @box-shadow;
+}
+.cxNotesUl .cxNoteTextareaOpen {
+	.cxNotesUlTextareaOpenMixin();
+	margin: @margin;
+}
+.cxShowMoreNotes {
+	.cxShowMoreNotesMixin();
+	background: @bg;
+	width: @w;
+	// max-width:@max-w;
+	padding: @padding;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+	border-radius: @cxCriteriaBoxBorderRadius;
+}
+.cxShowMoreNotes:hover {
+	.cxShowMoreNotesHoverMixin();
+	// background: @bg;
+}
+// .cxNoteNewUI .cruxNotesList, 
+// .cxNoteNewUI .notesTextInputBoxWrap,
+// .cxNotesUl,
+// .cxNoteHeadingInnerDiv,
+// .cxShowMoreNotes {
+// 	.cxNotesMaxWidthMixin();
+// 	max-width:@max-w;
+// }
+.cxNotesMoreLink {
+	font-family: @cruxSecondaryFont;
+	font-weight: @cruxFontWeightBold;
+}
+// .cruxNoteOwnerName{
+// 	display: flex;
+//     flex-direction: column;
+//     min-width: 0;
+// }
+.cxNoteNewUI .cruxNotesList, 
+.cxNoteNewUI .notesTextInputBoxWrap,
+.cxNotesUl,
+.cxNoteHeadingInnerDiv,
+.cxShowMoreNotes {
+	.cxNotesMaxWidthMixin();
+	max-width:@max-w;
+}
+.cxNotesAddedContent,
+.cxNoteNewUI .cxNoteTitleSpan {
+	max-width:calc(100% - 80px);
+}
+.cruxNoteOwnerNameImg { //not used need to check
+    .cxNoteOwnerNameImgMixin();
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    background: @bg;
+    color: @color;
+    border: @border;
+    font-size: @font-size;
+    text-align: center;
+    line-height: @line-height;
+    font-family: @font-family;
+    text-transform: capitalize;
+	flex-shrink: 0;
+}
+.cruxNoteOwnerNameImg,
+.cruxNoteOwnerImg {
+	@{property-margin-right}:10px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.cruxNoteOwnerImg img {
+    .cxNoteOwnerImgMixin();
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    max-width: @max-w;
+    max-height: @max-h;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: @margin-top;
+}
+.cxNotesOnwerLookupLabel { //not used need to check
+    .cxNotesOnwerLookupLabelMixin();
+    color: @color;
+	display: inline-block;
+	overflow-wrap: anywhere;
+    min-width: 50px;
+}
+.cxNotesAttachNameWrap {
+	height: 100px;
+	line-height: 100px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: calc(100% - 20px);
+	padding: 10px;
+	display: inline-block;
+	overflow: hidden;
+}
+// .cxNotesAttachementList:hover .cxNotesAttachActions {
+//     height: 25px; code moved above
+//     opacity: 1;
+// }
+.cxNoteNewUI  #noteMoreFiles > .dz-preview {
+	overflow: hidden;
+    clear: both;
+	padding-bottom: 5px;
+    margin-bottom: 0;
+}
+.cxNoteNewUI  #noteMoreFiles > .dz-preview > .dz-details {
+	.cxNoteMoreFilesDetailMixin();
+	display: inline-flex;
+	align-items: center;
+	width: @w;
+	min-width: @min-width;
+}
+.cxNoteNewUI  .noteMoreFiles > .dz-preview .dz-size {
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+.cxLookupExtraDetailsTbl td:first-child {
+    padding: 6px 10px 0 5px;
+    min-width: 100px;
+    vertical-align: top;
+}
+.cxLookupExtraDetailsTbl td:last-child {
+    padding: 6px 20px 0 10px;
+    vertical-align: top;
+}
+.noteMoreFiles .dz-error .dz-error-message,
+.noteMoreFiles .dz-processing .dz-progress,
+.noteMoreFiles > .dz-success > .dz-progress,
+.noteMoreFiles .dz-file-preview .dz-progress,
+.noteMoreFiles .dz-progress {
+    .cxNoteMoreFilesMarginLeftMixin();
+    @{property-margin-left}: @margin-left;
+}
+.cxNoteNewUI  #noteMoreFiles > .dz-preview .dz-filename {
+	.cxNoteMoreFilesDzPreviewFilenameMixin();
+	max-width: @max-w;
+	overflow: auto;
+}
+.cxNoteNewUI  #noteMoreFiles > .dz-error > .dz-error-message {
+    min-width: 100px;
+    max-width: 120px;
+	width: auto;
+}
+.cxNoteMoreFiles {
+	.cxNoteMoreFilesMixin();
+	background: @bg;
+	// margin-top: 10px;
+	margin-top: 0px !important; /*Temporary fix to override style in CRM*/
+	@{property-padding-left}: @paddingLeft !important;
+	@{property-padding-right}: @paddingRight;
+	z-index: 1;
+}
+
+.cxNoteWithMoreFiles{
+	.cxNoteMoreFilesMixin();
+	border-top: @border-top;
+}
+
+.cxNoteMoreFiles .dz-preview:first-of-type,
+.cxNoteMoreFiles .cxNotesAttachmentWrap:first-of-type {
+    // margin-top:10px !important;
+	padding-top:10px !important;
+}
+.cxNotesAttachmentWrap {
+	font-size: 14px;
+	padding-bottom: 10px;
+}
+.cxNoteNewUI .dz-filename > span {
+	max-width: 100%;
+	display: inline-block;
+	vertical-align: top;
+	// display: inline-flex;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.cxNotesAttachmentIcons { 
+	.cxNotesAttachmentIconsMixin(); 
+	background-image: @bg-img !important;
+	display: inline-block;
+	flex-shrink: 0;
+	top: @top;
+    position: relative;
+	// background-position: @bg-default-position;
+	// width: @w;
+	// height: @h;
+}
+.cxNoteNewUI .cx-bmp-icon,
+.cxNoteNewUI .cx-jpg-icon,
+.cxNoteNewUI .cx-gif-icon,
+.cxNoteNewUI .cx-png-icon {
+	.cxNotesPngIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxNoteNewUI .cx-word-icon {
+	.cxNotesWordIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxNoteNewUI .cx-txt-icon {
+	.cxNotesTxtIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxNoteNewUI .cx-movie-icon {
+	.cxNoteMovieIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxNoteNewUI .cx-mp3-icon {
+	.cxNoteMp3IconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxNoteNewUI .cx-pdf-icon {
+	.cxNotePdfIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxNoteNewUI .cx-csv-icon,
+.cxNoteNewUI .cx-excel-icon {
+	.cxNoteExcelIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxNoteNewUI .cx-ppt-icon {
+	.cxNotePptIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxNoteNewUI .cx-zip-icon,
+.cxNoteNewUI .cx-file-icon,
+.cxNoteNewUI .cx-exe-icon,
+.cxNoteNewUI .cx-html-icon {
+	.cxNoteZipIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	display: inline-block;
+}
+.cxNotesAttachedListName {
+	.cxNotesAttachedListNameMixin();
+    max-width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+	@{property-margin-right}: @margin-right;
+	display: inline-block;
+	vertical-align: middle;
+}
+.cxNotesAttachmentRemoveIcon {
+	.cxNotesAttachmentRemoveIconMixin();
+	-webkit-mask-image: @mask-img;
+	mask-image: @mask-img;
+	-webkit-mask-position: @mask-pos;
+	mask-position: @mask-pos;
+	width: @w;
+	height: @h;
+	background-color: @bg-color;
+	display: inline-block;
+	top:@top;
+	position: relative;
+	@{property-margin-left}: @margin-left;
+	cursor: pointer;
+}
+
+.cxNoteCount {
+    .cxNoteCountMixin();
+	height: @h;
+	padding: @padding;
+	background: @bg;
+	border-radius: @border-radius;
+	line-height: @line-height;
+	display: inline-block;
+	text-align: center;
+	font-size: @font-size;
+	@{property-margin-left}: @margin-left;
+	cursor: default;
+}
+.cxNotesOnwerLookupValue {
+    .cxNotesOnwerLookupValueMixin();
+    color: @color;
+	overflow-wrap: anywhere;
+}
+
+
+.cxNoteStorageLimitContent {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.cxNotesStorageLimitShadow {
+    .cxNotesStorageLimitShadowMixin();
+    position: absolute;
+    width: @w;
+    height: @h;
+    border-top: @border-top;
+    @{property-border-left}: @border-left;
+    @{property-border-right}: @border-right;
+    opacity: @opacity;
+    border-radius: @border-radius;
+    @{property-left}: @left;
+    top: @top;
+}
+.cxNotesStorageLimitWarnIcon {
+    background: url(/crm/CRMClient/images/ico_storage_exceed.svg) -9px -4px no-repeat;
+    width: 34px;
+    height: 33px;
+    display: inline-block;
+    vertical-align: middle;
+    @{property-margin-right}: 35px;
+}
+.cxNotesStorageLimitInfo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 450px;
+    @{property-padding-right}: 55px;
+}
+.cxNoteStorageLimitModalWrapper .lyteModal {
+    border-radius: 6px;
+}
+.cxNotesStorageLimitWarnMsg {
+    .cxNotesStorageLimitWarnMsgMixin();
+    color: @color;
+    font-family: @font-family;
+    font-weight: @font-weight;
+    display: inline-block;
+}
+.cxNotesStorageLimitLink {
+	.cxNotesStorageLimitLinkMixin();
+    color: @color;
+    text-decoration: none;
+}
+.cxNoteStorageLimitManageBtn {
+    @{property-margin-right}: 20px;
+}
+.cxNotesStorageLimitClose {
+    background: url(/crm/CRMClient/images/ico_storage_exceed.svg) -48px -4px no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.notesTextInputBox .lyteMIWrapper {
+    width: 100%;
+	@{property-padding-left} : 5px; /* Added to make adjustment for left padding for placeholder with .lyteMIWrapper */
+}
+.cxNotesGrayTxtContent{
+	.cxNotesGrayTxtContentMixin();
+	font-size: @font-size;
+}
+.cxVoiceNoteContent{
+	.cxVoiceNoteContentMixin();
+	font-size: @font-size;
+}
+.cxNotesCommonLinkColor {
+	.cxNotesCommonLinkColorMixin();
+	color: @color;
+}
+.cxShowMoreNotesContent{
+	.cxShowMoreNotesContentMixin();
+	font-size: @font-size;
+}
+.cxNotesCommonLinkColor:hover {
+	.cxNotesCommonLinkColorHoverMixin();
+	color: @color;
+}
+.cxNotesUl crux-note-loading {
+	.cxNotesUlNoteLoadingMixin();
+	display: block;
+	padding: @padding;
+}
+.cxNotesAddedNotesLoader {
+	height: 35px;
+	margin: 10px 0;
+	display: flex;
+}
+.cxNotesUl.cxNotesRecentFirst .cxNotesAddedNotesLoader {
+	.cxNotesUlFirstNoteElemLoadingMixin();
+	margin-bottom: @margin-bottom;
+}
+.cxNotesUl.cxNotesRecentLast .cxNotesAddedNotesLoader {
+	.cxNotesUlLastNoteElemLoadingMixin();
+	margin-top: @margin-top;
+}
+.cxNotesLoaderCircle {
+	.cxNotesLoaderCircleMixin();
+	background: @bg;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+}
+.cxNotesLoaderRightSection {
+	@{property-margin-left}: 10px;
+	flex-grow: 1;
+}
+.cxNotesLoaderLine {
+	.cxNotesLoaderLineMixin();
+	background: @bg;
+	height: 10px;
+	border-radius: 3px;
+	position: relative;
+	overflow: hidden;
+}
+.cxNotesLoaderLine1 {
+	width: 50%;
+	margin: 3px 0 7px;
+}
+.cxNotesLoaderLine2 {
+	width: 25%;
+}
+.cxNotesLoaderRunner {
+	.cxNotesLoaderRunnerMixin();
+	height: 100%;
+	background: @bg;
+	width: 30%;
+	border-radius: 3px;
+	position: absolute;
+	animation: cxNotesLoaderRunnerFrame 3s ease infinite;
+}
+.cxNotesCircleLoaderRunner {
+	.cxNotesCircleLoaderRunnerMixin();
+	height: 200%;
+	width: 200%;
+	background:  @bg;
+	position: absolute;
+	animation: cxNotesCircleLoaderRunnerFrame 3s linear infinite;
+	border-radius: 50%;
+}
+@keyframes cxNotesLoaderRunnerFrame {
+	0% {
+		@{property-left}: -30%;
+	}
+	100% {
+		@{property-left}: 100%;
+	}
+}
+@keyframes cxNotesCircleLoaderRunnerFrame {
+	0% {
+        top: -65%;
+		@{property-left}: -65%;
+	}
+	100% {
+        top: -15%;
+		@{property-left}: -15%;
+	}
+}
+.cxNoteVoiceFileIcon{
+	background-image: url(/crm/images/voicefileicon.png);
+	width: 16px;
+	height: 19px;
+}
+
+.cxNotesSortDropdown lyte-drop-button {
+	.cxNotesSortDropButtonMixin();
+	padding: @padding;
+}
+.cxNotesSortDropdown lyte-drop-button::after {
+	.cxNotesSortDropButtonAfterMixin();
+    top: @top;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cruxNoteSelectedToggle::before {
+	.cxNoteSelectedToggleMixin();
+	content: '';
+	// background-image: @bg-img;
+	// background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	display: inline-block;
+	position: absolute;
+	@{property-left}: @left;
+	top: @top;
+	opacity: @opacity;
+	@background-position: -328px -235px;
+	.cruxMaskImageMixin(@cruxSprite,@background-position,@cxIconBaseMaskBg);
+    background-image: none;
+    background-position: initial;
+}
+.cxNoteCkboxLabel {
+	.cxNoteCkboxLabelMixin();
+	margin-top: @margin-top;
+	font-size: @font-size;
+}
+/*.cxNoteCheckbox .lyteCheckBoxDefault::before {
+	.cxNoteCheckboxDefaultBeforeMixin();
+	(transform: @transform;
+	@{property-margin-right}: @margin-right;
+}*/
+.cxNoteCheckbox input[type="checkbox"] + .lyteCheckBoxDefault::after {
+	.cxNoteCheckboxDefaultAfterMixin();
+	transform: @transform;
+}
+.cxNoteCheckbox {
+	.cxNoteCheckboxMixin();
+	@{property-margin-left}: @margin-left;
+}
+.cxNotesGraytxt { // not used need to check
+	.cxNotesGraytxtMixin();
+	color: @color;
+}
+
+.lyteMultiSelectDropdown .cruxNoteToggleOptions lyte-drop-item {
+	@{property-padding-left}: 25px;
+	@{property-padding-right}: 10px;
+}
+.cruxNoteToggleOptions .moduleBasedGroup {
+	display: block;
+}
+.cruxNoteToggleOptions .moduleBasedGroup lyte-drop-item:last-of-type {
+	.cxNotesSortModuleGroupMixin();
+	border-bottom: @border-bottom;
+    display: block;
+}
+
+.cruxNoteToggleOptions lyte-drop-item.cruxNoteSelectedToggle {
+	font-family: var(--crm-font-bold);
+}
+.cxNoteNewUI  #noteMoreFiles .dz-remove {
+	.cxNotesFileUploadCloseMixin();
+	float: @float;  
+    top: @top;
+}
+.cruxNoteOnwerProfileInfo {
+	.cruxNoteOnwerProfileInfoMixin();
+	display: @display;
+}
+.cruxNoteOwnerName {
+	.cruxNoteOwnerNameMixin();
+	flex: @flex-one;
+    min-width: @min-width;
+    display: @display;
+    width: @width;
+    flex-direction: @flex-direction;
+	font-family: @cruxSecondaryFont;
+	font-weight: @cruxFontWeightBold;
+	display: inline-block;
+}
+.cruxNoteOnwerSecInfoLink {
+	font-size: 15px;
+	display: block;
+	line-height:20px;
+}
+// .cruxNoteOnwerSecInfoLink {
+
+// }
+.cxNotesSmallFont{
+	.cxNotesSmallFontMixin();
+	font-size: @font-size;
+}
+.cxNotesStorageLimitInfoContent{
+	.cxNotesStorageLimitInfoContentMixin();
+	font-size: @font-size;
+}
+.notesbluetxt{
+	vertical-align: top;
+}
+.cruxNoteOwnerProfileInfo {
+	.cruxNoteOwnerProfileInfoMixin();
+	display: @display;
+	max-width: 100%;
+    overflow: hidden;
+    min-width: 0;
+}
+.cruxNoteOnwerSecInfoLink,
+.cruxNoteOnwerSecInfoBC {
+	.cruxNoteOnwerSecInfoOverflowNormalMixin();
+	white-space: @white-space;
+    overflow-wrap: @overflow-wrap;
+	line-height: @line-height;
+	font-size: @font-size;
+}
+.cxNotesFooterRight {
+	.cxNotesFooterRightMixin();
+	display: @display;
+	align-items: @align-items;
+	flex-wrap: @flex-wrap;
+	// margin-bottom: @margin-bottom;
+	// margin-top: 10px;
+	@{property-margin-right}: initial !important;
+}
+.cxFooterRightPrefixYield {
+	.cxFooterRightPrefixYieldMixin();
+	// margin-bottom: @margin-bottom;
+}
+.cxNotesFooterRight lyte-button{
+	.cxFooterRightPrefixYieldMixin();
+	// margin-bottom: @margin-bottom;
+}
+.cxNotesFooterRight lyte-button:last-of-type {
+	@{property-margin-right}:0;
+}
+
+.cxNotesSortDropdown[lt-prop-type=multiple] lyte-drop-button::after, 
+.cxNotesSortDropdown[lt-prop-type=multisearch] lyte-drop-button::after {
+    @{property-left}: initial !important;
+    @{property-right}: 10px !important;
+}
+.cxNoteRightPrefixIcon {
+	.cxNoteRightPrefixIconMixin();
+	display: @display;
+	@{property-margin-right}: @margin-right;
+}
+.cxNoteMinWidth {
+	min-width: 280px;
+	display: block;
+}
+.cxNotesNoRecord {
+	.cxNotesNoRecordMixin();
+	color:@color;
+	padding-bottom: @padding-bottom;
+}
+.cxAttachFilesWithoutBorder {
+	/*To remove border, when only attach icon is present */
+	@{property-border-right}: none;
+    @{property-padding-right}: 0;
+}
+.cxNoteNewUI .lyteInputDisabled .lyteField:hover {
+	border: none;
+}
+.cxNoteImageName { 
+	text-align: center;
+	padding:5px;
+	font-size:1.3rem;
+}
+.cxNoteMoreFiles .dz-filename {
+	.cxNoteMoreFilesFileNameMixin();
+	@{property-margin-right}: @margin-right;
+	@{property-margin-left}: @margin-left;
+}
+
+
+
+
+
+
+/*CRUX Notes Rich text Editor UI Changes Starts */
+.cxNoteNewUI .lyteEditorPlaceholderDiv {
+	@{property-left}: 15px;
+}
+.cxNoteTitleInput,
+.cxNoteNewUI lyte-texteditor.cxNotesTextarea {
+	@{property-padding-left}: 15px;
+}
+.cxNoteNewUI lyte-texteditor.cxNotesTextarea {
+	.cxNotesEditorTextareaMixin();
+	border:@border !important;
+	padding: @padding;
+    min-height: @min-height;
+	width: initial !important;
+}
+.cxNoteNewUI .lyteEditorMainDiv {
+	// @{property-padding-left}: 0;
+	@{property-padding-left}: if( (@direction = rtl), 5px, 0); /* For rtl, padding-right must be minimum: 5px */
+	
+	// height: 100%;
+	// height: auto;
+    min-height: 84px;
+	padding-bottom: 0;
+	z-index: 1; /* Cursor comes above in Timeline and other sections */
+}
+
+// .cxNoteEditorScrollDisable .lyteEditorMainDiv {
+// 	overflow : unset;
+// }
+.cxNoteEditorScrollDisable .lyteEditorMainDiv::-webkit-scrollbar {
+	display: none;
+}
+.cxNoteEditorScrollDisable .lyteEditorMainDiv{
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+// .cxNotesEditorWrapperClass lyte-popover-freeze,
+// .cxNotesEditorMoreWrapper lyte-popover-freeze  {
+//     opacity: 0 !important;
+// }
+.cxNotesEditorWrapperClass.popoverWrapper:not(.lyteEditorMobileOptionsPopover) {
+    pointer-events: auto;
+}
+.cxEditorCheckboxWrap {
+	display: flex;
+    flex-wrap: wrap;
+}
+.cxEditorCheckboxWrap.dN,
+.cxEditorCheckboxWrap.cxdN {
+	display: none !important;
+}
+/*CRUX Notes Rich text Editor UI Changes Ends */
+
+
+
+.cxNotesShowMore {
+	padding-top: 7px;
+}
+// .cxNotesAddedContent ul,
+// .cxNotesAddedContent ol {
+// 	list-style:initial;	
+// 	margin:initial;
+// 	padding: 0px !important;
+// }
+// .cxNotesAddedContent ul li,
+// .cxNotesAddedContent ol li {
+// 	list-style:inherit;
+// 	padding:initial;	
+// }
+
+.cxNotesAddedContent ul,
+.cxNotesAddedContent ol {
+	list-style:initial;	
+	margin:initial;
+    list-style-position: outside !important;
+}
+.cxNotesAddedContent ul li,
+.cxNotesAddedContent ol li {
+	list-style:inherit;
+	// padding:initial;	
+	@{property-padding-left}: 0;
+}
+// .cxNotesAddedContent > ul {
+//     padding: 0 !important;
+//     margin: 0;
+// }
+/*  font-weight: @font-weight; Commented to avoid empty value from crm css - crm-font-bold */
+.cxNotesAddedContent b,
+.cxNotesAddedContent strong  {
+	.cxNotesAddedContentBoldMixin();
+	font-family: @font-family;
+	font-weight: bold;
+	background-color: inherit;
+}
+.cxNotesAddedContent,
+.cxNotesAddedContent *:not(a,.cxNotesCommonLinkColor,.cruxNoteSeeMore .zcicn-cssIcons) {
+    color: inherit;
+    background-color: inherit;
+}
+/* .cxNonRTF  - class is neeeded. Incase rtf is not there, normal blue color will come for notes, merge fields in notes etc*/
+.cxNotesAddedContent:not(.cxNonRTF) a {
+	// color: inherit; Commented to add styling - if not rtf color is applied
+	cursor: pointer;
+}
+// .cxNotesTextareaWrap .lyteEditorMentionWord {
+	// background: inherit !important;
+	/* For merge fields, background color not getting applied. so removed to override */
+// 
+.cxNoteEditorPanelPopover {
+	position: absolute;
+    // left: 33px;
+	@{property-left}:43px;
+    top: 5px;
+    // width: 100%;
+	max-width: calc(100% - 240px);
+	opacity: 0;
+	visibility: hidden;
+	transition:opacity 0.15s ease-in;
+	border: 1px solid transparent;
+}
+.cxNoteEditorPanelPopoverFullWidth {
+	max-width: calc(100% - 60px);
+}
+.cxNoteEditorPanelPopover.cxNoteShowTransition {
+	opacity: 1;
+	visibility: visible;
+}
+crux-note-editor .cxNotesTextarea.lyteInputFocus .lyteField {
+	box-shadow: none !important;
+	// border-radius: 0;
+}
+
+.cxNotesContentWrap .cxNotesAddedContent i,
+.cxNoteNewUI .cxNotesAddedContent i {
+	font-style: italic !important;
+}
+/* Lyte Code Override Starts */
+.cxNoteNewUI .lyteEditorResizeHandler{
+	z-index: 2;
+}
+.cxNoteEditorPanelPopover .lytePopover,
+.cxNoteEditorPanelPopover .lyteEditorIconsDiv {
+	.cxNoteEditorPanelPopoverBorderRadiusMixin();
+	border-radius: @border-radius;
+}
+.cxNoteEditorPanelPopover .lytePopover,
+.cxNotesEditorWrapperClass .lytePopover {
+	box-shadow: none;
+}
+.cxNotesEditorWrapperClass .lytePopoverArrowIcon {
+	box-shadow: none;
+}
+.cxNoteEditorPanelPopover .lyteEditorIconsDiv {
+    // box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25) inset;
+    // background: #E1E6EC;
+	.cxNoteEditorPanelPopoverIconsDivMixin();
+    border: none;
+	@{property-padding-left}:15px;
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25) inset;
+	border-radius: @cxBoxElementsBorderRadius;
+}
+
+.cxNoteEditorPanelPopover .lyteEditorIconsDiv,
+.cxNotesEditorMoreWrapper .lyteEditorIconsDiv ,
+.cxNotesEditorMoreWrapper .lytePopoverArrowIcon {
+	.cxNoteEditorPanelPopovericonDivMixin();
+	background: @background !important;
+}
+/* .cxNotesEditorMoreWrapper .lyteEditorIconsDiv */
+// .cxNoteEditorPanelPopover .lyteEditorIconsDiv  {
+    // box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25) inset;
+	// box-shadow: none;
+	// border-radius: @cxBoxElementsBorderRadius;
+    // background: #E1E6EC;
+// }
+// .cxNoteEditorPanelPopover .lyteEditorIconsDiv {
+//     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25) inset;
+// }
+
+/****************************************************
+	
+	.lyteEditorMobileOptionsPopover - DO NOT REMOVE THIS CLASS
+
+	 This class will comes only when notes component Used in Mobile.
+	 For mobile Alone - shadow, border and other styling must not come
+*****************************************************/
+.cxNotesEditorWrapperClass:not(.lyteEditorMobileOptionsPopover) .lytePopover {
+	.cxNotesEditorWrapperClassPopoverMixin();
+    box-shadow: @box-shadow;
+    border-radius: @border-radius;
+    border:@border;
+}
+.cxNotesEditorWrapperClass .lyteColorPicker__shades .lyteColorPicker__colorpan {
+	margin-bottom: 5px;
+}
+.cxNotesEditorWrapperClass .lyteColorPicker__shades:last-of-type .lyteColorPicker__colorpan {
+	margin-bottom: 0;
+}
+.cxNotesEditorWrapperClass .lyteColorPicker__colorpan {
+	border-radius: 50%;
+}
+
+.cxNotesEditorWrapperClass .lyteEmojiInputElement {
+	padding-top: 15px;
+}
+.cxNoteEditorPanelPopover .lyteEditorMoreOptions{
+	@{property-margin-left}: 3px;
+	flex-shrink: 0;
+}
+
+.cxNoteEditorPanelPopover .lyteEditorImageIcon:hover, 
+.cxNoteEditorPanelPopover .lyteEditorTableIcon:hover, 
+.cxNoteEditorPanelPopover .lyteEditorLineHeightIcon lyte-drop-button:hover, 
+.cxNoteEditorPanelPopover .lyteListIcon:hover, 
+.cxNoteEditorPanelPopover .lyteSwitchIcon:hover, 
+.cxNoteEditorPanelPopover .lyteEditorMoreOptions:hover, 
+.cxNoteEditorPanelPopover .lyteEditorEmojiIcon:hover, 
+.cxNoteEditorPanelPopover .lyteEditorRedoIcon:hover, 
+.cxNoteEditorPanelPopover .lyteEditorUndoIcon:hover, 
+.cxNoteEditorPanelPopover .lyteEditorBgIcon:hover, 
+.cxNoteEditorPanelPopover .lyteEditorColorIcon:hover, 
+.cxNoteEditorPanelPopover .lyteEditorAnchorIcon:hover {
+	.cxNotesEditorPanelPopoverIconHoverMixin();
+	background-color: @bg;
+}
+.cxNoteEditorPanelPopover .lyteEditorColorpickerOpened, 
+.cxNoteEditorPanelPopover .lyteEditorColorpickerOpened:hover, 
+.cxNoteEditorPanelPopover .lyteEditorPanelListPopOpened, 
+.cxNoteEditorPanelPopover .lyteEditorPanelListPopOpened:hover, 
+.cxNoteEditorPanelPopover .lyteEditorMoreOptionsOpened, 
+.cxNoteEditorPanelPopover .lyteEditorTextFormatSelected:hover, 
+.cxNoteEditorPanelPopover .lyteEditorTextFormatSelected {
+	.cxNoteEditorPanelIconSelectedMixin(); 
+	box-shadow: none;
+    border: 1px solid @border;
+    // background-color: var(--bg_f7fbff);
+	background-color: @bg;
+}
+.cxNoteEditorPanelPopover .clearformatting .lyteEditorTextFormatSelected {
+	border: none !important;
+}
+.cxNotesTextarea.lyteEditorResizeSelect {
+	cursor: ns-resize; 
+}
+/********************************
+	.lyteEditorMobileOptionsPopover - DO NOT REMOVE THIS CLASS
+********************************/
+.cxNotesEditorWrapperClass:not(.lyteEditorMobileOptionsPopover) lyte-popover-content {
+	padding: 15px !important;;
+}
+.cxNotesEditorWrapperClass .lyteListOlIconsWrap {
+	min-width: 208px;
+	justify-content: space-between;
+}
+.cxNotesEditorWrapperClass .lyteListUlIconsWrap .lyteSwitchIcon,
+.cxNotesEditorWrapperClass .lyteListOlIconsWrap .lyteSwitchIcon  {
+	margin: 0 5px 8px 3px;
+}
+.cxNotesEditorWrapperClass.lyteColorpickerVisible lyte-popover-content {
+	padding: 0 !important;;
+}
+.cxNotesEditorWrapperClass .lyteColorPicker__commandbar .lyte-button {
+	text-transform: capitalize;
+}
+// crux-note-editor .cxNotesTextareaWrap .lyteEditorMainDiv lyte-word {
+	// font-family: inherit !important;
+	//adding this removed bold styling in notes editor.
+// }
+.cxNotesEditorWrapperClass .lyteColorPicker__default {
+	.cxNoteEditorPanelColorPickerBorderRadiusMixin();
+    border-radius: @border-radius;
+    overflow: hidden;
+}
+.cxNotesEditorWrapperClass .lyteErrorMsg {
+	transform: translateY(4px);
+}
+/* Lyte Code Override Ends */
+
+.cxNoteHeaderSuffixWrap {
+	display: flex;
+    align-items: flex-start;
+}
+.cxNoteHeaderSuffixYield {
+	@{property-margin-right}: 15px;
+	margin-top: 4px;
+}
+
+/* Notes Print Preview UI Changes Starts */
+.cxNotesPrintPreview .cxNotesModuleRecordName {
+	text-decoration: none;
+}
+.cxNotesPrintPreview .cxNotesAttachActions {
+	display: none;
+}
+.cxNotesPrintPreview .cxNotesModuleRecordName {
+	max-width: auto;
+	text-decoration: none;
+}
+/* Notes Print Preview UI Changes Ends */
+
+.cxNotesMentionWrapperClass lyte-menu-body {
+	max-height: 350px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************************************** 
+	CRUX Notes Mandatory Styling Starts
+	1. CRUX Rich Text Editor
+	2. CRUX Notes - with Mandatory Styling
+	3. CRUX Notes - with Header Styling
+***************************************/
+.cxNoteTitleInputSection {
+	position: relative;
+}
+// notesTextInputBoxWrap
+// .cxMandatory .cxNoteNewUI .cxNotesTextarea::before,
+// .cxMandatory .cxNoteNewUI .cxNoteTitleInputSection::before
+.cxNoteNewUI .cxMandatory.notesTextInputBoxWrap {
+	position: relative;
+}
+.cxNoteNewUI .cxMandatory.notesTextInputBoxWrap::before {
+	content: '';
+	// height: 99%;
+	width: 3px;
+	background: var(--dropdownMandatoryBorder) !important;
+	position: absolute;
+    top: 1px;
+    @{property-left}: -1px;
+    z-index: 2;
+    border-radius: 4px 0 0 4px;
+    visibility: visible;
+    // bottom: 6px;
+	bottom:0;
+}
+// .cxMandatory .cxNoteNewUI .cxNotesTextarea::before {
+	// border-radius: 4px 0 0 0;
+// }
+// .cxNoteElem.cxMandatory .cxNoteNewUI .cxNoteTitleInputSection::before 
+
+// .cxMandatory .cxNoteNewUI .cxNoteTitleInputSection::before {
+// 	// top: -9px;
+// 	top: 0;
+//     height: 37px;
+//     border-radius: 4px 0 0 0;
+// }
+/* CRUX Notes Mandatory Styling Ends */
+// .cxNotesAddressLookupWrap {
+// 	display: inline-flex;
+// }
+.cxNoteEditorPanelPopover.cxDisableEditBtn {
+	pointer-events: none;
+}
+
+
+/* DARK Mode UI Fixes Starts */
+/* :not(.cxNoteNormal) - added to override styles that are not needed in Darkmode after RTF disabled */
+[data-mode=dark] .cxNoteNewUI:not(.cxNoteNormal) .cxNotesAddedContent {
+	.cxNotesAddedContentMixin();
+	background: @bg !important;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+	box-sizing: border-box;
+}
+/* DARK Mode UI Fixes Ends */
+.cxNotesAddressLookupWrap {
+	display: inline-flex;
+}
+// [data-mode=dark] .cxNoteNewUI:not(.cxNoteNormal) .notesTextInputBoxWrap {
+// 	background: @cxThemeBg !important;
+// }
+
+
+/* FEEDS Override UI Changes Starts */
+.cxBubbleNotesContent .cxNotesAddedContent {
+	.cxBubbleNotesContentmixin();
+	background: @background;
+    border-radius: @border-radius;
+    padding: @padding;
+    border: 1px solid @border;
+    box-sizing: border-box;
+    display: inline-block;
+    width: auto;
+	max-width: @max-w;
+}
+// .cxBubbleNotesContent .cxNotesAddressWrapper {
+// 	position: relative; 
+// 	display: inline-block;
+// }
+.cxBubbleNotesContent .cxNoteDeleteIcon,
+.cxBubbleNotesContent .cxNoteEditIcon,
+.cxBubbleNotesContent .cxNotesTimerIcon {
+	.cxNotesBubbleContentIconsMixin();
+	// background-color: @cxMaskIconGrayBg;
+	background-color: @bg;
+}
+/* FEEDS Override UI Changes Ends */
+
+
+/* CRUX Note Attachment related CSS Starts
+	To be used only for LUX CSS
+*/
+
+
+#noteMoreFiles > .dz-preview {
+	padding: 0;
+	margin: 0 0 5px;
+	box-shadow: none;
+	position: relative;
+	background: 0 0;
+	border: none;
+	display: block;
+	cursor: default !important;
+  }
+  #noteMoreFiles > .dz-error > .dz-error-message {
+	.cxNotesMoreFileDzErrorMixin();
+	@{property-left}: 272px;
+	background: 0 0;
+	opacity: 1;
+	display: inline-block;
+	padding: 0;
+	color: @color;
+	vertical-align: middle;
+	position: static !important;
+	min-width: 120px;
+	width: 120px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	text-align: @value-textalign-left;
+  }
+  #noteMoreFiles > .dz-preview div {
+	display: inline-block;
+	font-size: var(--crm-extra-medium-font-size);
+  }
+  #noteMoreFiles .dz-size {
+	display: inline-block;
+	font-size: var(--crm-extra-medium-font-size);
+	vertical-align: middle;
+  }
+  #noteMoreFiles > .dz-preview div .dz-filename {
+	font-size: var(--crm-extra-medium-font-size);
+	color: var(--linkColor);
+	overflow: visible;
+	@{property-margin-right}: 10px;
+	vertical-align: middle;
+	word-break: break-word;
+  }
+  #noteMoreFiles > .dz-preview div .dz-filename > [class$="-icon"] {
+	display: inline-block;
+	vertical-align: middle;
+  }
+  #noteMoreFiles > .dz-preview div .dz-filename > span:nth-child(2) {
+	margin-top: 0;
+	display: inline-block;
+	width: auto;
+	max-width: 150px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	vertical-align: middle;
+  }
+  #noteMoreFiles > .dz-preview div .dz-size {
+	position: static;
+	color: var(--baseColor);
+	margin-top: 0;
+	height: auto;
+	line-height: 26px;
+  }
+  #noteMoreFiles > .dz-preview div .dz-size span {
+	vertical-align: top;
+	display: inline-block;
+  }
+  #noteMoreFiles > .dz-preview > .dz-details {
+	width: 265px;
+	height: auto;
+	background: 0 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+  }
+  #noteMoreFiles > .dz-preview > .dz-progress {
+	width: 120px;
+	display: inline-block;
+	vertical-align: middle;
+	background: var(--bg_C8CDD6);
+	position: static;
+  }
+  #noteMoreFiles > .dz-error > .dz-progress {
+	opacity: 0;
+	display: none;
+  }
+  #noteMoreFiles > .dz-success > .dz-progress {
+	opacity: 1;
+  }
+  #noteMoreFiles > .dz-callbackcomplete > .dz-progress > .dz-upload {
+	background-color: var(--linkColor) !important;
+	transition: background-color 250ms linear;
+  }
+  #noteMoreFiles > .dz-preview > .dz-progress > .dz-upload {
+	background-color: var(--bg_14C477);
+	background-image: none;
+	position: static !important;
+	height: 100%;
+  }
+  #noteMoreFiles > .dz-error > .dz-progress > .dz-upload {
+	background-color: var(--negativeBgFlag);
+	background-image: none;
+	position: static !important;
+	opacity: 0;
+  }
+  #noteMoreFiles > .dz-preview > .dz-error-mark,
+  #noteMoreFiles > .dz-preview > .dz-success-mark {
+	width: 50px;
+	float: @value-float-left;
+  }
+  #noteMoreFiles .dz-remove {
+	display: inline-block;
+	vertical-align: middle;
+	@{property-margin-left}: 10px;
+	cursor: pointer;
+  }
+  .attachzone,.attachzone *,
+  .attachzone-previews,.attachzone-previews * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.attachzone {
+    position: relative
+}
+
+.attachzone.dz-clickable,
+.attachzone.dz-clickable .dz-message,
+.attachzone.dz-clickable .dz-message span {
+    cursor: pointer
+}
+
+.attachzone.dz-clickable * {
+    cursor: default
+}
+
+.attachzone .dz-message {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none
+}
+
+.attachzone.dz-drag-hover {
+	.cxAttachZoneDragHoverMixin();
+    border-color: @border;
+    background: @bg;
+}
+
+.attachzone .dz-preview,.attachzone-previews .dz-preview {
+	.cxAttachZonePreviewMixin();
+    background: @bg;
+    position: relative;
+    display: inline-block;
+    margin: 17px;
+    vertical-align: top;
+    border: 1px solid @border ;
+    padding: 6px;
+    box-shadow: 1px 1px 4px @shadow;
+    font-size: 14px
+}
+
+.attachzone .dz-preview.dz-file-preview [data-dz-thumbnail],
+.attachzone-previews .dz-preview.dz-file-preview [data-dz-thumbnail] {
+    display: none
+}
+
+.attachzone .dz-preview .dz-details,
+.attachzone-previews .dz-preview .dz-details {
+	.cxAttachZonePreviewDetailsMixin();
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background: @bg;
+    padding: 5px;
+    margin-bottom: 22px
+}
+
+.attachzone .dz-preview .dz-details .dz-filename,
+.attachzone-previews .dz-preview .dz-details .dz-filename {
+    overflow: hidden;
+    height: 100%
+}
+
+.attachzone .dz-preview .dz-details img,
+.attachzone-previews .dz-preview .dz-details img {
+    position: absolute;
+    top: 0;
+    @{property-left}: 0;
+    width: 100px;
+    height: 100px
+}
+
+.attachzone .dz-preview .dz-details .dz-size,
+.attachzone-previews .dz-preview .dz-details .dz-size {
+	.cxAttachZonePreviewDetailsSizeMixin();
+    position: absolute;
+    bottom: -28px;
+    @{property-left}: 0;
+    height: 28px;
+    line-height: 28px;
+    color: @color;
+}
+
+.attachzone .dz-preview:hover .dz-details img,
+.attachzone-previews .dz-preview:hover .dz-details img {
+    display: none
+}
+
+// .attachzone .dz-preview .dz-error-mark,
+// .attachzone .dz-preview .dz-success-mark,
+// .attachzone-previews .dz-preview .dz-error-mark,
+// .attachzone-previews .dz-preview .dz-success-mark {
+//     position: absolute;
+//     width: 40px;
+//     height: 40px;
+//     font-size: 30px;
+//     text-align: center;
+//     @{property-right}: -10px;
+//     top: -10px
+// }
+
+// .attachzone .dz-preview .dz-success-mark,
+// .attachzone-previews .dz-preview .dz-success-mark {
+//     color: #8cc657
+// }
+
+// .attachzone .dz-preview .dz-error-mark,
+// .attachzone-previews .dz-preview .dz-error-mark {
+//     color: #ee162d
+// }
+
+.attachzone .dz-preview .dz-progress,
+.attachzone-previews .dz-preview .dz-progress {
+	.cxAttachZonePreviewProgressMixin();
+    position: absolute;
+    top: 100px;
+    @{property-left}: 6px;
+    @{property-right}: 6px;
+    height: 6px;
+    background: @bg;
+    display: none
+}
+
+.attachzone .dz-preview.dz-processing .dz-progress,
+.attachzone-previews .dz-preview.dz-processing .dz-progress {
+    display: block
+}
+
+.attachzone .dz-preview .dz-error-message,
+.attachzone-previews .dz-preview .dz-error-message {
+	.cxAttachZonePreviewErrorMessageMixin();
+    position: absolute;
+    top: -5px;
+    @{property-left}: -20px;
+    background: @bg;
+    padding: 8px 10px;
+    color: @cxErrorMsgColor;
+    min-width: 140px;
+    max-width: 500px;
+    z-index: 500;
+	opacity: 0;
+}
+
+.attachzone .dz-default.dz-message {
+	.cxAttachZoneDefaultMessageMixin();
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    transition: opacity .3s ease-in-out;
+    position: absolute;
+    width: 428px;
+    border: 1px dashed @border;
+}
+
+// @media all and (-webkit-min-device-pixel-ratio: 1.5),(min--moz-device-pixel-ratio:1.5),(-o-min-device-pixel-ratio:1.5/1),(min-device-pixel-ratio:1.5),(min-resolution:138dpi),(min-resolution:1.5dppx) {
+//     .attachzone .dz-default.dz-message {
+//         background-image:url("../images/spritemap@2x.png");
+//         -webkit-background-size: 428px 406px;
+//         -moz-background-size: 428px 406px;
+//         background-size: 428px 406px
+//     }
+// }
+
+.attachzone .dz-default.dz-message span {
+    display: none
+}
+
+.attachzone.dz-square .dz-default.dz-message {
+    background-position: 0 -123px;
+    width: 268px;
+    @{property-margin-left}: -134px;
+    height: 174px;
+    margin-top: -87px
+}
+
+.attachzone.dz-drag-hover .dz-message {
+    opacity: .15
+}
+
+.attachzone.dz-started .dz-message {
+    display: block;
+    opacity: 0
+}
+
+.attachzone .dz-preview.dz-image-preview:hover .dz-details img,
+.attachzone-previews .dz-preview.dz-image-preview:hover .dz-details img {
+    display: block;
+    opacity: .1
+}
+
+.attachzone .dz-preview.dz-error .dz-error-mark,
+.attachzone .dz-preview.dz-success .dz-success-mark,
+.attachzone-previews .dz-preview.dz-error .dz-error-mark,
+.attachzone-previews .dz-preview.dz-success .dz-success-mark {
+    display: block;
+    opacity: 1;
+    -ms-filter: none;
+    filter: none
+}
+
+.attachzone .dz-preview.dz-error .dz-progress .dz-upload,
+.attachzone-previews .dz-preview.dz-error .dz-progress .dz-upload {
+    background: @cxIconErrorMaskBg;
+}
+
+// .attachzone .dz-preview .dz-error-mark,
+// .attachzone .dz-preview .dz-success-mark,
+// .attachzone-previews .dz-preview .dz-error-mark,
+// .attachzone-previews .dz-preview .dz-success-mark {
+//     display: block;
+//     opacity: 0;
+//     transition: opacity .4s ease-in-out;
+//     // background-image: url("../images/spritemap.png");
+//     // background-repeat: no-repeat
+// }
+
+.attachzone .dz-preview .dz-error-mark span,
+.attachzone .dz-preview .dz-success-mark span,
+.attachzone-previews .dz-preview .dz-error-mark span,
+.attachzone-previews .dz-preview .dz-success-mark span {
+    display: none
+}
+
+// .attachzone .dz-preview .dz-error-mark,.attachzone-previews .dz-preview .dz-error-mark {
+//     background-position: -268px -123px
+// }
+
+// .attachzone .dz-preview .dz-success-mark,.attachzone-previews .dz-preview .dz-success-mark {
+//     background-position: -268px -163px
+// }
+
+.attachzone .dz-preview .dz-progress .dz-upload,
+.attachzone-previews .dz-preview .dz-progress .dz-upload {
+	.cxAttachZoneDzProgressUploadMixin();
+    display: block;
+    bottom: 0;
+    background-color: @bg;
+    animation: .4s linear infinite loading;
+    transition: width .3s ease-in-out;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    position: absolute;
+    top: 0;
+    @{property-left}: 0;
+    width: 0%;
+    /* height:100%; */
+    // background-image: url("../images/spritemap.png");
+    // background-repeat: repeat-x;
+    // background-position: 0 -400px
+}
+
+// @media all and (-webkit-min-device-pixel-ratio: 1.5),(min--moz-device-pixel-ratio:1.5),(-o-min-device-pixel-ratio:1.5/1),(min-device-pixel-ratio:1.5),(min-resolution:138dpi),(min-resolution:1.5dppx) {
+//     .attachzone .dz-preview .dz-error-mark,.attachzone .dz-preview .dz-progress .dz-upload,.attachzone .dz-preview .dz-success-mark,.attachzone-previews .dz-preview .dz-error-mark,.attachzone-previews .dz-preview .dz-progress .dz-upload,.attachzone-previews .dz-preview .dz-success-mark {
+//         background-image:url("../images/spritemap@2x.png");
+//         -webkit-background-size: 428px 406px;
+//         -moz-background-size: 428px 406px;
+//         background-size: 428px 406px
+//     }
+// }
+
+.attachzone .dz-preview.dz-success .dz-progress,
+.attachzone-previews .dz-preview.dz-success .dz-progress {
+    display: block;
+    opacity: 0;
+    transition: opacity .4s ease-in-out
+}
+
+// .attachzone .dz-preview .dz-error-message,
+// .attachzone-previews .dz-preview .dz-error-message {
+//     display: block;
+//     opacity: 0;
+//     transition: opacity .3s ease-in-out
+// }
+
+.attachzone .dz-preview:hover.dz-error .dz-error-message,
+.attachzone-previews .dz-preview:hover.dz-error .dz-error-message {
+    display: block;
+    opacity: 1;
+    -ms-filter: none;
+    filter: none
+}
+
+.attachzone a.dz-remove,.attachzone-previews a.dz-remove {
+	.cxAttachZoneDzRemoveMixin();
+    text-decoration: none;
+    display: block;
+    padding: 0;
+    margin: 26px 0 0;
+    color: @color;
+}
+
+.attachzone a.dz-remove:hover,.attachzone-previews a.dz-remove:hover {
+    text-decoration: underline
+}
+
+@keyframes loading {
+    from {
+        background-position: 0 -400px
+    }
+
+    to {
+        background-position: -7px -400px
+    }
+}
+
+/* CRUX Note Attachment related CSS Ends*/
+
+/* Notes grid based UI changes - to test Starts */
+// .cxNotesFooterLeft {
+// 	display: grid;
+//     grid-template-columns: 38px 1fr;
+//     overflow: hidden;
+//     justify-content: flex-start;
+//     justify-items: flex-start;
+//     flex-grow: 1;
+// }
+// .cxNoteEditorPanelPopover {
+// 	grid-column: 2;
+//     grid-row: 1;
+//     overflow: auto;
+//     max-width: 100%;
+//     display: flex;
+//     justify-self: stretch;
+// }
+// .cxEditorCheckboxWrap {
+// 	grid-column: 2;
+//     grid-column: 1;
+// }
+/* Notes grid based UI changes - to test Ends */
+
+
+/****************************************
+	 CRUX Notes Font Specific FIX Starts
+	 --temporary fix-
+	 for Hebrew, Japanese and Other languages
+****************************************/
+.cxNotesTextareaWrap lyte-word[style*="font-family: var(--crm-font-bold)"],
+.richTextField lyte-word[style*="font-family: var(--crm-font-bold)"],
+.cxNotesAddedContent b, 
+.cxNotesAddedContent strong {
+    font-weight: 600 !important;
+}
+/** CRUX Notes Font Specific FIX Ends. ***/

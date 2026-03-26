@@ -1,0 +1,42 @@
+// Image Section Mixin Starts
+.cxPbDefaultUserImageMixin(){
+	@w: 40px;
+	@h: 40px;
+	@bg-img: @cruxNoPhotoImage;
+	@bg-size: 100%;
+	@border-radius: 20px;
+}
+
+.cxPbRecordImageElementMixin(){
+	@margin-left: 5px;
+	@padding-bottom: 10px;
+	@h: 40px;
+}
+
+.cxPbRecordImageActionIconWrapMixin(){
+	@left: 8px;
+	@right: initial;
+}
+
+.cxPbImgSecTitleDivMixin(){
+	@padding-bottom: 10px;
+	@padding-top: 5px;
+}
+
+.cxPbImgSecTitleMixin(){
+	@margin: .cruxLESSMarginMixin(0px 10px 0px 5px)[@margin];
+	@max-w: calc(100% - 71px);
+	@font-size: @cxFontSize15px;
+	@font-family: @cruxSecondaryFont;
+	@font-weight: @cruxFontWeightBold;
+}
+
+.cxPbHideDefaultUserImageMixin(){
+	@h: 0px;
+}
+
+.cxPbRecImgHideTitleDivMixin(){
+	@padding-bottom: 5px;
+}
+
+// Image Section Mixin Ends

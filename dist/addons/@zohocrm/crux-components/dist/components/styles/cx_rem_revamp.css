@@ -1,0 +1,73 @@
+.showNoResultDiv {
+    padding: .8rem 1.5rem;
+}
+
+.cxElementsHoverCardContent,
+.cxNumDefaultInfo {
+   	font-size: 1.3rem;
+}
+.cxNormaltag{
+	font-size: 1.1rem;
+}
+
+
+.cxLookupComponent lyte-autocomplete lyte-input input,
+.cxLookupComponent lyte-input input {
+    font-size: 1.5rem;
+}
+.cxLookupPopoverWrapper .cxLookupPopTd {
+    font-size: 1.3rem;
+}
+
+
+
+.userLookupModal lyte-td {
+    font-size: 1.4rem;
+}
+
+.tablecomponent lyte-th,
+crux-table-component .tablecomponent1 lyte-th,
+crux-table-component .tablecomponent2 lyte-td {
+	font-size: 1.5rem;
+}
+
+.cvFilterList crux-user-dropdown .lyteMultipleSelect li,
+.cvFilterList crux-user-dropdown .lyteMultipleSelect li span{
+	font-size: 1.2rem !important;
+}
+.parentscope_Tag .cxTagBgSpan {
+    font-size: 1.5rem;
+}
+.cxComboAdditionalRecipientPresent,
+.cxLookupViewTopHeading {
+    font-size: 1.5rem;
+}
+.cxLookupViewLabel {
+    font-size: 1.4rem;
+}
+.cxComboboxAccordionBody .selected-user-type-detail {
+    font-size: 1.2rem;
+}
+.cxTagDropBox .cxTagDropItem .cxTagDropItemChild,
+.cxTagBgSpan {
+    font-size: 1.3rem;
+}
+
+
+.cxComboBoxAddedLabel,
+.cxComboBoxViewButtonList {
+    font-size: 1.4rem !important;
+}
+.cxComboBoxViewButtonUserCount {
+    font-size: 1rem !important;
+}
+.cxComboBoxViewHeader,
+.cxComboBoxViewUserNameLabel {
+    font-size: 1.3rem !important;
+}
+.cxTerritoryTree .treeValue {
+    font-size: 1.5rem !important;
+}
+/* .cxNoteCkboxLabel {
+	font-size: 1.3rem !important;
+} */

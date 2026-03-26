@@ -1,0 +1,42 @@
+.cxTwitterInputWrapper .cxBoxInput.lyteInputBox.horizontal .lyteLabel,
+.cxTwitterInputWrapper .lyteLabel {
+    color: #999;
+}
+.cxTwitterInputWrapper .cxFlatInput.horizontal .lyteLabel {
+    width: auto;
+    min-width: auto;
+    flex-grow: 0;
+}
+.cxTwitterInputWrapper .cxFlatInput.horizontal:hover .lyteLabel {
+    border-bottom: 1px solid #c1c1c1;
+}
+.cxTwitterInputWrapper .cxFlatInput.horizontal.lyteInputFocus .lyteLabel {
+    border-bottom: 1px solid #7fceef;
+}
+.cxTwitterInputWrapper .cxFlatInput.lyteInput .lyteField {
+    width: auto;
+    min-width: auto;
+    flex-grow: 1;
+}
+/*
+.cxTwitterInputWrapper .cxBoxInput.lyteInputBox .lyteField {
+    padding-left: 25px;
+}
+.cxTwitterInputWrapper .cxFlatInput.lyteInput .lyteField::after,
+.cxTwitterInputWrapper .cxBoxInput.lyteInputBox .lyteField::after {
+    content: '@';
+    position: absolute;
+    font-size: 1rem;
+    color: #333;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 0.5;
+}
+.cxTwitterInputWrapper .cxFlatInput.lyteInput .lyteField::after {
+    left: 0;
+}
+*/

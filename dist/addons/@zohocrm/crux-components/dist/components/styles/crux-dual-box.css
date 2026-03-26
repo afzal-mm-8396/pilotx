@@ -1,0 +1,107 @@
+crux-dual-box .lyteListboxLeftPanel {
+	margin-right: 15px;
+}
+crux-dual-box .lyteLBDragElement,
+crux-dual-box .lyteListBoxLeftWrap,
+crux-dual-box .lyteListBoxRightWrap {
+	margin: 0 10px;
+}
+crux-dual-box .lyteListboxRightPanel .lyteListBoxRightWrap:first-child,
+crux-dual-box .lyteListboxleftElementWrap .lyteListBoxLeftWrap:first-child {
+	margin-top: 10px;
+}
+crux-dual-box .lyteListBoxLeftElement {
+	padding: 7px 15px;
+}
+crux-dual-box .lyteListBoxRightElement {
+	padding: 7px 15px 7px 5px;
+}
+.cxDualBoxContent {
+	display: flex;
+}
+.cxDualBoxDragIcon {
+	-webkit-mask-image: url(../images/crux-sprite-icons.svg);
+	mask-image: url(../images/crux-sprite-icons.svg);
+	-webkit-mask-position: -165px -123px;
+	mask-position: -165px -123px;
+	color: #9C9C9C;
+	width: 6px;
+	height: 18px;
+	margin-right: 5px;
+	cursor: move;
+	visibility: hidden;
+}
+.cxDualBoxLabel {
+	margin-right: auto;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    white-space: normal;
+}
+.cxColPinIcon,
+.cxColPinActiveIcon {
+	display: inline-block;
+	background-image: url(../images/crux-sprite-icons.svg);
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+.cxColPinIcon {
+	background-position: -266px -107px;
+}
+.cxColPinActiveIcon {
+	background-position: -244px -107px;
+}
+crux-dual-box .cxColPinIcon {
+	visibility: hidden;
+}
+.lyteListBoxRightElement:hover .cxDualBoxDragIcon,
+.lyteListBoxRightElement:hover .cxColPinIcon {
+	visibility: visible;
+}
+crux-dual-box lyte-lb-add,
+crux-dual-box lyte-lb-remove {
+	background-image: none;
+	background-position: none;
+	-webkit-mask-image: url(../images/crux-sprite-icons.svg);
+	mask-image: url(../images/crux-sprite-icons.svg);
+	width: 17px;
+	height: 17px;
+	background-color: #000;
+}
+crux-dual-box lyte-lb-add {
+	-webkit-mask-position: -334px -87px;
+	mask-position: -334px -87px;
+}
+crux-dual-box lyte-lb-remove {
+	-webkit-mask-position: -310px -87px;
+	mask-position: -310px -87px;
+}
+crux-dual-box lyte-lb-add::after,
+crux-dual-box lyte-lb-remove::before,
+crux-dual-box lyte-lb-add::before {
+	content: none;
+}
+.cxDualBoxMandatorySign {
+	color: #f8614d;
+}
+crux-dual-box .lyteListBoxNoResultsFound {
+	align-items: flex-start;
+	height: calc(100% - 20px);
+}
+crux-dual-box .cxPinnedCol .lyteLbAdd {
+	display: none;
+}
+
+.cruxFormViewComponent.cxBoxBg{
+	min-width: auto;
+    box-sizing: border-box;
+}
+.cruxFormViewComponent.boxBg .crmFormComponentRow > .lyteField{
+	min-width: auto !important;
+    background-color: inherit;
+    max-width: 45%;
+}
+.cxColPinDisabled {
+	opacity: 0.3;
+	cursor: default;
+}

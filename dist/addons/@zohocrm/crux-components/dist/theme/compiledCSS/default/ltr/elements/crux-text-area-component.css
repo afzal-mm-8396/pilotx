@@ -1,0 +1,173 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cxTextareaViewMode {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  min-width: 300px;
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+.cxTextareaShowMore {
+  /* Added inline-block for canvas issue */
+  display: inline-block;
+  position: relative;
+  color: var(--lyte-crux-text-area-show-more-color);
+  cursor: pointer;
+}
+crux-text-area-component lyte-input .lyteField {
+  flex-grow: unset;
+}
+crux-table-component crux-text-component {
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+.cxTextarea lyte-input[lt-prop-type=textarea] .lyteField::after {
+  bottom: 0px;
+  right: 0px;
+}
+.cxLineClamp {
+  -webkit-box-orient: vertical;
+  display: -webkit-box !important;
+  overflow: hidden;
+}
+.cxLineNoClamp {
+  display: -webkit-box !important;
+}
+/* CRUX Table Component with Ellipsis Text Starts */
+.cxTextareaNoWrap .cxTextareaViewMode {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.cxTextareaNoWrap crux-text-component {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+/* CRUX Table Component with Ellipsis Text Ends */
+/*Text area hover card styles starts*/
+.cxTextareaHoverCard {
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+}
+.cxTextareaShowHoverCard {
+  padding-right: 25px;
+}
+.cxTextareaShowHoverCard .cxTextareaViewMode {
+  text-overflow: ellipsis;
+}
+.cxTextareaHoverCard .cxTextareaViewMode {
+  min-width: auto;
+  max-width: none;
+}
+.cxTextAreaToggleShowBtn {
+  display: inline-block;
+  width: 20px;
+  height: 18px;
+  border: 1px solid var(--lyte-crux-text-area-popup-toggle-btn-border-color);
+  background: var(--lyte-crux-text-area-popup-toggle-btn-bg-color);
+  border-radius: 4px;
+  cursor: pointer;
+  visibility: hidden;
+  position: absolute;
+  margin-left: 5px;
+  right: 0px;
+  top: -2px;
+}
+crux-text-area-component:hover .cxTextAreaToggleShowBtn {
+  visibility: visible;
+}
+.cxTextAreaToggleShowBtn:after {
+  content: '';
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -1px -2px;
+  width: 8px;
+  height: 4px;
+  display: inline-block;
+  position: absolute;
+  left: 6px;
+  top: 7px;
+}
+.cxTextareaHovercardPopover lyte-popover-content pre {
+  font-size: 0.929rem;
+  font-family: 'LatoRegular', sans-serif;
+  white-space: normal;
+  word-wrap: break-word;
+  padding: 0px 43px 0px 15px;
+  overflow: auto;
+}
+.cxTextareaHovercardPopover .lytePopover {
+  border-radius: 6px;
+}
+.cxTextareaHovercardPopover lyte-popover-content {
+  padding: 15px 0px 15px 0px !important;
+  line-height: 18px;
+  overflow: hidden;
+}
+.cxTextareaHovercardPopover .lytePopoverClose {
+  background: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+  opacity: 1;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  top: 15px !important;
+  right: 20px;
+}
+.cxTextareaHovercardPopover .lytePopoverClose:hover {
+  background: var(--lyte-crux-text-area-popup-close-icon-hover-bg-color);
+}
+.cxTextareaHovercardPopover .lytePopoverClose::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -71px -118px;
+  mask-position: -71px -118px;
+  background-color: #333;
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+}
+/*Text area hover card styles ends*/
+/*# sourceMappingURL=crux-text-area-component.css.map */

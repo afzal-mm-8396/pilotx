@@ -1,0 +1,195 @@
+.cxTagCompDropdownMixin(){
+	@w: 100%;
+}
+
+.cxTagSelectedListMixin() {
+	@max-h: 100px;
+	@margin-bottom: 5px;
+}
+.cxTagSearchLoaderMixin() {
+	// @bg-img: url(../images/crux-search-loader.svg);
+	@bg-img: @cruxSearchLoaderImage;
+	@h: 32px;
+	@w: 32px;
+	@bg-size: 100%;
+}
+.cxTagDropItemChildMixin() {
+	@max-width:90%;
+}
+.cxPropNewTagOptionMsgMixin(){
+	@font-family:@cruxPrimaryFont ;
+	// @font-size:@cxFontSize11px;
+	@color: @cxTagNewOptionMsgColor;
+	@margin-right :5px;
+	@margin-left :10px;
+}
+.cxTagDropboxInitialLoaderWrapMixin() {
+	@padding: 80px 0;
+	@text-align: center;
+}
+.cxTagSearchMixin() {
+	@w: 100%;
+}
+.cxTagSearchInputMixin() {
+	@padding: 0;
+	@h: auto;
+}
+.cxTagDropdownMultiselectInputMixin() {
+	@margin: 3px 0 6px;
+}
+// .cxTagDropButtonMixin() {
+// 	@padding: 3px 10px 1px 5px;
+// }
+.cxTagDropBoxMixin() {
+	@z-index: 10005 !important;
+	@min-w: 360px !important;
+	@max-w: 360px !important;
+}
+.cxTagDropboxTooltipMixin() {
+	@z-index: 10007 !important;
+}
+.cxTagDropBoxDropItemMixin() {
+	@padding-left: 35px !important;
+}
+.cxTagDropBoxDropItemChildMixin() {
+	@padding: 3px 3px 4px 10px;
+	@border-radius: 3px 0px 0px 3px;
+	@font-size: 1.3rem;
+	@line-height: 16px;
+	@z-index: 1;
+}
+.cxTagDropBoxDropItemChildAfterMixin() {
+	@w: 13px;
+	@h: 13px;
+	@bg: inherit;
+	@transform: rotate(45deg) skew(6deg, 6deg);
+	@top: 4px;
+	@left: calc(100% - 7px);
+	@z-index: -1;
+	@border-top: 1px solid @cxTagDropItemChildAfterBorder;
+	@border-right: 1px solid  @cxTagDropItemChildAfterBorder;
+}
+.cxTagDropBoxDropItemChildBeforeMixin() {
+	@border: 1px solid @cxTagDropItemChildBeforeBorder;
+	@top: 0;
+	@left: 0;
+	@right: 0;
+	@bottom: 0;
+	@border-radius: 3px 0px 0px 3px !important;
+	@border-right: 0;
+}
+.cxAddedTagsMixin() {
+	@padding: 3px 13px 3px 10px !important;
+	@border-radius: 3px 0px 0px 3px !important;
+	@border: 0 !important;
+	@margin: 0 15px 3px 0 !important;
+	@font-size: 1.3rem;
+	@line-height: 16px;
+	@z-index: 2;
+}
+.cxMoreTagsPopoverMixin() {
+	@padding: 3px 4px 4px 10px !important;
+}
+.cxParentscopeTagListMixin() {
+	@line-height: inherit;
+}
+.cxTagBgSpanMixin() {
+	@padding: 3px 5px 3px 10px !important;
+	@border-radius: 3px 0px 0px 3px !important;
+	@border: 0 !important;
+	@margin-right: 12px !important;
+	@font-size: 1.3rem;
+	@line-height: 16px;
+	@z-index: 2;
+}
+.cxTagBgSpanAfterMixin() {
+	@w: 13px;
+	@h: 13px;
+	@bg: inherit;
+	@transform: rotate(45deg) skew(6deg, 6deg);
+	@top: 4px;
+	@left: calc(100% - 7px);
+	@z-index: -1;
+	@border-top: 1px solid @cxTagBgSpanAfterBorder;
+	@border-right: 1px solid @cxTagBgSpanAfterBorder;
+}
+.cxTagBgSpanBeforeMixin() {
+	@border: 1px solid @cxTagBgSpanBeforeBorder;
+	@top: 0;
+	@left: 0;
+	@right: 0;
+	@bottom: 0;
+	@z-index: -1;
+	@border-radius: 3px 0px 0px 3px !important;
+	@border-right: 0;
+}
+.cxTagBgSpanHoverMixin() {
+	@filter: brightness(0.95);
+}
+.cxAddedTagsCloseIconMixin() {
+	@left: calc(100% - 13px) !important;
+	@z-index: 3;
+	@w: 21px;
+	@top: 1px;
+	@border-radius: 0;
+	@h: 100%;
+	@bg: transparent !important;
+	@transform: scale(0.9) !important;
+}
+.cxTagBoxDropdownMultiselectAddedTagsCloseIconBeforeMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -71px -118px;
+	@left: calc(50% - 6px);
+	@top: calc(50% - 5px);
+	@transform: scale(0.9);
+}
+.cxTagBoxDropdownMultiselectAddedTagsDarkBgCloseIconBeforeMixin() {
+	@bg-pos: -57px -118px;
+}
+.cxAddedTagsCloseIconHoverMixin() {
+	@bg: @cruxSprite -87px -122px !important;
+	@transform: scale(0.9);
+}
+.cxAddedTagsDarkBgCloseIconHoverMixin() {
+	@bg-pos: -28px -122px !important;
+}
+.cxTagBoxDropdownMultipleSelectHighlightMixin() {
+	@bg: @cxTagMultipleSelectHighlightBg;
+}
+.cxTagMoreTagOptionMixin() {
+	@color: @cxTagMoreOptionBg;
+	@font-size: @cxFontSize14px;
+}
+.cxTagMoreTagOptionDisableMixin(){
+	@opacity: 1 !important;
+}
+.cxTagMoreTagOptionMoreCountHoverMixin() {
+	@color: @cxTagMoreOptionAndCountHoverTextColor;
+}
+.cxTagDropdownTagsPresentDropButtonMixin() {
+	@padding: 5px 10px 2px;
+}
+.cxTagDropdownTagsPresentMultipleSelectInputMixin() {
+	@margin-bottom: 5px;
+}
+.cxTagHighlightMixin() {
+	@bg: @cxTagHighlightBg !important;
+}
+.cxTagHighlightAfterMixin() {
+	@border-color: transparent transparent transparent @cxTagHighlightAfterLeftBorder !important;
+}
+
+.cxTagOptionMsgMixin(){
+	@margin-left: 10px;
+	@margin-right: 5px;
+	@color: @cxTagOptionMsgColor;
+}
+
+.cxNewTagLabelMixin(){
+	@flex: 1;
+	@min-w: 30px;
+}
+
+.cxNewTagDropItemMixin(){
+	@font-size: @cxFontSize14px;
+}

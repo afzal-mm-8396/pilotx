@@ -1,0 +1,281 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cxDvInfoFormField .cxInfoGrayBgIcon {
+  top: 9px;
+  position: absolute;
+  margin-left: 5px;
+}
+.cxDvSectionName {
+  font-family: 'LatoSemiBold', sans-serif;
+  color: var(--lyte-crux-detail-view-section-name-color);
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+/*************************** 
+	Common left Align Reset For Components 
+	- When this gets loaded in Web Tab 
+****************************/
+.cxDvSectionName,
+crux-note,
+crm-field {
+  text-align: left;
+}
+.cxDvSubform lyte-th {
+  border-top: 0 !important;
+  border-bottom: 2px solid var(--lyte-crux-detail-view-subform-th-border-bottom-color) !important;
+}
+.cxDvSubform lyte-tr lyte-td {
+  border-left: 1px solid var(--lyte-crux-detail-view-subform-td-border-color);
+  border-right: 0;
+}
+.cxDvSubform lyte-tr lyte-td:first-child {
+  border-left: 0;
+}
+.cxDvSubform lyte-tr lyte-td:last-child {
+  border-left: 0;
+}
+/*
+.dv_info_parent,
+.dv_bc_info_parent{
+    display: flex;
+    align-items: center;
+}
+*/
+.cxDvInfoCont {
+  margin-bottom: 20px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.cxDvInfoFormField,
+.cxDvBcInfoFormField {
+  color: var(--lyte-crux-detail-view-form-info-color);
+  min-width: 200px;
+  width: 200px;
+  /*    margin-bottom: 20px;*/
+  padding: 8px 17px 8px 0;
+  text-align: right;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: break-word;
+  position: relative;
+  margin-right: 5px;
+}
+/*
+.cxDvBcInfoFormField{
+    color: #616e88;
+    min-width: 200px;
+    margin-bottom: 6px;
+    text-align: right;
+}
+*/
+.cxDvBcInfoFormRow {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.cxDvInfoValue {
+  width: 100%;
+  max-width: 390px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.cxDvInfoValue crux-detailpage-field-details {
+  max-width: 100%;
+}
+.cxDvInfoValue .cxElemCompViewWrap {
+  max-width: 100%;
+  display: block;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+.cxDvCompParent {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+.cxDvTagsParent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.cxDvCompParent:hover {
+  border: 1px solid var(--lyte-crux-detail-view-parent-hover-border-color);
+}
+.cxDvCompParent .cxDvTagFieldEditIcon {
+  visibility: hidden;
+}
+.cxDvCompParent:hover .cxDvTagFieldEditIcon {
+  visibility: visible;
+}
+.cxDvCompParent .cxDvFieldEditIcon {
+  visibility: hidden;
+  position: absolute;
+  right: 15px;
+}
+.cxDvCompParent:hover .cxDvFieldEditIcon {
+  visibility: visible;
+}
+.cxDvAjaxEdit {
+  position: relative;
+  width: auto;
+  min-width: 220px;
+  box-sizing: border-box;
+  height: auto;
+  min-height: 34px;
+  padding-right: 30px;
+}
+.cxDvSaveCancelSection {
+  margin-left: 12px;
+  display: none;
+}
+.cxDvRecordEdit {
+  margin-left: 8px;
+}
+.cxDvFieldSectionContainer {
+  width: 100%;
+}
+.cxDvReadOnlyWrap {
+  position: absolute;
+  right: 0;
+  visibility: visible;
+}
+.cxDvCompParent .cxUnsupportedField::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  border-radius: 5px;
+}
+/* Detailview Header Arrow Animation Starts */
+.cxDvShowHideArrowWrap {
+  position: relative;
+  background: none;
+  padding-left: 0;
+  transition: padding 0.25s ease-in;
+  pointer-events: none !important;
+  cursor: default !important;
+}
+.cxDvShowHideArrowWrap:hover,
+.cxDvShowHideArrowWrap.lyteNavActive {
+  position: relative;
+  background: none;
+  padding-left: 15px;
+}
+.cxDvShowHideArrowAnim {
+  position: relative;
+}
+.cxDvShowHideArrowAnim::after {
+  content: '';
+  position: absolute;
+  background-position: -1px -2px;
+  background-image: url(../../images/crux-sprite-icons.svg);
+  left: -14px;
+  top: 7px;
+  visibility: hidden;
+  width: 8px;
+  height: 4px;
+  animation: none;
+  transform: scale(1.4) rotate(180deg);
+}
+.cxDvShowHideArrowWrap:hover .cxDvShowHideArrowAnim::after {
+  visibility: visible;
+  animation: cxDvShowHideArrowAnim 0.3s ease-in-out normal forwards 1;
+}
+@keyframes cxDvShowHideArrowAnim {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(270deg) scale(1.4);
+  }
+}
+/* Detailview Header Arrow Animation Ends */
+/* Detailview Empty Field - hyphen styling STarts */
+.cxDvFieldEmpty::before {
+  content: '';
+  width: 10px;
+  height: 1px;
+  display: inline-block;
+  margin-bottom: 0;
+  opacity: 0.35;
+  vertical-align: middle;
+  background-color: var(--lyte-crux-detail-view-empty-field-bg-color);
+}
+/* Detailview Empty Field - hyphen styling Ends */
+/* CRUX User Component - Right Icon disabled for CRUX Create Page and Detailview - based on CRM reference */
+.cxDvFchildContainer crux-user-component[cx-prop-type="multiple"] .cxBoxRightIcon {
+  display: none !important;
+}
+.cxDetailLoadingDiv {
+  text-align: center;
+}
+/* DETAilview Clubbed/ Grouped SUbform Section Starts */
+.cxGroupedSubformWrap {
+  padding: 0 !important;
+  border: 1px solid var(--lyte-crux-detail-grouped-subform-wrap-border) !important;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+.cxGroupedSubformBlock {
+  padding: 20px 20px 0;
+  width: fit-content;
+}
+.cxGroupedSubformWrap .cxDvInfoCont {
+  margin-bottom: 0;
+  border-radius: 0 0 10px 10px;
+  background: var(--lyte-crux-detail-grouped-subform-wrap-background);
+}
+.cxGroupedSubformWrap .cxDvBcInfoFormRow {
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+.cxGroupedSubformWrap .cxDvInfoValue {
+  width: auto;
+}
+.cxGroupedSubformFooter .cxDvCompParent:hover {
+  border: none !important;
+}
+.cxGroupedSubformFooter .cxDvAjaxEdit {
+  min-width: auto;
+}
+/* DETAilview Clubbed/ Grouped SUbform Section Ends*/
+/*# sourceMappingURL=crux-detailpage-sections.css.map */

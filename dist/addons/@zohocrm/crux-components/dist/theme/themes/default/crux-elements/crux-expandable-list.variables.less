@@ -1,0 +1,177 @@
+@cxExpListMoreBtnColor: @cxLabelColor;
+@cxExpListMoreBtnDecorColor: #C5C4D3;
+@cxExpListMoreBtnHoverDecorColor: #313949;
+@cxExpListElemBrColor: rgba(0, 0, 0, 0.2);
+@cxDefExpListElemBrColor: #D9E8F9;
+@cxDefExpListElemBg: #E7F2FF;
+@cxExpListDDItemErrorBrColor: #FAA9A2;
+@cxExpListDDItemErrorBg: #FFF7FA;
+@cxExpListDDItemErrorIconBg: #FF5D5A;
+@cxExpListRemoveIconWrapBg: #338cf0;
+@cxExpListRemoveIconBg: #fff;
+@cxExpListLiClickableColor: #338cf0;
+@cxExpListLiClickableHoverColor: #338cf0;
+
+.cxExpListDefWidthMixin(){
+    @w: 230px;
+}
+
+.cxExpListMoreTagOptMixin(){
+    @color: @cxExpListMoreBtnColor;
+}
+
+.cxExpListMoreCountAfterMixin(){
+    @w: 100%;
+    @h: 1px;
+    @bg: @cxExpListMoreBtnDecorColor;
+    @left: 0px;
+    @bottom: -1px;
+}
+
+.cxExpListMoreCountBeforeMixin(){
+    @w: 100%;
+    @h: 1px;
+    @bg: @cxExpListMoreBtnHoverDecorColor;
+    @left: 0px;
+    @bottom: -1px;
+    @z-index: 1;
+    @transition: transform 0.3s;
+    @transform: scaleX(0);
+}
+
+.cxExpListMoreCountHoverBeforeMixin(){
+    @transform: scaleX(1);
+}
+
+.cxExpListPopoverContMixin(){
+    @padding: 15px;
+}
+
+// .cxExpListPopElemWrapMixin(){
+//     @margin-bottom: 5px;
+// }
+
+// .cxExpListElemTextMixin(){
+//     @top: -1px;
+// }
+
+.cxExpListElementLiMixin(){
+    @padding: if(@direction = rtl,3px 10px 3px 5px,3px 5px 3px 10px);
+    @line-height: 16px;
+    @margin-right: 11px;
+}
+
+.cxExpListPopElemLiMixin(){
+    @max-w: 100%;    
+}
+
+.cxExpListElementLiAfterMixin(){
+    @w: 16px;
+    @h: 16px;
+    @left: calc(100% - 10px);
+    @transform: if(@direction = rtl,rotate(-45deg),rotate(45deg));
+    @border-top: 1px solid @cxExpListElemBrColor;
+    @border-right: 1px solid @cxExpListElemBrColor;
+    @border-radius: 2px;
+}
+
+.cxExpListElementLiBeforeMixin(){
+    @border-radius: 3px;
+    @inset: 0px;
+    @border: 1px solid @cxExpListElemBrColor;
+    @border-right: none;
+}
+
+.cxExpListTagPopoverContMixin(){
+    @gap: 5px;
+}
+
+.cxExpListElemLiWithImgMixin(){
+    @padding-left: 28px !important;
+}
+
+.cxExpListImgMixin(){
+    @w: 16px;
+    @h: 16px;
+    @border-radius: 16px;
+    @border: 1px solid @cxExpListElemBrColor;
+    @left: 7px;
+}
+
+.cxExpListDefLiImgMixin(){
+    @left: 5px;
+    @border: none;
+}
+
+
+/**** default styles mixins starts ****/ 
+.cxExpListDefElemLiMixin(){
+    @padding: 3px 10px;
+    @border: 1px solid @cxDefExpListElemBrColor;
+    @bg: @cxDefExpListElemBg;
+    @border-radius: 100px;
+    @margin-right: 3px;
+}
+
+.cxExpListDefPopContMixin(){
+    @gap: 10px;
+}
+
+.cxExpListDefPopImgMixin(){
+    @left: 0px;
+    @w: 25px;
+    @h: 25px;
+    @border-radius: 25px;
+}
+
+.cxExpListDefPopImgLiMixin(){
+    @padding-left: 0px !important;
+}
+
+.cxExpListDefPopTextMixin(){
+    @margin-left: 8px;    
+}
+
+/**** default styles mixins ends ****/
+
+.cxExpListDDItemErrorMixin(){
+    @border-color: @cxExpListDDItemErrorBrColor;
+    @bg: @cxExpListDDItemErrorBg;
+}
+
+.cxExpListDDCloseIconMixin(){
+    @bg: @cxExpListDDItemErrorIconBg;   
+}
+
+.cxExpListTagWrapModeMixin(){
+    @gap: 5px;
+}
+
+.cxExpListTagWrapModeLiMixin(){
+    @margin-right: 0px !important;   
+}
+
+.cxExpListElemRemoveIconWrapMixin(){
+    @w: 14px;
+    @h: 14px;
+    @border-radius: 14px;
+    @bg: @cxExpListRemoveIconWrapBg;
+    @right: 4px;
+}
+
+.cxExpListElemRemoveIconMixin(){
+    @bg-color: @cxExpListRemoveIconBg;
+}
+
+.cxExpListElemLiClickableMixin(){
+    @font-family: @cruxSecondaryFont;
+    @color: @cxExpListLiClickableColor;
+}
+
+.cxExpListPopElemLiClickableMixin(){
+    @font-family: @cruxPrimaryFont;
+}
+
+.cxExpListPopElemLiClickableHoverMixin(){
+    @color:  @cxExpListLiClickableHoverColor;
+}

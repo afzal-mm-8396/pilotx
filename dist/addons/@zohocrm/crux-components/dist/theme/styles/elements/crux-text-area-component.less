@@ -1,0 +1,178 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-text-area-component.variables.less";
+
+@import "../../themes/default/less-variables/crux-text-area-component-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-text-area-component";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../themes/default/css-variables/crux-text-area-component-variables.less";
+}
+
+.cxTextareaViewMode {
+	.cxTextareaViewModeMixin();
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	min-width: @min-w;
+	max-width: @max-w;
+	width: @width;
+	display: @display;
+}
+.cxTextareaShowMore {
+	.cxTextareaShowMoreMixin();
+	display: @display;
+	position: @position;
+	color: @color;
+    cursor: pointer;
+}
+crux-text-area-component lyte-input .lyteField {
+	.cxTextareaLyteFieldMixin();
+	flex-grow: @flex-grow;
+}
+crux-table-component crux-text-component {
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+.cxTextarea lyte-input[lt-prop-type=textarea] .lyteField::after {
+    .cxTextarealyte-inputMixin();
+    bottom:@bottom ;
+    @{property-right}:@right;
+}
+.cxLineClamp{
+    -webkit-box-orient: vertical;
+    display: -webkit-box!important;
+    overflow: hidden;
+}
+.cxLineNoClamp{
+    display: -webkit-box!important;
+}
+
+/* CRUX Table Component with Ellipsis Text Starts */
+.cxTextareaNoWrap .cxTextareaViewMode {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.cxTextareaNoWrap crux-text-component {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+/* CRUX Table Component with Ellipsis Text Ends */
+
+
+/*Text area hover card styles starts*/
+
+.cxTextareaHoverCard{
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.cxTextareaShowHoverCard{
+    .cxTextareaShowHoverCardMixin();
+    @{property-padding-right}: @padding-right;
+}
+
+.cxTextareaShowHoverCard .cxTextareaViewMode{
+    text-overflow: ellipsis;
+}
+
+.cxTextareaHoverCard .cxTextareaViewMode{
+    min-width: auto;
+    max-width: none;
+}
+
+.cxTextAreaToggleShowBtn{
+    .cxTextAreaToggleShowBtnMixin();
+	display: inline-block;
+    width: @w;
+    height: @h;
+    border: @border;
+    background: @bg;
+    border-radius: @border-radius;
+    cursor: pointer;
+    visibility: hidden;
+    position: absolute;
+    @{property-margin-left}: @margin-left;
+    @{property-right}: @right;
+    top: @top;
+}
+
+crux-text-area-component:hover .cxTextAreaToggleShowBtn{
+	visibility: visible;
+}
+
+.cxTextAreaToggleShowBtn:after {
+    .cxTextAreaToggleShowBtnIconMixin();
+    content: '';
+    background-image: @bg-image;
+    background-position: @bg-position;
+    width: @w;
+    height: @h;
+    display: inline-block;
+    position: absolute;
+    @{property-left}: @left;
+    top: @top;
+}
+
+.cxTextareaHovercardPopover lyte-popover-content pre{
+    .cxTextareHovercardPopoverPreMixin();
+    font-size: @font-size;
+    font-family: @font-family;
+    white-space: normal;
+    word-wrap: break-word;
+    padding: @padding;
+    overflow: auto;
+}
+
+.cxTextareaHovercardPopover .lytePopover{
+    .cxTextareHovercardPopoverMixin();
+	border-radius: @border-radius;
+}
+
+.cxTextareaHovercardPopover lyte-popover-content{
+    .cxTextareHovercardPopoverContentMixin();
+	padding: @padding;
+	line-height: @line-height;
+    overflow: hidden;
+}
+
+.cxTextareaHovercardPopover .lytePopoverClose{
+    .cxTextAreaHovercardPopoverCloseIconWrap();
+    background: @bg;
+    -webkit-mask-image: @bg;
+    mask-image: @bg;
+    opacity: @opacity;
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    top: @top;
+    @{property-right}: @right;
+}
+
+.cxTextareaHovercardPopover .lytePopoverClose:hover{
+    .cxTextAreaHovercardPopoverCloseIconWrapHover();
+    background: @bg;
+}
+
+.cxTextareaHovercardPopover .lytePopoverClose::after{
+    .cxTextAreaHovercardPopoverCloseIcon();
+    content: '';
+    width: @w;
+    height: @h;
+    display: inline-block;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    position: absolute;
+    inset: @inset;
+    margin: @margin;
+}
+
+/*Text area hover card styles ends*/

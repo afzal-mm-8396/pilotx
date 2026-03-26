@@ -1,0 +1,910 @@
+.cxCriteriaEditorWrapper {
+    font-family: var(--crux-primary-font);
+    display: block;
+}
+.cxCriteriaTable {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+/* .cxCriteriaAutoWidth .cxCriteriaTable {
+    width:auto;
+} */
+.cxViewMode.cxCriteriaTable {
+    width: auto;
+    table-layout: auto;
+    border-spacing: 0 10px;
+}
+.cxCriteriaBoxStyle .cxDateTimeWrapper,
+.cxCriteriaBoxStyle lyte-number,
+.cxCriteriaAddRemove {
+    display: flex;
+}
+.criteria_new_pat_edtr {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+.cxCriteriaPtrnContViewMode {
+	/* flex-direction: column; */
+}
+.cxCriteriaPtrnLabel {
+    color: #666;
+    font-size: 15px;
+}
+.cxCriteriaBoxStyle .cxCriteriaPtrnLabel {
+	color: #303a48;
+}
+.cxCriteriaBoxStyle .cxCriteriaPtrnContViewMode .cxCriteriaPtrnLabel {
+	margin-top: 0;
+}
+.cxCriteriaPatternText {
+	white-space: nowrap;
+	margin-top: 0;
+	font-size: 0.929rem;
+}
+/* .cxCriteriaPtrnContViewMode .cxCriteriaPatternText {
+	font-family: var(--crux-bold-font);
+} */
+.criteria_new_pat_edtr .criteriaTd {
+    display: inline-flex;
+}
+.cxCriteriaPtrnContEditMode {
+	padding-top: 30px;
+	padding-bottom: 5px;
+}
+.cxCriteriaBoxStyle .criteria_new_pat_edtr .criteriaTd {
+	padding-top: 0 !important;
+	width: auto;
+}
+.criteria_new_pat_edtr .criteriaTd:first-of-type {
+    margin-left: 38px; /* Adjusted as per latest Guidelines */
+    width: 150px;
+}
+.cxCriteriaBoxStyle .criteria_new_pat_edtr .criteriaTd:first-of-type {
+	width: auto;
+	padding-right: 20px;
+	align-items: center;
+}
+.cxCriteriaPtrnContEditMode .cxCriteriaEditorPatternInput,
+.cxCriteriaPtrnContEditMode .cxCriteriaEditorPatternValue {
+	flex-grow: 1;
+	padding-right: 0;
+	margin-right: 87px;
+}
+.cxCriteriaFlatStyle .cxCriteriaEditorPatternValue,
+.cxCriteriaFlatStyle .cxCriteriaEditorPatternInput {
+	border-bottom: 1px solid #e5e5e5;
+}
+.cxCriteriaPatternValue {
+    color: #333;
+    white-space: normal;
+}
+.cxCriteriaCancelLink,
+.cxCriteriaSaveLink,
+.cxCriteriaEditLink {
+    font-size: 0.929rem;
+    cursor: pointer;
+    margin-left: 10px;
+    white-space: nowrap;
+    color: #338CF0;
+    margin-top: 9px;
+}
+.cxCriteriaEditLink,
+.cxCriteriaDeleteLink {
+    margin-top: 15px;
+}
+.cxCriteriaBoxStyle .cxCriteriaFlatLink {
+	display: none;
+}
+.cxCriteriaBoxStyle .cxCriteriaCancelLink,
+.cxCriteriaBoxStyle .cxCriteriaSaveLink {
+	width: 18px;
+	height: 18px;
+	border: 1px solid #bbb;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 7px;
+}
+.cxCriteriaBoxStyle .cxCriteriaSaveLink {
+	background: #4daeee;
+	border: 1px solid #4daeee;
+	margin-left: 15px;
+}
+.cxCriteriaBoxStyle .cxCriteriaSaveLink::before {
+	content: '';
+	background-image: url(../images/crux-sprite-icons.svg);
+	background-position: -316px -116px;
+	width: 11px;
+	height: 8px;
+}
+.cxCriteriaBoxStyle .cxCriteriaCancelLink::before {
+	content: '';
+	background-image: url(../images/crux-sprite-icons.svg);
+	background-position: -337px -115px;
+	width: 9px;
+	height: 10px;
+}
+.cxCriteriaCancelLink {
+    color: #999;
+}
+.editmodeLabel {
+    border-bottom: 1px solid #e5e5e5;    
+}
+.criteria_new_pat_edtr.viewmode .editPatternInput {
+    border-bottom: 0;
+    margin-right: 0;
+}
+.criteria_new_pat_edtr.viewmode .criteriaTd {
+    padding: 0 0 5px;
+    width: auto;
+}
+.criteria_new_pat_edtr.viewmode .criteriaTd:first-of-type {
+    margin-left: 0;
+}
+.editPatternInput lyte-input.criteriaPatternText .lyteField:hover,
+.editPatternInput lyte-input.criteriaPatternText .lyteField {
+    border-bottom: 0;
+    padding: 0;
+}
+.editPatternInput #lyteInputCriteria {
+    padding: 0;
+}
+.patternButtons {
+    display: inline-flex;
+    align-items: flex-end;
+}
+.cxCriteriaBoxStyle .patternButtons {
+	min-width: 60px;
+	width: 60px;
+	align-items: flex-start;
+}
+
+
+
+
+.cxCriteriaEditorWrapper .colorSpan {
+    color : #303a48;
+    word-break: break-word;
+}
+.cxCriteriaViewComparatorLabel {
+	color: #34b8a9;
+    display: inline-block;
+}
+.cxCriteriaViewIndexSpan {
+	color: #889bb7;
+}
+.cxCriteriaEditorWrapper lyte-input {
+    width: 100%;
+}
+.cxCriteriaEditorWrapper .lyteDropdown-disabled,
+.cxCriteriaEditorWrapper .lyteField input:disabled{
+    opacity: 0.6;
+}
+.cxCriteriaEditorWrapper lyte-input[lt-prop-type="number"] input {
+    -moz-appearance: textfield;
+}
+.cxCriteriaEditorWrapper lyte-input[lt-prop-type="number"] input::-webkit-outer-spin-button,
+.cxCriteriaEditorWrapper lyte-input[lt-prop-type="number"] input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.cxCriteriaNumWrap,
+.cxCriteriaValueCol,
+.cxCriteriaDropdown {
+    position: relative;
+}
+.cxCriteriaDropdownDisabled,
+.cx_prefixDropdownLabel.lyteDropdown-disabled, 
+.cx_fieldDropdownLabel.lyteDropdown-disabled, 
+.cx_compDropdownLabel.lyteDropdown-disabled {
+    cursor: not-allowed;
+}
+.cxCriteriaEditorWrapper .lyteDropdownLabel {
+    margin-right: 5px;
+    max-width: calc(100% - 20px);
+}
+.cxCriteriaFlatStyle .lyteDropdownLabel {
+	display: inline-block;
+	vertical-align: middle;
+}
+.cxCriteriaEditorWrapper .andOrConditionView{
+    width: 35px;
+    font-size: 12px;
+}
+.criteriaViewRow {
+    margin-bottom: 5px;
+}
+.cxCriteriaViewIndexSpan {
+    white-space: nowrap;
+}
+.cxCriteriaTable .criteriaTd .cxCriteriaViewIndexSpan {
+    padding-right: 10px;
+}
+.criteriaViewRow.criteriaRow:first-of-type .criteriaTd {
+    padding-top: 0;
+}
+.criteriaViewRow .criteriaTd {
+    width: auto;
+    font-size: 1rem;
+    padding: 0;
+    vertical-align: top;
+}
+.cxCriteriaViewDataColumn {
+    word-break: break-all;
+}
+.criteriaTd.criteriaNumber {
+    width: 30px;
+}
+.criteriaTd.criteriaNumber::before{
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    background: #dadada;
+    position: absolute;
+    left: 15px;
+    top: -3px;
+}
+
+
+/* crux-criteria-editor-header CSS Begins */
+.criteriaRow {
+    display: table-row;
+}
+.criteriaTd {
+    display: table-cell;
+    padding: 35px 15px 0 0;
+    position: relative;
+    vertical-align: bottom;
+    font-size: 1rem;
+    width: 150px;
+}
+.criteriaRow:first-of-type .criteriaTd {
+    /* padding-top: 15px; */
+}
+.criteriaRow:first-of-type .criteriaTd:nth-child(1):before{
+    display: none;
+}
+.criteriaRow .criteriaTd.cxAddRemoveTd{
+    width: 70px;
+}
+.criteriaRow lyte-dropdown {
+    width : 150px;
+}
+.cxLookupMultiModuleWrap .cxMultiModuleCriteriaDropdown lyte-dropdown {
+	width: auto;
+}
+.cxCriteriaElementComponent {
+    display: block;
+}
+template.cxCriteriaElementComponent {
+    display: none;
+}
+.criteriaRow crux-layout-component lyte-dropdown,
+.criteriaRow crux-role-component lyte-dropdown,
+.criteriaRow crux-tag-component lyte-dropdown,
+.criteriaRow crux-picklist-component lyte-dropdown,
+.criteriaRow crux-boolean-component lyte-dropdown,
+.criteriaRow crux-user-dropdown lyte-dropdown,
+.criteriaRow crux-lookup-component lyte-dropdown {
+    width: auto;
+    display: block;
+}
+
+.criteriaRow crux-lookup-component crux-dropdown {
+    flex-grow: 1;
+}
+
+.criteriaRow crux-date-component#betweenComponent1,
+.criteriaRow crux-date-component#betweenComponent2,
+.criteriaRow crux-date-time-component#betweenComponent1,
+.criteriaRow crux-date-time-component#betweenComponent2,
+.criteriaRow crux-number-component#betweenComponent1,
+.criteriaRow crux-number-component#betweenComponent2 {
+    flex-grow: 1;
+    margin: 0 8px 8px 0;
+    width: calc(50% - 8px);
+}
+.ageInDaysComp {
+    width: 24%;
+    min-width: 50px;
+    max-width: 70px;
+}
+.criteriaRow .ageInDaysComp lyte-dropdown {
+    width: 100%;
+    display: block;
+}
+.cxCriteriaEditorWrapper .ageInDaysComp .lyteDropdownLabel {
+    font-size: 1rem;
+    line-height: 13px;
+}
+.criteriaRow .ageInDaysComp lyte-icon.dropdown {
+    position: static;
+}
+.ageInDaysVal {
+    width: 74%;
+    flex-grow: 1;
+}
+.criteriaRow .cxDateTimeWrapper {
+    display: flex;
+}
+.criteriaRow crux-date-time-component#betweenComponent1,
+.criteriaRow crux-date-time-component#betweenComponent2 {
+    min-width: 200px;
+}
+.criteriaRow crux-date-time-component .datewidth {
+    width: 50%;
+    min-width: 90px;
+}
+.criteriaRow crux-date-time-component .cxTimeSection {
+    width: 50%;
+    min-width: 70px;
+}
+.cxCriteriaFlatStyle crux-user-dropdown lyte-drop-button {
+    border: 0 !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #ddd !important;
+}
+.criteriaRow lyte-icon.dropdown {
+    background: url(../images/crux-sprite-icons.svg) no-repeat 0 0;
+    width: 9px;
+    height: 7px;
+    vertical-align: middle;
+    display: inline-block;
+    opacity: 0.6;
+	flex-shrink: 0;
+}
+.criteriaRow lyte-dropdown lyte-search {
+    flex-grow: 1;
+}
+.cxCriteriaFlatStyle lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxCriteriaFlatStyle lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button:hover,
+.cxCriteriaFlatStyle lyte-dropdown lyte-drop-button {
+    color: #111;
+    padding: 8px 3px;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    box-shadow: none;
+    border-radius: 0;
+    display: block;
+}
+.cxCriteriaFlatStyle lyte-dropdown[lt-prop-type="multisearch"] lyte-drop-button,
+.cxCriteriaFlatStyle lyte-dropdown[lt-prop-type="multiple"] lyte-drop-button {
+    color: #111;
+    padding: 0 3px;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+}
+.criteriaRow .lyteInput .lyteField {
+    padding: 0;
+    border-bottom: 1px solid #ddd;
+    width: auto;
+}
+.criteriaRow .lyteInput .lyteField:hover,
+.criteriaRow lyte-dropdown:not([lt-prop-type="multiple"]):not([lt-prop-type="multisearch"]) lyte-drop-button:hover {
+    border-bottom: 1px solid #a5a5a5;
+}
+.criteriaRow .lyteInputFocus .lyteField:hover,
+.criteriaRow .lyteInputFocus .lyteField {
+    border-bottom: 1px solid #4ab4fe;
+}
+.criteriaRow .lyteInput .lyteLabel,
+.cxCriteriaValueCol .lyteInput .lyteField input {
+    padding: 5px 3px;
+    font-size: 1rem;
+    line-height: 27px;
+    box-sizing: border-box;
+    background: transparent;
+}
+.cxCriteriaBoxStyle .cxCriteriaValueCol .lyteInput .lyteField input {
+	line-height: normal;
+	padding: 0;
+}
+.cxCriteriaValueCol lyte-drop-button {
+	max-height: 120px;
+	overflow: auto;
+}
+.cxCriteriaNoneConditionInput {
+    display: flex;
+    align-items: center;
+}
+.cxCriteriaDynamicFedInput.cxBoxInput {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 40px);
+    padding: 10px;
+    box-sizing: border-box;
+    outline: 1px solid red;
+}
+.criteriaRow lyte-input.disabledText .lyteField,
+.criteriaRow lyte-input.disabledText .lyteField:hover {
+    /* border-bottom: 1px solid #f0f0f0; */
+}
+.criteriaRow lyte-input.disabledText .lyteField input {
+    background: #eee;
+    color: #333;
+    opacity: 1;
+    padding: 5px 3px;
+}
+.cxCriteriaAndOr {
+    top: 0;
+    transform : translate(-5px,-33px);
+    z-index: 2;
+    position: absolute;
+    background: #fff;
+    width: 40px;
+}
+.cxCriteriaAndOr .cxCriteriaAndOrLyteInput .lyteField:hover,
+.cxCriteriaAndOr .cxCriteriaAndOrLyteInput .lyteField {
+    border-bottom: transparent;
+    font-size: 12px;
+    cursor: pointer;
+}
+.cxCriteriaAndOr .cxCriteriaAndOrLyteInput .cxCriteriaAndOrInput {
+    color: #2687d3;
+    font-size: 12px;
+    padding: 0;
+    text-align: center;
+    pointer-events: none;
+    line-height: normal;
+}
+.cxCriteriaEditorWrapper lyte-dropdown[lt-prop-type="multisearch"] .lyteMultipleSelect li.lyteMultiselectInput {
+    background: transparent;
+    max-width: 100%;
+}
+.cxCriteriaPatternNum {
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    cursor: default;
+    background: #f6f6f6;
+    border: 1px solid #b3b3b3;
+    box-sizing: border-box;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    color: #333;
+    padding-top: 0px;
+    z-index: 1;
+    position: relative;
+    font-size: 1rem;
+}
+.criteriaDropbox  lyte-input.vertical .lyteField {
+    border-bottom: 1px solid #ddd;
+}
+.criteriaDropbox  lyte-input.vertical.lyteInputFocus .lyteField {
+    border-bottom: 1px solid #4ab4fe;
+}
+.criteriaDropbox lyte-input[lt-prop-type="search"]:not(.lyteInputBox) input {
+    padding-left: 25px;
+}
+.criteriaDropbox lyte-input span.searchIcon {
+    left: 5px;
+}
+lyte-drop-item.prevent {
+    pointer-events: none;
+}
+.criteriaRow .cxCriteriaAddIcon,
+.criteriaRow .cxCriteriaRemoveIcon {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    width: 15px;
+    height: 18px;
+    padding: 8px;
+    background: none;
+}
+.criteriaRow .cxCriteriaAddIcon::before,
+.criteriaRow .cxCriteriaRemoveIcon::before {
+    content: '';
+    position: absolute;
+    background: url(../images/crux-sprite-icons.svg) no-repeat;
+    width: 15px;
+    height: 18px;    
+}
+.criteriaRow .cxCriteriaAddIcon::before{
+    background-position: -172px -52px;
+}
+.criteriaRow .cxCriteriaRemoveIcon::before{
+    background-position: -151px -51px;
+}
+/* crux-criteria-editor-header CSS Ends */
+
+.cx_fieldDropdownLabel,
+.cx_compDropdownLabel,
+.cx_prefixDropdownLabel {
+    padding: 8px 3px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    width: 150px;
+}
+.cx_prefixDropdownLabel.lyteDropdown-disabled,
+.cx_fieldDropdownLabel.lyteDropdown-disabled,
+.cx_compDropdownLabel.lyteDropdown-disabled {
+	cursor: not-allowed;
+}
+.cx_fieldDropdownLabel:hover,
+.cx_compDropdownLabel:hover {
+    border-bottom: 1px solid #a5a5a5;
+}
+.criteriaRow lyte-dropdown lyte-drop-button.cx_empty_dropbtn{
+    padding: 0;
+    background: transparent;
+    border-color: transparent;
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+}
+.cx_fieldsDropdown,
+.cx_compDropdown,
+.cxCriteriaPrefixOrigDropdown {
+    z-index: -1;
+    display: block;
+    position: absolute;
+    height: 100%;
+    top: 0;
+}
+.criteriaRow crux-number-component .lyteInput .lyteField input {
+    padding-left: 0;
+}
+
+
+/*  Criteria box model related CSS BEGINS   */
+.cxCriteriaBoxStyle .cx_fieldDropdownLabel,
+.cxCriteriaBoxStyle .cx_compDropdownLabel,
+.cxCriteriaBoxStyle .cx_prefixDropdownLabel {
+    border: 1px solid #c3c6ca;
+    border-radius: 5px;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+
+.cxCriteriaBoxStyle .cx_fieldDropdownLabel:hover,
+.cxCriteriaBoxStyle .cx_compDropdownLabel:hover,
+.cxCriteriaBoxStyle .cx_prefixDropdownLabel:hover {
+    border: 1px solid #c3c6ca;
+    box-shadow: 0 0 6px #c3c6ca;
+}
+.cxCriteriaBoxStyle .cxCriteriaDropdownOpen .cx_fieldDropdownLabel,
+.cxCriteriaBoxStyle .cxCriteriaDropdownOpen .cx_compDropdownLabel,
+.cxCriteriaBoxStyle .cxCriteriaDropdownOpen .cx_prefixDropdownLabel,
+.cxCriteriaBoxStyle .cx_prefixDropdownLabel:focus,
+.cxCriteriaBoxStyle .cx_compDropdownLabel:focus,
+.cxCriteriaBoxStyle .cx_fieldDropdownLabel:focus  {
+    border: 1px solid #3c9df7;
+    box-shadow: 0 0 6px #8dc4ff;
+    outline : 0;
+}
+.cxCriteriaBoxStyle .cx_fieldDropdownLabel lyte-icon.dropdown,
+.cxCriteriaBoxStyle .cx_compDropdownLabel lyte-icon.dropdown,
+.cxCriteriaBoxStyle .cx_prefixDropdownLabel lyte-icon.dropdown {
+    margin-left: auto;
+}
+.cxCriteriaBoxStyle .lyteInput .lyteField input {
+    padding: 0;
+    line-height: normal;
+    font-size: 1rem;
+}
+
+.cxCriteriaBoxStyle lyte-input.disabledText .lyteField input {
+    padding: 8px 10px;
+    border: 0;
+    box-shadow: none;
+}
+.cxCriteriaBoxStyle .ageInDaysComp lyte-icon.dropdown {
+    position: absolute;
+}
+.cxCriteriaBoxStyle .ageInDaysComp .lyteDropdownLabel {
+    line-height: normal;
+    max-width: 100%;
+}
+.cxCriteriaBoxStyle .ageInDaysComp lyte-dropdown:not([lt-prop-type="multiple"]):not([lt-prop-type="multisearch"]) lyte-drop-button.lyteDropButtonUp,
+.cxCriteriaBoxStyle .ageInDaysComp lyte-dropdown:not([lt-prop-type="multiple"]):not([lt-prop-type="multisearch"]) lyte-drop-button.lyteDropButtonDown,
+.cxCriteriaBoxStyle .ageInDaysComp lyte-dropdown:not([lt-prop-type="multiple"]):not([lt-prop-type="multisearch"]) lyte-drop-button:hover,
+.cxCriteriaBoxStyle .ageInDaysComp lyte-dropdown:not([lt-prop-type="multiple"]):not([lt-prop-type="multisearch"]) lyte-drop-button {
+    border-right: 0;
+    border-radius: 5px 0 0 5px;
+}
+.cxCriteriaBoxStyle .ageInDaysVal .cxBoxInput.lyteInputBox .lyteField {
+    border-radius: 0 5px 5px 0;
+}
+.cxCriteriaBoxStyle .cxCriteriaAgeInDays .ageInDaysComp {
+    width: 15%;
+    min-width: 60px;
+}
+.cxCriteriaBetweenCase {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -8px -8px 0;
+}
+.cxCriteriaBoxStyle .cxCriteriaBetween1,
+.cxCriteriaBoxStyle .cxCriteriaBetween2 {
+    width: calc(50% - 8px);
+}
+.cxCriteriaBoxStyle .criteriaRow lyte-input.disabledText .lyteField,
+.cxCriteriaBoxStyle .criteriaRow lyte-input.disabledText .lyteField:hover {
+    /* border: 1px solid #c3c6ca; */
+}
+.cxCriteriaBoxStyle .criteriaRow crux-user-dropdown lyte-drop-button {
+    border-bottom: 1px solid #c3c6ca !important;
+}
+.cxCriteriaBoxStyle crux-user-dropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxCriteriaBoxStyle crux-user-dropdown lyte-drop-button.lyteDropButtonDown,
+.cxCriteriaBoxStyle crux-user-dropdown lyte-drop-button.lyteDropButtonUp {
+    border-bottom: 1px solid #3c9df7 !important;
+}
+
+
+.cxCriteriaFlatStyle .criteriaRow lyte-input[lt-prop-type="datetime"] input:first-child {
+    border-right: 0;
+}
+.cxCriteriaFlatStyle .cxCriteriaAgeInDays {
+    align-items: flex-end;
+}
+
+/*  Criteria box model related CSS ENDS   */
+
+.cxCriteriaInfoIcon {
+    background: url(../images/crux-sprite-icons.svg) no-repeat -68px -2px;
+    min-width: 16px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 10px;
+    opacity: 0.5;
+    margin-top: 7px;
+}
+.cxCriteriaInlineError {
+	color: #e64c48;
+	font-size: 12px;
+	position: absolute;
+}
+.cxCriteriaBoxStyle .cxCriteriaInfoIcon {
+	margin-left: 8px;
+	margin-top: 0;
+}
+.cxCritPtnNum {
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    cursor: grab;
+}
+.cxCritPtnNum:hover {
+    background: #eee;
+}
+.cxCritPtnNum.sortable-element-selected {
+    background: #4B72E5;
+    color: #fff;
+}
+.cxGroupPattern{
+    border: 1px solid transparent;
+}
+.cxCritSortBottomElem {
+    border: 1px dashed #4B72E5;
+    background-color: #F5F8FF;
+}
+.criteriaHide,
+.criteria_new_pat_edtr .lyteSortablePlaceholder {
+    display: none;
+}
+
+.cxCritPtnNum.cxCursorGrab {
+    cursor: grabbing;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 18px;
+}
+.criteriaCondition{
+    color: #2C7BD0;
+    margin: 0 3px;
+}
+.cxPatternBrakets{
+    color: #999;
+    margin: 0 3px;
+}
+.cxCriteriaInitialLoaderWrap {
+	padding: 90px 0;
+	text-align: center;
+}
+.cxCriteriaScrollLoaderIcon {
+	width: 24px;
+	height: 24px;
+	background-image: url(../images/crux-search-loader.svg);
+	background-size: 100%;
+	display: inline-block;
+}
+
+
+.cxCriteriaValueColDropInputWrap {
+	border: 1px solid #c3c6ca;
+	border-radius: 5px;
+    min-width: 0;
+    overflow: hidden;
+}
+.cxCriteriaValueColDropInputWrap:hover {
+	border: 1px solid #c3c6ca;
+	box-shadow: 0 0 6px #c3c6ca;
+}
+.cxCriteriaValueColDisabled.cxCriteriaValueColDropInputWrap:hover {
+	box-shadow: none;
+}
+.cxCriteriaValueColDropInputWrapActive:hover,
+.cxCriteriaValueColDropInputWrapActive {
+	border: 1px solid #3c9df7;
+	box-shadow: 0 0 6px #8dc4ff;
+}
+.cxCriteriaValueColTypeDropdown {
+	border-right: 1px solid #c3c6ca;
+	width: auto;
+	flex-basis: 25%;
+	font-size: 1rem;
+}
+.cxCriteriaValueColTypeDropdown lyte-drop-button {
+	display: block;
+	border: 0 !important;
+	box-shadow: none !important;
+	border-radius: 4px 0 0 4px;
+	padding: 8px 25px 8px 10px;
+}
+.cxCriteriaValueColTypeDropdown .lyteDropdown-disabled {
+	opacity: 1;
+	border: 0 !important;
+}
+.cxCriteriaValueColTypeDropdown.lyteDropdownDisabled lyte-drop-button {
+	background: #eee;
+}
+.cxCriteriaValueColTypeDropdown .lyteDropdownLabel {
+	max-width: 100%;
+	margin-right: 0;
+} 
+/* // .cxCriteriaValueColDropField {
+// 	flex-basis: 75%;
+// 	flex-grow: 1;
+// 	overflow: auto;
+// } */
+    
+.cxCriteriaValueColDropField {
+    max-width: calc(100% - 40px);
+    overflow: hidden;
+    width: 100%;
+    flex:1;
+}
+.cxCriteriaValueColDropInputWrap .cxBoxInput.lyteInputBox .lyteField,
+.cxCriteriaBoxStyle .cxCriteriaValueColDropField .cxBoxInput.disabledText input,
+.cxCriteriaBoxStyle .cxCriteriaValueColDropField lyte-input.disabledText .lyteField:hover,
+.cxCriteriaBoxStyle .cxCriteriaValueColDropField lyte-input.disabledText .lyteField,
+.cxCriteriaBoxStyle .cxCriteriaValueColDropField .cx_fieldDropdownLabel {
+	border: 0;
+	border-radius: 0 4px 4px 0;
+	box-shadow: none;
+}
+.cxCriteriaValueColDropInputWrap crux-date-time-component .cxBoxInput.lyteInputBox .lyteField input:first-child {
+	border-right: 1px solid #c3c6ca;
+	border-radius: 0;
+}
+.cxCriteriaValueColDropInputWrap .cxBoxInput.lyteInputBox.disabledText .lyteField {
+	border: 0 !important;
+}
+.cxCriteriaValueColText {
+	vertical-align: bottom;
+}
+.cxCriteriaValueColModuleLabel,
+.cxCriteriaValueColFieldLabel {
+	min-width: 25px;
+}
+.cxCriteriaValueColModuleLabel {
+	color: #8b9ab9;
+}
+.cxCriteriaValueColDropField .lyteDropdownLabel {
+	display: flex;
+	border-radius: 3px;
+}
+.cxCriteriaViewModuleBadgeWrap {
+	display: inline-flex;
+	color: #20b8a8;
+}
+.cxCriteriaViewModuleBadge {
+	color: #8b9ab9;
+}
+.cxCriteriaViewModuleBadgeWrap .cxCriteriaViewBadgeLabel {
+	max-width: 370px;
+}
+.cxCriteriaValueColDropInputWrap .cxCriteriaValueSection {
+	flex-grow: 1;
+	overflow: auto;
+}
+.cxCriteriaValueColDropInputWrap .cxBoxWithRightIcon {
+	border: 0 !important;
+	box-shadow: none !important;
+}
+.cxCriteriaValueColDropInputWrap lyte-dropdown.cxBoxDropdown lyte-drop-button {
+	border: 0 !important;
+	box-shadow: none !important;
+	display: block;
+}
+.cxCriteriaValueColDropInputWrap .ageInDaysComp lyte-dropdown.cxBoxDropdown lyte-drop-button {
+	border-right: 1px solid #c3c6ca !important;
+	border-radius: 0;
+}
+.cxCriteriaColumnLabel {
+	color: #111;
+}
+
+.cxCriteriaValueColBetweenCase.cxCriteriaValueColDropInputWrap {
+	border: 0;
+	box-shadow: none;
+	align-items: flex-start;
+}
+.cxCriteriaValueColBetweenCase .cxCriteriaValueColTypeDropdown {
+	border-right: 0;
+}
+.cxCriteriaValueColBetweenCase .cxCriteriaValueColTypeDropdown lyte-drop-button {
+	border: 1px solid #c3c6ca !important;
+	border-radius: 5px 0 0 5px;
+}
+.cxCriteriaValueColBetweenCase:hover .cxCriteriaValueColTypeDropdown lyte-drop-button {
+	border: 1px solid #c3c6ca !important;
+	border-right: 1px solid #c3c6ca !important;
+	box-shadow: 0 0 6px #c3c6ca !important;
+}
+
+.cxCriteriaValueColBetweenCase.cxCriteriaValueColDropInputWrap .cxBoxInput.lyteInputBox .lyteField {
+	border: 1px solid #c3c6ca;
+	border-radius: 5px;
+}
+.cxCriteriaValueColBetweenCase.cxCriteriaValueColDropInputWrap .cxCriteriaBetween1 .cxBoxInput.lyteInputBox .lyteField {
+	border-left: 0;
+	border-radius: 0 5px 5px 0;
+}
+.cxCriteriaValueColBetweenCase.cxCriteriaValueColDropInputWrap:hover .cxCriteriaBetween1 .cxBoxInput.lyteInputBox .lyteField {
+	border: 1px solid #c3c6ca;
+	border-left: 0;
+	box-shadow: 0 0 6px #c3c6ca;
+}
+
+.cxCriteriaValueColBetweenCase .cxCriteriaBetween2 {
+	width: 100%;
+}
+.cxCriteriaValueColBetweenCase.cxCriteriaValueColDropInputWrap .cxCriteriaBetween2:hover .cxBoxInput.lyteInputBox .lyteField {
+	border: 1px solid #c3c6ca;
+	box-shadow: 0 0 6px #c3c6ca;
+}
+
+.cxCriteriaValueColBetweenCase.cxCriteriaValueColDropInputWrapActive:hover .cxCriteriaValueColTypeDropdown lyte-drop-button,
+.cxCriteriaValueColBetweenCase.cxCriteriaValueColDropInputWrapActive .cxCriteriaValueColTypeDropdown lyte-drop-button {
+	border: 1px solid #3c9df7 !important;
+	border-right: 1px solid #c3c6ca !important;
+	box-shadow: 0 0 6px #8dc4ff !important;
+}
+.cxCriteriaValueColBetweenCase.cxCriteriaValueColDropInputWrapActive .cxCriteriaBetween1 .cxBoxInput.lyteInputBox .lyteField {
+	border: 1px solid #3c9df7;
+	border-left: 0;
+	box-shadow: 0 0 6px #8dc4ff;
+}
+.cxCriteriaValueColBetweenCase.cxCriteriaValueColDropInputWrap .cxCriteriaBetween2 .cxBoxInput.lyteInputBox.lyteInputFocus .lyteField {
+	border: 1px solid #3c9df7;
+	box-shadow: 0 0 6px #8dc4ff;
+}
+.cxCriteriaValueColDisabled .cxCriteriaValueSection{
+    /* background: #eee; */
+}
+
+.cxCriteriaWrapper .cxCriteriaTdTextWrapper{
+    padding: 9px 0px;
+    width: inherit;
+}
+
+.cxCriteriaWrapper .cxCriteriaTdTextWrapper lyte-text{
+    max-width: 100%;
+}

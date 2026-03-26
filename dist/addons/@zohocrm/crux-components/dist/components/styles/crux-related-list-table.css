@@ -1,0 +1,49 @@
+/*
+:root{
+	--pxUtilCSSSprite: url('/BFSIClient/dist/assets/images/svg-icons.svg');
+	--pxUIIcons: url('/BFSIClient/dist/assets/images/pixel-ui-icons.svg');
+	--lyteSprite: url('/BFSIClient/dist/assets/images/sprite_lyte.svg');
+	--cruxSprite: url('/BFSIClient/dist/assets/images/crux-sprite-icons.svg');
+	
+	
+	 --pxPrimaryButtonBackgroundColor: linear-gradient(183.29deg, var(--bfsi_bor4) 69.81%, #2F58B0 117.26%); 
+}
+*/
+
+.cx_rl_header{
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+.cx_rl_scroll_header{
+    font-family: var(--crux-bold-font);
+    font-weight: var(--crux-font-weight-bold);
+    color: #202123;
+    font-size: 15px;
+}
+.cx_rl_table_component{
+    display: block;
+    margin-bottom: 25px;
+}
+.related_listview_tale lyte-tr:hover .dv_list_table_moreicon,
+.dv_list_table_moreicon.lyteMenuSelected{
+    visibility: visible;
+}
+/*
+.dv_list_table_moreicon_parent{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    visibility: hidden;
+}
+*/
+.dv_list_table_moreicon{
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.editDeleteIcons{
+    width: 30px;
+}

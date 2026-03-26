@@ -1,0 +1,194 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+.cxNoneSelected .lyteDropdownLabel {
+  color: var(--lyte-crux-picklist-dropdown-none-label-color);
+}
+.colorEnabledPicklist:not(.colorEnabledPKNone) .activitesColor,
+crux-picklist-component .colorEnabledPicklist:not(.colorEnabledPKNone) .activitesColor {
+  top: 11px;
+}
+.colorEnabledPicklist:not(.colorEnabledPKNone) {
+  position: relative;
+}
+crux-picklist-component lyte-dropdown {
+  display: block;
+}
+/*Whn no placeholder or empty placeholder comes, this is needed */
+crux-picklist-component .cxPicklistNoPlaceholder lyte-drop-button {
+  min-height: 35px;
+}
+/*
+    lyte-dropdown:not(.cxDropdownIconNodePresent)
+    This selector will get added if $0.cxProp('isDropdownIconNode', true) is passed
+    This selector is specific for canvas feature. The below padding will not get added in crux-picklist for Canvas.
+*/
+.colorEnabledPicklist:not(.colorEnabledPKNone) lyte-dropdown:not(.cxDropdownIconNodePresent) lyte-drop-button,
+crm-create-fields .colorEnabledPicklist:not(.colorEnabledPKNone) lyte-dropdown:not(.cxDropdownIconNodePresent) lyte-drop-button {
+  padding: 8px 33px 8px 30px;
+  position: relative;
+}
+crux-picklist-component .colorEnabledPicklist:not(.colorEnabledPKNone) lyte-dropdown:not(.cxDropdownIconNodePresent) lyte-drop-button {
+  padding: 8px 33px 8px 30px;
+}
+.colorEnabledPKDropBox lyte-drop-item:not(.colorEnabledSelect2None) {
+  padding: 8px 50px 8px 25px;
+}
+.colorEnabledPicklist.colorEnabledPKNone .activitesColor,
+.colorEnabledPKDropBox .colorEnabledSelect2None .activitesColor,
+crux-picklist-component .colorEnabledPKNone .activitesColor {
+  display: none !important;
+}
+.cxDropbox lyte-drop-item.cxDropboxNoneItem[selected="true"]::before {
+  content: none;
+}
+crux-picklist-component lyte-text {
+  vertical-align: top;
+}
+.activitesColor,
+crux-picklist-component .activitesColor,
+.colorEnabledPKDropBox .activitesColor {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  z-index: 1;
+  padding: 0px;
+}
+.colorEnabledPKDropBox .activitesColor {
+  top: calc(50% - 7px);
+  right: 25px;
+}
+.activitesColor::after,
+crux-picklist-component .activitesColor::after,
+.colorEnabledPKDropBox .activitesColor::after {
+  content: '';
+  position: absolute;
+  border: 1px solid var(--lyte-crux-picklist-indicator-after-border-color);
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  border-radius: 50%;
+}
+crux-picklist-component .colorAppliedPicklist {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.cxElementDisabled lyte-dropdown[lt-prop-type="multisearch"] .lyteMultipleSelect .lyteField {
+  border: none;
+}
+.cxNoUserSelected .lyteDummyEventContainer:focus lyte-drop-button {
+  box-shadow: none !important;
+}
+.colorAppliedPicklist {
+  padding: 3px 11px;
+  border-radius: 15px;
+  font-size: 0.857rem;
+  border: 0 !important;
+  line-height: 16px !important;
+  display: inline-block;
+  vertical-align: middle;
+  word-break: break-word !important;
+  position: relative;
+  color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+  cursor: pointer;
+}
+.colorAppliedPicklist:not(.colorAppliedPKNone)::before {
+  content: "";
+  position: absolute;
+  border: 1px solid var(--lyte-crux-picklist-color-applied-before-border-color);
+  border-radius: 15px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  display: inline-flex;
+}
+.colorAppliedPKNone {
+  padding-right: 0;
+  border: 0;
+  color: inherit !important;
+}
+/*# sourceMappingURL=crux-picklist-component.css.map */

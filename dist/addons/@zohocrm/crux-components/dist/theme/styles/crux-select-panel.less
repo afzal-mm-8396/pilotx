@@ -1,0 +1,436 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-select-panel.variables.less";
+
+@import "../themes/default/less-variables/crux-select-panel-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-select-panel-variables.less";
+}
+
+.cxSelectModalcheckboxWrapper{
+    .cxSelectModalcheckboxWrapperMixin();
+    display: flex;
+    padding: @padding;
+    align-items: center;
+    border-radius: @border-radius;
+    margin: @margin;
+    position: relative;
+}
+// .cxSelectModSearchWrap{
+//     .cxSelectModSearchWrapMixin();
+//     margin-top:@margin-top;
+// }
+.cxSelectModalExpModFilterDivWrap{
+    .cxSelectModalExpModFilterDivWrapMixin();
+    padding: @padding;
+    border-bottom:  @border-bottom;
+    margin-bottom: @margin-bottom;
+}
+.cxSelectModalNameAndEmailWrapper{
+    .cxSelectModalNameAndEmailWrapperMixin();
+    display: inline-flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+    // gap: @gap;
+    @{property-padding-left}: @padding-left;
+    align-items: center;
+    width: @w;
+    box-sizing: border-box;
+}
+.cxSelectModalNameAndEmailText {
+    .cxSelectModalNameAndEmailTextMixin();
+    flex: @flex;
+    min-width: @min-w;
+    // white-space: nowrap;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+}
+.cxSelectModalcheckboxWrapper .lyteCheckBoxDefault::before {
+    .cxSelectModalcheckboxBeforeMixin();
+    vertical-align: top;
+    position: absolute;
+    @{property-left}: @left;
+}
+
+.cxSelectModalContainer lyte-accordion lyte-accordion-body{
+    .cxSelectModalContainerAccordionBodyMixin();
+    @{property-padding-right}: @padding-right;
+    border: @border;
+}
+
+.cxSelectModalUserImage{
+    .cxSelectModalUserImageMixin();
+    width: @width;
+    height: @height;
+    border-radius: @border-radius;
+    @{property-margin-right}:  @margin-right;
+    flex-shrink: @flex-shrink;
+    object-fit: contain;
+}
+.cxSelectModalHeaderWrapper{
+    .cxSelectModalHeaderWrapperMixin();
+    padding: @padding;
+    margin: @margin;
+}
+
+.cxSelectModalContainer  lyte-accordion-body {
+    .cxSelectModalContainerLyteAccordionBodyMixin();
+    padding: @padding;
+}
+.cxSelectModalContainer lyte-accordion lyte-accordion-item{
+    .cxSelectModalContainerAccordionItemMixin();
+    margin: @margin;
+    border: @border;
+}
+// .cxSelectModSearchWrap .cxFakeDropButton,.cxSelectModSearchWrap lyte-dropdown.cxBoxDropdown lyte-drop-button{
+//     .cxSelectModalSearchWrapFakeDropMixin();
+//    @{property-border-left}: @border-left;
+//     border-top:@border-top;
+//     border-bottom:@border-bottom;
+//    @{property-border-top-right-radius}:@border-top-right-radius;
+//    @{property-border-bottom-right-radius}:@border-bottom-right-radius;
+//     @{property-border-right}: @border-right;
+// }
+.cxSelectModSearchWrap lyte-input .lyteField.lyteInputBoxSearch{
+    .dropDownAndInputMixin();
+    border:@border;
+    box-shadow: @box-shadow;
+}
+
+.cxSelModUsrLabel{
+    flex: 1;
+    overflow: hidden;
+}
+
+.cxSelModUsrSelActionBtn {
+    .cxSelModUsrSelActionBtnMixin();
+    // font-size: @font-size;
+    // font-family:@font-family;
+    color: @color ;
+    // margin-top: @margin-top;
+    // float:@float;
+    cursor: pointer;
+    flex: 1;
+    text-align: @value-textalign-right;
+    @{property-margin-left}: @margin-left;
+}
+.cxSelectModalUserSelecteAll{
+    .cxSelectModalUserSelecteAllMixin();
+    font-size: @font-size;
+    font-family: @font-family;
+    color: @color;
+}
+.cxSelectModalcheckboxWrapper.sortable-element{
+    cursor: move;
+}
+.cxSelectModalcheckboxWrapper.sortable-element:hover{
+    .cxSelectModalSortableCBHoverMixin();
+    // border: none;
+    background: @bg;
+}
+.cxSelectModalcheckboxWrapper.sortable-element-selected{
+    .cxSelectModalSortableSelCBHoverMixin();
+    background: @bg;
+    box-shadow: @box-shadow;
+}
+
+.cxSelectModalDragIcon.cxDragIcon{
+    .cxSelectModalDragIconMixin();
+    display: none;
+    position: absolute;
+    @{property-left}: @left;
+    background-color: @bg-color;
+}
+
+.cxSelectModalAccDragSel .cxSelectModalcheckboxWrapper.sortable-element.sortable-element-selected .cxSelectModalDragIcon,
+.cxSelectModalcheckboxWrapper.sortable-element-selected .cxSelectModalDragIcon,
+.cxSelectModalcheckboxWrapper.sortable-element:hover .cxSelectModalDragIcon{
+    display: block;
+}
+
+.cxSelectModalAccDragSel .cxSelectModalcheckboxWrapper.sortable-element .cxSelectModalDragIcon{
+    display: none;
+}
+
+.cxSelectModalAccDragSel .cxSelectModalcheckboxWrapper.sortable-element:not(.lyteSortablePlaceholder):hover{
+    .cxSelectModalCBwrapperElemOnSelectMixin();
+    background: @bg;
+}
+
+.cxSelectModSearchWrap crux-dropdown{
+    .cxSelectModSearchDropdownMixin();
+    max-width: @max-w;
+}
+.cxSelectModSearchWrap .cxFakeDropButton,
+.cxSelectModSearchWrap .cxFakeDummyEventContainer:focus .cxFakeDropButton,
+.cxSelectModSearchWrap lyte-dropdown.cxBoxDropdown lyte-drop-button,
+.cxSelectModSearchWrap .cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxSelectModSearchWrap .cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button:hover{
+    .cxSelectModalSearchWrapFakeDropMixin();
+    @{property-border-left}: @border-left;
+    border-top:@border-top;
+    border-bottom:@border-bottom;
+    @{property-border-top-right-radius}:@border-top-right-radius;
+    @{property-border-bottom-right-radius}:@border-bottom-right-radius;
+    @{property-border-right}: @border-right;
+    box-shadow: @box-shadow;
+}
+
+.cxSelectModUserSearch{
+    .cxSelectModUserSearchMixin();
+    width: @w;
+}
+
+lyte-checkbox.cxPartialSelect input[type=checkbox]+.lyteCheckBoxDefault::after{
+    .cxPartialSelectlyteCheckBoxDefaultMixin();
+    content:" ";
+    display:inline-block;
+    width:@w;
+    height:@h;
+    background-color:@background-color;
+    position:absolute;
+    @{property-left}:@left;
+    top:@top;
+    border-radius: @border-radius;
+    transition: @transition;
+    -webkit-mask-image: @bg-img;
+    mask-image: @bg-img;
+}
+.cxSelectModalContainer .lyteCheckDisabled .cxSelectModalGroupName {
+    .cxSelectModalDisableCBLabelMixin();
+    opacity: @opacity;
+}
+.cxSelectModalGroupContainer lyte-accordion-header{
+    .cxSelectModalGroupContainerlyteAccordionHeaderMixin();
+    display:flex;
+    align-items:center;
+    padding: @padding;
+    margin-top: @margin-top;
+}
+.cxSelectModalGroupContainer lyte-accordion-header lyte-icon{
+    .cxSelModGroupContAccIconMixin();
+    position: absolute;
+    @{property-left}: @left;
+    cursor: pointer;
+    top: @top;
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+}
+
+.cxSelectModalGroupContainer lyte-accordion-header lyte-icon:hover{
+    .cxSelModGroupContAccIconHoverMixin();
+    background-color: @bg-color;   
+}
+// .cxSelectModalGroupContainer lyte-accordion-header lyte-icon::after {
+//     .cxSelModGroupContAccIconAfterMixin();
+// 	content: '';
+// 	width: @w;
+// 	height: @h;
+// 	display: inline-block;
+// 	background-color: @bg-color;
+// 	position: absolute;
+// 	z-index: @z-index;
+// 	border-radius: @border-radius;
+// 	@{property-left}: @left;
+// 	top: @top;
+// 	cursor: pointer;
+// 	visibility: hidden;
+// }
+// .cxSelectModalGroupContainer lyte-accordion-header lyte-icon:hover::after {
+//     visibility: visible;
+// }
+
+.cxSelectModalGroupName{
+    .cxSelectModalGroupNameMixin();
+    font-family:@font-family;
+    font-weight: @font-weight;
+    word-break: break-word;
+    // color: @color;
+    // padding: @padding;
+}
+// .cxSelectModalGroupSelectAll,
+// .cxSelectModalGroupDeselectAll{
+//     .cxSelectModalGroupSelectAllandDeselectAllMixin();
+//     font-size: @font-size;
+//     color: @color;
+//     border-bottom:@border-bottom;
+//     cursor: pointer;
+// }
+.cxSelectModalGroupContainer lyte-accordion-body{
+    .cxSelectModalAccBodyMixin();
+    // overflow: visible  !important;
+    padding: @padding;
+}
+
+.cxSelectModalGroupContainer lyte-accordion-item {
+    border-bottom: none;
+}
+
+.cxSelectModalGroupContainer .sortable-parent{
+    max-height: none;
+}
+
+.cxSelectModalContent {
+    .cxSelectModalContentMixin();
+    display: flex;
+    flex-direction: column;
+    overflow: hidden !important;
+    padding: @padding;
+    border-radius: @border-radius;
+    max-height: @max-h;
+}
+.cxSelectModalWrapper.lyteModalSlideFromLeft .cxSelectModalContent,
+.cxSelectModalWrapper.lyteModalSlideFromRight .cxSelectModalContent{
+    .cxSelectModalFromLeftRightContentMixin();
+    max-height: @max-h;
+    height: @h;
+}
+.cxSelectModalContent .cxSelectModalContainer  {
+    .cxSelectModalContainerMixin();
+    // display: flex;
+    overflow-y: auto;
+    padding: @padding;
+}
+.cxSelectModalLoader,
+.cxSelectModalNoResult {
+    .cxSelectModalNoResultMixin();
+    width: @w;
+    box-sizing: border-box;
+}
+
+.cxSelectModalNoResult.cxSelModWoutFooterNoRes{
+    .cxSelModWoutFooterNoResMixin();
+    padding-bottom: @padding-bottom;
+}
+
+.cxSelectModalHeader{
+    .cxSelectModalHeaderMixin();
+    padding-bottom: @padding-bottom;
+}
+
+.cxSelModalDisplayLabel,
+.cxSelModalDisplayMail{
+    display: block;
+}
+
+.cxSelModalDisplayMail{
+    .cxSelModalDisplayMailMixin();
+    font-size: @font-size;
+    color: @color;
+    margin-top: @margin-top;
+}
+
+.cxSelectModalcheckboxWrapper lyte-checkbox,
+.cxSelectModalcheckboxWrapper label.lyteCheckbox,
+.cxSelectModalcheckboxWrapper label.lyteCheckbox .lyteCheckBoxDefault,
+.cxSelectModalcheckboxWrapper label.lyteCheckbox  .lyteCheckBoxDefault > span{
+    .cxSelectModalItemCheckBoxMixin();
+    max-width: @max-w;
+}
+
+.cxSelectModalCheckbox input,
+.cxSelectModalCheckbox .lyteCheckBoxDefault::before,
+.cxSelectModalCheckbox .lyteCheckBoxDefault::after{
+    .cxSelectModalCheckboxIconMixin();
+    top: @top;
+    bottom: @bottom;
+    margin: @margin;
+}
+
+.cxSelectModalCheckbox .lyteCheckBoxDefault::after{
+    .cxSelectModalCheckboxIconAfterMixin();
+    bottom: @bottom;
+}
+
+.cxSelectModalCheckbox input{
+    .cxSelectModalCheckboxInputMixin();
+    height: @h;
+}
+
+.cxSelectModalContent lyte-accordion lyte-accordion-item:first-of-type lyte-accordion-header{
+    .cxSelectModalAccHeadFirstChildMixin();
+    margin-top: @margin-top;
+}
+
+.cxSelectModalAccDragSel label.lyteCheckbox,
+.cxSelectModalAccDragSel .cxSelectModalcheckboxWrapper{
+    cursor: move;
+}
+
+.cxSelctModalNoUserPhoto{
+    .cxSelctModalNoUserPhotoMixin();
+    background-image: @bg-img;
+	background-size: @bg-size;
+    background-repeat: no-repeat;
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    @{property-margin-right}: @margin-right;
+    flex-shrink: 0;
+}
+
+.cxSelModYield{
+    align-self: flex-start;
+}
+
+.cxSelectModalGroupNameWrap{
+    .cxSelectModalGroupNameWrapMixin();
+    display: inline-flex;
+    @{property-padding-left}: @padding-left;
+}
+
+.cxSelModGroupNameCheckbox .lyteCheckBoxDefault::before{
+    .cxSelModGroupNameCheckboxBeforeMixin();
+    // top: @top;3
+    @{property-left}: @left;
+    position: absolute;
+}
+
+.cxSelectModalContent{
+    display: flex;
+
+}
+
+/************ select panel poup and page styles starts *************/
+
+.cxSelectPanelOnPopup lyte-popover-content,
+.cxSelectPanelOnPopup lyte-modal-content{
+    .cxSelectPanelOnPopupContentMixin();
+    padding: @padding;
+}
+
+.cxSelectPanelOnPopup lyte-popover-header,
+.cxSelectPanelOnPopup lyte-modal-header{
+    .cxSelectPanelOnPopupHeaderMixin();
+    padding-bottom: @padding-bottom;
+}
+
+.cxSelectPanelOnPopup lyte-popover-content .cxSelectModalHeaderWrapper{
+    .cxSelectPanelOnPopupHeaderWrapperMixin();
+    margin-top: @margin-top;
+    padding: @padding;
+}
+
+.cxSelectPanelOnPopup lyte-popover-content  .cxSelectModalExpModFilterDivWrap{
+    .cxSelectPanelOnPoupFilterDivWrap();
+    margin: @margin;
+}
+
+.cxSelectPanelOnPopup lyte-popover-content .cxSelectModalContainer{
+    .cxSelectPanelOnPoupModalContainer();
+    padding: @padding;
+}
+
+.cxSelectPanelOnPopup .lyteModalSlideFromLeft .cxSelectModalContent,
+.cxSelectPanelOnPopup .lyteModalSlideFromRight .cxSelectModalContent{
+    .cxSelectModalFromLeftRightContentMixin();
+    max-height: @max-h;
+    height: @h;
+}
+
+/************ select panel poup and page styles ends *************/

@@ -1,0 +1,95 @@
+.cxDvSectionName{
+    font-family: var(--crux-bold-font);
+    font-weight: var(--crux-font-weight-bold);
+    color: #202123;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+.cxDvSubform lyte-th {
+    border-top: 0 !important;
+    border-bottom: 2px solid #d7e2ed !important;
+}
+.cxDvSubform lyte-tr lyte-td {
+    border-left: 1px solid #edf0f4;
+    border-right: 0;
+}
+.cxDvSubform lyte-tr lyte-td:first-child{
+    border-left: 0;
+}
+.cxDvSubform lyte-tr lyte-td:last-child{
+    border-left: 0;
+}
+/*
+.dv_info_parent,
+.dv_bc_info_parent{
+    display: flex;
+    align-items: center;
+}
+*/
+.cxDvInfoCont{
+    margin-bottom: 20px;
+}
+.cxDvInfoFormField,
+.cxDvBcInfoFormField{
+    color: #616e88;
+    min-width: 200px;
+/*    margin-bottom: 20px;*/
+    padding: 8px 0;
+    text-align: right;
+}
+/*
+.cxDvBcInfoFormField{
+    color: #616e88;
+    min-width: 200px;
+    margin-bottom: 6px;
+    text-align: right;
+}
+*/
+.cxDvInfoValue{
+    width: 100%;
+    max-width: 450px;
+    margin-left: 10px;
+    margin-right: 6px;
+}
+
+.cxDvCompParent{
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+.cxDvTagsParent{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+.cxDvCompParent:hover{
+    border: 1px solid #C0C6CC;
+}
+.cxDvCompParent .cxDvFieldEditIcon{
+    visibility: hidden;
+    position: absolute;
+    right: 15px;
+}
+.cxDvCompParent .cxDvTagFieldEditIcon{
+    visibility: hidden;
+}
+.cxDvCompParent:hover .cxDvTagFieldEditIcon{
+    visibility: visible;
+}
+.cxDvCompParent:hover .cxDvFieldEditIcon {
+    visibility: visible;
+}
+.cxDvAjaxEdit{
+    position: relative;
+    width: 300px;
+    box-sizing: border-box;
+    height: 34px;
+}
+.cxDvSaveCancelSection{
+    margin-left: 12px;
+    display: none;
+}
+.cxDvRecordEdit{
+    margin-left: 8px;
+}

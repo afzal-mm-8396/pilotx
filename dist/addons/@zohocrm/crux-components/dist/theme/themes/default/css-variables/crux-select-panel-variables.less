@@ -1,0 +1,26 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-select-modal-accordion-icon-after-bg-color: #ddd;
+    --@{cssPrefix}-select-modal-border-color: #ddd;
+    --@{cssPrefix}-select-modal-all-user-selected-color: #333333;
+    --@{cssPrefix}-select-modal-user-selected-color: #338CF0;
+    --@{cssPrefix}-select-modal-partial-selected-bg-color: #bdbdbd;
+    --@{cssPrefix}-select-modal-group-name-color: #313949;
+    --@{cssPrefix}-select-modal-drop-btn-border-color: #C0C6CC;
+    --@{cssPrefix}-select-modal-sort-element-hover-bg-color: #F0F4FC;
+    --@{cssPrefix}-select-modal-sort-element-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-select-modal-checkbox-sort-element-box-shadow-color: 0 0 4px 0 rgba(0,0,0,0.30);
+    --@{cssPrefix}-select-modal-display-mail-color: var(--crux-base-text-color);
+}

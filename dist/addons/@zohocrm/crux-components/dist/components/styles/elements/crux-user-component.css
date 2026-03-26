@@ -1,0 +1,49 @@
+.cxViewUserValueWrap,
+.cxViewUserValue {
+	max-width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+}
+.cxUserComponent crux-user-dropdown {
+    display: flex;
+    flex-grow: 1;
+}
+.cxUserComponent crux-user-dropdown lyte-dropdown {
+    flex-grow: 1;
+}
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown .lyteDummyEventContainer lyte-drop-button,
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button:hover {
+    border: 0;
+    box-shadow: none;
+}
+.cxUserCompIcon {
+    background-image: url('../images/crux-sprite-icons.svg');
+    background-position: -6px -361px;
+    width: 15px;
+    height: 16px;
+}
+
+crux-user-component lyte-text{
+	vertical-align: top;
+}
+
+.cxUserComponent lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button{
+    padding-right: 25px;
+}
+
+/* .cxUserComponent.cxBoxWithRightIcon lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button{
+    padding-right: 55px;
+} */
+
+/* .cxUserComponent lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button::after{
+    content: '';
+}
+
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button::after{
+    right: 40px;
+} */
+.cxElementValue lyte-dropdown{
+    /* border-right: 1px solid #ddd; */
+}

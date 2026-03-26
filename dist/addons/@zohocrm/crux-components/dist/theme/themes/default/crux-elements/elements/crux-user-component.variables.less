@@ -1,0 +1,61 @@
+.cxViewUserValueMixin() {
+	@max-w: 100%;
+	// @line-height: 21px;
+}
+.cxViewUserValueInTdMixin() {
+	// @max-w: 450px;
+	@max-w: inherit;
+}
+.cxUserComponentUserDropdownMixin() {
+	@flex-grow: 1;
+}
+.cxUserComponentUserDropdownLyteDropdownMixin() {
+	@flex-grow: 1;
+}
+.cxUserComponentDropButtonMixin() {
+	@border: 0;
+	@box-shadow: none;
+	@padding-right: 25px;
+	@border-radius: if(@direction=ltr,5px 0px 0px 5px,0px 5px 5px 0px);
+}
+
+.cxUserCompDropButtonHideLookupIconMixin(){
+	@border-radius: 5px;
+}
+
+.cxUserComponentDropButtonWithClearIconMixin(){
+	@padding-right: 45px;
+}
+
+.cxUserCompIconMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -359px -87px;
+	@w: 15px;
+	@h: 16px;
+}
+
+.cxUserCompBoxDropButtonMixin(){
+	@padding-right: 25px;
+}
+
+// .cxUserCompMultiBoxDropButtonMixin(){
+// 	@padding-right: 55px;
+// }
+.cxViewUserTimestampMixin(){
+	@font-family: @cruxPrimaryFont;
+	@font-size: @cxFontSize12px;
+	@color: @cxUserTimeStampColor;
+	@line-height: 21px;
+}
+
+.cxUserComponentDropDownIconMixin(){
+	@right: 10px;
+}
+
+.cxUserComponentCloseIconMixin(){
+	@right: 60px;
+}
+
+.cxUserComponentLyteDropButton(){
+	@padding-right:25px;
+}

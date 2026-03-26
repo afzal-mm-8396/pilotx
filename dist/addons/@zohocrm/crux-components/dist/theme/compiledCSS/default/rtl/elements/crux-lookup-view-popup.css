@@ -1,0 +1,186 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+.cxLookupViewTopSection {
+  display: flex;
+  margin-bottom: 10px;
+}
+.cxLookupViewTopSection .cxLookupHasSingleRow {
+  display: flex;
+  align-items: center;
+}
+.cxLookupViewPopImgCont .cxLookupViewPopRecImg,
+.cxLookupViewPopImgCont {
+  width: 36px;
+  height: 36px;
+  border-radius: 36px;
+  display: inline-block;
+}
+.cxLookupViewPopImgCont {
+  margin-left: 10px;
+}
+.cxLookupViewLetterCircle,
+.cxEmptyProfileImage img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+.cxLookupViewLetterCircle {
+  background: var(--lyte-crux-lookup-view-popup-img-bg-color);
+  color: var(--lyte-crux-lookup-view-popup-img-text-color);
+  border: 1px solid var(--lyte-crux-lookup-view-popup-img-border-color);
+  font-size: 1rem;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+.cxLookupViewTopSection .cxLookupViewLetterCircle {
+  margin-left: 10px;
+}
+.cxLookupViewTopContentWrap {
+  flex: 1;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  font-size: 0.857rem;
+}
+.cxLookupViewTopHeading {
+  cursor: pointer;
+  font-size: 0.857rem;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxLookupViewTopDesc {
+  color: var(--lyte-crux-lookup-view-popup-desc-color);
+  overflow: hidden;
+  display: block;
+  word-break: break-word;
+  margin-top: 5px;
+}
+.cxDivTable {
+  display: table;
+}
+.cxDivTr {
+  display: table-row;
+}
+.cxDivTd {
+  display: table-cell;
+}
+.cxLookupViewLabel {
+  padding: 5px 0px 5px 15px;
+  min-width: 100px;
+  color: var(--lyte-crux-lookup-view-popup-form-label-color);
+  margin-left: 15px;
+  font-size: 0.857rem;
+  vertical-align: top;
+  max-width: 160px;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+.cxLookupViewValue {
+  font-family: 'LatoRegular', sans-serif;
+  padding: 5px 0px 5px 0px;
+  max-width: 295px;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  font-size: 0.857rem;
+}
+.cxLookupViewValueWrap {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cxLookupViewPopupHeadingLink {
+  color: var(--lyte-crux-lookup-view-popup-heading-color);
+}
+.cxLookupVwPopupValue.cxLookupViewValue .phoneRtl.cxPhoneViewZPBEnabled {
+  padding-left: 65px;
+  padding-right: 0px;
+}
+.cxLookupVwPopupValue .cxPhoneViewZPBEnabledIconWrap {
+  top: -3px;
+}
+.cxEmptyProfileImage {
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+/*# sourceMappingURL=crux-lookup-view-popup.css.map */

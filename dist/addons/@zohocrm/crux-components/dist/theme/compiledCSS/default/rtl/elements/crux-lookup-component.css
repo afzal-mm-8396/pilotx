@@ -1,0 +1,310 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+.cxLookupComponent .cxBoxLeftContent {
+  cursor: text;
+  background: var(--lyte-crux-input-bg-color);
+  border-radius: 0px 5px 5px 0px;
+}
+.cxLookupComponent lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox input,
+.cxLookupComponent lyte-dropdown {
+  border-radius: 4px 0 0 4px;
+}
+.cxLookupComponent lyte-input,
+.cxLookupComponent lyte-autocomplete {
+  flex-grow: 1;
+  border-radius: 4px 0 0 4px;
+  display: block;
+  width: 100%;
+}
+.cxLookupComponent.cxBoxWithoutRightIcon .cxBoxLeftContent {
+  border-radius: 5px;
+}
+.cxLookupComponent lyte-autocomplete lyte-dropdown lyte-drop-button {
+  padding: 0;
+  border-radius: 4px 0 0 4px;
+  display: block;
+}
+.cxLookupComponent lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox .lyteField,
+.cxLookupComponent .lyteInputBox .lyteField {
+  padding: 0;
+  border: 0;
+  border-radius: 4px 0 0 4px;
+}
+.cxLookupComponent lyte-autocomplete lyte-input input,
+.cxLookupComponent lyte-input input {
+  outline: none;
+  box-shadow: none;
+}
+.cxLookupComponent:hover input {
+  text-overflow: initial;
+  /*On Hover removed ellipsis in input to faciliate input default mouse scroll */
+}
+.cxLookupComponent lyte-autocomplete lyte-input .cxLookupCompInputElem {
+  padding-left: 30px;
+  padding-right: 12px;
+}
+.cxLookupComponent lyte-autocomplete.cxLookupNoValueSel .cxLookupCompInputElem {
+  padding-left: 12px;
+}
+.cxLookupComponent lyte-autocomplete.cxLookupInputLoading lyte-input input {
+  padding-left: 10px;
+}
+.cxLookupComponent .cxBoxSpinWrapper {
+  padding-left: 6px;
+}
+.cxLookupComponent .cxBoxCloseIconWrap {
+  width: 20px;
+  cursor: pointer;
+  visibility: hidden;
+}
+.cxLookupComponent:hover .cxBoxCloseIconWrap {
+  visibility: visible;
+}
+.cxLookupComponent .cxBoxSpin {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+.cxLookupDropbox .lyteautocompleteHighlight {
+  background: transparent;
+}
+.cxLookupDropboxLabel {
+  max-width: calc(100% - 14px);
+}
+.cxLookupDropbox lyte-autocomplete-label .cxLookupDropboxLabel {
+  max-width: calc(100% - 25px);
+}
+.cxLookupInfoIcon {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -41px -75px;
+  width: 14px;
+  height: 14px;
+  opacity: 0.3;
+  position: relative;
+  left: 0;
+  margin: 0 !important;
+}
+.cxLookupDropbox .cxLookupInfoIcon {
+  margin-right: 3px !important;
+}
+.cxLookupDropbox lyte-autocomplete-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cxLookupComponent .lyteInputBox[lt-prop-disabled=true] .lyteField:hover {
+  border: 0;
+  box-shadow: none;
+}
+.cxLookupComponent .lyteInputBox input:disabled {
+  background: var(--lyte-crux-input-disabled-bg-color);
+  /* Commented as disabled field will have gray bg */
+}
+lyte-drop-button .lyteMultipleSelect .lyteMultiselectInput lyte-input .lyteField {
+  border: none;
+}
+.popoverWrapper.cxLookupPopoverWrapper {
+  z-index: 10125;
+}
+.cxLookupPopoverWrapper .lytePopover {
+  max-width: calc(100vw - 200px);
+  border-radius: 5px;
+}
+.cxLookupPopoverWrapper .cxLookupPopTd {
+  padding: 5px 20px 5px 15px;
+  font-size: 0.857rem;
+  border: 0;
+  word-break: break-word;
+  vertical-align: top;
+}
+.cxLookupPopoverWrapper .cxLookupPopTd.cxLookupViewValue {
+  padding: 5px 0px 5px 20px;
+}
+.cxLookupPopoverWrapper .cxLookupPopTd:first-child {
+  text-align: left;
+}
+.cxLookupPopoverWrapper lyte-tr:first-of-type .cxLookupPopTd {
+  padding-top: 15px;
+}
+.cxLookupPopoverWrapper lyte-tr:last-of-type .cxLookupPopTd {
+  padding-bottom: 15px;
+}
+.cxLookupPopoverWrapper,
+.cxLookupPopoverWrapper .lytePopover {
+  pointer-events: none;
+}
+.cxLookupPopoverWrapper .lv_data_user {
+  max-width: 370px;
+}
+.cxLookupPopoverWrapper lyte-table {
+  border: 0;
+  border-radius: 0;
+}
+.cxLookupMultiModuleWrap {
+  display: flex;
+  align-items: center;
+}
+.cxLookupMultiModuleWrap .cxMultiModuleCriteriaDropdown {
+  flex-grow: 1;
+  overflow: auto;
+  min-width: 70px;
+}
+.cxMultiModuleCriteriaDropdown .lyteDropdownLabel {
+  max-width: 100%;
+  margin-left: 0;
+}
+.cxMultiModuleDropdown {
+  max-width: 30%;
+  min-width: 100px;
+}
+.cxLookupComponent .cxMultiModuleDropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxMultiModuleDropdown .cxFakeDummyEventContainer:focus .cxFakeDropButton,
+.cxMultiModuleDropdown lyte-drop-button:hover,
+.cxMultiModuleDropdown .cxFakeDropButton,
+.cxMultiModuleDropdown .cxFakeDropButton:hover,
+.cxMultiModuleDropdown lyte-drop-button,
+.cxLookupComponent lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button:hover {
+  border: 0;
+  border-left: 1px solid var(--lyte-crux-input-border-color);
+  border-radius: 0 4px 4px 0;
+  box-shadow: none;
+}
+.entityLookupTable lyte-table lyte-tr lyte-td:first-child lyte-radiobutton {
+  margin-left: 0px;
+}
+.cxLookupViewWrapper {
+  display: flex;
+}
+.cxLookupViewIcon {
+  flex-shrink: 0;
+  margin-left: 5px;
+}
+.cxLookupCompMulModValue,
+.cxLookupCompLink {
+  overflow: hidden;
+  max-width: fit-content;
+}
+.cxLookupCompLink {
+  flex: 1;
+  min-width: 25px;
+}
+.cxLookupCompSeparator {
+  margin: 0px 3px;
+  flex-shrink: 0;
+}
+.cxElementDisabled .cxLookupComponent .lyteDummyEventContainer.lyteDropdown-disabled lyte-drop-button:hover,
+.cxElementDisabled .cxLookupComponent .lyteDummyEventContainer:focus lyte-drop-button {
+  border: none;
+}
+.cxLookupComponent .cxBoxDropdown .lyteDummyEventContainer,
+.cxLookupComponent .cxBoxDropdown .lyteDummyEventContainer lyte-drop-button,
+.cxLookupComponent .cxMultiModuleDropdown lyte-dropdown {
+  height: 100%;
+}
+.cxLookupComponent .cxBoxDropdown .lyteDummyEventContainer lyte-drop-button,
+.cxLookupComponent lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxLookupComponent lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button:hover {
+  border: none;
+  border-radius: 0px;
+  border-left: 1px solid var(--lyte-crux-lookup-dummy-container-focus-drop-border-color);
+}
+.cxElementDisabled .cxLookupComponent lyte-drop-button::after {
+  visibility: hidden;
+}
+.cxLookupComponent .cxMultiModuleDropdown .cxFakeDropButton {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+crux-lookup-component .cxViewInfoTooltipIcon {
+  position: relative;
+  margin-right: 5px;
+  top: 2px;
+}
+.cxLookupCompViewWrap {
+  display: inline-flex;
+  /* changed to inline flex - as it overlaps other icons in Related list Table */
+}
+.cxMMLSeperator {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.cxLookupCompWsNormal {
+  white-space: normal !important;
+}
+/*# sourceMappingURL=crux-lookup-component.css.map */

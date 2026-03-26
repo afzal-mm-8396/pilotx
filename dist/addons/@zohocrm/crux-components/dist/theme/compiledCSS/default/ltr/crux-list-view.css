@@ -1,0 +1,1112 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+crux-list-view {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+crux-list-view lyte-expresstable {
+  z-index: 1;
+}
+crux-list-view .lyteExpStickyTable .lyteExpTableOrigTableInnerWrap {
+  border: none;
+}
+crux-list-view .lyteExpTableWrapper {
+  border-radius: 6px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+crux-list-view .lyteExpOriginalTable {
+  table-layout: fixed;
+  min-width: unset;
+}
+crux-list-view .cxLvAutoWidthTable .lyteExpOriginalTable {
+  width: auto;
+  min-width: 100%;
+}
+crux-list-view .cxLvAutoWidthTable .lyteExpOriginalTable {
+  width: auto;
+  min-width: 100%;
+}
+.cxLvHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 5px;
+}
+.cxLvContWrapper {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+.cxLvViewContainer {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+.cxLvHeaderTextSemiBold {
+  font-family: 'LatoSemiBold', sans-serif;
+}
+.cxLvSeparationCircle {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  margin: 0px 8px;
+  background: var(--lyte-crux-list-view-separation-radius-bg-color);
+}
+.cxLvHeaderActionBtn {
+  margin-left: 8px;
+  position: relative;
+  cursor: pointer;
+}
+.cxLvHeaderActionBtn::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+  background: var(--lyte-crux-list-view-un-sort-btn-border-color);
+}
+.cxLvHeaderSelectAllBtn {
+  cursor: pointer;
+  color: var(--lyte-crux-list-view-select-all-btn-color);
+  margin-left: 15px;
+}
+.cxLvHeadRightCont {
+  display: flex;
+  align-items: center;
+}
+.cxLvPageCountLabel {
+  font-family: 'LatoSemiBold', sans-serif;
+  margin: 0px 10px;
+}
+.cxLvPageCountDropdown lyte-drop-button {
+  padding: 5px 25px 5px 10px;
+  font-size: 0.857rem;
+}
+.cxLvPageCountDropItem {
+  padding: 6px 15px 6px 25px;
+  font-size: 0.857rem;
+}
+.cxLvPageCountDropItem[selected="true"]::before {
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+}
+.cxListVwPartialselect,
+.cxListVwCustomCheckBoxChecked,
+.cxListVwCustomCheckBox {
+  border: 2px solid var(--lyte-crux-list-view-checkbox-border-color);
+  background: var(--lyte-crux-list-view-checkbox-bg-color);
+  box-sizing: border-box;
+  position: relative;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  border-radius: 3px;
+  top: 1px;
+}
+.cxLvTableComp lyte-checkbox:hover .cxListVwCustomCheckBox {
+  border-color: var(--lyte-crux-list-view-checkbox-hover-border-color);
+}
+.cxLvTableComp lyte-checkbox input:focus + .cxListVwCustomCheckBox {
+  border-color: var(--lyte-crux-list-view-checkbox-focus-border-color);
+}
+.cxListVwCustomCheckBoxChecked {
+  border-color: var(--lyte-crux-list-view-checkbox-checked-border-color);
+  background: var(--lyte-crux-list-view-checkbox-checked-bg-color);
+}
+.cxListVwCustomCheckBoxChecked::after {
+  content: '';
+  display: block;
+  width: 11px;
+  height: 9px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -328px -234px;
+  mask-position: -328px -234px;
+  background-color: var(--lyte-crux-list-view-checkbox-tick-icon-bg-color);
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+}
+.cxListVwPartialselect::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 3px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -347px -238px;
+  mask-position: -347px -238px;
+  background-color: var(--lyte-crux-list-view-checkbox-partial-icon-bg-color);
+  inset: 0px;
+  margin: auto;
+}
+.cxLvRecPerPageDd lyte-dropdown.cxBoxDropdown lyte-drop-button,
+.cxLvRecPerPageDd .cxFakeDropButton {
+  padding: 5px 25px 5px 10px;
+  border-radius: 5px;
+  font-size: 0.857rem;
+}
+.cxLvRecPerPageDd lyte-dropdown.cxBoxDropdown .lyteDropdownLabel,
+.cxLvRecPerPageDd .cxFakeDropdownLabel {
+  font-size: 0.857rem;
+}
+.cxLvRecPerPageDropBox.cxDropbox lyte-drop-item {
+  font-size: 0.857rem;
+  padding: 6px 15px 6px 25px;
+}
+.cxLvRecPerPageDropBox lyte-drop-item[selected=true]::before {
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+  left: 8px;
+  transform: scale(0.75);
+}
+.cxLvTableManageMenuBtn {
+  width: 40px;
+  height: 35px;
+  position: absolute;
+  border-left: 1px solid var(--lyte-crux-list-view-table-menu-border-color);
+  right: 1px;
+  top: 1px;
+  z-index: 15;
+  background: var(--lyte-crux-list-view-table-menu-btn-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 0px 6px 0px 0px;
+}
+.cxLvTableManageMenuBtn:hover {
+  background: var(--lyte-crux-list-view-table-menu-hover-bg-color);
+}
+.cxLvTableManageMenuBtn.lyteMenuSelected {
+  box-shadow: inset 0 2px 6px var(--lyte-crux-list-view-table-menu-selected-box-shadow-color);
+  background: var(--lyte-crux-list-view-table-menu-selected-border-color);
+}
+.cxLvShowOverlay {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.cxLvTableManageMenuBtnIcon {
+  display: block;
+  width: 15px;
+  height: 13px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -282px -233px;
+  mask-position: -282px -233px;
+  background-color: #333;
+}
+.lyteExpStickyTable .cxLvTableRowHover lyte-exptable-td.lyteFixedColumn,
+.cxLvTableRowHover lyte-exptable-td.lyteFixedColumn,
+.cxLvTableRowHover lyte-exptable-td {
+  background: var(--lyte-crux-list-view-table-row-hover-bg-color);
+}
+.lyteExpStickyTable .cxLvTableRowSelected lyte-exptable-td.lyteFixedColumn,
+.cxLvTableRowSelected lyte-exptable-td.lyteFixedColumn,
+.cxLvTableRowSelected lyte-exptable-td {
+  border-color: var(--lyte-crux-list-view-table-selected-border-color);
+  background: #F0F4FC;
+}
+.cxLvUserSelNone {
+  user-select: none;
+}
+.cxLvDNImp {
+  display: none !important;
+}
+.cxLvEditIconWrapCont {
+  width: 100%;
+  height: 100%;
+  display: block;
+  visibility: hidden;
+}
+.cxLvTableRowHover .cxLvEditIconWrapCont {
+  visibility: visible;
+}
+.cxLvTableIconWrap {
+  width: 29px;
+  height: 29px;
+  border-radius: 20px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  margin: auto;
+  cursor: pointer;
+}
+.cxLvTableIconWrap::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  border: 1px solid var(--lyte-crux-list-view-table-icon-wrap-border-color);
+  background: var(--lyte-crux-list-view-table-icon-wrap-bg-color);
+  transform: scale(0);
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+}
+.lyteMenuSelected.cxLvTableIconWrap::after,
+.cxLvTableIconWrap:hover::after {
+  transform: scale(1);
+}
+.cxLvMoreIcon {
+  display: block;
+  width: 3px;
+  height: 13px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -294px -4px;
+  mask-position: -294px -4px;
+  background-color: #333;
+  transform: rotate(90deg);
+  z-index: 2;
+}
+.cxLvEditIcon {
+  display: block;
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -69px -153px;
+  mask-position: -69px -153px;
+  background-color: #333;
+  z-index: 2;
+}
+.cxLvTickIcon {
+  display: block;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -229px -177px;
+  mask-position: -229px -177px;
+  background-color: var(--lyte-crux-list-view-tick-icon-bg-color);
+  z-index: 2;
+}
+.cxLvTableIconWrap.cxLvActEditFirstIcon {
+  inset: initial;
+  margin: initial;
+  top: 4px;
+  bottom: 0px;
+  left: 4px;
+}
+.cxLvTableIconWrap.cxLvActEditSecondIcon {
+  inset: initial;
+  margin: initial;
+  top: 4px;
+  bottom: 0px;
+  left: 38px;
+}
+.cxLvActEditSecondIcon::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  inset: 0;
+  margin: auto;
+}
+.cxLvMangeColumnModalContent {
+  max-height: calc(100vh - 200px);
+}
+.cxLvAlphaSortBtn {
+  font-size: 0.725rem;
+  padding: 1px 18px 2px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--lyte-crux-list-view-alpha-sort-btn-border-color);
+  cursor: pointer;
+  margin-left: 5px;
+  position: relative;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxLvAlphaSortBtn.lyteMenuSelected,
+.cxLvAlphaSortBtn.cxLvAlphaSortBtnSel,
+.cxLvAlphaSortBtn:hover {
+  background: var(--lyte-crux-list-view-alpha-sort-btn-active-bg-color);
+}
+.cxLvAlphaSortBtn.lyteMenuSelected,
+.cxLvAlphaSortBtn.cxLvAlphaSortBtnSel {
+  border-color: var(--lyte-crux-list-view-alpha-sort-btn-active-border-color);
+}
+.cxLvAlphaSortBtn.cxLvAlphaSortBtnSel .cxLvAlphaSearch {
+  padding-right: 7px;
+}
+.cxLvAlphaSortEdit {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 23px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 10px 10px 0px;
+}
+.cxLvSortCloseIcon,
+.cxLvAlphaSortEditIcon {
+  display: block;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -71px -118px;
+  mask-position: -71px -118px;
+  background-color: #333;
+}
+.cxLvAlphaSortEdit:hover {
+  background: var(--lyte-crux-list-view-alpha-sort-btn-edit-hover-bg-color);
+}
+.cxLvMoreOptDropdownIcon,
+.cxLvAlphaSortBtnDdIcon {
+  display: block;
+  width: 8px;
+  height: 4px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -1px -2px;
+  mask-position: -1px -2px;
+  background-color: #333;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+  right: 5px;
+}
+.cxLvMoreOptDropdownIcon {
+  transform: rotate(-90deg);
+  right: 7px;
+}
+.cxLvAlphaSortMenu {
+  min-width: initial;
+}
+.cxLvAlphaSortMenuBody lyte-menu-item {
+  padding: 4px 15px;
+  justify-content: center;
+}
+.cxLvAlphaSortMenuBody .cxLvAlphaSortMenuSel {
+  color: var(--lyte-crux-list-view-alpha-sort-menu-selection-color);
+  pointer-events: none;
+}
+.cxLvSortMenuBody lyte-menu-item {
+  padding: 7px 10px 7px 30px;
+}
+.cxLvDisabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.cxLvSortMenuIcon {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 11px;
+  margin: auto;
+}
+.cxLvSortMenuIcon.cxMaskIcon,
+.cxLvSortMenuIcon.cxUnmaskIcon {
+  left: 8px;
+}
+.cxLvSortAscIcon {
+  display: block;
+  width: 9px;
+  height: 11px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -365px -234px;
+  mask-position: -365px -234px;
+  background-color: #333;
+}
+.cxLvSortDesIcon {
+  transform: rotate(180deg);
+}
+.cxLvSortPinIcon {
+  display: block;
+  width: 16px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -266px -107px;
+  mask-position: -266px -107px;
+  background-color: #333;
+  left: 9px;
+}
+.cxLvSortUnpinIcon {
+  display: block;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -244px -107px;
+  mask-position: -244px -107px;
+  background-color: #333;
+  left: 9px;
+}
+.cxLvTableManageMenuBody .cxLvTableManagePopLiDisabled {
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: default;
+  background: none;
+}
+.cxLvTableComp #cxLvTableHeaderRow lyte-exptable-th {
+  padding: 9px 35px 9px 10px;
+  border-bottom: none;
+}
+.cxLvTableComp #cxLvTableHeaderRow lyte-exptable-th.cxLvEditIconCol,
+.cxLvTableComp #cxLvTableHeaderRow lyte-exptable-th.cxLvCheckboxCol {
+  padding: 9px 10px;
+  width: 36px;
+  min-width: 36px;
+}
+.cxLvTableComp .lyteExpTableWrapper:not(.lyteExpStickyTable) lyte-exptable-td.cxLvEditIconCol {
+  position: relative;
+}
+.cxLvCheckboxCol lyte-radiobutton {
+  margin-right: 0px;
+}
+.cxLvCheckboxWithLockCol.cxLvLockIconCol {
+  min-width: 60px !important;
+  width: 60px !important;
+}
+.cxLvTableComp #cxLvTableHeaderRow lyte-exptable-th.cxLvActEditIconCol {
+  padding: 9px 10px;
+  width: 70px;
+  min-width: 70px;
+}
+.cxLvTableComp #cxLvTableHeaderRow lyte-exptable-th.cxLvActivityCol {
+  width: 140px;
+  min-width: 140px;
+  padding: 9px 10px;
+}
+.cxLvTableComp .cxLvActivityCol.cxLvHideActivityCol,
+.cxLvTableComp #cxLvTableHeaderRow lyte-exptable-th.cxLvActivityCol.cxLvHideActivityCol {
+  width: 0px;
+  min-width: 0px;
+  max-width: 0px;
+  padding: 0px;
+  display: none;
+}
+.cxLvTableComp lyte-exptable-td {
+  padding: 9px 10px;
+  white-space: normal;
+  word-break: break-word;
+  box-sizing: border-box;
+  max-width: 200px;
+}
+.cxLvTableComp lyte-exptable-th {
+  min-width: 70px;
+}
+.cxLvTableComp lyte-exptable-th.cxLvAlphaSearchIncl {
+  min-width: 120px;
+}
+.cxLvAutoWidthTable.cxLvTableComp lyte-exptable-th {
+  min-width: 200px;
+}
+.cxLvTableComp lyte-exptable-td,
+.cxLvTableComp lyte-exptable-td lyte-text {
+  white-space: initial;
+  vertical-align: top;
+}
+.cxLvTableComp .cxLvWrapTextIncluded lyte-exptable-td,
+.cxLvTableComp .cxLvWrapTextIncluded lyte-exptable-td lyte-text {
+  white-space: nowrap;
+}
+.cxLvActivityColDiv {
+  display: flex;
+  align-items: center;
+}
+.cxLvActivityIcon {
+  width: 17px;
+  height: 17px;
+  margin-right: 5px;
+}
+.cxLvActEventIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -327px -253px;
+  mask-position: -327px -253px;
+  background-color: #333;
+}
+.cxLvActTaskIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -374px -252px;
+  mask-position: -374px -252px;
+  background-color: #333;
+}
+.cxLvActCallIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -351px -253px;
+  mask-position: -351px -253px;
+  background-color: #333;
+}
+.cxLvActivityColLink {
+  height: 18px;
+  line-height: 19px;
+  padding: 0 2px 0 5px;
+  font-size: 0.725rem;
+  border-radius: 2px;
+  color: var(--lyte-crux-list-view-activity-text-color);
+  display: block;
+  position: relative;
+  white-space: nowrap;
+}
+.cxLvActivityColLink::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  border-width: 9px;
+  border-style: solid inset solid solid;
+  left: calc(100% - 1px);
+}
+.cxLvActTodayTask {
+  background: var(--lyte-crux-list-view-activity-today-task-bg-color);
+}
+.cxLvActTodayTask::after {
+  border-color: var(--lyte-crux-list-view-activity-today-task-bg-color) transparent var(--lyte-crux-list-view-activity-today-task-bg-color) var(--lyte-crux-list-view-activity-today-task-bg-color);
+}
+.cxLvActOverdue {
+  background: var(--lyte-crux-list-view-activity-over-due-bg-color);
+}
+.cxLvActOverdue::after {
+  border-color: var(--lyte-crux-list-view-activity-over-due-bg-color) transparent var(--lyte-crux-list-view-activity-over-due-bg-color) var(--lyte-crux-list-view-activity-over-due-bg-color);
+}
+.cxLvActLaterTask {
+  background: var(--lyte-crux-list-view-activity-later-task-bg-color);
+}
+.cxLvActLaterTask::after {
+  border-color: var(--lyte-crux-list-view-activity-later-task-bg-color) transparent var(--lyte-crux-list-view-activity-later-task-bg-color) var(--lyte-crux-list-view-activity-later-task-bg-color);
+}
+.cxLvActivityTooltip {
+  font-size: 0.929rem;
+}
+.cxLvMoreOptionLongMenu lyte-menu-body {
+  min-width: 190px;
+}
+.cxLvMoreOptionsMenu lyte-menu-item {
+  padding: 8px 22px;
+}
+.cxLvCDefault {
+  cursor: default;
+}
+.cxLvMoreOptionsMenu.cxLvMoreOptionsActivityMenu {
+  transform: translate(0, -6px);
+  z-index: 10025;
+}
+.cxLvMoreOptionsMenu.cxLvMoreOptionsCallMenu {
+  z-index: 10030;
+}
+.cxLvAppointMenuItemSplit {
+  border-bottom: 1px solid var(--lyte-crux-list-view-menu-split-border-color);
+}
+.cxLvCustomButtonWrap {
+  top: 6px;
+  position: absolute;
+}
+.cxLvCustomButtonsMenuList {
+  max-height: 165px;
+}
+.cxLvLoaderWrap {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: none;
+  background: var(--lyte-crux-list-view-loader-over-lay-bg-color);
+  opacity: 0.7;
+}
+.cxLvTableLoader {
+  position: relative;
+  z-index: 1;
+  top: 50%;
+  left: 47%;
+  height: 22px;
+  width: 22px;
+  animation: cxLvTableLoaderAnim 0.6s infinite linear;
+  border: 2px solid var(--lyte-crux-list-view-loader-border-color);
+  border-top: 2px solid var(--lyte-crux-list-view-loader-gap-border-color);
+  border-radius: 50%;
+  display: block;
+}
+@keyframes cxLvTableLoaderAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.cxLvOnlineEntity {
+  position: relative;
+}
+.cxLvOnlineEntity::after {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 7px;
+  background: var(--lyte-crux-list-view-online-entity-bg-color);
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.cxLvEventColorWrap {
+  position: relative;
+}
+.cxLvEventColorSpan {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 14px;
+  z-index: 1;
+  left: -17px;
+  top: 4px;
+}
+.cxLvTaskSyncIcon {
+  width: 17px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -303px -255px;
+  mask-position: -303px -255px;
+  background-color: #333;
+}
+.cxLvEventTypeElemCont {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.cxLvEventTypeColorIndicator {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  top: 13px;
+  left: 0px;
+  position: absolute;
+}
+.cxLvNotFoundColor {
+  color: var(--lyte-crux-list-view-not-found-text-color);
+}
+.cxLvBestTimeTagList {
+  padding: 3px 5px;
+  margin-right: 5px;
+}
+.cxLvCampignTypeIcon {
+  vertical-align: middle;
+  width: 17px;
+  height: 16px;
+  margin-left: 8px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -280px -252px;
+  mask-position: -280px -252px;
+  background-color: #333;
+}
+.cxLvCampignTypeText {
+  max-width: calc(100% - 25px);
+}
+.cxLvColorAppliedPicklist {
+  display: inline-block;
+  padding: 3px 11px;
+  border: 1px solid var(--lyte-crux-list-view-color-picklist-border-color);
+  border-radius: 15px;
+  line-height: 16px;
+  word-break: break-word;
+  font-size: 0.857rem;
+  color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+  max-width: calc(100% - 25px);
+  vertical-align: top;
+}
+.cxLvColorAppliedPicklist.cxLvColorAppliedPKNone {
+  border: 1px solid transparent;
+  font-size: unset;
+  padding-left: 0px;
+}
+.cxLvCustPopFormElem {
+  display: flex;
+  align-items: center;
+}
+.cxLvCustPopFormDesc {
+  margin-top: 15px;
+}
+.cxLvCustPopLabel {
+  margin-right: 8px;
+  color: var(--lyte-crux-list-view-custom-popup-label-color);
+  width: 100px;
+  min-width: 100px;
+  text-align: right;
+}
+.cxLvPR {
+  position: relative;
+}
+.cxLvViewContainer lyte-exptable-th.cxLvSortAppliedFld:not(.cxLvAlphaSearchIncl) lyte-text.cxTableHeadingElem {
+  max-width: calc(100% - 20px);
+}
+.cxLvViewContainer lyte-exptable-th.cxLvAlphaSearchIncl.cxLvSortAppliedFld lyte-text.cxTableHeadingElem {
+  max-width: calc(100% - 64px);
+}
+.cxLvViewContainer lyte-exptable-th.cxLvAlphaSearchIncl lyte-text.cxTableHeadingElem {
+  max-width: calc(100% - 50px);
+}
+.cxLvTableComp .cxLvNameLinkColumn .link {
+  color: var(--lyte-crux-list-view-base-color);
+}
+.cxLvTableComp lyte-exptable-th.cxLvTextAreaElem {
+  min-width: 70px;
+  width: 250px;
+}
+.cxLvAutoWidthTable.cxLvTableComp lyte-exptable-th.cxLvTextAreaElem {
+  min-width: 250px;
+}
+.cxLvTableComp lyte-exptable-td.cxLvTextAreaElem {
+  max-width: 250px;
+}
+.cxLvAutoWidthTable.cxLvTableComp lyte-exptable-th.cxLvFixedLastCol,
+.cxLvTableComp lyte-exptable-th.cxLvFixedLastCol {
+  min-width: 40px;
+  max-width: 40px;
+  width: 40px;
+}
+.cxLvAutoWidthTable.cxLvTableComp lyte-exptable-th.cxLvTableTagElem {
+  min-width: 400px;
+}
+.cxLvTableComp lyte-exptable-th.cxLvTableTagElem {
+  width: 400px;
+  min-width: 150px;
+}
+.cxLvTableComp lyte-exptable-td .cxLvTableTagElem {
+  max-width: 400px;
+}
+crm-listview[cx-prop-content-overflow="true"] {
+  height: inherit;
+  overflow: auto;
+  display: block;
+}
+.cxLvRecordCount {
+  margin-left: 4px;
+}
+.cxLvLoadingDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cxLvLoader {
+  width: 32px;
+  height: 32px;
+  border-width: 5px;
+}
+.cxLvHeaderSortedColName {
+  margin-left: 3px;
+}
+.cxLvTableComp .cxLv_customBtnTd.cxLv_noCustomBtn {
+  width: 0px !important;
+  min-width: 0px !important;
+  padding: 0px !important;
+}
+.cxLvTableComp .cxLvNoManageLastCol {
+  width: 12px !important;
+  min-width: 12px !important;
+  padding: 0px !important;
+}
+.cxLvTableComp .cxLvTextAreaElem pre {
+  min-width: initial !important;
+  max-width: initial;
+  font-family: 'LatoRegular', sans-serif;
+}
+.cxLvTableComp .cxLvWrapTextIncluded .cxLvTextAreaElem pre {
+  white-space: nowrap !important;
+  max-width: inherit !important;
+  width: calc(100% - 25px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cxLvTableComp .cxLvTextAreaElem .showMoreAddedEvents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 18px;
+  border: 1px solid var(--lyte-crux-list-view-text-area-pop-toggle-btn-border-color);
+  background: var(--lyte-crux-list-view-text-area-pop-toggle-btn-bg-color);
+  border-radius: 4px;
+  cursor: pointer;
+  visibility: hidden;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.cxLvTableComp .cxLvTextAreaElem .showMoreAddedEvents::after {
+  content: '';
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -1px -2px;
+  width: 8px;
+  height: 4px;
+  display: inline-block;
+  position: absolute;
+}
+.cxLvWrapTextIncluded .cxLvTableRowHover .cxLvTextAreaElem .showMoreAddedEvents {
+  visibility: visible !important;
+}
+.cxLvTableComp .cxTableEmptyRow lyte-exptable-td {
+  height: 60px;
+}
+.cxLvTableComp .showMoreAddedEvents.cxLvDescBtnHide {
+  display: none !important;
+}
+.cxLvTableComp .cxTableCompNoResults {
+  position: absolute;
+  width: calc(100% - 10px);
+  top: 40px;
+  left: 5px;
+  padding: 20px;
+  z-index: 1;
+}
+.cxLvRecordCountLoader {
+  height: 10px;
+  width: 10px;
+  margin-top: 3px;
+  background-image: var(--lyte-crux-list-view-record-loader-bg-img);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cxLvViewContainer:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 35px;
+  background: var(--lyte-crux-list-view-table-border-color);
+  display: inline-block;
+  z-index: 15;
+  left: 0px;
+}
+.cxLvViewContainer lyte-exptablehead-resize::after {
+  background: var(--lyte-crux-list-view-resize-handle-bg-color);
+  right: 12px;
+  opacity: 1;
+  top: 6px;
+  height: 67%;
+  width: 1px;
+}
+.cxLvViewContainer lyte-exptablehead-resize:hover::after {
+  background-color: var(--lyte-crux-list-view-resize-handle-hover-bg-color);
+  height: 100%;
+  top: 0px;
+  width: 2px;
+}
+.cxLvViewContainer .lyteExpTableResizing lyte-exptable-th.resizeSelect lyte-exptablehead-resize {
+  height: 100vh;
+}
+.cxLvViewContainer .lyteExpTableResizing lyte-exptable-th.resizeSelect lyte-exptablehead-resize::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  right: 12px;
+  background: var(--lyte-crux-list-view-resize-handle-hover-bg-color);
+  height: 36px;
+  z-index: 1;
+}
+.cxLvViewContainer .lyteExpTableResizing lyte-exptable-th.resizeSelect lyte-exptablehead-resize::after {
+  height: 100%;
+  background: var(--lyte-crux-list-view-resize-handle-bg-color);
+  width: 1px;
+}
+.cxLvViewContainer .cxTableSortIcon {
+  top: 0px;
+}
+.cxLvLockIcon {
+  width: 14px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -165px -262px;
+  mask-position: -165px -262px;
+  background-color: #333;
+  vertical-align: top;
+  position: relative;
+  left: 1px;
+}
+.cxLvLockIconWithCB {
+  margin-left: 8px;
+}
+.cxLvVisionWaitingIcon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -119px -382px;
+  vertical-align: top;
+}
+.cxLvVisionProcessIcon {
+  width: 19px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -245px -361px;
+  mask-position: -245px -361px;
+  background-color: #333;
+  vertical-align: top;
+}
+.cxLvStopProcessIcon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -269px -362px;
+  mask-position: -269px -362px;
+  background-color: #333;
+  vertical-align: top;
+  position: relative;
+  left: 1px;
+}
+.cxLvVisionRejectIcon {
+  background-color: var(--lyte-crux-list-view-text-red-icon-bg-color);
+}
+.cxLvWaitingReviewIcon {
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -289px -361px;
+  mask-position: -289px -361px;
+  background-color: #333;
+  vertical-align: top;
+}
+.cxLvWaitingApprovalIcon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -310px -361px;
+  mask-position: -310px -361px;
+  background-color: #333;
+  vertical-align: top;
+}
+.cxLvDescMenuPopup .cxLvDescMenuBody {
+  padding: 15px 0px;
+}
+.cxLvDescMenuPopup .cxLvDescContDiv {
+  padding: 0px 43px 0px 15px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: 'LatoRegular', sans-serif;
+  line-height: 18px;
+}
+.cxLvDescMenuPopup .cxLvDescCloseIcon {
+  width: 18px;
+  height: 18px;
+  right: 9px;
+  top: 15px;
+  position: absolute;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  cursor: pointer;
+}
+.cxLvDescMenuPopup .cxLvDescCloseIcon:hover {
+  background: var(--lyte-crux-list-view-text-area-pop-close-btn-hover-bg-color);
+}
+.cxLvDescMenuPopup .cxLvDescCloseIcon::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -71px -118px;
+  mask-position: -71px -118px;
+  background-color: #333;
+}
+/*# sourceMappingURL=crux-list-view.css.map */

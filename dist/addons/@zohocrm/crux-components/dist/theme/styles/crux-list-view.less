@@ -1,0 +1,1335 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-list-view.variables.less";
+
+@import "../themes/default/less-variables/crux-list-view-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-list-view-variables.less";
+}
+
+crux-list-view{
+    .cxListViewCompMixin();
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: @h;
+}
+
+crux-list-view lyte-expresstable{
+    .cxListVwExpTableMixin();
+    z-index: 1;
+}
+
+crux-list-view .lyteExpStickyTable .lyteExpTableOrigTableInnerWrap{
+    border: none;
+}
+
+crux-list-view .lyteExpTableWrapper{
+    .cxLvExpTableWrapperMixin();
+    border-radius: @border-radius;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+crux-list-view .lyteExpOriginalTable{
+    .cxLvExpTableMixin();
+    table-layout: fixed;
+    min-width: @min-w;
+}
+
+crux-list-view .cxLvAutoWidthTable .lyteExpOriginalTable {
+    .cxLvAutoWidthExpTableMixin();
+    width: @w;
+    min-width: @min-w;
+}
+
+crux-list-view .cxLvAutoWidthTable .lyteExpOriginalTable {
+    .cxLvAutoWidthExpTableMixin();
+    width: @w;
+    min-width: @min-w;
+}
+
+.cxLvHeader{
+    .cxLvHeaderMixin();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: @padding;
+}
+
+.cxLvContWrapper{
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.cxLvViewContainer{
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+
+.cxLvHeaderTextSemiBold{
+    .cxLvHeaderTextSemiBoldMixin();
+    font-family: @font-family;
+}
+
+.cxLvSeparationCircle{
+    .cxLvSeparationCircleMixin();
+    display: block;
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    margin: @margin;
+    background: @bg;
+}
+
+.cxLvHeaderActionBtn{
+    .cxLvHeaderActionBtnMixin();
+    @{property-margin-left}: @margin-left;
+    position: relative;
+    cursor: pointer;
+}
+
+.cxLvHeaderActionBtn::after{
+    .cxLvHeaderActionBtnAfterMixin();
+    content: '';
+    display: block;
+    width: @w;
+    height: @h;
+    position: absolute;
+    bottom: @bottom;
+    @{property-left}: @left;
+    background: @bg;
+}
+
+.cxLvHeaderSelectAllBtn{
+    .cxLvHeaderSelectAllBtnMixin();
+    cursor: pointer;
+    color: @color;
+    @{property-margin-left}: @margin-left;
+}
+
+.cxLvHeadRightCont{
+    display: flex;
+    align-items: center;
+}
+
+.cxLvPageCountLabel{
+    .cxLvPageCountLabelMixin();
+    font-family: @font-family;
+    margin: @margin;
+}
+
+.cxLvPageCountDropdown lyte-drop-button{
+    .cxLvPageCountDropdownBtnMixin();
+    padding: @padding;
+    font-size: @font-size;
+}
+
+.cxLvPageCountDropItem{
+    .cxLvPageCountDropItemMixin();
+    padding: @padding;
+    font-size: @font-size;
+}
+
+.cxLvPageCountDropItem[selected="true"]::before{
+    .cxLvPageCountSelDropItemBeforeMixin();
+    top: @top;
+    bottom: @bottom;
+    margin: @margin;
+}
+
+.cxListVwPartialselect,
+.cxListVwCustomCheckBoxChecked,
+.cxListVwCustomCheckBox{
+    .cxListVwCustomCheckBoxMixin();
+    border: @border;
+    background: @bg;
+    box-sizing: border-box;
+    position: relative;
+    width: @w;
+    height: @h;
+    display: inline-block;
+    border-radius: @border-radius;
+    top: @top;
+}
+
+.cxLvTableComp lyte-checkbox:hover .cxListVwCustomCheckBox{
+    .cxListVwCustomCheckBoxHoverMixin();
+    border-color: @border-color;
+}
+
+.cxLvTableComp lyte-checkbox input:focus + .cxListVwCustomCheckBox{
+    .cxListVwCustomCheckBoxFocusMixin();
+    border-color: @border-color;
+}
+
+.cxListVwCustomCheckBoxChecked{
+    .cxListVwCustomCheckBoxCheckedMixin();
+    border-color: @border-color;
+    background: @bg;
+}
+
+.cxListVwCustomCheckBoxChecked::after{
+    .cxListVwCustomCheckBoxCheckedAfterMixin();
+    content: '';
+    display: block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    position: absolute;
+    inset: @inset;
+    margin: @margin;
+}
+
+.cxListVwPartialselect::after{
+    .cxListVwPartialselectAfterMixin();
+    content: '';
+    display: block;
+    position: absolute;
+    width: @w;
+    height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    inset: @inset;
+    margin: @margin;
+}
+
+
+.cxLvRecPerPageDd lyte-dropdown.cxBoxDropdown lyte-drop-button,
+.cxLvRecPerPageDd .cxFakeDropButton{
+    .cxLvRecPerPageDdBtnMixin();
+    padding: @padding;
+    border-radius: @border-radius;
+    font-size: @font-size;
+}
+
+.cxLvRecPerPageDd lyte-dropdown.cxBoxDropdown .lyteDropdownLabel,
+.cxLvRecPerPageDd .cxFakeDropdownLabel{
+    .cxLvRecPerPageDdLabelMixin();
+    font-size: @font-size;
+}
+
+.cxLvRecPerPageDropBox.cxDropbox lyte-drop-item{
+    .cxLvRecPerPageDropBoxItemMixin();
+    font-size: @font-size;
+    padding: @padding;
+}
+
+.cxLvRecPerPageDropBox lyte-drop-item[selected=true]::before{
+    .cxLvRecPerPageDropBoxIconMixin();
+    top: @top;
+    bottom: @bottom;
+    margin: @margin;
+    @{property-left}: @left;
+    transform: @transform;
+}
+
+.cxLvTableManageMenuBtn{
+    .cxLvTableManageMenuBtnMixin();
+    // display: block;
+    width: @w;
+    height: @h;
+    position: absolute;
+    @{property-border-left}: @border-left;
+    @{property-right}: @right;
+    top: @top;
+    z-index: @z-index;
+    background: @bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: @border-radius;
+}
+
+.cxLvTableManageMenuBtn:hover{
+    .cxLvTableManageMenuBtnHoverMixin();
+    background: @bg;
+}
+
+.cxLvTableManageMenuBtn.lyteMenuSelected{
+    .cxLvTableManageMenuBtnSelMixin();
+    box-shadow: @box-shadow;
+    background: @bg;
+}
+
+.cxLvShowOverlay{
+    .cxLvShowOverlayMixin();
+    pointer-events: none;
+    opacity: @opacity;
+}
+
+.cxLvTableManageMenuBtnIcon{
+    .cxLvTableManageMenuBtnIconMixin();
+    display: block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.lyteExpStickyTable .cxLvTableRowHover lyte-exptable-td.lyteFixedColumn,
+.cxLvTableRowHover lyte-exptable-td.lyteFixedColumn,
+.cxLvTableRowHover lyte-exptable-td{
+    .cxLvTableRowHoverTdMixin();
+    background: @bg;
+}
+
+.lyteExpStickyTable .cxLvTableRowSelected lyte-exptable-td.lyteFixedColumn,
+.cxLvTableRowSelected lyte-exptable-td.lyteFixedColumn,
+.cxLvTableRowSelected lyte-exptable-td{
+    .cxLvTableRowSelectedTdMixin();
+    border-color: @border-color;
+    background: @bg;
+}
+
+.cxLvUserSelNone{
+    user-select: none;
+}
+
+.cxLvDNImp{
+    display: none !important;
+}
+
+.cxLvEditIconWrapCont{
+    .cxLvEditIconWrapContMixin();
+    // position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    visibility: hidden;
+}
+
+.cxLvTableRowHover .cxLvEditIconWrapCont{
+    visibility: visible;
+}
+
+.cxLvTableIconWrap{
+    .cxLvTableIconWrapMixin();
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inset: @inset;
+    margin: @margin;
+    cursor: pointer;
+}
+
+.cxLvTableIconWrap::after{
+    .cxLvTableIconWrapEffectMixin();
+    content: '';
+    display: block;
+    position: absolute;
+    width: @w;
+    height: @h;
+    border: @border;
+    background: @bg;
+    transform: @transform;
+    transition: @trasition;
+    border-radius: @border-radius;
+}
+
+.lyteMenuSelected.cxLvTableIconWrap::after,
+.cxLvTableIconWrap:hover::after{
+    .cxLvTableIconWrapHoverEffectMixin();
+    transform: @transform;
+}
+
+.cxLvMoreIcon{
+    .cxLvMoreIconMixin();
+    display: block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    transform: @transform;
+    z-index: @z-index;
+}
+
+.cxLvEditIcon{
+    .cxLvEditIconMixin();
+    display: block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    z-index: @z-index;
+}
+
+.cxLvTickIcon{
+    .cxLvTickIconMixin();
+    display: block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    z-index: @z-index;
+}
+
+// .cxLvActEditIconWrap .cxLvTableIconWrap:not(:last-child){
+//     .cxLvActEditIconsMixin();
+//     @{property-margin-right}: @margin-right;
+// }
+
+.cxLvTableIconWrap.cxLvActEditFirstIcon{
+    .cxLvActEditFirstIconMixin();
+    inset: @inset;
+    margin: @margin;
+    top: @top;
+    bottom: @bottom;
+    @{property-left}: @left;
+}
+
+.cxLvTableIconWrap.cxLvActEditSecondIcon{
+    .cxLvActEditSecondIconMixin();
+    inset: @inset;
+    margin: @margin;
+    top: @top;
+    bottom: @bottom;
+    @{property-left}: @left;
+}
+
+.cxLvActEditSecondIcon::before{
+    .cxLvActEditSecondIconBeforeMixin();
+    content:'';
+    display: block;
+    position: absolute;
+    width: @w;
+    height: @h;
+    inset: @inset;
+    margin: @margin;
+    // background: @bg;
+}
+
+.cxLvMangeColumnModalContent{
+    .cxLvMangeColumnModalContentMixin();
+    max-height: @max-h;
+}
+
+.cxLvAlphaSortBtn{
+    .cxLvAlphaSortBtnMixin();
+    font-size: @font-size;
+    padding: @padding;
+    border-radius: @border-radius;
+    // background: @bg;
+    border: @border;
+    cursor: pointer;
+    @{property-margin-left}: @margin-left;
+    position: relative;
+    font-family: @font-family;
+    font-weight: @font-weight;
+}
+
+.cxLvAlphaSortBtn.lyteMenuSelected,
+.cxLvAlphaSortBtn.cxLvAlphaSortBtnSel,
+.cxLvAlphaSortBtn:hover{
+    .cxLvAlphaSortBtnHoverMixin();
+    background: @bg;
+}
+
+.cxLvAlphaSortBtn.lyteMenuSelected,
+.cxLvAlphaSortBtn.cxLvAlphaSortBtnSel{
+    .cxLvAlphaSortBtnSelMixin();
+    border-color: @border-color;
+}
+
+.cxLvAlphaSortBtn.cxLvAlphaSortBtnSel .cxLvAlphaSearch{
+    .cxLvAlphaSearchMixin();
+    @{property-padding-right}: @padding-right;
+}
+
+.cxLvAlphaSortEdit{
+    .cxLvAlphaSortEditMixin();
+    position: absolute;
+    top: @top;
+    @{property-right}: @right;
+    width: @w;
+    height: @h;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: @border-radius;
+}
+
+.cxLvSortCloseIcon,
+.cxLvAlphaSortEditIcon{
+    .cxLvAlphaSortEditIconMixin();
+    display: block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxLvAlphaSortEdit:hover{
+    .cxLvAlphaSortEditHoverMixin();
+    background: @bg;
+}
+
+.cxLvMoreOptDropdownIcon,
+.cxLvAlphaSortBtnDdIcon{
+    .cxLvAlphaSortBtnDdIconMixin();
+    display: block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    position: absolute;
+    top: @top;
+    bottom: @bottom;
+    margin: @margin;
+    @{property-right}: @right;
+}
+
+.cxLvMoreOptDropdownIcon{
+    .cxLvMoreOptDropdownIconMixin();
+    transform: @transform;
+    @{property-right}: @right;
+}
+
+.cxLvAlphaSortMenu{
+    .cxLvAlphaSortMenuMixin();
+    min-width: @min-w;
+}
+
+.cxLvAlphaSortMenuBody lyte-menu-item{
+    .cxLvAlphaSortMenuItemMixin();
+    padding: @padding;
+    justify-content: center;
+} 
+
+.cxLvAlphaSortMenuBody .cxLvAlphaSortMenuSel{
+    .cxLvAlphaSortMenuSelMixin();
+    color: @color;
+    pointer-events: none;
+}
+
+.cxLvSortMenuBody lyte-menu-item{
+    .cxLvSortMenuItemMixin();
+    padding: @padding;
+}
+
+.cxLvDisabled{
+    .cxLvDisabledMixin();
+    opacity: @opacity;
+    cursor: default;
+}
+
+
+.cxLvSortMenuIcon{
+    .cxLvSortMenuIconMixin();
+    position: absolute;
+    top: @top;
+    bottom: @bottom;
+    @{property-left}: @left;
+    margin: @margin; 
+}
+.cxLvSortMenuIcon.cxMaskIcon,.cxLvSortMenuIcon.cxUnmaskIcon{
+    left: 8px;
+}
+
+.cxLvSortAscIcon{
+    .cxLvSortAscIconMixin();
+    display: block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxLvSortDesIcon{
+    .cxLvSortDesIconMixin();
+    transform: @transform;
+}
+
+.cxLvSortPinIcon{
+    .cxLvSortPinIconMixin();
+    display: block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    @{property-left}: @left;
+}
+
+.cxLvSortUnpinIcon{
+    .cxLvSortUnpinIconMixin();
+    display: block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    @{property-left}: @left;
+}
+
+// .cxLvTableManagePopup .lytePopover{
+//     .cxLvTableManagePopupMixin();
+//     padding: @padding;
+//     border-radius: @border-radius;
+//     min-width: @min-w;
+//     border: @border;   
+// }
+
+// .cxLvTableManagePopup .cxLvTableManagePopLiCont{
+//     .cxLvTableManagePopLiContMixin();
+//     padding: @padding;
+//     margin: @margin;
+//     list-style: none;
+// }
+
+// .cxLvTableManagePopLiCont .cxLvTableManagePopLi{
+//     .cxLvTableManagePopLiMixin();
+//     padding: @padding;
+//     cursor: pointer;
+// }
+
+// .cxLvTableManagePopLiCont .cxLvTableManagePopLi:hover{
+//     .cxLvTableManagePopLiHoverMixin();
+//     background: @bg;
+// }
+
+.cxLvTableManageMenuBody .cxLvTableManagePopLiDisabled{
+    .cxLvTableManagePopLiDisabledMixin();
+    opacity: @opacity;
+    pointer-events: none;
+    cursor: default;
+    background: @bg;
+}
+
+.cxLvTableComp #cxLvTableHeaderRow lyte-exptable-th{
+    .cxLvTableHeaderRowThMixin();
+    padding: @padding;
+    border-bottom: @border-bottom;
+}
+
+.cxLvTableComp #cxLvTableHeaderRow lyte-exptable-th.cxLvEditIconCol,
+.cxLvTableComp #cxLvTableHeaderRow lyte-exptable-th.cxLvCheckboxCol{
+    .cxLvTableHeaderRowFixedThMixin();
+    padding: @padding;
+    width: @w;
+    min-width: @min-w;
+}
+
+.cxLvTableComp .lyteExpTableWrapper:not(.lyteExpStickyTable) lyte-exptable-td.cxLvEditIconCol{
+  position:relative;
+}
+
+.cxLvCheckboxCol lyte-radiobutton{
+    .cxLvCheckBoxColRadioBtnMixin();
+    @{property-margin-right}: @margin-right;
+}
+
+.cxLvCheckboxWithLockCol.cxLvLockIconCol{
+    .cxLvLockIconColMixin();
+    min-width: @min-w;
+    width: @w;
+}
+
+.cxLvTableComp #cxLvTableHeaderRow lyte-exptable-th.cxLvActEditIconCol{
+    .cxLvActEditIconColMixin();
+    padding: @padding;
+    width: @w;
+    min-width: @min-w;
+}
+
+.cxLvTableComp #cxLvTableHeaderRow lyte-exptable-th.cxLvActivityCol{
+    .cxLvActivityColMixin();
+    width: @w;
+    min-width: @min-w;
+    padding: @padding;
+}
+
+.cxLvTableComp .cxLvActivityCol.cxLvHideActivityCol,
+.cxLvTableComp #cxLvTableHeaderRow lyte-exptable-th.cxLvActivityCol.cxLvHideActivityCol{
+    .cxLvHideActivityColMixin();
+    width: @w;
+    min-width: @min-w;
+    max-width: @max-w;
+    padding: @padding;
+    display: none;
+}
+
+
+.cxLvTableComp lyte-exptable-td{
+    .cxLvTableCompTdMixin();
+    padding: @padding;
+    // line-height: @line-height;
+    white-space: normal;
+    word-break: break-word;
+    box-sizing: border-box;
+    max-width: @max-w;
+}
+
+.cxLvTableComp lyte-exptable-th{
+    .cxLvTableCompHeadElemMixin();
+    // width: @w;
+    min-width: @min-w;
+}
+
+.cxLvTableComp lyte-exptable-th.cxLvAlphaSearchIncl{
+    .cxLvTableAlphaSearchElemHeadMixin();
+    min-width: @min-w;
+}
+
+.cxLvAutoWidthTable.cxLvTableComp lyte-exptable-th{
+    .cxLvAutoWidthTableThMixin();
+    min-width: @min-w;
+}
+
+.cxLvTableComp lyte-exptable-td,
+.cxLvTableComp lyte-exptable-td lyte-text{
+    white-space: initial;
+    vertical-align: top;
+}
+
+.cxLvTableComp .cxLvWrapTextIncluded lyte-exptable-td,
+.cxLvTableComp .cxLvWrapTextIncluded lyte-exptable-td lyte-text{
+    white-space: nowrap;
+}
+
+.cxLvActivityColDiv{
+    display: flex;
+    align-items: center;
+}
+
+.cxLvActivityIcon{
+    .cxLvActivityIconMixin();
+    width: @w;
+    height: @h;
+    @{property-margin-right}: @margin-right;
+}
+
+.cxLvActEventIcon{
+    .cxLvActEventIconMixin();
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxLvActTaskIcon{
+    .cxLvActTaskIconMixin();
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxLvActCallIcon{
+    .cxLvActCallIconMixin();
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxLvActivityColLink{
+    .cxLvActivityColLinkMixin();
+    height: @h;
+    line-height: @line-height;
+    padding: @padding;
+    font-size: @font-size;
+    border-radius: @border-radius;
+    color: @color;
+    display: block;
+    position: relative;
+    white-space: nowrap;
+}
+
+.cxLvActivityColLink::after{
+    .cxLvActivityColLinkAfterMixin();
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border-width: @border-width;
+    border-style: @border-style;
+    @{property-left}: @left;
+}
+
+.cxLvActTodayTask{
+    .cxLvActTodayTaskMixin();
+    background: @bg;
+}
+
+.cxLvActTodayTask::after{
+    .cxLvActTodayTaskAfterMixin();
+    border-color: @border-color;
+}
+
+.cxLvActOverdue{
+    .cxLvActOverdueMixin();
+    background: @bg;
+}
+
+.cxLvActOverdue::after{
+    .cxLvActOverdueAfterMixin();
+    border-color: @border-color;
+}
+
+.cxLvActLaterTask{
+    .cxLvActLaterTaskMixin();
+    background: @bg;
+}
+
+.cxLvActLaterTask::after{
+    .cxLvActLaterTaskAfterMixin();
+    border-color: @border-color;
+}
+
+.cxLvActivityTooltip{
+    .cxLvActivityTooltipMixin();
+    font-size: @font-size;
+}
+
+.cxLvMoreOptionLongMenu lyte-menu-body{
+    .cxLvMoreOptionsMenuBodyMixin();
+    min-width: @min-w;
+}
+
+.cxLvMoreOptionsMenu lyte-menu-item{
+    .cxLvMoreOptionsMenuItemsMixin();
+    padding: @padding;
+}
+
+.cxLvCDefault{
+    cursor: default;
+}
+
+.cxLvMoreOptionsMenu.cxLvMoreOptionsActivityMenu{
+    .cxLvMoreOptionsActivityMenuMixin();
+    transform: @transform;
+    z-index: @z-index;
+}
+
+.cxLvMoreOptionsMenu.cxLvMoreOptionsCallMenu{
+    .cxLvMoreOptionsCallMenuMixin();
+    z-index: @z-index;
+}
+
+.cxLvAppointMenuItemSplit{
+    .cxLvAppointMenuItemSplitMixin();
+    border-bottom: @border-bottom;
+}
+
+.cxLvCustomButtonWrap{
+    .cxLvCustomButtonWrapMixin();
+    top: @top;
+    position: absolute;
+}
+
+.cxLvCustomButtonsMenuList{
+    .cxLvCustomButtonsMenuListMixin();
+    max-height: @max-h;
+}
+
+.cxLvLoaderWrap {
+    .cxLvLoaderWrapMixin();
+    position: absolute;
+    top: @top;
+    @{property-left}: @left;
+    width: @w;
+    height: @h;
+    z-index: @z-index;
+    display: none;
+    background : @bg;
+    opacity : @opacity;
+}
+
+.cxLvTableLoader {
+    .cxLvTableLoaderMixin();
+    position: relative;
+    z-index: @z-index;
+    top: @top;
+    @{property-left}: @left;
+    height: @h;
+    width: @w;
+    animation: @animation;
+    border: @border;
+    border-top: @border-top;
+    border-radius: @border-radius;
+    display: block;
+}
+
+@keyframes cxLvTableLoaderAnim {
+    0% {
+		transform: rotate(0deg);
+	}
+	100% {
+        transform: rotate(360deg);
+	}
+}
+
+.cxLvOnlineEntity{
+    position: relative;
+}
+
+.cxLvOnlineEntity::after{
+    .cxLvOnlineEntityAfterMixin();
+    content: '';
+    display: block;
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    background: @bg;
+    position: absolute;
+    @{property-right}: @right;
+    top: @top;
+}
+
+.cxLvEventColorWrap{
+    position: relative;
+}
+
+.cxLvEventColorSpan{
+    .cxLvEventColorSpanMixin();
+    content: '';
+    display: block;
+    position: absolute;
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    z-index: @z-index;
+    @{property-left}: @left;
+    top: @top;
+}
+
+.cxLvTaskSyncIcon{
+    .cxLvTaskSyncIconMixin();
+    display: inline-block;
+    width: @w;
+    height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxLvEventTypeElemCont{
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.cxLvEventTypeColorIndicator{
+    .cxLvEventTypeColorIndicatorMixin();
+    display: block;
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    top: @top;
+    @{property-left}: @left;
+    position: absolute;
+}
+
+.cxLvNotFoundColor{
+    .cxLvNotFoundColorMixin();
+    color: @color;
+}
+
+.cxLvBestTimeTagList{
+    .cxLvBestTimeTagListMixin();
+    padding: @padding;
+    @{property-margin-right}: @margin-right;
+}
+
+.cxLvCampignTypeIcon{
+    .cxLvCampignTypeIconMixin();
+    display: inline-block;
+    vertical-align: middle;
+    width: @w;
+    height: @h;
+    @{property-margin-left}: @margin-left;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxLvCampignTypeText{
+    .cxLvCampignTypeTextMixin();
+    max-width: @max-w;
+}
+
+.cxLvColorAppliedPicklist{
+    .cxLvColorAppliedPicklistMixin();
+    display: inline-block;
+    padding: @padding;
+    border: @border;
+    border-radius: @border-radius;
+    line-height: @line-height;
+    word-break: break-word;
+    font-size: @font-size;
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    max-width: @max-w;
+    vertical-align: top;
+}
+
+.cxLvColorAppliedPicklist.cxLvColorAppliedPKNone{
+    .cxLvColorAppliedPKNoneMixin();
+    border: @border;
+    font-size: @font-size;
+    @{property-padding-left}: @padding-left;
+}
+
+.cxLvCustPopFormElem{
+    display: flex;
+    align-items: center;
+}
+
+.cxLvCustPopFormDesc{
+    .cxLvCustPopFormDescMixin();
+    margin-top: @margin-top;
+}
+
+.cxLvCustPopLabel{
+    .cxLvCustPopLabelMixin();
+    @{property-margin-right}: @margin-right;
+    color: @color;
+    width: @w;
+    min-width: @min-w;
+    text-align: @property-right;
+}
+
+.cxLvPR{
+    position: relative;
+}
+
+.cxLvViewContainer lyte-exptable-th.cxLvSortAppliedFld:not(.cxLvAlphaSearchIncl) lyte-text.cxTableHeadingElem {
+    .cxLvSortAppliedFldHeadMixin();
+	max-width: @max-w;
+}
+.cxLvViewContainer lyte-exptable-th.cxLvAlphaSearchIncl.cxLvSortAppliedFld lyte-text.cxTableHeadingElem {
+    .cxLvAlphaSearchInclSortApldHeadElemMixin();
+	max-width: @max-w;
+}
+.cxLvViewContainer lyte-exptable-th.cxLvAlphaSearchIncl lyte-text.cxTableHeadingElem {
+    .cxLvAlphaSearchInclHeadElemMixin();
+	max-width: @max-w;
+}
+
+.cxLvTableComp .cxLvNameLinkColumn .link{
+    .cxLvNameLinkColumnTextMixin();
+    color: @color;
+}
+
+.cxLvTableComp lyte-exptable-th.cxLvTextAreaElem{
+    .cxLvTextAreaElemThMixin();
+    min-width: @min-w;
+    width: @w;
+}
+
+.cxLvAutoWidthTable.cxLvTableComp lyte-exptable-th.cxLvTextAreaElem{
+    .cxLvAutoWTextAreaElemThMixin();
+    min-width: @min-w;
+}
+
+.cxLvTableComp lyte-exptable-td.cxLvTextAreaElem{
+    .cxLvTextAreaElemTdMixin();
+    max-width: @max-w;
+}
+
+.cxLvAutoWidthTable.cxLvTableComp lyte-exptable-th.cxLvFixedLastCol,
+.cxLvTableComp lyte-exptable-th.cxLvFixedLastCol{
+    .cxLvFixedLastColMixin();
+    min-width: @min-w;
+    max-width: @max-w;
+    width: @w;
+}
+
+.cxLvAutoWidthTable.cxLvTableComp lyte-exptable-th.cxLvTableTagElem{
+    .cxLvTableTagElemAutoThMixin();
+    min-width: @min-w;
+}
+
+.cxLvTableComp lyte-exptable-th.cxLvTableTagElem{
+    .cxLvTableTagElemThMixin();
+    width: @w;
+    min-width: @min-w;
+}
+
+.cxLvTableComp lyte-exptable-td .cxLvTableTagElem{
+    .cxLvTableTagElemTdMixin();
+    max-width: @max-w;
+}
+crm-listview[cx-prop-content-overflow="true"] {
+	height: inherit;
+	overflow: auto;
+	display: block;
+}
+
+.cxLvRecordCount{
+    .cxLvRecordCountMixin();
+    @{property-margin-left}: @margin-left;
+}
+
+.cxLvLoadingDiv{
+    .cxLvLoadingDivMixin();
+	width: @w;
+	height: @h;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cxLvLoader{
+    .cxLvLoaderMixin();
+    width: @w;
+    height: @h;
+    border-width: @border-width;
+}
+
+.cxLvHeaderSortedColName{
+    .cxLvHeaderSortedColNameMixin();
+    @{property-margin-left}: @margin-left;
+}
+
+.cxLvTableComp .cxLv_customBtnTd.cxLv_noCustomBtn{
+    .cxLvTableCompNoCustBtnMixin();
+    width: @w;
+    min-width: @min-w;
+    padding: @padding;
+}
+
+.cxLvTableComp  .cxLvNoManageLastCol{
+    .cxLvNoManageLastColMixin();
+    width: @w;
+    min-width: @min-w;
+    padding: @padding;
+}
+
+.cxLvTableComp .cxLvTextAreaElem pre{
+    .cxLvTextAreaElemPreMixin();
+    min-width: @min-w;
+    max-width: @max-w;
+    font-family: @font-family;
+}
+
+
+.cxLvTableComp .cxLvWrapTextIncluded .cxLvTextAreaElem pre{
+    .cxLvTextAreaElemWrapPreMixin();
+    white-space: nowrap !important;
+    max-width: @max-w;
+    width: @w;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cxLvTableComp .cxLvTextAreaElem .showMoreAddedEvents{
+    .cxLvTextAreaElemShowMoreBtnMixin();
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    width: @w;
+    height: @h;
+    border: @border;
+    background: @bg;
+    border-radius: @border-radius;
+    cursor: pointer;
+    visibility: hidden;
+    position: absolute;
+    // @{property-margin-left}: @margin-left;
+    @{property-right}: @right;
+    top: @top;
+}
+
+.cxLvTableComp .cxLvTextAreaElem .showMoreAddedEvents::after{
+    .cxLvTextAreaElemShowMoreBtnIconMixin();
+    content: '';
+    background-image: @bg-image;
+    background-position: @bg-position;
+    width: @w;
+    height: @h;
+    display: inline-block;
+    position: absolute;
+}
+
+.cxLvWrapTextIncluded .cxLvTableRowHover .cxLvTextAreaElem .showMoreAddedEvents{
+    visibility: visible !important;
+}
+
+.cxLvTableComp .cxTableEmptyRow lyte-exptable-td{
+    .cxLvTableCompEmptyRowTdMixin();
+    height: @h;
+}
+
+.cxLvTableComp .showMoreAddedEvents.cxLvDescBtnHide{
+    display: none !important;
+}
+
+.cxLvTableComp .cxTableCompNoResults{
+    .cxLvTableCompNoResultMixin();
+    position: absolute;
+    width: @w;
+    top: @top;
+    @{property-left}: @left;
+    padding: @padding;
+    z-index: @z-index;
+}
+
+.cxLvRecordCountLoader{
+    .cxLvRecordCountLoaderMixin();
+    height: @h;
+    width: @w;
+    margin-top: @margin-top;
+    background-image: @bg-img;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cxLvViewContainer:after{
+    .cxLvViewContainerMixin();
+    content: '';
+    width: @w;
+    height: @h;
+    position: absolute;
+    top: @top;
+    background: @bg;
+    display: inline-block;
+    z-index: @z-index;
+    @{property-left}: @left;
+}
+
+.cxLvViewContainer lyte-exptablehead-resize::after{
+    .cxLvViewTableResizeHandleMixin();
+    background: @bg;
+    @{property-right}: @right;
+    opacity: @opacity;
+    top: @top;
+    height: @h;
+    width: @w;
+}
+
+.cxLvViewContainer lyte-exptablehead-resize:hover::after{
+    .cxLvViewTableResizeHandleHoverMixin();
+    background-color: @bg-color;
+    height: @h;
+    top: @top;
+    width: @w;
+}
+
+.cxLvViewContainer .lyteExpTableResizing lyte-exptable-th.resizeSelect lyte-exptablehead-resize{
+    .cxLvViewTableResizeHeadHoverMixin();
+    height: @h;
+}
+
+.cxLvViewContainer .lyteExpTableResizing lyte-exptable-th.resizeSelect lyte-exptablehead-resize::before {
+    .cxLvViewTableResizeHandleBeforeMixin();
+    content: '';
+    position: absolute;
+    width: @w;
+    @{property-right}: @right;
+    background: @bg;
+    height: @h;
+    z-index: @z-index;
+}
+
+.cxLvViewContainer .lyteExpTableResizing lyte-exptable-th.resizeSelect lyte-exptablehead-resize::after{
+    .cxLvViewTableResizeHandleAfterMixin();
+    height: @h;
+    background: @bg;
+    width: @w;
+}
+
+.cxLvViewContainer .cxTableSortIcon{
+    .cxLvViewTableSortIconMixin();
+    top: @top;
+}
+
+
+.cxLvLockIcon{
+    .cxLvLockIconMixin();
+    display: inline-block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    vertical-align: top;
+    position: relative;
+    @{property-left}: @left;
+}
+
+.cxLvLockIconWithCB{
+    .cxLvLockIconWithCBMixin();
+    @{property-margin-left}: @margin-left;
+}
+
+.cxLvVisionWaitingIcon{
+    .cxLvVisionWaitingIconMixin();
+    display: inline-block;
+    width: @w;
+	height: @h;
+    background-image: @bg-img;
+    background-position: @bg-pos;
+    vertical-align: top;
+}
+
+.cxLvVisionProcessIcon{
+    .cxLvVisionProcessIconMixin();
+    display: inline-block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    vertical-align: top;
+}
+
+.cxLvStopProcessIcon{
+    .cxLvStopProcessIconMixin();
+    display: inline-block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    vertical-align: top;
+    position: relative;
+    @{property-left}: @left;
+}
+
+.cxLvVisionRejectIcon{
+    .cxLvVisionRejectIconMixin();
+    background-color: @bg-color;
+}
+
+.cxLvWaitingReviewIcon{
+    .cxLvWaitingReviewIconMixin();
+    display: inline-block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    vertical-align: top;
+}
+
+.cxLvWaitingApprovalIcon{
+    .cxLvWaitingApprovalIconMixin();
+    display: inline-block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    vertical-align: top;
+}
+
+.cxLvDescMenuPopup .cxLvDescMenuBody{
+    .cxLvDescMenuBodyMixin();
+    padding: @padding;
+}
+
+.cxLvDescMenuPopup .cxLvDescContDiv{
+    .cxLvDescContDivMixin();
+    padding: @padding;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: @font-family;
+    line-height: @line-height;
+}
+
+.cxLvDescMenuPopup .cxLvDescCloseIcon{
+    .cxLvDescCloseIconMixin();
+    width: @w;
+    height: @h;
+    @{property-right}: @right;
+    top: @top;
+    position: absolute;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: @border-radius;
+    cursor: pointer;
+}
+
+.cxLvDescMenuPopup .cxLvDescCloseIcon:hover{
+    .cxLvDescCloseIconHoverMixin();
+    background: @bg;
+}
+
+.cxLvDescMenuPopup .cxLvDescCloseIcon::after{
+    .cxLvDescCloseIconAfterMixin();
+    content: '';
+    display: inline-block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}

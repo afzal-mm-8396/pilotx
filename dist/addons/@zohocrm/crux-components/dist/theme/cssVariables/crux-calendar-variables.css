@@ -1,0 +1,51 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-calendar-popup-box-shadow-color: rgba(0, 0, 0, 0.3);
+  --lyte-crux-calendar-popup-border-color: #CACACA;
+  --lyte-crux-calendar-hover-border-color: #D9E2EA;
+  --lyte-crux-calendar-hover-bg-color: #E8F2FC;
+  --lyte-crux-calendar-sel-bg-color: #338CF0;
+  --lyte-crux-calendar-sel-border-color: #338CF0;
+  --lyte-crux-calendar-sel-color: #fff;
+  --lyte-crux-calendar-today-bg-color: #EDF6FF;
+  --lyte-crux-calendar-today-color: #338CF0;
+  --lyte-crux-calendar-today-border-color: #338CF0;
+  --lyte-crux-calendar-nav-head-bg-color: #F5F7FA;
+  --lyte-crux-calendar-year-cont-border-color: #E5E8EF;
+  --lyte-crux-calendar-nav-icon-color: #111;
+}
+/*# sourceMappingURL=crux-calendar-variables.css.map */

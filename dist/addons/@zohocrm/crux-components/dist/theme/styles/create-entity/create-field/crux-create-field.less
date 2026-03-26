@@ -1,0 +1,277 @@
+@import "../../../themes/default/global/global.variables.less";
+
+@import "../../../themes/default/crux-elements/create-entity/create-field/crux-create-field.variables.less";
+
+@import "../../../themes/default/less-variables/create-entity/crux-create-field-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../../themes/default/css-variables/create-entity/crux-create-field-rootvar.less";
+}
+
+crux-create-field {
+    .cruxCreateFieldMixin();
+    display: block;
+     margin-bottom: @margin-bottom ;
+}
+
+.cruxFormFieldParentContainer .cxcreateFormComponentRow {
+    .cxcreateFormComponentRowMixin();
+    position: relative;
+    width: @w;
+    padding: @padding;
+    border: none;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.cruxFormFieldParentContainer template {
+    display:none !important;
+}
+// .cxFormFirstNameDiv crux-picklist-component .cxElementValue {
+//     min-width: 95px;
+//     max-width: 95px;
+// }
+.cxFormFirstNameDiv crux-picklist-component {
+    min-width: 95px;
+    max-width: 95px;
+}
+.cxSalutationElemWrapper {
+    display: flex;
+}
+.cxSalutationElemWrapper .cxElementValue .cxElementValue {
+    min-width: 0;
+    max-width: 0;
+}
+.cxSalutationElemWrapper {
+    .cxSalutationElemWrapperMixin();
+    display: flex;
+    min-width: 295px;
+    max-width: 390px;
+    transition: border .3s ease-out, box-shadow .3s ease-out;
+    position: relative;
+    background: @bg;
+    box-sizing: border-box;
+    border: 1px solid @border;
+    border-radius: 6px;
+}
+.cxSalutationElemWrapper:hover {
+    .cxSalutationEleWrapHoverMixin();
+    border: 1px solid @border;
+}
+.cxSalutationElemWrapper.cxSalutationFocused {
+    .cxSalutationWrapFocusMixin();
+    box-shadow: 0 0 6px @boxShadow;
+    border: 1px solid @border;
+}
+.cxSalutationElemWrapper lyte-dropdown:not([lt-prop-type="multiple"]):not([lt-prop-type="multisearch"]) lyte-drop-button,
+.cxSalutationElemWrapper .cxBoxInput.lyteInputBox .lyteField {
+    .cxSalutationElemWrapperDropDownMixin();
+    // @{property-border-right}:@border-right;
+    // @{property-border-left}:@border-left;
+    // border-top: @border-top;
+    // border-bottom: @border-bottom;
+    border: @border;
+    // border-radius: @border-radius;
+    box-shadow:@box-shadow;
+}
+.cxSalutationElemWrapper crux-picklist-component{
+    .cxSalutationElemWrapperPickListMixin(); 
+    @{property-border-right}:@border-right;
+}
+// .cxcreateFormComponentRow lyte-dropdown:not([lt-prop-type="multiple"]):not([lt-prop-type="multisearch"]) lyte-drop-button {
+    // padding-top: 8px;
+    // padding-bottom: 8px;
+    // .cxcreateFormComponentDropDownMixin();
+    // padding:@padding; /* padding overrides phone component right side padding */
+   
+// }
+// .cxcreateFormComponentRow .cxElementValue .cxElementValue lyte-dropdown {
+    // border-right: solid #c3c6ca;
+    // .cxCreareFormElementValDropDownMixin();
+    // @{property-border-right}:@border ;
+// }
+.cxSalutationElemWrapper .cxBoxInput.lyteInputBox .lyteField {
+    padding: 0 !important;
+}
+.cxSalutationElemWrapper lyte-input.cxBoxInput.mandatoryField .lyteField::before {
+    display: none;
+}
+.cxcreateFormComponentRow .cxElementLabel,
+.cxcreateFormComponentRow .cxFieldLabel {
+    .cxcreateElementLabelMixin();
+    min-width: @min-w;
+    width: @w;
+    max-width: @max-w;
+    // display: inline-flex;
+    // justify-content: flex-start;
+    // align-items: flex-start;
+    box-sizing: border-box;
+    text-align: @value-textalign-right;
+    @{property-padding-right}: @padding-right;
+    padding-top: @padding-top;
+    color: @color;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    font-size: @cruxFormLabelFontSize;
+}
+.cxcreateFormComponentRow .cxElementLabel .cxInfoIcon {
+    position: absolute;
+    top:10px;
+}
+.cxcreateTitlebar .crux-create-row {
+    display: flex;
+    margin-top: 0px;
+}
+.cxcreateTitlebar .cxElementLabel {
+    .cxcreateElementLabelInHeaderMixin();
+    width: @w;
+    max-width: @max-w;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    box-sizing: border-box;
+    text-align: @property-right;
+    @{property-padding-right}: 20px;
+    color: @color;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    font-family: @cruxPrimaryFont;
+    font-size: @cruxFormLabelFontSize;
+    padding-top: @padding-top;
+}
+.cxcreateFormComponentRow .cxElementValue {
+    .cxcreateElementValueMixin();
+    min-width: @min-w;
+    max-width: @max-w;
+    flex: 1;
+    text-align: @value-textalign-left;
+    // max-height:@max-h;
+}
+.cxcreateFormComponentRow .cxElementValue .cxElementValue  {
+    min-width: initial;
+    max-width: initial;
+}
+
+.cxCreateSingleContainer .cxcreateFormComponentRow .cxElementValue {
+    .cxcreateSingleContElementValueMixin();
+    flex: 1;
+    max-width: @max-w;
+    min-width: @min-w;
+}
+.cxCreateSingleContainer .cxElementValue .cxElementValue  {
+    max-width: 100%;
+    min-width: auto;
+}
+.cxCreateSingleContainer .cxElementValue .cxBoxDropdown, 
+.cxCreateSingleContainer .cxElementValue .cxFlatDropdown {
+    max-width: 100%;
+}
+
+.cruxFormFieldParentContainer .singlechoice.cxGrouperRadioCont{
+    .cxCreateSingleRadioContMixin();
+    padding-top: @padding-top;
+}
+
+.cruxFormFieldParentContainer .cxGrouperRadioCont lyte-radiobutton-group{
+    display: block;
+}
+
+/* Loading Gif STyling Starts */
+.cxLoadOnViewElement {
+    width: 100%;
+}
+.cxLoadOnViewElement .cxLoadOnViewLabel {
+    min-width: 190px;
+}
+.cxLoadOnViewElement .cxLoadOnViewValue {
+    max-width: 390px;
+    min-width: 190px;
+}
+.cxCreateSingleContainer .cxLoadOnViewLabel {
+    min-width: 190px;
+}
+.cxCreateSingleContainer .cxLoadOnViewValue {
+    max-width: 58%;
+    min-width: 390px;
+}
+
+/* Loading Gif STyling Ends */
+
+/* CRUX User Component - Right Icon disabled for CRUX Create Page and Detailview - based on CRM reference */
+crux-create-field crux-user-component[cx-prop-type="multiple"] .cxBoxRightIcon {
+	display: none !important;
+}
+
+
+/*
+crux-create-field crux-boolean-component .lyteCheckbox {
+    .cxCreateCheckboxMixin();
+    padding-top: @padding-top;
+    padding-bottom: @padding-bottom;
+}*/
+.cxcreateFormBooleanRow .cxElementLabel,
+.cxcreateFormBooleanRow .cxFieldLabel {
+        padding-top: 3px !important;
+}
+
+crux-create-section lyte-input,
+.cxDropbox lyte-drop-header lyte-search {
+    width: 100%;
+    display: block;
+}
+.cxQCModalWrapper .cxCreateSingleContainer .cxcreateFormComponentRow .cxElementValue {
+    max-width: 390px;
+}
+.cxQCModalWrapper  crux-create-layout-dropdown {
+    display: inline-block;   
+}
+.cxQCModalWrapper .cxcreateSectionsCont {
+    padding-top: 0;
+}
+.cxQCModalWrapper .cxcreateTitlebar  .cxFakeDropdownLabel {
+    font-family: @cruxPrimaryFont;
+}
+.cxQCModalWrapper .cxcreateTitlebar  .crux-create-row {
+    margin-top: 20px;
+}
+.cxQCModalWrapper .cxcreateTitlebar  .cxElementLabel {
+    width: auto;
+    text-align: @value-textalign-left;
+}
+.cxSubform lyte-tr:hover .cxSubformTableRowActions {
+    visibility: visible;
+}
+/* Styles For Field Types */
+
+.cxcreateFormComponentRow .cxElemCompViewWrap {
+    max-width: 100%;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+/*******************************
+    AUTO WIDTH ROWS STARTS
+    
+    Crux Label and Field will have Auto Width.
+    =>Label: auto width, Resizable from Slyte UI
+    =>Field: No Max width (390px)
+            Full 100% width for Fields
+ *******************************/
+.cxAutoWidthRow .cxElementLabel,
+.cxAutoWidthRow .cxFieldLabel {
+    .cxAutoWidthRowLabelMixin();
+    min-width: @min-w;
+    width: @w;
+    max-width: @max-w;
+}
+.cxAutoWidthRow .cxElementValue {
+    .cxAutoWidthRowValueMixin();
+    min-width: @min-w;
+    width: @w;
+    max-width: @max-w;
+}
+
+/***** AUTO WIDTH ROWS ENDS *******/

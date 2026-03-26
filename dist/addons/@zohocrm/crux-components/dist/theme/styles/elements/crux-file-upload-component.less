@@ -1,0 +1,760 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/crux-file-upload-component.variables.less";
+
+@import "../../themes/default/less-variables/crux-input-elements-variables.less";
+
+@import "../../themes/default/less-variables/crux-file-upload-component-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@cruxUseCssMaskForBg: true;
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+	@import "../../themes/default/css-variables/crux-input-elements-variables.less";
+    @import "../../themes/default/css-variables/crux-file-upload-component-variables.less";
+}
+
+/*********************************************************
+        File Upload Button CSS
+        1. File Upload Basic Styles
+        2. Uploaded Files Section Styling
+        3. mandatory Styling
+        4. File Upload Options - Single, Multiple, Drag and Drop etc
+        5. Error Message and Border Styling
+        6. Disabled/ ReadOnly Styling
+
+**********************************************************/
+/****************************************************************/
+
+.cxFileUploadButton {
+	.cxFileUploadButtonMixin();
+	width: @w;
+	display: block;
+	margin: @margin;
+}
+
+.cxFileUploadButton .cxFileUpCompPlaceholder{
+	.cxFileUpCompPlaceholderMixin();
+	font-family: @font-family;
+	max-width: @max-w;
+	flex: 1;
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+	color: @color;
+	padding: @padding;
+}
+
+.cxFileUploadButton .lyte-button,
+.cxFileUploadButton .lyte-button.lyteSecondary {
+	.cxFileUploadLyteButtonMixin();
+    /* outline: 2px solid red; */
+	width: @w;
+	display: block;
+	// max-width: @max-w;
+	border: @border;
+	border-radius: @border-radius;
+	background: @bg;
+	color: @color;
+	text-align: @value-textalign-left;
+	padding: @padding;
+	position: relative;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.cxFileUploadButton .lyte-button:hover {
+	.cxFileUploadButtonHoverMixin();
+	// background: @bg;
+	// color: @color;
+	// #787D83
+	border: @border;
+}
+.cxFileUploadButton .lyte-button:focus,
+.cxFileUploadButton .lyte-button.lyteMenuSelected {
+	.cxFileUploadMenuSelectedMixin();
+	border-color: @border-color;
+	box-shadow: @box-shadow;
+	outline: @outline;
+}
+
+.cxFileUploadButton .cxFileUpCompDropBtnLabel{
+	.cxFileUpCompDropBtnLabelMixin();
+	padding: @padding;
+	color: @color;
+	flex: 1;
+}
+
+.cxFileUploadButton .lyte-button .cxFileUpCompBtnYield{
+	.cxFileUplCompBtnYieldMixin();
+	width: @w;
+}
+.cxFileUploadButton .lyte-button .dropdown {
+	.cxFileUplCompBtnDropDownIconMixin();
+    /*.cxboxdropdownDropdownIcon(); */
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	display: inline-block;
+	position: absolute;
+	@{property-right}: @right;
+	top: @top;
+	transform: @transform;
+	opacity: @opacity;
+}
+.cxFileUploadCreateWrap {
+	position: relative;
+}
+
+/****************************************************************
+    1. File Upload Basic Styles 
+    2. Menu & Uploaded Files Section Styling 
+****************************************************************/  
+
+.cxFileMenuItem lyte-menu-label {
+	.cxFileMenuItemMixin();
+	display: @display;
+	position: @position;
+    @{property-padding-left}: @padding-left;
+}
+.cxFileMenuItem lyte-menu-item {
+	.cxFileUplCompMenuItemMixin();
+	padding: @padding;
+	position: relative;
+}
+.cxFileMenuItem .cxFileUploadSprite {
+	.cxFileUplCompMenuSpriteIconMixin();
+	display: inline-block;
+	position: absolute;
+	@{property-left}: @left;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadContainer ul {
+	margin:0;
+	padding:0;
+}
+.cxFileUploadContainer li {
+	.cxFileUploadContainerMixin();
+	background: @bg;
+	border: @border;
+	border-radius: @border-radius;
+	list-style: none;
+	padding: @padding;
+	margin-top: @margin-top;
+	box-sizing: border-box;
+	position: relative;
+	display: flex;
+	align-items: center;
+    line-height: @line-height;
+	cursor: pointer;
+}
+crux-file-upload-component[cx-prop-from="view"] .cxFileUploadContainer li:first-of-type {
+	margin-top:0;
+}
+.cxFileUploadDetail {
+	.cxFileUploadDetailMixin();
+	@{property-padding-left}: @padding-left;
+	@{property-padding-right}: @padding-right;
+	position: relative;
+	flex: 1;
+	// max-width: @max-w;
+	// margin-right: @margin-right;
+	font-size: @font-size;
+	width: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+	// cursor: default;
+	white-space: nowrap;
+}
+
+.cxFileUploadViewContainer .cxFileUploadDetail{
+	.cxFileUploadDetailOnViewMixin();
+	@{property-padding-right}: @padding-right;
+}
+
+.cxFileUploadDetail .cxFileUploadTypeIconWrap {
+	.cxFileUploadDetailSpriteMixin();
+	position: absolute;
+	@{property-margin-right}: @margin-right;
+	@{property-left}: @left;
+	width: @w;
+	// height: @h;
+}
+
+.cxFileUpdCompWrappedNameDiv .cxFileUploadTypeIconWrap{
+	align-self: flex-start;
+}
+
+.cxFileUploadSprite {
+	.cxFileUploadSpriteMixin();
+	background-image: @bg-img;
+	display: inline-block;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadName {
+	.cxFileUploadNameMixin();
+	// color: @color;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	// max-width: @max-w;
+	// flex: 1;
+}
+
+.cxFileUpdCompWrappedName{
+	word-break: break-all;
+	white-space: normal;
+}
+
+.cxFileUploadSize {
+	.cxFileUploadSizeMixin();
+	color: @color;
+	white-space: nowrap;
+	// @{property-margin-right}: @margin-right;
+}
+.cxFileUploadContainer .cxFileUploadRemoveIcon,
+.cxFileUploadContainer .cxFileUploadLoadingIcon {
+	display: none;
+}
+.cxFileUploadContainer li:focus-visible .cxFileUploadRemoveIcon,
+.cxFileUploadContainer li:hover .cxFileUploadRemoveIcon {
+	display: block;
+}
+
+.cxFileUploadContainer li:hover .cxFileUploadWarningIcon,
+.cxFileUploadContainer li:focus-visible .cxFileUploadTickIcon, 
+.cxFileUploadContainer li:hover .cxFileUploadTickIcon {
+	display: none;
+} 
+.cxFileUploadStatus {
+	.cxFileUploadStatusMixin();
+	align-self: flex-end;
+	height: @h;
+	// min-width: @min-w;
+	position: absolute;
+	inset: @inset;
+    @{property-right}: @right;
+	margin: @margin;
+    // top: 3px;
+	// transform: translateY(-2px);
+	display: flex;
+}
+.cxFileUploadDriveLogos {
+	.cxFileUploadDriveLogosMixin();
+	position: absolute;
+	@{property-left}: @left;
+}
+/****************************************************************
+    4. File Upload - All Icons 
+****************************************************************/
+
+.cxFileUploadModalLoaderIcon {
+	.cxFileUploadModalLoaderIconMixin();
+	width: @w;
+	height: @h;
+	background-image: @bg-img;
+	background-size: 100%;
+	display: inline-block;
+}
+
+.cxFileUploadModalAttachmentTypeIcon {
+	.cxFileUploadModalAttachmentTypeIconMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	@{property-margin-right}: @margin-right;
+}
+.cxFileUploadModalAttachmentName {
+	flex-grow: 1;
+}
+// .cxFileUploadSprite {
+// 	.cxFileUplCompSpriteIconMixin();
+// 	background-image: @bg-img;
+// 	display: inline-block;
+// 	width: @w;
+// 	height: @h;
+// }
+
+.cxFileUpCompIcon_allfile,
+.cxFileUploadIcon_html {
+	.cxFileUploadIcon_htmlMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+
+/*File Upload Menu icons Starts */
+.cxFileUploadIcon_uploadfile {
+	.cxFileUploadIcon_uploadfileMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_documents {
+	.cxFileUploadIcon_documentsMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_zwdrive {
+	.cxFileUploadIcon_zwdriveMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_zdocs {
+	.cxFileUploadIcon_zdocsMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_gdrive {
+	.cxFileUploadIcon_gdriveMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+/*File Upload Menu icons Ends */
+
+.cxFileUploadIcon_image {
+	.cxFileUploadIcon_imageMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_pdf {
+	.cxFileUploadIcon_pdfMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_zip {
+	.cxFileUploadIcon_zipMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_video {
+	.cxFileUploadIcon_videoMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_audio {
+	.cxFileUploadIcon_audioMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_docx {
+	.cxFileUploadIcon_docxMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_ppt {
+	.cxFileUploadIcon_pptMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_notes {
+	.cxFileUploadIcon_notesMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+/*
+ppt
+audio
+note
+*/
+
+.cxFileUploadIcon_xlsx,
+.cxFileUploadIcon_csv,
+.cxFileUploadIcon_xls{
+	.cxFileUploadIcon_xlsMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+
+.cxFileUploadTickIcon{
+	.cxFileUploadTickIconMixin();
+	.cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+	width: @w;
+	height: @h;
+	display: inline-block;
+}
+.cxFileUploadRemoveIcon{
+	.cxFileUploadRemoveIconMixin();
+	.cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+	// background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	z-index: @z-index;
+	position: relative;
+}
+.cxFileUploadContainer .cxFileDownloadButtonIcon {
+	.cxFileDownloadButtonMixin();
+	.cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+	display: inline-block;
+	width: @w;
+	height: @h;
+	cursor: pointer;
+	position: relative !important;
+	visibility: @visibility;
+	// @{property-margin-left}: @margin-left;
+	@{property-padding-right}: @padding-right;
+	// @{property-margin-right}: @margin-right;
+	vertical-align: top;
+}
+// .cxFileUploadContainer .cxFileDownloadButton::before {
+// 	content: '';
+// }
+.cxFileUploadContainer li:focus-visible .cxFileDownloadButtonIcon,
+.cxFileUploadContainer li:hover .cxFileDownloadButtonIcon {
+	visibility: visible;
+}
+.cxFileUploadIcon {
+	.cxFileUploadIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+// .cxFileDownloadButton {
+// 	.ManualName_13_cxFileDownloadButtonMixin();
+// 	cursor: pointer;
+// 	margin-left: @margin-left;
+// }
+.cxFileUploadStatus .cxFileUploadRemoveIcon {
+	cursor: pointer;
+    top: 0;
+}
+.cxFileUploadLoadingIcon {
+	.cxFileUploadLoadingIconMixin();
+	width: @w;
+	height: @h;
+
+}
+/****************************************************************
+    3. mandatory Styling
+
+****************************************************************/
+
+.cxSFileUpCompElem.mandatoryField::before,
+crux-file-upload-component .mandatoryField .lyte-button::before {
+	.mandatoryFieldMixin();
+	@{property-border-left}: @border-left;
+	content: '';
+	height: @h;
+	width: @w;
+	background: @bg;
+	position: absolute;
+	top: @top;
+	@{property-left}: @left;
+	border-radius: @border-radius;
+	z-index: @z-index;
+}
+
+// .cxSFileUpCompElem.mandatoryField::before{
+// 	.cxSFileUpCompElemMandatoryMixin();
+// 	height: @h;
+// 	top: @top;
+// }
+
+crux-file-upload-component .cxMandatoryOptEnabled.mandatoryField .lyte-button::before {
+	display: none !important;
+}
+    /****************************************************************
+    4. File Upload Options - Single, Multiple, Drag and Drop etc
+****************************************************************/
+    /* To be added in Future*/
+
+
+// .cxFileUpCompReadOnly .cxFileUploadContainer,
+.cxFileUpCompReadOnly .cxFileUploadButton {
+	pointer-events: none;
+}
+.cxFileUpCompReadOnly .cxFileUploadRemoveIcon{
+	visibility: hidden;
+ }
+.cxFileUpCompReadOnly .cxFileUpdCompActionIconWrap.cxRemoveFile{
+	visibility: hidden;
+}
+ 
+/****************************************************************
+     5. Error Message and Border Styling
+****************************************************************/
+
+    
+
+
+crux-file-upload-component .mandatoryField.cxErrorBox .lyte-button,
+crux-file-upload-component .mandatoryField.cxErrorBox .lyte-button:focus,
+crux-file-upload-component .mandatoryField.cxErrorBox .lyte-button:active {
+	.cxFileUpldCompErrorButtonMixin();
+	box-shadow: @box-shadow;
+}
+crux-file-upload-component .mandatoryField.cxErrorBox .lyte-button {
+	.cxFileUpldCompErrorButtonBorderMixin();
+	border: @border;
+}
+/****************************************************************
+    6. Disabled/ ReadOnly Styling
+****************************************************************/
+
+
+
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button,
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button:focus,
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button:active {
+	.cxFileUpCompReadOnlyBtnMixin();
+	box-shadow: @box-shadow;
+}
+.cxFileUpCompReadOnly .cxFileUploadButton,
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button {
+	cursor: default;
+}
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button {
+	pointer-events: none;
+}
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button,
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button:hover,
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button:focus,
+.cxFileUploadButton  button.lyteSecondary[disabled],
+.cxFileUploadButton:hover  button.lyteSecondary[disabled] {
+	.cxFileUplCompReadOnlyBtnMixin();
+	border: @border;
+	background: @bg;
+	// color: @color;
+}
+.cxFileUploadButton .lyteMenuSelected .dropdown {
+    transform: rotate(-180deg);
+}
+.cxError .cxFileUploadButton .lyte-button, 
+.cxError .cxFileUploadButton .lyte-button.lyteMenuSelected{
+	.cxFileUploadErrorButtonMixin();
+    border: 1px @border solid;
+    box-shadow: none !important;
+}
+.cxFileUploadButton .lyte-button:disabled .dropdown{
+	pointer-events: none;
+}
+.cxFileUploadButton .lyte-button:disabled:hover {
+	.cxFileUploadBtnDisabledMixin();
+	border: 1px @border solid;
+}
+
+.cxFileUpdCompActionIconWrap{
+    position: relative;
+}
+
+.cxFileUpdCompActionIconWrap::before{
+    .cxFileUpdCompActionIconWrapBeforeMixin();
+    content: '';
+    display: inline-block;
+    border: @border;
+    background: @bg;
+    width: @w;
+    height: @h;
+    position: absolute;
+    @{property-left}: @left;
+    top: @top;
+    visibility: hidden;
+    border-radius: @border-radius;
+    transform: @transform;
+    opacity:  @opacity;
+    transition: @transition;
+}
+
+.cxFileUpdCompActionIconWrap:focus-visible::before,
+.cxFileUpdCompActionIconWrap:hover::before{
+    .cxFileUpdCompActionIconWrapHoverBeforeMixin();
+    visibility: visible;
+    transform: @transform;
+    opacity:  @opacity;
+}
+
+.cxFileUpdCompActionIconWrap:focus-visible .cxFileDownloadButtonIcon,
+.cxFileUpdCompActionIconWrap:focus-visible .cxFileUploadRemoveIcon{
+	visibility: visible;
+}
+
+.cxFileUpCompDownloadIconWrap{
+	.cxFileUpCompDownloadIconWrapMixin();
+	margin: @margin;
+}
+
+.cxSFileUpCompElem.cxFileUpCompReadOnly:hover,
+.cxSFileUpCompElem.cxFileUpCompReadOnly{
+	.cxFileUpCompReadOnlyMixin();
+	cursor: not-allowed;
+	background: @bg;
+	border-color: @border-color;
+}
+
+.cxFileUpCompReadOnly .cxSFileUploadIconWrap,
+.cxFileUpCompReadOnly .cxSFileUpPlaceholder{
+	pointer-events: none;
+}
+
+.cxFileUpCompReadOnly .cxFileUpCompIcon{
+	visibility: hidden;
+}
+
+// .cxFileUpCompCurNotAllow{
+// 	cursor: not-allowed;
+// }
+
+/* CRUX Single File Upload Component Styles Starts */
+
+.cxSFileUpCompElem{
+	.cxSFileUpCompElemMixin();
+	border: @border;
+	display: flex;
+	border-radius: @border-radius;
+	// overflow: hidden;
+	position: relative;
+}
+
+.cxSFileUpCompElem:hover{
+	.cxSFileUpCompElemHoverMixin();
+	border: @border;
+}
+.cxSFileUpCompElem.cxFileCompFocus {
+	.cxSFileUpCompElemFocusMixin();
+	border: @border;
+	box-shadow: @box-shadow;
+}
+.cxSFileUpCompElem.cxSFileUpCompErrorElem:hover,
+.cxSFileUpCompElem.cxSFileUpCompErrorElem {
+	.cxSFileUpCompElemErrorMixin();
+	border: 1px solid @border-color;
+	box-shadow: none;
+}
+
+.cxSFileUpCompNameWrapper {
+	.cxSFileUpCompNameWrapperMixin();
+	display: flex;
+	align-items: center;
+	flex: 1;
+	min-width: @min-w;
+	padding: @padding;
+	position: relative;
+}
+
+.cxSFileUploadIconWrap{
+	.cxSFileUploadIconWrapMixin();
+	padding: @padding;
+	background-color: @bg-color;
+	cursor: pointer;
+	border-radius: @border-radius;
+}
+
+.cxSFileUploadIcon{
+	.cxSFileUploadIconMixin();
+	display: block;
+	height: @h;
+	width: @w;
+	.cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color)
+}
+
+.cxSFileUpPlaceholder{
+	.cxSFileUpPlaceholderMixin();
+	color: @color;
+	display: flex;
+	flex: 1;
+	padding: @padding;
+	align-items: center;
+	cursor: pointer;
+	white-space: nowrap;
+	min-width: @min-w;
+}
+
+.cxSFileRemoveIconWrap{
+	.cxSFileRemoveIconWrapMixin();
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	background: @bg;
+	cursor: pointer;
+	flex-shrink: 0;
+	visibility: hidden;
+}
+
+.cxSFileUpCompNameWrapper:focus-visible .cxSFileRemoveIconWrap,
+.cxSFileUpCompNameWrapper:hover .cxSFileRemoveIconWrap{
+	visibility: visible;
+}
+
+.cxSFileRemoveIcon{
+	.cxSFileRemoveIconMixin();
+	display: block;
+	height: @h;
+	width: @w;
+	.cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color)
+}
+
+.cxSFileUpName{
+	.cxSFileUpNameMixin();
+	display: flex;
+	flex: 1;
+	min-width: @min-w;
+	// padding: @padding;
+	box-sizing: border-box;
+}
+
+.cxSFileUpNameWithExtn{
+	.cxSFileUpNameWithExtnMixin();
+	@{property-padding-left}: @padding-left;
+	min-width: @min-w;
+}
+
+.cxSFileUpName .cxFileUploadSize{
+	.cxSFileUpNameWithExtnMixin();
+	@{property-padding-right}: @padding-right;
+}
+
+.cxSFileUploadTypeIconWrap{
+	.cxSFileUploadTypeIconWrapMixin();
+	height: @h;
+}
+
+.cxFileUploadCompStatusIcon{
+	.cxFileUploadCompStatusIconMixin();
+	position: absolute;
+	@{property-right}: @right;
+}
+
+.cxSFileUpCompNameWrapper:hover .cxFileUploadCompStatusIcon{
+	visibility: hidden;
+}
+
+/* CRUX Single File Upload Component Styles Ends */
+
+
+/* File Upload Component Prefix yield case styles starts */ 
+
+.cxFileUploadViewContainer{
+	display: flex;
+}
+
+.cxFileUploadViewContainer .cxFileUplCompViewListWrap{
+	.cxFileUplCompViewListWrapMixin();
+	flex: 1;
+	min-width: @min-w;
+}
+
+/* File Upload Component Prefix yield case styles ends */ 

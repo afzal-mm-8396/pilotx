@@ -1,0 +1,74 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-img-prev-convert-photo-box-shadow-color: rgba(0,0,0,.38);
+    --@{cssPrefix}-img-prev-name-edit-color:  #fff;
+    --@{cssPrefix}-img-prev-name-edit-hover-bg-color: #101010;
+    --@{cssPrefix}-img-prev-name-edit-hover-border-color: #3c3c3c;
+    --@{cssPrefix}-img-prev-file-name-edit-icon-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-img-prev-input-field-color: #fff;
+    --@{cssPrefix}-img-prev-header-action-icon-hover-bg-color: #1b1c1e;
+    --@{cssPrefix}-img-prev-header-crop-icon-bg-color: #fff;
+    --@{cssPrefix}-img-prev-header-download-icon-bg-color: #fff;
+    --@{cssPrefix}-img-prev-header-info-icon-bg-color: #fff;
+    --@{cssPrefix}-img-prev-header-delete-icon-bg-color: #fff;
+    --@{cssPrefix}-img-prev-thumb-wrap-hover-bg-color: rgba(39,111,220,.2);
+    --@{cssPrefix}-img-prev-thumb-img-selected-bg-color: rgba(39,111,220,.2);
+    --@{cssPrefix}-img-prev-zoom-in-out-wrap-box-shadow-color: rgba(0,0,0,.36);
+    --@{cssPrefix}-img-prev-zoom-in-out-wrap-bg-color: #000;
+    --@{cssPrefix}-img-prev-zoom-radio-wrap-text-color: #fff;
+    --@{cssPrefix}-img-prev-zoom-radio-wrap-bg-color: #000;
+    --@{cssPrefix}-img-prev-zoom-radio-wrap-hover-bg-color: #1b1c1e;
+    --@{cssPrefix}-img-prev-zoom-radio-wrap-after-bg-color: #434d5e;
+    --@{cssPrefix}-img-prev-desc-input-box-shadow-color: rgba(0,0,0,.5);
+    --@{cssPrefix}-img-prev-info-popup-bg-color: #1b1b1b;
+    --@{cssPrefix}-img-prev-info-popup-box-shadow-color: rgba(0,0,0,.6);
+    --@{cssPrefix}-img-prev-info-popup-text-color: #fff;
+    --@{cssPrefix}-img-prev-scale-menu-text-color: #1e1f22;
+    --@{cssPrefix}-img-prev-scale-menu-item-bg-color: rgba(255,255,255,.1);
+    --@{cssPrefix}-img-prev-scale-menu-label-color: #fff;
+    --@{cssPrefix}-img-prev-zoom-in-action-hover-bg-color: #1b1c1e;
+    --@{cssPrefix}-img-prev-zoom-in-icon-bg-color: #fdfeff;
+    --@{cssPrefix}-img-prev-zoom-out-icon-bg-color: #fdfeff;
+    --@{cssPrefix}-img-prev-desc-wrap-border-color: rgba(0,0,0,0.2);
+    --@{cssPrefix}-img-prev-count-bg-color: rgba(17,17,17,0.5);
+    --@{cssPrefix}-img-prev-count-text-color: #fff;
+    --@{cssPrefix}-img-prev-crop-input-container-text-color: #fff;
+    --@{cssPrefix}-img-prev-crop-wh-input-color: #d6d6d6;
+    --@{cssPrefix}-img-prev-crop-wh-input-field-color: #8b9ab9;
+    --@{cssPrefix}-img-prev-input-field-border-color: #3e3e3e;
+    --@{cssPrefix}-img-prev-crop-separation-border-color: #313132;
+    --@{cssPrefix}-img-prev-crop-icon-wrap-bg-color: #1b1c1e;
+    --@{cssPrefix}-img-prev-crop-radio-icon-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-img-prev-crop-radio-square-icon-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-img-prev-crop-radio-four-third-icon-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-img-prev-crop-radio-landscape-icon-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-img-prev-crop-swap-icon-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-img-prev-crop-rotate-icon-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-img-prev-crop-load-rotate-icon-bg-color: #d0d0d0b0;
+    --@{cssPrefix}-img-prev-crop-div-border-color: #fff;
+    --@{cssPrefix}-img-prev-contain-after-bg-color: linear-gradient(180deg,#080808 0,rgba(2,2,2,0) 100%);
+
+    --@{cssPrefix}-img-prev-container-bg-color: rgba(13,13,13,.9);
+    --@{cssPrefix}-img-prev-header-bg-color: transparent;
+    --@{cssPrefix}-img-prev-desc-placeholder-color: #276fdc;
+    --@{cssPrefix}-img-prev-desc-hover-border-color: #313949;
+    --@{cssPrefix}-img-prev-desc-hover-box-shadow-color: rgba(0,0,0,.5);
+    --@{cssPrefix}-img-prev-desc-bg-color: #101010;
+    --@{cssPrefix}-img-prev-desc-input-bg-color: #fff;
+    --@{cssPrefix}-img-prev-desc-view-input-color: #A2A9B7;
+    --@{cssPrefix}-img-prev-crop-icon-sel-border-color: #276fdc; 
+    --@{cssPrefix}-img-prev-crop-icon-sel-bg-color: #f6f6f61c;
+    --@{cssPrefix}-img-prev-thumb-sel-border-color: #276fdc;
+}

@@ -1,0 +1,680 @@
+@import "../../themes/default/crux-elements/crux-base/crux-common-styles.variables.less";
+
+@cxHighlightBg1: #fffef0;
+@cxHighlightBg2: #FFFAD0;
+
+/* CRUX Common Classes Starts*/
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/crux-base/crux-common-style.variables.less";
+
+@import "../../themes/default/less-variables/crux-common-style-variables.less";
+
+@import (multiple,optional) "../../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../themes/default/css-variables/crux-common-style-variables.less";
+}
+
+:root {
+	/* CRUX Font-Size Variables */
+	--crux-base-font-size: @cxFontSize14px;
+	--crux-medium-font-size: @cxFontSize15px;
+	--crux-small-font-size: @cxFontSize13px;
+	--crux-extra-small-font-size: @cxFontSize12px;
+	
+	--crux-large-font-size: 1.8rem;
+	--crux-extra-large-font-size: 2rem;
+
+	--crux-heading-font-size: 2.2rem;
+	--crux-subheading-font-size: 2rem;
+
+	--crux-form-label-font-size: 14px; /* Used for Dynamically calculating font-size using updateFormLabelWidth() */
+    
+    /* CRUX Common font Family used in font-size calculation - for form label width */
+    --crux-primary-font: 'Zoho_Puvi_Regular', sans-serif;
+    --crux-semi-bold-font: 'Zoho_Puvi_Medium', sans-serif;
+    --crux-bold-font: 'Zoho_Puvi_SemiBold', sans-serif;
+    --crux-light-font: 'Zoho_Puvi_Regular', sans-serif;
+    --crux-thin-font:  'Zoho_Puvi_Regular', sans-serif;
+}
+
+.cxFlex {
+    display: flex;
+}
+.cxEllipsis{
+    text-overflow: ellipsis;
+}
+.cxDIB{
+    display: inline-block;
+}
+
+.cxDB{
+    display: block;
+}
+
+.cxHide {
+    display: none !important;
+}
+.cxVam{
+    vertical-align: middle;
+}
+
+.cxVam{
+    vertical-align: middle;
+}
+.cxdN {
+	display: none ;
+}
+.cxdNImp{
+    display: none !important;
+}
+.cxFlexOne{
+    flex: 1;
+}
+.cxFlexShrink0{
+    flex-shrink: 0;
+}
+.cxFlexDC{
+    flex-direction: column;
+}
+
+.cxSmallFont{
+    font-size: @cxFontSize13px;
+}
+.cxAlignItemCenter{
+    align-items: center;
+}
+.cxloaderWrapper {
+    display: flex;
+    align-items: center;
+    padding: 5px 25px 10px;
+    justify-content: center;
+}
+
+.cxPeNone{
+    pointer-events: none;
+}
+.cxClearBoth{
+    clear: both;
+}
+.cxClearLeft{
+    clear: left;
+}
+.cxW100Per{
+    width: 100%;
+}
+.cxFlexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cxFlexSpaceBtwn{
+    justify-content: space-between;
+}
+
+.cxVat{
+    vertical-align: top;
+}
+.cxOH{
+    overflow: hidden;
+}
+.cxAlignRight{
+    text-align: right;
+}
+
+.cxAlignCenter{
+    text-align: center;
+}
+
+.cxCP {
+    cursor: pointer;
+}
+.cxCDefault{
+    cursor: default;
+}
+.cxMaxHInherit{
+    max-height: inherit;
+}
+
+/* CRUX Common Classes Ends*/
+
+/* Animations */
+/*Show More Loading - Horizontal Dotted loading GIf Starts */
+
+.cxDotBullet {
+    .cxCommonDotBulletMixin();
+    animation: bouncedelay 1.2s infinite ease-in-out;
+    animation-fill-mode: both;
+    border-radius: 100%;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    background-color: @bg;
+    margin: 0 1px;
+}
+
+@keyframes bouncedelay {
+    0%,to {
+        transform: scale(0)
+    }
+    50% {
+        transform: scale(1)
+    }
+}
+.cxDotLoader1{
+    animation-delay: -.32s;
+}
+.cxDotLoader2{
+    animation-delay: -.16s;
+}
+.cxDotLoader3{
+    animation-delay: 0s;
+}
+/*Show More Loading Gif Ends*/
+
+/*Singe Line Loading GIf Starts */
+.cxFormLoader .lyteField {
+    min-width: 250px !important;
+    max-width: 250px !important;
+    vertical-align: top;
+    @{property-margin-left}: 10px;
+    display: inline-block;
+}
+.cxSingleLineLoader:before {
+    .cxSingleLineLoaderBeforeMixin();
+    content: "";
+    height: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: cxPlaceHolderShimmer;
+    animation-timing-function: linear;
+    background: @bg;
+    // background: linear-gradient(to right, #F0F4FF 8%, #E2EEFF 18%, #F0F4FF 33%);
+    background-size: 800px 104px;
+    position: relative;
+    width:100%;
+}
+@keyframes cxPlaceHolderShimmer{
+    0%{
+        background-position: -300px 0
+    }
+    100%{
+        background-position: 300px 0
+    }
+}
+/*Singe Line Loading Gif Ends */
+
+/*Circle Dot loading GIf Starts */
+
+/*Circle Dot loading GIf Ends*/
+//  circle spin loader starts
+.cxSpinloader {
+    border: 2px solid @cxSpinLoaderRotatorBr;
+    border-top: 2px solid @cxSpinLoaderRotatorBg;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    animation: cxSpinloaderAnim 1.3s linear infinite;
+    display: inline-block;
+  }
+  
+  @keyframes cxSpinloaderAnim {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+//  circle spin loader ends
+
+
+
+/************  CRUX Circle Loader Styles Starts  ***********/
+.cxCircleLoader{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    animation: cxSpinloaderAnim 0.6s linear infinite forwards; /*stylelint-disable-line property-disallowed-list*/
+}
+
+.cxCircleLoader::before{
+    content: '';
+    display: block;
+    width: 2px;
+    height: 2px;
+    border-radius: 2px;
+    background: rgba(@cxCircleLoaderRgb);
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    left: calc(50% - 1px); /*stylelint-disable-line property-disallowed-list*/
+}
+
+.cxCircleLoader1::after,
+.cxCircleLoader1::before{
+    content: '';
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px; /*stylelint-disable-line property-disallowed-list*/
+    border-radius:  20px 0px 0px 20px;
+    box-sizing: border-box;
+    background: linear-gradient(rgba(@cxCircleLoaderRgb),rgba(@cxCircleLoaderRgb,0.5));
+}
+
+.cxCircleLoader1::after{
+    width: 50%;
+    right: 0px; /*stylelint-disable-line property-disallowed-list*/
+    left: initial; /*stylelint-disable-line property-disallowed-list*/
+    border-radius: 0px 20px 20px 0px;
+    background: linear-gradient(rgba(@cxCircleLoaderRgb,0.05),rgba(@cxCircleLoaderRgb,0.25),rgba(@cxCircleLoaderRgb,0.5));
+}
+
+.cxCircleLoader2{
+    width: 12px;
+    height: 12px;
+    background: @cxCircleLoaderBg;
+    display: block;
+    position: absolute;
+    border-radius: 12px;
+    z-index: 1;
+    left: 2px; /*stylelint-disable-line property-disallowed-list*/
+    top: 2px;
+}
+/************  CRUX Circle Loader Styles Ends  ***********/
+
+/******************************** 
+    .cxDisabledLink - Disabled link Styling
+    used in Lookup component -> Filter -> Apply, Cancel Filter Link
+*********************************/
+.cxDisabledLink {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.4;
+    color: @cxBaseColor;
+}
+/************ CRUX Primary btn loader styles Starts  ********/
+
+.cxPrimaryBtnLoader .lytePrimaryBtn:disabled{
+    .cxPrimaryBtnLoaderMixin();
+    opacity: @opacity;
+    box-shadow: @box-shadow;
+    background: @bg;
+}
+
+.cxPrimaryBtnLoader .cxCircleLoader2{
+    .cxPrimaryBtnLoaderMixin();
+    background: @bg;
+}
+
+.cxPrimaryBtnLoader .cxCircleLoader::before{
+    .cxPrimaryBtnLoaderMixin();
+    background: rgba(@loaderBg);
+}
+
+.cxPrimaryBtnLoader .cxCircleLoader1::after,
+.cxPrimaryBtnLoader .cxCircleLoader1::before{
+    .cxPrimaryBtnLoaderMixin();
+    background: linear-gradient(rgba(@loaderBg),rgba(@loaderBg,0.5));   
+}
+
+.cxPrimaryBtnLoader .cxCircleLoader1::after{
+    .cxPrimaryBtnLoaderMixin();
+    background: linear-gradient(rgba(@loaderBg,0.05),rgba(@loaderBg,0.25),rgba(@loaderBg,0.5));
+}
+
+/************ CRUX Primary btn loader styles Ends  ********/
+
+
+/************ Bar Loader styles starts ************/
+
+.cxBarLoader>div {
+    animation: 1.2s ease-in-out infinite both cxbarbouncedelay;
+    display: inline-block;
+    height: 15px;
+    width: 5px;
+    background-color: #4e90ea;
+    margin: 0 1px
+}
+
+.cxBarLoader .cxBarLoader1 {
+    animation-delay: -.32s
+}
+
+.cxBarLoader .cxBarLoader2 {
+    animation-delay: -.16s
+}
+
+.cxBarLoader .cxBarLoader3 {
+    animation-delay: 0s
+}
+
+.cxBarLoader .cxBarLoader4 {
+    animation-delay: .16s
+}
+
+@keyframes cxbarbouncedelay {
+    0%,to {
+        transform: scaleY(1);
+        opacity: .6
+    }
+
+    50% {
+        transform: scaleY(1.5);
+        opacity: 1
+    }
+}
+
+/************ Bar Loader styles ends ************/
+/********** Accordion icon style starts *********/
+lyte-accordion-item .cxAccArwIcon{
+    .cxAccordionArwIconMixin();
+    transition: @transition;
+    background-color: @bg-color;
+}
+
+lyte-accordion-item:not(.lyteAccordionActive) .cxAccArwIcon{
+    .cxAccordioActiveArwIcon();
+    transform: @transform;
+}
+
+/********** Accordion icon style ends *********/
+/************ CRUX Refresh button styles Ends  ********/
+.cxRefreshBtnTextWrap{
+	position: relative;
+}
+
+.cxRefreshBtnWrap{
+	.cxRefreshBtnWrapMixin();
+	position: absolute;
+	top: @top;
+	width: @w;
+	z-index: @z-index;
+	justify-content: center;
+}
+
+.cxRefreshBtn.lytePrimaryBtn{
+	.cxRefreshBtnMixin();
+	padding: @padding;
+	border-radius: @border-radius;
+	box-shadow: @box-shadow;
+}
+
+.cxOnRefresh .cxRefreshBtn{
+	.cxRefreshBtnCompMixin();
+	padding: @padding;
+	transition: @transition;
+}
+
+.cxRefreshBtn:disabled{
+	.cxRefreshBtnDisabledMixin();
+	background: @bg;
+	opacity: @opacity;
+}
+
+.cxRefreshIcon.cxPrimaryBtnRefreshIcon{
+	.cxPrimaryBtnRefreshIconMixin();
+	background-color: @bg-color;
+}
+
+.cxRefreshLyteBtn{
+	.cxRefreshLyteBtnMixin();
+	margin: @margin;
+	position: relative;
+	top: @top;
+}
+
+.cxRefreshBtnText{
+	.cxRefreshBtnTextMixin();
+	@{property-margin-left}: @margin-left;
+	font-size: @font-size;
+	max-width: @max-w;
+}
+
+.cxOnRefresh .cxRefreshBtnText{
+	.cxRefreshBtnTextOnRefMixin();
+	transition: @transition;
+	max-width: @max-w;
+	overflow: hidden;
+	@{property-margin-left}: @margin-left;
+}
+
+.cxCircleLoader.cxRefreshBtnLoader{
+	.cxRefreshBtnLoaderMixin();
+	position: absolute;
+	@{property-left}: @left;
+	width: @w;
+	height: @h;
+	display: none;
+}
+
+.cxCircleLoader.cxRefreshBtnLoader .cxCircleLoader2{
+	.cxRefreshBtnLoader2Mixin();
+	width: @w;
+	height: @h;
+	background: @bg;
+}
+
+.cxOnRefresh .cxPrimaryBtnRefreshIcon{
+	visibility: hidden;
+}
+
+.cxOnRefresh .cxCircleLoader.cxRefreshBtnLoader{
+	display: block;
+}
+
+.cxRefreshBtnLoader.cxCircleLoader::before{
+	.cxRefreshBtnLoaderBeforeMixin();
+	background: @bg;
+}
+
+.cxRefreshBtnLoader.cxCircleLoader .cxCircleLoader1::before{
+	.cxRefreshBtnLoader1BeforeMixin();
+	background: @bg;
+}
+
+.cxRefreshBtnLoader.cxCircleLoader .cxCircleLoader1::after{
+	.cxRefreshBtnLoader1AfterMixin();
+	background: @bg;
+}
+/************ CRUX Refresh button styles Ends  ********/
+
+@keyframes cxHighlightAnimation{
+    0%{
+        background: @cxHighlightBg1;
+    }
+    100%{
+        background: @cxHighlightBg2;
+    }
+}
+
+
+/*************** CRUX Lyte Tab Style Starts *************/
+
+.cxOuterTab lyte-tab-head {
+    .cxOuterTabHeadMixin();
+	border: @border;
+	border-bottom: @border-bottom;
+	position: relative;
+	padding: @padding;
+}
+.cxOuterTab lyte-tab-title{
+    .cxOuterTabTitleMixin();
+	overflow: visible;
+	padding: @padding;
+	margin: @margin;
+	position: relative;
+	font-family: @font-family;
+	color: @color;
+	border-bottom: @border;
+	background: @bg;
+}
+.cxOuterTab lyte-tab-title.lyteTabActive,
+.cxOuterTab lyte-tab-title:hover{
+    .cxOuterTabHoverActiveMixin();
+	font-weight: @font-weight;
+	border: @border;
+	color: @color;
+}
+.cxOuterTab lyte-tab-title.lyteTabActive{
+    .cxOuterTabActiveMixin();
+	font-family: @font-family;
+	-webkit-text-stroke: @textStroke;
+    position: relative;
+}
+
+.cxOuterTab lyte-tab-title:hover::after,
+.cxOuterTab lyte-tab-title.lyteTabActive::after{
+    .cxOuterTabHoverActiveAfterMixin();
+    content: '';
+    position: absolute;
+	display: block;
+	background-color: @bg-color;
+    bottom: @bottom;
+	height: @h;
+	width: @w;
+	@{property-left}: @left;
+    @{property-border-top-left-radius}: @border-top-left-radius;
+    @{property-border-top-right-radius}: @border-top-right-radius;
+}
+
+.cxOuterTab lyte-tab-title.lyteTabActive:hover:after,
+.cxOuterTab lyte-tab-title.lyteTabActive::after{
+    .cxOuterTabActiveAfterMixin();
+	background-color: @bg-color;
+}
+
+.cxOuterTab lyte-tab-body{
+    .cxOuterTabBodyMixin();
+	border: @border;
+}
+
+/*************** CRUX Lyte Tab Style Ends *************/ 
+
+
+/*************** CRUX Lyte Button Style Starts *************/
+
+.cxOutlinePrimaryBtn{
+    .cxOutlinePrimaryBtnMixin();
+	color: @color;
+	padding: @padding;
+	border: @border;
+	background: @bg;
+	box-shadow: @box-shadow;
+	display: inline-block;
+}
+.cxOutlinePrimaryBtn:hover,
+.cxOutlinePrimaryBtn:active{
+    .cxOutlinePrimaryBtnHoverActiveMixin();
+	border: @border;
+	background: @bg;
+	top: @top;
+    color: @color;
+    box-shadow: @box-shadow;
+    padding: @padding;
+}
+.cxOutlinePrimaryBtn[disabled]{
+    .cxOutlinePrimaryBtnDisabledMixin();
+	cursor: not-allowed;
+    opacity: @opacity;
+    pointer-events: auto !important;
+	top: @top;
+    background: @bg;
+    box-shadow: @box-shadow;
+    border: @border;
+    color: @color;
+}
+
+.cxClubbedBtn{
+    display: inline-flex;
+}
+.cxClubbedBtn lyte-button{
+    .cxClubbedBtnMixin();
+    @{property-margin-right}: @margin-right;
+}
+.cxClubbedBtn lyte-button:first-child button {
+    .cxClubbedBtnFirstChildMixin();
+	@{property-border-top-right-radius}: @border-top-right-radius;
+    @{property-border-bottom-right-radius}: @border-bottom-right-radius;
+}
+.cxClubbedBtn lyte-button:last-of-type button {
+    .cxClubbedBtnLastChildMixin();
+	@{property-margin-left}: @margin-left;
+    z-index: @z-index;
+    @{property-border-top-left-radius}: @border-top-left-radius;
+    @{property-border-bottom-left-radius}: @border-bottom-left-radius;
+    display: inline-flex;
+    align-items: center;
+    height: @h;
+    padding: @padding;
+}
+
+.cxClubbedBtn lyte-button:last-of-type button.cxOutlinePrimaryBtn,
+.cxClubbedBtn lyte-button:last-of-type button.lyteDefaultBtn{
+    .cxClubbedBtnLastChildMixin();
+    padding: @secondaryPadding;
+}
+
+.cxClubbedBtn lyte-button:last-child button:after{
+    .cxClubbedBtnArrowMixin();
+    content: "";
+    width: @w;
+    height: @h;
+    display: inline-block;
+    -webkit-mask-image: @bg-img;
+    mask-image: @bg-img;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: @bg-pos;
+    mask-position: @bg-pos;
+    background-image: none;
+    filter: none !important;
+}
+
+.cxClubbedBtn lyte-button:last-child button.cxOutlinePrimaryBtn:after{
+    .cxClubbedOutlineBtnArrowMixin();
+    background-color: @bg-color;
+}
+
+/*************** CRUX Lyte Button Style Ends *************/
+
+.cxOutlineFailureBtn{
+    .cxOutlineFailureBtnMixin();
+	color: @color;
+    padding: @padding;
+    border: @border;
+    background: @bg;
+    box-shadow: @box-shadow;
+}
+.cxOutlineFailureBtn:hover,.cxOutlineFailureBtn:active{
+    .cxOutlineFailureBtnActiveMixin();
+	border: @border;
+    background: @bg;
+    top: @top;
+}
+.cxOutlineFailureBtn[disabled]{
+    .cxOutlineFailureBtnDisabledMixin();
+    pointer-events: auto !important;
+	top: @top;
+    border: @border;
+    opacity: @opacity;
+    background: @bg;
+    color: @color;
+    box-shadow: @box-shadow;
+}
+
+/*************** CRUX Lyte Button Style Starts *************/

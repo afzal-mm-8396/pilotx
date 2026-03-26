@@ -1,0 +1,40 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-user-tooltip-popup-box-shadow-color: rgba(0, 0, 0, 0.2);
+    --@{cssPrefix}-user-tooltip-popup-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-user-tooltip-up-space-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-user-tooltip-normal-tag-text-color: #777;
+    --@{cssPrefix}-user-tooltip-normal-tag-border-color: #ddd;
+    --@{cssPrefix}-user-tooltip-dismiss-btn-color: #ef7575;
+    --@{cssPrefix}-user-tooltip-dismiss-btn-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-user-tooltip-dismiss-btn-border-color: #ffa9a9;
+    --@{cssPrefix}-user-tooltip-info-popup-arrow-left-box-shadow-color: rgba(0, 0, 0, 0.2);
+    --@{cssPrefix}-user-tooltip-info-popup-arrow-left-border-color: #cacaca;
+    --@{cssPrefix}-user-tooltip-info-popup-arrow-right-box-shadow-color: rgba(0, 0, 0, 0.2);
+    --@{cssPrefix}-user-tooltip-info-popup-arrow-right-border-color: #cacaca;
+    --@{cssPrefix}-user-tooltip-info-popup-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-user-tooltip-info-popup-box-shadow-color: rgba(0,0,0,0.2);
+    --@{cssPrefix}-user-tooltip-info-popup-border-color: #cacaca;
+    --@{cssPrefix}-user-tooltip-red-color: #ff3838;
+    --@{cssPrefix}-user-tooltip-dash-border-color: #e8e8e8;
+    --@{cssPrefix}-user-tooltip-actions-icon-border-color: #6497cb;
+    --@{cssPrefix}-user-tooltip-actions-icon-hover-bg-color: #6497cb;
+    --@{cssPrefix}-user-tooltip-client-portal-label-border-color: #EFC06A;
+    --@{cssPrefix}-user-tooltip-client-portal-label-bg-color: #FFF9ED;
+    --@{cssPrefix}-user-tooltip-name-color: #333;
+    --@{cssPrefix}-user-tooltip-phone-content-color: #333;
+    --@{cssPrefix}-user-tooltip-up-space-content-color: #333;
+    --@{cssPrefix}-user-tooltip-mail-link-color: #333;
+}

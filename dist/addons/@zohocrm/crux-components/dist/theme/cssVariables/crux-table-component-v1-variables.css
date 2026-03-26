@@ -1,0 +1,56 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-table-list-view-lazy-load-bg-color: #efefef;
+  --lyte-crux-table-sort-icon-hover-bg-color: #e5e9ef;
+  --lyte-crux-table-existing-list-view-exp-table-th-border-color: #ddd;
+  --lyte-crux-table-existing-list-view-exp-table-th-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-table-existing-list-view-exp-table-text-color: #777;
+  --lyte-crux-table-existing-list-view-exp-td-text-color: #333;
+  --lyte-crux-table-filter-icon-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-table-filter-icon-border-color: #ddd;
+  --lyte-crux-table-fixed-header-icon-border-color: #ddd;
+  --lyte-crux-table-lookup-filter-component-bg-color: #f8faff;
+  --lyte-crux-table-last-pinned-column-border-color: #d9e0eb;
+  --lyte-crux-table-show-more-added-events-border-color: #d0d6e0;
+  --lyte-crux-table-tfoot-td-border-color: #ddd;
+  --lyte-crux-table-comp-no-result-color: var(--crux-no-result-color);
+  --lyte-crux-table-header-mandatory-bg-color: #FF5D5A;
+  --lyte-crux-table-comp-tfoot-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-table-show-more-add-event-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-table-list-lazy-load-runner-bg-color: linear-gradient(to right, #efefef, #ddd, #efefef);
+}
+/*# sourceMappingURL=crux-table-component-v1-variables.css.map */

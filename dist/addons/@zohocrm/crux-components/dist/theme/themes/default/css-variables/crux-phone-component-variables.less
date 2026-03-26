@@ -1,0 +1,17 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-phone-call-icon-bg-color: #52c343;
+    --@{cssPrefix}-phone-view-call-label-color: #fff;
+}

@@ -1,0 +1,118 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-notes-heading-border-color: #d9e6ef;
+  --lyte-crux-notes-footer-active-icon-border-color: #1C9EFC;
+  --lyte-crux-notes-footer-active-icon-box-shadow-color: #1C9DFB80;
+  --lyte-crux-notes-footer-border-color: #D2D9E0;
+  --lyte-crux-notes-footer-bg-color: #F4F7FF;
+  --lyte-crux-notes-footer-add-title-border-color: #d4d8dd;
+  --lyte-crux-notes-other-actions-color: #a2a2a2;
+  --lyte-crux-notes-added-content-color: #22242B;
+  --lyte-crux-notes-list-dot-bg-color: #C3CDDB;
+  --lyte-crux-notes-edit-delete-wrap-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-notes-edit-delete-icon-wrap-border-color: #eee;
+  --lyte-crux-notes-edit-icon-hover-border-color: #4a8de9;
+  --lyte-crux-notes-delete-icon-hover-border-color: #f56d6d;
+  --lyte-crux-notes-disabled-icon-wrap-hover-border-color: #eee;
+  --lyte-crux-notes-edit-icon-hover-bg-color: #4a8de9;
+  --lyte-crux-notes-delete-icon-hover-bg-color: #f56d6d;
+  --lyte-crux-notes-attach-element-border-color: #f0f0f0;
+  --lyte-crux-notes-attach-actions-bg-color: #d3d3d3;
+  --lyte-crux-notes-new-ui-text-area-border-color: #1C9EFC;
+  --lyte-crux-notes-new-ui-text-area-box-shadow-color: #1C9DFB80;
+  --lyte-crux-notes-show-more-hover-bg-color: #f1f1f1;
+  --lyte-crux-notes-owner-img-bg-color: #f8f8f8;
+  --lyte-crux-notes-owner-img-text-color: var(--crux-heading-color);
+  --lyte-crux-notes-owner-img-border-color: #d8d8d8;
+  --lyte-crux-notes-owner-lookup-label-color: #666;
+  --lyte-crux-notes-owner-lookup-value-color: #333;
+  --lyte-crux-notes-more-files-bg-color: #F8FAFF;
+  --lyte-crux-notes-more-files-border-color: #D7E2ED;
+  --lyte-crux-notes-attachment-remove-icon-bg-color: #3e5f78;
+  --lyte-crux-notes-count-bg-color: #e0e0e0;
+  --lyte-crux-notes-storage-limit-shadow-border-color: #ffabab;
+  --lyte-crux-notes-storage-limit-warn-msg-color: #f35b50;
+  --lyte-crux-notes-common-link-color: #338cf0;
+  --lyte-crux-notes-common-link-hover-color: #1d7fed;
+  --lyte-crux-notes-grey-text-color: #787878;
+  --lyte-crux-notes-sort-module-group-border-color: #EDF0F4;
+  --lyte-crux-notes-footer-icon-wrap-hover-border-color: #c1c8d2;
+  --lyte-crux-notes-editor-popup-box-shadow-color: rgba(0, 0, 0, 0.3);
+  --lyte-crux-notes-editor-popup-border-color: #CACACA;
+  --lyte-crux-notes-editor-more-wrapper-icons-bg-color: #F8FAFF;
+  --lyte-crux-notes-editor-panel-popover-hover-selected-bg-color: #f7fbff;
+  --lyte-crux-notes-editor-panel-popover-hover-selected-border-color: #B2C3DA;
+  --lyte-crux-notes-editor-header-color: #313949;
+  --lyte-crux-notes-editor-white-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-notes-editor-grey-color: #616E88;
+  --lyte-crux-notes-editor-prev-next-bg-color: #f8f8f8;
+  --lyte-crux-notes-editor-bubble-cont-border-color: #d7e2ed;
+  --lyte-crux-notes-bubble-content-icons-bg-color: var(--crux-base-text-color);
+  --lyte-crux-notes-no-records-color: var(--crux-no-result-color);
+  --lyte-crux-notes-more-file-dz-error-color: #FF5D5A;
+  --lyte-crux-note-new-ui-wrap-border-color: var(--crux-element-border-color);
+  --lyte-crux-note-new-ui-wrap-hover-border-color: var(--crux-element-border-color);
+  --lyte-crux-note-new-ui-wrap-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-note-footer-icon-active-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-notes-bubble-content-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-note-new-ui-error-textarea-border-color: #FF5D5A;
+  --lyte-crux-note-footer-link-sep-before-border-color: #B2C2DA;
+  --lyte-crux-notes-loader-circle-bg-color: #f5f5f5;
+  --lyte-crux-notes-loader-line-bg-color: #f5f5f5;
+  --lyte-crux-notes-loader-runner-bg-color: linear-gradient(to right, #f5f5f5, #eee, #f5f5f5);
+  --lyte-crux-notes-circle-loader-runner-bg-color: linear-gradient(to bottom right, #eee, #f5f5f5, #eee, #f5f5f5, #eee);
+  --lyte-crux-notes-editor-panel-popover-icon-hover-bg-color: #f7fbff;
+  --lyte-crux-notes-editor-panel-icon-selected-border-color: #B2C3DA;
+  --lyte-crux-notes-editor-panel-icon-selected-bg-color: #f7fbff;
+  --lyte-crux-notes-added-content-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-notes-attach-zone-drag-hover-border-color: rgba(0, 0, 0, 0.15);
+  --lyte-crux-notes-attach-zone-drag-hover-bg-color: rgba(0, 0, 0, 0.04);
+  --lyte-crux-notes-attach-zone-preview-bg-color: rgba(255, 255, 255, 0.8);
+  --lyte-crux-notes-attach-zone-preview-border-color: #acacac;
+  --lyte-crux-notes-attach-zone-preview-shadow-color: rgba(0, 0, 0, 0.16);
+  --lyte-crux-notes-attach-zone-preview-details-bg-color: #ebebeb;
+  --lyte-crux-notes-attach-zone-preview-details-size-color: #999;
+  --lyte-crux-notes-attach-zone-preview-progress-bg-color: #d7d7d7;
+  --lyte-crux-notes-attach-zone-preview-error-msg-color: #800;
+  --lyte-crux-notes-attach-zone-preview-error-bg-color: rgba(245, 245, 245, 0.8);
+  --lyte-crux-notes-attach-zone-default-msg-border-color: #c4c4c4;
+  --lyte-crux-notes-attach-zone-dz-error-bg-color: #ee1e2d;
+  --lyte-crux-notes-attach-zone-dz-progress-bg-color: #8cc657;
+  --lyte-crux-notes-attach-zone-dz-remove-color: #658ac8;
+  --lyte-crux-notes-grey-hover-color: #313949;
+}
+/*# sourceMappingURL=crux-notes-variables.css.map */

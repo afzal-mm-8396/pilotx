@@ -1,0 +1,200 @@
+.cxFileUploadModal lyte-modal-header {
+	padding: 15px 50px;
+	text-align: center;
+}
+.cxFileUploadModalContent {
+	padding: 0 0 0 50px;
+	flex-grow: 1;
+    display: flex;
+}
+.cxFileUploadModal .lyteModalClose {
+	top: 15px;
+	right: 15px;
+}
+.cxFileUploadModal lyte-yield {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.cxFileUploadModalLeftPanel {
+	width: 50px;
+	background: #f5f5f5;
+	flex-shrink: 0;
+	transition: width 0.3s ease;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 5;
+}
+.cxFileUploadModalLeftPanel:hover {
+	width: 200px;
+}
+.cxFileUploadAvailableOptionsUl {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	width: 200px;
+}
+.cxFileUploadAvailableOption {
+	cursor: pointer;
+	padding: 15px 20px;
+	display: flex;
+	align-items: center;
+}
+.cxFileUploadAvailableOption:hover {
+	background: #ddd;
+}
+.cxFileUploadDriveLogos {
+	width: 20px;
+	margin-right: 10px;
+}
+.selectedDrive {
+	color: #2d7ff9;
+}
+.cxFileUploadAttachmentCount {
+	font-size: 11px;
+	background: #2d7ff9;
+	color: #fff;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 10px;
+}
+.cxFileUploadModalDeviceUpload .fileUploadWrapper,
+.cxFileUploadModalDeviceUpload,
+.cxFileUploadRightPanelContent .dB,
+.cxFileUploadRightPanelContent,
+.cxFileUploadRightPanel,
+.cxFileUploadModalSelListAccordion {
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+	flex-grow: 1;
+}
+
+.cxFileUploadRightPanel {
+	padding: 15px;
+}
+.cxFileUploadRightPanel.cxFileUploadModalSelectedView {
+	padding-top: 0;
+}
+.cxFileUploadButtons {
+	margin-top: 20px;
+}
+.cxFileUploadModalCloudOptions {
+	height: 100%;
+}
+.cxFileUploadPickBtnWrap {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 20px;
+}
+.cxFileUploadModal .lyteFileUpdList {
+	max-height: 280px;
+	overflow: auto;
+}
+.cxFileUploadFooterFilesAttachedCase {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-grow: 1;
+}
+.cxFileUploadModalContent lyte-accordion-body {
+	width: auto;
+}
+.cxFileUploadButtons {
+	display: flex;
+	justify-content: flex-end;
+}
+.cxFileUploadBtnSelectedViewHidden {
+	display: none;
+}
+.cxFileUploadBtnSelectedViewShown {
+	flex-grow: 1;
+	display: block;
+}
+.cxFileUploadBtnSelectedViewShown + .cxFileUploadRightPanelContent {
+	display: none;
+}
+.cxFileUploadDeselectAllLink {
+	cursor: pointer;
+}
+.cxFileUploadSelectedList {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.cxFileUploadSelectedListElem {
+	padding: 10px 0;
+	display: flex;
+	align-items: center;
+}
+.cxFileUploadModalSelListRemove {
+	cursor: pointer;
+	margin-left: 10px;
+}
+.cxFileUploadModalSelListRemoveIcon {
+	display: block;
+	background-image: url(../../images/crux-sprite-icons.svg);
+	background-position: -53px -2px;
+	width: 9px;
+	height: 8px;
+	opacity: 0.5;
+}
+.cxFileUploadModalSelListRemove:hover .cxFileUploadModalSelListRemoveIcon {
+	opacity: 1;
+}
+.cxFileUploadModalLoaderCont {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+.cxFileUploadModalLoaderIcon {
+	width: 32px;
+	height: 32px;
+	background-image: url(../../images/crux-search-loader.svg);
+	background-size: 100%;
+	display: inline-block;
+}
+
+.cxFileUploadModalAttachmentTypeIcon {
+	background: url(../../images/crux-sprite-icons.svg);
+	background-position: -321px -150px;
+	width: 15px;
+	height: 17px;
+	margin-right: 5px;
+}
+.cxFileUploadModalAttachmentName {
+	flex-grow: 1;
+}
+.cxFileUploadModal_image {
+	background-position: -274px -151px;
+	width: 17px;
+	height: 15px;
+}
+.cxFileUploadModal_pdf {
+	background-position: -181px -150px;
+	width: 15px;
+	height: 17px;
+}
+.cxFileUploadModal_zip {
+	background-position: -226px -150px;
+	width: 15px;
+	height: 17px;
+}
+.cxFileUploadModal_video {
+	background-position: -113px -152px;
+	width: 17px;
+	height: 14px;
+}
+.cxFileUploadModal_docx {
+	background-position: -159px -150px;
+	width: 15px;
+	height: 17px;
+}

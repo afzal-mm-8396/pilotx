@@ -1,0 +1,37 @@
+{
+  "name": "@zohocrm/crux-components",
+  "version": "3.229.13",
+  "description": "Crux Components provides you generic and re-usable components, plugins and utils.",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "prepack": "node build/prepublish.js && node ./build/comment-parser.js && node build/inject-version.js",
+    "postinstall": "node build/runscript.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.csez.zohocorpin.com/CRM/crux-components.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "semver": "^7.3.2",
+    "@zoho/slyte-doc": "^3.1.2",
+    "@zoho/lyte": "3.1.2",
+    "@zoho/lyte-ui-component": "3.108.11"
+  },
+  "devDependencies": {
+    "fs-extra": "^8.0.0",
+    "@zoho/slyte-doc": "3.4.3",
+    "@zoho/lyte-cli": "3.4.10"
+  },
+  "flatDependencies": [
+    "@zoho/lyte-ui-component",
+    "@zoho/lyte"
+  ],
+  "lyte-addon": true,
+  "addons": [
+    "@zoho/lyte-ui-component"
+  ]
+}

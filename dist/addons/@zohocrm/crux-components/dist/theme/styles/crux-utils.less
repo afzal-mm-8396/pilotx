@@ -1,0 +1,124 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-utils/crux-utils.variables.less";
+
+@import "../themes/default/less-variables/crux-utils-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-utils";
+
+.cxAlertWrapper .alertPopup {
+	.cxAlertWrapperPopupMixin();
+	border-radius: @border-radius;
+	padding: @padding;
+}
+.cxAlertWrapper .alertHeader {
+	.cxAlertWrapperHeaderMixin();
+	padding: 0;
+	font-family: @cruxPrimaryFont;
+	font-size: @font-size;
+	margin-bottom: @margin-bottom;
+	font-weight: normal;
+}
+.cxAlertWrapper .alertPrimaryMsg {
+	.cxAlertWrapperPrimaryMsgMixin();
+	padding: 0;
+	font-family: @cruxPrimaryFont;
+	font-size: @font-size;
+	// margin-bottom: @margin-bottom;
+	// margin-top: @margin-top;
+	font-weight: normal;
+}
+.cxAlertOnlyHeading .alertPrimaryMsg { 
+	.cxAlertOnlyHeadingMixin();
+    font-size: @font-size !important;
+    padding-top: @padding-top;
+    margin-bottom: @margin-bottom;
+}
+.cxAlertWrapper .alertContent {
+	padding: 0;
+	box-sizing: border-box;
+	display: flex;
+	text-align: center;
+    align-items: flex-start;
+}
+.cxAlertWrapper.cxAlignLeft .alertContent {
+    .cxAlertAlignLeftMixin();
+    text-align: @text-align;
+}
+.cxAlertWrapper .lyteStatusIcon {
+    .cxAlertStatusIconMixin();
+    margin-top: @margin-top;
+}
+.cxAlertWrapper .alertContentMiddle {
+	display: block;
+}
+.cxAlertWrapper .alertSecondaryMsg,
+.cxPermissionDeniedAlert lyte-alert-content {
+    .cxAlertSecondaryMsgMixin();
+    // font-family: @cruxPrimaryFont;
+	// font-size: @font-size;
+	line-height: 20px;
+	overflow-wrap: anywhere;
+}
+.cxAlertWrapper .alertFooter {
+	.cxAlertWrapperFooterMixin();
+	border-top: @border-top;
+	padding: @padding;
+	border-radius: @border-radius;
+}
+.cxAlertWrapper lyte-alert-footer .alertFooter {
+	padding-top:0; //reset when footer comes within lyte-tag
+}
+
+/******* Alert scroll styles starts ******/
+
+.cxAlertScrollable .alertPopup{
+	.cxAlertScrollablePopupMixin();
+ 	padding: @padding;
+}
+
+.cxAlertScrollable .cxAlertContainer{
+	.cxAlertScrollableContainerMixin();
+    display: flex;
+    flex-direction: column;
+    max-height: @max-h;
+}
+
+.cxAlertScrollable lyte-alert-header{
+	.cxAlertScrollableHeaderMixin();
+    padding: @padding;
+    margin-bottom: @margin-bottom;
+}
+
+.cxAlertScrollable lyte-alert-content{
+	.cxAlertScrollableContentMixin();
+    padding: @padding;
+    flex: @flex;
+    overflow: auto;
+}
+
+.cxAlertScrollable lyte-alert-header + lyte-alert-content{
+	.cxAlertScrollableContentWithHeadMixin();
+    padding-top: @padding-top;
+}
+
+.cxAlertScrollable lyte-alert-footer{
+	.cxAlertScrollableFooterMixin();
+    padding: @padding;
+}
+
+.cxAlertScrollable lyte-alert-footer.alertBoxSh{
+	.cxAlertScrollableFooterShadowMixin();
+    box-shadow: @box-shadow;
+}
+
+.cxAlertScrollable lyte-alert-header.alertBoxSh{
+	.cxAlertScrollableHeaderShadowMixin();
+    box-shadow: @box-shadow;
+}
+
+/******* Alert scroll styles ends ******/

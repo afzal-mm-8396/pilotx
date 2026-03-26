@@ -1,0 +1,40 @@
+.cxPermissionDeniedAlertPopMixin() {
+	@max-w: 600px;
+    @border-radius: 0 0 8px 8px;
+    @padding: .cruxLESSPaddingMixin(25px 30px 30px 30px)[@padding];
+}
+.cxPermissionDeniedAlertHeaderMixin() {
+    @font-size: 20px;
+    @padding: 15px 30px 0px;
+    @font-family: @cruxPrimaryFont;
+}
+.cxPermissionDeniedAlertHeaderWithIconMixin() {
+    @padding: 15px 10px 0px;
+}
+.cxPermissionDeniedAlertContentMixin() {
+	@font-size: @cxFontSize1rem;
+    @padding: 15px 30px;
+}
+.cxPermissionDeniedAlertContentWithIconMixin() {
+    @margin-left: 15px;
+}
+.cxPermissionDeniedAlertWithIconMixin() {
+    @padding-left: 45px;
+}
+.cxPermissionDeniedAlertFooterMixin() {
+	@padding: 15px 30px;
+    @border-radius: 0 0 8px 8px;
+}
+.cxPermissionDeniedIconMixin() {
+    @bg-img: @cruxSprite;
+    @bg-pos: -2px -91px;
+    @w: 24px; /*Crux sprite warning icon width - reduced */
+    @h: 24px;
+    @margin-right: 8px;
+    @display:inline-block;
+}
+.cxPermissionDeniedTextMixin(){
+    @flex: 1;
+    // @padding-top: 2px;
+    @padding-top: 0;
+}

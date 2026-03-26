@@ -1,0 +1,283 @@
+/* Default theme imported */
+
+@import "../themes/default/ui-elements/orgtree/orgtree.variables.less";
+
+/* Loading theme in configuration */
+
+@import "../config.less";
+
+@import (optional) "../themes/@{orgtree}/ui-elements/orgtree/orgtree.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{orgtree}/global/@{direction}.less";
+
+.lyteOrgTreeWrapper{
+	.lyteOrgTreeWrapperMixin();
+	cursor: pointer;
+	max-width: @max-w;
+	overflow: auto hidden;
+	position: relative;
+	display: inline-grid;
+	grid-auto-flow: column;
+}
+.lyteOrgTreeColumn{
+	.lyteOrgTreeColumnMixin();
+	display: flex;
+	flex-direction: column;
+	height: @h;
+	overflow: auto;
+	margin: @margin;
+}
+.lyteOrgTreeExpandedColumn{
+	.lyteOrgTreeExpandedColumnMixin();
+	width: @w;
+}
+.lyteOrgTreeShrinkedColumn{
+	.lyteOrgTreeShrinkedColumnMixin();
+	width: @w;
+}
+.lyteOrgTreeElementsWrap{
+	.lyteOrgTreeElementsWrapMixin();
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	padding: @padding;
+	border-left: @border-left;
+}
+.lyteOrgTreeChildDropZone{
+	.lyteOrgTreeChildDropZoneMixin();
+	width: @w;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.lyteOrgTreeElements{
+	.lyteOrgTreeElementsMixin();
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	margin: @margin;
+	border: @border;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	z-index: @z-index;
+	background-color: @background-color;
+	flex-shrink: 0;
+}
+.lyteOrgTreeShrinkedColumn .lyteOrgTreeElements{
+	.lyteOrgTreeShrinkedColumnElementsMixin();
+	width: @w;
+	overflow: auto;
+}
+.lyteOrgTreeActiveElement {
+	.lyteOrgTreeActiveElementMixin();
+	border: @border;
+	z-index: @z-index;
+}
+.lyteOrgTreeBadgeWrapper{
+	.lyteOrgTreeBadgeWrapperMixin();
+	min-width: @min-w;
+	position: absolute;
+	right: @right;
+}
+.lyteOrgTreeChildrenCountBadge{
+	.lyteOrgTreeChildrenCountBadgeMixin();
+	height: @h;
+	min-width: @min-w;
+	margin: @margin;
+	border: @border;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	z-index: @z-index;
+	background-color: @background-color;
+}
+.lyteOrgTreeActiveWrap .lyteOrgTreeChildrenCountBadge{
+	.lyteOrgTreeActiveWrapMixin();
+	background-color: @background-color;
+    border-color: @border-color;
+	color: @color;
+	z-index: @z-index;
+}
+.lyteOrgTreeVerticalConnect{
+	.lyteOrgTreeVerticalConnectMixin();
+	position: absolute;
+	width: @w;
+	background-color: @background-color;
+	z-index: @z-index;
+}
+.lyteOrgTreeVerticalBorder {
+	.lyteOrgTreeVerticalBorderMixin();
+	position: absolute;
+	width: @w;
+	top: @top;
+	bottom: @bottom;
+}
+.lyteOrgTreeLeftHorizontalConnect,
+.lyteOrgTreeRightHorizontalConnect{
+	.lyteOrgTreeLeftRightHorizontalConnectMixin();
+	height: @h;
+	flex-grow: 1;
+	top: @top;
+	z-index: @z-index;
+}
+.lyteOrgTreeLeftHorizontalConnect{
+	.lyteOrgTreeLeftHorizontalConnectMixin();
+	left: @left;
+	background-color: @background-color;
+}
+.lyteOrgTreeRightHorizontalConnect{
+	.lyteOrgTreeRightHorizontalConnectMixin();
+	right: @right;
+}
+.lyteOrgTreeColumn::-webkit-scrollbar {
+	display: none;
+}
+.lyteOrgTreeColumn {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+.lyteOrgTreeLoadMoreWrap,
+.lyteOrgTreeScrollTopWrap{
+	.lyteOrgTreeLoadScrollTopWrapMixin();
+	position: sticky;
+	z-index: @z-index;
+	display: none;
+	transition-duration: 0.3s;
+}
+.lyteOrgTreeLoadMoreWrap{
+	.lyteOrgTreeLoadMoreWrapMixin();
+	bottom: @bottom;
+	top: @top;
+	margin-top: @margin-top;
+}
+.lyteOrgTreeScrollTopWrap{
+	.lyteOrgTreeScrollTopWrapMixin();
+	margin-top: @margin-top;
+	top: @top;
+}
+.lyteOrgTreeColumn:hover .lyteOrgTreeLoadMoreWrap,
+.lyteOrgTreeColumn:hover .lyteOrgTreeScrollTopWrap{
+	display: flex;
+}
+.lyteOrgTreeLoadMore,
+.lyteOrgTreeTopScroll{
+	.lyteOrgTreeTopScrollMixin();
+	position: absolute;
+	width: @w;
+	height: @h;
+	top: @top;
+	position: absolute;
+	left: @left;
+	transform: @transform;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: @background-color;
+}
+.lyteOrgTreeLoadMore{
+	.lyteOrgTreeLoadMoreMixin();
+	top: @top;
+	bottom: @bottom;
+}
+.lyteOrgTreeChildPlaceHolder{
+	.lyteOrgTreeChildPlaceHolderMixin();
+	width: @w;
+	height: @h;
+	display: none;
+	background: @bg;
+	z-index: @z-index;
+	position: absolute;
+	pointer-events: none;
+}
+.lyteOrgTreeChildPlaceHolderActive{
+	display: inline-block;
+}
+.lyteOrgTreeSiblingPlaceHolder{
+	.lyteOrgTreeSiblingPlaceHolderMixin();
+	width: @w;
+	height: @h;
+	display: inline-block;
+	background: @bg;
+	flex-shrink: 0;
+}
+.clonedElem{
+	.clonedElemMixin();
+	position: absolute;
+	margin: @margin;
+	z-index: @z-index;
+	pointer-events: none;
+}
+
+.lyteOrgTreeConnectorSvg{
+	position: absolute;
+	pointer-events: none;
+}
+
+.lyteOrgTreeLoadMore::after,
+.lyteOrgTreeTopScroll::after {
+	.lyteOrgTreeTopScrollAfterMixin();
+	content: "";
+	width: @w;
+	height: @h;
+	display: block;
+	transform: @transform;
+	border-left: @border-left;
+	border-top: @border-top;
+}
+.lyteOrgTreeLoadMore::after {
+	.lyteOrgTreeLoadMoreAfterMixin();
+	transform: @transform;
+}
+.lyteOrgTreeBadgeWrapper + .lyteOrgTreeRightHorizontalConnect {
+	.lyteOrgTreeBadgeWrapperRightHorizontalConnectMixin();
+	background-color: @background-color;
+	margin-right: @margin-right;
+}
+.lyteOrgTreeActiveWrap .lyteOrgTreeLeftHorizontalConnect,
+.lyteOrgTreeActiveWrap .lyteOrgTreeRightHorizontalConnect{
+	.lyteOrgTreeActiveWrapHorizontalConnectMixin();
+	background-color: @background-color;
+	height: @h;
+	margin-right: @margin-right;
+	border-color: @border-color;
+}
+.lyteOrgTreeColumn > div:nth-last-child(4)::after,
+.lyteOrgTreeScrollTopWrap + .lyteOrgTreeElementsWrap::before {
+	.lyteOrgTreeScrollWrapAfterBeforeMixin();
+	content: "";
+	display: block;
+	width: @w;
+	height: @h;
+	position: absolute;
+	z-index: @z-index;
+	background-color: @background-color;
+	left: @left;
+}
+.lyteOrgTreeScrollTopWrap + .lyteOrgTreeElementsWrap::before{
+	.lyteOrgTreeScrollTopWrapElementsWrapBeforeMixin();
+	top: @top;
+}
+.lyteOrgTreeColumn > div:nth-last-child(4)::after {
+	.lyteOrgTreeColumnLastForthChildAfterMixin();
+	bottom: @bottom;
+}
+.lyteOrgTreeWrapper div:first-of-type .lyteOrgTreeElementsWrap {
+	.lyteOrgTreeWrapperFirstElementMixin();
+	border-left: @border-left;
+}
+div.lyteOrgTreeColumn:first-of-type {
+	.LyteOrgtreeColumnFirstOfTypeMixin();
+	margin-left: @margin-left;
+}
+div.lyteOrgTreeColumn:last-of-type {
+	.LyteOrgtreeColumnLastOfTypeMixin();
+	margin-right: @margin-right;
+}

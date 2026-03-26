@@ -1,0 +1,347 @@
+.cxSubformAggDiv {
+	margin-top: 30px;
+	overflow: auto;
+	display: flex;
+	justify-content: flex-end;
+}
+.cxSubformTable lyte-th {
+	/*padding: 8px;*/
+	background: #fff;
+	text-transform: capitalize;
+	border-bottom: 3px double #e5e5e5;
+	border-top: 1px solid #e5e5e5;
+	font-family: var(--crux-primary-font);
+}
+.cxSubformTable .cxTableLookupFilterComponent lyte-th {
+	padding: 8px 8px 50px 8px;
+	border-right: 1px solid #ddd;
+}
+.cxSubformTable .cxSubformFirstColTd {
+	padding-left: 0;
+	padding-right: 0;
+	min-width: 80px;
+	width: 80px;
+}
+.cxSubformTable lyte-tbody .cxBoxInput.lyteInputBox .lyteField {
+	/*border-color: transparent;*/
+}
+.cxSubformTable lyte-tbody .cxBoxInput.lyteInputBox .lyteField:hover {
+	border-color: #c3c6ca;
+}
+.cxSubformTable lyte-tbody .cxBoxInput.lyteInputBox.lyteInputFocus .lyteField {
+	border-color: #3c9df7;
+}
+.cxSubformSerialNoInput.lyteInputBox .lyteField {
+	border-color: transparent !important;
+	box-shadow: none !important;
+	background: transparent;
+}
+.cxSubformSerialNoInput.lyteInputBox .lyteField input {
+	cursor: not-allowed;
+	padding: 8px 0;
+}
+/*
+crux-subform lyte-tbody .cxBoxInput.lyteInputBox input {
+	padding: 5px;
+}*/
+crux-subform lyte-tbody lyte-dropdown.cxBoxDropdown lyte-drop-button {
+	padding: 4px 25px 4px 5px;
+	/*border-color: transparent;*/
+}
+crux-subform lyte-tbody lyte-dropdown.cxBoxDropdown.mandatoryField lyte-drop-button::before {
+	opacity: 0;
+}
+.cxSubformTable .cxLookupFilterButtonWrap {
+	bottom: 8px;
+}
+.cxSubformTable lyte-td {
+	padding: 4px 8px;
+	border-right: 1px solid #ddd;
+	word-break: break-word;
+    overflow-wrap: break-word;
+	vertical-align: top;
+}
+.cxSubformTable lyte-td lyte-yield { /* For yeild component with large text, ui breaks. hence this fix*/
+	max-width: inherit;
+	/*width: inherit;*/
+	display: block;
+}
+lyte-td[fixed="enable"] lyte-yield  { /* For yeild component in SNO, ui breaks. hence this fix*/
+	width: auto;
+}
+.cxSubformAggTable lyte-td {
+	/*padding: 18px 10px 8px 5px;*/
+}
+.cxSubformAggTable lyte-tr:first-of-type lyte-td {
+	padding-top: 8px;
+}
+.cxSubformAggTDLabel {
+	font-family: var(--crux-primary-font);
+	text-align: right;
+}
+.cxSubformField {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	/*	This z-index is added because of textarea resize icon coming above the fixed column	*/
+}
+.cxSubformField:last-child {
+	border-right: 0;
+}
+crux-subform .sortable-parent {
+	height: auto;
+}
+.cxSubformInfoIcon {
+	background-image: url(../images/crux-sprite-icons.svg);
+	background-position: -7px -126px;
+	min-width: 13px;
+	width: 13px;
+	height: 14px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+	margin-left: 5px;
+	opacity: 0.5;
+}
+.cxSubformRemoveIcon {
+	background-image: url(../images/crux-sprite-icons.svg);
+	background-position: -118px -126px;
+	height: 12px;
+	width: 12px;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 10px 0 5px;
+}
+.cxSubformRemoveIcon:hover {
+	background-position: -140px -126px;
+}
+.cxSubformDragIcon {
+	background-image: url(../images/crux-sprite-icons.svg);
+	background-position: -165px -123px;
+	width: 6px;
+	height: 18px;
+	cursor: move;
+	display: inline-block;
+	vertical-align: middle;
+}
+.cxSubformTable .lyteSortablePlaceholder lyte-td {
+	background: inherit;
+}
+.cxSubformTheadFixed {
+	overflow: hidden;
+	position: fixed;
+	z-index: 8;
+}
+.cxSubformTableRowActions {
+	display: flex;
+	min-width: 80px;
+    justify-content: center;
+}
+.cxSubformTableRowActionsHidden {
+	visibility: hidden;
+}
+.cxSubformEditIcon,
+.cxSubformMoreActionIcon {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	position: relative;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.cxSubformEditIcon::before,
+.cxSubformMoreActionIcon::before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	transform: scale(0);
+	background: #e1e6ec;
+	transition: transform 0.3s ease;
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	left: 0;
+}
+.cxSubformMoreActionIcon.lyteMenuSelected {
+	visibility: visible;
+}
+.cxSubformEditIcon:hover::before,
+.cxSubformMoreActionIcon:hover::before,
+.cxSubformMoreActionIcon.lyteMenuSelected::before {
+	transform: scale(1);
+}
+.cxSubformEditIcon::after,
+.cxSubformMoreActionIcon::after {
+	content: '';
+	background-image: url(../images/crux-sprite-icons.svg);
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+}
+.cxSubformEditIcon::after {
+	background-position: -228px -37px;
+	width: 13px;
+	height: 13px;
+}
+.cxSubformMoreActionIcon::after {
+	background-position: -294px -4px;
+	width: 3px;
+	height: 13px;
+}
+.cxSubformFooterActionSection {
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.cxSubformScrollTopActionLabel {
+	color: #0078FF;
+	cursor: pointer;
+}
+.cxSubformShowAllActionLabel {
+	text-align: center;
+	color: #0078FF;
+	cursor: pointer;
+}
+.cxSubform {
+	display: inline-block;
+    width: auto;
+  	max-width:100%;
+}
+.cxSubform crux-table-component {
+    width:100%;
+}
+.cxSubformAggTable {
+	/*width: 500px;*/
+	width: auto;
+	max-width: 80%;
+}
+.cxSubformTable .cxLookupFieldList:nth-child(2) .cxCriteriaInputSection {
+	width: auto;
+}
+.cxSubformTable crux-lookupfilter-component .cxCriteriaInputSection {
+	margin-top: 10px;
+}
+.cxSubformTable .cxCriteriaInputSection .cxLookupFiltersInput {
+	display: flex;
+}
+.cxSubformSaveCancelWrap {
+	/*margin-top: 8px;*/
+	justify-content: center;
+}
+.cxSubformSave,
+.cxSubformCancel {
+	width: 18px;
+	height: 18px;
+	border: 1px solid #bbb;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.cxSubformSave {
+	background: #4daeee;
+	border: 1px solid #4daeee;
+}
+.cxSubformCancel {
+	margin-left: 10px;
+}
+.cxSubformSave::before,
+.cxSubformCancel::before {
+	content: '';
+	background-image: url(../images/crux-sprite-icons.svg);
+}
+.cxSubformSave::before {
+	background-position: -316px -116px;
+	width: 11px;
+	height: 8px;
+}
+.cxSubformCancel::before {
+	background-position: -337px -115px;
+	width: 9px;
+	height: 10px;
+}
+.cxSubformSortMenuIcon {
+	background-image: url(../images/crux-sprite-icons.svg);
+	background-position: -1px -2px;
+	width: 8px;
+	height: 4px;
+	margin-right: 5px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.cxSubformAscElem .cxSubformSortMenuIcon {
+	transform: rotate(180deg);
+}
+.cxSubformUnsortElem .cxSubformSortMenuIcon {
+	background-position: -71px -118px;
+	width: 8px;
+	height: 8px;
+}
+.cxSubformRowEditMode lyte-td {
+	/*vertical-align: top;*/
+	border-top: 1px solid #4CA2FB;
+	border-bottom: 1px solid #4CA2FB;
+}
+lyte-table lyte-tr lyte-td:nth-last-child(2) {
+	border-right:none;
+}
+lyte-table lyte-tr.cxSubformRowEditMode:last-of-type lyte-td { 
+	border-bottom: 1px solid #4CA2FB;
+}
+.cxSubformRowEditMode lyte-td:first-child {
+	border-left: 1px solid #4CA2FB;
+}
+.cxSubformRowEditMode lyte-td:last-child {
+	border-right: 1px solid #4CA2FB;
+}
+/*For last line alone, curved border-radius must come Starts*/
+.cxSubformTable lyte-tr:last-of-type lyte-td:first-child {
+	border-bottom-left-radius: 10px;
+}
+.cxSubformTable lyte-tr:last-of-type lyte-td:last-child {
+	border-bottom-right-radius: 10px;
+}
+/*For last line alone, curved border-radius must come Ends */
+.cxSubformTable lyte-tr:last-of-type lyte-td {
+	padding-bottom: 20px;
+}
+.cxSubformField .cxLookupComponent lyte-drop-button,
+.cxSubformField lyte-input.cxTextarea {
+	display: block;
+}
+.cxSubformHighlightRow {
+	background: #fffced;
+}
+.cxSubformTopArrowIcon {
+	-webkit-mask-image: url(../images/crux-sprite-icons.svg);
+	-webkit-mask-position: -92px -175px;
+	mask-image: url(../images/crux-sprite-icons.svg);
+	mask-position: -92px -175px;
+	background-color: #4a8de9;
+	width: 9px;
+	height: 13px;
+	display: inline-block;
+}
+.cxSubformScrollTopActionLabel .cxSubformTopArrowIcon {
+	margin-right: 5px;
+}
+.cxAggFieldOptionsTd {
+	min-width: 80px;
+	width:80px;
+}
+.cxSubformProdTxtarea {
+	margin-top: 20px;
+    display: block;
+}
+.cxSubformYeildReset {
+	width: auto;
+}
+.cxSubformTable lyte-td .cruxErrorMsgDesc {
+	position: relative;
+}
+.cxSubFormCreateTime {
+	/*display: inline-block;*/
+}

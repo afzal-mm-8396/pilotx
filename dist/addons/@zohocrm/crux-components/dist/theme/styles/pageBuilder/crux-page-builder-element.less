@@ -1,0 +1,482 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/pageBuilder/crux-page-builder-element.variables.less";
+
+@import "../../themes/default/less-variables/crux-input-elements-variables.less";
+
+@import "../themes/default/less-variables/crux-page-builder-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@cruxUseCssMaskForBg: true;
+
+crux-page-builder-element{
+	.cxPageBuilderElemMixin();
+	display : block;
+	// padding: @padding;
+	margin: @margin;
+}
+
+crux-page-builder-element.draggable-element{
+	cursor: grab;
+}
+
+crux-page-builder .lytePbRejectDrag{
+    cursor: default;
+}
+
+// lyte-pb-column-template:last-child crux-page-builder-element{
+// 	.cxPbLytePbColumnTemplatelastchildMixin();
+// 	padding: @padding;
+// }
+
+// crux-page-builder-element.cxPbElemFullWidthCol{
+// 	.cxPbElemFullWidthColMixin();
+// 	padding: @padding;
+// }
+
+.cxPbElementClass{
+	display: flex;
+	align-items: center;
+}
+
+.cxPbMandatoryClass{
+	position: relative;
+}
+
+.cxPbMandatoryClass::before{
+	.cxPbMandatoryClassMixin();
+	content: '';
+	@{property-border-left}: @border-left;
+	border-radius: @border-radius;
+	width: @w;
+	height: @h;
+	position: absolute;
+	display: inline-block;
+	@{property-left}: @left;
+	top: @top;
+}
+
+crux-page-builder-subform .cxPbTitleSection.cxPbMandatoryClass::before{
+	.cxPbSubformTitleMandatoryMixin();
+	@{property-left}: @left;
+}
+
+// crux-page-builder-element:hover .cxPbToolbar{
+// 	.cxPbElemHoverMixin();
+// 	visibility: visible;
+// 	opacity: @opacity;
+// }
+
+
+.cxPbElementDraggable {
+	.cxPbElementDraggableMixin();
+	border: @border;
+	border-radius: @border-radius;
+	background: @bg;
+	position: relative;
+	padding: @padding;
+}
+
+.cxPbEditableLabelElement.cxPbElementDraggable{
+	.cxPbEditableLabelElementMixin();
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.cxPbEditableLabelElement.cxPbElementDraggable .cxPbElementIcon{
+	.cxPbEditableLabelElementIconMixin();
+	@{property-margin-right}: @margin-right;
+}
+
+.cxPbAddressElementComp{
+	.cxPbElementDraggableMixin();
+	// border: @border;
+	// border-radius: @border-radius;
+	background: @bg;
+}
+
+.cxPbAddressElem .cxPbElementLabelInput input,
+.cxPbAddressElementComp .cxPbAddressElem .cxPbElementLabel{
+	.cxPbAddressElemMixin();
+	font-family: @font-family;
+	font-weight: @font-weight;	
+}
+.cxPbAddressElementComp .cxPbAddressElem{
+	.cxPbAddressElemMixin();
+	border-bottom: @border-bottom;
+	@{property-border-bottom-right-radius}: @border-radius;
+	@{property-border-bottom-left-radius}: @border-radius;
+}
+
+.cxPbAddressElementFieldsWrap{
+	.cxPbAddressElementFieldsWrapMixin();
+	padding: @padding;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background: @bg;
+	border: @border;
+	border-top: @border-top;
+	@{property-border-bottom-right-radius}: @border-radius;
+	@{property-border-bottom-left-radius}: @border-radius;
+}
+
+.cxPbAddressElementFieldsWrap .cxPbElementClass{
+	.cxPbAddresFieldSubElemMixin();
+	margin-bottom: @margin-bottom;
+	width: @w;
+	box-sizing: border-box;
+}
+
+.cxPbAddressElementFieldsWrap .cxPbElementClass:hover{
+	.cxPbElementDraggableMixin();
+	border: @border;
+}
+
+.cxPbAddressElementComp:hover .cxPbAddressElementFieldsWrap,
+.cxPbAddressElementComp:hover .cxPbAddressElem,
+.cxPbElementDraggable:hover{
+	.cxPbElementDraggableHoverMixin();
+	border-color: @border-color;
+}
+
+// .cxPbElementDraggable.cxPbActiveElem:hover,
+// .cxPbElementDraggable.cxPbActiveElem,
+.cxPbAddressElementComp.lytePbActiveEntityItem .cxPbAddressElem,
+.cxPbAddressElementComp.lytePbActiveEntityItem .cxPbAddressElementFieldsWrap,
+crux-page-builder-element:not(.cxPbAddressElementComp):not(.cxPbElementErrorDiv).lytePbActiveEntityItem .cxPbElementDraggable:hover,
+crux-page-builder-element:not(.cxPbAddressElementComp):not(.cxPbElementErrorDiv).lytePbActiveEntityItem .cxPbElementDraggable{
+	.cxPbElementDraggableActiveMixin();
+	border-color: @border-color;
+	box-shadow: @box-shadow;
+}
+
+.cxPbAddressElementComp.lytePbActiveEntityItem .cxPbAddressElem,
+.cxPbAddressElementComp.lytePbActiveEntityItem .cxPbAddressElementFieldsWrap{
+	box-shadow: none;
+}
+
+.cxPbAddressElementComp.lytePbActiveEntityItem:not(.cxPbElementErrorDiv){
+	.cxPbElementDraggableActiveMixin();
+	box-shadow: @box-shadow;
+}
+
+crux-page-builder-element.lytePbActiveEntityItem .cxPbElementDraggable .lyteField{
+	.cxPbElementDraggableActiveMixin();
+	border-color: @input-border-color;
+}
+
+.cxPbAddressElementFieldsWrap .cxPbAddressElemDoubleColField{
+	.cxPbAddressElemDoubleColFieldMixin();
+	width: @w;
+	box-sizing: border-box;
+}
+
+// .cxPbToolbar {
+// 	.cxPbToolbarMixin();
+// 	visibility: hidden;
+// 	opacity: @opacity;
+// 	background-color: @background-color;
+// 	box-shadow: @box-shadow;
+// 	border-radius: @border-radius;
+// 	display: flex;
+// 	@{property-margin-right}: @margin-right;
+// 	@{property-margin-left}: @margin-left;
+// }
+
+
+// .cxPbToolbar .cxPbToolIconWrap {
+// 	.cxPbToolbarIconWrapMixin();
+// 	margin: @margin;
+// 	display: inline-flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	box-sizing: border-box;
+// 	position: relative;
+// 	width: @w;
+// 	height: @h;
+// 	border-radius: @border-radius;
+// 	cursor: pointer;
+// 	transition: background-color 0.3s;
+// }
+
+// .cxPbToolbar .cxPbToolIconWrap:hover{
+// 	.cxPbToolbarIconWrapHoverMixin();
+// 	background-color: @background-color;
+// }
+
+// .cxPbToolbar .cxPbToolIconWrap:hover .cxPbSprite{
+// 	.cxPbToolbarIconWrapHoverSpriteMixin();
+// 	background-color: @background-color;
+// }
+
+// .cxPbToolbar .cxPbToolIconWrap:hover.cxPbDeleteIconWrap{
+// 	.cxPbToolbarIconWrapHoverDelWrapMixin();
+// 	background-color: @background-color;
+// }
+
+// .cxPbToolbar .cxPbToolIconWrap:hover .cxPbDeleteIcon{
+// 	.cxPbToolbarIconWrapHoverDelIconMixin();
+// 	background-color: @background-color;
+// }
+
+.cxPbElemActionIconWrap{
+	.cxPbElemActionIconWrapMixin();
+	position: absolute;
+	@{property-right}: @right;
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.cxPbElemActionIconWrap.lyteMenuSelected,
+.cxPbElemActionIconWrap:not(.cxPbDisabled):focus-visible,
+.cxPbElemActionIconWrap:not(.cxPbDisabled):hover{
+	.cxPbElemActionIconWrapHoverMixin();
+	background-color: @bg-color;
+}
+
+.cxPbElemMoreIcon.cxMoreIcon{
+	.cxPbElemMoreIconMixin();
+	display: block;
+	transform: @transform;
+	visibility: hidden;
+}
+
+.cxPbElemActionIconWrap.lyteMenuSelected .cxPbElemMoreIcon,
+.cxPbElemActionIconWrap:focus-visible .cxPbElemMoreIcon,
+.cxPbAddressElementComp:focus-visible .cxPbElemMoreIcon,
+.cxPbAddressElementComp:hover .cxPbElemMoreIcon,
+.cxPbElementClass:focus-visible .cxPbElemMoreIcon,
+.cxPbElementClass:hover .cxPbElemMoreIcon{
+	visibility: visible;
+}
+
+.cxPbElementErrorDiv .cxPbElemMoreIcon,
+.cxPbAddressElementComp.cxPbElementErrorDiv .cxPbElemMoreIcon{
+	visibility: hidden !important;
+}
+
+.cxPbErrorElement{
+	.cxPbErrorElementMixin();
+	border-color: @border-color;
+	background: @bg;
+}
+
+.cxPbErrorElement::after{
+	.cxPbErrorElementWarningIconMixin();
+	content: '';
+	position: absolute;
+	@{property-right}: @right;
+	width: @w;
+	height: @h;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+// crux-page-builder-element:hover .cxPbErrorElement::after{
+// 	display: none;
+// }
+
+.cxPbElementClass.cxPbElementWithMinus{
+	.cxPbElementWithMinusMixin();
+	@{property-padding-right}: @padding-right;
+}
+
+.cxPbElementClass.cxPbElementWithMoreIcon{
+	.cxPbElementWithMoreIconMixin();
+	@{property-padding-right}: @padding-right;
+}
+
+.cxPbElementWithMinus .cxPbQcMinusIconWrapper{
+	.cxPbElementWithMinusIconWrapMixin();
+	// @{property-margin-left}: @margin-left;
+	flex-shrink: 0;
+	// border-color: @border-color;
+	visibility: hidden;
+	cursor: pointer;
+	position: absolute;
+	@{property-right}: @right;
+}
+
+.cxPbQcMinusIconWrapper.cxIconHoverEffect::before{
+	.cxPbQcMinusIconWrapperBeforeMixin();
+	background-color: @cxPbMinusIconHoverBg;
+}
+
+.cxPbAddressElementComp:focus-visible .cxPbElementWithMinus .cxPbQcMinusIconWrapper,
+.cxPbAddressElementComp:hover .cxPbElementWithMinus .cxPbQcMinusIconWrapper,
+.cxPbElementWithMinus:focus-visible .cxPbQcMinusIconWrapper,
+.cxPbElementWithMinus:hover .cxPbQcMinusIconWrapper{
+	visibility: visible;
+}
+
+crux-page-builder-element.selected-element .cxPbQcMinusIconWrapper{
+	cursor: move;
+	visibility: hidden !important;
+}
+
+crux-page-builder-element.selected-element{
+	.cxPageBuilderElementOnDragSelMixin();
+	z-index: @z-index;
+	cursor: grabbing;
+}
+
+.cxPbQcMinusIconWrapper .cxMinusRoundedIcon{
+	.cxPbElementWithMinusIconMixin();
+	background-color: @bg-color;
+}
+
+.cxPbElementSortPlaceholder{
+	.cxPbElementPlaceholderMixin();
+	transform: @transform;
+}
+
+.cxPbElementSortPlaceholderDiv{
+	.cxPbElementSortPlaceholderDivMixin();
+	background-color: @bg-color;
+	border: @border;
+	border-radius: @border-radius;
+	box-sizing: border-box;
+	width: @w;
+	padding: @padding;
+    margin: @margin;
+}
+
+.cxPbElementSortPlaceholderDiv span{
+	visibility: hidden;
+}
+
+.cxPbElementClass.cxPbElemWithDropdown{
+	.cxPbElemWithDropdownMixin();
+	padding-top: @padding-top;
+	padding-bottom: @padding-bottom;
+}
+
+.cxPbElemDepDropdown{
+	.cxPbElemDepDropdownMixin();
+	@{property-margin-left}: @margin-left;
+	@{property-margin-right}: @margin-right;
+	pointer-events: none;
+}
+
+.cxPbElemDepDropdown .cxBoxDropdown lyte-drop-button,
+.cxPbElemDepDropdown .cxFakeDropButton{
+	.cxPbElemDepDropdownBtnMixin();
+	padding-top: @padding-top;
+	padding-bottom: @padding-bottom;
+}
+.cxPbElemDepDropdown .cxBoxDropdown .lyteDropdownLabel,
+.cxPbElemDepDropdown .cxFakeDropdownLabel{
+	.cxPbElemDepDropdownLabelMixin();
+	font-size: @font-size;
+}
+
+.cxPbPreviewElements .cxElemCompPrefixDiv{
+	.cxPbPreviewElementsPrefixDivMixin();
+	padding: @padding;
+	background: @bg;
+}
+
+.cxPbElemPrevDepDropdown lyte-drop-button,
+.cxPbElemPrevDepDropdown .cxFakeDropButton{
+	.cxPbElemPrevDepDDBtnMixin();
+	border-top: @border-top;
+	border-bottom: @border-bottom;
+	@{property-border-left}: @border-left;
+	@{property-border-top-right-radius}: @border-top-right-radius !important;
+    @{property-border-bottom-right-radius}: @border-bottom-right-radius !important;
+}
+
+.cxPbPreviewDoubleElements .cxElementValue{
+	.cxPbPreviewDoubleEleValueMixin();
+	gap: @gap;
+} 
+
+.cxPbPreviewModalContent .cxPbPreviewDoubleElemChild .cxElementValue{
+	.cxPbPreviewDoubleElemChildValMixin();
+	width: @w;
+}
+
+.cxPbAddressClearBtn{
+	.cxPbAddressClearBtnMixin();
+	@{property-margin-left}: @margin-left;
+	color: @color;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.cxPbAddressClearBtn.cxPbAddressBtnReadonly{
+	.cxPbAddressBtnReadonlyMixin();
+	opacity: @opacity;
+	cursor: not-allowed;
+}
+
+.cxPbPreviewAddressHeader{
+	.cxPbPreviewAddressHeaderMixin();
+	position: absolute;
+	display: flex;
+	align-items: center;
+	color: @color;
+	font-family: @font-family;
+	background-color: @bg-color;
+	padding: @padding;
+	@{property-left}: @left;
+	top: @top;
+}
+
+.cxPbPreviewAddressHeader .cxInfoIcon{
+	.cxPbPreviewAddressHeaderInfoIconMixin();
+	@{property-margin-left}: @margin-left;
+}
+
+.cxPbElemMessage{
+	.cxPbElemMessageMixin();
+	padding: @padding;
+	font-size: @font-size;
+	display: flex;
+}
+
+.cxPbElemMessage .cxInfoIcon{
+	.cxPbElemMsgInfoIconMixin();
+	@{property-margin-right}: @margin-right;
+}
+
+.cxPbElementInfoDiv{
+	.cxPbElementInfoDivMixin();
+	border-radius: @border-radius;
+	background-color: @bg-color;
+}
+
+.cxPbElementErrorDiv{
+	.cxPbElementErrorDivMixin();
+	border-radius: @border-radius;
+	background-color: @bg-color;
+}
+
+.cxPbElementErrorDiv .cxPbElemMessage{
+	.cxPbElementErrorDivMixin();
+	color: @color;
+}
+
+.cxPbAddressElementComp.cxPbElementErrorDiv .cxPbAddressElementFieldsWrap,
+.cxPbAddressElementComp.cxPbElementErrorDiv .cxPbAddressElem,
+.cxPbElementErrorDiv:not(.cxPbAddressElementComp) .cxPbElementClass{
+	.cxPbElementErrorDivMixin();
+	border-color: @border-color;
+}
+
+.cxPbPreviewModalContent .cxImgElemReadOnly,
+.cxPbPreviewModalContent .rtfReadOnly,.cxPbPreviewModalContent .rtfReadOnly:hover, //crm rich text class
+.cxPbPreviewModalContent .cxElementReadOnly .cxBoxWithRightIcon,
+.cxPbPreviewModalContent .cxElementReadOnly lyte-drop-button,
+.cxPbPreviewModalContent .cxElementReadOnly .lyteInputFocus .lyteField,
+.cxPbPreviewModalContent .cxElementReadOnly .lyteField:hover{
+	.cxPbPrevModalReadonlyFldMixin();
+	border-color: @border-color;
+	box-shadow: @box-shadow;
+}

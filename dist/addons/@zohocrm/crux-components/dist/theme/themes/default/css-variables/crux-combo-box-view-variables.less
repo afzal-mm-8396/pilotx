@@ -1,0 +1,21 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-combo-box-view-list-bg-color: #e7f2ff;
+    --@{cssPrefix}-combo-box-view-list-border-color: #d9e8f9;
+    --@{cssPrefix}-combo-box-view-count-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-combo-box-view-count-border-color: #b7d6fb;
+    --@{cssPrefix}-combo-box-view-popover-box-shadow-color: #202123;
+    --@{cssPrefix}-combo-box-view-popover-header-color: #202123;
+}

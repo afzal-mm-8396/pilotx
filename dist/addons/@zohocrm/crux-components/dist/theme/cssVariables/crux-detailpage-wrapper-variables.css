@@ -1,0 +1,45 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-crux-dv-nav-item-font-color: #202123;
+  --lyte-crux-crux-dv-record-user-img-bg-color: #9775FA;
+  --lyte-crux-crux-dv-record-user-img-font-color: #fff;
+  --lyte-crux-crux-dv-wrap-bg-color: #EDF0F4;
+  --lyte-crux-crux-dv-tab-content-box-shadow-color: #000;
+  --lyte-crux-crux-dv-tab-content-border-color: #d7e2ed;
+  --lyte-crux-crux-dv-tab-content-bg-color: var(--crux-element-bg-color);
+}
+/*# sourceMappingURL=crux-detailpage-wrapper-variables.css.map */

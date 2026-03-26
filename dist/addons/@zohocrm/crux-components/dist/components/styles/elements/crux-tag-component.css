@@ -1,0 +1,26 @@
+.listview_taglists li.tagElementList.cxAddedTags {
+	margin:0 5px 2px 0;
+	padding: 3px 5px 3px 10px !important;
+    line-height: 16px;
+    vertical-align: middle;
+    /*max-width: calc(100% - 30px);*/
+}
+.listview_taglists .tagElementList.cxAddedTags span {
+	white-space: nowrap;
+    width: calc(100% + 7px);
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cruxTagTitle {
+	overflow: hidden; text-overflow: ellipsis;
+	white-space:nowrap;
+	display: block;
+}
+.tagPopoverLab .cxAddedTags{
+	white-space: nowrap;
+}
+.cruxTagTitle::after {
+	display:block;
+	content : "";
+}

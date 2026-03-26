@@ -1,0 +1,442 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-user-lookup.variables.less";
+
+@import "../themes/default/less-variables/crux-user-lookup-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-user-lookup";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-user-lookup-variables.less";
+}
+
+.userLookupModal .currentSelected {
+	.userLookupModalMixin();
+	background-color: @background-color;
+}
+.userLookupModal .lyteModal > lyte-yield {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.userLookupModal lyte-checkbox{
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.userLookupModal lyte-tbody lyte-tr {
+	cursor: pointer;
+}
+.userLookupModal .alignSelectedFooter {
+	vertical-align: middle;
+}
+
+.userLookupModal lyte-tbody .cxUserLookupEmptyRow{
+	cursor: default;
+}
+
+.userLookupModal .singleUserSelected {
+	.cxUserLookupModalSingleUserSelectedMixin();
+	color: @color;
+	@{property-margin-right}: @margin-right;
+	padding-top: @padding-top;
+	@{property-margin-left}: @margin-left;
+}
+.userLookupModal .scrollSearchDiv {
+	.cxUserLookupModalScrollSearchDivMixin();
+	height: @h;
+	padding: @padding;
+	display: none;
+	text-align: @text-align;
+}
+.userLookupModal .noHeader {
+	.cxUserLookupModalNoHeaderMixin();
+	top: @top;
+}
+.userLookupModal .viewLookupTr {
+	cursor: default;
+}
+.userLookupModal .lookupHeaderStyle {
+	.cxUserLookupModalLookupHeaderMixin();
+	padding-bottom: @padding-bottom;
+}
+.userLookupModal .lookupHeaderText {
+	.cxUserLookupModalHeaderTextMixin();
+	display : block;
+	width : @w;
+	word-wrap: break-word;
+}
+.userLookupModal .displayFlex,
+.lookupSearch lyte-input,
+.userLookupModal.cruxUserView .lookupSearch {
+	display: flex;
+}
+/*
+.userLookupModal lyte-modal-header {
+	.cxUserLookupModalHeaderMixin();
+	font-size: @font-size;
+}*/
+.userLookupModal lyte-modal-header .user-lookup-section {
+	.cxUserLookupModalHeaderMixin();
+	font-size: @font-size;
+	margin-top: @margin-top;
+	font-weight: @font-weight;
+    font-family: @font-family;
+}
+//For above style check the below two
+// color: #333; Missing here but available in css 
+// background: #fff; Missing here but available in css
+
+.cxUserLookupSearch .lyteField input {
+	.cxUserLookupSearchInputMixin();
+	@{property-padding-right}: @padding-right; /*Needed for search in crux user lookup Modal*/
+	text-overflow: ellipsis;
+}
+.cxUserViewModal .cxUserLookupSearch .lyteField input,
+.cxUserLookupSearchSection .cxUserLookupSearch .lyteField input { 
+	.cxUserViewModalLookupSearchInputMixin();
+	@{property-padding-right}: @padding-right;
+}
+.userLookupModal .lookupSearch {
+	position : relative;
+	min-width: 300px;
+}
+.userLookupModal .user-lookup-section:first-child { 
+	.cxUserLookupNoLeftMarginMixin();
+	@{property-margin-left}: @margin-left;
+	@{property-padding-left}: @padding-left;
+}
+.userLookupModal .lookupModalContent {
+	.cxUserLookupModalContentMixin();
+	position: relative;
+	min-height: @min-h;
+	flex-grow: @flex-grow;
+	// box-sizing: content-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.userLookupModal .cxLookupModalNoFooter{
+	.cxUserLookupModalNoFooterMixin();
+	padding-bottom: @padding-bottom;
+}
+
+
+.userLookupModal lyte-th {
+	.cxUserLookupModalLyteThMixin();
+	min-width: @min-w;
+}
+.userLookupModal .cxUserLookupSubHeadingRow:hover,
+.userLookupModal lyte-thead lyte-tr:hover {
+	.cxUserLookupModalLyteTrHoverMixin();
+	background: @bg;
+}
+.cxUserLookupUserImg {
+	.cxUserLookupUserImgMixin();
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	vertical-align: middle;
+	display: inline-block;
+	@{property-margin-right}: @margin-right;
+}
+.cxUserLookupNoPhoto {
+	.cxUserLookupNoPhotoMixin();
+	background: @bg;
+	background-size: @bg-size;
+}
+.cxUserLookupSelectedRow lyte-td {
+	.cxUserLookupSelectedRowTdMixin();
+	background-color: @bg-color;
+}
+.userLookupModal lyte-th:first-child,
+.userLookupModal lyte-td:first-child,
+.lookupTableBodypadding,
+.userLookupModal .lookupTableHeaderWidth {
+	.cxUserLookupModalBodyMixin();
+	@{property-padding-left}: @padding-left;
+}
+.userLookupModal lyte-th.lookupTableHeaderWidth,
+.userLookupModal .lookupFirstMinWidth {
+	.cxUserLookupModalFirstMinWidthMixin();
+	min-width: @min-w;
+	width: @w;
+}
+
+// .userLookupModal .lookupTableHeaderWidth {
+// 	.cxUserLookupModalTableHeaderWidthMixin();
+// 	width: @w;
+// 	@{property-padding-left}: @padding-left;
+// }
+.userLookupModal .lyteCheckBoxPrimary::before {
+	.cxUserLookupModalCkBoxPrimaryBeforeMixin();
+	background-position: @bg-pos;
+}
+.userLookupModal .lyteCheckBoxPrimary:hover::before {
+	.cxUserLookupModalCkBoxPrimaryHoverBeforeMixin();
+	background-position: @bg-pos;
+}
+.cxUserLookupSelCountLabel,
+.userLookupModal .userSelection {
+	.cxUserLookupModalUserSelectionMixin();
+	font-size: @font-size;
+	align-self: center;
+	color: @color;
+	font-family: @font-family;
+	@{property-margin-left}: @margin-left;
+}
+.userLookupModal .userSelection {
+	cursor:pointer;
+}
+.userLookupModal .userSelection:hover {
+	text-decoration: underline;
+}
+.cxUserLookupSelCountLabel {
+	.cxUserLookupSelCountLabelMixin();
+	color: @color;
+}
+.userLookupTable lyte-radiobutton {
+	.userLookupTableRadiobuttonMixin();
+	@{property-margin-right}: @margin-right;
+}  
+.userLookupModal .lookupSearchCloseIcon {
+	.cxUserLookupModalSearchCloseIconMixin();
+	background: @bg;
+	width: @w;
+	height: @h;
+	transform: @transform;
+	display : none;
+	position: absolute;
+	@{property-right}: @right;
+	top: @top;
+	cursor: pointer;
+}
+.userLookupModal .selectedUsersHd {
+	.cxUserLookupModalSelectedUsersHdMixin();
+	padding-bottom: @padding-bottom;
+}
+.userLookupModal .userLookupBackIcon {
+	.cxUserLookupModalBackIconMixin();
+	background: @bg;
+	width: @w;
+	height: @h;
+	display: inline-block;
+	cursor:pointer;
+	opacity: @opacity;
+	position: absolute;
+	transform: @transform;
+	@{property-margin-right}: @margin-right;
+}
+.cxUserLookupZiaSuggestedRow lyte-td:nth-child(2) .cxUserLookupTextWrap {
+	.cxUserLookupTextWrapMixin();
+	display: inline-flex;
+	max-width: @max-w;
+}
+.userLookupModal .cruxUserLookupText {
+	.cxUserLookupModalTextMixin();
+	display: inline-block;
+	max-width: @max-w;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.userLookupModal .cruxUserLookupImage {
+	.cxUserLookupModalImageMixin();
+	max-width: @max-w;
+}
+.cxUserLookupZiaPercent {
+	.cxUserLookupZiaPercentMixin();
+	font-family: @font-family;
+	font-weight: @font-weight;
+	display: inline-block;
+	vertical-align: middle;
+	@{property-margin-left}: @margin-left;
+}
+.cxUserLookupTableWrap {
+	max-height: inherit;
+	position: relative;
+	/* overflow: auto; Caused scrollbar issue in windows machine. Hence commented */
+	display: flex;
+	flex-direction: column;
+}
+.userLookupTable {
+	overflow:hidden;
+	max-height: inherit;
+	display: flex;
+	flex-direction: column;
+	transform: translate3d(0,0,0);
+}
+.userLookupTable .lyteTableScroll {
+	max-height: inherit;
+}
+.emptyUserLookupTable {
+	overflow:hidden;
+}
+.cxUserLookupEmptyRow lyte-td {
+	.cxUserLookupEmptyRowTdMixin();
+	height: @h;
+}
+.NoUsersLookup {
+	.cxUserLookupModalNoUsersMixin();
+	display: block;
+	text-align: center;
+	line-height: @line-height;
+	color: @color;
+	position: absolute;
+	@{property-left}: @left;
+	@{property-right}: @right;
+	bottom: @bottom;
+	pointer-events: none;
+	z-index: @z-index;
+	background: @bg;
+	@{property-border-right}: 1px solid @border;
+	@{property-border-left}: 1px solid @border;
+	box-sizing: border-box;
+  	@{property-border-bottom-right-radius}: @border-bottom-right-radius;
+  	@{property-border-bottom-left-radius}: @border-bottom-left-radius;
+}
+.cxUserLookupListLoaderWrap{
+	margin-top: 2rem;
+	position: relative;
+}
+.cxUserLookupSearchLoader,
+.cxUserLookupListLoader,
+.cxUserLookupLazyLoader {
+	.cxUserLookupModalLoaderCommonMixin();
+	background: @bg;
+	background-size: @bg-size;
+	display: inline-block;
+}
+.cxUserLookupListLoader {
+	.cxUserLookupModalListLoaderMixin();
+	position: absolute;
+	width: @w;
+	height: @h;
+	@{property-left}: @left;
+	top: @top;
+	transform: @transform;
+	z-index: @z-index;
+}
+.cxUserLookupSearchLoader {
+	.cxUserLookupModalSearchLoaderMixin();
+	position: absolute;
+	@{property-right}: @right;
+	top: @top;
+	width: @w;
+	height: @h;
+}
+.cxUserLookupSearch .cxUserLookupSearchLoader {
+	.cxUserLookupSearchLoaderMixin();
+	@{property-right}: @right;
+}
+.cxUserLookupLazyLoader {
+	.cxUserLookupModalLazyLoaderMixin();
+	width: @w;
+	height: @h;
+}
+.cxUserLookupSelNameDummy {
+	.cxUserLookupModalSelNameDummyMixin();
+	width: @w;
+	height: @h;
+	display: inline-block;
+	vertical-align: middle;
+	background: @bg;
+}
+.cxUserLookupImgDummy {
+	.cxUserLookupModalImgDummyMixin();
+	width: @w;
+	height: @h;
+	display: inline-block;
+	vertical-align: middle;
+	background: @bg;
+	border-radius: @border-radius;
+}
+
+.userLookupModal .cxUserLookupSubHeadingRow {
+	cursor: default;
+}
+.cxUserLookupListLoaderTr lyte-td,
+.cxUserLookupSubHeadingRow lyte-td {
+	.cxUserLookupSubHeadingRowTdMixin();
+	border-bottom: @border-bottom;
+}
+.cxUserLookupSubHeadingCell {
+	.cxUserLookupSubHeadingCellMixin();
+	z-index: @z-index;
+	height: @h;
+}
+.cxUserLookupSubHeadingSecondCell {
+	.cxUserLookupSubHeadingSecondCellMixin();
+	padding-top: @padding-top;
+	height: @h;
+}
+.cxUserLookupRowHeading {
+	.cxUserLookupRowHeadingMixin();
+	position: absolute;
+	top: @top;
+	font-family: @font-family;
+	font-weight: @font-weight;
+	white-space: nowrap;
+}
+.cxUserLookupSubHeadingSecondCell .cxUserLookupRowHeading {
+	.cxUserLookupSubHeadingSecondCellHeadingMixin();
+	top: @top;
+}
+.cxUserLookupListLoaderTr {
+	position: relative;
+}
+.cxUserLookupListLoaderTd {
+	.cxUserLookupListLoaderTdMixin();
+	height: @h;
+	position: static;
+}
+.cxUserLookupNoSuggestion {
+	.cxUserLookupNoSuggestionMixin();
+	position: absolute;
+	@{property-left}: 50%;
+	transform: translateX(-50%);
+	color: @color;
+	height: 50px;
+	z-index: 2;
+	top: 0;
+	display: flex;
+	align-items: center;
+}
+.userLookupTableRadiobuttonMixin() {
+	@margin-right: 5px;
+}
+.cxUserLookupProfileSection {
+	.cxUserLookupProfileSectionMixin();
+	display: flex;
+	align-items: center;
+	flex:@flex-one;
+	position: @position;
+}
+.cxUserLookupProfileSection .cxUserLookupNoPhoto,
+.cxUserLookupProfileSection .cxUserLookupUserImg {
+	top:2px;
+}
+.cxUserLookupProfileName {
+	.cxUserLookupProfileNameMixin();
+	@{property-padding-left}: @padding-left;
+    display: @display;
+	padding-top: @padding-top;
+	max-width: @max-width;
+    word-break: @word-break;
+}
+.cxLookupFilterpresent {
+	.cxUserLookupFilterpresentSearchMixin();
+	@{property-margin-left}: @margin-left;
+}
+.cruxUserView .cxUserLookupSearch lyte-input {
+	.cruxUserViewLookupSearchMixin();
+	width: @width !important;
+}

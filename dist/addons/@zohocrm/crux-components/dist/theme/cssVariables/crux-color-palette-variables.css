@@ -1,0 +1,59 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-color-palette-dropper-border-color: #dae0e3;
+  --lyte-crux-color-palette-dropper-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-color-palette-dropper-hover-border-color: var(--crux-element-border-color);
+  --lyte-crux-color-palette-dropper-hover-box-shadow-color: #c3c6ca;
+  --lyte-crux-color-palette-popup-opened-hover-bg-color: #3c9df7;
+  --lyte-crux-color-palette-popup-opened-hover-box-shadow-color: var(--crux-element-focus-shadow-color);
+  --lyte-crux-color-palette-text-container-bg-color: #4ea8dd;
+  --lyte-crux-color-palette-text-container-before-border-color: rgba(0, 0, 0, 0.2);
+  --lyte-crux-color-palette-slider-circle-border-color: rgba(0, 0, 0, 0.5);
+  --lyte-crux-color-palette-proceed-btn-border-color: #ebebeb;
+  --lyte-crux-color-palette-popup-content-no-fill-border-color: #adadad;
+  --lyte-crux-color-palette-popup-circle-no-fill-after-bg-color: #f27f7e;
+  --lyte-crux-color-palette-popup-circle-hover-after-border-color: rgba(0, 0, 0, 0.3);
+  --lyte-crux-color-palette-dropper-circle-before-border-color: rgba(0, 0, 0, 0.2);
+  --lyte-crux-color-palette-dropper-circle-no-fill-after-bg-color: #f27f7e;
+  --lyte-crux-color-palette-tags-popup-border-color: rgba(0, 0, 0, 0.2);
+  --lyte-crux-color-palette-tags-popup-infinite-scroll-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-color-palette-picker-icon-color: var(--crux-base-icon-color);
+  --lyte-crux-color-palette-more-btn-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-color-palette-tags-popup-header-border-color: #d7e2ed;
+  --lyte-crux-color-palette-more-btn-border-color: #E8F0F8;
+}
+/*# sourceMappingURL=crux-color-palette-variables.css.map */

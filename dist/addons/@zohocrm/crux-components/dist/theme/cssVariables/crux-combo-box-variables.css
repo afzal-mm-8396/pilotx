@@ -1,0 +1,74 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-combo-box-header-info-bg-color: #EDF1F5;
+  --lyte-crux-combo-box-header-info-text-color: #313949;
+  --lyte-crux-combo-box-user-search-input-placeholder-text-color: #999;
+  --lyte-crux-combo-box-section-heading-text-color: #313949;
+  --lyte-crux-combo-box-total-recipients-count-text-color: var(--crux-base-text-color);
+  --lyte-crux-combo-box-selected-user-content-border-color: #dfdfdf;
+  --lyte-crux-combo-box-user-selection-option-border-color: #ddd;
+  --lyte-crux-combo-box-user-option-drop-button-border-color: #ddd;
+  --lyte-crux-combo-box-search-input-disabled-bg-color: #eee;
+  --lyte-crux-combo-box-user-list-hover-bg-color: #f1f6f9;
+  --lyte-crux-combo-box-user-description-text-color: var(--crux-element-label-color);
+  --lyte-crux-combo-box-added-label-text-color: #5bb57c;
+  --lyte-crux-combo-box-added-label-before-bg-color: #5bb57c;
+  --lyte-crux-combo-box-selected-list-section-border-color: #ebebeb;
+  --lyte-crux-combo-box-selected-list-section-bg-color: #f9f9f9;
+  --lyte-crux-combo-box-selected-list-section-hover-border-color: #ebebeb;
+  --lyte-crux-combo-box-user-type-detail-text-color: #313949;
+  --lyte-crux-combo-box-selected-user-list-border-color: #e5e5e5;
+  --lyte-crux-combo-box-selected-user-list-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-combo-box-selected-user-img-border-color: #ddd;
+  --lyte-crux-combo-box-selected-close-wrap-hover-bg-color: #e8e8e8;
+  --lyte-crux-combo-box-msg-box-text-color: var(--crux-heading-color);
+  --lyte-crux-combo-box-empty-msg-text-color: #777;
+  --lyte-crux-combo-box-recipient-multiselect-border-color: #e5e5e5;
+  --lyte-crux-combo-box-recipient-multiselect-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-combo-box-recipient-multiselect-highlight-border-color: #222;
+  --lyte-crux-combo-box-recipient-multiselect-highlight-bg-color: #f4f4f4;
+  --lyte-crux-combo-box-recipient-multiselect-error-bg-color: #fadada;
+  --lyte-crux-combo-box-recipient-multiselect-error-border-color: #f51e1e;
+  --lyte-crux-combo-box-recipient-error-text-color: #444;
+  --lyte-crux-combo-box-recipient-close-icon-hover-bg-color: #f7b0b0;
+  --lyte-crux-combo-box-recipient-placeholder-text-color: #888;
+  --lyte-crux-combo-box-recipient-selected-list-border-color: var(--crux-element-border-color);
+  --lyte-crux-combo-box-no-recipient-ul-bg-color: #f9f9f9;
+  --lyte-crux-combo-box-contain-color: #333;
+  --lyte-crux-combo-box-selected-user-count-color: #333;
+}
+/*# sourceMappingURL=crux-combo-box-variables.css.map */

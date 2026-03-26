@@ -1,0 +1,432 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-grouper-radio-component/crux-grouper-radio-component.variables.less";
+
+@import "../themes/default/less-variables/crux-grouper-radio-component-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-grouper-radio-component";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-grouper-radio-component-variables.less";
+}
+
+// crux-grouper-radio-component{
+// 	.cruxGrouperRadioComponentMixin();
+// 	// display: flex;
+// 	// flex-wrap: wrap;
+// 	color: @color;
+// }
+crux-grouper-radio-component .cxElementValue {
+    display: flex;
+}
+// crux-grouper-radio-component .cxElementLabel {
+//     .cxGrouperRadioElementLabelMixin();
+//     @{property-margin-right}: @margin-right;
+// }
+
+.cxGrouperRadioCont {
+	.cxGrouperRadioContMixin();
+	border: @border;
+	padding: @padding;
+    margin: @margin;
+    min-width: @min-w;
+	white-space: nowrap;
+	// overflow: hidden;
+	display: inline-flex;
+	max-width: @max-w;
+}
+
+.cxGrouperRadioCont.singlechoice{
+	.cxGrouperRadioContSingleChoiceMixin();
+	// flex: 1;
+	// flex-basis: @flex-basis;
+	display: flex;
+} 
+
+.cxGrouperRadioCont .lyteCBoxGroupVertical .lyteCheckBoxPrimary::before,
+.cxGrouperRadioCont .lyteCBoxGroupVertical .lyteCheckBoxDefault::before {
+	position: absolute;
+}
+.cxGrouperRadioCont .lyteCBoxGroupVertical .lyteCheckBoxPrimary span, 
+.cxGrouperRadioCont .lyteCBoxGroupVertical .lyteCheckBoxDefault span {
+	@{property-padding-left}: 20px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 25px);
+}
+
+.cxGrouperGroupBtn {
+	.cxGrouperGroupBtnMixin();
+	border: @border;
+	border-radius: @border-radius;
+	position: relative;
+	width: @w;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.mandatoryField .cxGrouperRadioBtn::before,
+.mandatoryField .cxGrouperGroupBtn::before {
+	.cxGrouperGroupBtnMandatoryMixin();
+	content: '';
+    display: inline-block;
+    width: @w;
+    position: absolute;
+    top: @top;
+    bottom: @bottom;
+    @{property-left}: @left;
+    border-radius: @border-radius;
+    z-index: @z-index;
+    @{property-border-left}: @border-left;
+    background: @bg;
+}
+
+.cxMandatoryOptEnabled.mandatoryField .cxGrouperRadioBtn::before,
+.cxMandatoryOptEnabled.mandatoryField .cxGrouperGroupBtn::before{
+	content: none;
+}
+
+.mandatoryField .cxGrouperRadioBtn::before{
+	.cxGrouperRadioBtnMandatoryMixin();
+	border-radius: @border-radius;
+    width: @w;
+}
+
+.cxGrouperGroupBtnElem {
+	.cxGrouperGroupBtnElemMixin();
+	padding: @padding;
+	@{property-border-right}: @border-right;
+	flex: 1;
+	font-size: @font-size;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	// min-width: @min-w;
+	max-width: @max-w;
+}
+.cxGrouperGroupBtnElem:focus{
+	.cxGrouperGroupBtnElemFocusMixin();
+	outline: @outline;
+}
+
+.cxGrouperGroupBtnElem.cxGroupBtnFocused{
+	.cxGroupBtnFocusedMixin();
+	outline: @outline;
+	z-index: @z-index;
+	outline-offset: @outline-offset;
+}
+
+.cxGrouperRadioMandatoryError .cxGrouperGroupBtnElem.cxGroupBtnFocused{
+	.cxGroupBtnErrorFocusedMixin();
+	outline: @outline;
+}
+
+.cxGrouperGroupBtnElem:first-child {
+	.cxGrouperGroupBtnElemFirstChildMixin();
+	border-radius: @border-radius;
+}
+
+.cxGrouperGroupBtnElem:last-child {
+	.cxGrouperGroupBtnElemLastChildMixin();
+	border-radius: @border-radius;
+	@{property-border-right}: @border-right;
+}
+
+.cxGrouperGroupBtnElem.cxGrouperGroupBtnSingleElem{
+	.cxGrouperGroupBtnSingleElemMixin();
+	border-radius: @border-radius;
+}
+
+.cxGrouperGroupBtnDisabled,
+.cxGrouperRadioBtnDisabled {
+	.cxGrouperInputDisabledMixin();
+	pointer-events: none;
+	cursor: not-allowed;
+	// opacity: @opacity;
+}
+
+.cxGrouperViewMode .cxGrouperGroupBtnElem:not(.cxGrouperGroupBtnSelected),
+.cxGrouperGroupBtnDisabled .cxGrouperGroupBtnElem:not(.cxGrouperGroupBtnSelected){
+	.cxGrouperGroupBtnDisabledElemMixin();
+	background: @bg;
+}
+
+.cxGrouperTickIcon{
+	.cxGrouperTickIconMixin();
+    width: @w;
+	min-width: @min-w;
+    height: @h;
+    display: inline-block;
+    @{property-margin-right}: @margin-right;
+    // background-image: @bg-img;
+    // background-position: @bg-pos;
+	.cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color)
+}
+
+.cxGrouperTickIcon.cxGrouperWhiteTickIcon{
+	.cxGrouperWhiteTickIconMixin();
+	// background-position: @bg-pos;
+	background-color: @bg-color;
+}
+
+
+.cxGrouperGroupBtnDefault.cxGrouperGroupBtnSelected,
+.cxGrouperGroupBtnDefault:hover{
+	.cxGrouperGroupBtnDefaultMixin();
+	background-color: @bg-color;
+}
+
+// .cxGrouperGroupBtnElem.cxGrouperGroupBtnSelected{
+// 	.cxGrouperGroupBtnElemSeletedMixin();
+// 	min-width: @min-w;
+// }
+
+.cxGrouperRadioBtn{
+	.cxGrouperRadioBtnMixin();
+	position: relative;
+	border-radius: @border-radius;
+	border: @border;
+	width: @w;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.cxGrouperRadioCont.mandatoryField .cxGrouperRadioBtn {
+	.cxMandatoryGrouperRadioBtnMixin();
+    @{property-padding-left}: @padding-left;
+}
+
+.cxGrouperRadioCont.cxMandatoryOptEnabled .cxGrouperRadioBtn{
+	.cxMandatoryOptEnabledRadioBtnMixin();
+    @{property-padding-left}: @padding-left;
+}
+
+// .cxGrouperRadioCont.mandatoryField .cxGrouperGroupBtnSelected{
+//     pointer-events: none;
+// }
+
+.cxGrouperRadioBtnBgTag{
+	.cxGrouperRadioBtnBgTagMixin();
+	padding: @padding;
+	border-radius: @border-radius;
+	border: @border;
+	display: inline-block;
+	box-sizing: border-box;
+	width: @w;
+	z-index: @z-index;
+	position: relative;
+	vertical-align: top;
+}
+
+.cxGrouperGroupBtn lyte-text,
+.cxGrouperRadioBtnBgTag lyte-text{
+	vertical-align: top;
+}
+
+.cxGrouperRadioBtn lyte-radiobutton:not(:last-child){
+	.cxGrouperRadioBtnLyteRadioNotLastChildMixin();
+	margin-bottom: @margin-bottom;
+}
+
+.cxGrouperRadioBtnReset{
+	.cxGrouperRadioBtnResetMixin();
+	padding: @padding;
+	color: @color;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.cxGrouperRadioBtnDisableReset{
+	.cxGrouperRadioBtnDisableResetMixin();
+	opacity: @opacity;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+.cxGrouperRadioBtn:not(.cxGrouperViewMode) lyte-radiobutton label:hover .cxGrouperRadioBtnBgTag:not(.cxGrouperRadioBtnDefaultTag),
+.cxGrouperRadioBtnSelected.cxGrouperRadioBtnBgTag:not(.cxGrouperRadioBtnDefaultTag){
+	.cxGrouperRadioBtnBgTagHoverSelectedMixin();
+	border: @border;
+	padding: @padding;
+}
+
+// .cxGrouperRadioBtn lyte-radiobutton label:hover .cxGrouperRadioBtnDefaultTag,
+// .cxGrouperRadioBtnDefaultTag.cxGrouperRadioBtnSelected{
+// 	.cxGrouperRadioBtnDefaultSelectedMixin();
+// 	background-color: @bg-color;
+// }
+
+
+.cxGrouperRadioBtnDummyLabel{
+	.cxGrouperRadioBtnDummyLabelMixin();
+	position: absolute;
+	@{property-left}: @left;
+	top: @top;
+	bottom: @bottom;
+	@{property-right}: @right;
+}
+
+.cxGrouperBreakFlexWrap{
+	.cxGrouperBreakFlexWrapMixin();
+	flex-basis: @flex-basis;
+}
+
+.cxGrouperColorFFF{
+	.cxGrouperColorFFFMixin();
+	color: @color;
+}
+
+.cxGrouperViewMode{
+	cursor: not-allowed;
+}
+
+.cxGrouperViewMode .cxGrouperGroupBtnElem{
+	pointer-events: none;
+}
+
+.cxGrouperRadioCont .cxGrouperBtnNoneOption{
+	.cxGrouperBtnNoneOptionMixin();
+	display: inline-block;
+	opacity: @opacity;
+	cursor: not-allowed;
+}
+
+
+.cxGrouperBtnNoneOption::after{
+	.cxGrouperBtnNoneOptionAfterMixin();
+	content: '';
+	display: inline-block;
+	width: @w;
+	height: @h;
+	background: @bg;
+	opacity: @opacity;
+	vertical-align: middle;
+}
+
+.cxGrouperRadioCont .lyteRadioLayer{
+	.cxGrouperRadioBtnInputMixin();
+	// margin-top: @margin-top;
+	@{property-margin-right}: @margin-right;
+}
+
+.cxGrouperRadioCont  .cxGrouperGroupBtn.cxGrouperRadioMandatoryError{
+	.cxGrouperRadioMandatoryErrorMixin();
+	border-color: @border-color;
+}
+
+.cxGrouperRadioMandatoryError .lyteRadioBtn:hover .lyteRadioLayer,
+.cxGrouperRadioMandatoryError .lyteRadioLayer{
+	.cxGrouperRadioMandatoryErrorMixin();
+	border-color: @border-color;
+}
+
+.cxGrouperRadioBtn lyte-radiobutton.lyteRadioLabelBiggerCase label{
+	.cxGrouperRadioBtnRadioLableMixin();
+	display: inline-flex;
+	max-width: @max-w;
+	position: relative;
+	align-items: center;
+}
+
+.cxGrouperRadioBtn.cxSelectionError lyte-radiobutton .lytePrimary input[type="radio"]:checked + .lyteRadioLayer{
+	.cxSelectionErrorRadioBtnMixin();
+	border-color: @border-color;
+}
+
+.cxGrouperRadioBtn.cxGrouperRadioMandatoryError lyte-radiobutton .lytePrimary input[type="radio"]:checked + .lyteRadioLayer{
+	.cxGrouperRadioBtnCheckedMandErrorMixin();
+	border-color: @border-color;
+}
+
+.cxGrouperRadioBtn.cxSelectionError lyte-radiobutton .lytePrimary input[type="radio"]:focus + .lyteRadioLayer, 
+.cxGrouperRadioBtn.cxSelectionError lyte-radiobutton .lytePrimary input[type="radio"]:active + .lyteRadioLayer,
+.cxGrouperRadioBtn.cxGrouperRadioMandatoryError lyte-radiobutton .lytePrimary input[type="radio"]:focus + .lyteRadioLayer, 
+.cxGrouperRadioBtn.cxGrouperRadioMandatoryError lyte-radiobutton .lytePrimary input[type="radio"]:active + .lyteRadioLayer{
+	.cxGrouperRadioBtnMandErrorMixin();
+	outline: @outline;
+	border-color: @border-color;
+}
+
+
+.cxGrouperRadioBtn.cxSelectionError lyte-radiobutton .lytePrimary .lyteRadioLayer .lyteRadioCheck{
+	.cxSelectionErrorRadioBtnCheckMixin();
+	background: @bg;
+}
+
+.cxGrouperGroupBtn.cxSelectionError .cxGrouperGroupBtnElem.cxGroupBtnFocused,
+.cxGrouperGroupBtn.cxSelectionError .cxGrouperGroupBtnSelected{
+	.cxGrouperGroupBtnSelectionErrorMixin();
+	outline: @outline;
+	border-color: @border-color;
+	z-index: @z-index;
+}
+
+.cxGrouperGroupBtn.cxGrouperViewMode .cxGrouperGroupBtnElem,
+.cxGrouperWrapDisabled{
+	cursor: not-allowed;
+}
+
+.cxGrouperRadioCont .cxGrouperRadioBtn .cxRadioSelected .lyteRadioBtn,
+.cxGrouperRadioCont.mandatoryField .cxGrouperGroupBtnSelected,
+.cxGrouperRadioBtn.cxGrouperViewMode lyte-radiobutton label{
+	cursor: default;
+}
+
+.cxGrouperViewMode lyte-text{
+	pointer-events: auto;
+	cursor: not-allowed;
+}
+
+.cxGrouperViewMode lyte-radiobutton input[type="radio"]:active + .lyteRadioLayer,
+.cxGrouperViewMode lyte-radiobutton .lytePrimary input[type="radio"]:active + .lyteRadioLayer,
+.cxGrouperViewMode lyte-radiobutton input[type="radio"]:focus + .lyteRadioLayer,
+.cxGrouperViewMode lyte-radiobutton .lytePrimary input[type="radio"]:focus + .lyteRadioLayer,
+.cxGrouperRadioBtn.cxGrouperViewMode .lyteRadioLayer,
+.cxGrouperRadioBtn.cxGrouperViewMode label:hover input[type="radio"]:not(:checked) + .lyteRadioLayer{
+	.cxGrouperRadioBtnViewModeLayerMixin();
+    background: @bg;
+    border-color: @border-color;
+	outline: @outline;
+}
+
+.cxGrouperRadioBtn.cxGrouperViewMode input[type=radio]:checked+.lyteRadioLayer{
+	.cxGrouperRadioBtnViewModeCheckedLayerMixin();
+    opacity: @opacity;
+}
+
+.cxGrouperRadioCont .cxGrouperGroupBtnSelected{
+	-webkit-text-stroke: 0.6px;
+}
+
+.cxGroupRadioBtnViewTag{
+	.cxGroupRadioBtnViewTagMixin();
+	padding: @padding;
+	border-radius: @border-radius;
+	border: @border;
+	display: inline-block;
+}
+
+.cxGroupRadioBtnViewTag lyte-text{
+	vertical-align: top;
+}
+
+/***** print color (bg graphics disabled case) related styles starts ****/
+
+.cxGrouperRadioCont lyte-radiobutton input[type=radio]+.lyteRadioLayer:before,
+.cxGrouperRadioBtnSelected.cxGrouperRadioBtnBgTag:not(.cxGrouperRadioBtnDefaultTag),
+.cxGrouperRadioCont .cxGrouperTickIcon,
+.cxColorEnabledField .cxGrouperGroupBtnSelected{
+    color-adjust: exact;
+	-webkit-print-color-adjust: exact;
+} 
+
+/***** print color (bg graphics disabled case) related styles ends ****/ 

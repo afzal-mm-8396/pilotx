@@ -1,0 +1,81 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-merge-field-body.variables.less";
+
+@import "../themes/default/less-variables/crux-merge-field-body-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-merge-field-body-variables.less";
+}
+
+.cxMergeFieldBodyPopover .lytePopoverElement{
+    .cxMergeFieldBodyPopoverElementMixin();
+    padding: @padding;
+}
+
+.cxMergeFieldBodyPopover .lytePopoverYield{
+    .cxMergeFieldBodyPopoverYieldMixin();
+    height: @h;
+    overflow: hidden;
+}
+
+.cxMegeFieldPopModuleDropdown{
+    .cxMegeFieldPopModuleDropdownMixin();
+    padding: @padding;
+}
+
+.cxMegeFieldPopContent{
+    .cxMegeFieldPopContentMixin();
+    padding: @padding;
+    overflow: auto;
+    flex: 1;
+    min-height: @min-h;
+}
+
+.cxMegeFieldPopContent lyte-text{
+    vertical-align: top;
+}
+
+.cxMergeFieldPopFieldsLabel{
+    .cxMergeFieldPopFieldsLabelMixin();
+    padding: @padding;
+    cursor: pointer;
+    margin: @margin;
+    border-radius: @border-radius;
+}
+
+.cxMergeFieldLabelActive{
+    .cxMergeFieldPopFieldsLabelHoverMixin();
+    background: @bg;
+}
+.cxMegeFieldPopDisabled .cxMergeFieldPopFieldsLabel,
+.cxMegeFieldPopDisabled .cxMergeFieldLabelActive {
+    .cxMegeFieldPopDisabledLableMixin();
+    background: @background !important;
+    color: @color;
+    pointer-events: none;
+}
+.cxMergeFieldPopSubHeading{
+    .cxMergeFieldPopSubHeadingMixin();
+    padding: @padding;
+    font-family: @font-family;
+    font-weight: @font-weight;
+    font-size: @font-size;
+}
+
+.cxMergeFieldModuleDropdownVisible::before{
+    .cxMergeFieldModuleDropdownVisibleLayerMixin();
+    content: '';
+    position: absolute;
+    cursor: default;
+    inset: @inset;
+}
+
+.cxMergeFieldTextBold{
+    .cxMergeFieldTextBoldMixin();
+    font-family: @font-family;
+    font-weight: @font-weight;
+}

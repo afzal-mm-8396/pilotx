@@ -1,0 +1,600 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.comboboxCloseIcon.lyteModalClose {
+  top: 35px;
+  right: 38px;
+}
+.op5_op1_parent > .op5_op1_child {
+  opacity: 0.5;
+}
+.op5_op1_parent:hover > .op5_op1_child {
+  opacity: 1;
+}
+.comboxBoxHeader {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  word-break: break-word;
+}
+.cxComboHeaderInfo {
+  background: var(--lyte-crux-combo-box-header-info-bg-color);
+  border-radius: 4px;
+  padding: 5px 15px;
+  font-size: 13px;
+  color: var(--lyte-crux-combo-box-header-info-text-color);
+  font-family: 'LatoRegular', sans-serif;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.cxComboboxheader {
+  font-size: 0.857rem;
+  padding: 0;
+}
+.cxComboboxHeaderInfoIcon {
+  background: url(../../images/crux-sprite-icons.svg);
+  background-position: -68px -2px;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.cxComboHeaderLimitMsg {
+  display: inline-block;
+  vertical-align: middle;
+}
+.combo-box-content,
+.cxComboBoxContent {
+  padding-top: 5px;
+  align-items: flex-start;
+}
+.cxUserSearch .clear-search {
+  height: 100%;
+  width: 25px;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  position: absolute;
+  opacity: 0.7;
+}
+.cxUserSearch input::placeholder {
+  color: var(--lyte-crux-combo-box-user-search-input-placeholder-text-color);
+  font-size: 14px;
+}
+.cxUserSearch .clear-search:hover {
+  opacity: 1;
+}
+.cxUserSearch .clear-search::before {
+  content: '';
+  background: url(../../images/crux-sprite-icons.svg) no-repeat -54px -2px;
+  width: 10px;
+  height: 8px;
+  position: absolute;
+  top: calc(50% - 4px);
+  right: 7px;
+}
+.combo-box-nophoto {
+  background: url(../../images/nophoto.png);
+  display: inline-block;
+  border-radius: 50%;
+  background-size: 100%;
+  vertical-align: middle;
+  width: 32px;
+  height: 32px;
+}
+.cxComboUser .combo-box-nophoto {
+  width: 32px;
+  height: 32px;
+}
+.selected-user-list .combo-box-nophoto {
+  width: 20px;
+  height: 20px;
+}
+.cxComboSearchLoader {
+  background: url(../../images/crux-search-loader.svg);
+  height: 30px;
+  width: 30px;
+  background-size: 100%;
+  display: inline-block;
+}
+.cxUserSearch .cxComboSearchLoader {
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+.cxComboLeftColHeadSection {
+  align-items: center;
+}
+.cxComboboxSectionHeading {
+  color: var(--lyte-crux-combo-box-section-heading-text-color);
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxUserSelectionPart .cxComboboxSectionHeading {
+  margin-left: 15px;
+}
+.cxComboboxUserOnlyModalContent .cxComboboxSectionHeading {
+  padding: 3px 0 4px;
+}
+.cxComboLeftColHeadSection lyte-drop-button {
+  padding: 2px 25px 3px 10px;
+}
+.cxUserSelectionPart {
+  width: 36%;
+  min-width: 290px;
+}
+.user-selected-part {
+  width: 64%;
+  min-width: 500px;
+}
+.cxComboUserSelectedHeaderContentWrap {
+  display: flex;
+  justify-content: space-between;
+}
+.cxComboboxWithoutHeader .cxComboboxTotalRecipientCount {
+  margin-right: 30px;
+  font-size: 0.929rem;
+  color: var(--lyte-crux-combo-box-total-recipients-count-text-color);
+}
+.cxComboBtnUserOnly {
+  margin-left: auto;
+}
+.user-selection-content,
+.cxUserSelectionContent,
+.cxComboUserSelectedContent {
+  height: 400px;
+  border: 1px solid var(--lyte-crux-combo-box-selected-user-content-border-color);
+  margin-top: 10px;
+}
+.cxComboAdditionalRecipientPresent {
+  font-size: 1rem;
+}
+.cxComboAdditionalRecipientPresent .user-selection-content,
+.cxComboAdditionalRecipientPresent .cxComboUserSelectedContent {
+  height: 350px;
+}
+.cxComboUserSelectedContent {
+  border-left: 0px;
+  overflow: auto;
+  border-radius: 0 6px 6px 0;
+}
+.cxUserSelectionContent {
+  margin-right: -1px;
+  border-radius: 6px 0 0 6px;
+}
+.cxUserSelectionOption {
+  border-right: 1px solid var(--lyte-crux-combo-box-user-selection-option-border-color);
+  line-height: 18px;
+}
+.cxUserDDSearchWrapper {
+  display: flex;
+}
+.cxUserDDSearchWrapper .cxUserSearch {
+  flex-grow: 1;
+  position: relative;
+}
+.cxComboBoxFilterDD,
+.cxComboBoxSearch {
+  display: block;
+}
+.cxUserSelectionOption .cxFakeDropButton,
+.cxUserSelectionOption lyte-dropdown lyte-drop-button {
+  border: 6px 0 0 0;
+  border-bottom: 1px solid var(--lyte-crux-combo-box-user-option-drop-button-border-color);
+  border-radius: 6px 0px 0px;
+  max-width: 140px;
+  padding: 10px 25px 10px 10px;
+  font-size: 14px;
+  display: block;
+  box-shadow: none;
+}
+.cxUserSelectionOption .cxFakeDropButton .cxFakeDropdownLabel {
+  font-size: inherit;
+}
+.cxComboBoxSearch .cxComboBoxSearchInput:disabled,
+.cxComboBoxSearch.lyteInputDisabled {
+  background: var(--lyte-crux-combo-box-search-input-disabled-bg-color);
+  cursor: not-allowed;
+}
+.cxUserSearch .cxComboBoxSearchInput {
+  height: 38px;
+  width: calc(100% - 25px);
+  padding: 4px 0 4px 30px;
+}
+.cxComboUserWrapper {
+  height: calc(100% - 39px);
+}
+.user-lists-container {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+.user-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.cxComboUserDetail .user-image {
+  margin-top: 3px;
+}
+.cxComboBoxImg {
+  width: 100%;
+}
+.cxComboUserList {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+}
+.cxComboUserList:hover {
+  background: var(--lyte-crux-combo-box-user-list-hover-bg-color);
+}
+.user-detail {
+  flex-grow: 1;
+}
+.cxComboUserDetail {
+  width: calc(100% - 62px);
+  display: flex;
+}
+.cxComboUserDescWrap {
+  flex: 1;
+  max-width: 100%;
+  min-width: 0;
+  padding-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.selected-user-name {
+  max-width: 300px;
+  font-size: 13px;
+  margin: 0 30px 0 7px;
+  overflow: hidden;
+}
+.cxComboUserNameSelector {
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cxComboUserDescSelector {
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 3px;
+  color: var(--lyte-crux-combo-box-user-description-text-color);
+}
+.comboBoxMW250 {
+  max-width: 250px;
+}
+.user-add-option {
+  display: flex;
+  align-items: center;
+}
+.cxComboUserList .user-add-option lyte-button {
+  margin-right: 0;
+}
+.cxComboBoxAddedLabel {
+  color: var(--lyte-crux-combo-box-added-label-text-color);
+  font-size: 0.929rem;
+  display: inline-flex;
+  align-items: center;
+}
+.cxComboBoxAddedLabel::before {
+  content: '';
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -33px -15px;
+  mask-position: -33px -15px;
+  width: 9px;
+  height: 7px;
+  background-color: var(--lyte-crux-combo-box-added-label-before-bg-color);
+  margin-right: 5px;
+}
+.cxComboBoxAddBtn {
+  border-radius: 20px;
+  visibility: hidden;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.cxComboUserList:hover .cxComboBoxAddBtn {
+  visibility: visible;
+}
+.no-results-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.cxComboUserSelectedListContainer {
+  padding: 15px;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 0.929rem;
+}
+.cxComboBoxDisContainer {
+  color: var(--lyte-crux-combo-box-contain-color);
+}
+.selected-user-count {
+  color: var(--lyte-crux-combo-box-selected-user-count-color);
+}
+.selected-user-list-section,
+.cxComboUserSelectedListSection {
+  padding: 10px;
+  border: 1px solid var(--lyte-crux-combo-box-selected-list-section-border-color) !important;
+  background: var(--lyte-crux-combo-box-selected-list-section-bg-color);
+  border-radius: 6px;
+  margin: 0 0 15px;
+}
+.cxComboUserSelectedListSection.lyteAccordionActive {
+  padding-bottom: 5px;
+}
+.selected-user-list-section:hover,
+.cxComboUserSelectedListSection:hover {
+  border: 1px solid var(--lyte-crux-combo-box-selected-list-section-hover-border-color);
+}
+.selected-user-list-last-section {
+  margin-bottom: 0px;
+}
+.selected-user-list-section lyte-accordion-body,
+.cxComboUserSelectedListSection lyte-accordion-body {
+  width: auto;
+  padding: 0;
+  box-sizing: content-box;
+  transition: height 0.3s ease-out, padding-top 0.3s ease-out;
+}
+.selected-user-list-section.lyteAccordionActive lyte-accordion-body,
+.cxComboUserSelectedListSection.lyteAccordionActive lyte-accordion-body {
+  padding-top: 15px;
+}
+.selected-user-type-detail {
+  color: var(--lyte-crux-combo-box-user-type-detail-text-color);
+}
+.cxComboboxAccordionBody .selected-user-type-detail {
+  font-family: 'LatoSemiBold', sans-serif;
+  font-size: 0.857rem;
+  margin-bottom: 10px;
+}
+.cxComboboxSelectedHead {
+  font-family: 'LatoBold', sans-serif;
+}
+.cxComboboxRecipientSelectedList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cxComboSelectedList {
+  border: 1px solid var(--lyte-crux-combo-box-selected-user-list-border-color);
+  border-radius: 25px;
+  padding: 5px 8px;
+  background: var(--lyte-crux-combo-box-selected-user-list-bg-color);
+  margin: 0 7px 5px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.cxComboSelectedList .selected-user-img {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--lyte-crux-combo-box-selected-user-img-border-color);
+  box-sizing: border-box;
+}
+.close-selected-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0 15px 15px 0;
+  width: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.close-selected-wrap:hover {
+  background: var(--lyte-crux-combo-box-selected-close-wrap-hover-bg-color);
+}
+.cxComboSelectedList .close-selected-user-icon {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -54px -2px;
+  width: 8px;
+  height: 8px;
+  transform: scale(0.875);
+}
+.emptySelected,
+.no-user-selected-div + .cxComboUserSelectedListContainer {
+  display: none;
+}
+.msgboxBoldText {
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  font-size: 14px;
+  color: var(--lyte-crux-combo-box-msg-box-text-color);
+}
+.cxComboBoxEmptyMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--lyte-crux-combo-box-empty-msg-text-color);
+  height: 300px;
+  text-align: center;
+}
+.filter-switching-loader {
+  position: absolute;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 60px;
+}
+.cxComboBoxContent {
+  max-height: unset;
+}
+.cxSearch-loaderContent {
+  font-size: cxFontSize14px;
+}
+.cxComboBoxFooter {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cxComboRecipientWrapper {
+  width: 100%;
+}
+.cxComboRecipientWrap {
+  position: relative;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.cxComboReciCloseIcon {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -54px -2px;
+  width: 8px;
+  height: 8px;
+  right: 10px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.cxComboReciCloseIcon:hover {
+  opacity: 1;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect li {
+  /*	Crux Tag overwrite !important added */
+  padding: 5px 38px 5px 8px !important;
+  border-radius: 25px !important;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--lyte-crux-combo-box-recipient-multiselect-border-color) !important;
+  background: var(--lyte-crux-combo-box-recipient-multiselect-bg-color);
+  margin-right: 5px !important;
+  /*	Crux Tag overwrite line added */
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect li.cxTagHighlight {
+  border: 1px dashed var(--lyte-crux-combo-box-recipient-multiselect-highlight-border-color) !important;
+  background: var(--lyte-crux-combo-box-recipient-multiselect-highlight-bg-color) !important;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect li.cxComboBoxErrorRecipient {
+  /*	Crux Tag overwrite !important added */
+  background: var(--lyte-crux-combo-box-recipient-multiselect-error-bg-color) !important;
+  border: 1px solid var(--lyte-crux-combo-box-recipient-multiselect-error-border-color) !important;
+  color: var(--lyte-crux-combo-box-recipient-multiselect-error-text-color) !important;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .cxComboBoxErrorRecipient.cxTagHighlight {
+  border-style: dashed !important;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect li:hover .lyteCloseIcon,
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .lyteCloseIcon {
+  /*	Crux Tag overwrite !important added */
+  position: absolute;
+  top: 0 !important;
+  right: 0 !important;
+  /*	Crux Tag overwrite !important added */
+  left: auto !important;
+  /*	Crux Tag overwrite line added */
+  bottom: 0;
+  transform: scale(1) !important;
+  /*	Crux Tag overwrite line added */
+  border-radius: 0 15px 15px 0;
+  width: 27px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .lyteCloseIcon:hover {
+  background: var(--lyte-crux-combo-box-recipient-close-icon-bg-color) !important;
+  /*	Crux Tag overwrite line added */
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .cxComboBoxErrorRecipient .lyteCloseIcon:hover {
+  /*	Crux Tag overwrite !important added */
+  background: var(--lyte-crux-combo-box-recipient-close-icon-hover-bg-color) !important;
+}
+.cxComboRecipientWrap lyte-dropdown.cxTagTagsPresent[lt-prop-type="multisearch"] lyte-drop-button {
+  padding-bottom: 3px;
+  max-height: 125px;
+  overflow: auto;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .lyteMultiselectInput {
+  border: 0 !important;
+  /*	Crux Tag overwrite !important added */
+  padding: 0;
+  margin: 0;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultiselect .cxAddedTags .lyteCloseIcon::before {
+  background-image: url(../../images/crux-sprite-icons.svg) !important;
+  background-position: -54px -2px !important;
+  /*	Crux Tag overwrite line added */
+  top: calc(50% - 4px);
+  /*	Crux Tag overwrite line added */
+  left: calc(50% - 4px) !important;
+  /*	Crux Tag overwrite line added */
+}
+.selected-user-list-section lyte-icon.lyteAccordionArrow {
+  left: unset;
+  right: 0;
+}
+.cxComboRecipientWrap .cxTagBgSpan::before,
+.cxComboRecipientWrap .cxAddedTags::before,
+.cxComboRecipientWrap .cxAddedTags::after {
+  content: none;
+}
+.cxComboRecipient {
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxComboRecipientPlaceholder {
+  color: var(--lyte-crux-combo-box-recipient-placeholder-text-color);
+  margin-left: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.cxComboboxRecipientHeadArea {
+  align-items: center;
+  margin-bottom: 15px;
+}
+.cxComboboxNoRecipientUl {
+  background: var(--lyte-crux-combo-box-no-recipient-ul-bg-color);
+}
+.cxUserSelectionOption lyte-dropdown.cxBoxDropdown:not([lt-prop-type=multiple]):not([lt-prop-type=multisearch]) lyte-drop-button {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+/*# sourceMappingURL=crux-combo-box.css.map */

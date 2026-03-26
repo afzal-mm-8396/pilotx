@@ -1,0 +1,19 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-text-area-popup-close-icon-hover-bg-color: #E9EEF4;
+    --@{cssPrefix}-text-area-popup-toggle-btn-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-text-area-popup-toggle-btn-border-color: #d0d6e0;
+    --@{cssPrefix}-text-area-show-more-color: var(--crux-link-color);
+}

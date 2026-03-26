@@ -1,0 +1,424 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+crux-tag lyte-dropdown {
+  width: 100%;
+  vertical-align: top;
+}
+.cxTagSelectedList {
+  max-height: 100px;
+  margin-bottom: 5px;
+}
+.cxTagSearchLoader {
+  background-image: url(../../images/crux-search-loader.svg);
+  height: 32px;
+  width: 32px;
+  background-size: 100%;
+  display: inline-block;
+}
+.cxTagDropButtonInitialLoaderWrap {
+  flex-grow: 1;
+}
+.cxTagDropboxInitialLoaderWrap {
+  padding: 80px 0;
+  text-align: center;
+}
+.cxTagSearch {
+  width: 100%;
+}
+.cxTagSearch input {
+  padding: 0;
+}
+lyte-drop-item#newTagId::before {
+  content: none;
+}
+crux-tag lyte-dropdown.cxBoxDropdown[lt-prop-type="multisearch"] .lyteMultipleSelect li.lyteMultiselectInput {
+  margin: 3px 0 6px;
+}
+/*Reduces left - padding in create field input dropdown*/
+crux-tag lyte-text,
+.cxTagDropBox lyte-text {
+  vertical-align: bottom;
+}
+.cxTagDropBox {
+  z-index: 10005 !important;
+  min-width: 360px !important;
+  max-width: 360px !important;
+}
+.cxTagDropboxTooltip {
+  z-index: 10007 !important;
+}
+/* .cxTagDropItem  - class for color pick list left padding */
+.cxDropbox .cxTagPicklistItem {
+  padding-right: 35px !important;
+}
+.cxTagDropBox .cxTagDropItem .cxTagDropItemChild {
+  display: inline-block;
+  padding: 3px 3px 4px 10px;
+  border-radius: 3px 0px 0px 3px;
+  /* color: #fff; */
+  font-size: 1.3rem;
+  /*line-height: @line-height;*/
+  position: relative;
+  z-index: 1;
+}
+/* .cxTagDropBox .cxTagDropItemChild.cxTagCol0 {
+	color: #444;
+	background: #fff;
+	padding: 1px 3px 3px 10px;
+	border: 1px solid #c9c9c9;
+	border-right: 0;
+} */
+.cxTagDropBox .cxTagDropItem .cxTagDropItemChild::after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  background: inherit;
+  transform: rotate(45deg) skew(6deg, 6deg);
+  top: 4px;
+  right: calc(100% - 7px);
+  z-index: -1;
+  border-top: 1px solid var(--lyte-crux-tag-drop-item-child-after-border-color);
+  border-left: 1px solid var(--lyte-crux-tag-drop-item-child-after-border-color);
+}
+.cxTagDropBox .cxTagDropItem .cxTagDropItemChild::before {
+  content: "";
+  position: absolute;
+  border: 1px solid var(--lyte-crux-tag-drop-item-child-before-border-color);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 3px 0px 0px 3px !important;
+  border-left: 0;
+}
+/* .cxTagDropBox .cxTagDropItem .cxTagDropItemChild.cxTagCol0::after {
+	width: 13px;
+	height: 13px;
+	transform: rotate(45deg) skew(5deg, 5deg);
+	top: 3px;
+} */
+.cxAddedTags {
+  padding: 3px 13px 3px 10px !important;
+  border-radius: 3px 0px 0px 3px !important;
+  border: 0 !important;
+  /* color: #fff !important; */
+  margin: 0 15px 3px 0 !important;
+  position: relative;
+  font-size: 1.3rem;
+  /*line-height: @line-height;*/
+  z-index: 2;
+}
+.cxTagPopoverWrapper .lytePopover .tagPopoverLab ul .cxAddedTags {
+  padding: 3px 4px 4px 10px !important;
+}
+.cxTagPopoverWrapper .lytePopover {
+  border-radius: 5px;
+}
+.cxTagPopoverWrapper ul {
+  list-style: none;
+}
+.parentscope__Tag .cruxTagList {
+  line-height: inherit;
+}
+.cxTagBgSpan {
+  padding: 3px 5px 3px 10px !important;
+  border-radius: 3px 0px 0px 3px !important;
+  border: 0 !important;
+  /* color: #fff !important; */
+  margin-left: 12px !important;
+  font-size: 1.3rem;
+  /*line-height: @line-height;*/
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+/* .cxAddedTags.cxTagCol0 {
+	padding: 1px 13px 3px 10px !important;
+	background: #fff;
+	color: #444 !important;
+	border: 1px solid #c9c9c9 !important;
+	border-right: 0 !important;
+}
+.cxTagBgSpan.cxTagCol0 {
+	padding: 1px 5px 3px 10px !important;
+	background: #fff;
+	color: #444 !important;
+	border: 1px solid #c9c9c9 !important;
+	border-right: 0 !important;
+} */
+.cxAddedTags::after,
+.cxTagBgSpan::after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  background: inherit;
+  transform: rotate(45deg) skew(6deg, 6deg);
+  top: 4px;
+  right: calc(100% - 7px);
+  z-index: -1;
+  border-top: 1px solid var(--lyte-crux-tag-bg-span-after-border-color);
+  border-left: 1px solid var(--lyte-crux-tag-bg-span-after-border-color);
+}
+.cxAddedTags::before,
+.cxTagBgSpan::before {
+  content: "";
+  position: absolute;
+  border: 1px solid var(--lyte-crux-tag-bg-span-before-border-color);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 3px 0px 0px 3px !important;
+  border-left: 0;
+}
+/* .cxTagCol0::after {
+	width: 13px;
+	height: 13px;
+	transform: rotate(45deg) skew(5deg, 5deg);
+	top: 3px;
+	border-top: 1px solid #c9c9c9;
+	border-right: 1px solid #c9c9c9;
+} */
+.cxTagBgSpan:hover {
+  filter: brightness(0.95);
+}
+/* crux-tag lyte-dropdown.cxFlatDropdown .lyteMultipleSelect .cxTagCol0,
+crux-tag lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .cxTagCol0 {
+	background: #fff;
+} 
+.cxTagCol1 {
+	background: #F17574 !important;
+}
+.cxTagCol2 {
+	background: #F48435 !important;
+}
+.cxTagCol3 {
+	background: #E7A826 !important;
+}
+.cxTagCol4 {
+	background: #A8C026 !important;
+}
+.cxTagCol5 {
+	background: #63C57E !important;
+}
+.cxTagCol6 {
+	background: #1DB9B4 !important;
+}
+.cxTagCol7 {
+	background: #57B1FD !important;
+}
+.cxTagCol8 {
+	background: #879BFC !important;
+}
+.cxTagCol9 {
+	background: #D297EE !important;
+}
+.cxTagCol10 {
+	background: #FD87BD !important;
+}
+.cxTagCol11 {
+	background: #969696 !important;
+}
+.cxTagCol12 {
+	background: #658BA8 !important;
+}
+.cxTagCol13 {
+	background: #B88562 !important;
+}*/
+.cxTagDropBox .cxTagDropItem[selected="true"]::before {
+  display: none;
+}
+.lyteMultipleSelect .cxAddedTags .lyteCloseIcon {
+  right: calc(100% - 13px) !important;
+  z-index: 3;
+  width: 21px;
+  top: 1px;
+  border-radius: 0;
+  height: 100%;
+  transition: none;
+  background: transparent !important;
+  transform: scale(0.9) !important;
+  visibility: visible;
+}
+lyte-dropdown.cxBoxDropdown .lyteMultiselect .cxAddedTags .lyteCloseIcon::before {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -71px -118px;
+  right: calc(50% - 6px);
+  top: calc(50% - 5px);
+  transform: scale(0.9);
+  transition: none;
+}
+lyte-dropdown.cxBoxDropdown .lyteMultiselect .cxAddedTags.cxTagDarkBg .lyteCloseIcon::before {
+  background-position: -57px -118px;
+}
+/* lyte-dropdown.cxBoxDropdown .lyteMultiselect .cxAddedTags .lyteCloseIcon::before {
+	background-image: url(/crm/CRMClient/images/crm-svgicons.svg) !important;
+	background-position: -255px -68px  !important;
+	left: calc(50% - 6px) !important;
+	top: calc(50% - 3px);
+	transform: scale(0.9);
+} */
+.cxAddedTags .lyteCloseIcon:hover {
+  background: url(../../images/crux-sprite-icons.svg) -87px -122px !important;
+  transform: scale(0.9);
+}
+.cxAddedTags.cxTagDarkBg .lyteCloseIcon:hover {
+  background-position: -28px -122px !important;
+}
+/* .cxAddedTags .lyteCloseIcon:hover {
+	background: none !important;
+} 
+.cxAddedTags .lyteCloseIcon:hover::before {
+	visibility: visible;
+}*/
+crux-tag lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .cxTagHighlight {
+  background: var(--lyte-crux-tag-multiple-select-highlight-bg-color);
+}
+.moreTagOption {
+  color: var(--lyte-crux-tag-more-option-bg-color);
+  font-size: 0.929rem;
+}
+.moreTagOption .disable {
+  opacity: 1 !important;
+}
+.moreTagOption .moreCount {
+  text-decoration: underline;
+}
+.moreTagOption .moreCount:hover {
+  text-decoration: underline;
+  color: var(--lyte-crux-tag-more-option-and-more-count-hover-text-color);
+}
+lyte-dropdown.cxBoxDropdown.cxTagTagsPresent[lt-prop-type="multisearch"] lyte-drop-button {
+  padding: 5px 10px 2px;
+}
+lyte-dropdown.cxBoxDropdown.cxTagTagsPresent[lt-prop-type="multisearch"] .lyteMultipleSelect li.lyteMultiselectInput {
+  margin-bottom: 5px;
+  width: fit-content;
+}
+.cxTagHighlight {
+  background: var(--lyte-crux-tag-highlight-bg-color) !important;
+}
+.cxTagHighlight::after,
+.cxTagHighlight.cxTagCol0::before {
+  border-color: transparent transparent transparent var(--lyte-crux-tag-highlight-after-left-border-color) !important;
+}
+.cxExistingTag {
+  animation: cxTagBgAnim 2s;
+}
+@keyframes cxTagBgAnim {
+  0% {
+    background: #fffffa;
+  }
+  50% {
+    background: #ffff64;
+  }
+  100% {
+    background: #fffffa;
+  }
+}
+.cxSelectedTagListWrap {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+.cxTagDropItemChild {
+  max-width: 90%;
+}
+.cxTagDropItemChild lyte-text {
+  z-index: 1;
+}
+.cxPropNewTagOptionMsg {
+  font-family: 'LatoRegular', sans-serif;
+  color: var(--lyte-crux-tag-new-option-msg-color);
+  margin-right: 10px;
+  margin-left: 5px;
+}
+.cxNewTagLabel {
+  display: inline-block;
+  vertical-align: middle;
+  flex: 1;
+  min-width: 30px;
+}
+.cxHideTagOption {
+  display: none !important;
+}
+/*# sourceMappingURL=crux-tag.css.map */

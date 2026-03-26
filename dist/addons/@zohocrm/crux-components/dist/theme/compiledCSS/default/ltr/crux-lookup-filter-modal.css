@@ -1,0 +1,94 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cxLookupSearch {
+  width: 300px;
+}
+.cxLookupModalbuttonLayer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cxLookupModalFooter {
+  padding: 0 30px;
+}
+.cxMlAuto {
+  margin-left: auto;
+}
+.cxTable lyte-th {
+  padding: 9px 0 9px 25px;
+  font-size: 0.857rem;
+  color: var(--lyte-crux-lookup-modal-table-th-label-color);
+}
+.cxTable lyte-td {
+  padding: 7px 0 7px 25px;
+  vertical-align: top;
+  font-weight: normal;
+  font-size: 1rem;
+}
+.cxSelectedSingle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-grow: 1;
+  display: flex;
+  text-align: left;
+}
+.cxLookupWidthOnePerc {
+  width: 1%;
+}
+.cxLookupModal lyte-modal-content {
+  display: flex;
+  flex-direction: column;
+}
+.cxLookupModal .cxTable lyte-table,
+.cxLookupModal .cxTable {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.cxLookupSearch .searchIcon {
+  cursor: pointer;
+}
+.cxLookupModal .numberDivCurrencyView,
+.cxLookupPopTd .numberDivCurrencyView {
+  text-align: left;
+}
+.cxLookupModalRelatedDDWrap {
+  width: 35%;
+  display: flex;
+  align-items: center;
+}
+/*# sourceMappingURL=crux-lookup-filter-modal.css.map */

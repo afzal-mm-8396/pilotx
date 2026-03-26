@@ -1,0 +1,47 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-user-lookup-modal-bg-color: #f7f7f7;
+  --lyte-crux-user-lookup-single-user-selected-color: var(--crux-element-label-color);
+  --lyte-crux-user-lookup-selected-row-td-bg-color: #efefef;
+  --lyte-crux-user-lookup-modal-user-selection-color: #338cf0;
+  --lyte-crux-user-lookup-count-label-color: #333;
+  --lyte-crux-user-lookup-modal-no-user-color: grey;
+  --lyte-crux-user-lookup-modal-no-user-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-user-lookup-modal-dummy-selected-name-bg-color: #eee;
+  --lyte-crux-user-lookup-modal-dummy-selected-img-color: #eee;
+}
+/*# sourceMappingURL=crux-user-lookup-variables.css.map */

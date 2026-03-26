@@ -1,0 +1,221 @@
+.cruxColumnListMixin() {
+	@box-shadow: 0px 1px 3px 0px @cxColumnListBoxShadowColor;
+	@font-family: @cruxPrimaryFont;
+	@h: 100%;
+	@max-h: inherit;
+}
+
+.cxColListWrapperDivMixin(){
+	@max-h: inherit;
+	@h: 100%;
+}
+
+.cruxColumnListMenuBodyMixin() {
+	@h: 100%;
+	@padding: 0px;
+	@max-h: inherit;
+	@border: none;
+}
+.cruxColumnListSearchInputWithCloseIconMixin() {
+	@padding-right: 30px;
+}
+.cruxColumnListSearchInputMixin() {
+	@font-size: 14px;
+}
+
+// .cxSearchClearIconMixin() {
+// 	@bg-img: @cruxSprite;
+// 	@bg-pos: -53px -2px;
+// 	@w: 9px;
+// 	@h: 8px;
+// }
+/*moved to crux elements common.less */
+.cruxColumnListMenuItemMixin() {
+	// @padding: 9px 20px;
+	@padding: 8px 20px;
+	@bg: @cxColumnListMenuItemBg;
+	@border-radius: 6px;
+	@border: 1px solid transparent;
+	@z-index: initial;
+}
+// .cruxColumnListMenuItemHoverMixin() {
+// 	@z-index: 10;
+// }
+.cxColListSingleFieldPinnedItemMixin() {
+	@bg: @cxColumnListMenuItemBg !important;
+}
+.cruxColumnListMenuItemSortableElementHoverMixin() {
+	@bg: @cxColumnListMenuItemHoverBg;
+}
+.cruxColumnListMenuItemSelectedMixin() {
+	@bg: @cxColumnListSortableSelectedMenuItemHoverBg;
+	@z-index: 3010 !important;
+	@box-shadow: 0px 0px 4px 0px @cxColumnListSortableSelectedMenuBoxshadow;
+}
+.cxPinColumnListCheckboxMixin() {
+	@max-w: calc(100% - 25px);
+}
+.cruxColumnListDivTopBorderMixin() {
+	@padding: 0px 10px 10px;
+	@max-height: calc(100% - 10px);
+	@h: 100%;
+	@border: none;
+
+}
+
+.cxColListOnSearchHideMixin(){
+	@margin-top: 10px;
+}
+
+.cruxColumnListCheckboxMandatoryAfterMixin() {
+	@color: @cxColumnListMandatorySymbolColor;
+	@w: 0px;
+	@h: 0px;
+}
+.cruxColumnListSortablePlaceholderMixin() {
+	@bg: transparent;
+	@border: 1px dashed @cxColumnListSortablePlaceholderBorderColor;
+	@border-radius: 6px;
+}
+.cruxColumnListMenuItemAfterMixin() {
+	@bg: @cruxSprite;
+	// @bg-pos: -134px -58px;
+	@bg-pos: -325px -177px;
+	@w: 7px;
+	@h: 11px;
+	@left: 7px;
+	@top: 13px;
+	@opacity: 0.5;
+}
+.cxColListCheckboxSpanMixin() {
+	@max-w: calc(100% - 20px);
+}
+.cruxColumnListBordertypeMixin() {
+	@max-w: 480px;
+	@padding: 15px 30px;
+}
+// .cruxColumnListBordertypeSearchMixin() {
+	// @margin-bottom: 10px;
+// }
+.cruxColumnListBordertypeTopBorderMixin() {
+	@border: 1px solid @cxColumnListMenuBorderColor;
+	@padding: 6px;
+}
+.cruxColumnListBordertypeMenuItemMixin() {
+	@padding: 7px 15px 8px 10px;
+	@border-bottom: 1px solid @cxColumnListMenuBorderColor;
+}
+.cruxColumnListBordertypeMenuItemHoverMixin() {
+	@bg: @cxColumnListMenuItemHoverBg;
+}
+.cruxColumnListBordertypeSortablePlaceholderMixin() {
+	@bg: @cxColumnListSortablePlaceholderBgColor;
+	@border: 1px dashed @cxColumnListSortablePlaceholderBorderColor;
+}
+.cxColPinIconMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -266px -107px;
+	@w: 15px;
+	@h: 15px;
+}
+.cxColPinActiveIconMixin() {
+	@bg-pos: -244px -107px;
+}
+.cxColumnListMaxLimitReachedPinIconMixin() {
+	@opacity: 0.5;
+}
+.cxColLineSeparatorMixin() {
+	@border-top: 1px solid @cxColumnListMenuBorderColor;
+	@margin: 5px 20px 0;
+}
+.cxColListNoResultMixin() {
+	@text-align: center;
+	@color: @cxColumnListNoResultColor;
+	@padding: 10px 30px;
+}
+.cruxColumnListDragcxPropDisableSortMixin() {
+	@opacity:0.2;
+}
+.cxColListAllFieldsSelectedMixin() {
+	@color: @cxColumnListNoResultColor;
+}
+// .cxColumnListWithAccordionAllFieldsSelectedixin() {
+// 	@margin-bottom: 30px;
+// }
+
+.cxColumnListAccordionArrowMixin(){
+	@bg-image: @cruxSprite;
+	@bg-pos: 0 -1px;
+	@w: 10px;
+	@h: 6px;
+	@transform: rotate(-90deg);
+	@margin-top: 5px;
+	@left: 5px;
+	@top: 15px;
+}
+
+.cxColumnListAccordionActiveArrowMixin(){
+	@transform: rotate(0deg);
+}
+
+.cxColListNonActionItemsMixin(){
+	@padding: 0 20px;
+}
+
+.cxColListLoaderMixin(){
+	@bg-image: @cruxSearchLoaderImage;
+	@h: 30px;
+	@w: 30px;
+}
+
+.cxColListPinnedFieldCheckBox(){
+	@opacity:  0.6;
+}
+
+
+.cxColumnListOnPopupMixin(){	
+	@box-shadow : none;
+}
+
+.cxColumnListOnPopupModalContentMixin(){
+	@padding: 0px !important;
+}
+
+.cxColumnListOnPopupWithHeaderSearchWrap(){
+	@margin: 10px 30px;
+}
+
+.cxColListNonSortSearchWrapMixin(){
+	@margin-left: 15px;
+	@margin-right: 15px;
+}
+
+.cxColListNonSortDivTopBorderMixin{
+	@padding-left: 5px;
+	@padding-right: 5px;
+}
+
+.cxColListNonSortListItemMixin{
+	@padding-left: 10px;
+	@padding-right: 10px;
+}
+
+.cxColListNoResultOnModalMixin(){
+	@padding-bottom: 20px;
+}
+
+.cxColListOnModalHeaderMixin(){
+	@padding-bottom: 10px;
+	@bg: @cxColumnListPopupBg;
+}
+
+.cxColListOnModalBgMixin(){
+	@bg: @cxColumnListPopupBg;
+}
+.cxColListSearchWrapMarginMixin() {
+	@margin: 20px 30px 10px;
+}
+
+.cxColumnListAccordionHeader(){
+	@color: @cxColumnListAccordionHeaderColor;
+}

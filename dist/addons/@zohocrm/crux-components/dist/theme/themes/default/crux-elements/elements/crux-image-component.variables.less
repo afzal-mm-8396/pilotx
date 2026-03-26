@@ -1,0 +1,252 @@
+.cxImageViewWrapMixin() {
+	@w: 70px;
+	@h: 70px;
+	@border-radius: 25px;
+}
+.cxImageViewImageDimensionCommonMixin() {
+	@w: 100%;
+	@h: 100%;
+	@border-radius: inherit;
+}
+.cxImageViewOverlayMixin() {
+	@bg: @cxImageCompPreviewOverlayBg;
+	@z-index: 1;
+	@opacity: 0;
+}
+.cxImageViewWrapHoverOverlayMixin() {
+	@opacity: 1;
+}
+.cxImageCameraIconMixin() {
+	@bg-img: @cruxSprite;
+	@w: 21px;
+	@h: 16px;
+	@bg-pos: -180px -124px;
+	@bg-color: @cxImageCompCameraIconBg;
+}
+.cxImageViewNoImageMixin() {
+	@bg-img: @cruxImagePreviewSprite;
+	@background-size: 470px auto;
+	@color: @cxImageAlaphabetTextColor;
+	@line-height: 70px;
+	@font-size: 40px;
+	@font-family: @cruxTertiaryFont;
+}
+.cxImageViewOverlayHoverNNextElemNoImageMixin() {
+	@color: transparent;
+}
+.cxImageViewNoImage1Mixin() {
+	@bg-pos: -20px -20px;
+}
+.cxImageViewNoImage2Mixin() {
+	@bg-pos: -110px -20px;
+}
+.cxImageViewNoImage3Mixin() {
+	@bg-pos: -200px -20px;
+}
+.cxImageViewNoImage4Mixin() {
+	@bg-pos: -290px -20px;
+}
+.cxImageViewNoImage5Mixin() {
+	@bg-pos: -380px -20px;
+}
+.cxImageViewNoImage6Mixin() {
+	@bg-pos: -20px -110px;
+}
+.cxImageViewNoImage7Mixin() {
+	@bg-pos: -110px -110px;
+}
+.cxImageViewNoImage8Mixin() {
+	@bg-pos: -200px -110px;
+}
+.cxImageViewNoImage9Mixin() {
+	@bg-pos: -290px -110px;
+}
+.cxImageViewNoImage10Mixin() {
+	@bg-pos: -380px -110px;
+}
+
+.cxMultiImageListMixin(){
+	@gap: 5px;
+}
+
+.cxImgCompLoaderMixin(){
+	@w: 100%;
+	@h: 100%;
+	@z-index: 2;
+	@bg: @cxImageLoaderBgColor;
+}
+
+.cxImgCompLoaderAfterMixin(){
+	@w: 2px;
+	@h: 100%;
+	@transform: rotate(12deg);
+	@bg: @cxImageLoaderAnimBgColor;
+	@box-shadow: 1px 1px 11px 7px @cxImageLoaderAnimBoxshadowColor;
+}
+
+.cxMultiImgUploadBtnMixin(){
+	@margin-top: 8px;
+}
+
+.cxImageElemWrapperMixin(){
+	@padding: 3px 5px;
+	@border: 1px solid @cxBoxInputBorderColor;
+	@border-radius: 6px;
+}
+
+.cxImageElemWrapperHoverMixin(){
+	@border: 1px solid @cxBoxInputBorderHoverColor;
+}
+
+.cxImgElemReadOnlyMixin(){
+	@bg: @cxBoxInputDisabledBgColor;
+	@border-color: @cxBoxInputDisabledBorderColor;
+}
+
+.cxImageElemViewWrapperMixin(){
+	@border: 1px solid transparent;
+}
+
+.cxWrapperElemWithImageMixin(){
+	@padding: 5px;
+}
+
+.cxMultiImageListViewContMixin(){
+	@w: 62px;
+	@h: 62px;
+	@border: 1px solid @cxImgListViewBorder;
+	@flex-shrink: 0;
+	@border-radius: 4px;
+}
+
+.cxMultiImgListVwContSortableSelectElemMixin(){
+	@border: 1px dashed @cxSortableSelectedElemBorder;
+	@box-shadow: 0px 0px 4px 0px @cxImgListViewBoxShadow;
+}
+
+.cxImgListVwContSortableSelectElemOndragMixin(){
+	@border: 1px solid @cxImgListViewBorder;
+	// @box-shadow: 0px 0px 4px 0px @cxImgListViewBoxShadow;
+}
+
+.cxImageContHoverContMixin(){
+	@w: 100%;
+	@h: 100%;
+	@bg: @cxImageListHoverBg;
+}
+
+.cxImgCompDeleteIconMixin(){
+	@w: 17px;
+	@h: 17px;
+	@bg-img: @cruxSprite;
+	@bg-pos: -356px -135px;
+	@bg-color: @cxImageDeleteIconColor;
+	@top: 6px;
+	@right: 6px; 
+}
+
+.cxImgCompDeleteIconHoverMixin(){
+	@bg-color: @cxImageDeleteIconHoverColor;
+}
+
+.cxImgCompPreviewIconMixin(){
+	@w: 19px;
+	@h: 19px;
+	@bg-img: @cruxSprite;
+	@bg-pos: -165px -198px;
+	@bg-color: @cxImagePreviewIconColor;
+	@inset: 0px;
+	@margin: auto;
+}
+
+.cxListPreviewImageMixin(){
+	@w: 100%;
+	@h: 100%;
+}
+
+.cxImgCompValidationProcessingIconMixin(){
+	@w: 27px;
+	@h: 30px;
+	@bg-img: @cruxSprite;
+	@bg-pos: -205px -232px;
+	@inset: 0px;
+}
+
+.cxImgCompValidationWaitingIconMixin(){
+	@w: 29px;
+	@h: 30px;
+	@bg-pos: -242px -233px;
+}
+
+.cxImgCompViewEmptyIconMixin(){
+    @bg-img: @cruxSprite;
+    @bg-pos: -146px -271px;
+    @bg-color: @cxImageHyphenIconColor;
+    @w: 11px;
+    @h: 1px;
+	@margin: 13px 7px 12px;
+}
+
+
+.cxSFImgElemWrapperMixin(){
+	@padding: 0px;
+}
+
+.cxSFImgListContMixin(){
+	@flex: 1;
+	@padding: 3px 9px;
+}
+
+.cxSFImgListUploadIconDivMixin(){
+	@flex-shrink: 0;
+	@padding: 8px;
+	@bg: @cxBoxInputIconBgColor;
+	@border-radius: if(@direction = rtl , 5px 0px 0px 5px ,0px 5px 5px 0px);
+}
+
+.cxSFImgListUploadIconMixin(){
+	@w: 17px;
+	@h: 16px;
+	@bg-img: @cruxSprite;
+    @bg-pos: -271px -175px;
+	@bg-color: @cxImageUploadIconColor;
+}
+
+.cxSFImgListPlaceholderMixin(){
+	@color: @cxBoxInputPlaceholderColor;
+	@w: 100%;
+	@h: 100%;
+	@padding: 3px 9px;
+}
+
+.cxSFShowMoreImageIconMixin(){
+	@margin-right: 5px;
+	@bg-color: @cxImageSFShowMoreIconBg;
+}
+
+.cxImgListLockIconMixin(){
+	@w: 14px;
+	@h: 16px;
+	@bg-img: @cruxSprite;
+    @bg-pos: -165px -262px;
+	@bg-color: @cxBoxInputLockIconBg;
+}
+
+.cxSFImgListLockIconMixin(){
+	@right: 2px;
+	@bg-color: @cxBoxInputLockIconBg;
+}
+
+.cxImageElemWrapperReadOnlyMixin{
+	@padding-right: 30px;
+}
+
+.cxImgListLockIconDefaultMixin(){
+	@right: 10px;
+	@top: 10px;
+}
+
+.cxImgHoverContWrapperMixin(){
+	@w: 100%;
+	@h: 100%;
+}

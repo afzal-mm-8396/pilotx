@@ -1,0 +1,24 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-user-lookup-modal-bg-color: #f7f7f7;
+    --@{cssPrefix}-user-lookup-single-user-selected-color: var(--crux-element-label-color);
+    --@{cssPrefix}-user-lookup-selected-row-td-bg-color: #efefef;
+    --@{cssPrefix}-user-lookup-modal-user-selection-color: #338cf0;
+    --@{cssPrefix}-user-lookup-count-label-color: #333;
+    --@{cssPrefix}-user-lookup-modal-no-user-color: grey;
+    --@{cssPrefix}-user-lookup-modal-no-user-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-user-lookup-modal-dummy-selected-name-bg-color: #eee;
+    --@{cssPrefix}-user-lookup-modal-dummy-selected-img-color: #eee;
+}

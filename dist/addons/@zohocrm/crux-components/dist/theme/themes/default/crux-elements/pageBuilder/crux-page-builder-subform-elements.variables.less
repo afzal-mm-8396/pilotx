@@ -1,0 +1,255 @@
+.cruxPbSubformElemMixin() {
+	@padding-bottom: 15px;
+	@padding-right: 0px;
+}
+.cxPbSubFormContMixin() {
+	@margin-right: 15px;
+}
+.cxPbSubFormAddBtnMixin() {
+	@bg: transparent;
+	@padding-bottom: 15px;
+}
+// .cxPbSubFormElemTabTitleMixin() {
+// 	@border:none;
+// 	@bg: none;
+// 	@color: @cxPbSubformTabTitleColor;
+// }
+// .cxPbSubFormElemTabActiveAfterMixin() {
+// 	@w: 100%;
+// 	@h: 6px;
+// 	@border-radius: 3px;
+// 	@bottom: -3px;
+// 	@background-color: @cxPbTabActiveBg;
+// 	@left: 0px;
+// }
+// .cxPbSubFormElemTabActiveMixin() {
+// 	@border: none;
+// 	@color: @cxPbSubformTabTitleActiveColor;
+// 	@font-family: @cruxTertiaryFont;
+// }
+
+.cxPbSubformElemTabYieldMixin(){
+	@h: 100%;	
+}
+
+.cxPbSubformElemTabHeadMixin(){
+	@padding: 0px;
+}
+
+.cxPbSubFormElemTabBodyMixin() {
+	@padding: 0px;
+	@h: auto !important;
+	@max-h: 350px;
+}
+.cxPbSubFormElemTabContentMixin() {
+	@max-h: inherit;
+	@h: 100%;
+}
+.cxPbSubFormFieldContWrapMixin() {
+	@h: calc(100% - 56px);
+}
+.cxPbSfElemWithHeadingContWrapMixin() {
+	@h: calc(100% - 85px);
+}
+.cxPbSubformFieldSearchMixin() {
+	@padding: 10px 10px 5px;
+	// @w: 335px;
+}
+.cxPbSubformFieldsHeadingMixin() {
+	@font-family: @cruxSecondaryFont;
+	@font-weight: @cruxFontWeightBold;
+	@font-size: @cxFontSize13px;
+	@padding: 7px 10px;
+}
+.cxPbSubformFieldContMixin() {
+	@padding: 7px 10px;
+	@margin: 0px 6px;
+	@border-radius: 6px;
+}
+.cxPbSubformFieldContHoverMixin() {
+	@background-color: @cxPbSubformFieldHoverBg;
+}
+.cxPbSubformFieldLabelMixin() {
+	@margin-left: 10px;
+}
+
+.cxPbSubformTableWrapMixin(){
+	@margin: 15px 5px 0px;
+}
+
+.cxPbSubformElemWrapperMixin(){
+	@max-w: 100%;
+	@bg: @cxPbSubformElemBg;
+	@border: 1px solid 	@cxPbSubformElemBorder;
+	@border-radius: 6px;
+}
+
+.cxPbSubformElemTableHeaderMixin(){
+	@bg-color: @cxPbSubformTableHeaderBg;
+	@padding-top: 7px !important;
+	@padding-bottom: 7px !important;
+	@min-w: 125px;
+}
+
+.cxPbSubformSmallThMixin(){
+	@min-w: 100px;
+}
+
+.cxPbSubformHeadFieldIconMixin(){
+	@margin-right: 2px;
+}
+
+.cxPbSubformPinnedTagMixin(){
+	@top: -10px;
+	@border-radius: 100px;
+	@left: -10px;
+	@padding: 5px;
+	@border: 2px solid @cxPbBackgroundColor;
+	@z-index: 12;
+	@bg: @cxPbSubformPinnedBg;
+	@color: @cxPbSubformPinnedColor;
+}
+
+.cxPbSubformPinnedBorderMixin(){
+	@w: 100%;
+	@h: 100%;
+	@border-radius: 5px;
+	@border: 1px solid @cxPbSubformPinnedBg;
+	@z-index: 10;
+}
+
+.cxPbSubformActiveBorderElemMixin(){
+	@border-color: @cxPbElementActiveBorder;
+}
+
+.cxPbSubformTableElemMixin(){
+	@border: 0px;
+	@border-radius: if(@direction=ltr,6px 0px 0px 6px,0px 6px 6px 0px);
+}
+
+.cxPbSubformTableElemScrollDivMixin(){
+	@border-radius: 0px;
+}
+
+.cxPbSubformTableElemTdTrMixin(){
+	@border-right: 1px solid @cxPbSubformTableBr;	
+}
+
+.cxPbSubformElemAddBtnMixin(){
+	@padding: 25px 15px;
+	@flex-shrink: 0;	
+	@z-index: 15;
+	@bg-color: @cxPbSubformAggBg;
+}
+
+.cxPbSubformElemAddBtnWrapBoxShMixin(){
+	@box-shadow: -6px 0 8px 0 @cxPbSubformElemAddBtnBoxShadow;
+	@z-index: 15;
+}
+
+.cxPbSubformElemAddLyteBtnMixin{
+	@margin-right: 0px;
+}
+
+.cxPbSubformTableThWithIconMixin(){
+	@padding: .cruxLESSPaddingMixin(12px 36px 12px 12px)[@padding] !important;	
+}
+
+.cxPbSubformTableThWithIconResizeMixin(){
+	@w: 6px !important;	
+}
+
+.cxPbSubformTableActionIconWrapMixin(){
+	@top: 6px;
+	@right: 6px;	
+}
+
+.cxPbSubformAggregateFieldWrapMixin(){
+	@margin-top: 20px;
+	@margin-left: auto;
+	@margin-right: 5px;
+	@border: 1px solid @cxPbSubformAggBorderColor;
+	@bg-color: @cxPbSubformAggBg;
+	@w: 350px;
+	@border-radius: 6px;
+}
+
+.cxPbSubformAggregateFieldLiMixin(){
+	@padding: 9px 12px;	
+}
+
+.cxPbSubformPrimaryFieldIconMixin(){
+	@margin-left: 5px;	
+	@bg-color: 	@cxPbSubformPrimaryFieldIconBg;
+}
+
+.cxPbSubformFieldMenuBodyMixin(){
+	@padding-top: 0px;
+}
+
+.cxPbSubformUnusedFieldHeaderMixin(){
+	@font-family: @cruxTertiaryFont;
+	@font-size: @cxFontSize13px;
+	@padding: 13px 10px 4px;
+	@color: @cxPbSubformUnusedFieldMenuHeaderColor;	
+}
+
+.cxPbSubformUnusedFieldSearchMixin(){
+	@padding: 8px 10px 0px;
+}
+
+.cxPbSubformFieldMenuBodyMixin(){
+	@max-h: 320px;	
+}
+
+.cxPbSubformUnusedFldNotFoundMixin(){
+	@color: @cxPbDefNotFoundColor;
+	@padding: 10px;	
+}
+
+.cxPbSubformUnusedFldLoaderMixin(){
+	@padding: 7px;
+}
+
+.cxPbSubfrmUnusdFldIconMixin(){
+	@margin-right: 8px;
+}
+
+.cxPbSubfrmUnusdFldMenuDelIconMixin(){
+	@margin-left: auto;
+}
+
+.cxPbSubformAggBuilderElemMixin(){
+	@margin: 0px;	
+}
+
+.cxPbSubformAggBuilderElemDivMixin(){
+	@border-radius: 0px;
+	@border: none;
+	@border-bottom: 1px solid @cxPbSubformAggBorderColor;
+}
+
+.cxPbSubformElemThInputMixin(){
+	@bg: transparent;
+	@border-color: transparent;
+}
+
+.cxPbSubformElemThMandatoryMixin(){
+	@left: 0px;
+}
+
+.cxPbSubformHeaderLabelMixin(){
+	@color: @cxPbElemLabelColor;
+	@margin-left: 24px;
+	@font-family: @cruxPrimaryFont;
+	@margin-top: 2px;
+}
+
+.cxPbSubformActiveElemBeforeMixin(){
+	@w: 100%;
+	@h: 100%;
+	@left: 0px;
+	@top: 0px;
+	@border: 1px solid @cxPbElementActiveBorder;
+	@z-index: 3;	
+}

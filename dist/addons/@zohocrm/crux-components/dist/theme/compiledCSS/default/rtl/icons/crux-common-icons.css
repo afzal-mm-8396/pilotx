@@ -1,0 +1,534 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+.cruxSprite,
+.cxSprite {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  display: inline-block;
+}
+.cxIconHoverEffect {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.cxIconHoverEffect::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  background-color: #E9EEF4;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.cxIconHoverEffect:hover::before {
+  visibility: visible;
+  transform: scale(1);
+  opacity: 1;
+}
+/********************************
+	Basic Icons Starts 
+********************************/
+.cxCancelIcon {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -71px -118px;
+  mask-position: -71px -118px;
+  background-color: #333;
+}
+.cxSaveIcon {
+  width: 13px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -229px -177px;
+  mask-position: -229px -177px;
+  background-color: #333;
+}
+.cxEditIcon {
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -69px -153px;
+  mask-position: -69px -153px;
+  background-color: #333;
+}
+.cxMoreIcon {
+  width: 3px;
+  height: 13px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -294px -4px;
+  mask-position: -294px -4px;
+  background-color: #333;
+}
+.cxDeleteIcon {
+  width: 11px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -93px -154px;
+  mask-position: -93px -154px;
+  background-color: #333;
+}
+.cxDeleteIcon:hover {
+  width: 11px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -93px -154px;
+  mask-position: -93px -154px;
+  background-color: #FF5D5A;
+}
+.cxBackIcon {
+  width: 16px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -355px -158px;
+  mask-position: -355px -158px;
+  background-color: #333;
+}
+.cxFilterIcon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -381px -156px;
+  mask-position: -381px -156px;
+  background-color: #333;
+}
+.cxColumnFilterIcon {
+  width: 17px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -138px -200px;
+  mask-position: -138px -200px;
+  background-color: #333;
+}
+.cxColumnArrangeIcon {
+  width: 15px;
+  height: 13px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -282px -233px;
+  mask-position: -282px -233px;
+  background-color: #333;
+}
+.cxInfoOutlineIcon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -147px -244px;
+  mask-position: -147px -244px;
+  background-color: #333;
+}
+.cxInfoRedBgIcon {
+  background-image: none;
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -62px -384px;
+  mask-position: -62px -384px;
+  background-color: #FF5D5A;
+  vertical-align: middle;
+}
+.cxInfoGrayBgIcon {
+  background-image: none;
+  min-width: 13px;
+  width: 13px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -7px -126px;
+  mask-position: -7px -126px;
+  background-color: #333;
+  vertical-align: middle;
+  opacity: 0.5;
+}
+/*** Basic Icons Ends ***/
+/********************************
+	Other Icons Starts 
+********************************/
+.cxUnmaskIcon,
+.cxPreviewIcon {
+  background-image: none;
+  width: 16px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -78px -363px;
+  mask-position: -78px -363px;
+  background-color: #333;
+}
+.cxMaskIcon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -52px -362px;
+  mask-position: -52px -362px;
+  background-color: #333;
+}
+.cxHelpIcon {
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -125px -360px;
+  mask-position: -125px -360px;
+  background-color: #333;
+}
+.cxGalleryImageIcon {
+  width: 16px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -221px -361px;
+  mask-position: -221px -361px;
+  background-color: #333;
+}
+.cxTransactionIcon {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -63px -403px;
+  mask-position: -63px -403px;
+  background-color: #333;
+}
+.cxNotesTimerIcon {
+  background-image: none;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -208px -78px;
+  mask-position: -208px -78px;
+  background-color: #333;
+}
+.cxDragIcon {
+  width: 6px;
+  height: 11px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -325px -177px;
+  mask-position: -325px -177px;
+  background-color: #333;
+}
+.cxNewPopupCloseIcon {
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -85px -401px;
+  mask-position: -85px -401px;
+  background-color: #333;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  display: inline-block;
+  background-image: none;
+}
+.cxDownloadIcon {
+  background-image: none;
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -114px -201px;
+  mask-position: -114px -201px;
+  background-color: #333;
+}
+.cxRefreshIcon {
+  background-image: none;
+  width: 12px;
+  height: 13px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -149px -223px;
+  mask-position: -149px -223px;
+  background-color: #333;
+}
+/* For Ascending, descending icons in CRM Subform */
+.cxAscIcon {
+  background-image: none;
+  width: 9px;
+  height: 11px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -365px -234px;
+  mask-position: -365px -234px;
+  background-color: #333;
+}
+.cxDescIcon {
+  background-image: none;
+  width: 9px;
+  height: 11px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -381px -234px;
+  mask-position: -381px -234px;
+  background-color: #333;
+}
+/* For Logged In user in All crux User Dropdown  */
+.cxLoggedInUserIcon {
+  width: 17px;
+  height: 13px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -76px -340px;
+  mask-position: -76px -340px;
+  background-color: #333;
+}
+/* For Non Assigned User in ComboBox View  */
+.cxUserUnAssignedIcon {
+  width: 16px;
+  height: 17px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -140px -381px;
+  mask-position: -140px -381px;
+  background-color: #333;
+}
+.cxFullscreenIcon {
+  background-image: none;
+  width: 14px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -162px -382px;
+  mask-position: -162px -382px;
+  background-color: #333;
+}
+.cxFullscreenMinIcon {
+  background-image: none;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -182px -383px;
+  mask-position: -182px -383px;
+  background-color: #333;
+}
+.cxWarnIcon {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -125px -223px;
+  mask-position: -125px -223px;
+  background-color: #FF5D5A;
+  width: 15px;
+  height: 14px;
+}
+.cxArrowIcon {
+  width: 8px;
+  height: 4px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -1px -2px;
+  mask-position: -1px -2px;
+  background-color: #333;
+}
+.cxArrowDownLineIcon {
+  width: 10px;
+  height: 5px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -13px -2px;
+  mask-position: -13px -2px;
+  background-color: #333;
+}
+.cxDeleteOutlineIcon {
+  width: 15px;
+  height: 17px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -284px -380px;
+  mask-position: -284px -380px;
+  background-color: #333;
+}
+.cxPlayIcon {
+  width: 17px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -305px -231px;
+  mask-position: -305px -231px;
+  background-color: #333;
+}
+.cxPauseIcon {
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -243px -401px;
+  mask-position: -243px -401px;
+  background-color: #333;
+}
+.cxMinusRoundedIcon {
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -356px -135px;
+  mask-position: -356px -135px;
+  background-color: #333;
+}
+/*# sourceMappingURL=crux-common-icons.css.map */

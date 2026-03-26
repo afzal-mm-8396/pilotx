@@ -1,0 +1,141 @@
+.cxCommonDotBulletMixin(){
+    @bg: @cxCommonDotBulletBg;
+}
+
+.cxSingleLineLoaderBeforeMixin(){
+    @bg: @cxSingleLineLoaderBeforeBg;
+}
+
+/*************** CRUX Lyte Tab Style Mixin Starts *************/
+
+.cxOuterTabHeadMixin(){
+    @border: none;
+    @border-bottom: 1px solid @cxTabBorderColor;
+    @padding: 0px 15px;
+}
+
+.cxOuterTabTitleMixin(){
+    @padding: 13px 0px;
+    @margin: 0px 15px;
+    @font-family: @cruxPrimaryFont;
+    @color: @cxTabTitleColor;
+    @border: none;
+    @bg: @cxTabTitleBg;   
+}
+
+.cxOuterTabHoverActiveMixin(){
+    @font-weight: normal !important;
+    @border: 0;
+    @color: @cxTabTitleColor;   
+}
+
+.cxOuterTabActiveMixin(){
+    @font-family: @cruxPrimaryFont;
+    @textStroke: 0.6px @cxTabTitleColor;
+}
+
+.cxOuterTabHoverActiveAfterMixin(){
+    @bg-color: @cxOuterTabActiveHoverBg;
+    @bottom: -1px;
+	@h: 3px;
+	@w: 100%;
+	@left: 0px;
+    @border-top-left-radius: 3px;
+    @border-top-right-radius: 3px;   
+}
+
+.cxOuterTabActiveAfterMixin(){
+    @bg-color: @cxOuterTabActiveBg;   
+}
+
+.cxOuterTabBodyMixin(){
+    @border: 0px;   
+}
+
+/*************** CRUX Lyte Tab Style Mixin Ends *************/
+
+
+/*************** CRUX Lyte Button Style Mixin Starts *************/
+
+.cxOutlinePrimaryBtnMixin(){
+    @color: @cxOutlinePrimaryBtnColor;
+    @padding: 7px 20px;
+    @border: 1px solid @cxOutlinePrimaryBtnBrColor;
+    @bg: @cxOutlinePrimaryBtnBg;
+    @box-shadow: none;
+}
+
+.cxOutlinePrimaryBtnHoverActiveMixin(){
+    @border: 1px solid @cxOutlinePrimaryBtnBrColor;
+    @bg: @cxOutlinePrimaryBtnHoverActiveBg;
+    @top: 0px;
+    @color: @cxOutlinePrimaryBtnColor;
+    @box-shadow: none !important;
+    @padding: 7px 20px;
+}
+
+.cxOutlinePrimaryBtnDisabledMixin(){
+    @opacity: 0.6 !important;
+    @top: 0px !important;
+    @bg: @cxOutlinePrimaryBtnDisabledBg;
+    @box-shadow: none;
+    @border: 1px solid @cxOutlinePrimaryBtnBrColor;
+    @color: @cxOutlinePrimaryBtnColor;
+}
+
+.cxClubbedBtnFirstChildMixin(){
+    @border-top-right-radius: 0px;
+    @border-bottom-right-radius: 0px;    
+}
+
+.cxClubbedBtnLastChildMixin(){
+    @margin-left: -1px;
+    @z-index: 1;
+    @border-top-left-radius: 0px;
+    @border-bottom-left-radius: 0px;
+    @h: 100%;
+    @padding: 8px 12px;
+    @secondaryPadding: 7px 12px;
+}
+
+.cxClubbedBtnArrowMixin(){
+    @w: 8px;
+    @h: 4px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -1px -2px;
+}
+
+.cxClubbedOutlineBtnArrowMixin(){
+    @bg-color: @cxOutlinePrimaryBtnColor;   
+}
+
+.cxClubbedBtnMixin{
+    @margin-right: 0px;
+}
+
+/*************** CRUX Lyte Button Style Mixin Ends *************/
+
+.cxOutlineFailureBtnMixin(){
+    @color: @cxOutlineFailureBtnColor;
+    @padding: 7px 20px;
+    @box-shadow: none;
+    @border: 1px solid @cxOutlineFailureBtnBrColor;
+    @bg: @cxOutlineFailureBtnBg;
+    @box-shadow: none;
+}
+
+.cxOutlineFailureBtnActiveMixin(){
+    @border: 1px solid @cxOutlineFailureBtnBrColor;
+    @bg: @cxOutlineFailureBtnHoverActiveBg;
+    @top: 0px;
+}
+
+.cxOutlineFailureBtnDisabledMixin(){
+    @top: 0px !important;   
+    @border: 1px solid @cxOutlineFailureBtnBrColor;
+    @opacity: 0.5;
+    @bg: @cxOutlineFailureBtnDisabledBg;
+    @color: @cxOutlineFailureBtnColor;
+    @box-shadow: none;
+}
+/*************** CRUX Lyte Button Style Mixin Ends *************/

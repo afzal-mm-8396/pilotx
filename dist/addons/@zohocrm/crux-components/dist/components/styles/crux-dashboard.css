@@ -1,0 +1,23 @@
+.oA {
+    overflow: auto;
+}
+.value2{
+    background:unset;
+}
+.value1{
+    background:white!important;
+}
+.positive lyte-menu-label{
+    color: #111!important;
+}
+.negative lyte-menu-label{
+    color: red!important;
+}
+.disabled lyte-menu-label{
+    color: #ccc!important;
+}
+.someClass{
+    background: url('../../images/crux-sprite-icons.svg') no-repeat -294px -4px;
+	width: 3px;
+	height: 13px;
+}

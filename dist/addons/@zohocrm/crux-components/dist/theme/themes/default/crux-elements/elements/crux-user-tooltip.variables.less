@@ -1,0 +1,216 @@
+.cxUserbcpopupMixin() {
+	@box-shadow: 0 2px 8px @cxUserTooltipPopupBoxShadow;
+	@bg-color: @cxUserTooltipPopupBg;
+	@border-radius: 4px;
+}
+.cxUpSpaceMixin() {
+	@bg-color: @cxUserTooltipUpSpaceBg;
+	@padding: 0;
+}
+.cxUpSpaceContentMixin() {
+	@color: @cxUserTooltipUpSpaceContColor;
+    @font-size: @cxFontSize13px;
+	@margin-top: 3px;
+}
+// .cxUpSpaceContentMixin{
+// 	@color:@cxBaseColor;
+//     @font-size: @cxFontSize13px;
+// 	@margin-top: 3px;
+// }
+.cxUpSizeMixin() {
+	@border-radius:50%;
+	@w: 30px;
+	@h: 30px;
+}
+// .cxRedColcxUserbcpopupContentMixin(){
+// 	@font-size:@cxFontSize14px;
+// 	@padding-bottom: 10px;
+// }
+// .cxUserbcInfoItemMixin(){
+// 	@padding-bottom:10px;
+// 	@padding-top: 5px;
+// }
+// .cxPhoneIconWrapParentMixin(){
+// 	@padding-bottom: 10px;
+// }
+.cxUserbcpopupContentMixin(){
+	@padding: .cruxLESSPaddingMixin(2px 10px 15px 10px)[@padding];
+}
+.cxUserbcInfoMixin() {
+	@padding: 15px 10px 0;
+@font-size: @cxFontSize13px;
+	}
+.cxMailLnkMixin(){
+	@color: @cxUserTooltipMailLinkColor;
+
+}
+
+.cxUserinfoMaxMixin() {
+	@max-w: 800px;
+}
+.cxNormaltagMixin() {
+	@font-size:0.786rem;
+	@padding:2px 5px;
+	@border-radius:2px;
+	@color: @cxUserTooltipNormalTagTextColor;
+	@border:1px solid @cxUserTooltipNormalTagBorder;
+}
+.cxUserTooltipIconsMixin() {
+	@bg-img: @cruxSprite;
+}
+.cxEmailIconMixin() {
+	@bg-pos: -64px -78px;
+	@w: 13px;
+	@h: 9px;
+	@margin: auto;
+}
+.cxPhoneIconMixin() {
+	@bg-pos: -109px -77px;
+	@w: 19px;
+	@h: 12px;
+	@margin: auto;
+}
+.cxPhoneIconContentMixin(){
+    @color: @cxUserTooltipPhoneContentColor;
+
+}
+// .cxMobileIconWrapParentMixin(){
+// 	@padding-bottom: 10px;
+// }
+.cxMobileIconMixin() {
+	@bg-pos: -85px -74px;
+	@w: 17px;
+	@h: 17px;
+	@margin: auto;
+}
+.cxDismissBtnMixin() {
+	@min-w: 70px;
+	@color: @cxUserTooltipDismissBtnColor;
+	@bg: @cxUserTooltipDismissBtnBg;
+	@border: 1px solid @cxUserTooltipDismissBtnBorder;
+	@border-radius: 2px;
+	@margin: 13px auto 0;
+	@padding: 6px 10px;
+	@margin-right: 10px;
+}
+.cxInfoPopoverArrowLeftMixin() {
+	@box-shadow: @cxUserTooltipInfoPopupArrowLeftBoxShadow 0px 0px 0px 0px;
+	// @border-left: 1px solid rgb(224, 224, 224);
+	// @border-bottom: 1px solid rgb(224, 224, 224);
+	@border-left: 1px solid @cxUserTooltipInfoPopupArrowLeftBorder;
+	@border-bottom: 1px solid @cxUserTooltipInfoPopupArrowLeftBorder;
+	@border-radius: 2px;
+	@left: -6px;
+}
+.cxInfoPopoverArrowRightMixin() {
+	@box-shadow: @cxUserTooltipInfoPopupArrowRightBoxShadow 0px 0px 0px 0px;
+	// @border-right: 1px solid rgb(224, 224, 224);
+	// @border-top: 1px solid rgb(224, 224, 224);
+	@border-right: 1px solid @cxUserTooltipInfoPopupArrowRightBorder;
+	@border-top: 1px solid @cxUserTooltipInfoPopupArrowRightBordera;
+	@border-radius: 2px;
+	@right: -6px;
+}
+.cxInfoPopoverLytePopoverMixin() {
+	@bg-color: @cxUserTooltipInfoPopupBg;
+	@border-radius: 4px;
+	@box-shadow: 0 0 5px @cxUserTooltipInfoPopupBoxShadow;
+	@z-index:31;
+	@min-w: 300px;
+	@border: 1px solid @cxUserTooltipInfoPopupBorder;
+}
+.cxUpSpaceEllipsisMixin() {
+	@max-w: 204px;
+}
+.cxUserbcInfoEllipsisMixin() {
+	@max-w: 227px;
+}
+.cxRedColMixin() {
+	@color: @cxUserTooltipRedColor;
+}
+.cxDashBorderMixin() {
+	@border-bottom: 1px dashed @cxUserTooltipDashBorder;
+	@h: 2px;
+	@margin: 10px;
+}
+.cxBcActionIconsMixin() {
+	@h: 30px;
+	@w: 30px;
+	@margin-right: 10px;
+	@border: 1px solid @cxUserTooltipActionsIconBorder;
+	@border-radius: 100%;
+}
+.cxBcActionIconsHoverMixin() {
+	@bg: @cxUserTooltipActionsIconHoverBg;
+}
+.cxBcCallIconMixin() {
+	@bg-pos: -160px -76px;
+	@w: 16px;
+	@h: 16px;
+	@left: 6px;
+	@top: 6px;
+}
+.cxBcActionIconsHoverBcCallIconMixin() {
+	@bg-pos: -63px -97px;
+}
+.cxBcChatIconMixin() {
+	@bg-pos: -135px -76px;
+	@w: 17px;
+	@h: 16px;
+	@left: 6px;
+	@top: 7px;
+}
+.cxBcActionIconsHoverBcChatIconMixin() {
+	@bg-pos: -38px -97px;
+}
+.cxVideoCallIconMixin() {
+	@bg-pos: -183px -78px;
+	@w: 17px;
+	@h: 12px;
+	@left: 6px;
+	@top: 9px;
+}
+.cxBcActionIconsHoverVideoCallIconMixin() {
+	@bg-pos: -86px -99px;
+}
+.cxUpSecondMixin() {
+	@max-w: 100px;
+}
+.cxUserTooltipClientPortalUserLabelMixin() {
+	@border: 1px solid @cxUserTooltipClientPortalLabelBorder;
+    @border-radius: 4px;
+    @bg-color: @cxUserTooltipClientPortalLabelBg;
+    @padding: .cruxLESSPaddingMixin(3px 5px)[@padding];
+    @font-size: 11px;
+	@margin-right: 5px;
+	@font-family:@cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+}
+.cxbcUserNameMixin(){
+    @color: @cxUserTooltipNameColor;
+    @font-size: @cxFontSize13px;
+    @margin-bottom: 5px;
+    @word-break: break-word;
+	@font-family:@cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+}
+
+.cxUpSizeWrapMixin(){
+	@padding-top: 2px;
+}
+
+.cxbcUserNameWrapMixin(){
+	@padding-left: 10px;
+}
+
+.cxUserTooltipIconMixin(){
+	@w: 20px;
+}
+
+.cxUserTooltipContentMixin(){
+	@padding-left: 10px;
+}
+
+.cxUserTooltipContentWrapMixin(){
+	@padding-bottom: 10px;
+}

@@ -1,0 +1,337 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*css for in color palatte*/
+.cxColorDropperOuter {
+  border: 1px solid var(--lyte-crux-color-palette-dropper-border-color);
+  display: inline-block;
+  padding: 4px 6px 4px 4px;
+  line-height: 0;
+  border-radius: 22px;
+  /* margin-left: 7px; */
+  cursor: pointer;
+  background: var(--lyte-crux-color-palette-dropper-bg-color);
+}
+.cxColorDropperOuter:hover {
+  border: 1px solid var(--lyte-crux-color-palette-dropper-hover-border-color);
+  box-shadow: 0 0 6px var(--lyte-crux-color-palette-dropper-hover-box-shadow-color);
+}
+.cxPalleteOpened,
+.cxPalleteOpened:hover {
+  border: 1px solid var(--lyte-crux-color-palette-popup-opened-hover-bg-color);
+  box-shadow: 0 0 6px var(--lyte-crux-color-palette-popup-opened-hover-box-shadow-color);
+}
+.cxPaletteWrapper {
+  z-index: 10005 !important;
+}
+.cxPaletteWrapper .lytePopover {
+  border: 0;
+  transition-duration: 0s;
+  margin-left: 7px;
+  margin-top: 3px;
+}
+.cxPaletteMoreColorsBtn {
+  background-color: var(--lyte-crux-color-palette-more-btn-bg-color);
+  border: 1px solid var(--lyte-crux-color-palette-more-btn-border-color);
+  text-align: left;
+  padding: 9px 15px;
+  border-radius: 0 0 6px 6px;
+  cursor: pointer;
+}
+.cxPaletteSampleTextContainer {
+  padding: 2px 12px 3px;
+  border-radius: 13px;
+  background: var(--lyte-crux-color-palette-text-container-bg-color);
+  position: relative;
+}
+.cxPaletteSampleTextContainer::before {
+  content: "";
+  position: absolute;
+  border: 1px solid var(--lyte-crux-color-palette-text-container-before-border-color);
+  border-radius: 13px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-right: 0px;
+}
+.cxPaletteColorPickerIcon {
+  width: 18px;
+  height: 18px;
+  background: url(../../images/crux-sprite-icons.svg) -209px -121px;
+  display: inline-block;
+  margin-right: 5px;
+}
+.cxPaletteWrapper .lyteColorPicker {
+  box-shadow: none;
+  border: none;
+  width: 100%;
+}
+.cxPaletteWrapper .lyteColorPicker .lyteColorPicker--advanced {
+  width: 100%;
+  padding: 0;
+}
+.cxPaletteWrapper .colorSlider_palette_circle::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  border: 1px solid var(--lyte-crux-color-palette-slider-circle-border-color);
+  border-radius: 50%;
+}
+.cxPaletteWrapper .lyteColorPicker__previewDiv,
+.cxPaletteWrapper .lyteColorPicker__sliderDiv {
+  padding: 0 10px;
+}
+.cxPaletteSampleTextContainerContent {
+  font-size: 0.857rem;
+  font-family: 'LatoSemiBold', sans-serif;
+}
+.cxPaletteProceedBtns {
+  padding: 10px;
+  box-sizing: border-box;
+  border-top: 1px solid var(--lyte-crux-color-palette-proceed-btn-border-color);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.cxPaletteProceedBtns lyte-button {
+  margin-right: 0px;
+}
+.cxPalettePopoverContent .cxPaletteCircle {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin: 0 2px 2px 0;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+.cxColorDropperCircle.cxnoFill,
+.cxPalettePopoverContent .cxPaletteCircle.cxnoFill {
+  background: 0 0;
+  border: 1px solid var(--lyte-crux-color-palette-popup-content-no-fill-border-color);
+}
+.cxPalettePopoverContent .cxPaletteSelected:not(.cxnoFill) {
+  width: 17px !important;
+  height: 17px !important;
+}
+.cxPalettePopoverContent .cxPaletteCircle.cxnoFill::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 1px;
+  background: var(--lyte-crux-color-palette-popup-circle-no-fill-after-bg-color);
+  left: calc(50% - 8px);
+  top: calc(50% - 1px);
+  transform: rotate(135deg);
+}
+.cxPalettePopoverContent .cxPaletteCircle:not(.cxnoFill):hover:after,
+.cxPalettePopoverContent .cxPaletteCircle:not(.cxnoFill):not(.cxPaletteSelected):before,
+.cxPaletteSelected:not(.cxnoFill):after {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid var(--lyte-crux-color-palette-popup-circle-hover-after-border-color);
+  border-radius: 50%;
+}
+.cxPalettePopoverContent .cxPaletteSelected:not(.cxnoFill)::before {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 8px;
+  inset: 0px;
+  margin: auto;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -328px -235px;
+  mask-position: -328px -235px;
+  background-color: #fff;
+}
+.cxPalettePopoverContent .cxColorPaletteSelDarkIcon:not(.cxnoFill)::before {
+  background-color: #333;
+}
+.cxColorDropperCircle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid transparent;
+  margin-right: 2px;
+}
+.cxColorDropperCircle::before {
+  content: "";
+  position: absolute;
+  border: 1px solid var(--lyte-crux-color-palette-dropper-circle-before-border-color);
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  border-radius: 50%;
+}
+.cxColorDropperCircle.cxnoFill::before {
+  border: none;
+}
+.cxColorDropperCircle.cxnoFill::after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 1px;
+  background: var(--lyte-crux-color-palette-dropper-circle-no-fill-after-bg-color);
+  left: calc(50% - 7px);
+  top: calc(50% - 1px);
+  transform: rotate(135deg);
+}
+.cxPaletteDropArrow {
+  background: url(../../images/crux-sprite-icons.svg) -13px -1px;
+  width: 11px;
+  height: 7px;
+  display: inline-block;
+  vertical-align: middle;
+  opacity: 0.6;
+}
+.cxPaletteColorPicker {
+  width: 100%;
+}
+/*css for in color palatte*/
+/*crux tag custom color palatte css*/
+.tagsColorPalettePopover .cxPaletteSampleTextContainer {
+  padding: 2px 5px 4px 10px !important;
+  border-radius: 3px 0px 0px 3px !important;
+  border: 0 !important;
+  margin-right: 12px !important;
+  font-size: 0.857rem;
+  height: 16px;
+  line-height: 18px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+.tagsColorPalettePopover .cxPaletteSampleTextContainer::before {
+  border-radius: 3px 0px 0px 3px;
+  border-right: 0;
+}
+.tagsColorPalettePopover .cxPaletteSampleTextContainer::after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  background: inherit;
+  transform: rotate(45deg) skew(6deg, 6deg);
+  top: 4px;
+  left: calc(100% - 7px);
+  z-index: -1;
+  border-top: 1px solid var(--lyte-crux-color-palette-tags-popup-border-color);
+  border-right: 1px solid var(--lyte-crux-color-palette-tags-popup-border-color);
+}
+.tagsColorPalettePopover lyte-table:not(.infinitescroll) lyte-tr:hover {
+  background: var(--lyte-crux-color-palette-tags-popup-infinite-scroll-bg-color);
+}
+.tagsColorPalettePopover .colorDiv {
+  border: 0;
+  border-radius: 0;
+}
+.tagsColorPalettePopover .lyteColorPicker .lyteColorPicker__commandbar,
+.tagsColorPalettePopover .cpValFormatIp lyte-tr:first-child lyte-td:nth-child(2),
+.tagsColorPalettePopover .lyteCPHexText,
+.tagsColorPalettePopover .lyteColorPicker__opacityslider,
+.tagsColorPalettePopover .selectFormat {
+  display: none;
+}
+.tagsColorPalettePopover .lyteCP__transparentbg {
+  position: absolute;
+  top: 32px;
+  left: 10px;
+}
+.tagsColorPalettePopover .colorSlider_hue {
+  margin-bottom: 0;
+}
+.tagsColorPalettePopover #lyteCPShowValue,
+.tagsColorPalettePopover .showValue {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+.tagsColorPalettePopover .showValue {
+  padding-left: 40px;
+  margin-bottom: 10px;
+}
+.tagsColorPalettePopover .showValue .lyteField {
+  box-shadow: none;
+}
+.tagsColorPalettePopover .showValue .lyteInputBox input {
+  padding: 11px 4px;
+}
+.tagsColorPalettePopover .colorSlider_hueBar_border,
+.tagsColorPalettePopover .lyteColorPicker__transparentbg {
+  width: 220px;
+}
+.tagsColorPalettePopover .colorSlider_sliderHandle {
+  height: 13px;
+}
+.tagsColorPalettePopover .colorSlider_hueBar {
+  border-radius: 3px;
+  height: 15px;
+  border: none;
+}
+.cxColorPalette {
+  padding: 10px 20px 7px 20px;
+}
+.cxPaletteColorPickerIconColor {
+  display: inline-block;
+}
+.cxPaletteSampleTextContainerParent {
+  border-bottom: 1px solid var(--lyte-crux-color-palette-tags-popup-header-border-color);
+  padding: 10px 10px 10px 10px;
+}
+/*crux tag custom color palatte css*/
+/* Below Temporary style fix will remove on color pallette revamp*/
+.cxColorClearFix::after {
+  content: '';
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
+/* Above Temporary style fix will remove on color pallette revamp*/
+/*# sourceMappingURL=crux-color-palette.css.map */

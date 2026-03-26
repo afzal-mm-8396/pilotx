@@ -1,0 +1,26 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-related-list-wrapper.variables.less";
+
+@import "../themes/default/less-variables/crux-related-list-wrapper-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-related-list-wrapper-variables.less";
+}
+
+.cx_detail_rl_container{
+	.cx_detail_rl_containerMixin();
+	border-radius: @border-radius;
+	box-shadow: @box-shadow;
+	border: @border;
+	padding: @padding;
+	margin-top: @margin-top;
+	background: @bg;
+}
+.cruxNotesCompWrap{
+	.cruxNotesCompWrapMixin();
+	padding: @padding;
+}

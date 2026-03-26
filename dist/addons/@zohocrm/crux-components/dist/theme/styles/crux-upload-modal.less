@@ -1,0 +1,153 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-upload-modal/crux-upload-modal.variables.less";
+
+@import "../themes/default/less-variables/crux-upload-modal-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-image-upload";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-upload-modal-variables.less";
+}
+
+.cxFileDropArea {
+	.cxFileDropAreaMixin();
+	padding: @padding;
+	border: @border;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.cxFileDropArea:hover {
+	.cxFileDropAreaHoverMixin();
+	background: @bg;
+	border: @border;
+}
+.sizeLimitReached{
+	font-size: @cxFontSize15px;
+}
+.cxFileDropInnerContent {
+	text-align: center;
+}
+.cxDropFieldText3,
+.cxDropFieldText1 {
+	.cxDropFieldText1Mixin();
+	font-size: @font-size;
+	font-family: @font-family;
+	font-weight: @font-weight;
+	color: @color;
+}
+.cxDropFieldText2 {
+	.cxDropFieldText2Mixin();
+	color: @color;
+	font-size: @font-size;
+	padding: @padding;
+}
+.cxDropFieldText3 {
+	text-decoration: underline;
+}
+.cxFileUploadIcon {
+	.cxFileUploadIconMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	margin: @margin;
+	opacity: @opacity;
+}
+
+.cxImgUploadModalContent .cruxFileUploadSortableDiv.sortable-parent{
+	.cxImgUploadSortableParentDivMixin();
+	border: @border;
+	height: @h;
+}
+
+.cxImgUploadModalContent .cxSelectAreaWrapperDiv .lyteFileUpdList .cruxFileUploadSortableDiv{
+	.cxImgUploadFileUploadSortableDivMixin();
+	@{property-left}: @left;
+	padding: @padding;
+	row-gap: @row-gap;
+	grid-template-columns: @grid-template-columns;
+}
+
+.cxMulImgUploadCountCont{
+	.cxMulImgUploadCountContMixin();
+	margin-bottom: @margin-bottom;
+	display: inline-flex;
+}
+
+.cxMulImgUploadCount{
+	display: inline-flex;
+	align-items: center
+}
+
+.cxMultImgUploadCountLabel{
+	.cxMultImgUploadCountLabelMixin();
+	color: @color;
+	@{property-padding-right}: @padding-right;
+	@{property-padding-left}: @padding-left;
+	font-size: @font-size;
+}
+
+.cxMultImgUploadCountValue{
+	.cxMultImgUploadCountValueMixin();
+	font-family: @font-family;
+	font-weight: @font-weight;
+}
+
+.cxMulImgCountSeparator{
+	.cxMulImgCountSeparatorMixin();
+	padding: @padding;
+	line-height: @line-height;
+	vertical-align: middle
+}
+
+.cxImgUploadSecMsgFirstDiv{
+	.cxImgUploadSecMsgFirstDivMixin();
+	margin-bottom: @margin-bottom;
+}
+
+.cxImgUploadSecMsgFirstDiv .cxImgUpFontBold{
+	.cxImgUpSecMsgFontBoldMixin();
+	font-family: @font-family;
+	font-weight: @font-weight;
+}
+
+
+.cxImgUploadModalContent{
+	.cxImgUploadModalContentMixin();
+	width: @w;
+	display: flex;
+	flex-direction: column;
+}
+
+.cxImgUploadModalContent .cxImgUpldContFileUpldComp{
+	.cxImgUpldContFileUpldCompMixin();
+	flex: 1;
+	min-height: @min-h;
+}
+
+.cxImgUploadModalContent lyte-fileupload{
+	.cxImgUploadModalContLyteFileCompMixin();
+	width: @w;
+	height: @h;
+}
+
+.cxImgUploadModalContent .cxImgUpldContFileUpldComp .cxSelectAreaWrapperDiv,
+.cxImgUploadModalContent .cxImgUpldContFileUpldComp .fileUploadWrapper{
+	.cxImgUpldContFileUpldCompContentMixin();
+	height: @h;
+}
+
+.cxImgUpdRejectedMoreFilesMsg{
+	.cxImgUpdRejectedMoreFilesMsgMixin();
+	font-family: @font-family;
+	text-decoration: @text-decoration;
+	cursor: pointer;
+}

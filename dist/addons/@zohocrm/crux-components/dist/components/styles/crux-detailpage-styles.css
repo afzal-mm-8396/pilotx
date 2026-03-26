@@ -1,0 +1,1070 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*crux comp base class starts*/
+/*crux comp base class ends*/
+.cxDvBodyContent {
+  min-height: 200px;
+}
+.dvSectionContainer {
+  overflow: auto;
+}
+.cxDvNavItem {
+  font-family: 'LatoSemiBold', sans-serif;
+  color: var(--lyte-crux-crux-dv-nav-item-font-color);
+}
+.cxDvFchildContainer {
+  flex: 1;
+}
+.cxDvInfoLabel {
+  text-align: right;
+  padding: 14px 17px 13px 0;
+  flex: 0 0 200px;
+  border: 1px solid transparent;
+}
+.cxDvRecordUserImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: var(--lyte-crux-crux-dv-record-user-img-bg-color);
+  color: var(--lyte-crux-crux-dv-record-user-img-font-color);
+}
+.cxDvRecTag {
+  padding: 4px 12px;
+}
+.cxDvWrapParent {
+  background-color: var(--lyte-crux-crux-dv-wrap-bg-color);
+  padding: 15px 20px;
+}
+/*.dv_details_section,*/
+.cxDvTabContent {
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 3px 4px 0 var(--lyte-crux-crux-dv-tab-content-box-shadow-color);
+  border: 1px solid var(--lyte-crux-crux-dv-tab-content-border-color);
+  padding: 20px;
+  background: var(--lyte-crux-crux-dv-tab-content-bg-color);
+}
+.cxDvBcSection {
+  border-radius: 6px;
+  margin: 0 0 15px 0;
+}
+.cxDvLyteNav {
+  border-radius: 6px 6px 0 0;
+  padding: 5px 20px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: auto;
+}
+crm-detailview[cx-prop-content-overflow="true"] {
+  height: inherit;
+  overflow: auto;
+  display: block;
+}
+.cxDvTagIconPosition {
+  display: flex;
+  align-items: center;
+}
+
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cxDvInfoFormField .cxInfoGrayBgIcon {
+  top: 9px;
+  position: absolute;
+  margin-left: 5px;
+}
+.cxDvSectionName {
+  font-family: 'LatoSemiBold', sans-serif;
+  color: var(--lyte-crux-detail-view-section-name-color);
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+/*************************** 
+	Common left Align Reset For Components 
+	- When this gets loaded in Web Tab 
+****************************/
+.cxDvSectionName,
+crux-note,
+crm-field {
+  text-align: left;
+}
+.cxDvSubform lyte-th {
+  border-top: 0 !important;
+  border-bottom: 2px solid var(--lyte-crux-detail-view-subform-th-border-bottom-color) !important;
+}
+.cxDvSubform lyte-tr lyte-td {
+  border-left: 1px solid var(--lyte-crux-detail-view-subform-td-border-color);
+  border-right: 0;
+}
+.cxDvSubform lyte-tr lyte-td:first-child {
+  border-left: 0;
+}
+.cxDvSubform lyte-tr lyte-td:last-child {
+  border-left: 0;
+}
+/*
+.dv_info_parent,
+.dv_bc_info_parent{
+    display: flex;
+    align-items: center;
+}
+*/
+.cxDvInfoCont {
+  margin-bottom: 20px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.cxDvInfoFormField,
+.cxDvBcInfoFormField {
+  color: var(--lyte-crux-detail-view-form-info-color);
+  min-width: 200px;
+  width: 200px;
+  /*    margin-bottom: 20px;*/
+  padding: 8px 17px 8px 0;
+  text-align: right;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: break-word;
+  position: relative;
+  margin-right: 5px;
+}
+/*
+.cxDvBcInfoFormField{
+    color: #616e88;
+    min-width: 200px;
+    margin-bottom: 6px;
+    text-align: right;
+}
+*/
+.cxDvBcInfoFormRow {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.cxDvInfoValue {
+  width: 100%;
+  max-width: 390px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.cxDvInfoValue crux-detailpage-field-details {
+  max-width: 100%;
+}
+.cxDvInfoValue .cxElemCompViewWrap {
+  max-width: 100%;
+  display: block;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+.cxDvCompParent {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+.cxDvTagsParent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.cxDvCompParent:hover {
+  border: 1px solid var(--lyte-crux-detail-view-parent-hover-border-color);
+}
+.cxDvCompParent .cxDvTagFieldEditIcon {
+  visibility: hidden;
+}
+.cxDvCompParent:hover .cxDvTagFieldEditIcon {
+  visibility: visible;
+}
+.cxDvCompParent .cxDvFieldEditIcon {
+  visibility: hidden;
+  position: absolute;
+  right: 15px;
+}
+.cxDvCompParent:hover .cxDvFieldEditIcon {
+  visibility: visible;
+}
+.cxDvAjaxEdit {
+  position: relative;
+  width: auto;
+  min-width: 220px;
+  box-sizing: border-box;
+  height: auto;
+  min-height: 34px;
+  padding-right: 30px;
+}
+.cxDvSaveCancelSection {
+  margin-left: 12px;
+  display: none;
+}
+.cxDvRecordEdit {
+  margin-left: 8px;
+}
+.cxDvFieldSectionContainer {
+  width: 100%;
+}
+.cxDvReadOnlyWrap {
+  position: absolute;
+  right: 0;
+  visibility: visible;
+}
+.cxDvCompParent .cxUnsupportedField::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  border-radius: 5px;
+}
+/* Detailview Header Arrow Animation Starts */
+.cxDvShowHideArrowWrap {
+  position: relative;
+  background: none;
+  padding-left: 0;
+  transition: padding 0.25s ease-in;
+  pointer-events: none !important;
+  cursor: default !important;
+}
+.cxDvShowHideArrowWrap:hover,
+.cxDvShowHideArrowWrap.lyteNavActive {
+  position: relative;
+  background: none;
+  padding-left: 15px;
+}
+.cxDvShowHideArrowAnim {
+  position: relative;
+}
+.cxDvShowHideArrowAnim::after {
+  content: '';
+  position: absolute;
+  background-position: -1px -2px;
+  background-image: url(../../images/crux-sprite-icons.svg);
+  left: -14px;
+  top: 7px;
+  visibility: hidden;
+  width: 8px;
+  height: 4px;
+  animation: none;
+  transform: scale(1.4) rotate(180deg);
+}
+.cxDvShowHideArrowWrap:hover .cxDvShowHideArrowAnim::after {
+  visibility: visible;
+  animation: cxDvShowHideArrowAnim 0.3s ease-in-out normal forwards 1;
+}
+@keyframes cxDvShowHideArrowAnim {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(270deg) scale(1.4);
+  }
+}
+/* Detailview Header Arrow Animation Ends */
+/* Detailview Empty Field - hyphen styling STarts */
+.cxDvFieldEmpty::before {
+  content: '';
+  width: 10px;
+  height: 1px;
+  display: inline-block;
+  margin-bottom: 0;
+  opacity: 0.35;
+  vertical-align: middle;
+  background-color: var(--lyte-crux-detail-view-empty-field-bg-color);
+}
+/* Detailview Empty Field - hyphen styling Ends */
+/* CRUX User Component - Right Icon disabled for CRUX Create Page and Detailview - based on CRM reference */
+.cxDvFchildContainer crux-user-component[cx-prop-type="multiple"] .cxBoxRightIcon {
+  display: none !important;
+}
+.cxDetailLoadingDiv {
+  text-align: center;
+}
+/* DETAilview Clubbed/ Grouped SUbform Section Starts */
+.cxGroupedSubformWrap {
+  padding: 0 !important;
+  border: 1px solid var(--lyte-crux-detail-grouped-subform-wrap-border) !important;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+.cxGroupedSubformBlock {
+  padding: 20px 20px 0;
+  width: fit-content;
+}
+.cxGroupedSubformWrap .cxDvInfoCont {
+  margin-bottom: 0;
+  border-radius: 0 0 10px 10px;
+  background: var(--lyte-crux-detail-grouped-subform-wrap-background);
+}
+.cxGroupedSubformWrap .cxDvBcInfoFormRow {
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+.cxGroupedSubformWrap .cxDvInfoValue {
+  width: auto;
+}
+.cxGroupedSubformFooter .cxDvCompParent:hover {
+  border: none !important;
+}
+.cxGroupedSubformFooter .cxDvAjaxEdit {
+  min-width: auto;
+}
+/* DETAilview Clubbed/ Grouped SUbform Section Ends*/
+
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cxDvRecordUserImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: var(--lyte-crux-detail-view-record-user-image-bg-color);
+  color: var(--lyte-crux-detail-view-record-user-color);
+  display: inline-block;
+  padding: 15px;
+  margin-left: 15px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.cxDvRecTag {
+  padding: 4px 12px;
+}
+/*
+.dv_contact_info{
+    background: #f5f5f8;
+    border: 1px solid #e4e4e1;
+}
+*/
+/*
+.dv_contact_info{
+    background: #f5f5f8;
+    border: 1px solid #e4e4e1;
+}*/
+.cxDvHeaderParent {
+  justify-content: space-between;
+  padding: 17px 30px 18px;
+}
+/*
+.cx_detail_header_txtsection{
+    display: flex;
+    align-items: center;
+}
+*/
+/*
+.cx_detail_header_backicon{
+    cursor: pointer;
+}
+.cx_detail_recorddetails{
+    display: flex;
+}
+*/
+.cxDvRecordRight {
+  margin-left: 12px;
+}
+.cxDvRecordName {
+  margin-bottom: 8px;
+}
+.cxDvRecordHeader1,
+.cxDvRecordHeaderhypen,
+.cxDvRecordHeader2 {
+  font-family: 'LatoSemiBold', sans-serif;
+  font-size: 20px;
+}
+.cxDvRecordHeaderhypen {
+  margin: 0 5px;
+}
+.cxDvRecordEmail {
+  color: var(--lyte-crux-detail-view-record-email-color);
+  font-size: 0.929rem;
+}
+.cxDvApprovalMoreOptionsBtn {
+  margin-right: 0;
+}
+.cxDetailHeader.cxMoreIconHor,
+.cxDvRecordMoreIcon,
+.cxDvApprovalMoreOptionsBtn .cruxSprite {
+  vertical-align: middle;
+}
+
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*
+.fied_comp_value_container{
+    border: 1px solid transparent;
+    padding: 8px 12px;
+    border-radius: 6px;
+    height: 32px;
+}
+*/
+.cxDvFieldDetailComp,
+.cxDvUserComponent {
+  width: 100%;
+}
+.cxDvFieldDetailComp .yieldObserver {
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cx_rl_header {
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.cx_rl_scroll_header {
+  font-family: 'LatoSemiBold', sans-serif;
+  color: var(--lyte-crux-rl-scroll-header-text-color);
+  font-size: 1rem;
+}
+.cx_rl_table_component {
+  display: block;
+  margin-bottom: 25px;
+}
+.related_listview_tale lyte-tr:hover .dv_list_table_moreicon,
+.dv_list_table_moreicon.lyteMenuSelected {
+  visibility: visible;
+}
+/*
+.dv_list_table_moreicon_parent{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    visibility: hidden;
+}
+*/
+.dv_list_table_moreicon {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.editDeleteIcons {
+  width: 30px;
+}
+crm-relatedlist[cx-prop-content-overflow="true"] {
+  height: inherit;
+  overflow: auto;
+  display: block;
+}
+crux-related-list-table .lyteNavigator {
+  justify-content: flex-end;
+  padding-right: 20px;
+  margin-top: 10px;
+}
+crux-related-list-table lyte-yield[yield-name="navigatorYield"] {
+  gap: 0;
+}
+crux-related-list-table .lyteNavigatorMidPoint {
+  display: flex;
+  align-items: center;
+}
+
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cx_detail_rl_container {
+  border-radius: 6px;
+  box-shadow: 0 3px 4px 0 var(--lyte-crux-detail-rl-container-box-shadow-color);
+  border: 1px solid var(--lyte-crux-detail-rl-container-border-color);
+  padding: 20px;
+  margin-top: 15px;
+  background: var(--lyte-crux-detail-rl-container-bg-color);
+}
+.cruxNotesCompWrap {
+  padding: 0;
+}
+
+/*css for in color palatte*/
+.cxColorDropperOuter {
+    border: 1px solid #dae0e3;
+    display: inline-block;
+    padding: 3px 4px 3px 3px;
+    line-height: 0;
+    border-radius: 22px;
+    /* margin-left: 7px; */
+    cursor: pointer;
+    background: #fff;
+}
+.cxColorDropperOuter:hover {
+	border: 1px solid #c3c6ca;
+    box-shadow: 0 0 6px #c3c6ca;
+}
+.cxPalleteOpened,
+.cxPalleteOpened:hover {
+	border: 1px solid #3c9df7;
+    box-shadow: 0 0 6px #8dc4ff;
+}
+.cxPaletteWrapper{
+  z-index: 10005 !important;
+}
+.cxPaletteWrapper .lytePopover {
+    border: 0;
+    transition-duration: 0s;
+    margin-left: 7px;
+    margin-top: 3px;
+}
+.cxPaletteSampleTextContainer {
+	padding: 2px 12px 3px;
+    border-radius: 13px;
+    background: #4ea8dd;
+    position: relative;
+}
+.cxPaletteSampleTextContainer::before {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 13px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.cxPaletteColorPickerIcon {
+	width: 18px;
+	height: 18px;
+	background: url(../images/crux-sprite-icons.svg) -209px -121px;
+}
+.cxPaletteWrapper .lyteColorPicker {
+	box-shadow: none;
+    border: none;
+    width: 100%;
+}
+.cxPaletteWrapper .lyteColorPicker .lyteColorPicker--advanced {
+    width: 100%;
+    padding: 0;
+}
+.cxPaletteWrapper .colorSlider_palette_circle::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    bottom: -3px;
+    left: -3px;
+    border: 1px solid rgba(0,0,0,.5);
+    border-radius: 50%;
+}
+.cxPaletteWrapper .lyteColorPicker__previewDiv, 
+.cxPaletteWrapper .lyteColorPicker__sliderDiv {
+	padding: 0 10px;
+}
+.cxPaletteProceedBtns {
+    padding: 10px;
+    box-sizing: border-box;
+    border-top: 1px solid #ebebeb;
+}
+.cxPalettePopoverContent .cxPaletteCircle {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin: 0 5px 5px 0;
+    cursor: pointer;
+    position: relative;
+}
+.cxPalettePopoverContent .cxPaletteCircle.cxnoFill {
+	background: 0 0;
+    border: 1px solid #adadad;
+}
+.cxPalettePopoverContent .cxPaletteSelected:not(.cxnoFill) {
+    width: 17px!important;
+    height: 17px!important;
+    /* margin: -2px 3px 3px -2px!important; */
+}
+.cxPalettePopoverContent .cxPaletteCircle.cxnoFill::after {
+	content: "";
+    position: absolute;
+    width: 16px;
+    height: 1px;
+    background: #f27f7e;
+    left: calc(50% - 8px);
+    top: calc(50% - 1px);
+    transform: rotate(135deg);
+}
+.cxPalettePopoverContent .cxPaletteCircle:not(.cxnoFill):hover:after, 
+.cxPalettePopoverContent .cxPaletteCircle:not(.cxnoFill):not(.cxPaletteSelected):before, 
+.cxPaletteSelected:not(.cxnoFill):after {
+	position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid rgba(0,0,0,.3);
+    border-radius: 50%;
+}
+.cxPalettePopoverContent .cxPaletteSelected:not(.cxnoFill)::before {
+	content: "";
+    position: absolute;
+    background: url(/crm/CRMClient/images/crm-svgicons.svg) -156px -851px;
+    width: 12px;
+    height: 9px;
+    top: calc(50% - 5px);
+    left: calc(50% - 6px);
+}
+
+.cxColorDropperCircle {
+	width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.cxColorDropperCircle::before {
+	content: "";
+    position: absolute;
+    border: 1px solid rgba(0,0,0,.2);
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    border-radius: 50%;
+}
+.cxColorDropperCircle.cxnoFill::after {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 1px;
+    background: #f27f7e;
+    left: calc(50% - 7px);
+    top: calc(50% - 1px);
+    transform: rotate(135deg);
+}
+.cxPaletteDropArrow {
+    background: url(../images/crux-sprite-icons.svg) -13px -1px;
+    width: 11px;
+    height: 7px;
+    display: inline-block;
+    vertical-align: middle;
+    opacity: 0.6;
+}
+
+.cxPaletteColorPicker{
+    width: 100%;
+}
+/*css for in color palatte*/
+
+/*crux tag custom color palatte css*/
+.tagsColorPalettePopover .cxPaletteSampleTextContainer {
+    padding: 2px 5px 4px 10px !important;
+    border-radius: 3px 0px 0px 3px !important;
+    border: 0 !important;
+    margin-right: 12px !important;
+    font-size: 1.3rem;
+    height: 16px;
+    line-height: 18px;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+.tagsColorPalettePopover .cxPaletteSampleTextContainer::before {
+    border-radius: 3px 0px 0px 3px;
+    border-right: 0;
+}
+.tagsColorPalettePopover .cxPaletteSampleTextContainer::after {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background: inherit;
+    transform: rotate(45deg) skew(6deg, 6deg);
+    top: 4px;
+    left: calc(100% - 7px);
+    z-index: -1;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    border-right: 1px solid rgba(0,0,0,0.2);
+}
+.tagsColorPalettePopover lyte-table:not(.infinitescroll) lyte-tr:hover {
+    background: #fff;
+}
+.tagsColorPalettePopover .colorDiv {
+	border: 0;
+	border-radius: 0;
+}
+.tagsColorPalettePopover .lyteColorPicker .lyteColorPicker__commandbar, 
+.tagsColorPalettePopover .cpValFormatIp lyte-tr:first-child lyte-td:nth-child(2), 
+.tagsColorPalettePopover .lyteCPHexText, 
+.tagsColorPalettePopover .lyteColorPicker__opacityslider, 
+.tagsColorPalettePopover .selectFormat {
+	display: none;
+}
+.tagsColorPalettePopover .lyteCP__transparentbg {
+	position: absolute;
+	top: 32px;
+}
+.tagsColorPalettePopover .colorSlider_hue {
+	margin-bottom: 0;
+}
+.tagsColorPalettePopover #lyteCPShowValue, 
+.tagsColorPalettePopover .showValue {
+    width: 100%!important;
+    box-sizing: border-box;
+}
+.tagsColorPalettePopover .showValue {
+	padding-left: 40px;
+	margin-bottom: 10px;
+}
+.tagsColorPalettePopover .showValue .lyteField  {
+    box-shadow: none;	
+}
+.tagsColorPalettePopover .showValue .lyteInputBox input {
+    padding: 11px 4px;
+}
+.tagsColorPalettePopover .colorSlider_hueBar_border,
+.tagsColorPalettePopover .lyteColorPicker__transparentbg {
+	width: 220px;
+}
+.tagsColorPalettePopover .colorSlider_sliderHandle {
+    height: 13px;
+}
+.tagsColorPalettePopover .colorSlider_hueBar {
+    border-radius: 3px;
+    height: 15px;
+    border: none;
+}
+/*crux tag custom color palatte css*/
+
+
+/* Below Temporary style fix will remove on color pallette revamp*/
+
+.cxColorClearFix::after{
+    content: '';
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+
+/* Above Temporary style fix will remove on color pallette revamp*/
+
+/*crux comp base class starts*/
+/* .cxFlex{
+    display: flex;
+}
+.cxAlignItemCenter{
+    align-items: center;
+}
+.cxCP{
+    cursor: pointer;
+} */
+/*crux comp base class ends*/
+
+.cxDvBodyContent{
+    overflow: auto;
+    min-height: 200px;
+}
+.cxDvNavItem{
+    font-family: var(--crux-bold-font);
+    font-weight: var(--crux-font-weight-bold);
+    color: #202123;
+}
+.field-section-container {
+    display: flex;
+    width: 100%;
+}
+.cxDvFchildContainer {
+    flex: 1;
+}
+.cxDvInfoLabel {
+    text-align: right;
+    padding: 14px 17px 13px 0;
+    flex: 0 0 200px;
+    border: 1px solid transparent;
+}
+.cxDvRecordUserImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: #9775FA;
+    color: #fff;
+}
+.cxDvRecTag {
+    padding: 4px 12px;
+}
+.cxDvWrapParent{
+    background-color: #EDF0F4;
+    padding: 15px 20px;
+}
+/*.dv_details_section,*/
+.cxDvTabContent{
+    border-radius: 0 0  6px 6px;
+    box-shadow: 0 3px 4px 0 #00000008;
+    border: 1px solid #d7e2ed;
+    padding: 20px;
+    background: #fff;
+}
+.cxDvLyteNav{
+    border-radius: 6px 6px 0 0;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: auto;
+}
+.cxEditIcon {
+width: 13px;
+height: 13px;
+-webkit-mask-position: -69px -153px;
+mask-position: -69px -153px;
+background-color: #333;
+}
+.cxMoreIcon {
+width: 16px;
+height: 5px;
+-webkit-mask-position: -368px -342px;
+mask-position: -368px -342px;
+background-color: #333;
+}
+.cxDvTagIconPosition{
+    display : flex;
+    align-items: center;
+}
+.dv_delRecLytePop .alertSecondaryMsg {
+    background-color: var(--noteBgColor);
+    border: 1px solid var(--noteBrColor);
+    border-radius: 6px;
+    color: var(--noteColor);
+    line-height: 1.5;
+    padding: 4px 10px
+}
+.timerIcon-notes {
+	background: var(--crmSprite) no-repeat -655px -31px;
+	width: 12px;
+	height: 12px;
+	margin-top:4px;
+}
+/*# sourceMappingURL=crux-detailpage-styles.css.map */

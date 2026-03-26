@@ -1,0 +1,208 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-territory.variables.less";
+
+@import "../themes/default/less-variables/crux-territory-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-territory";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-territory-variables.less";
+}
+
+.cxTerritoryModalWrapper .lyteModal > lyte-yield {
+	.cxTerritoryModalWrapperModalOuterYieldMixin();
+	display: flex;
+	flex-direction: column;
+	height: @h;
+}
+.cxTerritoryModalContent {
+	display: flex;
+	flex-direction: column;
+}
+.cxTerritoryTreeWrap,
+.cxTerritoryModalTreeWrap {
+	.cxTerritoryTreeWrapMixin();
+	overflow: auto;
+	margin-top: @margin-top;
+	padding-bottom: @padding-bottom;
+}
+.cxTerritoryModalTreeWrap {
+	.cxTerritoryModalTreeWrapMixin();
+	/*min-height: @min-height;*/
+}
+.cxTerritoryTree > .lyteTreeBodyDiv > lyte-tree-body {
+	.cxTerritoryTreeOuterTreeBodyMixin();
+	margin-top: @margin-top;
+}
+lyte-tree.cxTerritoryTree {
+	.cxTerritoryTreeMixin();
+	padding: @padding;
+	display: inline-block;
+}
+.cxTerritoryTree .lyteCheckBoxDefault::before {
+	.cxTerritoryTreeCheckBoxDefaultBeforeMixin();
+	@{property-margin-right}: @margin-right;
+}
+.cxTerritoryTree lyte-tree-content {
+	cursor: default;
+	display: flex;
+}
+.cxTerritoryTreeWrap lyte-tree-content,
+.cxTerritoryModalTreeWrap lyte-tree-content, 
+.cxTerritoryTree lyte-tree-content {
+	display: flex;
+}
+.cxTerritoryModalTreeWrap .cxTerritoryTree lyte-tree .lyteTreeNoChildContainer lyte-tree-content::before {
+	.cxTerritoryTreeNoChildContainerTreeContentBeforeMixin();
+	width: @width;
+}
+.cxTerritoryModalTreeWrap .cxTerritoryTree .lyteTreeNoChildContainer lyte-tree-content {
+	.cxTerritoryTreeNoChildContainerTreeContentMixin();
+	// @{property-padding-left}: @padding-left;
+}
+.cxTerritoryTree lyte-yield {
+	outline: none;
+}
+.cxTerritoryTree .lyteTreeMainContainer > lyte-yield {
+	display: block;
+}
+.cxTerritoryTree lyte-tree-icon {
+	position: relative;
+	cursor: pointer;
+	height: fit-content;
+}
+.cxTerritoryTree .cxTerritoryCheckbox {
+	.cxTerritoryTreeCheckboxMixin();
+	margin: @margin;
+}
+.cxTerritoryTree .cxTerritoryCkboxEmptyLabel {
+	display: none;
+}
+// .cxTerritoryTree .cxTerritoryCheckbox .lyteRadioLayer {
+// 	.cxTerritoryTreeRadioLayerMixin();
+// 	@{property-margin-right}: @margin-right;
+// }
+.cxTerritoryTreeWrap .cxTerritoryCheckbox .lyteRadioLayer,
+.cxTerritoryModalTreeWrap .cxTerritoryCheckbox .lyteRadioLayer, 
+.cxTerritoryTree .cxTerritoryCheckbox .lyteRadioLayer {
+	.cxTerritoryTreeRadioLayerMixin();
+	margin: @margin;
+}
+.cxTerritoryTree lyte-tree-icon .collapseBox {
+	.cxTerritoryTreeLyteTreeCollapseBoxMixin();
+	opacity: @opacity;
+	display: block;
+}
+.cxTerritoryTree .cxTerritoryLabel {
+	.cxTerritoryTreeTerritoryLabelMixin();
+	max-width: @max-w;
+	cursor: pointer;
+	@{property-margin-left}: @margin-left;
+	white-space:@white-space;
+	z-index: @z-index;
+}
+/*
+.cxTerritoryTree .cxTerritoryLabel:hover {
+	.cxTerritoryTreeTerritoryLabelHoverMixin();
+	color: @color;
+}*/
+.cxTerritoryTree .cxTerritoryNoSelect {
+	cursor: default;
+}
+.cxTerritoryTreeValueWrapper {
+	.cxTerritoryTreeValueWrapperMixin();
+	flex-grow: @flex-grow;
+	@{property-margin-left}: @margin-left;
+}
+/*
+.lyteTreeHasNoChild .cxTerritoryTreeValueWrapper {
+	.cxTerritoryTreeNoChildTreeValueWrapperMixin();
+	@{property-margin-left}: @margin-left;
+}*/
+.cxTerritoryCheckbox + .cxTerritoryTreeValueWrapper {
+	.cxTerritoryTreeNoChildTreeValueWrapperNextToCheckboxMixin();
+	@{property-margin-left}: @margin-left;
+}
+.cxTerritoryItemYield {
+	display: inline-flex;
+	z-index: 1;
+    position: relative;
+}
+.cxTerritoryTreeValueWrapper::before {
+	.cxTerritoryTreeValueWrapperBeforeMixin();
+	content: '';
+	position: absolute;
+	width: @w;
+	height: @h;
+	// top: @top;
+}
+.cxTerritoryHighlightElement::before {
+	animation: cxTerritoryHighlightAnim 2s ease;
+}
+@keyframes cxTerritoryHighlightAnim {
+	from {
+		.cxTerritoryHighlightAnimMixin();
+		background: @from-bg-color;
+	}
+	to {
+		.cxTerritoryHighlightAnimMixin();
+		background: @to-bg-color;
+	}
+}
+.cxTerritoryItemSuffixWrap {
+	.cxTerritoryItemSuffixWrapMixin();
+	@{property-margin-left}: @margin-left;
+}
+.lyteTreeNoChildContainer .cxTerritoryItemSuffixWrap {
+	.cxTerritoryItemSuffixWrapLastMixin();
+	@{property-margin-left}: @margin-left;
+}
+.lyteTreeBodyClosed .mainContainer::before{
+	display: none;
+}
+.cxTerritoryCrumb{
+	display: inline-block;
+}
+.cxTerritorySearchWrap {
+	display: flex;
+}
+.cxTerritorySearchWrap crux-territory-search {
+	flex: 1;
+    max-width: 350px;
+}
+.cxTerritorySearchWrap lyte-dropdown {
+	width: 100%;
+}
+.cxTerritorySearchWrap lyte-dropdown lyte-drop-button, 
+.cxTerritorySearchWrap lyte-dropdown lyte-drop-button:hover {
+	padding: 0 !important;
+}
+.cxTerritorySearchWrap .lyteInputBox .lyteField,
+.cxTerritorySearchWrap .lyteInputBox .lyteField:hover,
+.cxTerritorySearchWrap .lyteInputBox.lyteInputFocus .lyteField {
+	border: none;
+}
+.cxTerritorySearchWrap .lyteInputBox .lyteField input {
+	background: none;
+}
+.cxTerritorySuffixYield {
+	@{property-margin-left}: 10px;
+    align-self: center;
+}
+.cxTerritoryHeaderYieldInfo {
+	.cxTerritoryHeaderYieldInfoMixin();
+	display: block;
+	font-family: @font-family;
+	font-weight: @font-weight;
+	font-size: @font-size;
+    padding-top: @padding-top;
+}
+.cxTerritoryTree .lyteTreeHasNoChild lyte-tree-icon {
+	display: none;
+}

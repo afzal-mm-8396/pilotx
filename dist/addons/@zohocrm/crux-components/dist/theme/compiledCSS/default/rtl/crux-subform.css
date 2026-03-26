@@ -1,0 +1,1004 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*Commented for code check */
+/*To be moved to Lyte Table CSS Starts*/
+.cxSubformRowEditMode .cxSfSaveCancelTd {
+  box-shadow: 1px 0 7px 0px var(--lyte-crux-subform-table-sticky-column-border-color);
+}
+/*To be moved to Lyte Table CSS Ends */
+/*Duplicate code removal*/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+.cxSubformAggDiv {
+  margin-top: 20px;
+  overflow: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+/*padding: @padding;*/
+/*background: @bg;*/
+/* 	font-family: @font-family;*/
+.cxSubformTable lyte-td.lyteTableFixed,
+.cxSubformTable lyte-th.lyteFixedColumn {
+  z-index: 2;
+}
+.cxSubformTable lyte-td.lyteTableFixed {
+  background-color: var(--lyte-crux-subform-table-bg-color);
+}
+.cxSubformTable .cxTableLookupFilterComponent lyte-th {
+  padding: 8px 8px 10px 8px;
+  border-bottom: 1px solid var(--lyte-crux-subform-table-filter-th-border-color);
+  font-family: 'LatoRegular', sans-serif;
+  text-transform: none;
+}
+.cxSubformTable .cxSubformFirstColTd,
+.cxSubformTable lyte-td.cxSubformFirstColTd,
+.cxSubformTable lyte-th.cxSubformFirstColTd {
+  /* @padding: 0;*/
+  /*padding: @padding;*/
+  min-width: 50px;
+  border-left: none;
+  width: 60px !important;
+  /* Added this important width, to remove jerk, when Header is Fixed */
+}
+.zcanvas .cxSubformTable .cxSubformFirstColTd,
+.zcanvas .cxSubformTable lyte-th.cxSubformFirstColTd {
+  width: 60px;
+}
+/*
+.cxSubformTable lyte-tbody .cxBoxInput.lyteInputBox .lyteField {
+	.cxSubformTableInputBoxFieldMixin();
+	// border-color: @border-color;
+}
+.cxSubformTable lyte-tbody .cxBoxInput.lyteInputBox .lyteField:hover {
+	.cxSubformTableInputBoxFieldHoverMixin();
+	border-color: @border-color;
+}
+.cxSubformTable lyte-tbody .cxBoxInput.lyteInputBox.lyteInputFocus .lyteField {
+	.cxSubformTableInputBoxFocusFieldHoverMixin();
+	border-color: @border-color;
+}
+*/
+.cxSubformSerialNoInput.lyteInputBox .lyteField {
+  border-color: transparent !important;
+  box-shadow: none !important;
+  background: transparent;
+}
+.cxSubformSerialNoInput.lyteInputBox .lyteField input {
+  cursor: not-allowed;
+  padding-right: 0;
+  padding-left: 0;
+}
+.cxSubformSerialNoInput.lyteNumberReadonly .lyteField input {
+  background: transparent;
+}
+/*
+crux-subform lyte-tbody .cxBoxInput.lyteInputBox input {
+	.cxSubformInputMixin();
+	padding: @padding;
+}*/
+crux-subform lyte-tbody lyte-dropdown.cxBoxDropdown.mandatoryField lyte-drop-button::before {
+  opacity: 0;
+}
+.cxSubformTable lyte-td {
+  /*@vertical-align: top;*/
+  /*@{property-border-right}: @border-right;
+	word-break: @break-word;
+    overflow-wrap: @overflow-wrap;*/
+  vertical-align: top;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.cxSubformTable lyte-td lyte-yield {
+  /* For yeild component with large text, ui breaks. hence this fix*/
+  /*width: @w;*/
+  display: block;
+  max-width: inherit;
+}
+.cxSubformTable lyte-td.cxSubformFirstColTd lyte-yield {
+  display: flex;
+  align-items: flex-start;
+  /* added to make all icons appear in top of td */
+  height: 100%;
+}
+lyte-td[fixed="enable"] lyte-yield {
+  /* For yeild component in SNO, ui breaks. hence this fix*/
+  width: auto;
+}
+.cxSubformAggTable lyte-td {
+  /* padding: @padding;*/
+  vertical-align: top;
+  min-width: 120px;
+  max-width: initial;
+}
+.cxSubformTable lyte-tr lyte-td:last-of-type {
+  border-left: none;
+}
+.cxSubformAggTDLabel {
+  font-family: 'LatoRegular', sans-serif;
+  overflow-wrap: break-word;
+  text-align: left;
+  color: var(--lyte-crux-subform-agg-td-label-color);
+  padding-top: 20px;
+}
+.cxSubformAggTDLabelWrap {
+  position: relative;
+  display: inline-flex;
+}
+.cxSubformAggTDLabelWrap .cxSubformInfoIcon {
+  margin-top: 2px;
+}
+.cxSubformField {
+  position: relative;
+  z-index: 1;
+  /*	This z-index is added because of textarea resize icon coming above the fixed column	*/
+  width: 100%;
+}
+.cxSubformField:last-child {
+  border-left: 0;
+}
+crux-subform .sortable-parent {
+  height: auto;
+}
+.cxSubformInfoIcon {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -7px -126px;
+  min-width: 13px;
+  width: 13px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+  opacity: 0.5;
+}
+/* .cxSubform lyte-th .cxSubformInfoIcon {
+ position: absolute; Commented as this overrides all cases, when title, info icon and Hamburger icon comes
+ }
+ */
+.cxSubformRemoveIcon {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -118px -126px;
+  height: 12px;
+  width: 12px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px 0 5px;
+}
+.cxSubformRemoveIcon:hover {
+  background-position: -140px -126px;
+}
+.cxSubformDragIcon {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -165px -123px;
+  width: 6px;
+  height: 18px;
+  cursor: move;
+  display: inline-block;
+  vertical-align: middle;
+}
+.cxSubformTable .lyteSortablePlaceholder lyte-td {
+  background: inherit;
+}
+.cxSubformTheadFixed {
+  overflow: hidden;
+  position: fixed;
+  z-index: 8;
+}
+.cxSubformTableRowActions {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+}
+.cxSubform lyte-tr:hover .cxSubformTableRowActions {
+  visibility: visible;
+}
+.cxSubform lyte-tr .cxSubformTableRowActionsHidden,
+.cxSubform lyte-tr:hover .cxSubformTableRowActionsHidden {
+  visibility: hidden;
+}
+.cxSubformEditIcon,
+.cxSubformMoreActionIcon {
+  width: 30px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-left: 5px;
+}
+.cxSubformEditIcon:last-of-type,
+.cxSubformMoreActionIcon:last-of-type {
+  margin-left: 0;
+}
+.cxSubformEditIcon::before,
+.cxSubformMoreActionIcon::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transform: scale(0);
+  background: var(--lyte-crux-subform-edit-and-more-icon-before-bg);
+  transition: transform 0.3s ease;
+  position: absolute;
+  z-index: 0;
+  box-sizing: border-box;
+}
+.cxSubformMoreActionIcon.lyteMenuSelected {
+  visibility: visible;
+}
+.cxSubformEditIcon:hover::before,
+.cxSubformMoreActionIcon:hover::before,
+.cxSubformMoreActionIcon.lyteMenuSelected::before {
+  transform: scale(1);
+}
+.cxSubformEditIcon::after,
+.cxSubformMoreActionIcon::after {
+  content: '';
+  background-image: url(../../images/crux-sprite-icons.svg);
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+.cxSubformEditIcon::after {
+  background-position: -228px -37px;
+  width: 13px;
+  height: 13px;
+}
+.cxSubformMoreActionIcon::after {
+  background-position: -294px -4px;
+  width: 3px;
+  height: 13px;
+  transform: rotate(90deg);
+}
+.cxSubformFooterActionSection {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cxSubformScrollTopActionLabel {
+  /*color: @color;*/
+  cursor: pointer;
+  color: var(--lyte-crux-subform-scroll-top-action-label-color);
+  text-decoration: underline;
+  margin-right: auto;
+  /* Need not remove - as the label item will always be right aligned */
+}
+.cxSubformShowAllActionLabel {
+  text-align: center;
+  color: var(--lyte-crux-subform-show-all-label-color);
+  cursor: pointer;
+  background-color: var(--lyte-crux-subform-show-all-label-bg-color);
+  box-shadow: 0 -2px 6px var(--lyte-crux-subform-show-all-label-box-shadow-color);
+  border-radius: 0px 0px 6px 6px;
+  border: 1px solid var(--lyte-crux-subform-show-all-label-border-color);
+  border-top: none;
+  padding: 9px;
+  z-index: 1;
+  position: relative;
+}
+.cxSubformShowAllActionLabel:hover {
+  text-decoration: underline;
+  background-color: var(--lyte-crux-subform-show-all-label-hover-bg-color);
+}
+.cxSubform {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 2rem;
+}
+.cxSubform crux-table-component,
+.cxSubform lyte-table-structure {
+  width: 100% !important;
+}
+.cxSubform lyte-th {
+  padding-left: 35px;
+}
+.cxSubform lyte-th.cxSfHeaderRight {
+  text-align: left;
+}
+.cxSubformAggTable {
+  width: auto;
+  max-width: 95%;
+}
+.cxSubformTable .cxLookupFieldList:nth-child(2) .cxCriteriaInputSection {
+  width: auto;
+}
+.cxSubformTable crux-lookupfilter-component .cxCriteriaInputSection {
+  margin-top: 10px;
+}
+.cxSubformTable crux-lookupfilter-component .cxElementDisabled .lyteMultiselectInput .lyteField {
+  border: none;
+}
+.cxSubformAggDiv .cruxErrMsg.cruxErrorMsgDesc {
+  position: relative;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+.cxSubformTable .cxCriteriaInputSection .cxLookupFiltersInput {
+  display: flex;
+}
+.cxSubformTable .cxLookupCriteriaFilter .lyteDummyEventContainer {
+  width: 100%;
+}
+.cxSubformSaveCancelWrap,
+.cxSubformValidateField crux-boolean-component {
+  padding-top: 7px;
+  justify-content: center;
+}
+.cxTableLookupFilterComponent lyte-number .lyteLabel {
+  display: none;
+}
+.cxSubformSave,
+.cxSubformCancel {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--lyte-crux-subform-save-and-cancel-btn-border-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.cxSubformSave {
+  background: var(--lyte-crux-subform-save-btn-bg-color);
+  border: 1px solid 1px solid var(--lyte-crux-subform-save-btn-border-color);
+}
+.cxSubformCancel {
+  margin-right: 10px;
+}
+.cxSubformSave::before,
+.cxSubformCancel::before {
+  content: '';
+  background-image: url(../../images/crux-sprite-icons.svg);
+}
+.cxSubformSave::before {
+  background-image: none;
+  width: 11px;
+  height: 8px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -316px -116px;
+  mask-position: -316px -116px;
+  background-color: var(--lyte-crux-subform-save-before-bg-color);
+}
+.cxSubformCancel::before {
+  background-position: -337px -115px;
+  width: 9px;
+  height: 10px;
+}
+.cxTableSortIconStatic {
+  position: relative;
+}
+.cxTableSortIconStatic::before,
+.cxTableSortIconStatic::after {
+  content: '';
+  position: absolute;
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -1px -2px;
+  width: 8px;
+  height: 4px;
+  display: inline-block;
+}
+/*
+	.cxSortAscArrow,
+	.cxSortDescArrow,
+	.cxSortClearArrow
+*/
+.cxSubformSortMenuIcon,
+.cxSortAscArrow,
+.cxSortDescArrow,
+.cxSortClearArrow {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -1px -2px;
+  width: 8px;
+  height: 4px;
+  margin-left: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.cxSubformAscElem .cxSubformSortMenuIcon,
+.cxTableSortIconStatic::after,
+.cxSortAscArrow {
+  transform: rotate(180deg);
+}
+.cxSubformUnsortElem .cxSubformSortMenuIcon,
+.cxSortClearArrow {
+  background-position: -71px -118px;
+  width: 8px;
+  height: 8px;
+}
+.cxSubformMaskElem .cxSprite {
+  top: 3px;
+  position: relative;
+  right: -3px;
+}
+.cxLookupSortItemNew .cxSortAscArrow,
+.cxLookupSortItemNew .cxSortDescArrow,
+.cxLookupSortItemNew .cxSortClearArrow {
+  margin-left: 5px;
+}
+.cxSubformRowEditMode lyte-td {
+  /*vertical-align: top;*/
+  border-top: 1px solid var(--lyte-crux-subform-row-edit-mode-td-border-color);
+  border-bottom: 1px solid var(--lyte-crux-subform-row-edit-mode-td-border-color);
+  padding-top: 2px;
+  padding-bottom: 0;
+  background-color: var(--lyte-crux-subform-row-edit-mode-td-bg-color);
+}
+lyte-table.cxSubformTable,
+lyte-table.cxSubformTable .lyteTableScroll {
+  border-radius: 6px;
+}
+/* 	
+	AUTO width - for Subform last before column
+	added as a fix to prevent Subform with exact 6 columns 
+	- then ist column has more width temporarily.
+	Issue occurs in Canvas and Normal Subform
+*/
+.cxSubform:not(.cxSubformViewMode) .cxSubformTdLoadingWrapper .cxLoaderHorTd:first-child {
+  width: 60px;
+}
+/*
+	= cxSubformViewMode - used in Public Fields
+	= cxSubformPreviewMode - For Layout Rules 
+		- all fields in td -> non-clickable, non-editable
+		- All aggregate Fields -> non-clickable, non-editable
+*/
+.cxSubform:not(.cxSubformViewMode) lyte-tr lyte-td:nth-last-child(2),
+.cxTableLookupFilterComponent lyte-th:nth-last-child(2),
+.cxTableLookupFilterComponent lyte-th:last-of-type {
+  border-left: none;
+}
+.cxSubform:not(.cxSubformViewMode) lyte-tr.cxSubformRowEditMode:last-of-type lyte-td {
+  border-bottom: 1px solid var(--lyte-crux-subform-row-edit-mode-td-border-color);
+}
+.cxSubform.cxSubformEditMode lyte-tr lyte-td:nth-last-child(2) {
+  border-left: 1px solid var(--lyte-crux-subform-edit-mode-td-border-color);
+}
+.cxSubformRowEditMode lyte-td:first-child {
+  border-right: 1px solid var(--lyte-crux-subform-row-edit-mode-td-first-child-border-color);
+}
+.cxSubformRowEditMode lyte-td:last-child {
+  border-left: 1px solid var(--lyte-crux-subform-row-edit-mode-td-last-child-border-color) !important;
+}
+.cxSubform:not(.cxSubformViewMode) lyte-tr lyte-td:first-of-type {
+  border-left: none;
+}
+/*For last line alone, curved border-radius must come Starts*/
+.cxSubformTable lyte-tr:last-of-type lyte-td:first-child {
+  border-bottom-right-radius: 6px;
+}
+.cxSubformTable lyte-tr:last-of-type lyte-td:last-child {
+  border-bottom-left-radius: 6px;
+}
+.cxSubformRowEditMode lyte-td .cxSubformTableRowActions {
+  /* Only for SUbform Edit mode - Single Row */
+  margin-top: 11px;
+}
+/*For last line alone, curved border-radius must come Ends */
+.cxSubformTable lyte-tr:last-of-type lyte-td {
+  padding-bottom: 15px;
+}
+.cxSubformField .cxLookupComponent lyte-drop-button,
+.cxSubformField lyte-input.cxTextarea {
+  display: block;
+}
+.cxSubformHighlightRow lyte-td {
+  background: var(--lyte-crux-subform-highlight-row-bg-color);
+  animation: cxSubformHighlightRowAnim 5s ease-out 0s 1;
+  animation-fill-mode: forwards;
+}
+@keyframes cxSubformHighlightRowAnim {
+  0% {
+    background: var(--lyte-crux-subform-row-animation-bg-highlight-color);
+  }
+  100% {
+    background: var(--lyte-crux-subform-row-animation-bg-white-color);
+  }
+}
+.cxSubformTopArrowIcon {
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -92px -175px;
+  mask-position: -92px -175px;
+  background-color: #333;
+  width: 9px;
+  height: 13px;
+  display: inline-block;
+}
+.cxSubformScrollTopActionLabel .cxSubformTopArrowIcon {
+  margin-left: 5px;
+}
+.cxSubformAggTable .cxAggFieldOptionsTd {
+  min-width: 80px;
+  width: 80px;
+  padding-right: 0;
+}
+.cxAggFieldOptionsTd .cxSubformEditIcon,
+.cxAggFieldOptionsTd .cxSubformMoreActionIcon {
+  top: 11px;
+}
+.cxSubformProdTxtarea {
+  margin-top: 10px;
+  display: block;
+}
+.cxSubformYeildReset {
+  width: auto;
+}
+.cxSubformTable lyte-td .cruxErrorMsgDesc {
+  position: relative;
+  white-space: normal;
+  overflow-wrap: break-word;
+  transform: none;
+}
+/*display: inline-block;*/
+.cxSubformValidateField .cxSubformField {
+  flex: 1;
+}
+.cxSubformValidateField .cxSubformField input {
+  text-overflow: ellipsis;
+}
+.cxSubformValidateField .cxSubformField .lyteMultipleSelect li {
+  min-width: 30px;
+}
+.cxSfCPQYeildContent {
+  margin-left: 5px;
+  flex: 1;
+}
+crm-detail-view-subform .cxTextareaViewMode {
+  min-width: 100%;
+  max-width: 100%;
+}
+/************************************
+	
+	******DO NOT REMOVE******
+
+cxSubformRowEditMode - normal State for Single Subform Row Edit.
+cxSubformRowFreeze - Hides full row. Triggered on clicking Save/Cancel.
+
+cxSubformTdFreeze - linked with 'cxSfSaveCancelTd'
+cxSubformTdFreeze - hides all Td, except Save, Cancel
+cxSfSaveCancelTd - for Save/Cancel Td
+
+*************************************/
+.cxSubformRowFreeze {
+  opacity: 0.7;
+  pointer-events: none;
+  cursor: default;
+}
+.cxSubformTdFreeze lyte-td:not(.cxSfSaveCancelTd) {
+  opacity: 1;
+  pointer-events: none;
+  cursor: default;
+}
+.cxSubformTdFreeze .lyteInputBox input,
+.cxSubformTdFreeze lyte-input textarea,
+.cxSubformTdFreeze .cxLookupIcon,
+.cxSubformTdFreeze lyte-dropdown lyte-drop-button,
+.cxSubformTdFreeze .cxFileUploadButton .lyte-button,
+.cxSubformTdFreeze .cxFileUploadButton .lyte-button.lyteSecondary {
+  background-color: var(--lyte-crux-subform-table-td-freeze-input-btn-bg-color);
+}
+.cxSubformTable .cNfileUpladBtn .lyteDefaultBtn {
+  width: 100%;
+  text-align: right;
+  border: var(--lyte-crux-subform-table-file-upload-btn-border-color);
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: var(--lyte-crux-subform-table-file-upload-btn-bg-color);
+  box-shadow: none;
+  border-radius: 5px;
+  font-family: 'LatoRegular', sans-serif;
+}
+.cxSubformTable .cNfileUpladBtn .lyteDefaultBtn,
+.cxSubformTable .cNfileUpladBtn .lyteDefaultBtn:active,
+.cxSubformTable .cNfileUpladBtn .lyteDefaultBtn:focus {
+  top: 0;
+}
+.cxSubformTable .cNfileUpladBtn .cNdropDown {
+  width: 24px;
+  position: absolute;
+  height: auto;
+  padding: 3px 0;
+  cursor: pointer;
+  left: 2px !important;
+  top: 4px;
+}
+.cxSubformTable crm-create-subformfields .cNfileUpladBtn,
+.cxSubformTable crm-create-subformfields lyte-button {
+  width: 100%;
+  top: 0;
+}
+.cxSubformTable .cNfileUpladBtn {
+  padding: 0 !important;
+}
+.cxSubformTable .numberDivCurrencyView {
+  text-align: left;
+}
+.cxSubformTable .cxPhoneViewZPBEnabled {
+  padding-right: 30px;
+  padding-left: 0;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 30px);
+  position: relative;
+  box-sizing: border-box;
+}
+.cxSubformTable .cxPhoneViewZPBEnabledIconWrap {
+  /* @{property-left}: @left; Not needed - phone icon will come in right */
+  margin-top: 2px;
+  /*2px added for phone icon coming with no bg */
+  transform: translateY(-3px);
+}
+.cxSubformTable .cxPhoneViewZPBEnabledIconWrap .zpbCallIconOuter {
+  margin-right: 0 !important;
+}
+/*To be moved to Lyte Table CSS Starts*/
+.cxTableNoResultsWrapper crux-table-component {
+  /* For outer wrapper enclosing empty message */
+  border: 1px solid var(--lyte-crux-subform-table-no-result-border-color);
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: block;
+}
+.cxTableNoResultsWrapper .cxSubformTable {
+  border: none;
+  border-radius: 6px 6px 0 0;
+}
+.cxTableNoResultsWrapper .lyteTableScroll,
+.has-showall .lyteTableScroll {
+  border-radius: 6px 6px 0 0;
+}
+.cxSubformAggDiv .lyteTableScroll {
+  border-radius: 10px;
+}
+.cxTableLookupFilterComponent lyte-number.horizontal .lyteField {
+  width: 100%;
+}
+.cxSubformHideCalculatorIcon {
+  display: none !important;
+}
+.cxSubformTable .lyteTableFixed {
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+  clip-path: inset(0px 0px 0px -7px);
+}
+.has-showall .cxSubformTable lyte-tr:last-of-type lyte-td {
+  border-radius: 0 !important;
+}
+.has-showall .cxSubformTable {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+/*To be moved to Lyte Table CSS Ends */
+.cxSubformFakeField {
+  height: 48px;
+}
+/*Show More Loading GIf Starts */
+/* Code moved to crux-common styles - so removed here*/
+/*Show More Loading Gif Ends*/
+/*Subform Row onscroll Loading GIf Starts */
+.cxSubformTdLoadingWrapper {
+  display: table-row;
+}
+.cxPlaceholderLoader {
+  position: relative;
+}
+.cxLoaderHorTd {
+  width: 100%;
+  height: 35px;
+  display: table-cell;
+  position: relative;
+  margin-left: 1.5rem;
+  min-width: 50px;
+}
+.cxPlaceholderLoader::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: infinite;
+  animation-timing-function: linear;
+  background: var(--lyte-crux-subform-placeholder-loader-bg-color);
+  background: var(--lyte-crux-subform-placeholder-loader-bg-gradient-color);
+  background-size: 800px 104px;
+  position: relative;
+}
+@keyframes cxPlaceHolderShimmer {
+  0% {
+    background-position: -300px 0;
+  }
+  100% {
+    background-position: 300px 0;
+  }
+}
+/*Subform Row onscroll Loading GIf Ends */
+.cxTableCompNoResults {
+  background-color: var(--lyte-crux-subform-table-no-result-bg-color);
+  border-radius: 0 0 6px 6px;
+}
+.cxSubformAggTable .numberDivCurrencyView,
+.cxSubformAggTable .numberDivNumberView,
+.cxSubformAggDiv .cxSubformValidateField crux-text-component {
+  border-radius: 6px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  min-width: 80px;
+  min-height: 34px;
+  display: block;
+}
+/* Padding overridden for - cxSubformEditMode. Padding neeeded only in view mode */
+.cxSubformEditMode .cxSubformAggTable .numberDivCurrencyView,
+.cxSubformEditMode .cxSubformAggTable .numberDivNumberView,
+.cxSubformEditMode .cxSubformAggDiv .cxSubformValidateField crux-text-component {
+  padding: 0;
+}
+.cxSubformAggTable .numberDivCurrencyView,
+.cxSubformAggTable .numberDivNumberView,
+.cxSubformAggDiv .cxSubformValidateField crux-text-component,
+.cxSubformAggTable .lyteInputBox input {
+  text-align: left;
+}
+.cxTableLookupFilterComponent .lyteNumberDisabled {
+  background-color: var(--lyte-crux-subform-lyte-num-disabled-border-color) !important;
+}
+crux-subform .cxElementDisabled .cxBoxInput input {
+  /*For subform fields, right extra padding or lock icon will not come*/
+  padding-left: 12px !important;
+}
+/*Hide pointer events for Crux Table filter */
+.cxSfTheadEditMode {
+  cursor: default !important;
+}
+.cxSubformIconDisabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.cxSubformIconDisabled:hover::before {
+  display: none;
+}
+.cxSfMandatory {
+  position: absolute;
+  right: 0;
+  color: #FF5D5A;
+}
+.cxSubformAggDiv .cxSfMandatory {
+  position: relative;
+}
+.cxSubformTable crux-text-component .lyteTextWrapper,
+.cxSubformTable crux-text-component lyte-text {
+  white-space: normal;
+  text-overflow: initial;
+  overflow-wrap: break-word;
+}
+.cxSubformTable crux-text-component lyte-text {
+  vertical-align: top;
+}
+/* 
+	CRUX Subform Wrap Mode Starts. 
+	No Ellipsis. All lines of text will appear
+*/
+.cxSubformWrapMode .lyteTextWrapper,
+.cxSubformWrapMode lyte-td,
+.cxSubformWrapMode lyte-td lyte-text {
+  text-overflow: initial;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+/* No wrap mode foer file name Starts */
+.cxSubformWrapMode lyte-td .cxFileUploadName {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-wrap: normal;
+}
+/* No wrap mode foer file name Ends */
+/* For file upload field - text overflow property added for IDC issue */
+.cxSubformWrapMode .cxFileUploadDetail,
+.cxSubformWrapMode .cxFileUploadDetail lyte-text {
+  text-overflow: ellipsis;
+  /* overflow: hidden; Breaks Download Icon in File upload  */
+  white-space: nowrap;
+}
+.cxSubformWrapMode .cxSubformAggDiv .cxSubformField {
+  max-width: 450px !important;
+  /* Added to override default td max-width and for formula field in textarea */
+}
+.cxSubformWrapMode .numberDivCurrencyView lyte-text,
+.cxSubformWrapMode .numberDivNumberView lyte-text {
+  display: block;
+}
+/* CRUX Subform Wrap Mode Ends  */
+.cxSubformAggTable .numberDivCurrencyView,
+.cxSubformAggTable .numberDivNumberView,
+.cxSubformAggTable .numberDivCurrencyView lyte-text,
+.cxSubformAggTable .numberDivNumberView lyte-text {
+  white-space: nowrap;
+}
+.cxSubformAggTable .numberDivCurrencyView,
+.cxSubformAggTable .numberDivNumberView {
+  display: flex;
+  justify-content: left;
+}
+.cxMoreActionHasIcon .cxSprite {
+  margin-left: 10px;
+}
+/* Added Tempporarily for Subform Pseudo class */
+.cxSubformValidateField .cxElementDisabled lyte-input textarea:disabled {
+  resize: both;
+}
+.cxSubformValidateField .cxElementDisabled lyte-input[lt-prop-type=textarea] .lyteField::before {
+  clip-path: none !important;
+  content: '';
+  width: 17px;
+  height: 17px;
+  background: var(--lyte-crux-subform-textarea-disabled-pseudo-border-color);
+  position: absolute;
+  left: -1px;
+  bottom: -1px;
+  z-index: 5;
+  border-radius: 0 0 6px;
+}
+.cxSubform .cxThFieldSortEnabled {
+  display: flex;
+  min-width: 0;
+}
+.cxSubform crux-file-upload-component[cx-prop-from=view] .cxFileUploadContainer li {
+  max-width: 100%;
+}
+.cxSubform .cxFileUploadDetail lyte-text {
+  overflow: hidden;
+  white-space: nowrap;
+  min-width: 15px;
+  text-overflow: ellipsis;
+  overflow-wrap: initial;
+}
+.cxSubform .cxSubformRowEditMode .cxFileUploadDetail lyte-text {
+  min-width: 46px;
+}
+.cxSubform .cxFileUploadDetail lyte-text lyte-yield {
+  display: initial;
+}
+/* 
+added inline-flex and removed flex -> breaks in related list 
+..cxHeaderWrapper - By default will have no flex-styling - very important
+.cxHeaderWrapper - >flex - needed in Subform Header 
+	-else long Header text  in subform overlaps the (header info icon + Sort Hamburger Icon)
+	- For Related list header, display:flex -  removed right alignment for currency field
+*/
+.cxSubform .cxHeaderWrapper {
+  display: flex;
+}
+/* CRUX Subform Resize Specific Changes Ends*/
+.cxSubformInfoPopover .lyteTableScroll {
+  max-height: 80vh;
+}
+.cxCreateSectionDetailsContainer .cxSubformTableRowActions {
+  margin-top: 8px;
+}
+.cxSubform .cxElementDisabled .lyteInputBox .lyteField::before,
+.cxSubform .cxReadOnlyIcon {
+  /* Lock Icon will not come for Subform Fields and Subform Aggregate Fields */
+  display: none !important;
+}
+.cxSfTableHeaderMandatory {
+  position: relative;
+}
+.cxSfTableHeaderMandatory::before {
+  content: " ";
+  display: inline-block;
+  width: 3px;
+  height: 25px;
+  position: absolute;
+  top: -3px;
+  right: -7px;
+  background: var(--formMandatoryBorder);
+}
+.cxSubform .cxGrouperRadioBtnBgTag {
+  border-radius: 12px;
+  /* For subform border radius issue in grouper radio button */
+}
+.cxSfCPQYeildWrapper {
+  display: flex;
+  align-items: flex-start;
+}
+/*********************************************** 	
+	CRUX table ReadOnly/ Preview Mode Starts 
+	'.cxSubformPreviewMode' - to be added at parent Section
+	- Used in Layout Rules - Subform preview Section
+***********************************************/
+.cxSubformPreviewMode lyte-table-structure,
+.cxSubformPreviewMode .cruxTableStructure,
+.cxSubformPreviewMode .cxSubformFooterActionSection,
+.cxSubformPreviewMode .cxSubformAggDiv {
+  pointer-events: none;
+  cursor: default;
+}
+/* CRUX table ReadOnly/ Preview Mode Ends */
+.cxSubform crux-number-component .cxBoxWithRightIcon .lyteInputBox input,
+.cxSubform crux-number-component .cxBoxWithRightIcon .lyteInputBox .lyteField {
+  border-radius: 6px;
+}
+.cxSfCurrencySymbol {
+  opacity: 0.6;
+}
+/*# sourceMappingURL=crux-subform.css.map */

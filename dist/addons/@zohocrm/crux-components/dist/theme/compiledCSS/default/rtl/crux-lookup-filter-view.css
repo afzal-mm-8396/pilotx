@@ -1,0 +1,391 @@
+/* $Id$ */
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+@keyframes lookupFetchLoad {
+  0% {
+    top: 6px;
+    height: 51px;
+  }
+  50%,
+  100% {
+    top: 19px;
+    height: 26px;
+  }
+}
+.cxAdvanceLookupFilterField {
+  margin: 0 30px !important;
+}
+.cxModuleRelatedDropdown {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+.cxAdvanceLookupFilterField .lookupCriteriaLabelCol {
+  padding: 0 !important;
+}
+.cxLFVCreateYield lyte-button:last-of-type {
+  margin-left: 0;
+}
+/* code commented to revert height transition issue in lookup modal*/
+.cxLookupModal .lyteModal {
+  padding: 20px 0;
+}
+.lookupCriteriaFilter {
+  padding: 7px 10px 10px 20px;
+  border-top: 1px solid var(--lyte-crux-lookup-criteria-filter-border-color);
+  text-transform: none;
+}
+.cxLookupFilterViewAdvanceFilterIcon {
+  left: 1px;
+  right: initial;
+  top: 1px;
+  height: 35px;
+  z-index: 10 !important;
+  /* added for cxAriaActive - */
+}
+/* added for cxAriaActive - */
+.cxLookupFilterViewAdvanceFilterIcon {
+  z-index: 10 !important;
+}
+/*
+.removeThisLookup{
+	background: url(/crm/CRMClient/images/crux-sprite-icons.svg) no-repeat  -277px -102px;
+	width: 16px;
+	height: 16px;
+    cursor: pointer;
+    @{property-margin-left}: 5px;
+    margin-top: -4px;
+    vertical-align: middle;
+    opacity: 0.7;
+}
+*/
+lyte-th.lookupSortAsc .lookupCriteriaLabel::after {
+  content: '';
+  display: inline-block;
+  background: url(/crm/images/svgicons.svg) no-repeat -211px -272px;
+  width: 7px;
+  height: 4px;
+  margin-right: 5px;
+  vertical-align: top;
+  margin-top: 7px;
+}
+lyte-th.lookupSortdesc .lookupCriteriaLabel::after {
+  content: '';
+  display: inline-block;
+  background: url(/crm/images/svgicons.svg) no-repeat -314px -844px;
+  width: 9px;
+  height: 5px;
+  margin-right: 5px;
+  vertical-align: top;
+  margin-top: 7px;
+}
+.removeThisLookup:hover {
+  opacity: 1;
+}
+.lookupsearch:hover .lyteField::after {
+  opacity: 1;
+}
+/*
+.zI261 {
+	z-index: 261 !important;
+}
+*/
+.modalWrapper.lookupListTable.forSearchCreateLookup {
+  z-index: 260;
+}
+.fromSalesInbox .lookupFiltersInput input,
+.fromSalesInbox .cxBoxInput.lyteInputBox input::placeholder {
+  font-size: 1.3rem !important;
+}
+.fromSalesInbox .moduleRelatedDropdown .outlineprimaryflat::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: url(/crm/images/svgicons.svg) no-repeat 0 -613px;
+  height: 11px;
+  width: 11px;
+  top: 11px;
+  right: 11px;
+}
+.fromSalesInbox .moduleRelatedDropdown .outlineprimaryflat:hover::after {
+  background-position: 0 -641px;
+}
+.moduleRelatedDropdown {
+  padding-bottom: 15px;
+}
+.lookupFieldList .lyteFixedColumn:not(.lytePreventIcon)::after,
+.hideOperators,
+.lookupListTable .lyteModalClose {
+  display: none;
+}
+.lookupFetchLoad {
+  display: inline-block;
+  position: absolute;
+  width: 64px;
+  height: 45px;
+  right: 47%;
+  top: -7px;
+  transform: scale(0.6);
+}
+.lookupFetchLoad div {
+  display: inline-block;
+  position: absolute;
+  right: 6px;
+  width: 13px;
+  background: var(--lyte-crux-lookup-fetch-load-div-bg-color);
+  animation: lookupFetchLoad 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lookupFetchLoad div:nth-child(1) {
+  right: 6px;
+  animation-delay: -0.24s;
+}
+.lookupFetchLoad div:nth-child(2) {
+  right: 26px;
+  animation-delay: -0.12s;
+}
+.lookupFetchLoad div:nth-child(3) {
+  right: 45px;
+  animation-delay: 0;
+}
+.cxLookupFilterViewRelatedDropdown {
+  max-width: 375px;
+}
+/* code commented to revert height transition issue in lookup modal*/
+.lookupListTable .lyteModalFromTop {
+  max-height: inherit !important;
+}
+.lookupFilterEditDiv a,
+.lookupFilterEditDiv i {
+  display: inline-block;
+  margin-top: 2px;
+  vertical-align: top;
+}
+.taskSubjectNameLookup .advanceFilter::after,
+.taskSubjectNameLookup .cxColumnSelect {
+  display: none !important;
+}
+.taskSubjectNameLookup .advanceFilter {
+  border-right: none;
+  background-color: var(--lyte-crux-lookup-advance-filter-task-sub-name-bg-color);
+}
+.taskSubjectNameLookup .advanceFilter,
+.taskSubjectNameLookup .cxColumnSelect {
+  pointer-events: none;
+}
+.countErrLookup {
+  margin-top: 3px;
+  font-size: 12px;
+  color: var(--lyte-crux-lookup-count-error-color);
+}
+.recordsCountWrap {
+  position: absolute;
+  left: 30px;
+  top: 6px;
+}
+.lyteDDFilter {
+  text-transform: none;
+}
+.columnCustomizeWrap .lytePopoverArrowIcon {
+  display: none !important;
+}
+.lookupFilterAlert .alertFooter {
+  padding: 0;
+}
+.lookupFilterAlert .lyteAlertCenterContent {
+  border-radius: 0 0 5px 5px;
+  padding: 20px 25px 25px !important;
+}
+.tagslistTable {
+  border: 1px solid var(--lyte-crux-lookup-filter-tags-list-table-border-color);
+  border-radius: 2px;
+  margin: 0 3px 2px 0;
+  padding: 1px 5px;
+}
+.columnCustomizeWrap.decreaseIndex {
+  z-index: 32;
+}
+/* Salesinbox doesn't have this class*/
+.clearAfterB::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.fromSalesInbox .outlineprimaryflat:hover {
+  background: #3c98dd;
+}
+/*New Comp Changes*/
+.lookupColumnCustomize {
+  padding: 15px 5px 0 !important;
+}
+.lookupColumnCustButtons {
+  padding: 0 11px 15px !important;
+}
+.lookupColumnCustomize lyte-menu-body {
+  border: none;
+}
+.lookupColumnCustComp .lyteSortableParent {
+  overflow: auto;
+}
+.cxColumnListBtn {
+  border-top: 1px solid var(--lyte-crux-lookup-filter-column-list-btn-border-color);
+  text-align: center;
+  padding-top: 15px;
+}
+.lookupColumnCustomize .cxColListNoResult {
+  text-align: center !important;
+}
+.lookupFieldList .cruxTableStructure lyte-td {
+  word-break: break-word;
+  width: 180px;
+  white-space: normal;
+}
+.lookupColumnCustComp {
+  box-shadow: none;
+}
+.entityLookupTable .cxLookupFilterButtonWrap {
+  position: inherit;
+  padding-left: 8px;
+  right: 0;
+}
+.lookupFieldList .entityLookupTable lyte-th:last-child {
+  padding-left: 36px !important;
+}
+.entityLookupTable .listview_taglists {
+  white-space: normal;
+}
+.lookupColumnCustomize crux-column-list .lyteCheckBoxDefault::before {
+  margin-top: 0;
+}
+.lookupColumnCustomize .lyteCheckDisabled {
+  opacity: 0.5;
+}
+.lookupColumnCustomize .lyteCheckDisabled .lyteCheckBoxDefault::before {
+  opacity: 1;
+}
+.entityLookupTable .lyteRowCopy .cxLookupFieldList,
+.entityLookupTable .lyteRowCopy .lyteFixedColumn {
+  background: #edf0f4;
+  vertical-align: top;
+}
+lyte-th.cxLookupFieldList .lyteMultipleSelect li {
+  text-transform: initial;
+}
+.lookupErrorMsg .alertContent {
+  display: block !important;
+}
+.lookupErrorMsg .alertSecondaryMsg {
+  font-size: 1.8rem !important;
+}
+.lookupFieldList crux-boolean-component {
+  margin-top: 0;
+}
+.lookupLyteTable {
+  max-height: inherit;
+}
+.lookupLyteTable crux-user-component lyte-text {
+  white-space: normal;
+}
+.lookupLyteTable .listview_taglists .tagElementList.cxAddedTags span {
+  width: calc(100% + 7px) !important;
+}
+.lookupLyteTable .numberDivCurrencyView,
+.cxLookupPopTd .numberDivCurrencyView {
+  text-align: right;
+}
+.cxLookupSortItem .sort_unsort {
+  background-position: -741px -9px;
+  width: 9px;
+  height: 9px;
+  transform: scale(0.8);
+  margin-right: 6px;
+  opacity: 0.7;
+}
+.cxLookupSortItem .sort_desc {
+  vertical-align: top;
+  margin-top: 5px;
+}
+.lookupFieldList .entityLookupTable .lv_data_username {
+  max-width: inherit !important;
+}
+.cxLookupFilterViewHeading {
+  font-family: var(--crux-bold-font);
+  font-weight: var(--crux-font-weight-bold);
+  font-size: 20px;
+  padding: 0 30px 10px 30px;
+}
+/*# sourceMappingURL=crux-lookup-filter-view.css.map */

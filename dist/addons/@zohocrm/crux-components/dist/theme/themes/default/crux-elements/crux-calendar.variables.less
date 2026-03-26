@@ -1,0 +1,146 @@
+.cxCalLyteCalendarPopupMixin(){
+    @border-radius: 6px;
+    @box-shadow: 0px 2px 8px 0px @cxCalendarPopupBoxShadowColor;
+    @border: 1px solid @cxCalendarPopupBorderColor;
+    @padding: 10px;
+}
+
+.cxCalLyteCalendarNavigatorMixin(){
+    @padding: 10px;
+}
+
+.cruxCalTableRowHeaderMixin(){
+    @margin : 8px 0px 10px;
+}
+
+.cxCalNavHeaderBackMixin(){
+    @bg: @cxCalNavHeaderBackBg;
+}
+
+.cxCalYearAndMonthNavMixin(){
+    @font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+    @padding: 4px 6px;
+    @border: 1px solid transparent;
+    @border-radius: 6px;
+    @transition: background 0.3s, border 0.3s;
+}
+
+.cruxCalNavMixin(){
+    @w: 22px;
+    @h: 22px;    
+    @border: 1px solid transparent;
+    @border-radius: 50%;
+    @transition: background 0.3s, border 0.3s;
+}
+
+.cruxCalNavHoverMixin(){
+    @bg: @cxCalHoverBg;
+    @border: 1px solid @cxCalHoverBorder;
+}
+
+.cxCalNavIconPrevMixin(){
+    @w: 11px;
+    @h: 7px;
+    @transform: rotate(90deg);
+    @bg-img: @cruxSprite;
+    @bg-pos: -13px -1px;
+    @bg-color:  @cxCalNavIconBgColor;
+}
+
+.cxCalNavIconNextMixin(){
+    @transform: rotate(-90deg);
+}
+
+.cxCalNavIconCurMixin(){
+    @w: 10px;
+    @h: 10px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -382px 140px;
+    @bg-color:  @cxCalNavIconBgColor;
+}
+
+.cruxCalNavMiddleChildMixin(){
+    @margin: 0px 4px;
+}
+
+.cxCalLyteCalTableContainerMixin(){
+    @padding: 0px 5px 5px;
+    @border-spacing: 0px;
+}
+
+.cxCalLyteCalTableCellMixin(){
+    @w: 26px;
+    @h: 26px;
+    @min-w: 26px;
+    @line-height: 26px;
+    @font-size: @cxFontSize12px;
+    @transition: background 0.3s, border 0.3s;
+}
+
+.cxCalLyteCalTableCellHoverMixin(){
+    @bg: @cxCalHoverBg;
+    @border: 1px solid @cxCalHoverBorder;
+}
+
+.cruxCalTableCellHeaderMixin(){
+    @w: 28px;
+    @font-size: @cxFontSize13px;
+    @font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+}
+
+.cxCalSpacingMixin(){
+    @border-spacing: 5px;
+}
+
+.cxCalContainerMixin(){
+    @transition: height 0.3s;
+}
+
+.cxCalLyteCalTodayMixin(){
+    @bg: @cxCalTodayBg;
+    @color: @cxCalTodayColor;
+    @border: 1px solid  @cxCalTodayBorder;
+}
+
+.cxCalLyteCalSelMixin(){
+    @bg: @cxCalSelectedBg;
+    @color: @cxCalSelectedColor;
+    @border: 1px solid  @cxCalSelectedBorder;
+}
+
+.cxCalYearTableCelMixin(){
+    @w: 36px;
+    @h: 20px;
+    @line-height: 20px;
+    @border: 1px solid transparent;
+    @border-radius: 7px;
+    @transition: background 0.3s, border 0.3s;
+}
+
+.cxCalYearAndMonthNavHoverMixin(){
+    @border: 1px solid @cxCalHoverBorder;
+    @bg: @cxCalHoverBg;
+}
+
+.cxCalTableRowMixin(){
+    @border-spacing: 3px 8px;
+    @font-size: @cxFontSize13px;
+}
+
+.cxSingleYearMixin(){
+    @padding: 10px 6px 2px;
+    @border-bottom: 1px solid @cxCalYearViewContBorder; 
+}
+
+.cxYearHeaderMixin(){
+    @padding: 0px 11px;
+    @font-size: @cxFontSize12px;
+    @font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+}
+
+.cxCalYearViewLyteCalTableContainerMixin(){
+    @padding: 0px 0px 5px;
+}

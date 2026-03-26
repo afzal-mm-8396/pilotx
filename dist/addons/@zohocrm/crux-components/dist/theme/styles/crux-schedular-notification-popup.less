@@ -1,0 +1,206 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-schedular-notification-popup.variables.less";
+
+@import "../themes/default/less-variables/crux-schedular-notification-popup-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-schedular-notification-popup";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-schedular-notification-popup-variables.less";
+}
+
+.cxSchedularModal .lyteModal {
+	.cxSchedularModalMixin();
+	box-shadow: @box-shadow;
+	// z-index: @z-index;
+	border: @border;
+}
+.cxSchedularModal lyte-modal-header {
+	.cxSchedularModalHeaderMixin();
+	background: @bg;
+	color: @color;
+	padding: @padding;
+	font-family: @font-family;
+	border-radius: @border-radius;
+	font-size: @font-size;
+}
+.cxSchedularBody {
+	.cxSchedularBodyMixin();
+	padding: @padding;
+	max-height: @max-height;
+}
+.cxSchedularMsg {
+	.cxSchedularMsgMixin();
+	display: @display;
+	align-items: center;
+	// padding-bottom: @padding-bottom;
+	position: relative;
+	gap: 5px;
+	margin-top: 20px;
+	padding: @padding;
+}
+.cxSchedularNotification {
+	.cxSchedularNotificationMixin();
+	border-bottom:	@border-bottom;
+    padding-bottom: @padding-bottom;
+    margin-bottom: @margin-bottom;
+}
+.cxSchedularNotification:first-of-type .cxSchedularMsg {
+	margin-top: 0;
+}
+.cxSchedularNotification:last-of-type {
+	border-bottom: none;
+	padding-bottom:0;
+	margin-bottom: 0;
+}
+.cxSchedularNotification:last-of-type .cxSchedularMsg:last-child {
+	padding-bottom:0;
+}
+.cxSchedularNotification .cxSchedularIcon {
+	.cxSchedularIconMixin();
+	// @{property-margin-right}: @margin-right;
+	flex-shrink: @flex-shrink;
+	align-self: @align-self;
+}
+.cxProgressBar {
+	.cxProgressBarMixin();
+	background: @bg;
+	height: @h;
+	border-radius: @border-radius;
+	border: @border;
+	position: relative;
+	overflow: hidden;
+	margin: @margin;
+}
+.cxProgressBarLoader {
+	.cxProgressBarLoaderMixin();
+	height: @h;
+	width: @w;
+	overflow: hidden;
+	background-image: @bg-img;
+	animation-name: cxSchedularProgresLoad;
+	animation-duration: 1.1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+@keyframes cxSchedularProgresLoad {
+	0% {
+		@{property-margin-left}: -40%;
+	}
+	to {
+		@{property-margin-left}: 85%;
+	}
+}
+.cxSchedularModal .lyteModal,
+.cxSchedularModal lyte-modal-content {
+	border-radius: 0 !important;
+}
+.cxSchedularModal .cxSchedularCloseWrap {
+	top: 13px;
+    @{property-right}: 15px;
+    position: absolute;
+    opacity: 1;
+	z-index: 5;
+	align-items: center;
+    display: flex;
+}
+.cxSchedularModal .cxSchedularClose {
+	.cxSchedularCloseIconMixin();
+	// background-image: @cruxSprite;
+	// background-position: -219px -58px;
+	width: 9px;
+	height: 9px;
+	transform: @transform;
+	display: inline-block;
+	cursor:pointer;
+	.cruxMaskImageMixin(@bg-img,@bg-position,@bg-color);
+	// .cxSchedularCloseMixin();
+
+	// .cxSchedularModalCloseMixin();
+	// background-position: @background-position;
+	// opacity: @opacity;
+	// top: @top;
+    // @{property-right}: @right;
+}
+.cxSchedularModal .cxSchedularMinimize {
+	// .cxSchedularMinimizeMixin();
+	@{property-margin-right}: 15px;
+	background-image: none;
+    background-position: 0 0;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    position: relative;
+	cursor: pointer;
+}
+.cxSchedularModal .cxSchedularMinimize::before{
+	.cxSchedularModalMinimizeBeforeMixin();
+	
+// 	width: @w;
+// 	height: @h;
+// 	background: @bg;
+
+content: '';
+width: 13px;
+height: 2px;
+background: @bg;
+top: 5px;
+position: absolute;
+}
+
+// .cxSchedularModal .lyteModalClose::after {
+// 	.cxSchedularModalCloseAfterMixin();
+// 	content: '';
+// 	width: @w;
+// 	height: @h;
+// 	background: @bg;
+// }
+// .cxSchedularSuccessIcon {
+// 	.cxSchedularSuccessIconMixin();
+// 	display: inline-flex;
+// 	width: @w;
+// 	height: @h;
+// 	align-items: center;
+// 	justify-content: center;
+// 	border: @border;
+// 	border-radius: @border-radius;
+// 	@{property-margin-right}: @margin-right;
+// }
+// .cxSchedularSuccessIcon::after {
+// 	.cxSchedularSuccessIconAfterMixin();
+// 	content: '';
+// 	-webkit-mask-image: @mask-img;
+// 	mask-image: @mask-img;
+// 	-webkit-mask-position: @mask-pos;
+// 	mask-position: @mask-pos;
+// 	width: @w;
+// 	height: @h;
+// 	background-color: @bg-color;
+// }
+.cxSchedularCardCloseIcon{
+	.cxSchedularCardCloseIconIconMixin();
+	// position: @position;
+	// @{property-right}: @right;
+	// top: @top;
+	cursor: pointer;
+	flex-shrink: 0;
+}
+.cxSchedularNotification .cxSchedularCardCloseIcon {
+	.cxSchedularCardCloseIconHiddenMixin();
+	visibility: @visibility;
+	opacity: @opacity;
+	@{property-right}: @right;
+	position: absolute;
+	top: @top;
+}
+.cxSchedularNotification:hover .cxSchedularCardCloseIcon {
+	.cxSchedularCardCloseIconHoverMixin();
+	visibility: @visibility;
+	opacity: @opacity;
+}

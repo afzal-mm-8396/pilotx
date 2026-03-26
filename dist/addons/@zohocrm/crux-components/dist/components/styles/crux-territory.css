@@ -1,0 +1,106 @@
+.cxTerritoryModalWrapper .lyteModal > lyte-yield {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.cxTerritoryModalContent {
+	display: flex;
+	flex-direction: column;
+}
+.cxTerritoryTreeWrap,
+.cxTerritoryModalTreeWrap {
+	overflow: auto;
+	margin-top: 10px;
+	padding-bottom: 3rem;
+
+}
+.cxTerritoryModalTreeWrap {
+	/*min-height: 198px;*/
+}
+.cxTerritoryTree > .lyteTreeBodyDiv > lyte-tree-body {
+	margin-top: 10px;
+}
+lyte-tree.cxTerritoryTree {
+	padding: 0 50px 0 0;
+	display: inline-block;
+}
+.cxTerritoryTree .lyteCheckBoxDefault::before {
+	margin-right: 0;
+}
+.cxTerritoryTree lyte-tree-content {
+	cursor: default;
+	display: flex;
+}
+.cxTerritoryModalTreeWrap .cxTerritoryTree lyte-tree .lyteTreeNoChildContainer lyte-tree-content::before {
+	/* width: 55px; Changed for Lyte Ui version update*/
+	width: 41px;
+}
+.cxTerritoryModalTreeWrap .cxTerritoryTree .lyteTreeNoChildContainer lyte-tree-content {
+	padding-left: 16px;
+}
+.cxTerritoryTree lyte-yield {
+	outline: none;
+}
+.cxTerritoryTree .lyteTreeMainContainer > lyte-yield {
+	display: block;
+}
+.cxTerritoryTree lyte-tree-icon {
+	position: relative;
+	cursor: pointer;
+}
+.cxTerritoryTree .cxTerritoryCheckbox {
+	margin: -1px 0 0 10px;
+}
+.cxTerritoryTree .cxTerritoryCkboxEmptyLabel {
+	display: none;
+}
+.cxTerritoryTree .cxTerritoryCheckbox .lyteRadioLayer {
+	margin-right: 0;
+}
+.cxTerritoryTree lyte-tree-icon .collapseBox {
+	opacity: 1;
+	display: block;
+}
+.cxTerritoryTree .cxTerritoryLabel {
+	max-width: unset;
+	cursor: pointer;
+	margin-left: 0;
+	white-space: nowrap;
+}
+/*
+.cxTerritoryTree .cxTerritoryLabel:hover {
+	color: #5ba1e5;
+}*/
+.cxTerritoryTreeValueWrapper {
+	flex-grow: 1;
+	margin-left: 7px;
+}
+.lyteTreeHasNoChild .cxTerritoryTreeValueWrapper {
+	margin-left: 0;
+}
+.cxTerritoryCheckbox + .cxTerritoryTreeValueWrapper {
+	margin-left: 5px;
+}
+.cxTerritoryItemYield {
+	display: inline-flex;
+}
+.cxTerritoryHighlightElement {
+	animation: cxTerritoryHighlight 2s ease;
+}
+@keyframes cxTerritoryHighlight {
+	from {
+		background: #FFF9C4;
+	}
+	to {
+		background: #fff;
+	}
+}
+.cxTerritoryItemSuffixWrap {
+	margin-left: 20px;
+}
+.lyteTreeNoChildContainer .cxTerritoryItemSuffixWrap {
+	margin-left: 0px;
+}
+.lyteTreeBodyClosed .mainContainer::before{
+	display: none;
+}

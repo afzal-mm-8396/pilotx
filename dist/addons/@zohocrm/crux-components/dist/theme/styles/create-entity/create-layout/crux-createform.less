@@ -1,0 +1,353 @@
+@import "../../../themes/default/global/global.variables.less";
+
+@import "../../../themes/default/crux-elements/create-entity/create-layout/crux-createform.variables.less";
+
+@import "../../../themes/default/less-variables/create-entity/crux-createform-variables.less";
+
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../../themes/default/css-variables/create-entity/crux-createform-rootvar.less";
+}
+
+@crmFormComponentRowLabel: 10px 18px 0px 0;
+// @--crm-font-regular: Zoho_Puvi_Regular, sans-serif;
+// @--crm-font-bold: Zoho_Puvi_SemiBold, sans-serif;
+// @property-padding-right: padding-right;
+// @value-textalign-right: right;
+
+// :root {
+// 	--crm-base-font-size: 1.4rem;
+// 	--crm-large-font-size: 2rem;
+// 	--headingColor: #202123;
+// 	--formBorder: #C0C6CC;
+// 	--formBorderHover: #787D83;
+// 	--formBorderFocus: #4C9EF7;
+// 	--formBoxShadowFocus: #4796ED;
+// 	--formMandatoryBorder: #FF5D5A;
+// 	--formBoxShadowHover: none;
+// 	--crmFormSubHeaderColor: #202123;
+// 	--fieldValueColor: #313949;
+// 	--fieldLabelColor: #616E88;
+// 	--formBorderTransition: border .3s ease-out, box-shadow .3s ease-out;
+// 	--bg_white: #fff;
+// }
+
+
+
+.cruxCreateFormComponent .cxcreateTitlebar {
+	.cxcreateTitlebarMixin();
+	background-color: @bg-color;
+	padding: @padding;
+	border-bottom: @border-bottom;
+	font-family: @font-family;
+	display: flex;
+	position: sticky;
+    top: 0;
+	z-index: @z-index;
+	min-width: 769px;
+}
+.cruxCreateFormComponent .cxStickyTitlebar {
+	position: sticky;
+    top: 0;
+}
+.cxCreateLayoutShowLoadingDivWrap {
+	min-width: 500px;
+	min-height: 200px;
+	position: relative;
+}
+.cxCreateLayoutShowLoadingDiv {
+	background: @cruxTableLoadingPlaceholder;
+	width: 70px;
+	height: 70px;
+	background-size: 100%;
+	margin: auto;
+}
+
+.cxPropLayoutShowErrorDiv {
+	text-align: center;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.cxPropMessageTypeSuccess {
+	.cxPropMessageTypeSuccessMixin();
+	color: @color;
+}
+
+.cxPropMessageTypeFailure {
+	.cxPropMessageTypeFailureMixin();
+	color: @color;
+}
+
+/* Success Message Banner Starts */
+.cxSuccessMessageWrapper {
+	.cxSuccessMessageWrapperMixin();
+	padding: 16px 20px;
+	border: 1px solid @border-color;
+	border-left: 4px solid @border-color;
+	border-radius: @border-radius;
+	background-color: @bg-color;
+	margin: 30px auto;
+	display: flex;
+	align-items: center;
+	width: 80%;
+	gap: 12px;
+}
+
+.cxSuccessTickIcon {
+	background-image: none;
+	@background-position: -229px -177px;
+	width: 16px;
+	height: 16px;
+	.cruxMaskImageMixin(@cruxSprite, @background-position, @cxCreateFormSuccessMsgColor);
+	flex-shrink: 0;
+}
+
+.cxSuccessMsgTextWrap {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-width: 0;
+}
+
+.cxSuccessHeaderMsg {
+	.cxSuccessHeaderMsgMixin();
+	font-size: @font-size;
+	font-family: @font-family;
+	color: @color;
+	line-height: 1.4;
+}
+
+.cxSuccessRecordName {
+	.cxSuccessRecordNameMixin();
+	font-size: @font-size;
+	font-family: @font-family;
+	color: @color;
+	line-height: 1.4;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.cxSuccessViewRecordBtn {
+	flex-shrink: 0;
+	@{property-margin-left}: auto;
+}
+
+.cxSuccessViewRecordArwIcon {
+	background-image: none;
+	@background-position: -13px -1px;
+	width: 11px;
+	height: 7px;
+	.cruxMaskImageMixin(@cruxSprite, @background-position, @cxMaskIconWhiteBg);
+	transform: rotate(-90deg);
+	display: inline-block;
+	vertical-align: middle;
+	@{property-margin-left}: 4px;
+}
+/* Success Message Banner Ends */
+
+/* Error Message Banner Starts */
+.cxErrorMessageWrapper {
+	.cxErrorMessageWrapperMixin();
+	padding: 16px 20px;
+	border: 1px solid @border-color;
+	border-left: 4px solid @border-color;
+	border-radius: @border-radius;
+	background-color: @bg-color;
+	margin: 30px auto;
+	display: flex;
+	align-items: center;
+	width: fit-content;
+	max-width: 80%;
+	gap: 12px;
+}
+
+.cxErrorAlertIcon {
+	background-image: none;
+	@background-position: -125px -223px;
+	width: 15px;
+	height: 14px;
+	.cruxMaskImageMixin(@cruxSprite, @background-position, @cxCreateFormErrorMsgColor);
+	flex-shrink: 0;
+	margin-top: 2px;
+}
+
+.cxErrorMsgText {
+	.cxErrorMsgTextMixin();
+	font-size: @font-size;
+	font-family: @font-family;
+	color: @color;
+	line-height: 1.4;
+	word-break: break-word;
+}
+
+.cxErrorMsgText .cxErrorMsgHighlight {
+	color: @cxCreateFormErrorMsgColor;
+	font-family: @cruxSecondaryFont;
+}
+/* Error Message Banner Ends */
+
+.cxcreateTitleBtns {
+	.cxcreateTitleBtns();
+	display: flex;
+	flex: 1;
+	justify-content: end;
+	@{property-padding-right}: @padding-right;
+}
+
+.cruxCreateFormComponent .cxcreateHeadingTitle {
+	.cxcreateHeadingTitleMixin();
+	padding: @padding;
+}
+.cx-layout-header-yield-wrapper .cxcreateHeadingLabel {
+	padding-top: 5px;
+}
+
+.cruxCreateFormComponent .cxcreateHeadingLabel {
+	.cxcreateHeadingLabelMixin();
+	word-wrap: break-word;
+	font-size: @font-size;
+	color: @color;
+	font-family: @font-family;
+	font-weight: @font-weight;
+}
+
+.cxcreateTitlebar lyte-button {
+	.cxcreateTitlebarLyteBtnMixin();
+	margin-bottom: @margin-bottom;
+}
+
+.cruxCreateFormComponent .cxcreateSectionsCont {
+	.cxcreateSectionsContMixin();
+	padding: @padding;
+	box-sizing: border-box;
+	@{property-padding-left}: @padding-left;
+	@{property-padding-right}: @padding-right;
+	min-width: 769px;
+}
+.cxCreateFormModalContent .cxcreateSectionsCont {
+	min-width: auto !important;
+	padding:0;
+}
+.cxLookupComponent lyte-autocomplete lyte-dropdown lyte-drop-button {
+	padding:0 !important
+}
+
+.cxCreateFormModalContent .cxcreateSectionsCont {
+	min-width: auto !important;
+	padding:0;
+}
+.cxLookupComponent lyte-autocomplete lyte-dropdown lyte-drop-button {
+	padding:0 !important
+}
+
+.cxcreateBtnFloatRight {
+	float: @property-right;
+}
+
+crux-create-button lyte-button {
+	.cxCreateLyteButtonMixin();
+	@{property-margin-right}: @margin-right;
+}
+
+
+/*********************************
+
+	QUICK CREATE Modal Starts 
+*********************************/
+
+// .cxQuickCreateModal {
+
+// }
+.cxQuickCreateModal .cxCreateSingleContainer .cxElementValue {
+	min-width: 290px;
+	max-width: 390px;
+	width:100%;
+}
+.cxCreateSingleContainer .cxElementValue .cxElementValue {
+	min-width: auto;
+}
+.cxCreateSingleContainer crux-create-field:last-of-type {
+	margin-bottom: 0;
+}
+
+crux-create-button {
+	text-align: right;
+    display: block;
+}
+crux-create-button lyte-button {
+	@{property-margin-left}: 0;
+}
+crux-create-button lyte-button:last-of-type {
+	@{property-margin-right}: 0;
+}
+crux-create-field crux-date-time-component .lyteField {
+	width: 100%;
+}
+crm-create-form[cx-prop-content-overflow="true"] {
+	height: inherit;
+	overflow: auto;
+	display: block;
+}
+/* QUICK CREATE Modal Ends */
+
+/* Clubbed Button with Sibling STyling STarts */
+.cxBtnHasShowMore {
+	.cxBtnHasShowMoreMixin();
+	@{property-margin-right}: @margin-right;
+	@{property-border-right}:@border-right;
+}
+.cxBtnHasShowMore .lyte-button {
+	border-radius: 6px 0 0 6px;
+}
+.cxQcMoreOptionBtn lyte-yield { 
+	display: inline-block;
+}
+.cxQcMoreOptionBtn .cxDropdown {
+	opacity: 1;
+	@{property-left}: 14px;
+}
+.cxQcMoreOptionBtn .lyte-button {
+	border-radius: 0 6px 6px 0;
+}
+.cxCreateFormModalContent, 
+.cxCreateFormModalFooter {
+	@{property-padding-right}: 38px;
+}
+/* Clubbed Button with Sibling STyling Ends */
+
+/*crmExistingEmailQuickInfoTable*/
+.cxDuplicateInfoTable lyte-td {
+    border-bottom: 0;
+    font-size: @cxFontSize15px;
+    padding: 5px;
+    white-space: normal;
+	vertical-align:top;
+}
+
+.cxDuplicateInfoTable .cxRecordLabel {
+	.cxDuplicateInfoTblRecordLabelMixin();
+    color: @color;
+}
+
+.cxDuplicateInfoTable .cxRecordValue {
+	.cxcDuplicateInfoTblRecordValueMixin();
+    color: @color;
+}
+.cxDuplicateInfoTable .cxDuplicateRecordCard {
+	width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    vertical-align: top;
+	border: 1px solid transparent;
+}
+
+/******************* TEMP Changes Starts *********************/
+// crux-create-field .cruxErrMsg {
+// 	top:98%;
+// }
+/******************* TEMP Changes Ends *********************/

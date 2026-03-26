@@ -1,0 +1,24 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-icr-selection-x-axis-ruler-border-color: #000000;
+    --@{cssPrefix}-icr-selection-y-axis-ruler-border-color: #000000;
+    --@{cssPrefix}-icr-selected-menu-bg-color: lightblue;
+    --@{cssPrefix}-icr-zoom-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-icr-zoom-border-color: #D7E2ED;
+    --@{cssPrefix}-icr-zoom-per-border-color: #D7E2ED;
+    --@{cssPrefix}-icr-zoom-out-bg-color: #F4F7FF;
+    --@{cssPrefix}-icr-img-wrapper-bg-color: #F4F7FF;
+    --@{cssPrefix}-icr-connected-path-stroke-color: blue;
+}

@@ -1,0 +1,600 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-table-component-v1.variables.less";
+
+@import "../themes/default/less-variables/crux-table-component-v1-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-table-component-v1";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-table-component-v1-variables.less";
+}
+
+crux-table-component lyte-th.lyteFixedColumn:not(.lytePreventIcon)::after {
+	content: none;
+}
+.wspaceNor{
+	.wspaceNorMixin();
+	width: @w;
+	white-space: normal!important;
+}
+.scrollbarClass{
+	.scrollbarClassMixin();
+	z-index: @z-index;
+}
+crux-table-component lyte-th.lyteFixedColumn:not(.lytePreventIcon):after {
+	display:none;
+}
+.cxTableLoadingIcon{
+	.cxTableLoadingIconMixin();
+	background: @bg;
+	width: @w;
+	height: @h;
+	background-size: 100%;
+	margin: @margin;
+}
+.cruxHideRow{
+	display: none;
+}
+.cxdN {
+	display: none;
+}
+.cxTableEmptyRow {
+	.cxTableEmptyRowMixin();
+	transform: @transform;
+	position: relative;
+}
+.cxTableLoadingDiv{
+	.cxTableLoadingDivMixin();
+	height: @h;
+	width: @w;
+	position: absolute;
+	top: @top;
+	@{property-left}: @left;
+	display: flex;
+	align-items: center;
+	z-index: @z-index;
+}
+.cxTableEmptyRow lyte-exptable-td{
+	.cxTableEmptyRowExpTableMixin();
+	padding: @padding;
+}
+.cxListViewLazyLoad {
+	.cxListViewLazyLoadMixin();
+	height: @h;
+	width: @w;
+	position: relative;
+	background: @bg;
+	overflow: hidden;
+}
+.cxListViewLazyLoadRunner {
+	.cxListViewLazyLoadRunnerMixin();
+	height: @h;
+	width: @w;
+	background: @bg;
+	animation: listViewLazyLoadAnim 1s linear infinite;
+	position: absolute;
+}
+@keyframes listViewLazyLoadAnim {
+	0% {
+	@{property-left}: -50%;
+    }
+	100% {
+	@{property-left}: 100%;
+    }
+}
+.cx_sortIconPlaceholder {
+	.cxSortIconPlaceholderMixin();
+	width: @w;
+	height: @h;
+}
+/* #listViewTable .cxTableSortIcon,
+  .cxTableSortMenuIcon.cxTableSortIcon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      height: 28px;
+      width: 28px;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      cursor: pointer;
+  }
+  .cxTableSortIconActive,
+  .cxTableSortIcon:hover {
+      background: #e5e9ef;
+  } */
+  /*Added as a temporary fix for listview */
+  /* #listViewTable .cxTableSortIcon,
+  .cxTableSortMenuIcon {
+      
+  } */
+  /* #listViewTable .cxTableSortIcon::before,
+  .cxTableSortMenuIcon::before {
+      content: '';
+      width: 13px;
+      height: 10px;
+      display: block;
+      background-image: url(../images/crux-sprite-icons.svg);
+      background-position: -57px -133px;
+  } */
+.cxTableSortIcon {
+	.cxTableSortIconMixin();
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;	
+	border-radius: @border-radius;
+	height: @h;
+	width: @w;
+	position: absolute;
+	@{property-right}: @right;
+	// top: @top;
+	cursor: pointer;
+	top:0;
+	bottom: 0;
+	margin:auto;
+}
+.cxTableSortIconActive,
+.cxTableSortIcon:hover,
+.cxTableSortIcon.lyteMenuSelected {
+	.cxTableSortIconHoverMixin();
+	background: @bg;
+}
+.cxTableSortIcon::before {
+	.cxTableSortIconBeforeMixin();
+	content: '';
+	width: @w;
+	height: @h;
+	display: block;
+	background-image: @bg-img;
+	background-position: @bg-pos;
+}
+crux-table-component .lyteExpOriginalTable{
+	.cruxTableComponentExpOriginalTableMixin();
+	min-width: @min-w;
+}
+
+.cxExistingListViewUI .lyteExpTableWrapper {
+	.cxExistingListViewUIMixin();
+	border: @border;
+}
+.cxExistingListViewUI lyte-exptable-th {
+	.cxExistingListViewExpTableUIMixin();
+	border-bottom: @border-bottom;
+	background: @bg;
+	padding: @padding;
+	color: @color;
+	text-transform: capitalize;
+	font-size: @font-size;
+}
+.cxExistingListViewUI lyte-exptable-td {
+	.cxExistingListViewExpTdUIMixin();
+	padding: @padding;
+	color: @color;
+	font-size: @font-size;
+}
+.cxTableHeadingElem {
+	vertical-align: bottom;
+}
+.cxTableSortIconNew {
+	.cxTableSortIconNewMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	@{property-margin-left}: @margin-left; /* Need this for RLL Table arrow spacing */
+	display: inline-block;
+	position: absolute;
+	top: calc(50% - 2px);
+}
+.cxThFieldSortEnabled {
+	// .cxThFieldSortEnabledMixin();
+	// cursor: pointer;
+	// display: flex; 
+	/* needed for text-overflow ellipsis in crux-table-component */
+	/* display: inline-flex; Changed to match infor icon and text aligned in header */
+    align-items: center;
+	white-space: nowrap; /* Added to fix aasc, desc arrow styling */
+}
+// .cxThFieldSortEnabled .cxTableHeadingElem {
+//     @{property-padding-right}: 5px;
+// }
+.cxThFieldSortEnabled .cxTableSortIconNew {
+	position: relative;
+    top: initial;
+	flex-shrink: 0;
+}
+crux-table-component lyte-th.cxTableHasSortIcon {
+	.cxTableHasSortIconMixin();
+   @{property-padding-right}: @padding-right !important;
+}
+
+.cxSortIconUpDown {
+	.cxSortIconUpDownMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	// width: @w;
+	// height: @h;
+	@{property-margin-left}: @margin-left;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+}
+.cxSortIconUpDown::after,
+.cxSortIconUpDown::before {
+	.cxSortIconUpDownBeforeAfterMixin();
+	content: " ";
+	position: absolute;
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	display: inline-block;
+	opacity: 0.6;
+}
+.cxSortIconUpDown::after:hover,
+.cxSortIconUpDown::before:hover {
+	opacity: 1;
+}
+// .cxSortIconUpDown::before {
+	// background-position: @bg-pos;
+// }
+.cxSortIconUpDown::after {
+	// background-position: @bg-pos;
+	.cxTableColumnSortAscendingMixin();
+	transform: @transform;
+	top: @top;
+}
+
+.cxTableColumnSort_asc,
+.cxTableColumnSort_ascending {
+	.cxTableColumnSortAscendingMixin();
+	transform: @transform;
+}
+.cxTableColumnSort_unsort {
+	display: none !important;
+}
+.cxTableHeaderFilterIcon {
+	.cxTableHeaderFilterIconMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	cursor: pointer;
+	display: inline-block;
+}
+.cxColumnSelectIcon { 
+	.cxColumnSelectMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.cxTableNoResultsWrapper .cxTableHeaderFilterIcon {
+	cursor: default;
+}
+/*---Start*/
+.cxTableHeaderFilterOpenedIcon {
+	.cxTableHeaderFilterOpenedIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxTableFilterIcons {
+	.cxTableFilterIconsMixin();
+	background: @bg;
+	@{property-border-left}: @border-left;
+	@{property-border-right}: @border-right;
+	/* padding: 7px 12px; */
+	padding: @padding;
+	z-index: @z-index;
+	@{property-border-top-right-radius}: @border-top-right-radius;
+}
+.cxTableHeaderIcons {
+	.cxTableHeaderIconsMixin();
+	position: absolute;
+	@{property-right}: @right;
+	/* top: 1px; */
+	top: @top;
+	/* background: transparent; */
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cxTableHeaderIconsFixed {
+	.cxTableHeaderIconsFixedMixin();
+	position: fixed;
+	@{property-border-right}: @border-right;
+	@{property-border-top-right-radius}: 0;
+}
+/*---E*/
+.cxTableLookupFilterComponent,
+.cxTableLookupFilterComponent lyte-th.lyteTableFixed {
+	.cxTableLookupFilterComponentMixin();
+	background: @bg;
+}
+.cxTableLookupFilterComponent lyte-th {
+	.cxTableLookupFilterComponentLyteThMixin();
+	background-color: @background-color;
+	padding: @padding;
+	vertical-align: top;
+	font-family: @font-family; 
+}
+.cxTableLookupFilterComponent lyte-th:first-child,
+.cxTableLookupFilterComponent lyte-th:last-child {
+	padding-left: 20px;
+}
+.cxTableStarLabel {
+	.cxTableStarLabelMixin();
+	display: inline-block;
+	position: relative;
+	font-size: @font-size;
+	height: @h;
+	top: @top;
+	@{property-left}: @left;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+.cxTableLastPinnedColumn {
+	.cxTableLastPinnedColumnMixin();
+	@{property-border-right}: @border-right;
+}
+.cxTableLastPinnedColEnableUiAnim .cxTableLastPinnedColumn {
+	animation: cxTableLastPinnedColumnAnimKeyframes 2s linear;
+}
+@keyframes cxTableLastPinnedColumnAnimKeyframes {
+	0% {
+	@{property-border-right}: 1px solid #5483d0;
+	}
+	100% {
+		@{property-border-right}: 1px solid #d9e0eb;
+	}
+}
+.cxTableLastPinnedColumn .cxTableSortIcon {
+	.cxTableLastPinnedColumnSortIconMixin();
+	@{property-right}: @right;
+}
+.cxSubformRowEditMode .cxSfSaveCancelTd {
+	.cxTableStickycolumnMixin();
+	position: sticky;
+	z-index: @z-index;
+	@{property-right}: @right;
+}
+.cxCommonTable lyte-td pre,
+.cxDefaultFont pre,
+crux-text-area-component pre{
+	.cxPreTagFontMixin();
+	font-family: @font-family;
+}
+.cxTableSortIconHide {
+	display: none;
+}
+.cxTableSortIconActive.cxTableSortIconHide,
+.lyteMenuSelected.cxTableSortIconHide {
+	.cxTableSortIconHideShowMixin();
+	display: @display;
+}
+crux-table-component crux-user-component {
+	.cruxUserComponentinTableMixin();
+	display: @display;
+	max-width: @max-width;
+	/* overflow: @overflow; hides Box shadow Styling - so removed */
+	/* overflow: @overflow; Overflow hidden hides box shadow in crux subform user lookup */
+	width: @width;
+}
+.cxCommonTable .numberDivCurrencyView,
+.cxCommonTable .numberDivNumberView {
+	.cxCommonTableNumberDivCurrencyViewMixin();
+	// text-align: @text-align;
+}
+
+.cxTableCompNoResults{
+	.cxTableCompNoResultsMixin();
+	padding: @padding;
+	text-align: center;
+	color: @color;
+}
+.cxSlyteTableCompNoResultsTr {
+	// height: 40px;
+	vertical-align: middle;
+}
+.cxSlyteTableCompNoResultsTr td {
+	padding: 12px 10px;
+}
+.cxSlyteTableCompNoResults{
+	.cxTableCompNoResultsMixin(); /* Same Mixin used for Both Tables. Will merge into one in future */
+	// padding: @padding; Padding Not needed for Slyte 
+	padding: 0 !important;
+	text-align: center;
+	color: @color;
+	/* newly added Styles for Slyte */
+	display: inline-block;
+    position: sticky;
+	overflow-wrap: anywhere;
+	word-wrap: break-word;
+    @{property-left}: 50%;
+	transform: if(@direction = rtl , translateY(-50%) ,translateX(-50%));
+}
+
+// .cxTableNoContent {
+// 	position: relative;
+// }
+// .cxTableNoContent .cxTableCompNoResults {
+// 	.cxTableContainerNoResultsMixin();
+//     position: @position;
+//     top: @top;
+//     width: @width;
+//     box-sizing: border-box;
+//     background: @background;
+// }
+// .cxTableNoContent .related_listview_tale,
+//  .cxTableNoContent > lyte-table {
+// 	min-height: 120px;
+// }
+// //  temp Code For Subform Min-height Fix Starts 
+// .cxTableNoContent > .cxSubformTable {
+// 	min-height: 78px;
+// }
+// .cxSubform .cxTableNoContent .cxTableCompNoResults {
+// 	padding-top: 10px;
+// }
+/* temp Code For Subform Min-height Fix Ends */
+
+
+/* Subform Icon moved to crux-table-component.less Starts */
+.cxSubformInfoIcon {
+	.cxSubformInfoIconMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	min-width: @min-w;
+	width: @w;
+	height: @h;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+	@{property-margin-left}: @margin-left;
+	opacity: @opacity;
+}
+// .cxSubform lyte-th .cxSubformInfoIcon {
+ /* position: absolute; Commented as this overrides all cases, when title, info icon and Hamburger icon comes */
+// }
+/* Expandable table show More button UI Starts */
+// .cxLvTableComp lyte-exptable-th .cxTableHeadingElem {
+// 	vertical-align: top;
+// }
+.wrapTextIncluded lyte-exptable-td .showMoreAddedEvents {
+	.showMoreAddedEventsMixin();
+    position: @position;
+    @{property-right}: @right;
+    display: @display;
+    width: @width;
+    height: @height;
+    border: @border;
+    top: @top;
+    background: @background;
+    border-radius: @border-radius;
+    cursor: @cursor;
+}
+lyte-exptable-td .showMoreAddedEvents {
+    visibility: hidden;
+}
+.wrapTextIncluded lyte-exptable-td .showMoreAddedEvents:after {
+	.showMoreAddedEventsAfterMixin();
+    content: '';
+    background: @background;
+    width: @width;
+    height: @height;
+    display: @display;
+    position: @position;
+    @{property-left}: @left;
+    top: @top;
+}
+.wrapTextIncluded lyte-exptable-tr:hover lyte-exptable-td .showMoreAddedEvents {
+    visibility:visible;
+}
+/* Expandable table show More button UI Ends */
+crux-table-component tfoot { 
+	.cxTableComponentTfootMixin();
+	position: sticky;
+    bottom: 0;
+    background: @bg;
+    z-index: 1;
+}
+crux-table-component tfoot td {
+	.cxTableComponentTfootTdMixin();
+	border-top: @border-top;
+	// padding-top: @padding-top;
+	// @{property-padding-right}: @padding-right;
+	// padding-bottom: @padding-bottom;
+	padding: @padding;
+}
+
+.cxTableVat lyte-tbody lyte-td,
+.cxTableContainer lyte-th .lyteCheckBoxDefault,
+.cxTableContainer lyte-th .lyteCheckBoxPrimary { /* To make Table content Top Aligned */
+	vertical-align: top;
+}
+/* 
+	Mandatory line for Team Selling module Starts
+
+	In futute will will options: 
+		1. * type
+		2. | vertical line
+		Both will come in Table header
+*/
+.cxTableHeaderMandatory .cxHeaderWrapper::before {
+	.cxTableHeaderMandatoryMandatoryMixin();
+	content: '';
+	width: @width;
+	background: @background;
+	position: @position;
+	top: @top;
+	bottom: @bottom;
+	@{property-left}: @left;
+	border-radius: @border-radius;
+	z-index: @z-index;
+	height:@height;
+}
+/* Mandatory line for Team Selling module Ends  */
+.cxHeaderPushRight .cxHeaderWrapper { /* table header right alignment */
+	justify-content: flex-end;
+}
+
+/* Mask Unmask Icon in table UI Starts */
+crux-table-component lyte-exptable-th .cxMaskIcon,
+crux-table-component lyte-exptable-th .cxUnmaskIcon,
+crux-table-component lyte-th .cxMaskIcon,
+crux-table-component lyte-th .cxUnmaskIcon {
+	vertical-align: middle;
+	margin-left: 5px;
+	display: inline-block;
+}
+/* Mask Unmask Icon in table UI Ends */
+
+.cxTableHeadWithSortIcon{
+	.cxTableHeadWithSortIconMixin();
+	@{property-padding-right}: @padding-right;
+}
+.cxHeaderPushRight .cxHeaderWrapper {
+	justify-content: flex-end;
+}
+
+/********************************************* 
+	CLIP MODE UI Starts
+	Text Clip Mode UI changes Added 
+	.cxTableClipModeEnabled -> text will be in single line wqith Ellipsis
+*********************************************/
+// .cxTableClipModeEnabled  lyte-table lyte-td,
+// .cxTableClipModeEnabled  lyte-table lyte-th,
+// .cxTableClipModeEnabled  lyte-exptable-td lyte-text,
+// .cxTableClipModeEnabled  lyte-exptable-th lyte-text {
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     white-space: nowrap;
+//     display: inline-block;
+// }
+
+.cxTableClipModeEnabled  lyte-table lyte-td,
+.cxTableClipModeEnabled  lyte-table lyte-th,
+.cxTableClipModeEnabled  lyte-table lyte-td lyte-text,
+.cxTableClipModeEnabled  lyte-table lyte-td a,
+.cxTableClipModeEnabled  lyte-exptable-td lyte-text,
+.cxTableClipModeEnabled  lyte-exptable-th lyte-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.cxTableClipModeEnabled  lyte-table lyte-table-structure{
+    table-layout: fixed;
+}
+
+/************ CLIP MODE UI Ends ***************/

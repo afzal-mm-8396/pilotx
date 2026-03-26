@@ -1,0 +1,2443 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/***** CRUX SEPARATE STYLES FOR BOOLEAN COMP MIXIN STARTS ******/
+/***** CRUX SEPARATE STYLES FOR BOOLEAN COMP MIXIN ENDS ******/
+.criteria-yes {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -68px -176px;
+  display: inline-block;
+  padding: 0 !important;
+  width: 14px;
+  height: 10px;
+  cursor: default;
+}
+crux-boolean-component .lyteCheckBoxDefault::before,
+crux-boolean-component .lyteCheckBoxPrimary::before {
+  margin: 0;
+}
+.cxBooleanCompWithLabel .lyteCheckBoxDefault::before {
+  margin-right: 6px;
+  top: 0px;
+  flex-shrink: 0px;
+}
+.cxBooleanCompWithLabel input[type=checkbox] + .lyteCheckBoxDefault::after {
+  top: 3px;
+}
+crux-boolean-component .lyteCheckBoxDefault {
+  display: flex;
+}
+crux-boolean-component .lyteCheckBoxDefault,
+crux-boolean-component .lyteCheckBoxPrimary,
+crux-subform .criteria-yes {
+  margin: 0 auto;
+  display: flex;
+}
+.cxcreateFormComponentRow crux-boolean-component .cxElementLabel,
+.cxcreateFormComponentRow crux-boolean-component .cxFieldLabel {
+  padding-top: 3px;
+}
+.cxcreateFormComponentRow .cxElementValue lyte-checkbox {
+  top: 2px;
+}
+.cxcreateFormComponentRow .cxElementValue lyte-checkbox[lt-prop-type="primary"] {
+  top: 2px;
+}
+crux-date-time-component .cxElementDisabled .cxBoxInput.lyteInputBox input:first-child {
+  padding-right: 10px;
+  border-radius: 5px 0 0 5px;
+}
+.cxDateTimeWrapper lyte-input {
+  width: 100%;
+}
+crux-email-component {
+  max-width: 100%;
+}
+.cxEmailViewLink {
+  text-decoration: none;
+}
+.cxImageViewWrap {
+  width: 70px;
+  height: 70px;
+  border-radius: 25px;
+  cursor: pointer;
+  position: relative;
+}
+.cxImageViewNoImage,
+.cxImageViewImgElem,
+.cxImageViewOverlay {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+.cxImageViewOverlay {
+  position: absolute;
+  background: var(--lyte-crux-image-preview-overlay-bg-color);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+.cxImageViewWrap:hover .cxImageViewOverlay {
+  opacity: 1;
+}
+.cxImageCameraIcon {
+  width: 21px;
+  height: 16px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -180px -124px;
+  mask-position: -180px -124px;
+  background-color: var(--lyte-crux-image-camera-icon-color);
+}
+.cxImageViewImgElem {
+  object-fit: cover;
+}
+.cxImageViewNoImage {
+  background-image: url(../../images/crux-image-preview-sprite.png);
+  background-size: 470px auto;
+  color: var(--lyte-crux-image-alphabet-text-color);
+  text-align: center;
+  line-height: 70px;
+  font-size: 40px;
+  font-family: 'LatoSemiBold', sans-serif;
+}
+.cxImageViewOverlay:hover + .cxImageViewNoImage {
+  color: transparent;
+}
+.cxImageViewNoImage1 {
+  background-position: -20px -20px;
+}
+.cxImageViewNoImage2 {
+  background-position: -110px -20px;
+}
+.cxImageViewNoImage3 {
+  background-position: -200px -20px;
+}
+.cxImageViewNoImage4 {
+  background-position: -290px -20px;
+}
+.cxImageViewNoImage5 {
+  background-position: -380px -20px;
+}
+.cxImageViewNoImage6 {
+  background-position: -20px -110px;
+}
+.cxImageViewNoImage7 {
+  background-position: -110px -110px;
+}
+.cxImageViewNoImage8 {
+  background-position: -200px -110px;
+}
+.cxImageViewNoImage9 {
+  background-position: -290px -110px;
+}
+.cxImageViewNoImage10 {
+  background-position: -380px -110px;
+}
+.cxMultiImageList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.cxImgCompValidationCont ~ .cxMultiImgUploadBtn,
+.cxMultiImageList ~ .cxMultiImgUploadBtn {
+  margin-top: 8px;
+}
+.cxImgCompLoader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: var(--lyte-crux-image-loader-bg-color);
+}
+.cxImgCompLoader::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  transform: rotate(12deg);
+  background: var(--lyte-crux-image-loader-animation-bg-color);
+  box-shadow: 1px 1px 11px 7px var(--lyte-crux-image-loader-animation-box-shadow-color);
+  animation: cxImageLoaderAnimation 0.7s infinite;
+}
+.cxImageElemWrapper {
+  border: 1px solid var(--lyte-crux-input-border-color);
+  padding: 3px 5px;
+  border-radius: 6px;
+  position: relative;
+}
+.cxImageElemWrapper:hover {
+  border: 1px solid var(--lyte-crux-input-hover-border-color);
+}
+.cxImageElemViewWrapper:hover,
+.cxImageElemViewWrapper {
+  border: 1px solid transparent;
+}
+.cxImgElemReadOnly {
+  background: var(--lyte-crux-input-disabled-bg-color);
+  border-color: var(--lyte-crux-input-disabled-border-color);
+}
+.cxImageElemWrapper.cxWrapperElemWithImage {
+  padding: 5px;
+}
+.cxMultiImageListViewCont {
+  width: 62px;
+  height: 62px;
+  border: 1px solid var(--lyte-crux-image-list-border-color);
+  display: block;
+  flex-shrink: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.cxMultiImageListViewCont.sortable-element-selected {
+  border: 1px dashed var(--lyte-crux-image-list-select-border-color);
+  box-shadow: 0px 0px 4px 0px var(--lyte-crux-image-list-select-box-shadow-color);
+}
+.cxMultiImageListViewCont.sortable-element-selected.cxImgListVwSortableSelectElemOndrag {
+  border: 1px solid var(--lyte-crux-image-list-border-color);
+}
+.cxImageContHoverCont {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background: var(--lyte-crux-image-list-hover-bg-color);
+  display: inline-block;
+}
+.cxImgCompDeleteIcon {
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -356px -135px;
+  mask-position: -356px -135px;
+  background-color: var(--lyte-crux-image-list-delete-icon-color);
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+.cxImgCompDeleteIcon:hover {
+  background-color: var(--lyte-crux-image-list-delete-icon-hover-color);
+}
+.cxImgCompPreviewIcon {
+  width: 19px;
+  height: 19px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -165px -198px;
+  mask-position: -165px -198px;
+  background-color: var(--lyte-crux-image-list-preview-icon-color);
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+}
+.cxMultiImageListViewCont .cxListPreviewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cxImgCompValidationWaiting::before,
+.cxImgCompValidationProcessing::before {
+  content: '';
+  display: inline-block;
+  width: 27px;
+  height: 30px;
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -205px -232px;
+  inset: 0px;
+  position: absolute;
+  margin: auto;
+}
+.cxImgCompValidationWaiting::before {
+  width: 29px;
+  height: 30px;
+  background-position: -242px -233px;
+}
+.cxImgCompValidationCont {
+  cursor: pointer;
+}
+.cxImgCompViewEmptyIcon {
+  display: block;
+  width: 11px;
+  height: 1px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -146px -271px;
+  mask-position: -146px -271px;
+  background-color: var(--lyte-crux-image-hyphen-icon-color);
+  margin: 13px 7px 12px;
+}
+@keyframes cxImageLoaderAnimation {
+  0% {
+    left: -20px;
+  }
+  100% {
+    left: calc(100% + 20px);
+  }
+}
+.cxImageElemWrapper.cxSFImgElemWrapper {
+  padding: 0px;
+  display: flex;
+}
+.cxSFImgListCont {
+  flex: 1;
+}
+.cxSFImgListContExpand.cxSFImgListCont {
+  padding: 3px 9px;
+  display: flex;
+  align-items: center;
+}
+.cxSFImgListUploadIconDiv {
+  flex-shrink: 0;
+  padding: 8px;
+  background: var(--lyte-crux-input-icon-bg-color);
+  border-radius: 0px 5px 5px 0px;
+  cursor: pointer;
+}
+.cxSFImgListUploadIcon {
+  display: inline-block;
+  width: 17px;
+  height: 16px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -271px -175px;
+  mask-position: -271px -175px;
+  background-color: var(--lyte-crux-image-upload-icon-color);
+  vertical-align: top;
+}
+.cxSFImgListPlaceholder {
+  color: var(--lyte-crux-input-placeholder-text-color);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  padding: 3px 9px;
+  box-sizing: border-box;
+}
+.cxSFImgListCollapseView {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.cxGalleryImageIcon.cxSFShowMoreImageIcon {
+  margin-right: 5px;
+  background-color: var(--lyte-crux-image-subform-show-more-icon-bg-color);
+}
+.cxImgListLockIcon {
+  display: inline-block;
+  width: 14px;
+  height: 16px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -165px -262px;
+  mask-position: -165px -262px;
+  background-color: var(--lyte-crux-input-lock-icon-color);
+}
+.cxSFImgListLockIcon {
+  position: relative;
+  right: 2px;
+  background-color: var(--lyte-crux-input-lock-icon-color);
+  vertical-align: top;
+}
+.cxImageElemWrapper.cxImgElemReadOnly:not(.cxSFImgElemWrapper) {
+  padding-right: 30px;
+}
+.cxImgListLockIconDefault {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.cxImgHoverContWrapper {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+.cxMultiImageListViewCont:hover .cxImgHoverContWrapper {
+  visibility: visible;
+}
+.cxMultiImageListViewCont.sortable-element {
+  cursor: grab;
+}
+.cxImgPrevListOnDrag,
+.cxMultiImageListViewCont.sortable-element-selected .cxImageContHoverCont,
+.cxMultiImageListViewCont.sortable-element-selected,
+.cxImgPrevListOnDrag .cxMultiImageListViewCont.sortable-element {
+  cursor: grabbing;
+}
+.cxImgPrevListOnDrag .cxMultiImageListViewCont .cxImgHoverContWrapper {
+  visibility: hidden;
+}
+.cxImageElemWrapper.cxImageElemViewWrapper.mandatoryField:before {
+  content: none;
+}
+.listview_layoutlists li.layoutElementList {
+  margin: 0 5px 2px 0;
+  padding: 1px 5px;
+  line-height: 1;
+}
+.cxLookupComponent .cxBoxLeftContent {
+  cursor: text;
+  background: var(--lyte-crux-input-bg-color);
+  border-radius: 5px 0px 0px 5px;
+}
+.cxLookupComponent lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox input,
+.cxLookupComponent lyte-dropdown {
+  border-radius: 4px 0 0 4px;
+}
+.cxLookupComponent lyte-input,
+.cxLookupComponent lyte-autocomplete {
+  flex-grow: 1;
+  border-radius: 4px 0 0 4px;
+  display: block;
+  width: 100%;
+}
+.cxLookupComponent.cxBoxWithoutRightIcon .cxBoxLeftContent {
+  border-radius: 5px;
+}
+.cxLookupComponent lyte-autocomplete lyte-dropdown lyte-drop-button {
+  padding: 0;
+  border-radius: 4px 0 0 4px;
+  display: block;
+}
+.cxLookupComponent lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox .lyteField,
+.cxLookupComponent .lyteInputBox .lyteField {
+  padding: 0;
+  border: 0;
+  border-radius: 4px 0 0 4px;
+}
+.cxLookupComponent lyte-autocomplete lyte-input input,
+.cxLookupComponent lyte-input input {
+  outline: none;
+  box-shadow: none;
+}
+.cxLookupComponent:hover input {
+  text-overflow: initial;
+  /*On Hover removed ellipsis in input to faciliate input default mouse scroll */
+}
+.cxLookupComponent lyte-autocomplete lyte-input .cxLookupCompInputElem {
+  padding-right: 30px;
+  padding-left: 12px;
+}
+.cxLookupComponent lyte-autocomplete.cxLookupNoValueSel .cxLookupCompInputElem {
+  padding-right: 12px;
+}
+.cxLookupComponent lyte-autocomplete.cxLookupInputLoading lyte-input input {
+  padding-right: 10px;
+}
+.cxLookupComponent .cxBoxSpinWrapper {
+  padding-right: 6px;
+}
+.cxLookupComponent .cxBoxCloseIconWrap {
+  width: 20px;
+  cursor: pointer;
+  visibility: hidden;
+}
+.cxLookupComponent:hover .cxBoxCloseIconWrap {
+  visibility: visible;
+}
+.cxLookupComponent .cxBoxSpin {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+.cxLookupDropbox .lyteautocompleteHighlight {
+  background: transparent;
+}
+.cxLookupDropboxLabel {
+  max-width: calc(100% - 14px);
+}
+.cxLookupDropbox lyte-autocomplete-label .cxLookupDropboxLabel {
+  max-width: calc(100% - 25px);
+}
+.cxLookupInfoIcon {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -41px -75px;
+  width: 14px;
+  height: 14px;
+  opacity: 0.3;
+  position: relative;
+  right: 0;
+  margin: 0 !important;
+}
+.cxLookupDropbox .cxLookupInfoIcon {
+  margin-left: 3px !important;
+}
+.cxLookupDropbox lyte-autocomplete-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cxLookupComponent .lyteInputBox[lt-prop-disabled=true] .lyteField:hover {
+  border: 0;
+  box-shadow: none;
+}
+.cxLookupComponent .lyteInputBox input:disabled {
+  background: var(--lyte-crux-input-disabled-bg-color);
+  /* Commented as disabled field will have gray bg */
+}
+lyte-drop-button .lyteMultipleSelect .lyteMultiselectInput lyte-input .lyteField {
+  border: none;
+}
+.popoverWrapper.cxLookupPopoverWrapper {
+  z-index: 10125;
+}
+.cxLookupPopoverWrapper .lytePopover {
+  max-width: calc(100vw - 200px);
+  border-radius: 5px;
+}
+.cxLookupPopoverWrapper .cxLookupPopTd {
+  padding: 5px 15px 5px 20px;
+  font-size: 0.857rem;
+  border: 0;
+  word-break: break-word;
+  vertical-align: top;
+}
+.cxLookupPopoverWrapper .cxLookupPopTd.cxLookupViewValue {
+  padding: 5px 20px 5px 0px;
+}
+.cxLookupPopoverWrapper .cxLookupPopTd:first-child {
+  text-align: right;
+}
+.cxLookupPopoverWrapper lyte-tr:first-of-type .cxLookupPopTd {
+  padding-top: 15px;
+}
+.cxLookupPopoverWrapper lyte-tr:last-of-type .cxLookupPopTd {
+  padding-bottom: 15px;
+}
+.cxLookupPopoverWrapper,
+.cxLookupPopoverWrapper .lytePopover {
+  pointer-events: none;
+}
+.cxLookupPopoverWrapper .lv_data_user {
+  max-width: 370px;
+}
+.cxLookupPopoverWrapper lyte-table {
+  border: 0;
+  border-radius: 0;
+}
+.cxLookupMultiModuleWrap {
+  display: flex;
+  align-items: center;
+}
+.cxLookupMultiModuleWrap .cxMultiModuleCriteriaDropdown {
+  flex-grow: 1;
+  overflow: auto;
+  min-width: 70px;
+}
+.cxMultiModuleCriteriaDropdown .lyteDropdownLabel {
+  max-width: 100%;
+  margin-right: 0;
+}
+.cxMultiModuleDropdown {
+  max-width: 30%;
+  min-width: 100px;
+}
+.cxLookupComponent .cxMultiModuleDropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxMultiModuleDropdown .cxFakeDummyEventContainer:focus .cxFakeDropButton,
+.cxMultiModuleDropdown lyte-drop-button:hover,
+.cxMultiModuleDropdown .cxFakeDropButton,
+.cxMultiModuleDropdown .cxFakeDropButton:hover,
+.cxMultiModuleDropdown lyte-drop-button,
+.cxLookupComponent lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button:hover {
+  border: 0;
+  border-right: 1px solid var(--lyte-crux-input-border-color);
+  border-radius: 4px 0 0 4px;
+  box-shadow: none;
+}
+.entityLookupTable lyte-table lyte-tr lyte-td:first-child lyte-radiobutton {
+  margin-right: 0px;
+}
+.cxLookupViewWrapper {
+  display: flex;
+}
+.cxLookupViewIcon {
+  flex-shrink: 0;
+  margin-right: 5px;
+}
+.cxLookupCompMulModValue,
+.cxLookupCompLink {
+  overflow: hidden;
+  max-width: fit-content;
+}
+.cxLookupCompLink {
+  flex: 1;
+  min-width: 25px;
+}
+.cxLookupCompSeparator {
+  margin: 0px 3px;
+  flex-shrink: 0;
+}
+.cxElementDisabled .cxLookupComponent .lyteDummyEventContainer.lyteDropdown-disabled lyte-drop-button:hover,
+.cxElementDisabled .cxLookupComponent .lyteDummyEventContainer:focus lyte-drop-button {
+  border: none;
+}
+.cxLookupComponent .cxBoxDropdown .lyteDummyEventContainer,
+.cxLookupComponent .cxBoxDropdown .lyteDummyEventContainer lyte-drop-button,
+.cxLookupComponent .cxMultiModuleDropdown lyte-dropdown {
+  height: 100%;
+}
+.cxLookupComponent .cxBoxDropdown .lyteDummyEventContainer lyte-drop-button,
+.cxLookupComponent lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxLookupComponent lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button:hover {
+  border: none;
+  border-radius: 0px;
+  border-right: 1px solid var(--lyte-crux-lookup-dummy-container-focus-drop-border-color);
+}
+.cxElementDisabled .cxLookupComponent lyte-drop-button::after {
+  visibility: hidden;
+}
+.cxLookupComponent .cxMultiModuleDropdown .cxFakeDropButton {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+crux-lookup-component .cxViewInfoTooltipIcon {
+  position: relative;
+  margin-left: 5px;
+  top: 2px;
+}
+.cxLookupCompViewWrap {
+  display: inline-flex;
+  /* changed to inline flex - as it overlaps other icons in Related list Table */
+}
+.cxMMLSeperator {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.cxLookupCompWsNormal {
+  white-space: normal !important;
+}
+/*Changed to left for PFQA Public fields. 
+Ref: Chinnaiya
+
+	For Number, Currency Fields:
+	Default: Left Aligned
+	Subform Table: Left Aligned.
+	Aggregate fields: right aligned
+*/
+crux-number-component lyte-input.cxFlatInput {
+  position: relative;
+  display: inline-flex;
+}
+crux-number-component lyte-input.cxBoxInput {
+  display: flex;
+}
+crux-number-component lyte-input.cxFlatInput.horizontal .lyteLabel {
+  min-width: auto;
+  width: auto;
+  flex-grow: 0;
+}
+crux-number-component lyte-input.cxFlatInput.horizontal .lyteField {
+  flex-grow: 1;
+}
+/************************************* 
+	**Number and Curreny Fields**
+
+Ref: Chinnaiya & Saravanan
+
+	By Default:
+		- For Currency Fields: Right Aligned
+		- Number Fields : Left Aligned
+	Subform Table: Left Aligned.
+	Aggregate fields: Right aligned.
+
+	Left Aligned (Number and Curreny Fields):
+		- crux-form-component
+		- Public Fields
+*************************************/
+.numberDivCurrencyView {
+  text-align: right;
+}
+.numberDivNumberView,
+crux-form-component .numberDivCurrencyView,
+.cxDvFieldDetailComp .numberDivCurrencyView {
+  text-align: left;
+}
+crux-number-component lyte-number.cxFlatInput.horizontal .lyteLabel {
+  min-width: auto;
+  width: auto;
+  flex-grow: 0;
+}
+/* .cxCalculatorIcon - chnaged to CSS mask Mode */
+.cxCalculatorIcon {
+  background-image: none;
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -68px -2px;
+  mask-position: -68px -2px;
+  background-color: #333;
+  vertical-align: middle;
+}
+.cxBoxWithRightIcon .cxElementValue {
+  flex-grow: 1;
+}
+.cxNumInfoPop .lytePopover {
+  transform: translateX(10px);
+}
+.cxNumInfoPop .lytePopoverArrowIcon {
+  transform: translateX(-10px) rotate(45deg);
+}
+.cxNumResPopContent {
+  color: var(--lyte-crux-number-popup-content-color);
+  font-size: 14px;
+  padding: 10px 15px;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  cursor: pointer;
+}
+.cxNumInfoPopContent {
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 350px;
+  color: var(--lyte-crux-number-info-popup-content-color);
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+.cxNumDefaultInfo {
+  font-size: 0.929rem;
+}
+crux-number-component .cxBoxWithRightIcon .cxBoxLeftContent {
+  overflow: visible;
+}
+/*Slider within Crux-picklist Less Starts */
+crux-number-component .cxNumberCompSlider {
+  margin: 12px 0px 0px 10px;
+}
+.cxNumberCompSlider .cxNumScaleLable {
+  padding-top: 0px !important;
+  margin-top: 28px;
+}
+.cxNumScaleLable .cxNumScaleLableFirstValue {
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: top;
+}
+.cxNumberCompSlider .lyteScaleLine:first-child .cxNumScaleLable {
+  text-align: left;
+  position: absolute;
+  left: 3px;
+}
+.cxNumberCompSlider .lyteScaleLine:last-child .cxNumScaleLable {
+  text-align: right;
+  position: absolute;
+  right: 3px;
+}
+.cxNumberCompSlider .lyteScaleLine:first-child .cxNumScaleLable.cxNumScaleSingDigLabel {
+  left: 6px;
+}
+.cxNumberCompSlider .lyteScaleLine:last-child .cxNumScaleLable.cxNumScaleSingDigLabel {
+  right: 6px;
+}
+.cxNumScaleLable .cxNumScaleLableSecondValue {
+  display: inline-flex;
+  white-space: nowrap;
+  margin-top: 6px;
+  color: var(--lyte-crux-number-scale-sec-value-color);
+}
+.cxNumberCompSlider .lyteScaleLine:last-child .cxNumScaleLableSecondValue {
+  justify-content: flex-end;
+}
+.cxNumScaleLable .cxNumScaleLableSecondValue lyte-text {
+  vertical-align: top;
+}
+.cxNumberCompSlider .lyteRangeSlider .lyteSliderFill,
+.cxNumberCompSlider .lyteRangeSlider {
+  border-radius: 0px;
+}
+.cxNumberCompSlider .lyteRangeSlider::after,
+.cxNumberCompSlider .lyteRangeSlider::before {
+  content: '';
+  width: 10px;
+  height: 100%;
+  display: block;
+  border-radius: 10px 0px 0px 10px;
+  left: -10px;
+  position: absolute;
+  background: var(--lyte-crux-number-slider-fill-bg-color);
+  z-index: 1;
+}
+.cxNumberCompSlider .lyteRangeSlider::after {
+  left: initial;
+  right: -10px;
+  border-radius: 0px 10px 10px 0px;
+  background: var(--lyte-crux-number-slider-bg-color);
+  width: 9px;
+}
+.cxNumberCompSlider .lyteRangeSlider.lyteHorizontal .lyteScaleOption {
+  top: 0px;
+}
+.cxNumberCompSlider .lyteRangeSlider .lyteScaleLine {
+  height: 18px;
+}
+.cxNumberCompSlider .lyteRangeSlider .lyteScaleLine span:first-child {
+  border-radius: 4px;
+}
+.cxNumberCompSlider .lyteScaleLine:first-child,
+.cxNumberCompSlider .lyteScaleLine:last-child {
+  height: 23px;
+}
+.cxNumberCompSlider .lyteRangeSlider .lyteSliderFill {
+  z-index: 1;
+}
+.cxNumberCompSliderReadOnly {
+  pointer-events: none;
+}
+.cxNumberCompSliderReadOnly .lyteSliderDisabled {
+  opacity: 1;
+}
+/*Slider within Crux-picklist Less Ends */
+crux-number-component .cxBoxInputInsideLabel.lyteInputDisabled .lyteLabel,
+crux-number-component .cxBoxInputInsideLabel.lyteInputReadonly .lyteLabel {
+  background-color: var(--lyte-crux-number-comp-box-disabled-bg-color);
+  color: var(--lyte-crux-number-box-disabled-label-color);
+}
+crux-number-component .cxBoxInputInsideLabel.lyteInputReadonly .lyteField input {
+  border-radius: 4px;
+}
+/* temp Code -Suffix Label Styling Starts */
+crux-number-component .cxSymbolSuffix .lyteLabel,
+crux-number-component .cxSymbolSuffix .lyteNumberUnitElem,
+crux-number-component .cxBoxInputInsideLabel .lyteNumberUnitElem {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  padding: 8px 10px 8px 10px;
+  flex-grow: 0;
+  opacity: 1;
+  width: auto;
+  line-height: 16px;
+  margin-right: 0;
+}
+/* temp Code -Suffix Label Styling Ends */
+crux-number-component lyte-input .lyteLabel,
+crux-twitter-component lyte-input .lyteLabel,
+crux-number-component .cxSymbolSuffix .lyteLabel,
+crux-number-component .cxBoxInputInsideLabel .lyteNumberUnitElem,
+crux-number-component .cxBoxLeftContent .lyteNumberUnitElem {
+  padding-left: 10px;
+  padding-right: 10px;
+  white-space: nowrap;
+  align-items: center;
+  background: transparent;
+  display: flex;
+  position: relative;
+}
+crux-number-component .cxBoxLeftContent .lyteNumberUnitElem {
+  margin-right: 0 !important;
+}
+crux-number-component lyte-input .lyteLabel::after,
+crux-number-component .cxSymbolPrefix .lyteLabel::after,
+crux-number-component .cxSymbolSuffix .lyteLabel::after,
+crux-number-component .cxBoxInputInsideLabel .lyteNumberUnitElem::after,
+crux-number-component .cxBoxLeftContent .lyteNumberUnitElem::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 20px;
+  top: 6px;
+  display: inline-block;
+  background: var(--formBorder);
+  z-index: 1;
+}
+crux-number-component .cxBoxInputInsideLabel .lyteField {
+  display: flex;
+}
+crux-number-component .cxSymbolSuffix {
+  flex-direction: row-reverse;
+}
+crux-number-component .cxSymbolSuffix .lyteLabel::after,
+crux-number-component .cxBoxInputInsideLabel .lyteNumberUnitElem::after,
+crux-number-component .cxBoxLeftContent .lyteNumberUnitElem::after {
+  left: 0;
+}
+crux-number-component .cxSymbolPrefix .lyteLabel::after {
+  right: 0;
+}
+/* For Label Right aligned Currency FIeld with Ctrl ++ */
+.cxBoxWithRightIcon .cxBoxLeftContent .lyteNumberUnitElem {
+  white-space: nowrap;
+  height: 100%;
+}
+/*
+.cxNumberCalcPopup.popoverWrapper {
+	z-index: 11; z-index overridden for making popover in currency field appear below crm header and subform fixed left menu
+}
+// 	z-index: 11; 
+// }
+/*
+    z-index overridden for making popover in currency field appear below crm header and subform fixed left menu
+    commented - causes common issue in widget and related cases
+    */
+/* .cxNumberCalcPopup.popoverWrapper {
+    z-index: 11; 
+} */
+.cxNumScaleLable lyte-text {
+  font-variant-ligatures: normal;
+}
+.cxPhoneViewValue {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+.cxCalliconOuter {
+  background: var(--lyte-crux-phone-call-icon-bg-color);
+  margin: 0 5px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.cxPhoneViewCallLabel {
+  display: none;
+  padding: 0 5px;
+  color: var(--lyte-crux-phone-view-call-label-color);
+  vertical-align: middle;
+}
+.cxCalliconOuter:hover .cxPhoneViewCallLabel {
+  display: inline-block;
+}
+.cxCallIcon {
+  background: url(../../images/crux-sprite-icons.svg) no-repeat;
+  background-position: -274px -86px;
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.cxPhoneViewZPBEnabled {
+  position: relative;
+  padding-right: 20px;
+  min-width: 100%;
+  word-break: break-word;
+  white-space: normal;
+  box-sizing: border-box;
+}
+.cxPhoneViewZPBEnabledIconWrap {
+  position: absolute;
+  margin-left: 5px;
+  /* For normal Phone Icon Field */
+}
+/* crux-phone-component - position:relative added to contain absolute positioned mask, unmask icon - crux_table_masking*/
+crux-phone-component,
+.cxAdvanceLookupFilterField .cxPhoneViewZPBEnabledIconWrap {
+  position: relative;
+}
+/*For Telephony enabled call Icon */
+crux-table-component .cxPhoneViewZPBEnabled {
+  padding-right: 50px;
+  white-space: nowrap;
+}
+.phoneRtlA a {
+  direction: ltr;
+}
+crux-phone-component .cxDropdownDisabled.cxFakeDummyEventContainer .cxFakeDropButton,
+crux-phone-component .cxFakeDummyEventContainer:focus .cxFakeDropButton,
+crux-phone-component .cxErrorBox .cxFakeDropButton {
+  border: 0 !important;
+  box-shadow: none;
+}
+.cxPhoneViewZPBEnabledIconWrap .zpbCallIconOuter {
+  white-space: nowrap;
+  max-width: 100%;
+  min-width: auto;
+  margin-left: 0 !important;
+}
+.cxLookupViewValue .phoneRtl.cxPhoneViewZPBEnabled {
+  min-width: 125px;
+}
+.cxNoneSelected .lyteDropdownLabel {
+  color: var(--lyte-crux-picklist-dropdown-none-label-color);
+}
+.colorEnabledPicklist:not(.colorEnabledPKNone) .activitesColor,
+crux-picklist-component .colorEnabledPicklist:not(.colorEnabledPKNone) .activitesColor {
+  top: 11px;
+}
+.colorEnabledPicklist:not(.colorEnabledPKNone) {
+  position: relative;
+}
+crux-picklist-component lyte-dropdown {
+  display: block;
+}
+/*Whn no placeholder or empty placeholder comes, this is needed */
+crux-picklist-component .cxPicklistNoPlaceholder lyte-drop-button {
+  min-height: 35px;
+}
+/*
+    lyte-dropdown:not(.cxDropdownIconNodePresent)
+    This selector will get added if $0.cxProp('isDropdownIconNode', true) is passed
+    This selector is specific for canvas feature. The below padding will not get added in crux-picklist for Canvas.
+*/
+.colorEnabledPicklist:not(.colorEnabledPKNone) lyte-dropdown:not(.cxDropdownIconNodePresent) lyte-drop-button,
+crm-create-fields .colorEnabledPicklist:not(.colorEnabledPKNone) lyte-dropdown:not(.cxDropdownIconNodePresent) lyte-drop-button {
+  padding: 8px 30px 8px 33px;
+  position: relative;
+}
+crux-picklist-component .colorEnabledPicklist:not(.colorEnabledPKNone) lyte-dropdown:not(.cxDropdownIconNodePresent) lyte-drop-button {
+  padding: 8px 30px 8px 33px;
+}
+.colorEnabledPKDropBox lyte-drop-item:not(.colorEnabledSelect2None) {
+  padding: 8px 25px 8px 50px;
+}
+.colorEnabledPicklist.colorEnabledPKNone .activitesColor,
+.colorEnabledPKDropBox .colorEnabledSelect2None .activitesColor,
+crux-picklist-component .colorEnabledPKNone .activitesColor {
+  display: none !important;
+}
+.cxDropbox lyte-drop-item.cxDropboxNoneItem[selected="true"]::before {
+  content: none;
+}
+crux-picklist-component lyte-text {
+  vertical-align: top;
+}
+.activitesColor,
+crux-picklist-component .activitesColor,
+.colorEnabledPKDropBox .activitesColor {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  z-index: 1;
+  padding: 0px;
+}
+.colorEnabledPKDropBox .activitesColor {
+  top: calc(50% - 7px);
+  left: 25px;
+}
+.activitesColor::after,
+crux-picklist-component .activitesColor::after,
+.colorEnabledPKDropBox .activitesColor::after {
+  content: '';
+  position: absolute;
+  border: 1px solid var(--lyte-crux-picklist-indicator-after-border-color);
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 50%;
+}
+crux-picklist-component .colorAppliedPicklist {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.cxElementDisabled lyte-dropdown[lt-prop-type="multisearch"] .lyteMultipleSelect .lyteField {
+  border: none;
+}
+.cxNoUserSelected .lyteDummyEventContainer:focus lyte-drop-button {
+  box-shadow: none !important;
+}
+.colorAppliedPicklist {
+  padding: 3px 11px;
+  border-radius: 15px;
+  font-size: 0.857rem;
+  border: 0 !important;
+  line-height: 16px !important;
+  display: inline-block;
+  vertical-align: middle;
+  word-break: break-word !important;
+  position: relative;
+  color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+  cursor: pointer;
+}
+.colorAppliedPicklist:not(.colorAppliedPKNone)::before {
+  content: "";
+  position: absolute;
+  border: 1px solid var(--lyte-crux-picklist-color-applied-before-border-color);
+  border-radius: 15px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  display: inline-flex;
+}
+.colorAppliedPKNone {
+  padding-left: 0;
+  border: 0;
+  color: inherit !important;
+}
+.listview_taglists li.tagElementList.cxAddedTags {
+  margin: 0 5px 2px 0;
+  padding: 2px 5px 4px 10px !important;
+  line-height: 16px;
+  vertical-align: middle;
+  /*max-width: calc(100% - 30px);*/
+}
+.listview_taglists .tagElementList.cxAddedTags span {
+  white-space: nowrap;
+  width: calc(100% + 7px);
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tagElementList {
+  font-size: 0.786rem;
+}
+.cxTagContent {
+  font-family: 'LatoRegular', sans-serif;
+  font-size: 0.725rem;
+  color: var(--lyte-crux-tag-content-color);
+}
+.cruxTagTitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+.tagPopoverLab .cxAddedTags {
+  white-space: nowrap;
+}
+.cxTagMoreCountUnderline {
+  position: relative;
+  display: inline !important;
+}
+.cruxTagTitle::after {
+  display: block;
+  content: "";
+}
+.cxTagMoreCountUnderline::after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  display: inline-block;
+  position: absolute;
+  background: var(--lyte-crux-tag-count-under-line-after-bg-color);
+  left: 0px;
+  bottom: -1px;
+}
+.cxTagMoreCountUnderline::before {
+  content: '';
+  width: 0px;
+  height: 1px;
+  display: inline-block;
+  position: absolute;
+  background: var(--lyte-crux-tag-count-under-line-hover-bg-color);
+  left: 0px;
+  bottom: -1px;
+  z-index: 1;
+  transition: 0.1s;
+}
+.cxTagMoreCountUnderline:hover::before {
+  width: 100%;
+}
+.cxTextareaViewMode {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  min-width: 300px;
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+.cxTextareaShowMore {
+  /* Added inline-block for canvas issue */
+  display: inline-block;
+  position: relative;
+  color: var(--lyte-crux-text-area-show-more-color);
+  cursor: pointer;
+}
+crux-text-area-component lyte-input .lyteField {
+  flex-grow: unset;
+}
+crux-table-component crux-text-component {
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+.cxTextarea lyte-input[lt-prop-type=textarea] .lyteField::after {
+  bottom: 0px;
+  right: 0px;
+}
+.cxLineClamp {
+  -webkit-box-orient: vertical;
+  display: -webkit-box !important;
+  overflow: hidden;
+}
+.cxLineNoClamp {
+  display: -webkit-box !important;
+}
+/* CRUX Table Component with Ellipsis Text Starts */
+.cxTextareaNoWrap .cxTextareaViewMode {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.cxTextareaNoWrap crux-text-component {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+/* CRUX Table Component with Ellipsis Text Ends */
+/*Text area hover card styles starts*/
+.cxTextareaHoverCard {
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+}
+.cxTextareaShowHoverCard {
+  padding-right: 25px;
+}
+.cxTextareaShowHoverCard .cxTextareaViewMode {
+  text-overflow: ellipsis;
+}
+.cxTextareaHoverCard .cxTextareaViewMode {
+  min-width: auto;
+  max-width: none;
+}
+.cxTextAreaToggleShowBtn {
+  display: inline-block;
+  width: 20px;
+  height: 18px;
+  border: 1px solid var(--lyte-crux-text-area-popup-toggle-btn-border-color);
+  background: var(--lyte-crux-text-area-popup-toggle-btn-bg-color);
+  border-radius: 4px;
+  cursor: pointer;
+  visibility: hidden;
+  position: absolute;
+  margin-left: 5px;
+  right: 0px;
+  top: -2px;
+}
+crux-text-area-component:hover .cxTextAreaToggleShowBtn {
+  visibility: visible;
+}
+.cxTextAreaToggleShowBtn:after {
+  content: '';
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -1px -2px;
+  width: 8px;
+  height: 4px;
+  display: inline-block;
+  position: absolute;
+  left: 6px;
+  top: 7px;
+}
+.cxTextareaHovercardPopover lyte-popover-content pre {
+  font-size: 0.929rem;
+  font-family: 'LatoRegular', sans-serif;
+  white-space: normal;
+  word-wrap: break-word;
+  padding: 0px 43px 0px 15px;
+  overflow: auto;
+}
+.cxTextareaHovercardPopover .lytePopover {
+  border-radius: 6px;
+}
+.cxTextareaHovercardPopover lyte-popover-content {
+  padding: 15px 0px 15px 0px !important;
+  line-height: 18px;
+  overflow: hidden;
+}
+.cxTextareaHovercardPopover .lytePopoverClose {
+  background: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+  opacity: 1;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  top: 15px !important;
+  right: 20px;
+}
+.cxTextareaHovercardPopover .lytePopoverClose:hover {
+  background: var(--lyte-crux-text-area-popup-close-icon-hover-bg-color);
+}
+.cxTextareaHovercardPopover .lytePopoverClose::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -71px -118px;
+  mask-position: -71px -118px;
+  background-color: #333;
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+}
+/*Text area hover card styles ends*/
+.cxElementsWrap {
+  display: inline-flex;
+}
+.cxElementsWrap.horizontal .cxElementLabel {
+  margin-right: 30px;
+}
+.cxElementsWrap.horizontal.cxFlatAppear {
+  align-items: flex-end;
+}
+.cxElementsWrap.horizontal.cxBoxAppear {
+  align-items: center;
+}
+.cxElementsWrap.vertical {
+  flex-direction: column;
+}
+.cxElementsWrap.vertical .cxElementLabel {
+  margin-bottom: 8px;
+  margin-right: 0;
+}
+.cxElementsWrap.vertical.cxFlatAppear .cxElementLabel {
+  margin-bottom: 0;
+}
+.cxTextCompExpandable .cxBoxInput.lyteInputBox:not(.lyteInputFocus) .lyteField:not(:hover) {
+  border-color: transparent;
+}
+.cxTextCompExpandable lyte-input,
+.cxTextCompExpandable lyte-input input {
+  max-width: 100%;
+}
+crux-text-component lyte-input,
+crux-text-component .cxTextAutoCompWrapper {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+crux-role-component lyte-dropdown[lt-prop-type="multisearch"] lyte-drop-button.lyteMultipleSelect {
+  padding-right: 30px;
+  box-shadow: none;
+}
+.cx_roleIconPos {
+  position: absolute;
+  top: 7px;
+}
+.cx_roleLookupIcon {
+  background: url(../../images/crux-sprite-icons.svg);
+  width: 20px;
+  height: 20px;
+  background-position: -260px -58px;
+  display: inline-block;
+  opacity: 0.5;
+  vertical-align: middle;
+}
+.cx_roleLookupIcon:hover {
+  opacity: 1;
+}
+.cxRoleModalWrapper lyte-modal-content {
+  max-height: calc(100vh - 200px);
+}
+.cxRoleModalWrapper lyte-modal-content > lyte-tree {
+  display: inline-block;
+  padding-inline-end: 50px;
+}
+.cxRoleModalWrapper lyte-tree-content {
+  display: flex;
+}
+.cxRoleCompLyteTree lyte-tree-icon:hover .treeValue lyte-text,
+.cxRoleCompLyteTree lyte-tree-icon.open .treeValue lyte-text,
+.cxRoleCompLyteTree .treeValue {
+  color: var(--lyte-crux-role-tree-value-color);
+  font-size: 1.5rem;
+  max-width: 300px;
+}
+.cxRoleCompLyteTree lyte-tree-icon:hover .treeValue:hover lyte-text,
+.cxRoleCompLyteTree lyte-tree-icon.open .treeValue:hover lyte-text,
+.cxRoleCompLyteTree .treeValue:hover lyte-text {
+  color: var(--lyte-crux-role-tree-hover-value-color);
+}
+.cxRoleModalWrapper .lyteTreeMaxedChild::before {
+  visibility: hidden;
+}
+.cxRoleCompLyteTree lyte-tree-icon .collapseBox,
+.cxRoleCompLyteTree lyte-tree-icon.open .collapseBox {
+  opacity: 0.5;
+  display: block;
+}
+.cxRoleModalWrapper lyte-tree-icon {
+  float: none;
+  margin: 0;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+.cxRoleModalWrapper .lyteTreeHasNoChild lyte-tree-icon {
+  display: none;
+}
+.cxRoleModalWrapper .lyteTreeHasNoChild lyte-tree-icon .arrow {
+  background: none;
+  border: 1px solid var(--lyte-crux-role-tree-has-no-child-border-color);
+  box-sizing: border-box;
+  border-radius: 3px;
+  cursor: default;
+}
+crux-role-component .cxBoxWithRightIcon.cxBoxContainsDropdown lyte-drop-button {
+  padding-right: 25px;
+}
+crux-role-component .cxBoxWithRightIcon.cxBoxContainsDropdown .cxBoxRightIcon {
+  position: relative;
+}
+crux-role-component .cxBoxWithRightIcon.cxBoxContainsDropdown lyte-icon.dropdown {
+  right: 10px;
+  position: absolute;
+}
+.cxTwitterInputWrapper .cxBoxInput.lyteInputBox.horizontal .lyteLabel,
+.cxTwitterInputWrapper .lyteLabel {
+  color: var(--lyte-crux-twitter-input-value-color);
+}
+.cxTwitterInputWrapper .cxFlatInput.horizontal .lyteLabel {
+  width: auto;
+  min-width: auto;
+  flex-grow: 0;
+}
+.cxTwitterInputWrapper .cxFlatInput.horizontal:hover .lyteLabel {
+  border-bottom: 1px solid var(--lyte-crux-twitter-flat-input-hover-label-color);
+}
+.cxTwitterInputWrapper .cxFlatInput.horizontal.lyteInputFocus .lyteLabel {
+  border-bottom: 1px solid var(--lyte-crux-twitter-flat-input-focus-label-color);
+}
+.cxTwitterInputWrapper .cxFlatInput.lyteInput .lyteField {
+  width: auto;
+  min-width: auto;
+  flex-grow: 1;
+}
+.cxViewUserValueWrap,
+.cxViewUserValue {
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+}
+crux-table-component .cxViewUserValue {
+  max-width: inherit;
+}
+.cxUserComponent crux-user-dropdown {
+  display: flex;
+  flex-grow: 1;
+}
+.cxUserComponent crux-user-dropdown lyte-dropdown {
+  flex-grow: 1;
+}
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown .lyteDummyEventContainer lyte-drop-button,
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button:hover {
+  border: 0;
+  box-shadow: none;
+}
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown .lyteDummyEventContainer lyte-drop-button {
+  border-radius: 5px 0px 0px 5px;
+}
+.cxUserComponent.cxUserCompHiddenLookupIcon lyte-dropdown .lyteDummyEventContainer lyte-drop-button {
+  border-radius: 5px;
+}
+.cxUserComponent.cxBoxWithRightIcon.cxUserCompWithClearIcon .cxUserCompValueSelected lyte-dropdown lyte-drop-button,
+.cxUserComponent.cxUserCompWithClearIcon .cxUserCompValueSelected lyte-dropdown lyte-drop-button {
+  padding-right: 45px;
+}
+.cxUserComponent.cxBoxWithRightIcon.cxBoxContainsDropdown .cxBoxRightIcon {
+  position: relative;
+}
+.cxUserCompIcon {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -359px -87px;
+  width: 15px;
+  height: 16px;
+}
+.cxViewUserTimestamp {
+  font-family: 'LatoRegular', sans-serif;
+  display: block;
+  font-size: 0.786rem;
+  color: var(--lyte-crux-user-time-stamp-color);
+  line-height: 21px;
+}
+crux-user-component lyte-text {
+  vertical-align: top;
+}
+.cxUserComponent lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button {
+  padding-right: 25px;
+}
+/* .cxUserComponent lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button::after{
+    content: '';
+}
+
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button::after{
+    right: 40px;
+} */
+.cxUserComponent.cxBoxWithRightIcon.cxBoxContainsDropdown lyte-icon.dropdown {
+  right: 10px;
+}
+.cxUserComponent.cxBoxWithRightIcon.cxUserCompWithClearIcon .cxBoxCloseIconWrap {
+  right: 60px;
+}
+.cxUserComponent.cxBoxContainsDropdown lyte-drop-button {
+  padding-right: 25px;
+}
+.cxUserbcpopup {
+  box-shadow: 0 2px 8px var(--lyte-crux-user-tooltip-popup-box-shadow-color);
+  background-color: var(--lyte-crux-user-tooltip-popup-bg-color);
+  border-radius: 4px;
+}
+.cxUpSpace {
+  background-color: var(--lyte-crux-user-tooltip-up-space-bg-color);
+  padding: 0;
+}
+.cxUpSpaceContent {
+  font-size: 0.857rem;
+  color: var(--lyte-crux-user-tooltip-up-space-content-color);
+  margin-top: 3px;
+  word-break: break-word;
+}
+.cxEmailIconWrap,
+.cxPhoneIconWrap,
+.cxUserbcInfoContent,
+.cxUpSizeWrap,
+.cxbcUserNameWrap {
+  display: table-cell;
+}
+.cxUpSize {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.cxUserbcInfo {
+  padding: 15px 10px 0;
+  font-size: 0.857rem;
+}
+.cxMailLnk {
+  color: var(--lyte-crux-user-tooltip-mail-link-color);
+}
+.cxUserbcInfoIconWrapper .cxUserinfoMax {
+  word-wrap: break-word;
+  max-width: 800px;
+}
+.cxNormaltag {
+  font-size: 0.786rem;
+  font-weight: normal;
+  padding: 2px 5px;
+  border-radius: 2px;
+  display: inline-block;
+  color: var(--lyte-crux-user-tooltip-normal-tag-text-color);
+  border: 1px solid var(--lyte-crux-user-tooltip-normal-tag-border-color);
+}
+.cxUserbcpopupContent {
+  padding: 2px 10px 15px 10px;
+}
+.cxUserbcInfoItem,
+.cxMobileIconWrapParent,
+.cxPhoneIconWrapParent {
+  display: flex;
+  align-items: center;
+}
+.cxEmailIcon,
+.cxPhoneIcon,
+.cxMobileIcon,
+.cxBcChatIcon,
+.cxBcCallIcon,
+.cxVideoCallIcon {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  display: inline-block;
+}
+.cxEmailIcon {
+  background-position: -64px -78px;
+  width: 13px;
+  height: 9px;
+  margin: auto;
+}
+.cxPhoneIcon {
+  background-position: -109px -77px;
+  width: 19px;
+  height: 12px;
+  margin: auto;
+}
+.cxPhoneIconContent {
+  display: table-cell;
+}
+.cxMobileIconWrap {
+  display: table-cell;
+}
+.cxMobileIcon {
+  background-position: -85px -74px;
+  width: 17px;
+  height: 17px;
+  margin: auto;
+}
+.cxDismiss-btn {
+  min-width: 70px;
+  color: var(--lyte-crux-user-tooltip-dismiss-btn-color);
+  background: var(--lyte-crux-user-tooltip-dismiss-btn-bg-color);
+  border: 1px solid var(--lyte-crux-user-tooltip-dismiss-btn-border-color);
+  border-radius: 2px;
+  margin: 13px auto 0;
+  padding: 6px 10px;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 10px;
+  text-transform: capitalize;
+}
+.cxInfoPopover .lytePopover {
+  z-index: 31;
+  min-width: 300px;
+  border: 1px solid var(--lyte-crux-user-tooltip-info-popup-border-color);
+}
+.cxEllipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: top;
+}
+.cxUpSpace .cxEllipsis {
+  max-width: 204px;
+}
+.cxUserbcInfo .cxEllipsis {
+  max-width: 227px;
+}
+.cxRedCol {
+  color: var(--lyte-crux-user-tooltip-red-color);
+}
+.cxDashBorder {
+  border-bottom: 1px dashed var(--lyte-crux-user-tooltip-dash-border-color);
+  height: 2px;
+  margin: 10px;
+}
+.cxBcActionIcons {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  display: inline-block;
+  border: 1px solid var(--lyte-crux-user-tooltip-actions-icon-border-color);
+  border-radius: 100%;
+  cursor: pointer;
+  position: relative;
+}
+.cxBcActionIcons:hover {
+  background: var(--lyte-crux-user-tooltip-actions-icon-hover-bg-color);
+}
+.cxBcCallIcon {
+  background-position: -160px -76px;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  position: absolute;
+  left: 6px;
+  top: 6px;
+}
+.cxBcActionIcons:hover .cxBcCallIcon {
+  background-position: -63px -97px;
+}
+.cxBcChatIcon {
+  background-position: -135px -76px;
+  width: 17px;
+  height: 16px;
+  display: inline-block;
+  position: absolute;
+  left: 6px;
+  top: 7px;
+}
+.cxBcActionIcons:hover .cxBcChatIcon {
+  background-position: -38px -97px;
+}
+.cxVideoCallIcon {
+  background-position: -183px -78px;
+  width: 17px;
+  height: 12px;
+  display: inline-block;
+  position: absolute;
+  left: 6px;
+  top: 9px;
+}
+.cxBcActionIcons:hover .cxVideoCallIcon {
+  background-position: -86px -99px;
+}
+.cxUpSecond .cxEllipsis {
+  max-width: 100px;
+}
+.cxUserTooltipRedBadge,
+.cxUserTooltipClientPortalUserLabel {
+  border-radius: 4px;
+}
+.cxUserTooltipClientPortalUserLabel {
+  border: 1px solid var(--lyte-crux-user-tooltip-client-portal-label-border-color);
+  background-color: var(--lyte-crux-user-tooltip-client-portal-label-bg-color);
+  padding: 3px 5px;
+  font-size: 11px;
+  display: inline-block;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxbcUserName {
+  color: var(--lyte-crux-user-tooltip-name-color);
+  font-size: 0.857rem;
+  margin-bottom: 5px;
+  word-break: break-word;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxInfoPopover .lytePopoverArrow,
+.cxInfoPopover .lytePopoverArrowIcon {
+  z-index: 0;
+  display: inline-block;
+}
+.cxbcUserNamePointer {
+  cursor: pointer;
+}
+.cxUpSizeWrap {
+  padding-top: 2px;
+}
+.cxbcUserNameWrap {
+  padding-left: 10px;
+}
+.cxMobileIconWrap,
+.cxPhoneIconWrap,
+.cxEmailIconWrap {
+  width: 20px;
+}
+.cxPhoneIconContent,
+.cxUserbcInfoContent {
+  padding-left: 10px;
+  word-break: break-word;
+}
+.cxUserbcInfoItem:not(:last-child),
+.cxMobileIconWrapParent:not(:last-child),
+.cxPhoneIconWrapParent:not(:last-child) {
+  padding-bottom: 10px;
+}
+crux-error-message {
+  display: block;
+}
+.cruxErrMsg {
+  font-family: 'LatoRegular', sans-serif;
+  color: var(--lyte-crux-error-msg-color);
+  font-size: 0.786rem;
+  display: block;
+}
+.cruxErrMsg.cruxErrorMsgDesc {
+  position: absolute;
+  font-family: 'LatoRegular', sans-serif;
+  z-index: 2;
+  color: var(--lyte-crux-field-error-msg-color);
+  font-size: 12px;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  left: 0;
+  display: block;
+}
+.cruxErrMsg.cruxErrorMultiline {
+  /*Added Important - as in LUX this style gets added at start itself */
+  white-space: normal !important;
+  position: relative !important;
+  overflow-wrap: break-word;
+}
+.cruxErrorField .lyteField {
+  border-bottom: 1px solid var(--lyte-crux-error-field-border-color) !important;
+}
+/**************************************************
+	.cxStaticErrorMsg - Used specifically in in places where single line static message needed.
+					- can be passed using cx-prop-error-class from wrapper eg: {crux-text-component}
+	.cxErrorMsgMultiLines - class will add Dynamically from crux based script calculation.
+					.cxErrorMsgMultiLines - DO NOT pass as cx-prop-erro-class. 
+					It will be removed Automatically.
+***************************************************/
+.cxStaticErrorMsg .cruxErrMsg.cruxErrorMsgDesc,
+.cxErrorMsgMultiLines .cruxErrMsg.cruxErrorMsgDesc {
+  position: static;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.cxFieldWarningMsg {
+  color: var(--lyte-crux-field-warning-msg-color);
+  font-size: 0.725rem;
+  top: 100%;
+  transform: translateY(4px);
+  position: absolute;
+  font-family: 'LatoRegular', sans-serif;
+  z-index: 2;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  left: 0;
+  display: block;
+}
+.cxPropWarningIconSpacing {
+  margin-right: 5px;
+  top: 1px;
+  position: relative;
+}
+.cxPropWarningMsgTxt {
+  max-width: calc(100% - 30px);
+}
+/* CRUX Error Hover Card Message Starts */
+.cxErrorHoverCard .lytePopover {
+  background-color: var(--lyte-crux-field-error-popup-background);
+  color: var(--lyte-crux-field-error-popup-color);
+  box-shadow: 0px 3px 12px var(--lyte-crux-field-error-popup-box-shadow-color);
+  line-height: 18px;
+  border: 1px solid var(--lyte-crux-error-hover-card-popup-border-color);
+}
+.cxErrorHoverCard lyte-hovercard-content {
+  padding: 8px 12px;
+  font-size: 0.929rem;
+}
+.cxErrorHoverCard .lytePopover a {
+  color: var(--lyte-crux-error-hover-card-popup-link-color);
+}
+/* CRUX Error message with small Info Icon for accessibility Starts */
+.cruxErrMsg.cxHasWarnIcon {
+  display: flex;
+  color: var(--lyte-crux-error-msg-color);
+  font-size: 0.857rem;
+}
+.cxHasWarnIcon .cxWarnIcon {
+  /* border: 1px solid #ddd; */
+  display: inline-block;
+  min-width: 0;
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+/* CRUX Error message with small Info Icon for accessibility Ends*/
+/* CRUX Error Hover Card Message Ends */
+/* Error message Shake Animation Starts */
+.cxShakeErrorHovercard .lytePopover {
+  /* @keyframes duration | easing-function | delay | iteration-count | direction | fill-mode | play-state | name */
+  animation: cx-animation-shake-horizontal 0.5s linear 1;
+}
+@keyframes cx-animation-shake-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* Error message Shake Animation Ends */
+.cxShakeErrorMessage.cruxErrMsg.cruxErrorMsgDesc {
+  animation: cx-error-shake-anim 0.5s linear 1;
+}
+@keyframes cx-error-shake-anim {
+  0% {
+    transform: translateX(3px);
+  }
+  30% {
+    transform: translateX(-3px);
+  }
+  60% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.cxLookupSearch {
+  width: 300px;
+}
+.cxLookupModalbuttonLayer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cxLookupModalContBtnLayer {
+  margin: 5px 0px 25px 0px;
+}
+.cxLookupModal lyte-table {
+  overflow: hidden;
+}
+.cxTable lyte-th {
+  padding: 9px 0 9px 25px;
+  font-size: 0.857rem;
+}
+.cxTable lyte-td {
+  border-bottom: 1px solid var(--lyte-crux-lookup-modal-table-td-border-color);
+  padding: 7px 0 7px 25px;
+  vertical-align: top;
+  font-weight: normal;
+  font-size: 1rem;
+}
+.cxSelectedSingle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-grow: 1;
+  display: flex;
+  text-align: left;
+}
+.cxLookupWidthOnePerc {
+  width: 1%;
+}
+.cxLookupModal .cxTable lyte-table,
+.cxLookupModal .cxTable {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.cxLookupSearch .searchIcon {
+  cursor: pointer;
+}
+.cxLookupModal .numberDivCurrencyView,
+.cxLookupPopTd .numberDivCurrencyView {
+  text-align: left;
+}
+.cxLookupModalRelatedDDWrap {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  margin-right: 30px;
+}
+.cxLookupModalContent {
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 0px;
+}
+.cxLookupModalNew .cxLookupModalContent {
+  background: #EEF1F9;
+  padding: 0px 0px 15px 15px;
+}
+.cxLookupModalRelIdName {
+  padding-left: 30px;
+}
+.cxLookupModalRelIdDropdown {
+  width: 130px;
+}
+.cxLookupModalOld .cxLookupModalRelIdDropdown {
+  padding-left: 10px;
+  overflow: auto;
+  width: auto;
+}
+/**********************************
+    Modal Lookup Top Header Section STarts 
+***********************************/
+.cxFilterIconWrap {
+  display: flex;
+  padding: 8px 15px;
+  border: 1px solid #c0c6cc;
+  margin-right: 15px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.cxFilterIconWrap:hover {
+  background-color: #eff1f5;
+}
+.cxLookupModFilterActiveIcon {
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.55);
+  background-color: #eff1f5;
+}
+.cxLookupModalContentWrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+}
+.cxLookupModalContent.cxLookupModalResultContent {
+  padding: 30px 0px 30px 30px;
+}
+.cxHeaderLabel {
+  align-items: center;
+  display: flex;
+  margin-right: 20px;
+}
+.cxLookupSelParticpantLabel,
+.cxLookupModalRelIdView,
+.cxLookupModalModuleDD,
+.cxLookupModalRelIdDropdown,
+.cxLookupModalCustomView {
+  margin-right: 10px;
+}
+.cxLookupModalModuleDD,
+.cxLookupModalCustomView {
+  width: 200px;
+}
+.cxLookupModalTopWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px 10px 20px;
+  overflow: auto;
+}
+.cxLookupModalTopLeft {
+  display: flex;
+  align-items: center;
+}
+.cxLookupModalTopRight {
+  display: flex;
+  align-items: center;
+}
+/** Modal Lookup Top Header Section Ends **/
+/**********************************
+    Modal Lookup Top Content Section STarts 
+***********************************/
+.cxLookupSelParticpantCount {
+  font-family: 'LatoRegular', sans-serif;
+  font-size: 0.929rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 10px;
+}
+.cxLookupSelParticpantCount .cxLookupSelParticpantLabel {
+  font-family: 'LatoBold', sans-serif;
+  color: #3c9df7;
+}
+.cxSelTableLookupModalHeader .cxLookupSelParticpantCount .cxLookupSelParticpantLabel {
+  color: #333;
+}
+/**********************************
+    Modal Lookup Top Content Section Ends 
+***********************************/
+.cxLookupModalNew .cxLookupModalHeader {
+  padding: 0px;
+}
+.cxLookupModalBoldText {
+  font-family: 'LatoBold', sans-serif;
+}
+.cxLookupModalSeparator {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background: #A2A9B7;
+  margin: 0px 10px;
+}
+.cxLookupModalHeadClearBtn {
+  position: relative;
+  color: #222;
+  cursor: pointer;
+  display: inline-block;
+}
+.cxLookupModalHeadClearBtn::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: #222;
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+}
+.cxLookupModalTopRight lyte-button {
+  margin-right: 8px;
+}
+.cxLookupModalContentTop {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  min-height: 27px;
+}
+.cxLookupModalFltrClrBtn {
+  margin-left: 10px;
+}
+.cxLookupModalSmartFilterContainer {
+  width: 302px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #D9E0EB;
+  padding-top: 16px;
+  border-radius: 12px;
+  margin-right: 20px;
+  background: #fff;
+  transition: width 0.2s, margin 0.2s, visibility 0.2s, border-width 0.2s;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 100%;
+}
+.cxLookupModalSmartFilterContainer crux-smart-filter {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.cxLookupModalSmartFilterHide {
+  width: 0px;
+  margin: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  visibility: hidden;
+}
+.cxLookupModalSmartFilterContainer .cxFilterScrollSection {
+  flex: 1;
+  overflow: auto;
+}
+.cxLookupModalFilterFooterBtn {
+  padding: 15px 20px 20px;
+  box-shadow: 0px -4px 5px 0px rgba(0, 0, 0, 0.08);
+  z-index: 1;
+  width: 300px;
+}
+.cxLookupModalListView {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 300px;
+  overflow: hidden;
+}
+.cxLookupModalListView crux-list-view {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+}
+.cxLookupModalListView .cxLvViewContainer {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+}
+.cxLookupModalListView .cxLvViewContainer crux-table-component {
+  width: 100%;
+}
+.cxLookupModalListView .cxLvTableManageMenuBtn {
+  right: 0px;
+  border-radius: 0px;
+}
+.cxLookupModalListView .lyteExpTableWrapper {
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 6px 0px 0px 6px;
+  border-right: none;
+}
+.cxLookupModalListView .cxLvTableRowSelected lyte-exptable-td,
+.cxLookupModalListView .cxLvTableRowSelected lyte-exptable-td.lyteFixedColumn {
+  background: #F0F4FC;
+}
+.cxLookupModalListView .cxLvTableComp #cxLvTableHeaderRow lyte-exptable-th.cxLvEditIconCol {
+  width: 30px;
+  min-width: 30px;
+}
+.cxMMLModalSelectedPanel {
+  width: 100%;
+  border: 1px solid #D7E2ED;
+  border-radius: 12px 0px 0px 12px;
+  overflow: auto;
+  background: #fff;
+}
+.cxMMLModalSelectedTableHead {
+  justify-content: space-between;
+  background-color: #F8FAFF;
+  padding: 5px 20px;
+}
+.cxMMLModalSelTableCount {
+  background-color: #fff;
+  padding: 1px 3px;
+  border-radius: 3px;
+  margin-left: 5px;
+  border: 1px solid #D9E0EB;
+  font-size: 0.857rem;
+}
+.cxLookupModalParticipantHead {
+  font-family: 'LatoBold', sans-serif;
+  font-size: 1rem;
+}
+.cxLookupModalParticipentWrap {
+  padding-top: 15px;
+}
+.cxLookupModalParticipantDesc {
+  margin-top: 6px;
+  color: #222;
+  font-size: 0.857rem;
+}
+.cxLookupModalParticipantTag {
+  margin-top: 10px;
+}
+.cxLookupModalParticipantTag lyte-drop-button {
+  height: 70px;
+}
+.cxLookupModalListView .cxLvCheckboxCol .lyteRadioLabel {
+  display: none;
+}
+.cxLookupModalListView .cxLvHeader {
+  padding: 12px 20px 12px 5px;
+}
+.cxMLookupModalFooter {
+  box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.07);
+  padding: 10px 20px;
+}
+.cxLookupModalParticptSep {
+  width: 1px;
+  height: 100%;
+  background: #A2A9B7;
+  margin: 0px 8px;
+  display: block;
+}
+.cxLookupModalParticptAddBtn {
+  color: #3c9df7;
+  font-family: 'LatoSemiBold', sans-serif;
+  margin-left: 9px;
+  cursor: pointer;
+}
+.cxLookupModalParticptTagBtn {
+  color: #222;
+  position: relative;
+  cursor: pointer;
+}
+.cxLookupModalParticptTagBtn::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 1px;
+  width: 100%;
+  bottom: -1px;
+  left: 0px;
+  background: #222;
+}
+.cxMMLModalSelTableRemoveBtn {
+  color: #FF5D5A;
+  margin-right: 35px;
+  cursor: pointer;
+  visibility: hidden;
+}
+.cxMMLModalSelectedTableWrap:hover .cxMMLModalSelTableRemoveBtn {
+  visibility: visible;
+}
+.cxMMLModalSelTableBackIcon {
+  display: block;
+  width: 16px;
+  height: 14px;
+  left: 6px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -355px -158px;
+  mask-position: -355px -158px;
+  background-color: #333;
+  position: absolute;
+  cursor: pointer;
+}
+.cxMMLModalSelectedTable lyte-tr .cxMMLModalSelectedTableCell:first-child {
+  width: 50px;
+  min-width: 50px;
+  margin: auto;
+}
+.cxMMLSelTableRemoveIconWrap {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  visibility: hidden;
+}
+.cxMMLModalSelectedTable lyte-tr:hover .cxMMLSelTableRemoveIconWrap {
+  visibility: visible;
+}
+.cxMMLSelTableRemoveIcon {
+  display: block;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -22px -77px;
+  mask-position: -22px -77px;
+  background-color: #333;
+}
+.cxMMLSelTableRemoveIconWrap::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -5px;
+  top: -5px;
+  border-radius: 20px;
+  visibility: hidden;
+  background: #fff;
+}
+.cxMMLSelTableRemoveIconWrap:hover::before {
+  visibility: visible;
+}
+.lookupCriteriaLabelWrap1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*For text overflow issue in Td*/
+}
+.cxLookupDisableRow {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.cxLookupViewTopSection {
+  display: flex;
+  margin-bottom: 10px;
+}
+.cxLookupViewTopSection .cxLookupHasSingleRow {
+  display: flex;
+  align-items: center;
+}
+.cxLookupViewPopImgCont .cxLookupViewPopRecImg,
+.cxLookupViewPopImgCont {
+  width: 36px;
+  height: 36px;
+  border-radius: 36px;
+  display: inline-block;
+}
+.cxLookupViewPopImgCont {
+  margin-right: 10px;
+}
+.cxLookupViewLetterCircle,
+.cxEmptyProfileImage img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+.cxLookupViewLetterCircle {
+  background: var(--lyte-crux-lookup-view-popup-img-bg-color);
+  color: var(--lyte-crux-lookup-view-popup-img-text-color);
+  border: 1px solid var(--lyte-crux-lookup-view-popup-img-border-color);
+  font-size: 1rem;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+.cxLookupViewTopSection .cxLookupViewLetterCircle {
+  margin-right: 10px;
+}
+.cxLookupViewTopContentWrap {
+  flex: 1;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  font-size: 0.857rem;
+}
+.cxLookupViewTopHeading {
+  cursor: pointer;
+  font-size: 0.857rem;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxLookupViewTopDesc {
+  color: var(--lyte-crux-lookup-view-popup-desc-color);
+  overflow: hidden;
+  display: block;
+  word-break: break-word;
+  margin-top: 5px;
+}
+.cxDivTable {
+  display: table;
+}
+.cxDivTr {
+  display: table-row;
+}
+.cxDivTd {
+  display: table-cell;
+}
+.cxLookupViewLabel {
+  padding: 5px 15px 5px 0px;
+  min-width: 100px;
+  color: var(--lyte-crux-lookup-view-popup-form-label-color);
+  margin-right: 15px;
+  font-size: 0.857rem;
+  vertical-align: top;
+  max-width: 160px;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+.cxLookupViewValue {
+  font-family: 'LatoRegular', sans-serif;
+  padding: 5px 0px 5px 0px;
+  max-width: 295px;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  font-size: 0.857rem;
+}
+.cxLookupViewValueWrap {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cxLookupViewPopupHeadingLink {
+  color: var(--lyte-crux-lookup-view-popup-heading-color);
+}
+.cxLookupVwPopupValue.cxLookupViewValue .phoneRtl.cxPhoneViewZPBEnabled {
+  padding-right: 65px;
+  padding-left: 0px;
+}
+.cxLookupVwPopupValue .cxPhoneViewZPBEnabledIconWrap {
+  top: -3px;
+}
+.cxEmptyProfileImage {
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.cxFileSizeCompContainer.cxBoxWithRightIcon .cxBoxLeftContent {
+  position: relative;
+  overflow: visible;
+}
+.cxFileSizeCompContainer .cxBoxLeftContent::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: 25px;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+  right: 0px;
+  background: var(--lyte-crux-input-border-color);
+}
+.cxFileSizeDropdown {
+  width: 100px;
+}
+.criteriaRow .cxFileSizeCompContainer lyte-dropdown.cxFileSizeDropdown lyte-drop-button:hover,
+.cxFileSizeDropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button:hover,
+.cxFileSizeDropdown.cxBoxDropdown lyte-drop-button.lyteDropButtonDown,
+.cxFileSizeDropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxFileSizeCompContainer .cxFileSizeDropdown.cxBoxDropdown lyte-drop-button {
+  border: 0px;
+  box-shadow: none;
+  vertical-align: top;
+}
+/*# sourceMappingURL=crux-elements.css.map */

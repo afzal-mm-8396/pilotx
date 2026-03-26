@@ -1,0 +1,236 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cxDivTable {
+  display: table;
+  width: 100%;
+  border: 1px solid var(--lyte-crux-table-border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.cxDivTableBody {
+  display: table-row-group;
+}
+.cxDivTableTr {
+  display: table-row;
+}
+.cxDivTableTh {
+  display: table-cell;
+  font-size: 1rem;
+  cursor: auto;
+  color: var(--lyte-crux-table-heading-color);
+  background: var(--lyte-crux-div-table-th-bg-color);
+  padding: 8px 10px;
+  border-bottom: 2px solid var(--lyte-crux-table-th-border-color);
+  vertical-align: middle;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxDivTableTd {
+  display: table-cell;
+  color: var(--lyte-crux-table-td-text-color);
+  border-bottom: 1px solid var(--lyte-crux-table-td-border-color);
+  font-size: 1rem;
+  text-align: left;
+  padding: 11px 10px 10px;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+.cxDivTable .cxDivTableTr:last-child .divTableTd,
+.cxDivTable .cxDivTableTr:last-child .cxDivTableTd {
+  border-bottom: none;
+}
+.cxDivTableTr .cxDivTableTd:first-child,
+.cxDivTableTr .cxDivTableTh:first-child {
+  padding-left: 20px;
+}
+.cxDivTableTr:hover {
+  background: var(--lyte-crux-table-tr-hover-bg-color);
+}
+.cxDivTableTr.sortable-element::before {
+  content: none;
+}
+.cxDivTableWrapperIcon .cxDivTableEditIcon,
+.cxDivTableWrapperIcon .cxDivTableDeleteIcon {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  margin-top: 4px;
+}
+.cxDivTableEditIcon,
+.cxDivTableDeleteIcon {
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  background-color: var(--lyte-crux-div-table-delete-and-edit-icon-bg-color);
+}
+.cxDivTableEditIcon {
+  mask-position: -69px -153px;
+  width: 13px;
+  height: 13px;
+}
+.cxDivTableDeleteIcon {
+  mask-position: -93px -154px;
+  width: 11px;
+  height: 13px;
+}
+.cxDivTableWrapperIcon {
+  display: flex;
+  gap: 20px;
+  padding-left: 10px;
+}
+.cxDivTableWrapperIcon .cxIconAnimationWrapper {
+  position: relative;
+}
+.cxDivTableWrapperIcon .cxIconAnimationWrapper::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  border-radius: 50%;
+  z-index: 1;
+  right: -7px;
+  top: -3px;
+  background-color: var(--lyte-crux-div-table-icon-wrap-after-color);
+  border: 1px solid var(--lyte-crux-table-border-color);
+  visibility: hidden;
+  cursor: pointer;
+  transform: scale(0.7);
+}
+.cxDivTableWrapperIcon .cxIconAnimationWrapper:hover.cxIconAnimationWrapper::after {
+  transition: 0.2s;
+  visibility: visible;
+  transform: scale(1);
+}
+.cxDivTableTh crux-dropdown {
+  display: inline-block;
+}
+.cxDivTableTh .cxFakeDropButton,
+.cxDivTableTh lyte-dropdown.cxBoxDropdown lyte-drop-button,
+.cxDivTableTh .cxFakeDummyEventContainer:focus .cxFakeDropButton {
+  padding: 0;
+  border: 0;
+  padding-right: 25px;
+  box-shadow: none !important;
+  color: var(--lyte-crux-table-heading-color);
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  font-size: 0.929rem;
+}
+.cxDivTableTh lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxDivTableTh lyte-dropdown.cxBoxDropdown lyte-drop-button.lyteDropButtonUp,
+.cxDivTableTh lyte-dropdown.cxBoxDropdown lyte-drop-button.lyteDropButtonDown,
+.cxDivTableTh lyte-dropdown.cxBoxDropdown lyte-drop-button:hover {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.cxTableInfoSection {
+  display: flex;
+  margin-bottom: 16px;
+}
+.cxTableInfoSectionRight {
+  margin-left: auto;
+}
+.cxDivTableTr .cxDivTableDeleteIcon,
+.cxDivTableTr .cxDivTableEditIcon,
+.cxDivTableTr .editDeleteHoverAnimation,
+.cxDivTable .sortable-parent .sortable-element::after {
+  visibility: hidden;
+}
+.cxDivTableTr:hover .cxDivTableDeleteIcon,
+.cxDivTableTr:hover .cxDivTableEditIcon,
+.cxDivTableTr:hover .cxIconAnimationWrapper,
+.cxDivTableTr:hover.sortable-element::after {
+  visibility: visible;
+}
+.cxDivTableNoResultTr {
+  position: relative;
+}
+.cxDivTableNoResultTr .cxDivTableTd {
+  padding: 20px 10px;
+}
+.cxDivTableNoResultMsg {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  color: var(--lyte-crux-table-no-result-msg-color);
+}
+.cxDivTableTrDisabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.cxDivTableUserDp {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.cxDivTableUserDpAndDate {
+  display: flex;
+  align-items: center;
+}
+.cxDivTableUserDateAndTime {
+  margin-left: 10px;
+  white-space: nowrap;
+  font-size: 0.929rem;
+}
+.cxDivTable .sortable-parent .sortable-element:not(.lyteSortablePlaceholder)::after {
+  content: " ";
+  width: 7px;
+  height: 11px;
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-position: -325px -177px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -325px -177px;
+  display: inline-block;
+  position: absolute;
+  background-color: #333;
+  top: 15px;
+  left: 10px;
+}
+.cxDivTable .cxDivTableTr.sortable-element {
+  position: relative;
+}
+.cxDateAndtimeContent {
+  color: var(--lyte-crux-table-date-time-content-color);
+}
+.cxDivThDescWidth,
+.cxDivTdDescWidth {
+  width: 30%;
+}
+/*# sourceMappingURL=crux-div-table-component.css.map */

@@ -1,0 +1,94 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-detailpage-header.variables.less";
+
+@import "../themes/default/less-variables/crux-detailpage-header-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-detailpage-header-variables.less";
+}
+
+.cxDvRecordUserImage {
+	.cxDvRecordUserImageMixin();
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	background: @bg;
+	color: @color;
+	display: inline-block;
+	padding: @padding;
+	@{property-margin-left}: @margin-left;
+	text-align: center;
+	box-sizing: border-box;
+}
+.cxDvRecTag {
+	.cxDvRecTagMixin();
+	padding: @padding;
+}
+/*
+.dv_contact_info{
+    background: #f5f5f8;
+    border: 1px solid #e4e4e1;
+}
+*/
+/*
+.dv_contact_info{
+    background: #f5f5f8;
+    border: 1px solid #e4e4e1;
+}*/
+
+.cxDvHeaderParent{
+	.cxDvHeaderParentMixin();
+	justify-content: space-between;
+	padding: @padding;
+}
+/*
+.cx_detail_header_txtsection{
+    display: flex;
+    align-items: center;
+}
+*/
+/*
+.cx_detail_header_backicon{
+    cursor: pointer;
+}
+.cx_detail_recorddetails{
+    display: flex;
+}
+*/
+.cxDvRecordRight{
+	.cxDvRecordRightMixin();
+	@{property-margin-left}: @margin-left;
+}
+.cxDvRecordName{
+	.cxDvRecordNameMixin();
+	margin-bottom: @margin-bottom;
+}
+.cxDvRecordHeader1,
+.cxDvRecordHeaderhypen,
+.cxDvRecordHeader2{
+	.cxDvRecordHeader2Mixin();
+	font-family: @font-family;
+	font-size: @font-size;
+}
+.cxDvRecordHeaderhypen{
+	.cxDvRecordHeaderhypenMixin();
+	margin: @margin;
+}
+.cxDvRecordEmail{
+	.cxDvRecordEmailMixin();
+	color: @color;
+	font-size: @font-size;
+}
+.cxDvApprovalMoreOptionsBtn{
+	.cxDvApprovalMoreOptionsBtnMixin();
+	@{property-margin-right}: @margin-right;
+}
+.cxDetailHeader.cxMoreIconHor,
+.cxDvRecordMoreIcon,
+.cxDvApprovalMoreOptionsBtn .cruxSprite { 
+	vertical-align: middle;
+}

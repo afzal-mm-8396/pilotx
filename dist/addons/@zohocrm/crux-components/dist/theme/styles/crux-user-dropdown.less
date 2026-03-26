@@ -1,0 +1,387 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-user-dropdown.variables.less";
+
+@import "../themes/default/less-variables/crux-user-dropdown-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@cruxUseCssMaskForBg: true;
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-user-dropdown";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-user-dropdown-variables.less";
+}
+
+crux-user-dropdown {
+	font-size: 15px;
+	max-width: 100%;
+}
+crux-user-dropdown lyte-dropdown {
+	max-width: 100%;
+    display: block;
+}
+.cxUserDropbox  .userSearchBox{
+    flex:1;
+}
+.cxUserDropbox  .userSearchBox::after {
+    .cxUserDropboxSearchBoxAfterMixin();
+	content: '';
+	background-image: @bg-img;
+    background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	position: absolute;
+    @{property-right}: @right;
+	top: @top;
+	bottom: @bottom;
+	margin: auto;
+	opacity: @opacity;
+}
+.cxUserDropbox  .cxUserDropboxSearchLoadingIcon {
+    .cxUserDropboxSearchLoadingIconMixin();
+	position: absolute;
+    @{property-right}: @right;
+	top: @top;
+    width: @w;
+    height: @h;
+    background-image: @bg-img;
+    background-size: @bg-size;
+}
+.cxUserDropbox  .userSecondaryDetail {
+    .cxUserDropboxSecondaryDetailMixin();
+	color: @color;
+    display: flex;
+    justify-content: space-between;
+}
+.cxUserDdSecondaryMsg {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.cxUserDdSuggestUserPercentage {
+    .cxUserDdSuggestUserPercentageMixin();
+    font-family: @font-family;
+    font-weight: @font-weight;
+    color: @color;
+    font-size: @font-size;
+    white-space: nowrap;
+    @{property-margin-left}: @margin-left;
+}
+.cxUserDropbox  lyte-drop-item {
+    .cxUserDropboxItemMixin();
+	padding: @padding;
+    display: flex;
+  // min-width: @min-w; Not needed in PRM
+  align-items: flex-start;
+  // line-height: @line-height;
+}
+.crux_dropbox_filter lyte-drop-item {
+    .cxUserDropboxFilterDropItemMixin();
+    padding: @padding;
+    color: @color;
+}
+.cxUserDropbox  .clearField + .userSearchBox::after,
+.crux_dropbox_filter lyte-drop-item[selected=true]::before {
+    content: none;
+}
+.cxUserDropbox  .lyteDropdownSelection {
+    .cxUserDropboxSelectionMixin();
+	background: @bg;
+}
+.cxUserDropbox  .result-selected::before {
+    .cxUserDropboxSelectedBeforeMixin();
+	content: "";
+	width: @w;
+	height: @h;
+	position: absolute;
+    @{property-left}: @left;
+	top: @top;
+	margin-top: @margin-top;
+	// background-image: @bg-img;
+    // background-position: @bg-pos;
+    .cruxIconBgImageMixin(@mask-img, @mask-pos, @bg-color);
+}
+.crux_dropbox_filter {
+    .cxDropboxFilterMixin();
+    @{property-margin-left}: @margin-left;
+}
+.crux_dropbox_filter lyte-drop-body {
+    .cxDropboxFilterDropbodyMixin();
+    padding: @padding;
+    max-height: @max-height;
+	overflow-x: hidden;
+}
+.cxUserDropbox  lyte-drop-body {
+    .cxUserDropboxDropBodyMixin();
+    padding: @padding;
+    max-height: @max-height;
+}
+// .cxUserDropFilterWrapperCont { 
+	// Not needed in PRM 
+// 	min-width: 300px;
+// }
+
+.cxUserDropboxInitialLoaderWrap {
+	.cxUserDropboxInitialLoaderWrapMixin();
+	// padding: @padding;
+text-align: @text-align;
+}
+.cxUserDropboxItemsLoader {
+    .cxUserDropboxItemsLoaderMixin();
+    width: @w;
+    height: @h;
+    background-image: @bg-img;
+    background-size: @bg-size;
+    display: inline-block;
+}
+.displayFlex {
+	display: flex;
+}
+lyte-drop-box.cxUserDropbox  .userSearchBox,
+.user-lookup-right {
+    flex: 1;
+}
+
+.cxUserDropdownInnerFilter {
+    .cxUserDropdownInnerFilterMixin();
+    max-width: @max-w;
+}
+.cxUserDropdownInnerFilter lyte-drop-button {
+    .cxUserDropdownInnerfilterDropButtonMixin();
+    box-shadow: @box-shadow;
+    // border: @border;
+    // border-top: @border-top;
+    // @{property-border-left}: @border-left;
+    // border-radius: @border-radius;
+	display: block;
+    // @{property-padding-left}: @padding-left !important;
+    // @{property-padding-right}: @padding-right !important;
+    border: none !important;
+    @{property-border-right}: @border-right !important;
+    // @{property-border-right}: 1px solid var(--formBorder) !important;
+}
+.cxUserDropdownInnerFilter lyte-drop-button:first-of-type {
+    z-index: 2;
+}
+.cxUserDropdownInnerFilter:hover lyte-drop-button {
+	z-index:3;
+}
+// .cxUserDropdownInnerFilter lyte-drop-button {
+//     border-radius: 0;
+// }
+.cxUserDropdownInnerFilter:first-of-type  lyte-drop-button {
+    .cxUserDropdownInnerFilterFirstBorderRadiusMixin();
+	border-radius: @border-radius;
+}
+// .cxUserDropdownInnerFilter:first-of-type {
+// 	@{property-margin-right}: -1px;
+// }
+.cxUserDropFilterWrapperCont .cxComboBoxEmptyMessage {
+    height: auto;
+    min-height: 50px;
+}
+/*FOr rtl -ltr padding alignment */
+// lyte-dropdown.cxUserDropdownInnerFilter lyte-drop-button {
+//     .cxUserDropdownInnerfilterDropButtonPaddingTempMixin();
+    
+// }
+
+lyte-drop-box.cxUserDropbox  lyte-input.userSearchBox input {
+    .cxUserDropboxSearchBoxInputMixin();
+    padding: @padding;
+}
+.cxUserDropbox  .multiSelectDd lyte-drop-item {
+    .cxUserDropboxMultiselectDropItemMixin();
+	padding: @padding;
+}
+
+.cxUserDropbox  .clearField {
+    .cxUserDropboxClearFieldMixin();
+    background-image: @bg-img;
+    background-position: @bg-pos;
+    width: @w;
+    height: @h;
+    transform: @transform;
+    z-index: @z-index;
+    content: '';
+    position: absolute;
+    @{property-right}: @right;
+    top: @top;
+    cursor: pointer;
+    opacity: @opacity;
+}
+.cxUserDropbox  .noUsersDiv{
+    .cxUserDropboxNoUsersFoundDivMixin();
+	display: block;
+	padding: @padding;
+	color: @color;
+	text-align: center;
+    text-transform: capitalize;
+}
+
+.cxUserDropbox  .lyteDropdownNoResult {
+	display: none !important;
+}
+
+.cxUserDropboxScrollLoaderIcon {
+    .cxUserDropdownLoadingGifMixin();
+    width: @w;
+    height: @h;
+    background-image: @bg-img;
+    background-size: @bg-size;
+    display: inline-block;
+}
+// .cruxUserImgWrap.allUsers,
+.cruxUserImgWrap {
+    .cxUserDropdownImgMixin();
+	height: @h;
+	width: @w;
+	border-radius: @border-radius;
+	box-shadow: @box-shadow;
+    flex-shrink: 0;
+    border: @border;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: @bg-color;
+}
+.cruxSelUserImgWrap {
+    .cxSelUserImgWrapMixin();
+    height: @height;
+    width: 	@width;
+    border-radius: @border-radius;
+    @{property-margin-right}: @margin-right;
+    // margin-top: 2px;
+    border: @border;
+    box-sizing: border-box;
+}
+
+// .cruxUserImgWrap {
+//     align-self: center;
+// }
+.cruxUserImg {
+    .cruxUserImgMixin();
+    max-width: @max-w;
+    max-height: @max-h;
+    border-radius: @border-radius;
+}
+.cruxSelUserImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+// .loggedInUser .cruxUserImg {
+//     .cxUserDropdownLoggedInUserImgMixin();
+// 	width: @w;
+// 	height: @h;
+// 	opacity: @opacity;
+// 	border-radius: @border-radius;
+// 	box-shadow: @box-shadow;
+//     background-image: @bg-img;
+//     background-size: @bg-size;
+// }
+.cxUserDropboxNoUserPhoto .cruxSelUserImg,
+.cxUserDropboxNoUserPhoto .cruxUserImg {
+    .cxUserDropboxNoUserPhotoUserImgMixin();
+    background-image: @bg-img;
+    background-size: @bg-size;
+    box-shadow: none;
+    display: inline-block;
+}
+.cxUserDropbox  lyte-drop-item.lyteDropdownActive,
+.crux_userdrop_multi_placeholder ~ .lyteMultipleSelect {
+	display: none;
+}
+// .loggedInUser,
+// .cruxUserImgWrap.allUsers {
+//     .cxUserDropdownAllUsersMixin();
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	background: @bg;
+// }
+// .cruxUserImgWrap .allUsersImg {
+//     .cxUserImgWrapAllUsersImgMixin();
+// 	background: @bg;
+// 	width: @w;
+// 	height: @h;
+// 	display: inline-block;
+// 	background-position: @bg-pos;
+// 	opacity: @opacity;
+// }
+.cruxDropAlluser {
+	display: flex;
+    align-self: center;
+}
+.userDetail,
+.cxUserDetail {
+    .cxUserDetailMixin();
+    word-break: break-all;
+    max-width: @max-width;
+    flex-grow: 1;
+    @{property-margin-left}: @margin-left;
+}
+.cxUserDropdownLoadingWithZia {
+    .cxUserDropdownLoadingWithZiaMixin();
+    height: @h;
+}
+crux-user-dropdown lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button {
+    .cxUserDropdownMultipleDropButtonMixin();
+    padding-top: @padding-top;
+    padding-bottom: @padding-bottom;
+    white-space: @white-space;
+    /*overflow: @overflow;*/
+    text-overflow: @text-overflow;
+}
+crux-user-dropdown .cxBoxDropdown[lt-prop-type="multiple"] .lyteDropdown-disabled lyte-drop-button::after, 
+crux-dropdown .cxDropdownDisabled .cxFakeDropButton:after {
+    opacity: 0.3;
+}
+.cxNoUserSelected.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button {
+    .cxUserDropdownNoUserSelectedMultipleDropButtonMixin();
+    padding-top: @padding-top;
+    padding-bottom: @padding-bottom;
+}
+.cxCriteriaTable .cxElementDiv .cxCriteriaValueCol {
+    .cxCriteriaValueColElemenMixin();
+    max-width: @max-width;
+}
+.lyteDropdown-disabled lyte-drop-button{
+    border-radius: 6px;
+}
+
+.cxUserDropFilterWrapperCont{
+    .cxUserDropFilterWrapperContMixin();
+    display: flex;
+    width: @w;
+}
+
+/* 
+	Border-radius will come by default.
+	But not for LoggedIn USer icon
+	*/
+.cruxUserImgWrap .cruxUserImg.cxSprite,
+.cruxUserImgWrap .cruxUserImg.cxLoggedInUserIcon { 
+	border-radius: 0 !important;
+}
+
+/* Temp Fix for User dropbox override Starts */
+.cxUserDropbox .cxDropdownInputGroupFocused {
+    border-radius: 6px;
+}
+.cxUserDropbox .cxDropdownInputGroupFocused lyte-input .lyteField {
+    .cxUserDropboxInpuFocusedLyteFieldMixin();
+    border: @border;
+    border-radius:@border-radius;
+    box-shadow:@box-shadow;
+}
+.cxUserDropbox .cxComboBoxEmptyMessage {
+	height: auto;
+    min-height: 50px;
+}
+/* Temp Fix for User dropbox override Ends */

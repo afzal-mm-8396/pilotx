@@ -1,0 +1,125 @@
+.cxIconHoverEffectMixin(){
+	@w: 26px;
+	@h: 26px;	
+}
+
+.cxIconHoverEffectBeforeMixin(){
+	@w: 100%;
+	@h: 100%;
+	@border-radius: 100px;
+	@bg-color: @cxIconHoverEffectBg;
+	@transform: scale(0.8);
+	@opacity: 0;
+	@transition: opacity 0.2s,transform 0.2s;
+}
+
+.cxIconHoverEffectBeforeAnimMixin(){
+	@transform: scale(1);
+	@opacity: 1;
+}
+
+.cxSaveCancelWrapMixin() {
+	@padding-top: 7px;
+	// @padding-top: 0;
+}
+.cxSaveAndCancelMixin() {
+	@w: 18px;
+	@h: 18px;
+	@border: 1px solid @cxIconSaveCancelBorder;
+	@border-radius: 50%;
+}
+.cxSaveMixin() {
+	@bg: @cxIconSaveBg;
+	@border: 1px solid @cxIconSaveBorder;
+}
+.cxCancelMixin() {
+	@margin-left: 10px;
+}
+.cxSaveAndCancelBeforeMixin() {
+	@bg-img: @cruxSprite;
+}
+.cxSaveBeforeMixin() {
+	@bg-pos: -316px -116px;
+	@w: 11px;
+	@h: 8px;
+	@background-color: @cxIconSaveBeforeBg;
+}
+.cxCancelBeforeMixin() {
+	@bg-pos: -337px -115px;
+	@w: 9px;
+	@h: 10px;
+}
+
+.cxUserLookupModalBackIconMixin() {
+	@bg: transparent @cruxSprite no-repeat -355px -158px;
+	@w: 16px;
+	@h: 14px;
+	@opacity: 0.4;
+	@transform: translateX(calc(-100% - 5px)) translateY(5px);
+	@margin-right: 5px;
+}
+.cxTableHeaderFilterIconMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -380px -156px;
+	@w: 16px;
+	@h: 16px;
+}
+.cxNewPopupCloseIconMixin(){
+	@cursor: pointer;
+	@display: inline-block;
+	@opacity: .8;
+}
+.cxWarnIconMixin(){
+    @bg-img:@cruxSprite;
+    @bg-pos: -125px -223px;
+    @bg-color: @cxIconErrorMaskBg;
+    @w: 15px;
+    @h: 14px;
+}
+
+.cxArwIconMixin(){
+	@bg-img:@cruxSprite;
+    @bg-pos: -1px -2px;
+    @bg-color: @cxIconBaseMaskBg;
+    @w: 8px;
+    @h: 4px;
+}
+
+.cxArrowDownLineIconMixin(){
+	@bg-img:@cruxSprite;
+    @bg-pos: -13px -2px;
+    @bg-color: @cxIconBaseMaskBg;
+    @w: 10px;
+    @h: 5px;
+}
+
+.cxDeleteOutlineIconMixin(){
+	@bg-img:@cruxSprite;
+    @bg-pos: -284px -380px;
+    @bg-color: @cxIconBaseMaskBg;
+    @w: 15px;
+    @h: 17px;
+}
+
+.cxPlayIconMixin(){
+	@bg-img:@cruxSprite;
+    @bg-pos: -305px -231px;
+    @bg-color: @cxIconBaseMaskBg;
+    @w: 17px;
+    @h: 16px;
+}
+
+.cxPauseIconMixin(){
+	@bg-img:@cruxSprite;
+    @bg-pos: -243px -401px;
+    @bg-color: @cxIconBaseMaskBg;
+    @w: 17px;
+    @h: 17px;
+}
+.cxMinusRoundedIconMixin(){
+	@bg-img:@cruxSprite;
+    @bg-pos: -356px -135px;
+    @bg-color: @cxIconBaseMaskBg;
+    @w: 17px;
+    @h: 17px;
+}

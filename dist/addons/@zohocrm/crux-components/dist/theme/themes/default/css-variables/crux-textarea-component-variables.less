@@ -1,0 +1,62 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+/********************** 
+    Common Color State to be considered for Dropdown, Input States
+    
+    1. Default State Color
+    2. Hover State Color
+    3. Focus State Color
+    4. Error State Color
+    5. ReadOnly State Color
+    6. Disabled State Color
+    7. Not Found State Color
+**********************/
+
+.getRootVariables() {
+    --@{cssPrefix}-textarea-border-color : var(--crux-element-border-color);
+    --@{cssPrefix}-textarea-text-color: var(--crux-base-text-color);
+    --@{cssPrefix}-textarea-label-text-color: #aaa;
+    --@{cssPrefix}-textarea-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-textarea-placeholder-color: var(--crux-placeholder-color);
+    --@{cssPrefix}-textarea-box-shadow-color: var(--crux-element-hover-shadow-color);
+    --@{cssPrefix}-textarea-mandatory-color: var(--crux-mandatory-color);
+    
+
+    --@{cssPrefix}-textarea-hover-border-color : var(--crux-element-hover-border-color);
+    --@{cssPrefix}-textarea-hover-text-color: var(--crux-base-text-color);
+    --@{cssPrefix}-textarea-hover-label-text-color: #aaa;
+    --@{cssPrefix}-textarea-hover-bg-color: var(--crux-element-bg-color);
+    // --@{cssPrefix}-textarea-hover-placeholder-color: var(--crux-placeholder-color);
+    --@{cssPrefix}-textarea-hover-box-shadow-color: var(--crux-element-hover-shadow-color);
+
+    --@{cssPrefix}-textarea-focus-border-color : var(--crux-element-focus-border-color);
+    --@{cssPrefix}-textarea-focus-text-color: var(--crux-base-text-color);
+    --@{cssPrefix}-textarea-focus-label-text-color: #aaa;
+    --@{cssPrefix}-textarea-focus-bg-color: var(--crux-element-bg-color);
+    // --@{cssPrefix}-textarea-hover-placeholder-color: var(--crux-placeholder-color);
+    --@{cssPrefix}-textarea-focus-box-shadow-color: var(--crux-element-focus-shadow-color);
+    
+    --@{cssPrefix}-textarea-error-border-color: var(--crux-element-error-border-color);
+    --@{cssPrefix}-textarea-error-text-color: var(--crux-element-error-border-color);
+    // --@{cssPrefix}-textarea-error-box-shadow-color: ;
+    // --@{cssPrefix}-textarea-error-box-shadow-color: ;
+
+    --@{cssPrefix}-textarea-readonly-border-color : var(--crux-element-hover-border-color);
+    // --@{cssPrefix}-textarea-readonly-text-color: ;
+    // --@{cssPrefix}-textarea-readonly-label-text-color: ;
+    // --@{cssPrefix}-textarea-readonly-bg-color: ;
+    // --@{cssPrefix}-textarea-readonly-placeholder-color: ;
+    // --@{cssPrefix}-textarea-readonly-box-shadow-color: ;
+
+    --@{cssPrefix}-textarea-no-result-text-color: var(--crux-no-result-color);
+}

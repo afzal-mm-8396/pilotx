@@ -1,0 +1,412 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-image-component.variables.less";
+
+@import "../../themes/default/less-variables/crux-input-elements-variables.less";
+
+@import "../../themes/default/less-variables/crux-image-component-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+	@import "../../themes/default/css-variables/crux-input-elements-variables.less";
+    @import "../../themes/default/css-variables/crux-image-component-variables.less";
+}
+
+@cruxUseCssMaskForBg: true;
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-image-component";
+
+.cxImageViewWrap {
+	.cxImageViewWrapMixin();
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	cursor: pointer;
+	position: relative;
+}
+.cxImageViewNoImage,
+.cxImageViewImgElem,
+.cxImageViewOverlay {
+	.cxImageViewImageDimensionCommonMixin();
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+}
+.cxImageViewOverlay {
+	.cxImageViewOverlayMixin();
+	position: absolute;
+	background: @bg;
+	z-index: @z-index;
+	opacity: @opacity;
+	transition: opacity 0.1s ease;
+}
+.cxImageViewWrap:hover .cxImageViewOverlay {
+	.cxImageViewWrapHoverOverlayMixin();
+	opacity: @opacity;
+}
+.cxImageCameraIcon {
+	.cxImageCameraIconMixin();
+	width: @w;
+	height: @h;
+	.cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+.cxImageViewImgElem {
+	object-fit: cover;
+}
+.cxImageViewNoImage {
+	.cxImageViewNoImageMixin();
+	background-image: @bg-img;
+	background-size: @background-size;
+	color: @color;
+	text-align: center;
+	line-height: @line-height;
+	font-size: @font-size;
+	font-family: @font-family;
+}
+.cxImageViewOverlay:hover + .cxImageViewNoImage {
+	.cxImageViewOverlayHoverNNextElemNoImageMixin();
+	color: @color;
+}
+.cxImageViewNoImage1 {
+	.cxImageViewNoImage1Mixin();
+	background-position: @bg-pos;
+}
+.cxImageViewNoImage2 {
+	.cxImageViewNoImage2Mixin();
+	background-position: @bg-pos;
+}
+.cxImageViewNoImage3 {
+	.cxImageViewNoImage3Mixin();
+	background-position: @bg-pos;
+}
+.cxImageViewNoImage4 {
+	.cxImageViewNoImage4Mixin();
+	background-position: @bg-pos;
+}
+.cxImageViewNoImage5 {
+	.cxImageViewNoImage5Mixin();
+	background-position: @bg-pos;
+}
+.cxImageViewNoImage6 {
+	.cxImageViewNoImage6Mixin();
+	background-position: @bg-pos;
+}
+.cxImageViewNoImage7 {
+	.cxImageViewNoImage7Mixin();
+	background-position: @bg-pos;
+}
+.cxImageViewNoImage8 {
+	.cxImageViewNoImage8Mixin();
+	background-position: @bg-pos;
+}
+.cxImageViewNoImage9 {
+	.cxImageViewNoImage9Mixin();
+	background-position: @bg-pos;
+}
+.cxImageViewNoImage10 {
+	.cxImageViewNoImage10Mixin();
+	background-position: @bg-pos;
+}
+
+.cxMultiImageList{
+	.cxMultiImageListMixin();
+	display: flex;
+	flex-wrap: wrap;
+	gap: @gap;
+}
+
+.cxImgCompValidationCont ~ .cxMultiImgUploadBtn,
+.cxMultiImageList ~ .cxMultiImgUploadBtn{
+	.cxMultiImgUploadBtnMixin();
+	margin-top: @margin-top;
+}
+
+.cxImgCompLoader{
+	.cxImgCompLoaderMixin();
+	position: absolute;
+	width: @w;
+	height: @h;
+	z-index: @z-index;
+	background: @bg;
+}
+
+.cxImgCompLoader::after{
+	.cxImgCompLoaderAfterMixin();
+	content: '';
+	position: absolute;
+	width: @w;
+	height: @h;
+	transform: @transform;
+	background: @bg;
+	box-shadow: @box-shadow;
+	animation: cxImageLoaderAnimation 0.7s infinite;
+}
+
+.cxImageElemWrapper{
+	.cxImageElemWrapperMixin();
+	border: @border;
+	padding: @padding;
+	border-radius: @border-radius;
+	position: relative;
+}
+
+.cxImageElemWrapper:hover{
+	.cxImageElemWrapperHoverMixin();
+	border:  @border
+}
+
+.cxImageElemViewWrapper:hover,
+.cxImageElemViewWrapper{
+	.cxImageElemViewWrapperMixin();
+	border: @border;
+}
+
+.cxImgElemReadOnly{
+	.cxImgElemReadOnlyMixin();
+	background: @bg;
+	border-color: @border-color;
+}
+
+.cxImageElemWrapper.cxWrapperElemWithImage{
+	.cxWrapperElemWithImageMixin();
+	padding: @padding;
+}
+
+.cxMultiImageListViewCont{
+	.cxMultiImageListViewContMixin();
+	width: @w;
+	height: @h;
+	border: @border;
+	display: block;
+	flex-shrink: @flex-shrink;
+	border-radius: @border-radius;
+	overflow: hidden;
+	position: relative;
+}
+
+.cxMultiImageListViewCont.sortable-element-selected{
+	.cxMultiImgListVwContSortableSelectElemMixin();
+	border: @border;
+	box-shadow: @box-shadow;
+}
+
+.cxMultiImageListViewCont.sortable-element-selected.cxImgListVwSortableSelectElemOndrag{
+	.cxImgListVwContSortableSelectElemOndragMixin();
+	border: @border;
+	// box-shadow: @box-shadow;
+}
+
+.cxImageContHoverCont{
+	.cxImageContHoverContMixin();
+	cursor: pointer;
+	// visibility: hidden;
+	// position: absolute;
+	width: @w;
+	height: @h;
+	background: @bg;
+	display: inline-block;
+}
+
+// .cxMultiImageListViewCont:hover .cxImageContHoverCont{
+// 	visibility: visible;
+// }
+
+.cxImgCompDeleteIcon{
+	.cxImgCompDeleteIconMixin();
+	width: @w;
+	height: @h;
+	display: inline-block;
+	.cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+	position: absolute;
+	top: @top;
+	@{property-right}: @right;
+}
+
+.cxImgCompDeleteIcon:hover{
+	.cxImgCompDeleteIconHoverMixin();
+	background-color: @bg-color;
+}
+
+.cxImgCompPreviewIcon{
+	.cxImgCompPreviewIconMixin();
+	width: @w;
+	height: @h;
+	display: inline-block;
+	.cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+	position: absolute;
+	inset: @inset;
+	margin: @margin;
+}
+
+.cxMultiImageListViewCont .cxListPreviewImage{
+	.cxListPreviewImageMixin();
+	width: @w;
+	height: @h;
+	object-fit: cover;
+}
+
+.cxImgCompValidationWaiting::before,
+.cxImgCompValidationProcessing::before{
+	.cxImgCompValidationProcessingIconMixin();
+	content: '';
+	display: inline-block;
+	width: @w;
+	height: @h;
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	inset: @inset;
+	position: absolute;
+	margin: auto;
+}
+
+.cxImgCompValidationWaiting::before{
+	.cxImgCompValidationWaitingIconMixin();
+	width: @w;
+	height: @h;
+	background-position: @bg-pos;
+}
+
+.cxImgCompValidationCont{
+	cursor: pointer;
+}
+
+.cxImgCompViewEmptyIcon{
+    .cxImgCompViewEmptyIconMixin();
+    display: block;
+	width: @w;
+	height: @h;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+	margin: @margin;
+}
+
+@keyframes cxImageLoaderAnimation {
+	0%{
+		@{property-left}: -20px;
+	}
+	100%{
+		@{property-left}: calc(100% + 20px);
+	}
+}
+
+.cxImageElemWrapper.cxSFImgElemWrapper{
+	.cxSFImgElemWrapperMixin();	
+	padding: @padding;
+	display: flex;
+}
+
+.cxSFImgListCont{
+	.cxSFImgListContMixin();
+	flex: @flex;
+}
+
+.cxSFImgListContExpand.cxSFImgListCont{
+	.cxSFImgListContMixin();
+	padding: @padding;
+	display: flex;
+	align-items: center;
+}
+
+.cxSFImgListUploadIconDiv{
+	.cxSFImgListUploadIconDivMixin();
+	flex-shrink: @flex-shrink;
+	padding: @padding;
+	background: @bg;
+	border-radius: @border-radius;
+	cursor: pointer;
+}
+
+.cxSFImgListUploadIcon{
+	.cxSFImgListUploadIconMixin();
+	display: inline-block;
+	width: @w;
+	height: @h;
+	.cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+	vertical-align: top;
+}
+
+.cxSFImgListPlaceholder{
+	.cxSFImgListPlaceholderMixin();
+	color: @color;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	width: @w;
+	height: @h;
+	padding: @padding;
+	box-sizing: border-box;
+}
+
+.cxSFImgListCollapseView{
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+.cxGalleryImageIcon.cxSFShowMoreImageIcon{
+	.cxSFShowMoreImageIconMixin();
+	@{property-margin-right}: @margin-right;
+	background-color: @bg-color;
+}
+
+.cxImgListLockIcon{
+	.cxImgListLockIconMixin();
+	display: inline-block;
+	width: @w;
+	height: @h;
+	.cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color)
+}
+
+.cxSFImgListLockIcon{
+	.cxSFImgListLockIconMixin();
+	position: relative;
+	@{property-right}: @right;
+	background-color: @bg-color;
+	vertical-align: top;
+}
+
+.cxImageElemWrapper.cxImgElemReadOnly:not(.cxSFImgElemWrapper){
+	.cxImageElemWrapperReadOnlyMixin();
+	@{property-padding-right}: @padding-right;
+}
+
+.cxImgListLockIconDefault{
+	.cxImgListLockIconDefaultMixin();
+	position: absolute;
+	@{property-right}: @right;
+	top: @top;
+}
+
+.cxImgHoverContWrapper{
+	.cxImgHoverContWrapperMixin();
+	position: absolute;
+	cursor: pointer;
+	width: @w;
+	height: @h;
+	visibility: hidden;
+}
+
+.cxMultiImageListViewCont:hover .cxImgHoverContWrapper{
+	visibility: visible;
+}
+
+.cxMultiImageListViewCont.sortable-element{
+	cursor: grab;
+}
+
+.cxImgPrevListOnDrag,
+.cxMultiImageListViewCont.sortable-element-selected .cxImageContHoverCont,
+.cxMultiImageListViewCont.sortable-element-selected,
+.cxImgPrevListOnDrag .cxMultiImageListViewCont.sortable-element{
+	cursor: grabbing;
+}
+
+.cxImgPrevListOnDrag .cxMultiImageListViewCont .cxImgHoverContWrapper{
+	visibility: hidden;
+}
+
+.cxImageElemWrapper.cxImageElemViewWrapper.mandatoryField:before{
+    content: none;
+}

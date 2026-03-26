@@ -1,0 +1,81 @@
+/*crux comp base class starts*/
+/* .cxFlex{
+    display: flex;
+}
+.cxAlignItemCenter{
+    align-items: center;
+}
+.cxCP{
+    cursor: pointer;
+} */
+/*crux comp base class ends*/
+
+.cxDvBodyContent{
+    overflow: auto;
+    min-height: 200px;
+}
+.cxDvNavItem{
+    font-family: var(--crux-bold-font);
+    font-weight: var(--crux-font-weight-bold);
+    color: #202123;
+}
+.field-section-container {
+    display: flex;
+    width: 100%;
+}
+.cxDvFchildContainer {
+    flex: 1;
+}
+.cxDvInfoLabel {
+    text-align: right;
+    padding: 14px 17px 13px 0;
+    flex: 0 0 200px;
+    border: 1px solid transparent;
+}
+.cxDvRecordUserImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: #9775FA;
+    color: #fff;
+}
+.cxDvRecTag {
+    padding: 4px 12px;
+}
+.cxDvWrapParent{
+    background-color: #EDF0F4;
+    padding: 15px 20px;
+}
+/*.dv_details_section,*/
+.cxDvTabContent{
+    border-radius: 0 0  6px 6px;
+    box-shadow: 0 3px 4px 0 #00000008;
+    border: 1px solid #d7e2ed;
+    padding: 20px;
+    background: #fff;
+}
+.cxDvLyteNav{
+    border-radius: 6px 6px 0 0;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: auto;
+}
+.cxEditIcon {
+width: 13px;
+height: 13px;
+-webkit-mask-position: -69px -153px;
+mask-position: -69px -153px;
+background-color: #333;
+}
+.cxMoreIcon {
+width: 16px;
+height: 5px;
+-webkit-mask-position: -368px -342px;
+mask-position: -368px -342px;
+background-color: #333;
+}
+.cxDvTagIconPosition{
+    display : flex;
+    align-items: center;
+}

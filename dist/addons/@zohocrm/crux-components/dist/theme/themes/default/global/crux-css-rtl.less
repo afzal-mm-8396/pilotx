@@ -1,0 +1,26 @@
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+    @{property-margin-left}: auto;
+	@{property-margin-right}: inherit;
+}
+
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+// .cxLookupViewTopContentWrap {
+// 	margin-left: 0;
+// 	margin-left: 10px;
+// }
+
+.cxLookupViewLabel {
+    @{property-padding-right}: 0px;
+    @{property-padding-left}: 15px;
+}
+// .cxLookupViewValue {
+//     padding-right :10px;
+// }
+.cxLookupViewPopImgCont{
+    margin-right: initial !important;  /* stylelint-disable-line property-disallowed-list */
+    margin-left: 10px; /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */

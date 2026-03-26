@@ -1,0 +1,39 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-dropdown-border-color : var(--crux-element-border-color);
+    --@{cssPrefix}-dropdown-text-color: var(--crux-base-text-color);
+    --@{cssPrefix}-dropdown-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-dropdown-placeholder-color: var(--crux-placeholder-color);
+    --@{cssPrefix}-dropdown-hover-border-color: var(--crux-element-hover-border-color);
+    --@{cssPrefix}-dropdown-hover-box-shadow-color: var(--crux-element-hover-shadow-color);
+    --@{cssPrefix}-dropdown-focus-border-color: var(--crux-element-focus-border-color);
+    --@{cssPrefix}-dropdown-focus-box-shadow-color: var(--crux-element-focus-shadow-color);
+    --@{cssPrefix}-multiple-dropdown-item-bg-color: #fafbfc;
+    --@{cssPrefix}-multiple-dropdown-item-border-color: #ddd;
+    --@{cssPrefix}-multiple-dropdown-close-hover-bg-color: #eee;
+    --@{cssPrefix}-dropbox-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-dropbox-border-color: #d6d6d6;
+    --@{cssPrefix}-dropbox-box-shadow-color: rgba(0, 0, 0, 0.15);
+    --@{cssPrefix}-dropbox-text-color: var(--crux-base-text-color);
+    --@{cssPrefix}-dropbox-search-border-color: #4ab4fe;
+    --@{cssPrefix}-dropbox-selected-bg-color: #efefef;
+    --@{cssPrefix}-dropdown-no-result-text-color: var(--crux-no-result-color);
+    --@{cssPrefix}-dropbox-label-text-color: #aaa;
+    --@{cssPrefix}-dropdown-mandatory-color: var(--crux-mandatory-color);
+    --@{cssPrefix}-dropdown-error-border-color: var(--crux-element-error-border-color);
+    --@{cssPrefix}-fake-multi-select-input-txt-color: #fff;
+    --@{cssPrefix}-pick-item-disabled-hover-card-border-color: #DADADA;
+    --@{cssPrefix}-fake-drop-button-error-border-color: var(--crux-element-error-border-color);
+}

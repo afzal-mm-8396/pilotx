@@ -1,0 +1,262 @@
+.cxPageBuilderElemMixin() {
+	// @padding: .cruxLESSPaddingMixin(0px 5px 10px)[@padding];
+	@margin: .cruxLESSMarginMixin(0px 5px 10px)[@margin];
+}
+
+.cxPbLytePbColumnTemplatelastchildMixin() {
+	@padding: .cruxLESSPaddingMixin(0px 5px 10px)[@padding];
+}
+// .cxPbElemFullWidthColMixin() {
+// 	@padding: 0px 5px 10px !important;
+// }
+
+.cxPbMandatoryClassMixin() {
+	@border-left: 3px solid @cxPbPropElemReqBr !important;
+	@border-radius: 4px 0px 0px 4px;
+	@w: 0px;
+	@h: 100%;
+	@left: -1px;
+	@top: 0px;
+}
+
+.cxPbSubformTitleMandatoryMixin(){
+	@left: -16px;	
+}
+
+// .cxPbElemHoverMixin() {
+// 	@opacity: 1;
+// }
+.cxPbElementDraggableMixin() {
+	@border: 1px solid @cxPbElementBorder;
+	@border-radius: 6px;
+	@bg: @cxPbElementBg;
+	@padding: .cruxLESSPaddingMixin(11px 20px 11px 14px)[@padding];
+}
+
+.cxPbEditableLabelElementMixin(){
+	@padding-top: 7px;
+	@padding-bottom: 7px;	
+}
+
+.cxPbEditableLabelElementIconMixin(){
+	@margin-right: 2px;	
+}
+
+.cxPbAddressElemMixin(){
+	@border-bottom: none;
+	@font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+	@border-radius: 0px;	
+}
+
+.cxPbAddressElementFieldsWrapMixin(){
+	@padding: 0px 14px;
+	@bg: @cxPbElementBg;
+	@border: 1px solid @cxPbElementBorder;
+	@border-top: 0px;
+	@border-radius: 6px;
+}
+
+.cxPbAddresFieldSubElemMixin(){
+	@margin-bottom: 10px;
+	@w: 100%;	
+}
+
+.cxPbElementDraggableHoverMixin(){
+	@border-color: 	@cxPbElementHoverBorder;
+}
+
+.cxPbElementDraggableActiveMixin(){
+	@border-color: 	@cxPbElementActiveBorder;
+	@box-shadow: 0 0 6px 0 @cxPbElementActiveShadowColor;
+	@input-border-color: @cxPbElementInputBorder !important;
+}
+
+.cxPbAddressElemDoubleColFieldMixin(){
+	@w: calc(50% - 5px);	
+}
+
+// .cxPbToolbarMixin() {
+// 	@opacity: 0;
+// 	@background-color: @cxPbElemToolbarBg;
+// 	@box-shadow: @cxPbElemToolbarBoxShadow;
+// 	@border-radius: 0px 5px 5px 0px;
+// 	@margin-right:0;
+// 	@margin-left: auto;
+// }
+
+// .cxPbToolbarIconWrapMixin() {
+// 	@margin: 7px 4px;
+// 	@w: 24px;
+// 	@h: 24px;
+// 	@border-radius: 24px;
+// }
+// .cxPbToolbarIconWrapHoverMixin() {
+// 	@background-color: @cxPbElemToolbarIconWrapBg;
+// }
+// .cxPbToolbarIconWrapHoverSpriteMixin() {
+// 	@background-color: @cxPbElemToolbarIconHoverColor;
+// }
+// .cxPbToolbarIconWrapHoverDelWrapMixin() {
+// 	@background-color: @cxPbElemToolbarDelIconWrapBg;
+// }
+// .cxPbToolbarIconWrapHoverDelIconMixin() {
+// 	@background-color: @cxPbElemToolbarDelIconHoverColor;
+// }
+
+.cxPbElemActionIconWrapMixin(){
+	@w: 26px;
+	@h: 26px;
+	@border-radius: 26px;
+	@right: 10px;
+}
+
+.cxPbElemActionIconWrapHoverMixin(){
+	@bg-color: @cxPbSectionActionIconHoverBg;
+}
+
+.cxPbElemMoreIconMixin(){
+	@transform: rotate(90deg);	
+}
+
+.cxPbErrorElementMixin(){
+	@border-color: @cxPbErrorElementBorder;
+	@bg: @cxPbErrorElementBg;
+}
+
+.cxPbErrorElementWarningIconMixin(){
+	@bg-img: @cruxSprite;
+    @bg-pos: -125px -223px;
+	@w: 15px;
+	@h: 14px;
+	@right: 12px;
+	@bg-color: @cxPbElemToolbarDelIconHoverColor;
+}
+
+.cxPbElementWithMinusMixin(){
+	@padding-right: 32px;
+}
+
+.cxPbElementWithMoreIconMixin(){
+	@padding-right: 40px;	
+}
+
+.cxPbElementWithMinusIconWrapMixin(){
+	// @margin-left: auto;
+	@border-color: @cxPbMinusIconColor;
+	@right: 10px;
+}
+
+.cxPbQcMinusIconWrapperBeforeMixin(){
+	@bg-color: @cxPbMinusIconHoverBg;	
+}
+
+.cxPageBuilderElementOnDragSelMixin(){
+	@z-index: 1200 !important;
+}
+
+.cxPbElementWithMinusIconMixin(){
+	@bg-color: @cxPbMinusIconColor;
+}
+
+.cxPbElementPlaceholderMixin(){
+	@transform: translateY(-6px);	
+}
+
+
+.cxPbElementSortPlaceholderDivMixin(){
+	@bg-color: @cxPbElemSortPlaceholderDivBg;
+	@border: 1px dashed @cxPbElemSortPlaceholderDivBorder;
+	@border-radius: 6px;
+	@margin: 0px 5px 10px;
+	@padding: 11px;
+	@w: calc(100% - 10px);
+}
+
+.cxPbElemWithDropdownMixin(){
+	@padding-top: 6px;
+	@padding-bottom: 6px;	
+}
+
+.cxPbElemDepDropdownMixin(){
+	@margin-left: auto;
+	@margin-right: 8px;	
+}
+
+.cxPbElemDepDropdownBtnMixin(){
+	@padding-top: 5px;
+	@padding-bottom: 5px; 	
+}
+
+.cxPbElemDepDropdownLabelMixin(){
+	@font-size: @cxFontSize13px;	
+}
+
+.cxPbPreviewElementsPrefixDivMixin(){
+	@padding: 0px;
+	@bg: none;	
+}
+
+.cxPbElemPrevDepDDBtnMixin(){
+	@border-top: 0px !important;
+	@border-bottom: 0px !important;
+	@border-left: 0px !important;
+	@border-top-right-radius: 0px;
+    @border-bottom-right-radius: 0px;	
+}
+
+.cxPbPreviewDoubleEleValueMixin(){
+	@gap: 10px;
+}
+
+.cxPbPreviewDoubleElemChildValMixin(){
+	@w: 100%;
+}
+
+.cxPbAddressClearBtnMixin(){
+	@margin-left: auto;
+	@color: @cxPbLabelColor;	
+}
+
+.cxPbAddressBtnReadonlyMixin(){
+	@opacity: 0.7;
+}
+
+.cxPbPreviewAddressHeaderMixin(){
+	@bg-color: @cxPbWhiteBg;
+	@color: @cxPbLabelColor;
+	@font-family: @cruxTertiaryFont;
+	@padding: 0px 12px 7px;
+	@left: 7px;
+	@top: -8px;
+}
+
+.cxPbPreviewAddressHeaderInfoIconMixin(){
+	@margin-left: 5px;	
+}
+
+.cxPbElemMessageMixin(){
+	@padding: 4px 10px;
+	@font-size: @cxFontSize13px;
+}
+
+.cxPbElemMsgInfoIconMixin(){
+	@margin-right: 6px;	
+}
+
+.cxPbElementInfoDivMixin(){
+	@border-radius: 7px 7px 6px 6px;
+	@bg-color: 	@cxPbElemInfoMsgBg;
+}
+
+.cxPbElementErrorDivMixin(){
+	@border-radius: 7px 7px 6px 6px;
+	@bg-color: 	@cxPbElemErrorMsgBg;
+	@color: @cxPbElemErrorMsgColor;
+	@border-color: @cxPbErrorElementBorder;
+}
+
+.cxPbPrevModalReadonlyFldMixin(){
+	@border-color: @cxBoxInputDisabledBorderColor !important;
+	@box-shadow: none !important;	
+}

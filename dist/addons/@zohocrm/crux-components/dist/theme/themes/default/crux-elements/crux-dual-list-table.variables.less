@@ -1,0 +1,40 @@
+.cxDualListContainerMixin(){
+    @h: 100%;
+    @max-h: 500px;
+}
+
+.cxDualListLeftContainerMixin(){
+    @w: 40%;
+}
+
+.cxDualListRightContainerMixin(){
+    @w: 60%;
+}
+
+.cxDualListExpTableMixin(){
+    @w: 100%;
+}
+
+.cxDualListRightTableInnerWrapMixin(){
+    @border: none;
+}
+
+.cxDualListLeftTableInnerWrapMixin(){
+    @border-left: none;
+    @border-top: none;
+    @border-bottom: none;
+}
+
+.cxDualListSelectedItemMixin(){
+    @bg: #fff;
+    @color: @cxDualListLinkColor;
+}
+
+.cxDualListSelectedItemBeforeMixin(){
+    @w: 2px;
+    @h: 100%;
+    @border-radius: if(@direction=rtl,2px 0px 0px 2px,0px 2px 2px 0px);
+    @bg: @cxDualListSelectedItemBeforeBg;
+    @left: 0px;
+    @top: 0px;
+}

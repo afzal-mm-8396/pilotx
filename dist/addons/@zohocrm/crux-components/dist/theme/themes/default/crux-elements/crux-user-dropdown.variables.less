@@ -1,0 +1,201 @@
+.cxUserDropboxSearchBoxAfterMixin() {
+	@bg-img: @cruxSprite;
+    @bg-pos: -180px -4px;
+	@w: 15px;
+	@h: 15px;
+	@right: 7px;
+	@top: 0;
+	@bottom: 0;
+	@opacity: 0.3;
+}
+.cxUserDropboxSearchLoadingIconMixin() { 
+	@right: 2px;
+	@top: 3px;
+    @w: 25px;
+    @h: 25px;
+    @bg-img: @cruxSearchLoaderImage;
+    @bg-size: 100%;
+}
+.cxUserDropboxSecondaryDetailMixin() {
+	@color: @cxUserDropDownSecondaryDetailColor;
+}
+.cxUserDdSuggestUserPercentageMixin() {
+	@font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+	@color: @cxUserDropDownSuggestedUserPercentageColor;
+	@font-size: 13px;
+	@margin-left: 20px;
+}
+.cxUserDropboxItemMixin() {
+	@padding: 4px 25px;
+    // @min-w: 250px;
+    @line-height: 20px;
+}
+.cxUserDropboxFilterDropItemMixin() {
+    @padding: 5px 15px;
+    @color: @cxUserDropDownFilterItemColor;
+}
+.cxUserDropboxSelectionMixin() {
+	@bg: @cxUserDropBoxSelectionBg;
+}
+.cxUserDropboxSelectedBeforeMixin() {
+	@w: 10px;
+	@h: 7px;
+    @left: 7px;
+	@top: 50%;
+	@margin-top: -6px;
+	// @bg-img: @cruxSprite;
+    // @bg-pos: -33px -15px;
+	@mask-img:@cruxSprite;
+	@mask-pos: -15px -13px;
+	@bg-color: @cxIconBaseMaskBg;
+}
+.cxDropboxFilterMixin() {
+	@margin-left: -1px;
+}
+.cxDropboxFilterDropbodyMixin() {
+	@padding: 3px 0;
+	@max-height: 160px;
+}
+.cxUserDropboxDropBodyMixin() {
+	@padding: 5px 0;
+	@max-height: 235px;
+}
+.cxUserDropboxInitialLoaderWrapMixin() {
+	@padding: 90px 0;
+	@text-align: center;
+
+}
+.cxUserDropboxItemsLoaderMixin() {
+    @w: 32px;
+    @h: 32px;
+    @bg-img: @cruxSearchLoaderImage;
+    @bg-size: 100%;
+}
+.cxUserDropdownInnerFilterMixin() {
+	@max-w: 200px;
+}
+.cxUserDropdownInnerfilterDropButtonMixin() {
+	@border-top: 0 !important;
+	@border-left: 0 !important;
+    @box-shadow: none !important;
+    @border-right: 1px solid @cxUserDropDownInnerFilterBtnBorder !important;
+    @border-radius: 0;
+	@padding-left : 10px;
+    @padding-right: 25px;
+	@border: none !important;
+}
+.cxUserDropdownSearchBoxFieldMixin() {
+	@padding: 5px 0;
+}
+.cxUserDropboxSearchBoxInputMixin() {
+    @padding: 6px 30px;
+}
+.cxUserDropboxMultiselectDropItemMixin() {
+	@padding: 5px 15px;
+}
+.cxUserDropboxClearFieldMixin() {
+    @bg-img: @cruxSprite;
+    @bg-pos: -54px -2px;
+    @w: 10px;
+    @h: 8px;
+    @transform: scale(1.3);
+    @z-index: 10002;
+    @right: 7px;
+    @top: 12px;
+    @opacity: 0.3;
+}
+.cxUserDropboxNoUsersFoundDivMixin() {
+	@padding: 20px 0px 30px 0px;
+	@color: @cxUserDropBoxNoUserTextColor;
+}
+.cxUserDropdownLoadingGifMixin() {
+    @w: 24px;
+    @h: 24px;
+    @bg-img: @cruxSearchLoaderImage;
+    @bg-size: 100%;
+}
+.cxUserDropdownImgMixin() {
+	@h: 30px;
+	@w: 30px;
+	@border-radius: 50%;
+	// @box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.15);
+	@box-shadow: none;
+	@border:none;
+	@bg-color: @cxUserDropDownAllUserBg;
+}
+.cruxUserImgMixin() {
+	@max-w: 30px;
+	@max-h: 30px;
+	@border-radius: 50%;
+}
+// .cxUserDropdownLoggedInUserImgMixin() {
+// 	@w: 22px;
+// 	@h: 15px;
+// 	@opacity: 0.4;
+// 	@border-radius: 0;
+// 	@box-shadow: none;
+//     @bg-img: url(../../images/ico_loggedinuser.svg);
+// // @bg-img: @cruxLoggedinUserImg;
+//     @bg-size: 100%;
+// }
+.cxUserDropboxNoUserPhotoUserImgMixin() {
+    @bg-img: @cruxNoPhotoImage;
+    @bg-size: 100%;
+}
+// .cxUserDropdownAllUsersMixin() {
+// 	@bg: #f6f6f6;
+// }
+// .cxUserImgWrapAllUsersImgMixin() {
+// 	@bg: @cruxSprite;
+// 	@w: 18px;
+// 	@h: 10px;
+// 	@bg-pos: -193px -57px;
+// 	@opacity: 0.4;
+// }
+.cxUserDetailMixin() {
+	@max-width: calc(100% - 42px);
+	@margin-left: 10px;
+}
+.cxUserDropdownLoadingWithZiaMixin() {
+	@h: 90px;
+}
+.cxUserDropdownMultipleDropButtonMixin() {
+    @padding-top: 5px;
+    @padding-bottom: 1px;
+	@white-space: nowrap;
+    // @overflow: hidden;
+    @text-overflow: ellipsis;
+}
+.cxUserDropdownNoUserSelectedMultipleDropButtonMixin() {
+    @padding-top: 7px;
+    @padding-bottom: 8px;
+}
+// .cxUserDropdownInnerfilterDropButtonPaddingTempMixin() {
+//     @padding-left : 10px;
+//     @padding-right: 25px;
+// }
+.cxUserDropdownInnerFilterFirstBorderRadiusMixin() {
+	@border-radius: 6px 0 0 6px;
+}
+.cxCriteriaValueColElemenMixin() {
+	@max-width : 100%;
+}
+
+
+.cxUserDropFilterWrapperContMixin(){
+	@w: 100%;
+}
+.cxUserDropboxInpuFocusedLyteFieldMixin(){
+    @border: none !important;
+    @border-radius:0;
+    @box-shadow:none !important;
+}
+
+.cxSelUserImgWrapMixin(){
+	@width: 16px;
+	@height: 16px;
+	@border-radius: 50%;
+	@margin-right: 5px;
+	@border: 1px solid @cxSelUseImgBorder;
+}

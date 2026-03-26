@@ -1,0 +1,59 @@
+.cxPhoneViewValue {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    /*word-break: break-word;
+    white-space: normal;*/
+}
+.cxCalliconOuter {
+    background: #52c343;
+    margin: 0 5px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+.cxPhoneViewCallLabel {
+    display: none;
+    padding: 0 5px;
+    color: #fff;
+    vertical-align: middle;
+}
+.cxCalliconOuter:hover .cxPhoneViewCallLabel {
+    display: inline-block;
+}
+.cxCallIcon {
+    background: url(../images/crux-sprite-icons.svg) no-repeat;
+    background-position: -274px -86px;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.cxPhoneViewZPBEnabled {
+    position: relative;
+    padding-right: 20px;
+    display: inline;
+    min-width: 100%;
+}
+.cxPhoneViewZPBEnabledIconWrap {
+    position: absolute;
+}
+.phoneRtlA a{
+    direction: ltr;
+}
+crux-phone-component .cxDropdownDisabled.cxFakeDummyEventContainer .cxFakeDropButton,
+crux-phone-component .cxFakeDummyEventContainer:focus .cxFakeDropButton,
+crux-phone-component .cxErrorBox .cxFakeDropButton { 
+    border: 0 !important;
+	box-shadow: none;
+}
+.cxPhoneViewZPBEnabledIconWrap .zpbCallIconOuter {
+	white-space: nowrap;
+    max-width: 100%;
+    min-width: auto;
+}
+crux-phone-component .cxFakeDropButton {
+    overflow: unset; /* Fix for - Phone field has scrollbasr in windows machine */
+}

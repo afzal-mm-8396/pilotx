@@ -1,0 +1,253 @@
+@cxDropItemDisabledBg: transparent;
+@cxDropItemDisabledColor: @cxPlaceholderColor;
+@cxDDRefreshBtnLoaderCircleBg: 255,255,255;
+@cxDDRefreshBtnLoaderBg: #5ba1e5;
+@cxDDRefreshBtnBoxShadow: rgba(51, 140, 240, 0.40);
+@cxDDItemHighlightColor1: #fffef0;
+@cxDDItemHighlightColor2: #FFFAD0;
+
+
+.cruxDropdownButtonMixin() {
+	@border: 1px solid @cxBoxDropdownBorderColor;
+	@border-radius: 5px;
+	@padding: 7px 30px 8px 10px;
+	@color: @cxBoxDropdownTextColor;
+	@bg: @cxBoxDropdownBg;
+}
+.cxlyteMultiselectInputMixin(){
+	@w:100%;
+}
+.cruxDropdownButtonHoverMixed(){
+	@border-color: @cxBoxDropdownBorderHoverColor;
+}
+.cruxMultipleFakeDropNoOptSelectedButtonMixin() {
+	@padding: 7px 10px 8px 10px;
+}
+.cruxMultipleDropdownFakeButtonMixin() {
+	@padding: 5px 10px 1px 10px;
+}
+.cxFakeDummyEventContainerFocusDropButtonMixin() {
+	@border: 1px solid @cxBoxDropdownBorderFocusColor;
+	@box-shadow: 0 0 6px @cxBoxDropdownFocusShadowColor;
+}
+.cruxDropdownLabelMixin() {
+    @margin: 0;
+    @padding: 0;
+	@font-size: @cxFontSize1rem;
+}
+.cxDropdownLabelDisabledLabelElemMixin() {
+	@opacity: 0.5;
+}
+.cruxDropdownPlaceholderMixin() {
+	@color: @cxBoxDropdownPlaceholderColor;
+	@opacity: 0.7;
+	@font-size: @cxFontSize1rem;
+	@w: 100%;
+}
+.cruxDropdownDropdownIconMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -1px -2px;
+	@w: 8px;
+	@h: 4px;
+	@right: 10px;
+	@top: calc(50% - 2px);
+	@transform: none;
+	@opacity: 0.5;
+}
+.cxFakeMultipleSelectMixin() {
+    @margin: 0;
+    @padding: 0;
+}
+.cxFakeDummyEventContainerMandatoryBeforeMixin() {
+    @h: auto;
+    @w: 3px;
+    @bg: @cxBoxDropdownMandatoryColor;
+    @top: 1px;
+    @bottom: 1px;
+    @left: 0;
+    @border-radius: @cxBoxDropdownInnerElemBorderRadius 0 0 @cxBoxDropdownInnerElemBorderRadius;
+    @z-index: 1;
+}
+.cruxDropdownMultipleSelectLiMixin() {
+	@margin-right: 5px;
+	@padding: 2px 20px 2px 5px;
+	@font-size: 13px;
+	@margin-bottom: 5px;
+	@bg: @cxBoxMultiDropdownItemBg;
+	@border: 1px solid @cxBoxMultiDropdownItemBorderColor;
+	@border-radius: 2px;
+	@max-w: 100%;
+}
+.cxFakeMultipleSelectInputElemMixin() {
+	@w: 100%;
+	@border: 0;
+	@font-size: @cxFontSize1rem;
+	@bg: transparent;
+	@color: @cxBoxDropdownTextColor;
+	@font-family: @cruxPrimaryFont;
+}
+.cxFakeMultipleSelectInputElemPlaceholderMixin() {
+    @color: @cxBoxDropdownPlaceholderColor;
+    @font-size: 14px;
+}
+.cruxDropdownMultipleSelectCloseIconMixin() {
+	@w: 16px;
+}
+.cruxDropdownMultipleSelectCloseHoverMixin() {
+	@bg: @cxBoxMultiDropdownCloseHoverBg;
+}
+.cruxDropdownMultipleSelectCloseAfterMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -54px -2px;
+	@w: 8px;
+	@h: 8px;
+	@top: calc(50% - 4px);
+	@left: calc(50% - 4px);
+}
+.cxDropdownSearchInputMixin() {
+    @padding-right: 5px;
+}
+.cxErrorBoxFakeDropButtonMixin() {
+	@border: 1px solid  @cxFakeDropButtonErrorBorderColor;
+	@box-shadow: none;
+}
+
+.cxDropItemInfoIconMixin(){
+	@margin-top: -2px;
+	@margin-left: 2px;
+}
+.cxFakeDropDownMixin(){
+	@min-height:25px;
+}
+/* dropdown diabled ui changes moved to new component */
+
+
+.cxPickItemDisabledHoverCardPopoverMixin() {
+	@box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.20);
+	@max-width: 495px;
+	@border-radius: @cxBoxElementsBorderRadius;
+	@border: 1px solid  @cxPickItemDisabledHoverCardBorder;
+ }
+ .cxPickItemDisabledHoverWrapperMixin(){
+	@z-index: 10099;
+}
+.cxPickItemDisabledHoverWrapperPopoverMixin(){
+	@z-index: 10100;
+}
+
+.cxDropdownGroupElemValueMixin(){
+	@color: @cxLabelColor;
+	@font-family: @cruxPrimaryFont;
+}
+
+.cxDDRefreshBtnMixin(){
+	@padding: 5px 10px !important;
+	@border-radius: 100px !important;
+	@box-shadow: 0px 4px 10px 0px @cxDDRefreshBtnBoxShadow;
+}
+
+.cxDDRefreshBtnCompMixin(){
+	@padding: 5px 20px;
+	@transition: padding 0.3s;
+}
+
+.cxDDRefreshBtnDisabledMixin(){
+	@bg: @cxDDRefreshBtnLoaderBg;
+	@opacity: 1;
+}
+
+.cxDDRefreshBtnWrapMixin(){
+	@w: 100%;
+	@top: 0px;
+	@z-index: 3;
+}
+
+.cxDDRefreshBtnDummyDivMixin(){
+	@h: 16px;
+}
+
+.cxDDRefreshIconMixin(){
+	@bg-color: @cxMaskIconWhiteBg;
+}
+
+.cxDDRefreshLyteBtnMixin(){
+	@margin: 0px;
+	@top: 5px;
+}
+
+.cxDDRefreshBtnTextMixin(){
+	@margin-left: 7px;
+	@font-size: @cxFontSize11px;
+	@max-w: 130px;
+}
+
+
+.cxDDRefreshBtnTextOnRefMixin(){
+	@transition: max-width 0.3s,margin 0.3s;
+	@max-w: 0px;
+	@margin-left: 0px;
+}
+
+.cxDDRefreshLyteBtnCompMixin(){
+	@top: -30px;
+	@transition: top 0.3s;
+}
+
+.cxDDRefreshBtnLoaderMixin(){
+	@left: 0px;
+	@w: 12px;
+	@h: 12px;
+}
+
+.cxDDRefreshBtnLoader2Mixin(){
+	@w: 8px;
+	@h: 8px;
+	@bg: @cxDDRefreshBtnLoaderBg;
+}
+
+.cxDDRefreshBtnLoaderBeforeMixin(){
+	@bg: rgba(@cxDDRefreshBtnLoaderCircleBg);
+}
+
+.cxDDRefreshBtnLoader1BeforeMixin(){
+	@bg: linear-gradient(rgba(@cxDDRefreshBtnLoaderCircleBg), rgba(@cxDDRefreshBtnLoaderCircleBg, 0.5));
+}
+
+.cxDDRefreshBtnLoader1AfterMixin(){
+	@bg: linear-gradient(rgba(@cxDDRefreshBtnLoaderCircleBg, 0.05), rgba(@cxDDRefreshBtnLoaderCircleBg, 0.25), rgba(@cxDDRefreshBtnLoaderCircleBg, 0.5));
+}
+
+.cxDDRefreshCompItemMixin(){
+	@max-h: 0px;
+	@transition: max-height 1s;
+}
+
+.cxDDRefreshTransitionItemMixin(){
+	@max-h: 100px;
+}
+
+.cxDDWithSearchRefreshBtnMixin(){
+	@top: 42px;
+}
+
+.cxDDWithSearchRefreshBtnCompMixin(){
+	@top: 0px;
+	@padding-top: 42px;
+}
+
+.cxDDWithSearchRefLyteBtnCompMixin(){
+	@top: -75px;
+}
+.cxDBPreYeildClassMixin(){
+	@margin-left: 5px;
+	@margin-right: 10px;
+}
+
+.cxFakeMultiSelectInputMixin(){
+	@bg: @cxFakeMultiSelectInputTxtColor;
+}
+
+.cxDisableDropItemMixin(){
+	@bg: @cxDropItemDisabledBg !important;
+	@color: @cxDropItemDisabledColor !important;
+}

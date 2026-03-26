@@ -1,0 +1,87 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-dual-list-table.variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+
+.cxDualListContainer{
+    .cxDualListContainerMixin();
+    display: flex;
+    height: @h;
+    max-height: @max-h;
+}
+
+.cxDualListLeftContainer{
+    .cxDualListLeftContainerMixin();
+    width: @w;
+}
+
+.cxDualListRightContainer{
+    .cxDualListRightContainerMixin();
+    width: @w;
+}
+
+.cxDualListLeftTable lyte-exptable,
+.cxDualListRightTable lyte-exptable{
+    .cxDualListExpTableMixin();
+    width: @w;
+}
+
+.cxDualListRightTable .lyteExpTableOrigTableInnerWrap{
+    .cxDualListRightTableInnerWrapMixin();
+    border: @border;
+}
+
+.cxDualListLeftTable .lyteExpTableOrigTableInnerWrap{
+    .cxDualListLeftTableInnerWrapMixin();
+    border-left: @border-left;
+    border-top: @border-top;
+    border-bottom:@border-bottom;
+}
+
+.cxDualListSelectedItem{
+    .cxDualListSelectedItemMixin();
+    position: relative;
+    color: @color;
+    background: @bg;
+}
+
+.cxDualListSelectedItem::before{
+    .cxDualListSelectedItemBeforeMixin();
+    content: '';
+    position: absolute;
+    width: @w;
+    height: @h;
+    background: @bg;
+    border-radius: @border-radius;
+    top: @top;
+    @{property-left}: @left;
+}
+
+.cxDualListLeftTable lyte-exptable-td{
+    cursor: pointer;
+}
+
+// .leftItem{
+//     padding: 10px;
+// }
+// .cxLeftHeader{
+// color: #202123;
+// font-family: "Zoho Puvi";
+// font-size: 15px;
+// font-style: normal;
+// font-weight: 500;
+// line-height: normal;
+// }
+// .cxLeftContainer{
+//     display: flex;
+// /* width: 362px; */
+// height: 160px;
+// flex-direction: column;
+// align-items: flex-start;
+// flex-shrink: 0;
+// }
+// .cxSelectedLeftPanel{
+    
+// }

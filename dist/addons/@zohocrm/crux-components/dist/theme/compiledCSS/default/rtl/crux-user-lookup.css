@@ -1,0 +1,435 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+.userLookupModal .currentSelected {
+  background-color: var(--lyte-crux-user-lookup-modal-bg-color);
+}
+.userLookupModal .lyteModal > lyte-yield {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.userLookupModal lyte-checkbox {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.userLookupModal lyte-tbody lyte-tr {
+  cursor: pointer;
+}
+.userLookupModal .alignSelectedFooter {
+  vertical-align: middle;
+}
+.userLookupModal lyte-tbody .cxUserLookupEmptyRow {
+  cursor: default;
+}
+.userLookupModal .singleUserSelected {
+  color: var(--lyte-crux-user-lookup-single-user-selected-color);
+  margin-left: 6px;
+  padding-top: 7px;
+  margin-right: 15px;
+}
+.userLookupModal .scrollSearchDiv {
+  height: 40px;
+  padding: 5px;
+  display: none;
+  text-align: center;
+}
+.userLookupModal .noHeader {
+  top: 15px;
+}
+.userLookupModal .viewLookupTr {
+  cursor: default;
+}
+.userLookupModal .lookupHeaderStyle {
+  padding-bottom: 10px;
+}
+.userLookupModal .lookupHeaderText {
+  display: block;
+  width: 95%;
+  word-wrap: break-word;
+}
+.userLookupModal .displayFlex,
+.lookupSearch lyte-input,
+.userLookupModal.cruxUserView .lookupSearch {
+  display: flex;
+}
+/*
+.userLookupModal lyte-modal-header {
+	.cxUserLookupModalHeaderMixin();
+	font-size: @font-size;
+}*/
+.userLookupModal lyte-modal-header .user-lookup-section {
+  font-size: 14px;
+  margin-top: 15px;
+  font-weight: normal;
+  font-family: 'LatoRegular', sans-serif;
+}
+.cxUserLookupSearch .lyteField input {
+  padding-left: 30px;
+  /*Needed for search in crux user lookup Modal*/
+  text-overflow: ellipsis;
+}
+.cxUserViewModal .cxUserLookupSearch .lyteField input,
+.cxUserLookupSearchSection .cxUserLookupSearch .lyteField input {
+  padding-left: 30px;
+}
+.userLookupModal .lookupSearch {
+  position: relative;
+  min-width: 300px;
+}
+.userLookupModal .user-lookup-section:first-child {
+  margin-right: 0;
+  padding-right: 0;
+}
+.userLookupModal .lookupModalContent {
+  position: relative;
+  min-height: 100px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.userLookupModal .cxLookupModalNoFooter {
+  padding-bottom: 30px;
+}
+.userLookupModal lyte-th {
+  min-width: 170px;
+}
+.userLookupModal .cxUserLookupSubHeadingRow:hover,
+.userLookupModal lyte-thead lyte-tr:hover {
+  background: transparent;
+}
+.cxUserLookupUserImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 5px;
+}
+.cxUserLookupNoPhoto {
+  background: url(../../images/nophoto.png);
+  background-size: 100%;
+}
+.cxUserLookupSelectedRow lyte-td {
+  background-color: var(--lyte-crux-user-lookup-selected-row-td-bg-color);
+}
+.userLookupModal lyte-th:first-child,
+.userLookupModal lyte-td:first-child,
+.lookupTableBodypadding,
+.userLookupModal .lookupTableHeaderWidth {
+  padding-right: 20px;
+}
+.userLookupModal lyte-th.lookupTableHeaderWidth,
+.userLookupModal .lookupFirstMinWidth {
+  min-width: 170px;
+  width: 200px;
+}
+.userLookupModal .lyteCheckBoxPrimary::before {
+  background-position: -76px -1px;
+}
+.userLookupModal .lyteCheckBoxPrimary:hover::before {
+  background-position: -59px -1px;
+}
+.cxUserLookupSelCountLabel,
+.userLookupModal .userSelection {
+  font-size: 1rem;
+  align-self: center;
+  color: var(--lyte-crux-user-lookup-modal-user-selection-color);
+  font-family: 'LatoRegular', sans-serif;
+  margin-right: 15px;
+}
+.userLookupModal .userSelection {
+  cursor: pointer;
+}
+.userLookupModal .userSelection:hover {
+  text-decoration: underline;
+}
+.cxUserLookupSelCountLabel {
+  color: var(--lyte-crux-user-lookup-count-label-color);
+}
+.userLookupTable lyte-radiobutton {
+  margin-left: 5px;
+}
+.userLookupModal .lookupSearchCloseIcon {
+  background: url(../../images/crux-sprite-icons.svg) no-repeat -54px -2px;
+  width: 10px;
+  height: 8px;
+  transform: scale(1.3);
+  display: none;
+  position: absolute;
+  left: 10px;
+  top: calc(50% - 4px);
+  cursor: pointer;
+}
+.userLookupModal .selectedUsersHd {
+  padding-bottom: 10px;
+}
+.userLookupModal .userLookupBackIcon {
+  background: transparent url(../../images/crux-sprite-icons.svg) no-repeat -355px -158px;
+  width: 16px;
+  height: 14px;
+  display: inline-block;
+  cursor: pointer;
+  opacity: 0.4;
+  position: absolute;
+  transform: translateX(calc(100% + 5px)) translateY(5px) scale(-1);
+  margin-left: 5px;
+}
+.cxUserLookupZiaSuggestedRow lyte-td:nth-child(2) .cxUserLookupTextWrap {
+  display: inline-flex;
+  max-width: 160px;
+}
+.userLookupModal .cruxUserLookupText {
+  display: inline-block;
+  max-width: 220px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.userLookupModal .cruxUserLookupImage {
+  max-width: 145px;
+}
+.cxUserLookupZiaPercent {
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.cxUserLookupTableWrap {
+  max-height: inherit;
+  position: relative;
+  /* overflow: auto; Caused scrollbar issue in windows machine. Hence commented */
+  display: flex;
+  flex-direction: column;
+}
+.userLookupTable {
+  overflow: hidden;
+  max-height: inherit;
+  display: flex;
+  flex-direction: column;
+  transform: translate3d(0, 0, 0);
+}
+.userLookupTable .lyteTableScroll {
+  max-height: inherit;
+}
+.emptyUserLookupTable {
+  overflow: hidden;
+}
+.cxUserLookupEmptyRow lyte-td {
+  height: 80px;
+}
+.NoUsersLookup {
+  display: block;
+  text-align: center;
+  line-height: 80px;
+  color: var(--lyte-crux-user-lookup-modal-no-user-color);
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 1px;
+  pointer-events: none;
+  z-index: 15;
+  background: var(--lyte-crux-user-lookup-modal-no-user-bg-color);
+  border-left: 1px solid var(--lyte-crux-user-lookup-modal-no-user-border);
+  border-right: 1px solid var(--lyte-crux-user-lookup-modal-no-user-border);
+  box-sizing: border-box;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.cxUserLookupListLoaderWrap {
+  margin-top: 2rem;
+  position: relative;
+}
+.cxUserLookupSearchLoader,
+.cxUserLookupListLoader,
+.cxUserLookupLazyLoader {
+  background: url(../../images/crux-search-loader.svg);
+  background-size: 100%;
+  display: inline-block;
+}
+.cxUserLookupListLoader {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  right: 50%;
+  top: 60px;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.cxUserLookupSearchLoader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+}
+.cxUserLookupSearch .cxUserLookupSearchLoader {
+  left: 5px;
+}
+.cxUserLookupLazyLoader {
+  width: 34px;
+  height: 34px;
+}
+.cxUserLookupSelNameDummy {
+  width: 100px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  background: var(--lyte-crux-user-lookup-modal-dummy-selected-name-bg-color);
+}
+.cxUserLookupImgDummy {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  background: var(--lyte-crux-user-lookup-modal-dummy-selected-img-color);
+  border-radius: 50%;
+}
+.userLookupModal .cxUserLookupSubHeadingRow {
+  cursor: default;
+}
+.cxUserLookupListLoaderTr lyte-td,
+.cxUserLookupSubHeadingRow lyte-td {
+  border-bottom: 0;
+}
+.cxUserLookupSubHeadingCell {
+  z-index: 1;
+  height: 35px;
+}
+.cxUserLookupSubHeadingSecondCell {
+  padding-top: 20px;
+  height: 45px;
+}
+.cxUserLookupRowHeading {
+  position: absolute;
+  top: 10px;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  white-space: nowrap;
+}
+.cxUserLookupSubHeadingSecondCell .cxUserLookupRowHeading {
+  top: 20px;
+}
+.cxUserLookupListLoaderTr {
+  position: relative;
+}
+.cxUserLookupListLoaderTd {
+  /* Height Increased to make table look proper */
+  height: 100px;
+  position: static;
+}
+.cxUserLookupNoSuggestion {
+  position: absolute;
+  right: 50%;
+  transform: translateX(-50%);
+  color: var(--lyte-crux-user-lookup-modal-no-user-color);
+  height: 50px;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+.cxUserLookupProfileSection {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+.cxUserLookupProfileSection .cxUserLookupNoPhoto,
+.cxUserLookupProfileSection .cxUserLookupUserImg {
+  top: 2px;
+}
+.cxUserLookupProfileName {
+  padding-right: 40px;
+  display: block;
+  padding-top: 7px;
+  max-width: 100%;
+  word-break: break-word;
+}
+.cxLookupFilterpresent {
+  margin-right: 8px;
+}
+.cruxUserView .cxUserLookupSearch lyte-input {
+  width: 100% !important;
+}
+/*# sourceMappingURL=crux-user-lookup.css.map */

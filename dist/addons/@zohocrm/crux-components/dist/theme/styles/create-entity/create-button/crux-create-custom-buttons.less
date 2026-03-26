@@ -1,0 +1,48 @@
+@import "../../../themes/default/global/global.variables.less";
+
+@import "../../../themes/default/crux-elements/create-entity/create-button/crux-create-custom-buttons.variables.less";
+
+@import "../../../themes/default/less-variables/create-entity/crux-create-custom-buttons-variable.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../../themes/default/css-variables/create-entity/crux-create-custom-buttons-rootvar.less";
+}
+
+
+.cxcreateBtnDropBox .cxcreateDropItemLinkColor{
+    .cxcreateDropItemLinkColor();
+    color: @color;
+}
+
+.cxcreateBtnDropBox lyte-drop-footer lyte-drop-item{
+    .cxcreateDropBoxFooterDropItemMixin();
+    padding: @padding;
+}
+
+.cxcreateBtnDropBox .cxcreateFooterDropItem{
+    .cxcreateFooterDropItemMixin();
+    padding: @padding;
+    cursor: pointer;
+    display: block;
+}
+
+.cxcreateCBpopoverWrapper .lytePopover{
+    .cxcreateCBpopoverMixin();
+    padding: @padding;
+    box-shadow: @box-shadow;
+    word-break: break-all;
+}
+
+.cxcreateCBpopoverBtnLabel{
+    .cxcreateCBpopoverBtnLabelMixin();
+    font-size: @font-size;
+    color: @color;
+}
+
+.cxcreateCBpopoverBtnDesc{
+    .cxcreateCBpopoverBtnDescMixin();
+    margin-top: @margin-top;
+}

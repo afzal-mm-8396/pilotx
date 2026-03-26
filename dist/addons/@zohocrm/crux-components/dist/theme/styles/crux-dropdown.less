@@ -1,0 +1,643 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-dropdown/crux-dropdown.variables.less";
+
+@import "../themes/default/less-variables/crux-dropdown-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-dropdown";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-dropdown-variables.less";
+}
+
+// .cruxDropbox lyte-search,
+// crux-dropdown {
+// 	display: block;
+// }
+
+.cruxDropbox lyte-search,
+crux-dropdown {
+	display: block;
+}
+crux-dropdown lyte-drop-button,
+crux-dropdown lyte-dropdown {
+	display: block;
+}
+crux-dropdown.dIB {
+	display: inline-block;
+	vertical-align: top;
+}
+
+crux-dropdown lyte-drop-button lyte-text{
+	vertical-align: top;
+}
+.cxDropbox .lyteInput {
+	display: flex;
+}
+crux-dropdown .lyteInput.lyteInputFocus .lyteField,
+crux-dropdown .lyteMultiselectInput lyte-input .lyteField:hover,
+crux-dropdown .lyteMultiselectInput lyte-input .lyteField {
+    border-bottom: 0;
+}
+crux-dropdown .lyteMultiselectInput lyte-input input {
+    padding: 0;
+}
+/*	Lyte dropdown CRM box model CSS Ends	*/
+.cxFakeDummyEventContainer {
+	outline: none;
+	position: relative;
+}
+.cxDropdownDisabled.cxFakeDummyEventContainer {
+    opacity: 0.5;
+}
+.cxFakeDropButton {
+	.cruxDropdownButtonMixin();
+	border: @border;
+	border-radius: @border-radius;
+	cursor: pointer;
+    text-align: @value-textalign-left;
+	position: relative;
+	display: block;
+	padding: @padding;
+	box-sizing: border-box;
+	color: @color;
+	background: @bg;
+	transition: box-shadow 0.1s ease-in-out;	
+}
+.cxFakeDropButton:hover{
+	.cruxDropdownButtonHoverMixed();
+	// border-color:@border-color;
+	/* Adds extra border in many cases of crux-dropdown */
+}
+crux-dropdown[cx-prop-type="multisearch"] .cxFakeDropNoOptSelected .cxFakeDropButton,
+crux-dropdown[cx-prop-type="multiple"] .cxFakeDropNoOptSelected .cxFakeDropButton {
+	.cruxMultipleFakeDropNoOptSelectedButtonMixin();
+	padding: @padding;
+}
+
+crux-dropdown .cxDropdownMultiSelect  .cxFakeDropButton,
+crux-dropdown[cx-prop-type="multiple"] .cxFakeDropButton,
+crux-dropdown[cx-prop-type="multisearch"] .cxFakeDropButton {
+	.cruxMultipleDropdownFakeButtonMixin();
+    padding: @padding;
+    cursor: text;
+}
+.cxFakeDummyEventContainer:focus .cxFakeDropButton {
+	.cxFakeDummyEventContainerFocusDropButtonMixin();
+	border: @border;
+	box-shadow: @box-shadow;
+}
+.cxlyteMultiselectInput lyte-input{
+	.cxlyteMultiselectInputMixin();
+	width: @w;
+}
+.cxFakeDropdownLabel {
+    .cruxDropdownLabelMixin();
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+	// vertical-align: top;
+	margin: @margin;
+    padding: @padding;
+    font-size: @font-size;
+}
+.cxDropdownLabelDisabled .lyteDropdownLabel,
+.cxDropdownLabelDisabled .cxFakeDropdownLabel {
+	.cxDropdownLabelDisabledLabelElemMixin();
+	opacity: @opacity;
+}
+crux-dropdown .cxFakeDropButton lyte-icon.dropdown {
+	.cruxDropdownDropdownIconMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	display: inline-block;
+	position: absolute;
+    @{property-right}: @right;
+	top: @top;
+	transform: @transform;
+	opacity: @opacity;
+}
+/* moved to crux-elements-common.less
+.cxFakeDummyEventContainer.mandatoryField::before {
+    .cxFakeDummyEventContainerMandatoryBeforeMixin();
+    content: '';
+    height: @h;
+    width: @w;
+    background: @bg;
+    position: absolute;
+    top: @top;
+    bottom: @bottom;
+    @{property-left}: @left;
+    border-radius: @border-radius;
+    z-index: @z-index;
+}*/
+.cxFakeMultipleSelect {
+    .cxFakeMultipleSelectMixin();
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: @margin;
+    padding: @padding;
+}
+.cxFakeMultipleSelectLi {
+	.cruxDropdownMultipleSelectLiMixin();
+    @{property-margin-right}: @margin-right;
+	padding: @padding;
+	font-size: @font-size;
+	margin-bottom: @margin-bottom;
+	background: @bg;
+	border: @border;
+	border-radius: @border-radius;
+	position: relative;
+	display: inline-flex;
+	max-width: @max-w;
+	box-sizing: border-box;
+}
+.cxFakeMultipleSelectLi.cxFakeMultipleSelectInput {
+	.cxFakeMultiSelectInputMixin();
+	border: 0;
+	padding: 0;
+	margin: 0;
+	width: 150px;
+	background: @bg;
+    align-self: flex-start
+}
+.cxFakeMultipleSelectLi.cxFakeMultipleSelectInput:only-of-type {
+	width: 100%;
+}
+.cxFakeMultipleSelectInput input {
+	.cxFakeMultipleSelectInputElemMixin();
+	width: @w;
+	border: @border;
+	font-size: @font-size;
+	background: @bg;
+	color: @color;
+	box-sizing: border-box;
+    font-family: @font-family;
+}
+.cxFakeMultipleSelectInput input::placeholder {
+    .cxFakeMultipleSelectInputElemPlaceholderMixin();
+    color: @color;
+    font-size: @font-size;
+}
+.cxFakeMultipleSelectLi .lyteCloseIcon {
+	.cruxDropdownMultipleSelectCloseIconMixin();
+	background: transparent;
+	top: 0;
+	bottom: 0;
+    @{property-right}: 0;
+    @{property-left}: auto;
+	width: @w;
+	height: auto;
+	position: absolute;	
+}
+.cxFakeMultipleSelectLi .lyteCloseIcon:hover {
+	.cruxDropdownMultipleSelectCloseHoverMixin();
+	background: @bg;
+}
+.cxFakeMultipleSelectLi .lyteCloseIcon::after {
+	.cruxDropdownMultipleSelectCloseAfterMixin();
+	content: '';
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	position: absolute;
+	display: inline-block;
+	top: @top;
+    @{property-left}: @left;
+	opacity: 0.9;
+	transform: scale(0.9);
+}
+.cxFakeDropPlaceholderNormal {
+	.cruxDropdownPlaceholderMixin();
+	color: @color;
+	opacity: @opacity;
+	font-size: @font-size;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	width: @w;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.cxDropdownSearch .cxDropdownSearchInput {
+    .cxDropdownSearchInputMixin();
+    @{property-padding-right}: @padding-right;
+}
+
+.cxErrorBox .cxFakeDropButton,
+.cxErrorBox .cxFakeDropButton:hover {
+	.cxErrorBoxFakeDropButtonMixin();
+	border: @border !important;
+	box-shadow: @box-shadow !important;
+}
+.cxDropbox lyte-drop-item lyte-text {   
+    vertical-align: top;
+}
+
+.cxDropItemInfoIcon{
+	.cxDropItemInfoIconMixin();
+	vertical-align: middle;
+	margin-top: @margin-top;
+	@{property-margin-left}: @margin-left;
+}
+.crux-dropdown .cxDropdownMultiSelect .cxFakeDropButton {
+	.cxFakeDropDownMixin();
+    min-height: @min-height;
+}
+
+
+
+/* CRUX Dropdown DropItem with Info Icon Changes Starts */
+.cxDropbox .cxDropItemWrapper {
+	display: flex;
+    align-items: center;
+    // justify-content: space-between;
+}
+// .cxDropbox .cxDropItemWrapper .lyteTextYield {
+// .cxDropbox .cxDropItemWrapper lyte-text {
+    // max-width: calc(100% - 5px);
+    // flex: 1;
+// }
+// .cxDropbox .cxDropItemWrapper .cxIconWrapper {
+//     display: flex;
+//     align-items: flex-start;
+//     padding-top: 3px;
+// 	flex-shrink: 0;
+// }
+.cxDropItemYield {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	// max-width: calc(100% - 5px);
+	min-width: 15px;
+    @{property-margin-right}: 0;
+}
+.cxDropbox .cxDropItemWrapper .cxInfoIcon {
+	// position: absolute;
+	// padding-top: 3px;
+	flex-shrink: 0;
+	visibility: hidden;
+	// @margin-left: 0;
+    // @{property-right}: 15px;
+	position: relative;
+    @{property-margin-left}: 8px;
+    @{property-right}: -8px;
+}
+
+
+/*
+	.cxInfoIcon - To show Hide Info Icon
+	.cxDBPreYeildShowIcon - This class specfically to show hide Any image other than info Icon
+	.cxDBPreYeildShowIcon - default: visibility:hidden;
+*/
+.cxDropbox lyte-drop-item:hover .cxDBPreYeildShowIcon {
+	visibility: hidden;
+	opacity: 0;
+}
+.cxShowDropdownInfoIcon .cxDropItemWrapper .cxInfoIcon,
+.cxDropbox lyte-drop-item.lyteDropdownSelection .cxInfoIcon,
+.cxDropbox lyte-drop-item.cxDItemShowInfoIcon .cxInfoIcon,
+.cxDropbox lyte-drop-item.lyteDropdownSelection .cxDBPreYeildShowIcon,
+.cxDropbox lyte-drop-item:hover .cxDBPreYeildShowIcon  {
+	visibility: visible;
+	opacity: 1;
+}
+
+
+.cxDropbox .lyteDropdown-disabled .cxInfoIcon {
+	cursor: pointer;
+}
+crux-dropdown .cxSelectWrapper {
+    display: flex;
+    align-items: center;
+	min-height: 16px;
+    flex: 1;
+    max-width: 100%;
+}
+crux-dropdown .cxDropItemWrapper lyte-text {
+	max-width: calc(100% - 20px);
+}
+.cxBoxDropdown .cxSelectWrapper .cxDBYeildClass,
+.cxFakeDummyEventContainer .cxSelectWrapper .cxDBYeildClass,
+.cxDropbox .cxDropItemWrapper .cxDBYeildClass {
+    @{property-margin-left}: 8px;
+    flex-shrink: 0;
+}
+.cxBoxDropdown .cxSelectWrapper .cxDBYeildNoText,
+.cxFakeDummyEventContainer .cxSelectWrapper .cxDBYeildNoText,
+.cxDropbox .cxDropItemWrapper .cxDBYeildNoText {
+	@{property-margin-left}: 0;
+}
+.cxDropbox .cxDropItemWrapper .cxDBYeildClass  {
+    min-height: 16px; /*When no text is present, min-height for icon */
+}
+/* CRUX Dropdown DropItem with Info Icon Changes Ends */
+
+/******************************************
+
+CRUX Dropdwown = Long Tooltip + Disabled Info Tooltip
+
+******************************************/
+
+// .cxPickItemDisabledHoverCard {
+    
+// }
+.cxPickItemDisabledHoverCard .lytePopover {
+	.cxPickItemDisabledHoverCardPopoverMixin();
+   box-shadow: @box-shadow;
+   max-width: @max-width;
+   border-radius: @border-radius;
+   border: @border;
+}
+.cxPickItemDisabledHoverCard lyte-hovercard-content {
+   padding: 6px 10px;
+   box-shadow: none;
+}
+.cxPickItemDisabledHoverCard .cxItemCardText {
+   word-wrap: break-word;
+   margin-bottom: 15px;
+}
+// .cxPickItemDisabledHoverCard .cxItemCardTooltipMsg {
+//    margin-top: 15px;
+// }
+.cxItemCardTooltipHead {
+   font-family: @cruxSecondaryFont;
+   font-weight: @cruxFontWeightBold;
+   margin-bottom: 5px;
+   position: relative;
+}
+.cxPickItemDisabledHoverCard .cxItemCardTooltipHead .cxSprite {
+	@{property-margin-right}: 5px;
+	top: 2px;
+	position: relative;
+}
+.cxItemCardTooltipHead .cxSprite {
+	vertical-align: middle;
+	background-image: none;
+}
+.lyteHovercardPopover.cxPickItemDisabledHoverWrapper {
+	.cxPickItemDisabledHoverWrapperMixin();
+	z-index: @z-index;
+	//z-index: 10099
+}
+.lyteHovercardPopover.cxPickItemDisabledHoverWrapper .lytePopover {
+	.cxPickItemDisabledHoverWrapperPopoverMixin();
+	z-index: @z-index;
+	//z-index: 10100
+}
+.cxPickItemDisabledHoverWrapper .lytePopover::before {
+	pointer-events: none;
+}
+.cxPropDropButtonPrefixYield {
+	min-width: 0;
+    display: inline-block;
+    flex-shrink: 0;
+	@{property-margin-right}: 5px;
+}
+/******************************************* 
+	Line-height: 16px - added for dropdown with Custom Yeild, 
+		- Added to reduce line-height for chinese and Japanese Languages
+		- Has yeild cases, dropdown with sucees icon etc.
+
+		.cxPropDropButtonPrefixYield .lyteDropdownLabel,
+		.cxPropDropButtonPrefixYield .lyteDropPlaceholderNormal,
+		.cxPropDropButtonPrefixYield .cxFakeDropdownLabel,
+		.cxPropDropButtonPrefixYield .cxFakeDropPlaceholderNormal
+*******************************************/
+.cxPropDropButtonPrefixYield .lyteDropdownLabel,
+.cxPropDropButtonPrefixYield .lyteDropPlaceholderNormal,
+.cxPropDropButtonPrefixYield .cxFakeDropdownLabel,
+.cxPropDropButtonPrefixYield .cxFakeDropPlaceholderNormal {
+	line-height: 16px;
+}
+.cxBoxDropdown .cxDropButtonHasYeild {
+	display: flex;
+}
+.cxDropButtonHasYeild .cxSelectWrapper {
+	align-items: center;
+    flex: 1;
+    max-width: 100%;
+	min-width: 0;
+    flex-shrink: 0;
+}
+
+.cxDropButtonHasYeild.cxDropButtonHasSuffixYeild .cxSelectWrapper{
+	display: inline-flex;
+	flex: initial;
+}
+
+.cxDropButtonHasYeild .cxFakeDropButton {
+	max-width: 100%;
+	display: flex;
+}
+/* CRUX Dropdwown = Long Tooltip + Disabled Info Tooltip Ends */
+
+
+.cxDropdownGroupElemValue{
+	.cxDropdownGroupElemValueMixin();
+	color: @color;
+	font-family: @font-family;
+}
+.cxDBPreYeildClass{
+	.cxDBPreYeildClassMixin();
+	@{property-margin-right}: @margin-right;
+	@{property-margin-left}: @margin-left;
+}
+/* Hide Mandatory Styling when Mandatory in Available in Table Starts */
+.cxHideMandatoryForInput .lyteInputBox.mandatoryField .lyteField:before, 
+.cxHideMandatoryForInput .cxFakeDropButton.mandatoryField:before, 
+.cxHideMandatoryForInput .cxBoxDropdown.mandatoryField lyte-drop-button:before,
+.cxHideMandatoryForInput lyte-dropdown.cxBoxDropdown.mandatoryField .lyteDummyEventContainer::before {
+	visibility: hidden;
+	opacity: 0;
+}
+/* Hide Mandatory Styling when Mandatory in Available in Table Ends*/
+
+.cxDisableDropBody lyte-drop-item{
+	.cxDisableDropItemMixin();
+	background: @bg;
+	color: @color;
+	cursor: not-allowed;
+}
+
+
+.cxDDRefreshBtnTextWrap{
+	position: relative;
+}
+
+.cxDDRefreshBtnWrap{
+	.cxDDRefreshBtnWrapMixin();
+	position: absolute;
+	top: @top;
+	width: @w;
+	z-index: @z-index;
+	justify-content: center;
+}
+
+.cxDDRefreshCompleted .cxDDRefreshBtnWrap{
+	overflow: hidden;
+}
+
+.cxDDRefreshBtn.lytePrimaryBtn{
+	.cxDDRefreshBtnMixin();
+	padding: @padding;
+	border-radius: @border-radius;
+	box-shadow: @box-shadow;
+}
+
+.cxDDOnRefresh .cxDDRefreshBtn{
+	.cxDDRefreshBtnCompMixin();
+	padding: @padding;
+	transition: @transition;
+}
+
+.cxDDRefreshBtn:disabled{
+	.cxDDRefreshBtnDisabledMixin();
+	background: @bg;
+	opacity: @opacity;
+}
+
+.cxDDRefreshBtnDummyDiv{
+	.cxDDRefreshBtnDummyDivMixin();
+	height: @h;
+}
+
+.cxRefreshIcon.cxDDRefreshIcon{
+	.cxDDRefreshIconMixin();
+	background-color: @bg-color;
+}
+
+.cxDDRefreshLyteBtn{
+	.cxDDRefreshLyteBtnMixin();
+	margin: @margin;
+	position: relative;
+	top: @top;
+}
+
+.cxDDRefreshCompleted .cxDDRefreshLyteBtn{
+	.cxDDRefreshLyteBtnCompMixin();
+	top: @top;
+	transition: @transition;
+}
+
+.cxDDRefreshBtnText{
+	.cxDDRefreshBtnTextMixin();
+	@{property-margin-left}: @margin-left;
+	font-size: @font-size;
+	max-width: @max-w;
+}
+
+
+.cxDDOnRefresh .cxDDRefreshBtnText{
+	.cxDDRefreshBtnTextOnRefMixin();
+	transition: @transition;
+	max-width: @max-w;
+	overflow: hidden;
+	@{property-margin-left}: @margin-left;
+}
+
+.cxDDRefreshCompleted .cxDDRefreshBtnDummyDiv{
+	display: none;
+}
+
+.cxCircleLoader.cxDDRefreshBtnLoader{
+	.cxDDRefreshBtnLoaderMixin();
+	position: absolute;
+	@{property-left}: @left;
+	width: @w;
+	height: @h;
+	display: none;
+}
+
+.cxCircleLoader.cxDDRefreshBtnLoader .cxCircleLoader2{
+	.cxDDRefreshBtnLoader2Mixin();
+	width: @w;
+	height: @h;
+	background: @bg;
+}
+
+.cxDDOnRefresh .cxDDRefreshIcon{
+	visibility: hidden;
+}
+
+.cxDDOnRefresh .cxCircleLoader.cxDDRefreshBtnLoader{
+	display: block;
+}
+
+.cxDDRefreshBtnLoader.cxCircleLoader::before{
+	.cxDDRefreshBtnLoaderBeforeMixin();
+	background: @bg;
+}
+
+.cxDDRefreshBtnLoader.cxCircleLoader .cxCircleLoader1::before{
+	.cxDDRefreshBtnLoader1BeforeMixin();
+	background: @bg;
+}
+
+.cxDDRefreshBtnLoader.cxCircleLoader .cxCircleLoader1::after{
+	.cxDDRefreshBtnLoader1AfterMixin();
+	background: @bg;
+}
+
+.cxDDRefreshCompleted lyte-drop-item.cxDDNewItem{
+	.cxDDRefreshCompItemMixin();
+	max-height: @max-h;
+	transition: @transition;
+	overflow: hidden;
+}
+
+.cxDDRefreshTransition lyte-drop-item.cxDDNewItem{
+	.cxDDRefreshTransitionItemMixin();
+	max-height: @max-h;
+	animation: cxDDItemHighlight 1s linear;
+}
+
+@keyframes cxDDItemHighlight{
+	0%{
+		background: @cxDDItemHighlightColor1;
+	}
+	100%{
+		background: @cxDDItemHighlightColor2;
+	}
+}
+
+.cxDropboxWithSearch .cxDDRefreshBtnWrap{
+	.cxDDWithSearchRefreshBtnMixin();
+	top: @top;
+}
+
+.cxDDRefreshCompleted.cxDropboxWithSearch .cxDDRefreshBtnWrap{
+	.cxDDWithSearchRefreshBtnCompMixin();
+	top: @top;
+	padding-top: @padding-top;
+}
+
+.cxDDRefreshCompleted.cxDropboxWithSearch .cxDDRefreshLyteBtn{
+	.cxDDWithSearchRefLyteBtnCompMixin();
+	top: @top;
+}
+.cxDropItemHead {
+	display: block;
+}
+.cxDropItemChild {
+	margin-top: 3px;
+	font-size: @cruxSmallFontSize;
+	color: @cxLabelColor;
+}
+.cxDropItemArwSep {
+	@{property-margin-left}: 5px;
+	@{property-margin-right}: 5px;
+	display: inline-block;
+}
+

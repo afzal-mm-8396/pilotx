@@ -1,0 +1,219 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-calendar.variables.less";
+
+@import "../themes/default/less-variables/crux-calendar-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-calendar";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-calendar-variables.less";
+}
+
+.cxdN{
+    display: none;
+}
+
+crux-calendar .lyteCalendarPopup{
+    .cxCalLyteCalendarPopupMixin();
+    border-radius: @border-radius;
+    box-shadow: @box-shadow;
+    border: @border;
+    overflow: hidden
+}
+
+crux-calendar .lyteCalendarNavigator{
+    .cxCalLyteCalendarNavigatorMixin();
+    justify-content: space-between;
+    padding: @padding;
+}
+
+.cruxCalTableRowHeader{
+    .cruxCalTableRowHeaderMixin();
+    margin: @margin;
+}
+
+crux-calendar .lyteCalendarNavigator.cxHeaderBack{
+    .cxCalNavHeaderBackMixin();
+    background: @bg;
+}
+
+crux-calendar .yearAndMonthNav{
+    .cxCalYearAndMonthNavMixin();
+    font-family: @font-family;
+    font-weight: @font-weight;
+    padding: @padding;
+    cursor: pointer;
+    border: @border;
+    border-radius: @border-radius;
+    transition: @transition;
+}
+
+.cruxCalNav{
+    .cruxCalNavMixin();
+    width: @w;
+    height: @h;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: @border;
+    border-radius: @border-radius;
+    transition: @transition;
+}
+
+.cxCalHeaderNavIcons{
+    display: flex;
+}
+
+.cxCalNavIconNext,
+.cxCalNavIconPrev{
+    .cxCalNavIconPrevMixin();
+    width: @w;
+    height: @h;
+    display: inline-block;
+    transform: @transform;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color)
+}
+
+.cxCalNavIconNext{
+    .cxCalNavIconNextMixin();
+    transform: @transform;
+}
+
+.cxCalNavIconCur{
+    .cxCalNavIconCurMixin();
+    width: @w;
+    height: @h;
+    display: inline-block;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color)
+}
+
+.cruxCalNav:not(:last-of-type):not(:first-of-type){
+    .cruxCalNavMiddleChildMixin();
+    margin: @margin;
+}
+
+crux-calendar .lyteCalTableContainer{
+    .cxCalLyteCalTableContainerMixin();
+    padding: @padding;
+    border-spacing: @border-spacing;
+}
+
+crux-calendar .lyteCalTableCell{
+    .cxCalLyteCalTableCellMixin();
+    width: @w;
+    height: @h;
+    min-width: @min-w;
+    line-height: @line-height;
+    font-size: @font-size;
+    transition: @transition;
+}
+
+crux-calendar[view-type="yearView"] .cruxYearTableCel:hover,
+crux-calendar .lyteCalTableCell:hover{
+    .cxCalLyteCalTableCellHoverMixin();
+    background: @bg;
+    border: @border;
+}
+
+.cruxCalTableCellHeader{
+    .cruxCalTableCellHeaderMixin();
+    display: table-cell;
+    width: @w;
+    font-size: @font-size;
+    font-family: @font-family;
+    font-weight: @font-weight;
+    text-align: center;
+}
+
+.cruxCalTableContainer,
+.cruxCalContainer{
+    .cxCalSpacingMixin();
+    border-spacing: @border-spacing;
+}
+
+.cruxCalContainer{
+    .cxCalContainerMixin();
+    transition: @transition;
+}
+
+crux-calendar .lyteCalSel{
+    .cxCalLyteCalSelMixin();
+    border: @border;
+    background: @bg;
+    color: @color;
+}
+
+crux-calendar[view-type="yearView"] .cruxYearTableCel{
+    .cxCalYearTableCelMixin();
+    width: @w;
+    height: @h;
+    line-height: @line-height;
+    display: table-cell;
+    text-align: center;
+    cursor: pointer;
+    border: @border;
+    border-radius: @border-radius;
+    transition: @transition;
+}
+
+crux-calendar .yearAndMonthNav:hover{
+    .cxCalYearAndMonthNavHoverMixin();
+    border: @border;
+    background: @bg;
+}
+
+crux-calendar[view-type="yearView"] .cruxCalTableRow{
+    .cxCalTableRowMixin();
+    border-spacing: @border-spacing;
+    font-size: @font-size;
+}
+
+crux-calendar[view-type="yearView"] .cxSingleYear{
+    .cxSingleYearMixin();
+    padding: @padding;
+    border-bottom: @border-bottom;
+}
+
+.cxYearHeader{
+    .cxYearHeaderMixin();
+    padding: @padding;
+    font-size: @font-size;
+    font-family: @font-family;
+    font-weight: @font-weight;
+}
+
+crux-calendar[view-type="yearView"] .lyteCalTableContainer{
+    .cxCalYearViewLyteCalTableContainerMixin();
+    padding: @padding;
+}
+
+crux-calendar .cruxCalNav:hover{
+    .cruxCalNavHoverMixin();
+    background-color: @bg;
+    border: @border;
+}
+
+crux-calendar[view-type="yearView"] .cxCalSelMonth:hover,
+crux-calendar[view-type="yearView"] .cxCalSelMonth,
+crux-calendar .lyteCalToday:hover,
+crux-calendar .lyteCalToday{
+    .cxCalLyteCalTodayMixin();
+    border: @border;
+    background: @bg;
+    color: @color;
+}
+
+crux-calendar .cruxCalYearContainer{
+    visibility: hidden;
+}
+
+crux-calendar[view-type="yearView"] .cruxCalYearContainer{
+    visibility: visible;
+}

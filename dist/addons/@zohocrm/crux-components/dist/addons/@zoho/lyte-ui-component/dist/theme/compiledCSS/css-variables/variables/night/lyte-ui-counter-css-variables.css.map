@@ -1,0 +1,1 @@
+{"version":3,"sources":["theme/themes/css-variables-night/ui-elements/counter/counter.css-variables.less"],"names":[],"mappings":";;;;;;;AAEA;EACI,0BAA0B,yBAA1B","sourcesContent":["@import \"../../global/global.variables.less\";\n\n:root {\n    --lyte-counter-font-size: var(--lyte-font-size-xxl);\n}\n"]}

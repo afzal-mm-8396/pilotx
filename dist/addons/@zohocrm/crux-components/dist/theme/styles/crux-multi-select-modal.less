@@ -1,0 +1,176 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-multi-select-modal.variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+.cxMSelModContent{
+    .cxMSelModContentMixin();
+    padding-top: @padding-top;
+    padding-bottom: @padding-bottom;
+    position: relative;
+}
+// .cxMSelModSearch{
+//     .cxMSelModSearchMixin();
+//     width: @w;
+// }
+.cxMSelModTable{
+    border: none;
+    overflow: hidden;
+}
+
+.cxMSelModTable lyte-table-structure{
+    .cxMSelModTableStructureMixin();
+    border-spacing: @border-spacing;
+    margin-bottom: @margin-bottom;
+}
+.cxMSelModTable .cxMSelModTd{
+    .cxMSelModTdMixin();
+    padding: @padding;
+    border: none;
+}
+// .cxMSelModTable .cxMSelModTr{
+//     .cxMSelModTrMixin();
+//     margin-bottom: @margin-bottom;
+// }
+// .cxMSelModTable .cxMSelModTr:last-child{
+//     .cxMSelModTrLastChildMixin();
+//     margin-bottom: @margin-bottom;
+// }
+.cxMSelModTr:hover .cxMSelModTd{
+    .cxMSelModTdHoverMixin();
+    background-color: @bg;
+}
+.cxMSelModTr .cxMSelModTd:first-child {
+    .cxMSelModTdFristChildBRMixin();
+    border-radius: @border-radius;
+}
+
+.cxMSelModTr .cxMSelModTd:last-child {
+    .cxMSelModTdLastChildBRMixin();
+    border-radius: @border-radius;
+}
+.cxMSelModTd:last-child {
+    .cxMSelModTdLastChildMixin();
+    width: @width;
+    position: relative;
+    padding-left: @padding-left;
+    vertical-align: top;
+}
+// .cxMSelModTd:last-child input{
+//     .cxMSelModTdLastChildInputMixin();
+//     width: @width;
+//     position: absolute;
+//     top: @top;
+// }
+// .cxMSelModTd:first-child .cxMSelModCheckBox{
+//     .cxMSelModTdFirsChildCheckBoxMixin();
+//     width: @width;
+// }
+.cxMSelModCheckBox.lyteCboxChecked .cxMSelModCheckBoxLabel{
+    .cxMSelModCheckBoxCheckedLabelMixin();
+    // font-family: @font-family;
+    // font-weight: @font-weight;
+    -webkit-text-stroke: @webkit-text-stroke;
+}
+.cxMSelModCheckBoxLabel{
+    // .cxMSelModCheckBoxLabelMixin();
+    word-break: break-word;
+    text-wrap: wrap;
+    // max-width: @max-width;
+    // vertical-align: top !important;
+}
+.cxMSelModCheckBox .lyteCheckBoxDefault{
+    display: inline-flex;
+    vertical-align: top;
+}
+.cxMSelModCheckBox .lyteCheckBoxDefault::before{
+    .cxMSelModCheckBoxDefaultBeforeMixin();
+    flex-shrink: @flex-shrink;
+    top: @top;
+    @{property-margin-right}: @margin-right;
+}
+
+.cxMSelModCheckBox .lyteCheckBoxDefault::after{
+    .cxMSelModCheckBoxDefaultAfterMixin();
+    top: @top;
+}
+.cxMSelModLabel{
+    .cxMSelModLabelMixin();
+    display: block;
+    color: @color;
+    // margin-bottom: @margin-bottom;
+    font-size: @font-size;
+    font-family: @font-family;
+    margin-top: @margin-top;
+}
+.cxMSelModDropdown lyte-drop-button,
+.cxMSelModDropdown .cxFakeDropButton{
+    .cxMSelModDropdownMixin();
+    width: @width;
+}
+.cxMSelModDropdownSearch{
+    .cxMSelModDropdownSearchMixin();
+    display: flex;
+    margin-bottom: @margin-bottom;
+    margin-top: @margin-top;
+    gap: @gap;
+    align-items: center;
+}
+.cxMSelModErrorMsg{
+    .cxMSelModErrorMsgMixin();
+    color: @color;
+    // width: @width;
+    // text-align: right;
+    margin-left: @margin-left;
+    font-size: @font-size;
+    font-family:@font-family;
+}
+.cxMSelModalHeading{
+    .cxMSelModalHeadingMixin();
+    // margin-bottom: @margin-bottom;
+    display: block;
+}
+.cxMSelModHeader{
+    .cxMSelModHeaderMixin();
+    padding-bottom: @padding-bottom;
+}
+.cxMSelModNoResultMsg{
+    .cxMSelModNoResultMsgMixin();
+    display: flex;
+    justify-content: center;
+    margin-bottom: @margin-bottom;
+    margin-top: @margin-top;
+    color: @color;
+}
+.cxMSelModErrorIcon{
+    .cxMSelModErrorIconMixin();
+    margin-right: @margin-right;
+}
+.cxMSelModContent .cxRefreshBtnWrap{
+    .cxMSelModRefreshBtnWrapMixin();
+    left : @left;
+}
+.cxMSelModRefreshCompleted .cxRefreshBtnWrap .cxRefreshLyteBtn{
+    .cxMSelModRefreshCompletedBtnMixin();
+    top : @top;
+    transition: top 0.4s ease;
+}
+
+.cxMSelModRefreshCompleted .cxRefreshBtnWrap{
+    overflow: hidden;
+}
+
+.cxMSelModRefreshCompleted .cxMSelModTable .cxMSelModHighlightRow .cxMSelModTd{
+    animation: cxHighlightAnimation 2s linear;
+}
+
+.cxMSelModDropdownSearchWithLabel{
+    .cxMSelModDropdownSearchWithLabelMixin();
+    margin-top: @margin-top;
+}
+
+.cxMSelModErrorMsgOnPopoverOpen{
+    .cxMSelModErrorMsgOnPopoverOpenMixin();
+    border-bottom: @border-bottom;
+}

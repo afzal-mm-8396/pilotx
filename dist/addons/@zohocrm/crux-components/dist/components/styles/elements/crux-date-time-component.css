@@ -1,0 +1,11 @@
+/* .sepeartor {
+	position: absolute;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: #dfdfdf;
+    left: 49%;
+} */
+crux-date-time-component .cxElementDisabled .cxBoxInput.lyteInputBox input:first-child {
+	padding-right: 10px;
+}

@@ -1,0 +1,697 @@
+.cxPbPropertiesModalSmallMixin() {
+	@w: 360px !important;
+}
+.cxPbPropertiesModalMediumMixin() {
+	@w: 571px !important;
+}
+.cxPbPropertiesModalLargeMixin() {
+	@w: 763px !important;
+}
+.cxPbPropertiesModalMixin() {
+	@border: none;
+	@box-shadow: 0px 1px 16px rgba(208, 221, 234, 0.87);
+}
+.cxPbPropertiesModalHeaderMixin() {
+	@padding: 10px;
+	@font-size: @cxFontSize15px;
+	@line-height: 17px;
+	@bg: @cxPbPropModalHeadFootBg;
+	@border-bottom: 1px solid @cxPbPropModalHeadFootBr;
+	@color: @cxPbPropHeadingColor;
+    @font-family: @cruxTertiaryFont;
+}
+.cxPbPropertiesModalHeaderIconsMixin() {
+	@w: 26px;
+	@h: 26px;
+	@margin-left: 6px;
+	@border-radius: 13px;
+}
+.cxPbPropertiesModalHeaderIconSpanHoverMixin() {
+	@bg: @cxPbPropModalHeadIconBg;
+}
+.cxPbPropertiesModalContentMixin() {
+	@h: 100%;
+	@padding: 0px;
+}
+.cxPbPropModalTabHeadBodyMixin() {
+	@border: none;
+}
+.cxPbPropModalTabHeadMixin() {
+	@border-bottom: 1px solid @cxPbPropTabBr;
+}
+.cxPbPropertiesModalTabTitleMixin() {
+	@padding: .cruxLESSPaddingMixin(18px 5px 15px 5px)[@padding];
+	@color: @cxPbPropBaseColor;
+	@border: none;
+	@bg: none;
+	@margin: 0px 15px;
+}
+.cxPbPropertiesModalTabActiveMixin() {
+	@color: @cxPbPropHeadingColor;
+	@border: none;
+}
+.cxPbPropertiesModalTabActiveAfterMixin() {
+	@w: 100%;
+	@h: 6px;
+	@border-radius: 3px;
+	@bottom: -3px;
+	@background-color: @cxPbTabActiveBg;
+	@left: 0px;
+}
+.cxPbPropModalTabBodyMixin() {
+	@padding: .cruxLESSPaddingMixin(20px 15px 0px 15px)[@padding];
+	@h: calc(100% - 52px) !important;
+}
+.cxPbPropModalTabFormHeadingMixin() {
+	@color: @cxPbPropHeadingColor;
+	@font-family: @cruxSecondaryFont;
+	@font-size: @cxFontSize13px;
+	@margin-bottom: 12px;
+	@padding-top: 8px;
+}
+.cxPbPropModalTabHeadingBtnMixin() {
+	@h: 100%;
+	@margin-left: 10px;
+	@border-radius: 4px;
+	@border:1px solid @cxPbPropFormHeadBtnBr;
+	@padding-left: 10px;
+	@padding-right: 10px;
+}
+.cxPbPropModalTabTwoColFormRowMixin() {
+	@flex-basis: calc(50% - 8px);
+}
+.cxPbPropModalTabFormRowMixin() {
+	@margin-bottom: 18px;
+}
+.cxPbPropModalTabFormElemLabelMixin() {
+	@color: @cxPbPropLabelColor;
+	@margin-bottom: 8px;
+}
+.cxPbFormRowInfoIconMixin(){
+	@margin-left: 6px;
+}
+.cxPbPropFormErrorInfoContMixin() {
+	@font-size: @cxFontSize13px;
+	@color: @cxPbPropLabelColor;
+	@margin-top: 5px;
+}
+.cxPbPropModalTabErrorColorMixin() {
+	@color: @cxPbPropErrMsgColor;
+}
+.cxPbPropModalTabFormInfoBoldMixin() {
+	@font-family: @cruxTertiaryFont;
+}
+.cxPbPropFormRowTextInputMixin() {
+	@w: 100%;
+}
+.cxPbPropFormCbRowMixin() {
+	@margin-bottom: 12px;
+}
+.cxPbPropFormCbRowCheckBoxMixin() {
+	@color: @cxPbPropBaseColor;
+}
+
+.cxPbFormCbIconMixin(){
+	@margin-left: 5px;
+	@top: 1px;
+}
+
+.cxPbPropFormCbInfoMixin() {
+	@margin-left: 23px;
+	@font-size: @cxFontSize13px;
+	@color: @cxPbPropLabelColor;
+	@margin-top: 5px;
+}
+.cxPbPropFormCbInfoIconMixin() {
+	@margin-left: 7px;
+}
+.cxPbPropNoteMixin() {
+	@w: 100%;
+	@font-size: @cxFontSize13px;
+	@padding: 9px 15px;
+	@color: @cxPbPropNoteColor;
+	@background-color: @cxPbPropNoteBg;
+	@border: 1px solid @cxPbPropNoteBr;
+	@border-radius: 6px;
+	@margin-bottom: 15px;
+}
+.cxPbPropNoteBoldFontMixin() {
+	@font-family: @cruxTertiaryFont;
+}
+
+.cxPbPropActionModalNoteMixin(){
+	@w: fit-content;
+}
+
+.cxPbPropFormNoteMixin() {
+	@margin-left: 23px;
+	@w: calc(100% - 23px);
+	@margin-top: 8px;
+	@margin-bottom: 0px;
+}
+.cxPbPropModalLargeMediumNoteMixin() {
+	@max-w: 433px;
+}
+.cxPbPropInfoMixin() {
+	@margin-bottom: 12px;
+	@color: @cxPbPropInfoColor;
+	@line-height: 20px;
+}
+.cxPbPropInfoLinkMixin() {
+	@color: @cxPbPropLinkColor;
+	@line-height: 20px;
+}
+.cxPbPropertiesModalFooterMixin() {
+	@color: @cxPbPropLabelColor;
+	@padding: 15px;
+	@bg: @cxPbPropModalHeadFootBg;
+	@border-top: 1px solid @cxPbPropModalHeadFootBr;
+}
+.cxPbPropFormulaEditorMixin() {
+	@border: 1px solid @cxPbPropEditorBr;
+	@border-radius: 6px;
+}
+.cxPbFormulaEditorHeadMixin() {
+	@border-bottom: 1px solid @cxPbPropEditorBr;
+	@background-color: @cxPbPropEditorHeadBg;
+}
+.cxPbFormulaEditorLabelMixin() {
+	@padding: .cruxLESSPaddingMixin(0px 15px 0px 20px)[@padding];
+	@border-radius: 6px 0px 0px 6px;
+	@color: @cxPbPropBaseColor;
+	@font-family: @cruxTertiaryFont;
+}
+.cxPbFormulaEditorLabelReqBeforeMixin() {
+	@w: 3px;
+	@background-color: @cxPbPropElemReqBg;
+	@h: 100%;
+	@left: 0px;
+}
+.cxPbFormulaEditorElemValMixin() {
+	@padding: 5px 0px;
+	@margin-right: 10px;
+}
+.cxPbFormulaEditorBodyMixin() {
+	@h: 200px;
+}
+.cxPbPropFormTableRowMixin() {
+	@margin: 0px -15px;
+	@margin-bottom: 18px;
+}
+.cxPbPropFormTableMixin() {
+	// @border-bottom: 1px solid @cxPbPropTableBr;
+	@border-radius: 6px 6px 0px 0px
+}
+.cxPbFormTableHeadMixin() {
+	@bg: @cxPbPropTableRowBgColor;
+	@border-top:1px solid @cxPbPropTableBr;
+	@border-bottom:1px solid @cxPbPropTableBr;
+	@padding: 15px 5px;
+	@min-w: 20px;
+	@color: @cxPbPropBaseColor;
+}
+.cxPbFormSortableTableHeadMixin() {
+	@bg: @cxPbPropTableHeadBg;
+}
+.cxPbFormSortableTableTdMixin() {
+	@border-color: @cxPbPropTableTdBr;
+	@padding: 8px 5px;
+}
+.cxPbFormTableTdMixin() {
+	@padding:12px 6px;
+	@color: @cxPbPropBaseColor;
+	@border-color: @cxPbPropTableTdBr;
+}
+.cxPbFormTableRowHoverBgMixin() {
+	@bg: @cxPbPropTableHoverBg;
+}
+.cxPbSortableTableRowHoverBgMixin() {
+	@bg: @cxPbPropTableRowBgColor;
+}
+// .cxPbSortableTableHandleMixin() {
+	// @margin-left: 13px;
+// }
+.cxPbFormTableActionTdMixin() {
+	@h: 100%;
+}
+.cxPbFormTableRowActionInfoMixin() {
+	@margin-left: 8px;
+}
+.cxPbFormTableMinusIconWrapMixin() {
+	@bottom: 5px;
+	@border-color: @cxPbMinusIconColor;
+}
+.cxPbFormTableMinusIconMixin() {
+	@background-color: @cxPbMinusIconColor;
+}
+.cxPbFormTablePlusIconWrapMixin() {
+	@margin-left: 7px;
+	@border-color: @cxPbPlusIconColor;
+}
+.cxPbFormTablePlusIconMixin() {
+	@background-color: @cxPbPlusIconColor;
+}
+.cxPbFormTableFooterMixin() {
+	@border: 1px solid @cxPbPropTableBr;
+	@border-top: none;
+	@h: 50px;
+	@padding: 0px 20px;
+	@color: @cxPbPropBaseColor;
+	@border-radius: 0px 0px 6px 6px;
+}
+.cxPbFormTableInfoRowTdMixin() {
+	@padding-bottom: 31px;
+}
+.cxPbFormTableInfoRowDivMixin() {
+	@padding: 0px;
+	@border: none;
+	@bottom: 8px;
+	@font-size: @cxFontSize13px;
+	@color: @cxPbPropLabelColor;
+	@min-w: 0px;
+	@z-index: 1;
+}
+.cxPbFormTableInfoTrMixin() {
+	@color: @cxPbPropLinkColor;
+}
+
+.cxPbPropFormElemNoteMixin(){
+	@color: @cxPbPropLabelColor;
+	@font-size: @cxFontSize13px;
+	@margin-top: 6px;
+}
+
+.cxPbPickListSortSelectorTableMixin(){
+	@h: auto;
+}
+
+// .cxPbPicklistOptionHeadMixin(){
+// 	@margin-bottom: 10px;
+// 	@padding: 0px 15px;	
+// }
+
+.cxPbPlOptActionBtnMixin(){
+	@h: 100%;
+	@w: 40px;
+	@border-radius: 4px;
+	@border: 1px solid @cxPbPropFormHeadBtnBr;
+	@margin-left: 10px;
+	@top: 0px;
+	@right: 0px;
+}
+
+.cxPbPicklistOptionHeadingMixin(){
+	@font-family: @cruxSecondaryFont;
+	@margin-bottom: 8px;
+}
+
+.cxPbPicklistSettingsMixin(){
+	@padding-left: 0px;
+	@w: 65px;
+}
+
+.cxPbTablePlActionTdMixin(){
+	@padding-left: 0px;
+}
+
+.cxPbTablePlSortIconThMixin(){
+	@padding-left: 15px;
+	@padding-right: 0px;
+	@min-w: 10px;
+	@w: 10px;
+}
+
+// .cxPbPicklistTableOptionsThMixin(){
+// 	@w: calc(100% - 45px)
+// }
+
+.cxPbFormPicklistTableMinMixin(){
+	@h: 365px;
+}
+
+.cxPbFormPicklistTableMaxMixin(){
+	@h: 730px;
+}
+
+.cxPbPlOptActionSettingsBtnMixin(){
+	@right: 40px;
+	@border-right : 1px solid @cxPbPropTableBr;
+	@border-left: 1px solid @cxPbPropTableBr;
+}
+
+.cxPbPlOptActionBtnHoverMixin{
+	@bg: @cxPbPropModalTableActionHoverBg;
+}
+
+.cxPbPropActionModalContentMixin(){
+	@margin-bottom: 10px;
+}
+
+// .cxPbPropActionModalHeadingMixin(){
+// 	@margin-bottom: 10px;
+// 	@font-size: @cxFontSize20px;
+// 	@font-family: @cruxSecondaryFont;
+// }
+.cxPbPropPlReFormSwapIconWrapMixin(){
+	@w: 30px;
+	@h: 30px;
+	@margin: 0px 15px 3px;
+	@flex-shrink: 0;
+	@border-radius: 15px;
+	@bg: @cxPbSectionActionIconHoverBg;
+}
+
+.cxPbPropPlReplaceFormFldMixin(){
+	@w: calc(50% - 30px); 
+}
+
+.cxPbPropPlSwapIconMixin(){
+	@transform: rotate(90deg);
+}
+
+.cxPbPropPlReplaceFormFldLabelMixin(){
+	@margin-bottom: 15px;
+	@font-family: @cruxTertiaryFont;
+}
+
+.cxPbPropPlReplaceFormMixin(){
+	@margin-top: 25px;
+}
+
+.cxPbPlReplaceModalNoteMixin(){
+	@w: 100%;
+	@margin: 30px 0px 0px;
+	@font-size: initial;
+	@padding-left: 30px;
+}
+
+.cxPbPlReplaceModalNoteListMixin(){
+	@margin-bottom: 20px;
+}
+
+.cxPbPlPreOptModalContMixin(){
+	@border: 1px solid @cxPbSectionBorder;
+	@border-radius: 6px;
+	@h: 500px;
+}
+
+.cxPbPlPreOptModalLeftContMixin(){
+	@w: 200px;
+	@padding: 7px;
+	@border-right: 1px solid @cxPbSectionBorder;
+	@bg: @cxPbBackgroundColor;
+}
+.cxPbPlPreOptModalLeftContItemMixin(){
+	@padding: 10px 12px;
+}
+
+.cxPbPlPreOptModalLeftContItemSelMixin(){
+	@bg: @cxPbItemSelectedBg;
+	@font-family: @cruxTertiaryFont;
+	@border-radius: 6px;
+}
+
+// .cxPbPlPreOptModalRightContMixin(){
+// }
+
+
+.cxPbPlPreOptModalRightContItemMixin(){
+	@margin: 15px 20px; 
+}
+
+.cxPbPlPreOptModalRightContPinnedMixin(){
+	@margin: 0px;
+	@padding: 15px 20px;
+	@border-bottom: 1px solid @cxPbSectionBorder;
+}
+
+.cxPbPlPreOptModalRightContItemCheckBoxMixin(){
+	@margin-right: 8px;
+	@top: 0px;
+}
+
+.cxPbPlPreOptModalRightNestedContMixin(){
+	@h: 100%;
+}
+
+.cxPbPropPlColorFldMixin(){
+	@margin-right: 10px;
+}
+
+.cxPbPropPlGlobalFormLabelMixin(){
+	@margin-right: 20px;
+}
+
+.cxPbFormHeadingWithRightBtnMixin(){
+	@margin-bottom: 8px;
+}
+
+.cxPbFormHeadingRightBtnMixin(){
+	@color: @cxPbPropLinkColor;
+	@margin-bottom: 10px;
+}
+
+.cxPbCriteriaViewContainerMixin(){
+	@padding: 7px 20px 15px;
+	@bg: @cxPbPropCriteriaViewContBg;
+	@border: 1px solid @cxPbPropCriteriaViewContBorder;
+	@border-radius: 6px;
+}
+
+.cxPbPropModalDashedSeparatorMixin(){
+	@w: 100%;
+	@border-top: 1px dashed @cxPbSectionBorder;
+	@padding: 9px 0px 12px;
+	@left: 0px;
+	@right: 0px;
+}
+
+.cxPbSectionSettingsMenuItemMixin(){
+	@padding-left: 32px;
+}
+
+.cxPbSecSettingMenuIconMixin(){
+	@margin-right: 8px;
+}
+
+.cxPbSecSettingMenuSelectedIconMixin(){
+	@mask-img: @cruxSprite; 
+	@mask-pos: -33px -15px;
+	@w: 9px;
+	@h: 6px;
+	@bg: @cxPbIconBaseColor;
+	@left: 15px;
+}
+
+.cxPbSecSettingMenuSelMixin(){
+	@font-family: @cruxSecondaryFont;
+}
+
+.cxPbLookupCriteriaCkboxMixin(){
+	@margin-top: 16px;
+}
+
+.cxPbFieldOfLookupHeaderMixin(){
+	@font-family: @cruxPrimaryFont;
+	@font-size: @cxFontSize14px;
+	@margin-top: 2px;
+}
+
+.cxPbFldLookupModalContentMixin(){
+	@padding-left: 0px;
+	@padding-right: 0px;
+}
+
+.cxPbFieldOfLookupTableMixin(){
+	@border-right: none;
+	@border-left: none;
+	@border-radius: 0px;
+}
+
+.cxPbFldLookupTableNoRecordMixin(){
+	@padding: 25px;
+	@color: @cxPbNotFoundColor;
+}
+
+.cxPbFldLookupMsgMixin(){
+	@color: @cxPbPropLabelColor;
+}
+
+.cxPbFldLookupMsgInfoIcon(){
+	@mask-position: -7px -126px;
+	@w: 13px;
+	@h: 14px;
+	@bg: @cxPbGrayBgIcon;
+	@margin-right: 6px;
+}
+
+.cxPbFldLookupFormRowMixin(){
+	@gap: 30px;
+	@margin-bottom: 20px;
+}
+
+.cxPbFldLookupFormLabelMixin(){
+	@color: @cxPbPropLabelColor;
+}
+
+.cxPbFldLookupFormValueMixin(){
+	@w: 350px;
+	@min-w: 350px;
+}
+
+.cxPbPropRollupSumContMixin(){
+	@border: 1px solid @cxPbPropSectionBr;
+	@h: 500px;
+	@border-radius: 6px;
+}
+
+.cxPbPropRollupSumLabelMixin(){
+	@color: @cxPbPropParagraphColor;
+	@margin-bottom: 15px;
+}
+
+.cxPbPropRollupSumHeadMixin(){
+	@margin-bottom: 20px;
+}
+
+.cxPbPropRollupSumLeftContMixin(){
+	@w: 200px;
+	@border-right: 1px solid @cxPbPropSectionBr;
+	@padding: 4px 0px;
+	@bg: @cxPbPropSectionBg;
+}
+
+.cxPbPropRollSumLeftHeadMixin(){
+	@font-family: @cruxSecondaryFont;
+	@padding: 8px 20px;
+}
+
+.cxPbPropRollupSumRightContMixin(){
+	@flex: 1;
+	@padding: 20px;
+}
+
+.cxPbPropRollSumLeftNavMixin(){
+	@flex: 1;
+	@h: auto;
+	@bg: none;
+}
+
+.cxPbPropRollSumLeftNavDivMixin(){
+	@padding: 0px 8px;
+}
+
+.cxPbPropRollSumLeftNavItemMixin(){
+	@padding: 8px 10px;
+	@font-size: @cxFontSize14px;
+	@border-radius: 6px;
+}
+
+.cxPbPropRollSumLeftNavItemHovMixin(){
+	@bg: none;
+}
+
+.cxPbPropRollSumLeftNavItemActiveMixin(){
+	@bg: @cxPbItemSelectedBg;
+	@color: @cxPbItemSelectedColor;
+}
+
+.cxPbPropRollupSumFormRowMixin(){
+	@margin-bottom: 20px;
+}
+
+.cxPbPropRollupSumFormLabelMixin(){
+	@font-family: @cruxSecondaryFont; 
+	@margin-bottom: 10px;
+}
+
+.cxPbPropRollupSumFieldContMixin(){
+	@gap: 10px 0px;
+}
+
+.cxPbPropRollupSumFieldMixin(){
+	@padding: 10px 12px;
+	@w: 240px;
+	@border-radius: 6px;
+	@border: 1px solid @cxPbSectionBorder;
+}
+
+.cxPbPropRollSumRecCountMixin(){
+	@font-family: @cruxSecondaryFont;
+}
+
+.cxPbModRollupFootContentMixin(){
+	@color: @cxPbPropLabelColor;
+}
+
+.cxPbModRollupFootValMixin(){
+	@font-family: @cruxTertiaryFont;
+	@margin-left: 3px;
+}
+
+.cxPbPermListCompTableMixin(){
+	@margin: 0px -15px;
+}
+
+.cxPbModalHeaderWrapMixin(){
+	@w: 100%;
+}
+
+.cxPbModalActionIconsWrapMixin(){
+	@w: 26px;
+	@h: 26px;
+	@border-radius: 26px;
+}
+
+.cxPbModalActionIconsWrapHoverMixin(){
+	@bg: @cxPbSectionActionIconHoverBg;
+}
+
+.cxPbModalHeaderActionIconsSpaceMixin(){
+	@margin-left: 6px;
+}
+
+.cxPbModalHeaderLabelHelpIconMixin(){
+	@margin-left: 6px;
+}
+
+.cxPbFormPreviewTextMixin(){
+	@margin-left: auto;
+	@color: @cxPbPropLinkColor;
+	@margin-bottom: 12px;
+}
+
+.cxPbPrevwTextDisabledMixin(){
+	@opacity: 0.6;	
+}
+
+.cxPbPropHelpHovercardMixin(){
+	@padding: 20px;
+}
+
+.cxPbPropHelpHovercardHeadMixin(){
+	@font-family: @cruxSecondaryFont;
+	@font-weight: @cruxFontWeightBold;
+	@font-size: @cxFontSize15px;
+	@margin-bottom: 15px;	
+}
+
+.cxPbPropHelpHovercardTableThMixin(){
+	@bg: @cxPbPropHelpHovercardTableThBg;
+}
+
+.cxPbPropHelpHovercardTableThTdMixin(){
+	@border-right: 1px solid @cxPbPropHelpHovercardTableThBr;
+}
+
+.cxPbPropHelpHCTableSpanTdMixin(){
+	@padding: 0px;	
+}
+
+.cxPbPropHelpHCTableSpanTdDivMixin(){
+	@padding: 6px 10px;	
+}
+
+.cxPbPropHelpHCTableSpanTdFirstDivMixin(){
+	@border-bottom: 1px solid @cxPbPropHelpHCTableSpanTdBorder;
+}

@@ -1,0 +1,282 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-detailpage-sections.variables.less";
+
+@import "../themes/default/less-variables/crux-detailpage-sections-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-detailpage-sections-variables.less";
+}
+
+.cxDvSectionName{
+	.cxDvSectionNameMixin();
+	font-family: @font-family;
+	color: @color;
+	font-size: @font-size;
+	margin-bottom: @margin-bottom;
+}
+/*************************** 
+	Common left Align Reset For Components 
+	- When this gets loaded in Web Tab 
+****************************/
+.cxDvSectionName,
+crux-note,
+crm-field {
+	text-align: @value-textalign-left;
+}
+.cxDvSubform lyte-th {
+	.cxDvSubformMixin();
+	border-top: @border-top;
+	border-bottom: @border-bottom;
+}
+.cxDvSubform lyte-tr lyte-td {
+	.cxDvSubformLyteTdMixin();
+	@{property-border-left}: @border-left;
+	@{property-border-right}: @border-right;
+}
+.cxDvSubform lyte-tr lyte-td:first-child{
+	.cxDvSubformLyteTdFirstChildMixin();
+	@{property-border-left}: @border-left;
+}
+.cxDvSubform lyte-tr lyte-td:last-child{
+	.cxDvSubformLyteTdLastChildMixin();
+	@{property-border-left}: @border-left;
+}
+/*
+.dv_info_parent,
+.dv_bc_info_parent{
+    display: flex;
+    align-items: center;
+}
+*/
+.cxDvInfoCont{
+	.cxDvInfoContMixin();
+	margin-bottom: @margin-bottom;
+	flex-wrap: nowrap;
+    width: 100%;
+}
+.cxDvInfoFormField,
+.cxDvBcInfoFormField{
+	.cxDvBcInfoFormFieldMixin();
+	color: @color;
+	min-width: @min-w;
+	width: @w;
+/*    margin-bottom: 20px;*/
+	padding: @padding;
+	text-align: @value-textalign-right;
+	overflow-wrap: break-word;
+    white-space: normal;
+    word-break: break-word;
+	position: relative;
+	@{property-margin-right}: @margin-right;
+}
+/*
+.cxDvBcInfoFormField{
+    color: #616e88;
+    min-width: 200px;
+    margin-bottom: 6px;
+    text-align: right;
+}
+*/
+.cxDvBcInfoFormRow {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+	margin-bottom: 10px;
+}
+.cxDvInfoValue{
+	.cxDvInfoValueMixin();
+	width: @w;
+	max-width: @max-w;
+	@{property-margin-left}: @margin-left;
+	@{property-margin-right}: @margin-right;
+}
+.cxDvInfoValue crux-detailpage-field-details {
+	max-width: 100%;
+}
+.cxDvInfoValue .cxElemCompViewWrap {
+    max-width: 100%;
+    display: block;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.cxDvCompParent{
+	.cxDvCompParentMixin();
+	border: @border;
+	border-radius: @border-radius;
+	padding: @padding;
+}
+.cxDvTagsParent{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+.cxDvCompParent:hover{
+	.cxDvCompParentHoverMixin();
+	border: @border;
+}
+.cxDvCompParent .cxDvTagFieldEditIcon{
+    visibility: hidden;
+}
+.cxDvCompParent:hover .cxDvTagFieldEditIcon{
+    visibility: visible;
+}
+.cxDvCompParent .cxDvFieldEditIcon{
+	.cxDvFieldEditIconMixin();
+	visibility: hidden;
+	position: absolute;
+	@{property-right}: @right;
+}
+.cxDvCompParent:hover .cxDvFieldEditIcon {
+	visibility: visible;
+}
+.cxDvAjaxEdit{
+	.cxDvAjaxEditMixin();
+	position: relative;
+    width: @width;
+	min-width: @min-width;
+    box-sizing: border-box;
+    height: @height;
+    min-height: @min-height;
+	@{property-padding-right}: @padding-right;
+}
+.cxDvSaveCancelSection{
+	.cxDvSaveCancelSectionMixin();
+	@{property-margin-left}: @margin-left;
+	display: none;
+}
+.cxDvRecordEdit{
+	.cxDvRecordEditMixin();
+	@{property-margin-left}: @margin-left;
+}
+.cxDvFieldSectionContainer {
+	.cxDvFieldSectionContainerMixin();
+	width: @w;
+}
+.cxDvReadOnlyWrap {
+    position: absolute;
+    @{property-right}: 0;
+	visibility: visible;
+}
+.cxDvCompParent .cxUnsupportedField::after {
+	.cxUnsupportedFieldmixin();
+	content: '';
+	position: @position;
+	// background:@background; 
+	top: @top;
+	bottom: @bottom;
+	@{property-left}: @left;
+	@{property-right}: @right;
+	border-radius: @border-radius;
+}
+
+/* Detailview Header Arrow Animation Starts */
+.cxDvShowHideArrowWrap {
+	position: relative;
+	background: none;
+	@{property-padding-left}: 0;
+	transition: padding 0.25s ease-in;
+	pointer-events: none !important;
+    cursor: default !important;
+  }
+  .cxDvShowHideArrowWrap:hover,
+  .cxDvShowHideArrowWrap.lyteNavActive {
+	position: relative;
+	background: none;
+	@{property-padding-left}: 15px;
+  }
+.cxDvShowHideArrowAnim {
+    position: relative;
+}
+.cxDvShowHideArrowAnim::after {
+    content: '';
+    position: absolute;
+    background-position: -1px -2px;
+    background-image: @cruxSprite;
+    @{property-left}: -14px;
+    top:7px;
+    visibility: hidden;
+    width: 8px;
+    height: 4px;
+    animation: none;
+    transform: scale(1.4) rotate(180deg);
+}
+.cxDvShowHideArrowWrap:hover .cxDvShowHideArrowAnim::after {
+    visibility: visible;
+    animation: cxDvShowHideArrowAnim 0.3s ease-in-out normal forwards 1;
+}
+@keyframes cxDvShowHideArrowAnim {
+    0%{
+        opacity: .5;
+    }
+
+    100%{
+        opacity: 1;
+        transform: rotate(270deg) scale(1.4);
+    }
+}
+/* Detailview Header Arrow Animation Ends */
+
+
+/* Detailview Empty Field - hyphen styling STarts */
+.cxDvFieldEmpty::before {
+	.cxDvFieldEmptyMixin();
+	content: '';
+	width: @width;
+	height: @height;
+	display: @display;
+	margin-bottom: @margin-bottom;
+	opacity: @opacity;
+	vertical-align: middle;
+	background-color: @background-color;
+}
+/* Detailview Empty Field - hyphen styling Ends */
+
+/* CRUX User Component - Right Icon disabled for CRUX Create Page and Detailview - based on CRM reference */
+.cxDvFchildContainer crux-user-component[cx-prop-type="multiple"] .cxBoxRightIcon {
+    display: none !important;
+}
+.cxDetailLoadingDiv {
+    text-align: center;
+}
+
+/* DETAilview Clubbed/ Grouped SUbform Section Starts */
+.cxGroupedSubformWrap {
+	.cxGroupedSubformWrapMixin();
+    padding: @padding;
+    border: 1px solid @border-color;
+    border-radius: @border-radius;
+    margin-bottom: @margin-bottom;
+	width: fit-content;
+}
+.cxGroupedSubformBlock {
+	padding: 20px 20px 0;
+	width: fit-content;
+}
+.cxGroupedSubformWrap .cxDvInfoCont {
+	.cxGroupedSubformWrapInfoContMixin();
+	margin-bottom: 0;
+	border-radius:@border-radius;
+	background: @background;
+}
+.cxGroupedSubformWrap .cxDvBcInfoFormRow {
+	justify-content: flex-end;
+	padding-top: 10px;
+}
+.cxGroupedSubformWrap .cxDvInfoValue {
+	width: auto;
+}
+.cxGroupedSubformFooter .cxDvCompParent:hover { 
+	border: none !important;
+}
+.cxGroupedSubformFooter .cxDvAjaxEdit {
+	min-width: auto;
+}
+
+/* DETAilview Clubbed/ Grouped SUbform Section Ends*/
+

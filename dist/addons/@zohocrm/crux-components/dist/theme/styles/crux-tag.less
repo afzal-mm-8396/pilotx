@@ -1,0 +1,406 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-tag.variables.less";
+
+@import "../themes/default/less-variables/crux-tag-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-tag";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-tag-variables.less";
+}
+
+crux-tag lyte-dropdown{
+	.cxTagCompDropdownMixin();
+	width: @w;
+	vertical-align: top;
+}
+
+.cxTagSelectedList {
+	.cxTagSelectedListMixin();
+	max-height: @max-h;
+	margin-bottom: @margin-bottom;
+}
+.cxTagSearchLoader {
+	.cxTagSearchLoaderMixin();
+	background-image: @bg-img;
+	height: @h;
+	width: @w;
+	background-size: @bg-size;
+	display: inline-block;
+}
+.cxTagDropButtonInitialLoaderWrap {
+	flex-grow: 1;
+}
+.cxTagDropboxInitialLoaderWrap {
+	.cxTagDropboxInitialLoaderWrapMixin();
+	padding: @padding;
+	text-align: @text-align;
+}
+.cxTagSearch {
+	.cxTagSearchMixin();
+	width: @w;
+}
+.cxTagSearch input {
+	.cxTagSearchInputMixin();
+	padding: @padding;
+}
+lyte-drop-item#newTagId::before {
+	content: none;
+}
+crux-tag lyte-dropdown.cxBoxDropdown[lt-prop-type="multisearch"] .lyteMultipleSelect li.lyteMultiselectInput {
+	.cxTagDropdownMultiselectInputMixin();
+	margin: @margin;
+}
+// crux-tag lyte-drop-button {
+// 	.cxTagDropButtonMixin();
+// 	padding: @padding;
+// }
+/*Reduces left - padding in create field input dropdown*/
+crux-tag lyte-text,
+.cxTagDropBox lyte-text {
+	vertical-align: bottom;
+}
+.cxTagDropBox {
+	.cxTagDropBoxMixin();
+	z-index: @z-index;
+	min-width: @min-w;
+	max-width: @max-w;
+}
+.cxTagDropboxTooltip {
+	.cxTagDropboxTooltipMixin();
+	z-index: @z-index;
+}
+/* .cxTagDropItem  - class for color pick list left padding */
+.cxDropbox .cxTagPicklistItem { 
+	.cxTagDropBoxDropItemMixin();
+	@{property-padding-left}: @padding-left;
+}
+.cxTagDropBox .cxTagDropItem .cxTagDropItemChild {
+	.cxTagDropBoxDropItemChildMixin();
+	display: inline-block;
+	padding: @padding;
+	border-radius: @border-radius;
+	/* color: #fff; */
+	font-size: @font-size;
+	/*line-height: @line-height;*/
+	position: relative;
+	z-index: @z-index;
+}
+/* .cxTagDropBox .cxTagDropItemChild.cxTagCol0 {
+	color: #444;
+	background: #fff;
+	padding: 1px 3px 3px 10px;
+	border: 1px solid #c9c9c9;
+	border-right: 0;
+} */
+.cxTagDropBox .cxTagDropItem .cxTagDropItemChild::after {
+	.cxTagDropBoxDropItemChildAfterMixin();
+	content: "";
+	position: absolute;
+	width: @w;
+	height: @h;
+	background: @bg;
+	transform: @transform;
+	top: @top;
+	@{property-left}: @left;
+	z-index: @z-index;
+	border-top: @border-top;
+	@{property-border-right}: @border-right;
+}
+.cxTagDropBox .cxTagDropItem .cxTagDropItemChild::before {
+	.cxTagDropBoxDropItemChildBeforeMixin();
+	content:"";
+	position: absolute;
+	border: @border;
+	top: @top;
+	@{property-left}: @left;
+	@{property-right}: @right;
+	bottom: @bottom;
+	border-radius: @border-radius;
+	@{property-border-right}: @border-right;
+}
+/* .cxTagDropBox .cxTagDropItem .cxTagDropItemChild.cxTagCol0::after {
+	width: 13px;
+	height: 13px;
+	transform: rotate(45deg) skew(5deg, 5deg);
+	top: 3px;
+} */
+.cxAddedTags {
+	.cxAddedTagsMixin();
+	padding: @padding;
+	border-radius: @border-radius;
+	border: @border;
+	/* color: #fff !important; */
+	margin: @margin;
+	position: relative;
+	font-size: @font-size;
+	/*line-height: @line-height;*/
+	z-index: @z-index;
+}
+.cxTagPopoverWrapper .lytePopover .tagPopoverLab ul .cxAddedTags {
+	.cxMoreTagsPopoverMixin();
+	padding: @padding;
+}
+.cxTagPopoverWrapper .lytePopover {
+	// .cxTagPopoverWrapperPopoverMixin();
+	border-radius: 5px;
+}
+.cxTagPopoverWrapper ul {
+	list-style: none;
+}
+.parentscope__Tag .cruxTagList {
+	.cxParentscopeTagListMixin();
+	line-height: @line-height;
+}
+.cxTagBgSpan {
+	.cxTagBgSpanMixin();
+	padding: @padding;
+	border-radius: @border-radius;
+	border: @border;
+	/* color: #fff !important; */
+	@{property-margin-right}: @margin-right;
+	font-size: @font-size;
+	/*line-height: @line-height;*/
+	display: inline-block;
+	position: relative;
+	z-index: @z-index;
+}
+/* .cxAddedTags.cxTagCol0 {
+	padding: 1px 13px 3px 10px !important;
+	background: #fff;
+	color: #444 !important;
+	border: 1px solid #c9c9c9 !important;
+	border-right: 0 !important;
+}
+.cxTagBgSpan.cxTagCol0 {
+	padding: 1px 5px 3px 10px !important;
+	background: #fff;
+	color: #444 !important;
+	border: 1px solid #c9c9c9 !important;
+	border-right: 0 !important;
+} */
+.cxAddedTags::after,
+.cxTagBgSpan::after {
+	.cxTagBgSpanAfterMixin();
+	content: "";
+	position: absolute;
+	width: @w;
+	height: @h;
+	background: @bg;
+	transform: @transform;
+	top: @top;
+	@{property-left}: @left;
+	z-index: @z-index;
+	border-top: @border-top;
+	@{property-border-right}: @border-right;
+}
+.cxAddedTags::before, 
+.cxTagBgSpan::before {
+	.cxTagBgSpanBeforeMixin();
+	content:"";
+	position: absolute;
+	border: @border;
+	top: @top;
+	@{property-left}: @left;
+	@{property-right}: @right;
+	bottom: @bottom;
+	z-index: @z-index;
+	border-radius: @border-radius;
+	@{property-border-right}: @border-right;
+}
+/* .cxTagCol0::after {
+	width: 13px;
+	height: 13px;
+	transform: rotate(45deg) skew(5deg, 5deg);
+	top: 3px;
+	border-top: 1px solid #c9c9c9;
+	border-right: 1px solid #c9c9c9;
+} */
+.cxTagBgSpan:hover {
+	.cxTagBgSpanHoverMixin();
+	filter: @filter;
+}
+/* crux-tag lyte-dropdown.cxFlatDropdown .lyteMultipleSelect .cxTagCol0,
+crux-tag lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .cxTagCol0 {
+	background: #fff;
+} 
+.cxTagCol1 {
+	background: #F17574 !important;
+}
+.cxTagCol2 {
+	background: #F48435 !important;
+}
+.cxTagCol3 {
+	background: #E7A826 !important;
+}
+.cxTagCol4 {
+	background: #A8C026 !important;
+}
+.cxTagCol5 {
+	background: #63C57E !important;
+}
+.cxTagCol6 {
+	background: #1DB9B4 !important;
+}
+.cxTagCol7 {
+	background: #57B1FD !important;
+}
+.cxTagCol8 {
+	background: #879BFC !important;
+}
+.cxTagCol9 {
+	background: #D297EE !important;
+}
+.cxTagCol10 {
+	background: #FD87BD !important;
+}
+.cxTagCol11 {
+	background: #969696 !important;
+}
+.cxTagCol12 {
+	background: #658BA8 !important;
+}
+.cxTagCol13 {
+	background: #B88562 !important;
+}*/
+.cxTagDropBox .cxTagDropItem[selected="true"]::before {
+	display: none;
+}
+.lyteMultipleSelect .cxAddedTags .lyteCloseIcon {
+	.cxAddedTagsCloseIconMixin();
+	@{property-left}: @left;
+	z-index: @z-index;
+	width: @w;
+	top: @top;
+	border-radius: @border-radius;
+	height: @h;
+	transition: none;
+	background: @bg;
+	transform: @transform;
+	visibility: visible;
+}
+lyte-dropdown.cxBoxDropdown .lyteMultiselect .cxAddedTags .lyteCloseIcon::before {
+	.cxTagBoxDropdownMultiselectAddedTagsCloseIconBeforeMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	@{property-left}: @left;
+	top: @top;
+	transform: @transform;
+	transition: none;
+}
+lyte-dropdown.cxBoxDropdown .lyteMultiselect .cxAddedTags.cxTagDarkBg .lyteCloseIcon::before {
+	.cxTagBoxDropdownMultiselectAddedTagsDarkBgCloseIconBeforeMixin();
+	background-position: @bg-pos;
+}
+/* lyte-dropdown.cxBoxDropdown .lyteMultiselect .cxAddedTags .lyteCloseIcon::before {
+	background-image: url(/crm/CRMClient/images/crm-svgicons.svg) !important;
+	background-position: -255px -68px  !important;
+	left: calc(50% - 6px) !important;
+	top: calc(50% - 3px);
+	transform: scale(0.9);
+} */
+.cxAddedTags .lyteCloseIcon:hover {
+	.cxAddedTagsCloseIconHoverMixin();
+	background: @bg;
+	transform: @transform;
+}
+.cxAddedTags.cxTagDarkBg .lyteCloseIcon:hover {
+	.cxAddedTagsDarkBgCloseIconHoverMixin();
+	background-position: @bg-pos;
+}
+/* .cxAddedTags .lyteCloseIcon:hover {
+	background: none !important;
+} 
+.cxAddedTags .lyteCloseIcon:hover::before {
+	visibility: visible;
+}*/
+crux-tag lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .cxTagHighlight {
+	.cxTagBoxDropdownMultipleSelectHighlightMixin();
+	background: @bg;
+}
+.moreTagOption {
+	.cxTagMoreTagOptionMixin();
+	color: @color;
+	font-size: @font-size;
+}
+.moreTagOption .disable {
+	.cxTagMoreTagOptionDisableMixin();
+    opacity: @opacity;
+}
+.moreTagOption .moreCount {
+	text-decoration: underline;
+}
+.moreTagOption .moreCount:hover {
+	.cxTagMoreTagOptionMoreCountHoverMixin();
+	text-decoration: underline;
+	color: @color;
+}
+lyte-dropdown.cxBoxDropdown.cxTagTagsPresent[lt-prop-type="multisearch"] lyte-drop-button {
+	.cxTagDropdownTagsPresentDropButtonMixin();
+	padding: @padding;
+}
+lyte-dropdown.cxBoxDropdown.cxTagTagsPresent[lt-prop-type="multisearch"] .lyteMultipleSelect li.lyteMultiselectInput {
+	.cxTagDropdownTagsPresentMultipleSelectInputMixin();
+	margin-bottom: @margin-bottom;
+	width: fit-content;
+}
+.cxTagHighlight {
+	.cxTagHighlightMixin();
+	background: @bg;
+}
+.cxTagHighlight::after,
+.cxTagHighlight.cxTagCol0::before {
+	.cxTagHighlightAfterMixin();
+	border-color: @border-color;
+}
+
+.cxExistingTag {
+	animation: cxTagBgAnim 2s;
+}
+@keyframes cxTagBgAnim {
+	0% {
+		background:rgb(255, 255, 250);
+	}
+	50% {
+		background:rgb(255, 255, 100);
+	}
+	100% {
+		background:rgb(255, 255, 250);
+	}
+}
+.cxSelectedTagListWrap {
+	display: flex;
+	flex-wrap: wrap;
+	flex-grow: 1;
+}
+.cxTagDropItemChild{
+	.cxTagDropItemChildMixin();
+	max-width: @max-width;
+}
+.cxTagDropItemChild lyte-text{
+	z-index: 1;
+}
+.cxPropNewTagOptionMsg{
+	.cxPropNewTagOptionMsgMixin();
+	font-family: @font-family;
+	// font-size:@font-size; will take default font-size
+	color: @color;
+	@{property-margin-left}:@margin-left;
+	@{property-margin-right}:@margin-right;
+}
+.cxNewTagLabel{
+	.cxNewTagLabelMixin();
+	display: inline-block;
+	vertical-align: middle;
+	flex: @flex;
+	min-width: @min-w;
+}
+.cxHideTagOption{
+	display: none !important;
+}

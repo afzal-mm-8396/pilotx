@@ -1,0 +1,1 @@
+{"version":3,"sources":["theme/themes/css-variables-night/ui-elements/tag/tag.css-variables.less"],"names":[],"mappings":";;;;;;;AAEA;EACI,kCAAkC,2BAAlC","sourcesContent":["@import \"../../global/global.variables.less\";\n\n:root {\n    --lyte-tag-description-font-size: var(--lyte-font-size-small);\n}"]}

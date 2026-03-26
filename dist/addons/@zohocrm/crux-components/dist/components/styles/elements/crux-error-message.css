@@ -1,0 +1,82 @@
+crux-error-message {
+    display: block;
+}
+.cruxErrMsg.cruxErrorMsgDesc {
+    position: absolute;
+    font-family: var(--crux-primary-font);
+    z-index: 2;
+    color: #e64c48;
+    font-size: 12px;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    left: 0;
+    display: block;
+}
+.cruxErrorField .lyteField{
+	border-bottom: 1px solid #e54d49!important;
+}
+.cxStaticErrorMsg .cruxErrMsg.cruxErrorMsgDesc,
+.cxErrorMsgMultiLines .cruxErrMsg.cruxErrorMsgDesc {
+    position: static;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+/*
+.cxErrorMsgMultiLinesBoxInside .cxErrorMsgMultiLines .cruxErrMsg.cruxErrorMsgDesc,
+.cxErrorMsgMultiLines .cruxErrMsg.cruxErrorMsgDesc {
+    position: static;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+.cxErrorMsgMultiLinesBoxInside .cxErrorMsgMultiLines {
+    position: absolute;
+    top: 100%;
+}
+.cxErrorMsgMultiLinesBoxInside {
+    margin-bottom: 15px;
+}
+*/
+
+.cxFieldWarningMsg {
+    color: #e49000;
+    position: absolute;
+    font-family: var(--crux-primary-font);
+    z-index: 2;
+    font-size: 12px;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    left: 0;
+    display: block;
+    top: 100%;
+    transform: translateY(4px);
+}
+.cxPropWarningIconSpacing {
+	margin-right: 5px;
+    top: 1px;
+    position: relative;
+}
+.cxPropWarningMsgTxt {
+	max-width: calc(100% - 30px);
+}
+
+/* CRUX Error Hover Card Message Starts */
+/* .cxErrorHoverCard .lytePopover{
+	background-color:#F14949;
+    color:#fff;
+    border: none;
+	box-shadow: none;
+    line-height: 18px;
+}
+.cxErrorHoverCard .lytePopoverArrowIcon {
+	display: none !important;
+}
+.cxErrorHoverCard lyte-hovercard-content {
+	padding: 6px 10px;
+	font-size: 1.3rem;
+} */
+
+/* CRUX Error Hover Card Message Ends */

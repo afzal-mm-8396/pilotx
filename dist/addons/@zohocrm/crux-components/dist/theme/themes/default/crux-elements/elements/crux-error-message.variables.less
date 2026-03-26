@@ -1,0 +1,55 @@
+.cruxErrMsgMixin() {
+	@font-family: @cruxPrimaryFont;
+	@color: @cxErrorMsgColor;
+	@font-size: @cxFontSize12px;
+}
+.cxErrorMsgDescMixin() {
+	@font-family: @cruxPrimaryFont;
+	@z-index: 2;
+	@color: @cxFieldErrorMsgColor;
+	@font-size: 12px;
+	@w: 100%;
+	@left: 0;
+}
+.cxErrorFieldLyteFieldMixin() {
+	@border-bottom: 1px solid @cxErrorFieldBorder !important;
+}
+.cxFieldWarningMsgMixin(){
+	@color: @cxFieldWarningMsgColor;
+    @font-size: @cxFontSize11px;
+	@top: 100%;
+    @transform: translateY(4px);
+	@position: absolute;
+    @font-family: @cruxPrimaryFont;
+    @z-index: 2;
+	@width: 100%;
+    @white-space: nowrap;
+    @text-overflow: ellipsis;
+    @overflow: hidden;
+    @left: 0;
+    @display: block;
+}
+.cxPropWarningIconSpacingMixin() {
+	@margin-right: 5px;
+	@top: 1px;
+    @position: relative;
+}
+.cxPropWarningMsgTxtMixin() {
+	@max-width: calc(100% - 30px);
+}
+.cxErrorHoverCardContentMixin(){
+	@padding: 8px 12px;
+	@font-size: @cxFontSize14px;
+}
+.cxErrorHoverCardPopoverMixin(){
+	// @bg-color:#F14949;
+	// @cxErrorHoverTextColor: #fff;
+	@bg-color: @cxFieldErrorPopBg;
+	@cxErrorHoverTextColor: @cxFieldErrorPopColor;
+	@box-shadow: 0px 3px 12px @cxFieldErrorPopShadow;
+	@line-height: 18px;
+	@border: @cxErrorHoverCardPopupBorder;
+}
+.cxErrorHoverCardPopupLinkMixin(){
+	@color: @cxErrorHoverCardPopupLinkColor;
+}

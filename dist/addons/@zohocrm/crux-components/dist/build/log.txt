@@ -1,0 +1,700 @@
+Timing to complete init function0.001 s
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-column-list.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-column-list.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-calendar.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-calendar.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-combo-box.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-combo-box.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-combo-box-view.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-combo-box-view.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-div-table-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-div-table-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-dual-box.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-dual-box.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-dropdown.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-dropdown.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-grouper-radio-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-grouper-radio-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-upload-modal.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-upload-modal.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-form-elements.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-form-elements.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-file-upload.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-file-upload.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-image-preview.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-image-preview.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-table-component-v1.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-table-component-v1.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-lookupfilter-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-lookupfilter-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-permission-denied-alert.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-permission-denied-alert.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-profile-permission-modal.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-profile-permission-modal.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-schedular-notification-popup.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-schedular-notification-popup.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-utils.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-utils.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-mentions-body.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-mentions-body.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-note.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-note.css
+Warning : File not found /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/node_modules/@zohocrm/crux-components/theme/styles/crux-image-connector.less
+Warning : File not found /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/node_modules/@zohocrm/crux-components/theme/styles/crux-image-connector.less
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-icr.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-icr.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-subform.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-subform.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-criteria-editor.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-criteria-editor.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-smart-filter.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-smart-filter.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-territory.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-territory.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-territory-search.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-territory-search.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-user-dropdown.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-user-dropdown.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-user-lookup.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-user-lookup.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-user-view.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-user-view.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-lookup-filter-modal.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-lookup-filter-modal.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-lookup-filter-view.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-lookup-filter-view.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-common-table.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-common-table.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-tag.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-tag.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-lookup-modal.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-lookup-modal.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-create-form.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-create-form.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-formula-editor.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-formula-editor.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-boolean-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-boolean-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-date-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-date-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-date-time-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-date-time-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-email-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-email-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-error-message.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-error-message.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-image-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-image-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-layout-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-layout-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-lookup-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-lookup-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-lookup-view-popup.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-lookup-view-popup.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-number-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-number-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-phone-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-phone-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-picklist-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-picklist-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-role-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-role-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-tag-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-tag-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-text-area-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-text-area-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-text-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-text-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-twitter-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-twitter-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-user-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-user-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-user-tooltip.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-user-tooltip.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-website-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-website-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-file-upload-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-file-upload-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-customview-dropdown.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-customview-dropdown.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-elements.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-elements.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/elements/crux-voicenote-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/elements/crux-voicenote-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-detailpage-wrapper.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-detailpage-wrapper.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-detailpage-header.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-detailpage-header.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-detailpage-sections.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-detailpage-sections.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-detailpage-field-details.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-detailpage-field-details.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-related-list-table.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-related-list-table.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-related-list-wrapper.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-related-list-wrapper.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-related-list-actions.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-related-list-actions.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-table-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-table-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-merge-field-body.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-merge-field-body.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-page-builder.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-page-builder.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-permission-list.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-permission-list.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-dual-list-table.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-dual-list-table.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/icons/crux-common-icons.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/icons/crux-common-icons.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-color-palette.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-color-palette.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-list-view.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-list-view.css
+Warning : File not found /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/node_modules/@zohocrm/crux-components/theme/styles/crux-select-modal.less
+Warning : File not found /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/node_modules/@zohocrm/crux-components/theme/styles/crux-select-modal.less
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-select-panel.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-select-panel.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-notification-center.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-notification-center.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-multi-select-modal.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-multi-select-modal.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-expandable-list.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-expandable-list.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-audio-recorder.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/rtl/crux-audio-recorder.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-root-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-base-root-variables.css
+Warning : File not found /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/node_modules/@zohocrm/crux-components/theme/themes/default/css-variables/crux-column-list-rootvar.less
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-dropdown-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-boolean-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-date-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-date-time-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-textarea-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-email-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-error-message-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-input-elements-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-file-upload-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-image-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-notes-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-calendar-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-color-palette-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-combo-box-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-criteria-editor-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-disabled-tooltip-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-detailpage-header-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-detailpage-sections-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-dual-box-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-file-upload-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-icr-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-image-preview-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-lookup-filter-view-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-mentions-body-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-merge-field-body-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-profile-permission-modal-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-related-list-table-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-related-list-wrapper-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-schedular-notification-popup-variables.css
+Warning : File not found /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/node_modules/@zohocrm/crux-components/theme/themes/default/css-variables/crux-select-modal-variables.less
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-smart-filter-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-subform-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-table-component-v1-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-tag-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-territory-search-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-territory-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-user-dropdown-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-user-lookup-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-common-icons.variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-common-input-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-customview-dropdown-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-common-table-variables.less
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-number-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-phone-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-picklist-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-role-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-twitter-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-user-tooltip-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-lookup-modal-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-detailpage-wrapper-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-lookup-view-popup-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-tag-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-combo-box-view-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-list-view-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-div-table-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-text-area-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-grouper-radio-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-createform-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-common-style-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-voicenote-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-user-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-lookupfilter-component.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-lookup-component-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-elements-common-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-notification-center-variables.css
+
+[Compiled][themes]create an css files in the outputPath /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/cssVariables/crux-create-page-variables.css
+/* START CLI DETAILS */ 
+{"cliVersion":"3.6.18","outputPath":"dist","mode":"development","cliLocation":"/usr/local/lib/node_modules/@zoho/lyte-cli"}
+/* END CLI DETAILS */
+Building time of copyAppDir : 0.155 s
+Building time of routes : 0 s
+Building components ....
+Full component compilation triggered
+Total no of files in the components going to compile :132
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.05 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.103 s
+browser Endpoint ws://127.0.0.1:50255/devtools/browser/180bc40b-0efa-42fa-8e40-c5259967be29
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 1.952 s
+Callback function called 0.009 scrux-page-builder,crux-page-builder-subform-aggregate,crux-page-builder-subform,crux-page-builder-property-header-help-info-icon,crux-page-builder-subform-elements,crux-page-builder-section-navigator,crux-page-builder-section,crux-page-builder-element-toolbar,crux-page-builder-preview,crux-page-builder-record-image,crux-view-info-tooltip,crux-page-builder-element-preview,crux-user-tooltip,crux-page-builder-left-panel,crux-website-component,crux-tag-popover,crux-page-builder-properties,crux-voicenote-component,crux-page-builder-element,crux-time-component,crux-page-builder-property-header,crux-text-area-component,crux-role-component,crux-tag-component,crux-lookup-popup,crux-text-component,crux-twitter-component,crux-lookup-filter-modal,crux-phone-component,crux-lookup-filter-view,crux-picklist-component,crux-grouper-checkbox-component,crux-user-component,crux-lookup-view-popup,crux-file-size-component,crux-error-message,crux-layout-component,crux-email-component,crux-boolean-component,crux-video,crux-user-view,crux-date-component,crux-grouper-radio-component,crux-file-upload-component,crux-territory-search,crux-lookup-modal,crux-date-time-component,crux-lookup-component,crux-image-component,crux-territory,crux-number-component,crux-smart-filter-crossfields,crux-upload-modal,crux-tag,crux-schedular-notification-popup,crux-select-panel,crux-related-list-wrapper,crux-select-modal,crux-user-dropdown,crux-related-list-actions,crux-pattern-editor,crux-parent-form-component,crux-profile-permission-modal,crux-permission-list,crux-permission-denied-alert,crux-notification-center,crux-user-lookup,crux-messagebox,crux-mentions-body,crux-merge-field-body,crux-related-list-table,crux-left-panel,crux-multi-select-modal,crux-left-panel-submenu,crux-note-editor,crux-icons,crux-smart-filter,crux-icr,crux-form-component,crux-form,crux-image-preview,crux-file-upload-modal,crux-lookupfilter-component,crux-file-upload-list,crux-formula-editor,crux-dual-box,crux-dual-list-table,crux-subform,crux-disabled-tooltip,crux-file-upload,crux-expandable-list,crux-note,crux-detailpage-tags,crux-detailpage-wrapper,crux-detailpage-header,crux-div-table-component,crux-field,crux-criteria-pattern,crux-customview-dropdown,crux-dashboard,crux-detailpage-sections,crux-criteria-editor-view-header,crux-table-component,crux-list-view,crux-dropdown,crux-smart-filter-input,crux-criteria-drop-item,crux-detailpage-field-details,crux-audio-recorder,crux-combo-box-view,crux-color-palette,crux-alert,crux-create-layout-footer,crux-create-layout-dropdown,crux-calendar,crux-create-layout-content,crux-criteria-editor,crux-create-layout-header,crux-create-comments-component,crm-relatedlist,crux-create-subformsection,crux-create-button,crux-create-custom-buttons,crux-create-section,crm-listview,crux-createform,crm-detailview,crux-column-list,crux-combo-box,crm-create-form,crux-create-field,crux-criteria-editor-header
+Time to end the dynamic nodes1.961 s
+Generating dist components...
+
+Warnings in the component :crux-page-builder-element-preview
+		Invalid component names : cxPropUITypeVsComponentMap,QCRestrictedFields
+
+Warnings in the component :crux-page-builder-property-header
+		Invalid component names : moduleCRMData
+
+Warnings in Component :crux-page-builder-property-header
+	 action or method must start with string on SPAN for the attribute:onclick- {{action(renderFieldPreview)}}
+
+Warnings in the component :crux-phone-component
+		Invalid component names : countryISOCodeVsName
+
+Warnings in the component :crux-lookup-modal
+		Invalid component names : totalCountForLV
+
+Warnings in the component :crux-notification-center
+		Invalid component names : ShowCloseButton
+
+Warnings in the component :crux-user-lookup
+		Invalid component names : DselectedList
+
+Warnings in the component :crux-customview-dropdown
+		Invalid component names : favoriteCVList,totalCVRecords
+
+Warnings in the component :crux-list-view
+		Invalid component names : LvHeader,LvContent,ShowLvLoading
+
+Warnings in the component :crux-smart-filter-input
+		Invalid component names : Email_Sentiment_Value
+
+Warnings in the component :crux-criteria-editor
+		Invalid component names : preventUIType
+
+Warnings in the component :crux-create-custom-buttons
+		Invalid component names : cxPropCompleteCBData
+
+Warnings in the component :crm-listview
+		Invalid component names : ErrorMsgData
+
+Time to end processing template0.289 s
+Building time of components : 2.449 s
+Building models ..............
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/section.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/application.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/cadence.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/campaign_status.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/field.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/custom_view.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/entity.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/custom_button.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/layout.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/module.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/servapp_preferences.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/layout_rule.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/note.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/related_list.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/tag.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/user.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/data-store/models/validation_rule.js
+
+Building time of models : 0.008 s
+Building helpers .....
+[Copy] components/helpers => ../../../dist/addons/@zohocrm/crux-components/dist/components/helpers
+
+Building time of helpers : 0.002 s
+Building mixins .....
+[Copy] mixins => ../../../dist/addons/@zohocrm/crux-components/dist/mixins
+
+Building time of mixins : 0.009 s
+build file exists on addons building
+addons building initated for/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/node_modules/@zohocrm/crux-components/node_modules/@zoho/lyte-ui-component/build/build.js
+Addons building time of : lyte-ui-component:36.05 s
+Building time of addons : 36.051 s
+Total no of minify task 69
+Total no of minify task 21
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-global-root-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-base-root-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-dropdown-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-date-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-boolean-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-column-list-rootvar.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-textarea-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-error-message-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-date-time-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-email-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-input-elements-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-file-upload-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-notes-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-image-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-combo-box-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-criteria-editor-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-color-palette-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-detailpage-header-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-disabled-tooltip-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-detailpage-sections-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-calendar-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-dual-box-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-file-upload-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-icr-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-image-preview-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-lookup-filter-view-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-mentions-body-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-merge-field-body-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-profile-permission-modal-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-related-list-table-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-related-list-wrapper-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-schedular-notification-popup-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-select-modal-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-smart-filter-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-subform-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-table-component-v1-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-tag-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-territory-search-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-territory-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-user-dropdown-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-user-lookup-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-common-icons.variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-common-input-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-customview-dropdown-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-common-table-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-number-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-phone-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-picklist-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-role-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-twitter-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-lookup-modal-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-user-tooltip-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-detailpage-wrapper-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-lookup-view-popup-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-tag-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-combo-box-view-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-list-view-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-div-table-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-text-area-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-grouper-radio-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-createform-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-common-style-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-voicenote-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-user-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-lookupfilter-component.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-lookup-component-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-elements-common-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/crux-notification-center-variables.less'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/themes/default/css-variables/create-entity/crux-create-min-rootvar.less'
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/crux-image-upload.js
+
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/components/helpers/typeof.js'
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/crux-note-component.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/crux-filter-component.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/crm-crux-create-form.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/styles/elements/crux-grouper-radio-component.css
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/styles/crux-criteria-component.css
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/crux-image.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/styles/crux-table-component.css
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/list-view.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/crux-criteria-component.js
+
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/theme/compiledCSS/default/ltr/crux-detailpage-tags.css'
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/crux-detailpage-resources.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/crux-accessibility-mixin.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/crux-page-builder-component.js
+
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/components/styles/elements/crux-lookup-popup.css'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/components/styles/crux-combo-box-dropitem.css'
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/styles/crux-image.css
+
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/components/styles/elements/crux-lookup-filter-modal.css'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/components/styles/elements/crux-lookup-filter-view.css'
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/components/styles/crux-kanban-view-item.css'
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/crux-create-form.js
+
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/components/styles/crux-permission-denied-alertbox.css'
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/crm-crux-data-store.js
+
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/components/crux-kanban-view-item.js'
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/styles/crux-elements.css
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/crux-elements.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/styles/crux-detailpage-styles.css
+
+Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/dist/addons/@zohocrm/crux-components/dist/components/crux-two-column.js'
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/crux-components.js
+
+Consolidated file created in the ../../../dist/addons/@zohocrm/crux-components/dist/components/styles/crux-components.css
+
+Time for consolidation and minify 0.42 s
+Total Building Time : 39.095 s
+Building completed
+Build sucesss

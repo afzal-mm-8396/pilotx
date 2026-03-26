@@ -1,0 +1,124 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-boolean-component.variables.less";
+
+@import "../../themes/default/less-variables/crux-boolean-component-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-boolean-component";
+
+.criteria-yes {
+	.cxBooleanYesTickIconMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	display: inline-block;
+	padding: @padding;
+	width: @w;
+	height: @h;
+	cursor:default;
+}
+// .cruxBoolColor {
+// 	.cruxBoolColorMixin();
+// 	color: @color;
+// }
+crux-boolean-component .lyteCheckBoxDefault::before,
+crux-boolean-component .lyteCheckBoxPrimary::before {
+	.cxBooleanCheckBoxDefaultBeforeMixin();
+	margin: @margin;
+}
+.cxBooleanCompWithLabel .lyteCheckBoxDefault::before{
+	.cxBooleanCheckBoxWithLabelBeforeMixin();
+	@{property-margin-right}: @margin-right;
+	top: @top;
+	flex-shrink: @flex-shrink;
+}
+.cxBooleanCompWithLabel input[type=checkbox] + .lyteCheckBoxDefault::after{
+	.cxBooleanCheckBoxWithLabelAfterMixin();
+	top: @top;
+}
+crux-boolean-component .lyteCheckBoxDefault {
+	display: flex;
+}
+crux-boolean-component .lyteCheckBoxDefault,
+crux-boolean-component .lyteCheckBoxPrimary,
+crux-subform .criteria-yes {
+	margin: 0 auto;
+	display: flex;
+}
+
+// /***** CRUX SEPARATE STYLES FOR BOOLEAN COMP STARTS ******/
+// .cxBooleanCompCheckbox 	.lyteCheckBoxDefault::before{
+// 	.cxBooleanCompCheckboxBeforeMixin();
+// 	// opacity: @opacity;
+//     border: @border;
+//     background: @bg;
+//     box-sizing: border-box;
+//     transition: @transition;
+//     vertical-align: top;
+//     position: relative;
+//     content: '';
+//     background-image: none;
+//     width: @w;
+//     height: @h;
+//     display: inline-block;
+//     border-radius: @border-radius;
+// }
+
+// .cxBooleanCompCheckbox .lyteCheckBoxDefault:hover::before, 
+// .cxBooleanCompCheckbox input[type=checkbox]:active+.lyteCheckBoxDefault::before{
+// 	.cxBooleanCompCheckboxActiveBeforeMixin();
+// 	border-color: @border-color;
+// 	box-shadow: @box-shadow;
+// }
+
+// .cxBooleanCompCheckbox input[type="checkbox"]:focus + .lyteCheckBoxDefault::before{
+// 	.cxBooleanCompCheckboxFocusBeforeMixin();
+// 	border-color: @border-color;
+// 	box-shadow: @box-shadow;
+// }
+
+// .cxBooleanCompCheckbox .lyteCustomCheckBoxChecked input[type=checkbox]+.lyteCheckBoxDefault::before, 
+// .cxBooleanCompCheckbox input[type=checkbox]:checked+.lyteCheckBoxDefault::before{
+// 	.cxBooleanCompCheckboxCheckedBeforeMixin();
+// 	border-color: @border-color;
+// 	background: @bg;
+// }
+
+// .cxBooleanCompCheckbox input[type=checkbox]+.lyteCheckBoxDefault::after{
+// 	.cxBooleanCompCheckboxAfterMixin();
+// 	content: "";
+//     width: @w;
+//     height: @h;
+//     position: absolute;
+//     left: @left;
+//     top: @top;
+//     transition: @transition;
+//     transform: @tranform;
+// 	.cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color)
+// }
+
+// .cxBooleanCompCheckbox input[type=checkbox]:checked+.lyteCheckBoxDefault::after{
+// 	.cxBooleanCompCheckedAfterMixin();
+// 	width: @w;
+// 	transform: @tranform;
+// }
+
+// .cxBooleanCompCheckbox.cxErrorCheckbox input[type=checkbox]+.lyteCheckBoxDefault::before{
+// 	.cxBooleanCompErrorChecboxMixin();
+// 	border-color: @border-color;
+// }
+
+// /***** CRUX SEPARATE STYLES FOR BOOLEAN COMP ENDS ******/ 
+.cxcreateFormComponentRow crux-boolean-component .cxElementLabel,
+.cxcreateFormComponentRow crux-boolean-component .cxFieldLabel {
+	padding-top: 3px;
+}
+.cxcreateFormComponentRow .cxElementValue lyte-checkbox {
+    top: 2px;
+}
+.cxcreateFormComponentRow .cxElementValue lyte-checkbox[lt-prop-type="primary"] {
+	top: 2px;
+}

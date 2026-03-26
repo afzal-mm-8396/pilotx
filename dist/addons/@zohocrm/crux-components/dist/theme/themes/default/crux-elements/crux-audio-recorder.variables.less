@@ -1,0 +1,57 @@
+.cxAudioRecControlBtnsDivMixin(){
+    @w: 100%;    
+}
+
+.cxAudioRecActionDivMixin(){
+    @padding: 10px 15px;
+    @border: 1px solid @cxAudioRecBorderColor;
+    @bg-color: @cxAudioRecFooterBg;
+}
+
+.cxAudioRecCoontrolWrapMixin(){
+    @padding: 0px;
+    @margin: 0px;   
+}
+
+.cxAudioRecNotesDivMixin(){
+    @border: 1px solid @cxAudioRecBorderColor;
+    @w: 100%;
+    @padding: 0px;
+    @border-radius: 5px;    
+}
+
+
+.cxAudioRecPreviewCanvasMixin(){
+    @w: 100%;
+    @h: 60px;
+    @margin: 0px;
+    @bg-color: @cxAudioRecCanvasBg;
+    @border: none;
+}
+
+.cxAudioRecNoteHandlerMixin(){
+    @h: calc(100% - 18px);   
+}
+
+.cxAudioRecBtnMixin(){
+    @margin: auto;
+}
+
+.cxAudioRecCanvasBgImageMixin(){
+    @bg-image: repeating-linear-gradient(to bottom, transparent 0px 8px, @cxAudioRecCanvasBgImageBr 8px 8.5px), 
+    repeating-linear-gradient(to right, transparent 0px 8px, @cxAudioRecCanvasBgImageBr 8px 8.5px);
+}
+
+.cxAudioRecHideBtnMixin(){
+    @margin: 0px;
+    @w: 0px;   
+}
+
+.cxAudioRecDelIconWrapMixin(){
+    @margin-right: 5px;   
+}
+
+.cxAudioRecPausePlayIconWrapMixin(){
+    @margin-top: 2px;   
+    @top: 1px;
+}

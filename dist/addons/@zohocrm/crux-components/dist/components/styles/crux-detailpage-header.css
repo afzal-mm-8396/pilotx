@@ -1,0 +1,82 @@
+.cxDvRecordUserImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: #9775FA;
+    color: #fff;
+    display: inline-block;
+    padding: 15px;
+    margin-left: 15px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.cxDvRecTag {
+    padding: 4px 12px;
+}
+/*
+.dv_contact_info{
+    background: #f5f5f8;
+    border: 1px solid #e4e4e1;
+}
+*/
+/*
+.dv_contact_info{
+    background: #f5f5f8;
+    border: 1px solid #e4e4e1;
+}*/
+
+.cxDvHeaderParent{
+    justify-content: space-between;
+    padding: 17px 30px 18px;
+}
+/*
+.cx_detail_header_txtsection{
+    display: flex;
+    align-items: center;
+}
+*/
+/*
+.cx_detail_header_backicon{
+    cursor: pointer;
+}
+.cx_detail_recorddetails{
+    display: flex;
+}
+*/
+.cxDvRecordRight{
+    margin-left: 12px;
+}
+.cxDvRecordName{
+    margin-bottom: 8px;
+}
+.cxDvRecordHeader1,
+.cxDvRecordHeaderhypen,
+.cxDvRecordHeader2{
+    font-family: var(--crux-bold-font);
+    font-weight: var(--crux-font-weight-bold);
+    font-size: 20px;
+}
+.cxDvRecordHeaderhypen{
+    margin: 0 5px;
+}
+.cxDvRecordEmail{
+    color: #313949;
+    font-size: 14px;
+}
+.cxDvApprovalMoreOptionsBtn{
+    margin-right: 0;
+}
+.cxDvRecordMoreIcon{
+    vertical-align: middle;
+}
+.cxMoreIcon {
+    width: 16px;
+      height: 5px;
+    -webkit-mask-position: -368px -342px;
+    mask-position: -368px -342px;
+    background-color: #333;
+  }
+  .cxDvTagIconPosition{
+    display : flex;
+    align-items: center;
+  }

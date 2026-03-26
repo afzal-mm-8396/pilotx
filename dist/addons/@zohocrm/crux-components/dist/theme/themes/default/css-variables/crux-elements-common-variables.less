@@ -1,0 +1,43 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-common-box-input-border-color: var( --crux-element-border-color);
+    --@{cssPrefix}-common-box-input-border-hover-color: #c3c6ca;
+    --@{cssPrefix}-common-box-input-hover-shadow-color: #c3c6ca;
+    --@{cssPrefix}-common-box-input-border-focus-color: var(--crux-link-color);
+    --@{cssPrefix}-common-box-input-focus-shadow-color: var(--crux-element-focus-shadow-color);
+    --@{cssPrefix}-common-box-input-label-color: var(--crux-element-label-color);
+    --@{cssPrefix}-common-box-input-mandatory-bg-color: var(--crux-mandatory-color);
+    --@{cssPrefix}-common-box-input-icon-bg-color: #f4f5f6;
+    --@{cssPrefix}-common-box-element-error-border-color: #FF5D5A;
+    --@{cssPrefix}-common-box-input-error-shadow-color: var(--crux-element-error-shadow-color);
+    --@{cssPrefix}-common-box-elements-disabled-bg-color: var( --crux-element-disabled-bg-color);
+    --@{cssPrefix}-common-box-input-info-icon-color: #616e88;
+    --@{cssPrefix}-common-box-input-loader-bg-color: #eee;
+    --@{cssPrefix}-common-box-input-info-popup-bg-color: var( --crux-element-bg-color);
+    --@{cssPrefix}-common-box-input-info-popup-border-color: #333;
+    --@{cssPrefix}-common-box-input-info-popup-color: #fff;
+    --@{cssPrefix}-common-box-input-info-popup-box-shadow-color: rgba(0,0,0,0.3);
+    --@{cssPrefix}-common-elements-loader-bg-color: #8B9BB8;
+    --@{cssPrefix}-common-elements-loader-border-color: #E1E6EC;
+    --@{cssPrefix}-common-link-color: var(--crux-link-color);
+    --@{cssPrefix}-common-grey-link-color: var(--crux-heading-color);
+    --@{cssPrefix}-common-box-input-disabled-border-color: var(--crux-element-disabled-border-color);
+    --@{cssPrefix}-common-box-input-show-more-icon-color: #3c9df7;
+    --@{cssPrefix}-common-criteria-gray-bg-color: #eee;
+    --@{cssPrefix}-common-icon-base-mask-bg-color: #333;
+    --@{cssPrefix}-common-search-clear-icon-bg-color: #E9EEF4;
+    --@{cssPrefix}-dropdown-white-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-elem-secondary-mask-icon-in-table-bg-color: #efefef;
+}

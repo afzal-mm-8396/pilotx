@@ -1,0 +1,225 @@
+.userLookupModalMixin() {
+	@background-color: @cxUserLookupModalBg;
+}
+.cxUserLookupModalSingleUserSelectedMixin() {
+	@color: @cxUserLookupSingleUserSelectedColor;
+	@margin-right: 6px;
+	@margin-left: 15px;
+	@padding-top:7px;
+}
+.cxUserLookupModalScrollSearchDivMixin() {
+	@h: 40px;
+	@padding: 5px;
+	@text-align: center;
+}
+.cxUserLookupModalNoHeaderMixin() {
+	@top: 15px;
+}
+.cxUserLookupModalLookupHeaderMixin() {
+	@padding-bottom: 10px;
+}
+.cxUserLookupModalHeaderTextMixin() {
+	@w : 95%;
+}
+.cxUserLookupModalHeaderMixin() {
+	@font-size: 14px;
+	@margin-top:15px;
+	@font-weight: normal;
+    @font-family: @cruxPrimaryFont;
+}
+
+.cxUserLookupSearchInputMixin() {
+	@padding-right: 30px;
+}
+.cxUserViewModalLookupSearchInputMixin(){
+	@padding-right: 30px;
+}
+.cxUserLookupFilterpresentSearchMixin() {
+	@margin-left: 8px;
+}
+.cxUserLookupModalContentMixin() {
+	// @min-h: 50px;
+	@min-h: 100px;
+	@flex-grow: 1;
+}
+.cxUserLookupModalNoFooterMixin(){
+	@padding-bottom: 30px;
+}
+.cxUserLookupModalFirstMinWidthMixin() {
+	// @min-w: 55px;
+	// @w: 55px;
+	@min-w: 170px;
+	@w: 200px;
+}
+.cxUserLookupModalLyteThMixin() {
+	// @min-w: 220px;
+	@min-w: 170px;
+}
+.cxUserLookupModalLyteTrHoverMixin() {
+	@bg: transparent;
+}
+.cxUserLookupUserImgMixin() {
+	@w: 30px;
+	@h: 30px;
+	@border-radius: 50%;
+	@margin-right: 5px;
+}
+.cxUserLookupNoPhotoMixin() {
+	@bg: @cruxNoPhotoImage;
+	@bg-size: 100%;
+}
+.cxUserLookupSelectedRowTdMixin() {
+	@bg-color: @cxUserLookupSelectedRowTdBg;
+}
+.cxUserLookupModalBodyMixin() {
+	@padding-left: 20px;
+}
+.cxUserLookupModalTableHeaderWidthMixin() {
+	@w:50px;
+	@padding-left:20px;
+}
+.cxUserLookupModalCkBoxPrimaryBeforeMixin() {
+	@bg-pos: -76px -1px;
+}
+.cxUserLookupModalCkBoxPrimaryHoverBeforeMixin() {
+	@bg-pos: -59px -1px;
+}
+.cxUserLookupModalUserSelectionMixin() {
+	@font-size: @cxFontSize1rem;
+	@color: @cxUserLookupModalUserSelectionColor;
+	@margin-left: 15px;
+	@font-family: @cruxPrimaryFont;
+}
+.cxUserLookupSelCountLabelMixin() {
+	@color: @cxUserLookupCountLabelColor;
+}
+.cxUserLookupModalSearchCloseIconMixin() {
+	@bg: @cruxSprite no-repeat -54px -2px;
+	@w: 10px;
+	@h: 8px;
+	@transform: scale(1.3);
+	@right: 10px;
+	@top: calc(50% - 4px);
+}
+.cxUserLookupModalSelectedUsersHdMixin() {
+	@padding-bottom: 10px;
+}
+.cxUserLookupModalBackIconMixin() {
+	@bg: transparent @cruxSprite no-repeat -355px -158px;
+	@w: 16px;
+	@h: 14px;
+	@opacity: 0.4;
+	@transform: translateX(calc(-100% - 5px)) translateY(5px);
+	@margin-right: 5px;	
+}
+.cxUserLookupTextWrapMixin() {
+	@max-w: 160px;
+}
+.cxUserLookupModalTextMixin() {
+	@max-w: 220px;
+}
+.cxUserLookupModalImageMixin() {
+	// @max-w: 160px;
+	@max-w: 145px;
+}
+.cxUserLookupZiaPercentMixin() {
+	@font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+	@margin-left: 10px;
+}
+.cxUserLookupEmptyRowTdMixin() {
+	@h: 80px;
+}
+.cxUserLookupModalNoUsersMixin() {
+	@line-height: 80px;
+	@color: @cxUserLookupModalNoUserColor;
+	@left: 0;
+	@right: 0;
+	@bottom: 1px;
+	@z-index: 15;
+	@bg: @cxUserLookupModalNoUserBg;
+	@border-bottom-right-radius: 10px;
+	@border-bottom-left-radius: 10px;
+	@border: @cxUserLookupModalNoUserBorder;
+}
+.cxUserLookupModalLoaderCommonMixin() {
+	@bg: @cruxSearchLoaderImage;
+	@bg-size: 100%;
+}
+.cxUserLookupModalListLoaderMixin() {
+	@w: 48px;
+	@h: 48px;
+	@left: 50%;
+	// @top: 50%;
+	@top: 60px;
+	@transform: translate(-50%, -50%);
+	@z-index: 2;
+}
+.cxUserLookupModalSearchLoaderMixin() {
+	@right: 0;
+	@top: 0;
+	@w: 30px;
+	@h: 30px;
+}
+.cxUserLookupSearchLoaderMixin() {
+	@right: 5px;
+}
+.cxUserLookupModalLazyLoaderMixin() {
+	@w: 34px;
+	@h: 34px;
+}
+.cxUserLookupModalSelNameDummyMixin() {
+	@w: 100px;
+	@h: 15px;
+	@bg: @cxUserLookupModalDummySelectedNameBg;
+}
+.cxUserLookupModalImgDummyMixin() {
+	@w: 30px;
+	@h: 30px;
+	@bg: @cxUserLookupModalDummyImgBg;
+	@border-radius: 50%;
+}
+.cxUserLookupSubHeadingRowTdMixin() {
+	@border-bottom: 0;
+}
+.cxUserLookupSubHeadingCellMixin() {
+	@z-index: 1;
+	@h: 35px;
+}
+.cxUserLookupSubHeadingSecondCellMixin() {
+	@padding-top: 20px;
+	@h: 45px;
+}
+.cxUserLookupRowHeadingMixin() {
+	@top: 10px;
+	@font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+}
+.cxUserLookupSubHeadingSecondCellHeadingMixin() {
+	@top: 20px;
+}
+.cxUserLookupListLoaderTdMixin() {
+	// @h: 50px;
+	@h: 100px; /* Height Increased to make table look proper */
+}
+.cxUserLookupProfileSectionMixin() {
+	@flex-one:1;
+	@position: relative;
+}
+.cxUserLookupProfileNameMixin(){
+	@padding-left: 40px;
+    @display: block;
+	@padding-top:7px;
+	@max-width: 100%;
+    @word-break: break-word;
+}
+.cxUserLookupNoLeftMarginMixin() { 
+	@margin-left: 0;
+	@padding-left: 0;
+}
+.cruxUserViewLookupSearchMixin() {
+	@width: 100%;
+}
+.cxUserLookupNoSuggestionMixin(){
+	@color: @cxUserLookupModalNoUserColor;
+}

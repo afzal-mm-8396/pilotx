@@ -1,0 +1,1176 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/pageBuilder/crux-page-builder-properties.variables.less";
+
+@import "../themes/default/less-variables/crux-page-builder-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+/* Modal Width */
+.cxPbPropertiesModalSmall .lyteModal{
+	.cxPbPropertiesModalSmallMixin();
+	width: @w;
+}
+
+.cxPbPropertiesModalMedium .lyteModal{
+	.cxPbPropertiesModalMediumMixin();
+	width: @w;
+}
+
+.cxPbPropertiesModalLarge .lyteModal{
+	.cxPbPropertiesModalLargeMixin();
+	width: @w;
+}
+
+.cxPbPropertiesModal .lyteModal{
+	.cxPbPropertiesModalMixin();
+	border: @border;
+	box-shadow: @box-shadow;
+}
+
+.cxPbPropertiesModal .cxPbCp{
+	cursor: pointer;
+}
+
+.cxPbPropertiesModal lyte-modal-header{
+	.cxPbPropertiesModalHeaderMixin();
+	padding: @padding;
+	display: flex;
+	align-items: center;
+	font-size: @font-size;
+	line-height: @line-height;
+	background: @bg;
+	border-bottom: @border-bottom;
+	color: @color;
+    font-family: @font-family;
+}
+
+.cxPbPropertiesModal .cxPbPropHeaderIcons{
+	display: flex;
+	flex: 1;
+	justify-content: flex-end;
+}
+
+.cxPbPropertiesModal .cxPbPropHeaderIcons span{
+	.cxPbPropertiesModalHeaderIconsMixin();
+	width: @w;
+	height: @h;
+	@{property-margin-left}: @margin-left;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: @border-radius;
+	cursor: pointer;
+}
+
+.cxPbPropertiesModal .cxPbPropHeaderIcons span:hover{
+	.cxPbPropertiesModalHeaderIconSpanHoverMixin();
+	background: @bg;
+}
+
+.cxPbPropertiesModal lyte-modal-content{
+	.cxPbPropertiesModalContentMixin();
+	height: @h;
+	overflow: auto;
+	padding: @padding;
+}
+
+.cxPbPropModalTab lyte-tab-head,
+.cxPbPropModalTab lyte-tab-body{
+	.cxPbPropModalTabHeadBodyMixin();
+	border: @border;
+}
+
+.cxPbPropModalTab lyte-tab-head{
+	.cxPbPropModalTabHeadMixin();
+	border-bottom: @border-bottom;
+}
+
+.cxPbPropertiesModal .cxPbPropModalTab lyte-tab-title{
+	.cxPbPropertiesModalTabTitleMixin();
+	padding: @padding;
+	color: @color;
+	border: @border;
+	background: @bg;
+	margin: @margin;
+	position: relative;
+}
+
+.cxPbPropertiesModal .cxPbPropModalTab lyte-tab-title.lyteTabActive{
+	.cxPbPropertiesModalTabActiveMixin();
+	color: @color;
+	border: @border;
+}
+
+.cxPbPropertiesModal .cxPbPropModalTab lyte-tab-title.lyteTabActive::after{
+	.cxPbPropertiesModalTabActiveAfterMixin();
+	content: '';
+	position: absolute;
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	bottom: @bottom;
+	background-color: @background-color;
+	@{property-left}: @left;
+}
+
+.cxPbPropModalTab lyte-tab-body{
+	.cxPbPropModalTabBodyMixin();
+	padding: @padding;
+	height: @h;
+}
+
+.cxPbPropModalTab .cxPbFormHeading{
+	.cxPbPropModalTabFormHeadingMixin();
+	color: @color;
+	font-family: @font-family;
+	font-size: @font-size;
+	margin-bottom: @margin-bottom;
+	padding-top: @padding-top;
+	display: flex;
+	align-items: center;
+}
+
+.cxPbPropModalTab .cxPbFormHeadingInput{
+	display: inline-flex;
+	flex: 1;
+	justify-content: flex-end;
+}
+
+.cxPbPropModalTab .cxPbFormHeadingInput button{
+	.cxPbPropModalTabHeadingBtnMixin();
+	height: @h;
+	@{property-margin-left} : @margin-left;
+	border-radius: @border-radius;
+	border: @border;
+	@{property-padding-left}: @padding-left;
+	@{property-padding-right}: @padding-right;
+}
+
+.cxPbPropModalTab .cxPbFormTwoColumns{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.cxPbPropModalTab .cxPbFormTwoColumns .cxPbFormRow{
+	.cxPbPropModalTabTwoColFormRowMixin();
+	flex-basis: @flex-basis;
+}
+
+.cxPbPropModalTab .cxPbFormRow{
+	.cxPbPropModalTabFormRowMixin();
+	margin-bottom: @margin-bottom;
+}
+
+.cxPbPropModalTab .cxPbFormRow .cxElementLabel{
+	.cxPbPropModalTabFormElemLabelMixin();
+	display: flex;
+	color: @color;
+	margin-bottom: @margin-bottom;
+}
+
+.cxPbPropModalTab .cxPbFormCbRow  .cxPbHelpIcon,
+.cxPbPropModalTab .cxPbFormCbRow  .cxPbInfoIcon,
+.cxPbPropModalTab .cxPbFormRow  .cxPbInfoIcon{
+	.cxPbFormRowInfoIconMixin();
+	@{property-margin-left}: @margin-left;
+}
+
+.cxPbPropModalTab .cxPbFormRow .cxPbFormulaEditorErrorMsg,
+.cxPbPropModalTab .cxPbFormRow  .cxPbFormErrorMsg,
+.cxPbPropModalTab .cxPbFormRow  .cxPbFormInfo{
+	.cxPbPropFormErrorInfoContMixin();
+	display: block;
+	text-align: end;
+	font-size: @font-size;
+	color: @color;
+	margin-top: @margin-top;
+}
+
+.cxPbPropModalTab .cxPbFormRow .cxPbFormulaEditorErrorMsg,
+.cxPbPropModalTab .cxPbFormRow  .cxPbFormErrorMsg{
+	.cxPbPropModalTabErrorColorMixin();
+	color: @color;
+}
+
+.cxPbPropModalTab .cxPbFormRow .cxPbFormulaEditorErrorMsg{
+	text-align: start;
+}
+
+.cxPbPropModalTab .cxPbFormRow  .cxPbFormInfo b{
+	.cxPbPropModalTabFormInfoBoldMixin();
+	font-family: @font-family;
+}
+
+.cxPbFormRow crux-number-component lyte-number,
+.cxPbFormRow crux-text-component lyte-input{
+	.cxPbPropFormRowTextInputMixin();
+	width: @w;
+}
+
+
+.cxPbPropModalTab .cxPbFormCbRow{
+	.cxPbPropFormCbRowMixin();
+	margin-bottom: @margin-bottom;
+	display: inline-block;
+}
+
+.cxPbPropModalTab .cxPbFormCbRow .cxPbPropModalBoolean{
+	display: inline-block;
+	vertical-align: middle
+}
+
+.cxPbPropModalTab .cxPbFormCbRow .cxElementLabel{
+	display: inline-flex;
+	align-items: center;
+}
+
+.cxPbPropModalTab .cxPbFormCbRow lyte-checkbox{
+	.cxPbPropFormCbRowCheckBoxMixin();
+	color: @color;
+}
+
+.cxPbPropModalTab .cxPbFormCbRow~.cxPbSprite{
+	.cxPbFormCbIconMixin();
+	vertical-align: middle;
+	cursor: pointer;
+	@{property-margin-left}: @margin-left;
+	position: relative;
+    top: @top;
+}
+
+.cxPbPropModalTab .cxPbFormCbRow .cxPbFormCbInfo{
+	.cxPbPropFormCbInfoMixin();
+	display: block;
+	@{property-margin-left} : @margin-left;
+	font-size: @font-size;
+	color: @color;
+	margin-top: @margin-top;
+}
+
+.cxPbPropModalTab .cxPbFormCbRow .cxPbFormCbInfoIcon{
+	.cxPbPropFormCbInfoIconMixin();
+	vertical-align: middle;
+	cursor: pointer;
+	@{property-margin-left} : @margin-left;
+}
+
+.cxPbPropActionModal .cxPbPropNote,
+.cxPbPropModalTab .cxPbPropNote{
+	.cxPbPropNoteMixin();
+	width: @w;
+	font-size: @font-size;
+	padding: @padding;
+	color: @color;
+	background-color: @background-color;
+	border: @border;
+	border-radius: @border-radius;
+	margin-bottom: @margin-bottom;
+	box-sizing: border-box;
+}
+
+.cxPbPropActionModal .cxPbPropNote b,
+.cxPbPropModalTab .cxPbPropNote b{
+	.cxPbPropNoteBoldFontMixin();
+	font-family: @font-family;
+}
+
+.cxPbPropActionModal .cxPbPropNote{
+	.cxPbPropActionModalNoteMixin();
+	width: @w;
+}
+
+.cxPbPropModalTab .cxPbFormCbRow .cxPbPropNote{
+	.cxPbPropFormNoteMixin();
+	@{property-margin-left} : @margin-left;
+	width: @w;
+	margin-top: @margin-top;
+	margin-bottom: @margin-bottom;
+}
+
+.cxPbPropertiesModalLarge  .cxPbFormCbRow .cxPbPropNote,
+.cxPbPropertiesModalMedium  .cxPbFormCbRow .cxPbPropNote{
+	.cxPbPropModalLargeMediumNoteMixin();
+	max-width: @max-w;
+}
+
+.cxPbPropModalTab .cxPbPropInfo{
+	.cxPbPropInfoMixin();
+	margin-bottom: @margin-bottom;
+	color: @color;
+	line-height: @line-height;
+}
+
+.cxPbPropModalTab .cxPbPropInfo a{
+	.cxPbPropInfoLinkMixin();
+	color: @color;
+	text-decoration: none;
+	line-height: @line-height;
+}
+
+
+.cxPbPropertiesModal lyte-modal-footer{
+	.cxPbPropertiesModalFooterMixin();
+	color: @color;
+	padding: @padding;
+	background: @bg;
+	border-top: @border-top;
+	display: flex;
+	align-items: center;
+}
+
+.cxPbPropertiesModal lyte-modal-footer span{
+	cursor: pointer;
+}
+
+.cxPbPropertiesModal lyte-modal-footer .cxPbPropFooterAction{
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+}
+/* Formula Editor */
+
+
+.cxPbPropertiesModal .cxPbFormulaEditor{
+	.cxPbPropFormulaEditorMixin();
+	border: @border;
+	border-radius: @border-radius;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.cxPbFormulaEditor .cxPbFormulaEditorHead{
+	.cxPbFormulaEditorHeadMixin();
+	display: flex;
+	border-bottom: @border-bottom;
+	background-color: @background-color;
+}
+
+.cxPbFormulaEditor .cxPbFormulaElementLabel{
+	.cxPbFormulaEditorLabelMixin();
+	padding: @padding;
+	border-radius: @border-radius;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	position: relative;
+	color: @color;
+	font-family: @font-family;
+}
+
+.cxPbFormulaEditor .cxPbFormulaElementLabel.required::before{
+	.cxPbFormulaEditorLabelReqBeforeMixin();
+	content: '';
+	width: @w;
+	background-color: @background-color;
+	height: @h;
+	position: absolute;
+	@{property-left} : @left;
+}
+
+.cxPbFormulaEditor .cxPbFormulaElementValue{
+	.cxPbFormulaEditorElemValMixin();
+	padding: @padding;
+	@{property-margin-right}: @margin-right;
+}
+
+.cxPbFormulaEditor .cxPbFormulaEditorBody{
+	.cxPbFormulaEditorBodyMixin();
+	height: @h;
+}
+/* Table Row */
+
+
+.cxPbPropModalTab  .cxPbFormTableRow{
+	.cxPbPropFormTableRowMixin();
+	// margin: @margin;
+	margin-bottom: @margin-bottom;
+}
+
+.cxPbFormTableRow lyte-table{
+	.cxPbPropFormTableMixin();
+	border-radius: @border-radius;
+}
+
+// .cxPbFormTableRow lyte-thead lyte-th{
+// 	.cxPbFormTableHeadMixin();
+// 	background: @bg;
+// 	border-top: @border-top;
+// 	border-bottom: @border-bottom;
+// 	padding: @padding;
+// 	min-width: @min-w;
+// 	color: @color;
+// }
+
+// .cxPbFormTableRow .cxPbDynamicSortableTable lyte-thead lyte-th{
+// 	.cxPbFormSortableTableHeadMixin();
+// 	background: @bg;
+// }
+
+// .cxPbDynamicSortableTable  lyte-td{
+// 	.cxPbFormSortableTableTdMixin();
+// 	border-color: @border-color;
+// 	padding: @padding;
+// }
+
+// .cxPbFormTableRow  lyte-td{
+// 	.cxPbFormTableTdMixin();
+// 	padding: @padding;
+// 	overflow: hidden;
+// 	text-overflow: ellipsis;
+// 	color: @color;
+// 	border-color: @border-color;
+// }
+
+// .cxPbFormTableRow lyte-tbody lyte-tr:hover lyte-td{
+// 	.cxPbFormTableRowHoverBgMixin();
+// 	background: @bg;
+// }
+
+// .cxPbDynamicSortableTable lyte-tbody lyte-tr:hover lyte-td{
+// 	.cxPbSortableTableRowHoverBgMixin();
+// 	background: @bg;
+// }
+
+.cxPbDynamicSortableTable lyte-td .cxPbTableSortableHandle{
+	// .cxPbSortableTableHandleMixin();
+	// @{property-margin-left}: @margin-left;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.cxPbFormTableRow .cxPbTableActionTd{
+	.cxPbFormTableActionTdMixin();
+	height: @h;
+}
+
+.cxPbFormTableRow .cxPbTableActionTd  span{
+	cursor: pointer;
+	display: inline-flex;
+	visibility: hidden;
+}
+
+.cxPbFormTableRow .sortable-element-selected .cxPbTableActionTd  span,
+.cxPbFormTableRow lyte-tr:hover .cxPbTableActionTd  span{
+	visibility: visible;
+}
+
+.cxPbFormTableRow .cxPbTableActionTd .cxPbActionInfo{
+	.cxPbFormTableRowActionInfoMixin();
+	@{property-margin-left}: @margin-left;
+}
+
+
+.cxPbFormTableRow .cxPbDynamicSortableTable .cxPbMinusIconWrapper{
+	.cxPbFormTableMinusIconWrapMixin();
+	position: relative;
+	bottom: @bottom;
+	border-color: @border-color;
+}
+
+.cxPbFormTableRow .cxPbDynamicSortableTable .cxPbMinusIconWrapper .cxPbMinusIcon{
+	.cxPbFormTableMinusIconMixin();
+	background-color: @background-color;
+}
+
+
+.cxPbFormTableRow .cxPbDynamicSortableTable .cxPbPlusIconWrapper{
+	.cxPbFormTablePlusIconWrapMixin();
+	@{property-margin-left}: @margin-left;
+	border-color: @border-color;
+}
+
+.cxPbFormTableRow .cxPbDynamicSortableTable .cxPbPlusIcon{
+	.cxPbFormTablePlusIconMixin();
+	background-color: @background-color;
+}
+
+.cxPbFormTableRow .cxPbFormTableFooter{
+	.cxPbFormTableFooterMixin();
+	display: flex;
+	align-items: center;
+	border: @border;
+	border-top: @border-top;
+	height: @h;
+	padding: @padding;
+	color: @color;
+	box-sizing: border-box;
+	border-radius: @border-radius;
+}
+
+.cxPbFormTableRow .cxPbFormTableFooter .cxPbPlFootFlex1{
+	display: flex;
+	flex: 1;
+	justify-content: flex-end;
+}
+
+.cxPbFormTableRow .cxPbFormTableFooter .lyteCheckbox{
+	display: inline-flex;
+	align-items: center;
+}
+
+.cxPbFormTableRow .cxPbFormTableInfoTr{
+	position: relative;
+}
+
+.cxPbFormTableRow .cxPbFormTableInfoTr lyte-td{
+	.cxPbFormTableInfoRowTdMixin();
+	padding-bottom: @padding-bottom;
+}
+
+.cxPbFormTableRow .cxPbFormTableInfoTr .cxPbFormTableInfoTd{
+	overflow: visible;
+}
+
+.cxPbFormTableRow .cxPbFormTableInfoTr .cxPbFormTableInfoDiv{
+	.cxPbFormTableInfoRowDivMixin();
+	position: absolute;
+	padding: @padding;
+	border: @border;
+	bottom: @bottom;
+	font-size: @font-size;
+	color: @color;
+	min-width: @min-w;
+	z-index: @z-index;
+}
+
+.cxPbFormTableInfoTr .cxPbFormTableInfoDiv .cxPbTableInfoUndo{
+	.cxPbFormTableInfoTrMixin();
+	color: @color;
+	cursor: pointer;
+}
+
+.cxPbPropFormElemNote{
+	.cxPbPropFormElemNoteMixin();
+	font-size: @font-size;
+	color: @color;
+	margin-top: @margin-top;
+	display: block;
+	text-align: end;
+}
+
+.cxPbPickListSortSelectorTable.sortable-parent{
+	.cxPbPickListSortSelectorTableMixin();
+	height: @h;
+}
+
+.cxPbPicklistOptionHeading{
+	.cxPbPicklistOptionHeadingMixin();
+	font-family: @font-family;
+	margin-bottom: @margin-bottom;
+}
+
+.cxPbFormTableRow lyte-table .cxPbPicklistSettings{
+	.cxPbPicklistSettingsMixin();
+	position: relative;
+	@{property-padding-left}: @padding-left;
+	width: @w;
+}
+
+.cxPbFormTableRow lyte-table .cxPbTablePlActionTd{
+	.cxPbTablePlActionTdMixin();
+	@{property-padding-left}: @padding-left;
+}
+
+.cxPbFormTableRow lyte-table .cxPbTablePlSortIconTd,
+.cxPbFormTableRow lyte-table .cxPbTablePlSortIconTh{
+	.cxPbTablePlSortIconThMixin();
+	@{property-padding-left}: @padding-left;
+	@{property-padding-right}: @padding-right;
+	min-width: @min-w;
+    width: @w;
+}
+
+// .cxPbPicklistTableOptionsTh{
+// 	.cxPbPicklistTableOptionsThMixin();
+// 	width: @w;
+// }
+
+.cxPbFormPicklistTableMin{
+	.cxPbFormPicklistTableMinMixin();
+	height: @h;
+}
+
+.cxPbFormPicklistTableMax{
+	.cxPbFormPicklistTableMaxMixin();
+	height: @h;
+}
+
+.cxPbPicklistFormTableCont lyte-table-structure{
+	position: unset;
+}
+
+// .cxPbPicklistOptionHead{
+// 	.cxPbPicklistOptionHeadMixin();
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	margin-bottom: @margin-bottom;
+// 	padding: @padding;
+// }
+
+.cxPbPlOptActionBtn{
+	.cxPbPlOptActionBtnMixin();
+	width: @w;
+	height: @h;
+	// border-radius: @border-radius;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	// border: @border;
+	@{property-margin-left}: @margin-left;
+	cursor: pointer;
+	position: absolute;
+	top: @top;
+	@{property-right}: @right;
+}
+
+.cxPbPlOptActionBtn:hover{
+	.cxPbPlOptActionBtnHoverMixin();
+	background: @bg;
+}
+
+.cxPbPlOptActionSettingsBtn{
+	.cxPbPlOptActionSettingsBtnMixin();
+	@{property-right}: @right;
+	@{property-border-right}: @border-right;
+	@{property-border-left}: @border-left;
+}
+
+.cxPbPropActionModalContent{
+	.cxPbPropActionModalContentMixin();
+	margin-bottom: @margin-bottom;
+}
+
+// .cxPbPropActionModalHeading{
+// 	.cxPbPropActionModalHeadingMixin();
+// 	margin-bottom: @margin-bottom;
+// 	font-size: @font-size;
+// 	font-family: @font-family;
+// }
+
+.cxPbPropPlReplaceForm{
+	.cxPbPropPlReplaceFormMixin();
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-top: @margin-top;
+}
+
+.cxPbPropPlReFormSwapIconWrap{
+	.cxPbPropPlReFormSwapIconWrapMixin();
+	width: @w;
+	height: @h;
+	margin: @margin;
+	flex-shrink: @flex-shrink;
+	border-radius: @border-radius;
+	background: @bg;
+}
+
+.cxPbPropPlReplaceFormFld{
+	.cxPbPropPlReplaceFormFldMixin();
+	width: @w;
+}
+
+.cxPbPropPlSwapIcon{
+	.cxPbPropPlSwapIconMixin();
+	transform: @transform;
+}
+
+.cxPbPropPlReplaceFormFld .cxPbPropPlReplaceFormFldLabel{
+	.cxPbPropPlReplaceFormFldLabelMixin();
+	display: inline-block;
+	font-family: @font-family;
+	margin-bottom: @margin-bottom;
+}
+
+.cxPbPropActionModal .cxPbPropNote.cxPbPlReplaceModalNote{
+	.cxPbPlReplaceModalNoteMixin();
+	width: @w;
+	margin: @margin;
+	font-size: @font-size;
+	@{property-padding-left}: @padding-left;
+}
+
+.cxPbPropNote.cxPbPlReplaceModalNote li{
+	.cxPbPlReplaceModalNoteListMixin();
+	list-style: disc;
+	margin-bottom: @margin-bottom;
+}
+
+.cxPbPlPreOptModalCont{
+	.cxPbPlPreOptModalContMixin();
+	display: flex;
+	border-radius: @border-radius;
+	border: @border;
+	height: @h;
+	overflow: hidden;
+}
+
+.cxPbPlPreOptModalLeftCont{
+	.cxPbPlPreOptModalLeftContMixin();
+	width: @w;
+	box-sizing: border-box;
+	padding: @padding;
+	overflow: auto;
+	@{property-border-right}: @border-right;
+	background: @bg;
+}
+
+.cxPbPlPreOptModalLeftContItem{
+	.cxPbPlPreOptModalLeftContItemMixin();
+	padding: @padding;
+	cursor: pointer;
+}
+
+.cxPbPlPreOptModalLeftContItem.cxPbSelected{
+	.cxPbPlPreOptModalLeftContItemSelMixin();
+	background: @bg;
+	font-family: @font-family;
+	border-radius: @border-radius;
+}
+
+.cxPbPlPreOptModalRightCont{
+	// .cxPbPlPreOptModalRightContMixin();
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.cxPbPlPreOptModalRightContItem{
+	.cxPbPlPreOptModalRightContItemMixin();
+	margin: @margin;
+}
+
+.cxPbPlPreOptModalRightContItem.cxPbPinned{
+	.cxPbPlPreOptModalRightContPinnedMixin();
+	margin: @margin;
+	padding: @padding;
+	border-bottom: @border-bottom;
+}
+
+.cxPbPlPreOptModalRightContItem .lyteCheckBoxDefault{
+	display: inline-flex;
+}
+
+.cxPbPlPreOptModalRightContItem .lyteCheckBoxDefault::before{
+	.cxPbPlPreOptModalRightContItemCheckBoxMixin();
+	@{property-margin-right}: @margin-right;
+	flex-shrink: 0;
+}
+
+.cxPbPlPreOptModalRightNestedCont{
+	.cxPbPlPreOptModalRightNestedContMixin();
+	height: @h;
+	overflow: auto;
+}
+
+.cxPbPropPlColorFld{
+	.cxPbPropPlColorFldMixin();
+	@{property-margin-right}: @margin-right;
+}
+
+.cxPbPropPlValueFld{
+	flex: 1;
+}
+
+.cxPbPropPlGlobalFormField{
+	display: flex;
+	align-items: center;
+}
+
+.cxPbPropPlGlobalFormLabel{
+	.cxPbPropPlGlobalFormLabelMixin();
+	@{property-margin-right}: @margin-right;
+	flex-shrink: 0;
+}
+
+.cxPbPropModalTab .cxPbFormHeading.cxPbFormHeadingWithRightBtn{
+	.cxPbFormHeadingWithRightBtnMixin();
+	align-items: flex-start;
+	justify-content: space-between;
+	margin-bottom: @margin-bottom;
+}
+
+.cxPbPropModalTab .cxPbFormHeadingWithRightBtn .cxPbFormHeadingRightBtn{
+	.cxPbFormHeadingRightBtnMixin();
+	color: @color;
+	cursor: pointer;
+	margin-bottom: @margin-bottom;
+}
+
+.cxPbCriteriaViewContainer{
+	.cxPbCriteriaViewContainerMixin();
+	padding: @padding;
+	background: @bg;
+	border: @border;
+	border-radius: @border-radius;
+}
+
+.cxPbPropModalDashedSeparator{
+	.cxPbPropModalDashedSeparatorMixin();
+	display: block;
+	width: @w;
+	padding: @padding;
+}
+
+.cxPbPropModalDashedSeparator::before{
+	.cxPbPropModalDashedSeparatorMixin();
+	content: '';
+	position: absolute;
+	display: block;
+	border-top: @border-top;
+	@{property-left}: @left;
+	@{property-right}: @right;
+}
+
+.cxPbSectionSettingsMenuBody lyte-menu-item{
+	.cxPbSectionSettingsMenuItemMixin();
+	@{property-padding-left}: @padding-left;
+}
+
+.cxPbSectionSettingsMenuBody  .cxPbSecSettingMenuIcon{
+	.cxPbSecSettingMenuIconMixin();
+	@{property-margin-right}: @margin-right;
+}
+
+.cxPbSectionSettingsMenuBody .cxPbMenuSelected lyte-menu-label::after{
+	.cxPbSecSettingMenuSelectedIconMixin();
+	content: '';
+	position: absolute;
+	width: @w;
+	height: @h;
+	display: inline-block;
+	.cruxIconBgImageMixin(@mask-img,@mask-pos,@bg);
+	@{property-left}: @left;
+}
+
+.cxPbSectionSettingsMenuBody .cxPbMenuSelected{
+	.cxPbSecSettingMenuSelMixin();
+	font-family: @font-family;
+}
+
+.cxPbLookupCriteriaCkbox .cxPbFormCbRow{
+	.cxPbLookupCriteriaCkboxMixin();
+	margin-top: @margin-top;
+}
+
+.cxPbFieldOfLookupHeader{
+	.cxPbFieldOfLookupHeaderMixin();
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-family: @font-family;
+	font-size: @font-size;
+	margin-top: @margin-top;
+}
+
+.cxPbPropActionModal lyte-modal-content.cxPbFldLookupModalContent{
+	.cxPbFldLookupModalContentMixin();
+	@{property-padding-left}: @padding-left;
+	@{property-padding-right}: @padding-right;
+}
+
+.cxPbFieldOfLookupTable{
+	.cxPbFieldOfLookupTableMixin();
+	@{property-border-right}: @border-right;
+	@{property-border-left}: @border-left;
+	border-radius: @border-radius;
+}
+
+.cxPbFieldOfLookupTable .lyteTableScroll{
+	.cxPbFieldOfLookupTableMixin();
+	border-radius: @border-radius;
+}
+
+.cxPbFldLookupTableNoRecord{
+	.cxPbFldLookupTableNoRecordMixin();
+	padding: @padding;
+	text-align: center;
+	color: @color;
+}
+
+.cxPbFldLookupModalFooter{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.cxPbFldLookupMsg{
+	.cxPbFldLookupMsgMixin();
+	display: flex;
+	align-items: center;
+	color: @color;
+}
+
+.cxPbFldLookupMsg .cxPbFldLookupInfoIcon{
+	.cxPbFldLookupMsgInfoIcon();
+	-webkit-mask-position: @mask-position;
+	mask-position: @mask-position;
+	width: @w;
+	height: @h;
+	background-color: @bg;
+	@{property-margin-right}: @margin-right;
+}
+
+.cxPbFldLookupFormRow{
+	.cxPbFldLookupFormRowMixin();
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: @gap;
+	margin-bottom: @margin-bottom;
+}
+
+.cxPbFldLookupFormRow:last-child{
+	margin-bottom: unset;
+}
+
+
+.cxPbFldLookupFormLabel{
+	.cxPbFldLookupFormLabelMixin();
+	color: @color;
+	text-align: end;
+}
+
+.cxPbFldLookupFormValue{
+	.cxPbFldLookupFormValueMixin();
+	width: @w;
+	min-width: @min-w;
+}
+
+.cxPbLkupFltrModalFooter{
+	justify-content: flex-end;
+}
+
+.cxPbPropRollupSumCont{
+	.cxPbPropRollupSumContMixin();
+	display: flex;
+	border: @border;
+	height: @h;
+	box-sizing: border-box;
+	border-radius: @border-radius;
+}
+
+.cxPbPropRollupSumLabel{
+	.cxPbPropRollupSumLabelMixin();
+	color: @color;
+	margin-bottom: @margin-bottom;
+}
+
+.cxPbPropRollupSumHead{
+	.cxPbPropRollupSumHeadMixin();
+	margin-bottom: @margin-bottom;
+}
+.cxPbPropRollupSumLeftCont{
+	.cxPbPropRollupSumLeftContMixin();
+	width: @w;
+	@{property-border-right}: @border-right;
+	padding: @padding;
+	background: @bg;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+.cxPbPropRollSumLeftHead{
+	.cxPbPropRollSumLeftHeadMixin();
+	font-family: @font-family;
+	padding: @padding;
+}
+
+.cxPbPropRollupSumRightCont{
+	.cxPbPropRollupSumRightContMixin();
+	flex: @flex;
+	overflow: auto;
+	padding: @padding;
+}
+
+lyte-nav.cxPbPropRollSumLeftNav{
+	.cxPbPropRollSumLeftNavMixin();
+	flex: @flex;
+	height: @h;
+	background: @bg;
+}
+
+.cxPbPropRollSumLeftNav .lyteNavDiv{
+	.cxPbPropRollSumLeftNavDivMixin();
+	padding: @padding;
+}
+
+.cxPbPropRollSumLeftNav .cxPbPropRollSumLeftNavItem{
+	.cxPbPropRollSumLeftNavItemMixin();
+	padding: @padding;
+	font-size: @font-size;
+	border-radius: @border-radius;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.cxPbPropRollSumLeftNav .cxPbPropRollSumLeftNavItem:hover{
+	.cxPbPropRollSumLeftNavItemHovMixin();
+	background: @bg;
+}
+
+.cxPbPropRollSumLeftNav .cxPbPropRollSumLeftNavItem.lyteNavActive,
+.cxPbPropRollSumLeftNav .cxPbPropRollSumLeftNavItem.lyteNavActive:hover{
+	.cxPbPropRollSumLeftNavItemActiveMixin();
+	color: @color;
+	background: @bg;
+}
+
+.cxPbPropRollupSumFormRow{
+	.cxPbPropRollupSumFormRowMixin();
+	margin-bottom: @margin-bottom;
+}
+
+.cxPbPropRollupSumFormLabel{
+	.cxPbPropRollupSumFormLabelMixin();
+	font-family: @font-family;
+	margin-bottom: @margin-bottom;
+}
+
+.cxPbPropRollupSumFieldCont{
+	.cxPbPropRollupSumFieldContMixin();
+	display: flex;
+	gap: @gap;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.cxPbPropRollupSumField{
+	.cxPbPropRollupSumFieldMixin();
+	padding: @padding;
+	width: @w;
+	border-radius: @border-radius;
+	border: @border;
+	cursor: pointer;
+	box-sizing: border-box;
+	position: relative;
+	display: flex;
+}
+
+.cxPbPropRollupSumFieldVal{
+	flex: 1;
+}
+
+.cxPbPropRollSumRecCount{
+	.cxPbPropRollSumRecCountMixin();
+	font-family: @font-family;
+}
+
+.cxPbRollupModFooter{
+	justify-content: flex-end;
+}
+
+.cxPbModRollupFootContent{
+	.cxPbModRollupFootContentMixin();
+	color: @color;
+}
+
+.cxPbModRollupFootVal{
+	.cxPbModRollupFootValMixin();
+	font-family: @font-family;
+	@{property-margin-left}: @margin-left;
+}
+
+.cxPbPermListComp .cxPermissionTable{
+	.cxPbPermListCompTableMixin();
+	margin: @margin;	
+}
+
+.cxPbModalHeaderWrap{
+	.cxPbModalHeaderWrapMixin();
+	width: @w;
+}
+
+.cxPbModalHeaderFLabel{
+	flex: 1;
+	overflow: hidden;
+}
+
+.cxPbModalActionIconsWrap{
+	.cxPbModalActionIconsWrapMixin();
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.cxPbModalActionIconsWrap:hover{
+	.cxPbModalActionIconsWrapHoverMixin();
+	background: @bg;
+}
+
+.cxPbModalHeaderWrap .cxPbModalActionIconsWrap{
+	.cxPbModalHeaderActionIconsSpaceMixin();
+	@{property-margin-left}: @margin-left;
+}
+
+.cxPbModalHeaderFLabel .cxPbHelpIcon{
+	.cxPbModalHeaderLabelHelpIconMixin();
+	@{property-margin-left}: @margin-left;
+	flex-shrink: 0;
+}
+
+.cxPbFormPreviewText{
+	.cxPbFormPreviewTextMixin();
+	@{property-margin-left}: @margin-left;
+	color: @color;
+	margin-bottom: @margin-bottom;
+	cursor: pointer;
+}
+
+.cxPbFormPreviewText.cxPbPrevwTextDisabled{
+	.cxPbPrevwTextDisabledMixin();
+	opacity: @opacity;
+	cursor: not-allowed;
+}
+
+/******* crux pb property panel help icon hovercard style starts ********/
+
+.cxPbPropHelpHovercard{
+	.cxPbPropHelpHovercardMixin();
+	padding: @padding;
+}
+
+.cxPbPropHelpHovercardHead{
+	.cxPbPropHelpHovercardHeadMixin();
+	font-family: @font-family;
+	font-weight: @font-weight;
+	font-size: @font-size;
+	margin-bottom: @margin-bottom;
+}
+
+.cxPbPropHelpHovercardTable lyte-th{
+	.cxPbPropHelpHovercardTableThMixin();
+	background: @bg;
+}
+
+.cxPbPropHelpHovercardTable lyte-th:not(:last-of-type),
+.cxPbPropHelpHovercardTable lyte-td:not(:last-of-type){
+	.cxPbPropHelpHovercardTableThTdMixin();
+	border-right: @border-right;
+}
+
+.cxPbPropHelpHovercardTable lyte-td:not(:first-of-type){
+	.cxPbPropHelpHCTableSpanTdMixin();
+	padding: @padding;
+}
+
+.cxPbPropHelpHovercardTable lyte-td>div{
+	.cxPbPropHelpHCTableSpanTdDivMixin();
+	padding: @padding;
+}
+
+.cxPbPropHelpHovercardTable lyte-td>div:first-of-type{
+	.cxPbPropHelpHCTableSpanTdFirstDivMixin();
+	border-bottom: @border-bottom;
+}
+
+/******* crux pb property panel help icon hovercard style ends ********/

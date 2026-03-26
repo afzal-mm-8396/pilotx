@@ -1,0 +1,476 @@
+.comboboxCloseIcon.lyteModalClose {
+  top: 35px;
+  right: 38px;
+}
+.op5_op1_parent > .op5_op1_child{
+  opacity: 0.5;
+}
+.op5_op1_parent:hover > .op5_op1_child{
+  opacity: 1;
+}
+.comboxBoxHeader {
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 100%;
+  word-break: break-word;
+}
+.cxComboHeaderInfo {
+	background: #EDF1F5;
+	border-radius: 4px;
+	padding: 5px 15px;
+	font-size: 13px;
+	color: #313949;
+	font-family: var(--crux-primary-font);
+	display: inline-block;
+	vertical-align: middle;
+}
+.cxComboboxHeaderInfoIcon {
+	background: url(../images/crux-sprite-icons.svg) no-repeat -68px -2px;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+.combo-box-content {
+  padding-top: 5px;
+  align-items: flex-end;
+}
+.user-selection-part .dropdown {
+  background: url(../images/crux-sprite-icons.svg) no-repeat -1px -2px;
+  width: 8px;
+  height: 4px;
+}
+.user-search .clear-search {
+  height: 100%;
+  width: 25px;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  position: absolute;
+  opacity: 0.7;
+}
+.user-search input::placeholder {
+  color: #999;
+  font-size: 14px;
+}
+.user-search .clear-search:hover {
+  opacity: 1;
+}
+.user-search .clear-search::before {
+  content: '';
+  background: url(../images/crux-sprite-icons.svg) no-repeat -54px -2px;
+  width: 10px;
+  height: 8px;
+  position: absolute;
+  top: calc(50% - 4px);
+  right: 7px;
+}
+.combo-box-nophoto {
+  background: url('../images/nophoto.png');
+  display: inline-block;
+  border-radius: 50%;
+  background-size: 100%;
+  vertical-align: middle
+}
+.cxComboUser .combo-box-nophoto {
+  width: 32px;
+  height: 32px;
+}
+.selected-user-list .combo-box-nophoto {
+  width: 20px;
+  height: 20px;
+}
+.search-loader{
+	background: url('../images/crux-search-loader.svg');
+	height: 30px;
+	width: 30px;
+	background-size: 100%;
+	display: inline-block;
+}
+.user-search .search-loader {
+	right: 0;
+	top: 0;
+	position: absolute;
+}
+.cxComboLeftColHeadSection {
+	align-items: center;
+}
+.cxComboboxSectionHeading {
+	color: #313949;
+}
+.cxComboboxUserOnlyModalContent .cxComboboxSectionHeading {
+  padding: 3px 0 4px;
+}
+.cxComboLeftColHeadSection lyte-drop-button {
+	padding: 2px 25px 3px 10px;
+}
+.user-selection-part {
+	width: 36%;
+	min-width: 290px;
+}
+.user-selected-part {
+	width: 64%;
+	min-width: 500px;
+}
+.cxComboUserSelectedHeaderContentWrap {
+  display: flex;
+  justify-content: space-between;
+}
+.cxComboboxWithoutHeader .cxComboboxTotalRecipientCount {
+  margin-right: 30px;
+}
+.user-selection-content, .user-selected-content {
+	height: 400px;
+  border: 1px solid #dfdfdf;
+}
+.cxComboAdditionalRecipientPresent {
+  font-size: 1rem;
+}
+.cxComboAdditionalRecipientPresent .user-selection-content,
+.cxComboAdditionalRecipientPresent .user-selected-content {
+    height: 350px;
+}
+
+.user-selected-content {
+	border-left: 0px;
+  overflow: auto;
+}
+.cxUserSelectionOption {
+	border-right: 1px solid #ddd;
+    line-height: 18px;
+}
+.dropdown-search-wrapper {
+  display: flex;
+}
+.dropdown-search-wrapper .user-search {
+  flex-grow: 1;
+  position: relative;
+}
+.cxComboBoxFilterDD,
+.cxComboBoxSearch {
+    display: block;
+}
+.cxUserSelectionOption .cxFakeDropButton,
+.cxUserSelectionOption lyte-dropdown lyte-drop-button {
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    max-width: 140px;
+    padding: 10px 25px 10px 10px;
+    font-size: 14px;
+    display: block;
+    box-shadow: none;
+}
+.cxUserSelectionOption .cxFakeDropButton .cxFakeDropdownLabel {
+	font-size: inherit;
+}
+.cxComboBoxSearch .cxComboBoxSearchInput:disabled,
+.cxComboBoxSearch.lyteInputDisabled {
+    background: #eee;
+    cursor: not-allowed;
+}
+.user-search .cxComboBoxSearchInput {
+	height: 38px;
+	width: calc(100% - 25px);
+	padding: 4px 0 4px 30px;
+}
+.user-search .cxComboBoxSearch .searchIcon {
+    transform: scale(0.9);
+    left: 8px;
+    background-position: -180px -3px;
+}
+.cxComboUserWrapper {
+  height: calc(100% - 39px);
+}
+.user-lists-container {
+  height:100%;
+	overflow: auto;
+	position: relative;
+}
+.user-image {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.cxComboBoxImg {
+	width: 100%;
+}
+.cxComboUser {
+	padding: 9px 13px;
+	cursor: pointer;
+  display: flex;
+}
+.cxComboUser:hover {
+	background: #f1f6f9;
+}
+.user-detail {
+  flex-grow: 1;
+}
+.cxComboUserDesc {
+  width: calc(100% - 50px);
+}
+.selected-user-name {
+  max-width: 300px;
+  font-size: 13px;
+  margin: 0 30px 0 7px;
+  overflow: hidden;
+}
+.comboBoxMW250 {
+  max-width: 250px;
+}
+.user-add-option {
+  display: flex;
+  align-items: center;
+}
+.cxComboBoxAddedLabel {
+	color: #5bb57c;
+	font-size: 0.929rem;
+	display: inline-flex;
+	align-items: center;
+}
+.cxComboBoxAddedLabel::before {
+	content: '';
+	-webkit-mask-image: url(../images/crux-sprite-icons.svg);
+	mask-image: url(../images/crux-sprite-icons.svg);
+	-webkit-mask-position: -33px -15px;
+	mask-position: -33px -15px;
+	width: 9px;
+	height: 7px;
+	background-color: #5bb57c;
+	margin-right: 5px;
+}
+.cxComboBoxAddBtn {
+    border-radius: 20px;
+    visibility: hidden;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-family: var(--crux-bold-font);
+    font-weight: var(--crux-font-weight-bold);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.cxComboUser:hover .cxComboBoxAddBtn {
+	visibility: visible;
+}
+.no-results-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	height: 100%;
+}
+.selected-user-list-container {
+	padding: 15px;
+  outline: none;
+  box-sizing: border-box;
+}
+.selected-user-list-section {
+	padding: 5px 10px;
+	border: 1px solid #ebebeb;
+	background: #f9f9f9;
+	border-radius: 2px;
+    margin: 0 0 10px;
+}
+.selected-user-list-section:hover {
+	border: 1px solid #ebebeb;
+}
+.selected-user-list-last-section{
+  margin-bottom: 0px;
+}
+.selected-user-list-section lyte-accordion-body {
+    width: auto;
+    padding: 0;
+    box-sizing: content-box;
+    transition: height .3s ease-out, padding-top .3s ease-out;
+}
+.selected-user-list-section.lyteAccordionActive lyte-accordion-body {
+    padding-top: 15px;
+}
+.selected-user-type-detail {
+	color: #313949;
+}
+.cxComboboxAccordionBody .selected-user-type-detail {
+	font-family: 'LatoSemibold', sans-serif;
+	font-size: 0.857rem;
+	margin-bottom: 10px;
+}
+.selected-user-ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.selected-user-list {
+	border: 1px solid #e5e5e5;
+	border-radius: 25px;
+	padding: 5px 8px;
+	background: #fff;
+	margin: 0 7px 5px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  box-sizing: border-box;
+}
+.selected-user-list .selected-user-img {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	overflow: hidden;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.close-selected-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0 15px 15px 0;
+  width: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.close-selected-wrap:hover {
+  background: #e8e8e8;
+}
+.selected-user-list .close-selected-user-icon {
+  background-image: url(../images/crux-sprite-icons.svg);
+  background-position: -54px -2px;
+  width: 8px;
+  height: 8px;
+  transform: scale(0.875);
+}
+.emptySelected,
+.no-user-selected-div + .selected-user-list-container{
+    display:none;
+}
+.msgboxBoldText {
+  font-family: var(--crux-bold-font);
+  font-weight: var(--crux-font-weight-bold);
+  font-size: 14px;
+  color: #111;
+}
+.cxComboBoxEmptyMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    height: 300px;
+    text-align: center;
+}
+.filter-switching-loader {
+	position: absolute;
+	top: calc(50% - 30px);
+	left: calc(50% - 30px);
+	width: 60px;
+	height: 60px;
+}
+.cxComboBoxContent {
+    max-height: unset;
+}
+
+.cxComboBoxFooter {
+    display: flex;
+    flex-wrap: wrap;
+}
+.cxComboRecipientWrapper {
+    width: 100%;
+}
+.cxComboRecipientWrap {
+  
+    position: relative;
+    margin-bottom: 20px;
+}
+.cxComboReciCloseIcon {
+	background-image: url(/crm/CRMClient/images/crux-sprite-icons.svg);
+	background-position: -54px -2px;
+	width: 8px;
+	height: 8px;
+    right: 10px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+.cxComboReciCloseIcon:hover {
+    opacity: 1;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect li {
+    padding: 5px 38px 5px 8px;
+    border-radius: 25px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .cxComboBoxErrorRecipient {
+    background: #f27474;
+    border: 1px solid #f27474;
+    color: #fff;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect li:hover .lyteCloseIcon,
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .lyteCloseIcon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+  transform: scale(1) !important;
+	border-radius: 0 15px 15px 0;
+	width: 27px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .cxComboBoxErrorRecipient .lyteCloseIcon:hover {
+    background: #ec5050;
+}
+.cxComboRecipientWrap lyte-dropdown.cxTagTagsPresent[lt-prop-type="multisearch"] lyte-drop-button {
+    padding-bottom: 3px;
+    max-height: 125px;
+    overflow: auto;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .lyteMultiselectInput {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .cxComboBoxErrorRecipient .lyteCloseIcon::after {
+    background-position: -219px -58px;
+    width: 8px;
+    height: 8px;
+}
+/*  Below Code added in Migrate remove branch   */
+
+.selected-user-list-section lyte-icon.lyteAccordionArrow {
+	left: unset;
+	right: 0;
+}
+.selected-user-list-section.lyteAccordionActive lyte-icon.lyteAccordionArrow {
+    transform: rotate(180deg);
+}
+
+/*  Above Code added in Migrate remove branch   */
+.cxComboRecipientWrap .cxTagBgSpan::before,
+.cxComboRecipientWrap .cxAddedTags::before,
+.cxComboRecipientWrap .cxAddedTags::after {
+	content: none;
+}
+.cxComboRecipientPlaceholder {
+	color: #888;
+  margin-left: 15px;
+}
+.cxComboboxRecipientHeadArea {
+  align-items: center;
+}
+/* .cxComboboxRecipientSelectedList {
+	height: 72px;
+	border: 1px solid #c3c6ca;
+	padding: 10px;
+	border-radius: 5px;
+	box-sizing: border-box;
+	overflow: auto;
+} */
+.cxComboboxNoRecipientUl {
+	background: #f9f9f9;
+}
+/* css code */
+.cxComboUserDetail {
+	width: calc(100% - 62px);
+}

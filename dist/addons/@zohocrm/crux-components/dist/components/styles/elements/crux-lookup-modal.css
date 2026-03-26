@@ -1,0 +1,72 @@
+.cxLookupSearch {
+    width: 300px;
+}
+
+.cxLookupModalbuttonLayer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cxMlAuto {
+    margin-left: auto;
+}
+.cxLookupModal lyte-table {
+	overflow: hidden;
+}
+.cxTable lyte-th {
+    padding: 9px 0 9px 25px;
+    font-size: .857rem;
+}
+
+.cxTable lyte-td {
+    border-bottom: 1px solid #f5f5f5;
+    padding: 7px 0 7px 25px;
+    vertical-align: top;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.lookupCriteriaLabelWrap1{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /*For text overflow issue in Td*/
+}
+
+.cxSelectedSingle{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    display: flex;
+    word-break: break-word;
+    text-align: left;
+}
+
+.cxLookupWidthOnePerc{
+    width : 1%;
+}
+.cxLookupModal lyte-modal-content {
+    display: flex;
+    flex-direction: column;
+}
+.cxLookupModal .cxTable lyte-table,
+.cxLookupModal .cxTable {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+.cxLookupSearch .searchIcon {
+    cursor: pointer;
+}
+
+.cxLookupModal .numberDivCurrencyView, .cxLookupPopTd .numberDivCurrencyView{
+    text-align: left;
+}
+.cxLookupModalRelatedDDWrap {
+    width: 35%;
+    display: flex;
+    align-items: center;
+}
+.cxLookupDisableRow {
+    pointer-events: none;
+    opacity: 0.5;
+}

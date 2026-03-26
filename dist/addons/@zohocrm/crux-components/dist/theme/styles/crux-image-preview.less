@@ -1,0 +1,682 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-upload-modal/crux-image-preview.variables.less";
+
+@import "../themes/default/less-variables/crux-image-preview-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@cruxUseCssMaskForBg: true;
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-image-preview-variables.less";
+}
+
+.cxImagePreviewTooltip {
+    .cxImagePreviewTooltipMixin();
+    font-size: @font-size;
+}
+
+.cxImgPrevContainer{
+    .cxImgPrevContainerMixin();
+    background: @bg;
+}
+
+.cxImgPrevContainer::after{
+    .cxImgPrevContainerAfterMixin();
+    content: '';
+    position: absolute;
+    display: block;
+    height: @h;
+    background: @bg;
+    width: @w;
+    top: @top;
+    // z-index: @z-index;
+}
+
+.cxImgCropWrapperCont::after{
+    .cxImgCropWrapperContAfterMixin();
+    z-index: @z-index;
+}
+
+.cxImgPrevContent{
+    .cxImgPrevContentMixin();
+    background: @bg;
+    bottom: @bottom;
+    outline: none;
+}
+
+.cxImgPrevContent .lyteCBoxPhoto{
+    .cxImgPrevContLytePhoto();
+    box-shadow: @box-shadow;
+}
+
+.cxImgPrevHeader{
+    .cxImgPrevHeaderMixin();
+    background: @bg;
+}
+
+.cxImagePreviewHeaderWrap{
+    .cxImagePreviewHeaderWrapMixin();
+    display: flex;
+    align-items: center;
+    width: @w;
+}
+
+.cxImgPrevNameWrap{
+    .cxImgPrevNameWrapMixin();
+    width: @w;
+    max-width: @max-w;
+}
+
+.cxImgPrevNameViewWrap,
+.cxImgPrevNameEditWrap{
+    .cxImgPrevNameEditWrapMixin();
+    width: @w;
+    padding: @padding;
+    box-sizing: border-box;
+    display: flex;
+    color: @color;
+    font-family: @font-family;
+    font-weight: @font-weight;
+    position: relative;
+    border: @border;
+    border-radius: @border-radius;
+    cursor: pointer;
+}
+
+.cxImgPrevNameViewWrap{
+    cursor: default;
+}
+
+.cxImgPrevNameEditWrap:hover{
+    .cxImgPrevNameEditWrapHoverMixin();
+    border: @border;
+    background: @bg;
+}
+
+.cxImgPrevFileName{
+    .cxImgPrevFileNameMixin();
+    display: @display;
+    white-space: @white-space;
+    overflow: @overflow;
+    text-overflow: @text-overflow;
+}
+
+.cxImgPrevFileExtn{
+    .cxImgPrevFileExtnMixin();
+    display: inline-block;
+    flex: @flex;
+}
+
+.cxImgPrevFileNameEditIcon{
+    .cxImgPrevFileNameEditIconMixin();
+    width: @w;
+	height: @h;
+	display: inline-block;
+	.cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color); 
+    position: absolute;  
+    top: @top;
+    bottom: @bottom;
+    @{property-right}: @right;
+    margin: @margin;
+    visibility: hidden;
+}
+
+.cxImgPrevNameEditWrap:hover .cxImgPrevFileNameEditIcon{
+    visibility: visible;
+}
+
+.cxImageNameInputWrap{
+    .cxImageNameInputWrapMixin();
+    width: @w;
+}
+
+.cxImageNameInputWrap.lyteInputBox .lyteField{
+    .cxImageNameInputFieldMixin();
+    background: @bg;
+}
+
+.cxImageNameInputWrap.lyteInputBox input{
+    .cxImageNameInputFieldMixin();
+    padding: @padding;
+    background: @bg;
+    color: @color;
+}
+
+.cxImgPrevHeaderActionsWrap{
+    .cxImgPrevHeaderActionsWrapMixin();
+    position: absolute;
+    @{property-left}: @left;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.cxImgPrevHeaderActionIcon{
+    .cxImgPrevHeaderActionIconMixin();
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cxImgPrevHeaderActionIcon:hover{
+    .cxImgPrevHeaderActionIconHoverMixin();
+    background: @bg;
+}
+
+.cxImgPrevHeadActionCropIcon{
+    .cxImgPrevHeadActionCropIconMixin();
+    width: @w;
+	height: @h;
+	display: inline-block;
+	.cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color); 
+}
+
+.cxImgPrevHeadActionDownloadIcon{
+    .cxImgPrevHeadActionDownloadIconMixin();
+    width: @w;
+	height: @h;
+	display: inline-block;
+	.cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color); 
+}
+
+.cxImgPrevHeadActionInfoIcon{
+    .cxImgPrevHeadActionInfoIconMixin();
+    width: @w;
+	height: @h;
+	display: inline-block;
+	.cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color); 
+}
+
+.cxImgPrevHeadActionDeleteIcon{
+    .cxImgPrevHeadActionDeleteIconMixin();
+    width: @w;
+	height: @h;
+	display: inline-block;
+	.cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color); 
+}
+
+.cxImgPrevHeaderActionsWrap lyte-colorbox-download,
+.cxImgPrevDeleteIconWrap,
+.cxImgPrevInfoIconWrap{
+    .cxImgPrevHeadActionIconGapMixin();
+    @{property-margin-left}: @margin-left;
+}
+
+.cxImgPrevInfoIconWrap{
+    cursor: default;   
+}
+
+.cxImagePreviewFooterWrap{
+    .cxImagePreviewFooterWrapMixin();
+    position: absolute;
+    bottom: @bottom;
+    @{property-left}: @left;
+    width: @w;
+}
+
+.cxImgPrevThumbnail{
+    .cxImgPrevThumbnailMixin();
+    height: @h;
+    position: relative;
+}
+
+.cxImgPrevThumbListWrap{
+    .cxImgPrevThumbListWrapMixin();
+    display: flex;
+    height: @h;
+    margin: @margin;
+}
+
+.cxImgPrevThumbImgWrap{
+    .cxImgPrevThumbImgWrapMixin();
+    width: @w;
+    height: @h;
+    padding-bottom: @padding-bottom;
+    border: @border;
+    border-bottom: @border-bottom;
+    border-radius: @border-radius;
+    @{property-margin-right}: @margin-right;
+}
+
+.cxImgPrevThumbImgWrap:hover{
+    .cxImgPrevThumbImgWrapHoverMixin();
+    background: @bg;
+    border: @border;
+    border-bottom: @border-bottom;
+}
+
+.cxImgPrevThumbImgWrap.cxSelected{
+    .cxImgPrevThumbImgWrapSelectedMixin();
+    border-color: @border-color;
+    background: @bg;
+    cursor: default;
+}
+
+.cxImgPrevThumbListWrap .cxImgPrevThumbImg{
+    .cxImgPrevThumbImgMixin();
+    width: @w;
+    height: @h;
+    position: absolute;
+    inset: @inset;
+    margin: @margin;
+}
+
+.cxImgPrevContainer .lyteColorboxUtilDiv.cxImgPrevZoomInOutWrap{
+    .cxImgPrevZoomInOutWrapMixin();
+    bottom: @bottom;
+    box-shadow: @box-shadow;
+    background: @bg;
+}
+
+.cxImgPrevZoomRatioWrap{
+    .cxImgPrevZoomRatioWrapMixin();
+    width: @w;
+    padding: @padding;
+    color: @color;
+    font-size: @font-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: @bg;
+    box-shadow: @box-shadow;
+    position: relative;
+    border-radius: @border-radius;
+}
+
+.cxImgPrevZoomRatioWrap::after{
+    .cxImgPrevZoomRatioWrapAfterMixin();  
+    content: '';
+    width: @w;
+    height: @h;
+    display: inline-block;
+    position: absolute;
+    bottom: @bottom;
+    @{property-right}: @right;
+    transform: @transform;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color) 
+}
+
+.cxImgPrevZoomRatioWrap:hover{
+    .cxImgPrevZoomRatioWrapHoverMixin();
+    background: @bg;
+}
+
+.cxImageDescriptionWrap{
+    .cxImageDescriptionWrapMixin();
+    width: @w;
+    min-height: @min-h;
+    @{property-margin-left}: @margin-left;
+}
+
+.cxImageDescInputWrap{
+    .cxImageDescInputWrapMixin();
+    width: @w;
+    box-shadow: @box-shadow;
+    border-radius: @border-radius;
+}
+
+.cxImageDescriptionWrap .cxImageDescInputWrap .lyteField{
+    .cxImagePrevDescriptionLyteFieldMixin();
+    padding: @padding;
+    // border: @border;
+    background: @bg;
+    border-radius: @border-radius;
+    box-shadow: @box-shadow;
+}
+
+.cxImageDescriptionWrap .cxImageDescInputWrap .cxImageDescInputTextarea{
+    .cxImageDescInputTextareaMixin();
+    color: @color;
+    padding: @padding;
+    background: @bg;
+    font-size: @font-size;
+}
+
+.cxImgPrevDescPlaceholder{
+    .cxImgPrevDescPlaceholderMixin();
+    color: @color;
+    width: @w;
+    height: @h;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: @padding;
+    border: @border;
+    font-size: @font-size;
+    border-radius: @border-radius;
+}
+
+.cxImgPrevDescPlaceholder:hover{
+    .cxImgPrevDescPlaceholderHoverMixin();
+    border: @border;
+    background: @bg;
+    box-shadow: @box-shadow;
+}
+
+.cxImgPrevDescSavedValue{
+    .cxImgPrevDescSavedValueMixin();
+    height: @h;
+    width: @w;
+    border: @border;
+    box-sizing: border-box;
+    border-radius: @border-radius;
+    padding: @padding;
+    color: @color;
+    font-size: @font-size;
+    overflow: auto;
+}
+
+.cxImgPrevDescSavedValue:hover{
+    .cxImgPrevDescSavedValueHoverMixin();
+    border: @border;
+    background: @bg;
+    box-shadow: @box-shadow;
+}
+
+.cxImagePreviewInfoDetailPopover .lytePopoverArrowIcon,
+.cxImagePreviewInfoDetailPopover .lytePopover{
+    .cxImagePreviewInfoDetailPopoverBgMixin();
+    background: @bg;
+    box-shadow: @box-shadow;
+}
+
+.cxImagePreviewInfoDetailPopover .lytePopover{
+    .cxImagePreviewInfoDetailPopoverMixin();
+    padding: @padding;
+    box-shadow: @box-shadow;
+    color: @color;
+    border: @border;
+    font-size: @font-size;
+}
+
+.cxImgPrevInfoWrap{
+    display: table-row;
+}
+
+.cxImgPrevInfoWrap:first-child .cxImgPrevInfoDetailPopLabel{
+    .cxImgPrevInfoDetailPopLabelFirstChildMixin();
+    padding-bottom: @padding-bottom;
+}
+
+.cxImagePreviewInfoDetailPopover .cxImgPrevInfoDetailPopLabel{
+    .cxImgPrevInfoDetailPopLabelMixin();
+    @{property-padding-right}: @padding-right;
+    opacity: @opacity;
+    // width: @w;
+    text-align: end;
+    display: table-cell;
+}
+
+.cxImagePreviewInfoDetailPopover .cxImgPrevInfoDetailValue{
+    white-space: nowrap;
+    display: table-cell;
+}
+
+.cxImgPreviewScaleMenu{
+    .cxImgPreviewScaleMenuMixin();
+    background: @bg;
+    border: @border;
+}
+
+.cxImgPreviewScaleMenu .lyteDropdownSelection{
+    .cxImgPreviewScaleMenuItemMixin();
+    background: @bg;
+}
+
+.cxImgPreviewScaleMenu .cxImgPreviewScaleMenuLabel{
+    .cxImgPreviewScaleMenuLabelMixin();
+    color: @color;
+}
+
+.cxImgPreviewScaleMenu .lyteArrow{
+    display: none !important;
+}
+
+.cxImagePrevZoomInAction{
+    .cxImagePrevZoomInActionMixin();
+    width: @w;
+    cursor: pointer;
+}
+
+.cxImagePrevZoomInAction:hover{
+    .cxImagePrevZoomInActionHoverMixin();
+    background: @bg;
+}
+
+.cxImgPreviewZoomInIcon{
+    .cxImgPreviewZoomInIconMixin();
+    display: inline-block;
+	width: @w;
+	height: @h;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxImgPreviewZoomOutIcon{
+    .cxImgPreviewZoomOutIconMixin();
+    display: inline-block;
+	width: @w;
+	height: @h;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxImageDescWrapContainer{
+    .cxImageDescWrapContainerMixin();
+    border-bottom: @border-bottom;
+}
+
+.cxImagePrevCountDiv{
+    .cxImagePrevCountDivMixin();
+    position: absolute;
+    @{property-right}: @right;
+    bottom: @bottom;
+    padding: @padding;
+    border-radius: @border-radius;
+    background: @bg;
+    color: @color;
+    font-size: @font-size;
+}
+
+/*Image crop ui style starts*/
+.cxImgCropContainer{
+    .cxImgCropContainerMixin();
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: @z-index;
+    padding: @padding;
+}
+
+.cxImgCropBtnWrap{
+    .cxImgCropBtnWrapMixin();
+    flex: @flex;
+    text-align: end;
+}
+
+.cxImgCropWidthHeightInputCont{
+    .cxImgCropWidthHeightInputContMixin();
+    color: @color;
+    display: flex;
+}
+.cxImgCropWHInputDiv{
+    .cxImgCropWHInputDivMixin();
+    display: inline-flex;
+    align-items: center;
+    color: @color;
+    font-size: @font-size;
+}
+
+.cxImgCropWHInputDiv:first-child{
+    .cxImgCropWHInputDivFirstChildMixin();   
+    @{property-margin-right}: @margin-right;
+}
+
+.cxImgCropWHInputDiv lyte-number{
+    .cxImgCropWHLyteNumberMixin();
+    margin: @margin;
+}
+
+.cxImgCropWHInputDiv input{
+    .cxImgCropWHInputFieldMixin();
+    padding: @padding;
+    width: @w;
+    font-size: @font-size;
+    background: @bg;
+    color: @color;
+}
+
+.cxImgCropWHInputDiv .lyteInputFocus .lyteField,
+.cxImgCropWHInputDiv .lyteField:hover,
+.cxImgCropWHInputDiv .lyteField{
+    .cxImgCropWHInputDivLyteFieldMixin();   
+    border: @border;
+    background: @bg;
+}
+
+.cxImgCropRatioWrap{
+    display: flex;
+}
+
+.cxImgCropSeparationSpan{
+    .cxImgCropSeparationSpanMixin();
+    display: inline-block;
+    @{property-border-right}: @border-right;
+    margin: @margin;
+    height: @h;
+}
+
+.cxImgCropIconWrap{
+    .cxImgCropIconWrapMixin();
+    cursor: pointer;
+    padding: @padding;
+    @{property-margin-right}: @margin-right;
+    border-radius: @border-radius;
+    border: @border;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cxImgCropIconWrap:hover{
+    .cxImgCropIconWrapHoverMixin();
+    background: @bg;
+}
+
+.cxImgCropIconWrap.cxSelected{
+    .cxImgCropIconWrapSelectedMixin();
+    border: @border;
+    background: @bg;
+}
+
+.cxImgCropRatioCustomIcon{
+    .cxImgCropRatioCustomIconMixin();
+    width: @w;
+    height: @h;
+    display: inline-block;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color)
+}
+
+.cxImgCropRatioSqaureIcon{
+    .cxImgCropRatioSqaureIconMixin();
+    width: @w;
+    height: @h;
+    display: inline-block;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color)
+}
+
+.cxImgCropRatioFourThirdIcon{
+    .cxImgCropRatioFourThirdIconMixin();
+    width: @w;
+    height: @h;
+    display: inline-block;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color)
+}
+
+.cxImgCropRatioLandscapeIcon{
+    .cxImgCropRatioLandscapeIconMixin();
+    width: @w;
+    height: @h;
+    display: inline-block;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color)
+}
+
+.cxImgCropSwapIcon{
+    .cxImgCropSwapIconMixin();
+    width: @w;
+    height: @h;
+    display: inline-block;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color)
+}
+
+.cxImgCropRotateIcon{
+    .cxImgCropRotateIconMixin();
+    width: @w;
+    height: @h;
+    display: inline-block;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color)
+}
+
+.cxImgCropIconCont{
+    .cxImgCropIconContMixin();
+    width: @w;
+    height: @h;
+    padding: @padding;
+}
+
+lyte-colorbox-loading-icon.cxImgCropLoadingIconWrap{
+    .cxImgCropLoadingIconWrapMixin();
+    top: @top;
+}
+
+.cxImageCropLoadWrap{
+    .cxImageCropLoadWrapMixin();
+    width: @w;
+    height: @w;
+    position: relative;
+}
+
+.cxImgPrevContainer .lyteCropDivImage{
+    .cxImageCropDivMixin();
+    border: 1px dashed @border;
+}
+
+.cxImageCropLoadRotateElem{
+    .cxImageCropLoadRotateElemMixin();
+    width: @w;
+    height: @h;
+    position: absolute;
+    border: @border;
+    border-top-color: @border-top-color;
+    border-radius: @border-radius;
+    animation: 1s linear infinite cxImgCropRotateElemAnim;
+}
+
+@keyframes cxImgCropRotateElemAnim{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/*Image crop ui style ends*/
+// .cxImagePreviewTooltip { used above
+//     font-size: 0.857rem;
+// }
+.savedImageNameReadOnly{
+    font-size:@cxFontSize14px;
+}
+.savedImageName{
+    font-size: @cxFontSize14px;
+}
+.exDetailKey{
+    font-size: @cxFontSize13px;
+}
+.exDetailsValue{
+    font-size: @cxFontSize13px;
+}
+.openAddDescriptionInit{
+    font-size: @cxFontSize13px;
+}

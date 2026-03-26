@@ -1,0 +1,513 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+.cxLookupSearch {
+  width: 300px;
+}
+.cxLookupModalbuttonLayer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cxLookupModalContBtnLayer {
+  margin: 5px 0px 25px 0px;
+}
+.cxLookupModal lyte-table {
+  overflow: hidden;
+}
+.cxTable lyte-th {
+  padding: 9px 25px 9px 0;
+  font-size: 0.857rem;
+}
+.cxTable lyte-td {
+  border-bottom: 1px solid var(--lyte-crux-lookup-modal-table-td-border-color);
+  padding: 7px 25px 7px 0;
+  vertical-align: top;
+  font-weight: normal;
+  font-size: 1rem;
+}
+.cxSelectedSingle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-grow: 1;
+  display: flex;
+  text-align: right;
+}
+.cxLookupWidthOnePerc {
+  width: 1%;
+}
+.cxLookupModal .cxTable lyte-table,
+.cxLookupModal .cxTable {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.cxLookupSearch .searchIcon {
+  cursor: pointer;
+}
+.cxLookupModal .numberDivCurrencyView,
+.cxLookupPopTd .numberDivCurrencyView {
+  text-align: right;
+}
+.cxLookupModalRelatedDDWrap {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  margin-left: 30px;
+}
+.cxLookupModalContent {
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 0px;
+}
+.cxLookupModalNew .cxLookupModalContent {
+  background: #EEF1F9;
+  padding: 0px 15px 15px 0px;
+}
+.cxLookupModalRelIdName {
+  padding-right: 30px;
+}
+.cxLookupModalRelIdDropdown {
+  width: 130px;
+}
+.cxLookupModalOld .cxLookupModalRelIdDropdown {
+  padding-right: 10px;
+  overflow: auto;
+  width: auto;
+}
+/**********************************
+    Modal Lookup Top Header Section STarts 
+***********************************/
+.cxFilterIconWrap {
+  display: flex;
+  padding: 8px 15px;
+  border: 1px solid #c0c6cc;
+  margin-left: 15px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.cxFilterIconWrap:hover {
+  background-color: #eff1f5;
+}
+.cxLookupModFilterActiveIcon {
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.55);
+  background-color: #eff1f5;
+}
+.cxLookupModalContentWrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+}
+.cxLookupModalContent.cxLookupModalResultContent {
+  padding: 30px 0px 30px 30px;
+}
+.cxHeaderLabel {
+  align-items: center;
+  display: flex;
+  margin-left: 20px;
+}
+.cxLookupSelParticpantLabel,
+.cxLookupModalRelIdView,
+.cxLookupModalModuleDD,
+.cxLookupModalRelIdDropdown,
+.cxLookupModalCustomView {
+  margin-left: 10px;
+}
+.cxLookupModalModuleDD,
+.cxLookupModalCustomView {
+  width: 200px;
+}
+.cxLookupModalTopWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 10px 0px;
+  overflow: auto;
+}
+.cxLookupModalTopLeft {
+  display: flex;
+  align-items: center;
+}
+.cxLookupModalTopRight {
+  display: flex;
+  align-items: center;
+}
+/** Modal Lookup Top Header Section Ends **/
+/**********************************
+    Modal Lookup Top Content Section STarts 
+***********************************/
+.cxLookupSelParticpantCount {
+  font-family: 'LatoRegular', sans-serif;
+  font-size: 0.929rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 10px;
+}
+.cxLookupSelParticpantCount .cxLookupSelParticpantLabel {
+  font-family: 'LatoBold', sans-serif;
+  color: #3c9df7;
+}
+.cxSelTableLookupModalHeader .cxLookupSelParticpantCount .cxLookupSelParticpantLabel {
+  color: #333;
+}
+/**********************************
+    Modal Lookup Top Content Section Ends 
+***********************************/
+.cxLookupModalNew .cxLookupModalHeader {
+  padding: 0px;
+}
+.cxLookupModalBoldText {
+  font-family: 'LatoBold', sans-serif;
+}
+.cxLookupModalSeparator {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background: #A2A9B7;
+  margin: 0px 10px;
+}
+.cxLookupModalHeadClearBtn {
+  position: relative;
+  color: #222;
+  cursor: pointer;
+  display: inline-block;
+}
+.cxLookupModalHeadClearBtn::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: #222;
+  position: absolute;
+  bottom: -1px;
+  right: 0px;
+}
+.cxLookupModalTopRight lyte-button {
+  margin-left: 8px;
+}
+.cxLookupModalContentTop {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  min-height: 27px;
+}
+.cxLookupModalFltrClrBtn {
+  margin-right: 10px;
+}
+.cxLookupModalSmartFilterContainer {
+  width: 302px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #D9E0EB;
+  padding-top: 16px;
+  border-radius: 12px;
+  margin-left: 20px;
+  background: #fff;
+  transition: width 0.2s, margin 0.2s, visibility 0.2s, border-width 0.2s;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 100%;
+}
+.cxLookupModalSmartFilterContainer crux-smart-filter {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.cxLookupModalSmartFilterHide {
+  width: 0px;
+  margin: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  visibility: hidden;
+}
+.cxLookupModalSmartFilterContainer .cxFilterScrollSection {
+  flex: 1;
+  overflow: auto;
+}
+.cxLookupModalFilterFooterBtn {
+  padding: 15px 20px 20px;
+  box-shadow: 0px -4px 5px 0px rgba(0, 0, 0, 0.08);
+  z-index: 1;
+  width: 300px;
+}
+.cxLookupModalListView {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 300px;
+  overflow: hidden;
+}
+.cxLookupModalListView crux-list-view {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+}
+.cxLookupModalListView .cxLvViewContainer {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+}
+.cxLookupModalListView .cxLvViewContainer crux-table-component {
+  width: 100%;
+}
+.cxLookupModalListView .cxLvTableManageMenuBtn {
+  left: 0px;
+  border-radius: 0px;
+}
+.cxLookupModalListView .lyteExpTableWrapper {
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 0px 6px 6px 0px;
+  border-left: none;
+}
+.cxLookupModalListView .cxLvTableRowSelected lyte-exptable-td,
+.cxLookupModalListView .cxLvTableRowSelected lyte-exptable-td.lyteFixedColumn {
+  background: #F0F4FC;
+}
+.cxLookupModalListView .cxLvTableComp #cxLvTableHeaderRow lyte-exptable-th.cxLvEditIconCol {
+  width: 30px;
+  min-width: 30px;
+}
+.cxMMLModalSelectedPanel {
+  width: 100%;
+  border: 1px solid #D7E2ED;
+  border-radius: 0px 12px 12px 0px;
+  overflow: auto;
+  background: #fff;
+}
+.cxMMLModalSelectedTableHead {
+  justify-content: space-between;
+  background-color: #F8FAFF;
+  padding: 5px 20px;
+}
+.cxMMLModalSelTableCount {
+  background-color: #fff;
+  padding: 1px 3px;
+  border-radius: 3px;
+  margin-right: 5px;
+  border: 1px solid #D9E0EB;
+  font-size: 0.857rem;
+}
+.cxLookupModalParticipantHead {
+  font-family: 'LatoBold', sans-serif;
+  font-size: 1rem;
+}
+.cxLookupModalParticipentWrap {
+  padding-top: 15px;
+}
+.cxLookupModalParticipantDesc {
+  margin-top: 6px;
+  color: #222;
+  font-size: 0.857rem;
+}
+.cxLookupModalParticipantTag {
+  margin-top: 10px;
+}
+.cxLookupModalParticipantTag lyte-drop-button {
+  height: 70px;
+}
+.cxLookupModalListView .cxLvCheckboxCol .lyteRadioLabel {
+  display: none;
+}
+.cxLookupModalListView .cxLvHeader {
+  padding: 12px 5px 12px 20px;
+}
+.cxMLookupModalFooter {
+  box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.07);
+  padding: 10px 20px;
+}
+.cxLookupModalParticptSep {
+  width: 1px;
+  height: 100%;
+  background: #A2A9B7;
+  margin: 0px 8px;
+  display: block;
+}
+.cxLookupModalParticptAddBtn {
+  color: #3c9df7;
+  font-family: 'LatoSemiBold', sans-serif;
+  margin-right: 9px;
+  cursor: pointer;
+}
+.cxLookupModalParticptTagBtn {
+  color: #222;
+  position: relative;
+  cursor: pointer;
+}
+.cxLookupModalParticptTagBtn::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 1px;
+  width: 100%;
+  bottom: -1px;
+  right: 0px;
+  background: #222;
+}
+.cxMMLModalSelTableRemoveBtn {
+  color: #FF5D5A;
+  margin-left: 35px;
+  cursor: pointer;
+  visibility: hidden;
+}
+.cxMMLModalSelectedTableWrap:hover .cxMMLModalSelTableRemoveBtn {
+  visibility: visible;
+}
+.cxMMLModalSelTableBackIcon {
+  display: block;
+  width: 16px;
+  height: 14px;
+  right: 6px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -355px -158px;
+  mask-position: -355px -158px;
+  background-color: #333;
+  position: absolute;
+  cursor: pointer;
+}
+.cxMMLModalSelectedTable lyte-tr .cxMMLModalSelectedTableCell:first-child {
+  width: 50px;
+  min-width: 50px;
+  margin: auto;
+}
+.cxMMLSelTableRemoveIconWrap {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  visibility: hidden;
+}
+.cxMMLModalSelectedTable lyte-tr:hover .cxMMLSelTableRemoveIconWrap {
+  visibility: visible;
+}
+.cxMMLSelTableRemoveIcon {
+  display: block;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -22px -77px;
+  mask-position: -22px -77px;
+  background-color: #333;
+}
+.cxMMLSelTableRemoveIconWrap::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -5px;
+  top: -5px;
+  border-radius: 20px;
+  visibility: hidden;
+  background: #fff;
+}
+.cxMMLSelTableRemoveIconWrap:hover::before {
+  visibility: visible;
+}
+.lookupCriteriaLabelWrap1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*For text overflow issue in Td*/
+}
+.cxLookupDisableRow {
+  pointer-events: none;
+  opacity: 0.5;
+}
+/*# sourceMappingURL=crux-lookup-modal.css.map */

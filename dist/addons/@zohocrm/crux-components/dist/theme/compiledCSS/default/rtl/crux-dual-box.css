@@ -1,0 +1,213 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+crux-dual-box .lyteListboxLeftPanel {
+  margin-left: 15px;
+  margin-right: 0;
+}
+crux-dual-box .lyteLBDragElement,
+crux-dual-box .lyteListBoxLeftWrap,
+crux-dual-box .lyteListBoxRightWrap {
+  padding: 0;
+}
+crux-dual-box .lyteListboxPanels {
+  height: 370px;
+  box-sizing: border-box;
+}
+crux-dual-box lyte-dual-listbox {
+  height: auto !important;
+  max-height: 370px;
+}
+/*Extra space comes in pinned column */
+crux-dual-box .lyteListboxleftElementWrap,
+crux-dual-box .lyteListboxRightPanel {
+  padding-top: 10px;
+}
+crux-dual-box .lyteListBoxLeftElement {
+  padding: 7px 15px;
+}
+crux-dual-box .lyteListBoxRightElement {
+  padding: 7px 5px 7px 25px;
+  position: relative;
+}
+.cxDualBoxContent {
+  display: flex;
+  width: 100%;
+}
+.cxDualBoxDragIcon {
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -165px -123px;
+  mask-position: -165px -123px;
+  color: var(--lyte-crux-dual-box-drag-icon-color);
+  width: 6px;
+  height: 18px;
+  margin-left: 5px;
+  cursor: move;
+  visibility: hidden;
+}
+.cxDualBoxLabel {
+  margin-left: auto;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  white-space: normal;
+  flex: 1;
+}
+.cxColPinIcon,
+.cxColPinActiveIcon {
+  display: inline-block;
+  background-image: url(../../images/crux-sprite-icons.svg);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.cxColPinIcon {
+  background-position: -266px -107px;
+}
+.cxColPinActiveIcon {
+  background-position: -244px -107px;
+}
+crux-dual-box .cxColPinIcon {
+  visibility: hidden;
+}
+.lyteListBoxRightElement:hover .cxDualBoxDragIcon,
+.lyteListBoxRightElement:hover .cxColPinIcon {
+  visibility: visible;
+}
+crux-dual-box .lyteListboxLeftPanel,
+crux-dual-box .lyteListboxRightPanel {
+  border-radius: 10px;
+  flex-grow: unset;
+  /* Added     flex-grow: unset; to override Long Box width issue from lyte component update */
+}
+crux-dual-box lyte-lb-add,
+crux-dual-box lyte-lb-remove {
+  background-image: none;
+  background-position: none;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  width: 17px;
+  height: 17px;
+  background-color: var(--lyte-crux-dual-box-lb-add-remove-bg-color);
+}
+crux-dual-box lyte-lb-add {
+  -webkit-mask-position: -334px -87px;
+  mask-position: -334px -87px;
+}
+crux-dual-box lyte-lb-remove {
+  -webkit-mask-position: -310px -87px;
+  mask-position: -310px -87px;
+  position: absolute;
+  left: 10px;
+  top: 6px;
+}
+crux-dual-box lyte-lb-add::after,
+crux-dual-box lyte-lb-remove::before,
+crux-dual-box lyte-lb-add::before {
+  content: none;
+}
+.cxDualBoxMandatorySign {
+  color: var(--lyte-crux-dual-box-mandatory-sign-color);
+}
+crux-dual-box .lyteListBoxNoResultsFound {
+  align-items: flex-start;
+  height: calc(100% - 20px);
+  padding-top: 50px;
+  box-sizing: border-box;
+}
+crux-dual-box .cxPinnedCol .lyteLbAdd {
+  display: none;
+}
+.cruxFormViewComponent.cxBoxBg {
+  min-width: auto;
+  box-sizing: border-box;
+}
+.cruxFormViewComponent.boxBg .crmFormComponentRow > .lyteField {
+  min-width: auto !important;
+  background-color: inherit;
+  max-width: 45%;
+}
+.cxColPinDisabled {
+  opacity: 0.3;
+  cursor: default;
+}
+crux-dual-box .lyteListboxYield {
+  margin-left: 10px;
+}
+/*# sourceMappingURL=crux-dual-box.css.map */

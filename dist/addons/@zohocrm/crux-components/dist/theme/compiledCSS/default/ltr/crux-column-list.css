@@ -1,0 +1,427 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*moved to crux elements common.less */
+crux-column-list {
+  display: block;
+  box-sizing: border-box;
+  outline: none;
+  box-shadow: 0px 1px 3px 0px var(--lyte-crux-column-list-box-shadow-color);
+  font-family: 'LatoRegular', sans-serif;
+  height: 100%;
+  max-height: inherit;
+}
+crux-column-list .cxColListWrapperDiv {
+  max-height: inherit;
+  height: 100%;
+}
+crux-column-list lyte-menu-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  max-height: inherit;
+  border: none;
+}
+crux-column-list lyte-search lyte-input[lt-prop-type="search"] input,
+crux-column-list .cxColumnListSearchInput input {
+  padding-right: 30px;
+}
+crux-column-list lyte-search lyte-input[lt-prop-type="search"]:not(.lyteInputBox) input {
+  font-size: 14px;
+}
+.cxColListSearchWrap {
+  position: relative;
+}
+crux-column-list .cxColListSearchWrap {
+  margin: 20px 30px 10px;
+}
+/* Code moved to CRUX Elements COmmon.less */
+crux-column-list .cxColListItem {
+  padding: 8px 20px;
+  background: var(--lyte-crux-column-list-menu-item-bg-color);
+  cursor: default;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  z-index: initial;
+}
+crux-column-list .cxColListItem .lyteCheckBoxDefault {
+  line-height: initial;
+}
+crux-column-list lyte-menu-item.sortable-element:hover {
+  background: var(--lyte-crux-column-list-menu-item-hover-bg-color);
+}
+.cxColListSingleFieldPinned .cxColListPinnedField:hover,
+.cxColListSingleFieldPinned .cxColListPinnedField {
+  background: var(--lyte-crux-column-list-menu-item-bg-color) !important;
+}
+crux-column-list .cxColListItem.sortable-element-selected {
+  background: var(--lyte-crux-column-list-sortable-selected-item-bg-color);
+  z-index: 3010 !important;
+  box-shadow: 0px 0px 4px 0px var(--lyte-crux-column-list-sortable-selected-item-box-shadow-color);
+}
+.cxColListPinnedField lyte-checkbox,
+.cxColListUnPinnedField lyte-checkbox {
+  max-width: calc(100% - 25px);
+}
+/* 
+This overrides  column list item with mandatory, but unchecked list item
+crux-column-list .cxColListMandatoryItem .lyteCheckBoxDefault {
+    cursor: default;
+} */
+.cxColListOnlyOneMandatoryChecked .cxColListMandatoryItem .cxColListCheckedElem {
+  pointer-events: none;
+}
+crux-column-list .divTopBorder {
+  padding: 0px 10px 10px;
+  overflow: hidden auto;
+  max-height: calc(100% - 10px);
+  box-sizing: border-box;
+  height: 100%;
+  border: none;
+}
+crux-column-list .cxColListOnSearchHide {
+  margin-top: 10px;
+}
+crux-column-list lyte-checkbox .cxColumnMandatory::after {
+  content: '*';
+  color: var(--lyte-crux-column-list-mandatory-menu-item-icon-color);
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  display: inline-block;
+}
+/*
+crux-column-list lyte-menu-item lyte-checkbox {
+	flex-grow: 1;
+}
+*/
+crux-column-list lyte-menu-item.sortable-element {
+  cursor: move;
+}
+crux-column-list .lyteSortablePlaceholder:hover,
+crux-column-list .lyteSortablePlaceholder {
+  background: transparent;
+  border: 1px dashed var(--lyte-crux-column-list-sortable-item-placeholder-border-color);
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+crux-column-list .cxColListItem::after {
+  content: '';
+  background: url(../../images/crux-sprite-icons.svg);
+  background-position: -325px -177px;
+  width: 7px;
+  height: 11px;
+  display: inline-block;
+  position: absolute;
+  left: 7px;
+  top: 13px;
+  opacity: 0.5;
+  visibility: hidden;
+}
+crux-column-list .cxPropDisableSort::after {
+  opacity: 0.2;
+  display: none;
+}
+crux-column-list .cxColListPinnedField.cxColListItem:hover::after {
+  visibility: hidden;
+}
+crux-column-list .cxColListItem.lyteSortablePlaceholder::after {
+  content: none;
+}
+crux-column-list .cxColListItem:hover::after {
+  visibility: visible;
+}
+.cxColListItem.cxPropDisableSort:hover::after,
+.cxColListItem.cxPropDisableSort::after,
+.cxColListSingleFieldPinned .cxColListPinnedField::after {
+  visibility: hidden;
+}
+crux-column-list .dragIcon {
+  display: none;
+}
+crux-column-list .lyteCheckBoxDefault span,
+crux-column-list .lyteCheckBoxPrimary span {
+  white-space: normal;
+  word-break: break-word;
+  max-width: calc(100% - 20px);
+}
+/*second type*/
+crux-column-list.borderType {
+  box-shadow: none;
+  display: block;
+  max-width: 480px;
+  padding: 15px 30px;
+}
+crux-column-list.borderType lyte-menu-body {
+  border: 0;
+  box-shadow: none;
+}
+crux-column-list.borderType lyte-search {
+  display: block;
+}
+crux-column-list.borderType .divTopBorder {
+  border: 1px solid var(--lyte-crux-column-list-menu-border-color);
+  padding: 6px;
+  transform: translate3d(0, 0, 0);
+}
+crux-column-list.borderType lyte-menu-item {
+  display: flex;
+  padding: 7px 15px 8px 10px;
+  border-bottom: 1px solid var(--lyte-crux-column-list-menu-border-color);
+}
+crux-column-list.borderType lyte-menu-item:last-of-type {
+  border-bottom: 0;
+}
+crux-column-list.borderType .sortable-element-selected,
+crux-column-list.borderType lyte-menu-item:hover {
+  background: var(--lyte-crux-column-list-menu-item-hover-bg-color);
+}
+crux-column-list.borderType lyte-menu-item::after {
+  content: none;
+}
+crux-column-list.borderType .dragIcon {
+  display: inline-flex;
+  margin-left: auto;
+}
+crux-column-list.borderType .lyteSortablePlaceholder {
+  background: var(--lyte-crux-column-list-sortable-item-placeholder-bg-color);
+  border: 1px dashed var(--lyte-crux-column-list-sortable-item-placeholder-border-color);
+}
+crux-column-list .lyteBodyPosition {
+  flex-grow: 1;
+  overflow: auto;
+}
+.restrictSortable {
+  pointer-events: none;
+}
+.cxColPinActiveIcon,
+.cxColPinIcon {
+  display: inline-block;
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -266px -107px;
+  width: 15px;
+  height: 15px;
+}
+.cxColPinIcon {
+  visibility: hidden;
+}
+.cxColPinActiveIcon {
+  background-position: -244px -107px;
+}
+.cxColumnListMaxLimitReached .cxColPinIcon {
+  opacity: 0.5;
+  cursor: default;
+}
+crux-column-list .cxColListItem:hover .cxColPinIcon {
+  visibility: visible;
+}
+.cxColListUnPinnedColumnSorting .cxColListItem:hover .cxColPinIcon {
+  visibility: hidden;
+}
+.cxColLineSeparator {
+  border-top: 1px solid var(--lyte-crux-column-list-menu-border-color);
+  margin: 5px 20px 0;
+}
+.cxColListNoResult {
+  text-align: center;
+  color: var(--lyte-crux-column-list-no-result-text-color) !important;
+  padding: 10px 30px;
+}
+.cxColumnListWithAccordion .columnListAccordianBody {
+  border: 0;
+  padding: 0;
+}
+.cxColumnListWithAccordion .lyteAccordionActive lyte-accordion-body {
+  overflow: visible !important;
+}
+.cxColumnListWithAccordion lyte-accordion-item {
+  border: 0;
+  margin: 0;
+}
+.cxColumnListWithAccordion lyte-accordion-header,
+.cxColumnListWithAccordion .lyteAccordionActive lyte-accordion-header {
+  color: var(--lyte-crux-column-list-accordion-header-color);
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  font-size: 13px;
+  padding-left: 20px;
+}
+.cxColumnListWithAccordion .lyteAccordionActive .lyteAccordionArrow,
+.cxColumnListWithAccordion .lyteAccordionArrow {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: 0 -1px;
+  width: 10px;
+  height: 6px;
+  transform: rotate(-90deg);
+  margin-top: 5px;
+  left: 5px;
+  top: 15px;
+}
+.cxColumnListWithAccordion .lyteAccordionActive .lyteAccordionArrow {
+  transform: rotate(0deg);
+}
+.cxColListNonActionItems {
+  padding: 0 20px;
+}
+.cxColListAllFieldsSelected {
+  color: var(--lyte-crux-column-list-no-result-text-color);
+}
+.cxColListLoader {
+  background: url(../../images/crux-search-loader.svg);
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  background-position: center;
+}
+crux-column-list .cxPropDisableSort {
+  cursor: default;
+}
+.cxColListPinnedColumnSorting .cxColListUnPinnedField:hover,
+.cxColListUnPinnedColumnSorting .cxColListPinnedField:hover,
+crux-column-list .cxPropDisableSort:hover {
+  background: transparent;
+}
+.cxColListRelatedList {
+  flex-grow: 1;
+  height: inherit;
+  overflow: auto;
+}
+crux-column-list .cxColListRelatedList .divTopBorder {
+  max-height: none;
+}
+.cxFieldDisabledCursor lyte-checkbox input[type=checkbox]:checked + .lyteCheckBoxDefault::before {
+  opacity: 0.6;
+}
+.cxFieldDisabledCursor lyte-checkbox,
+.cxFieldDisabledCursor lyte-checkbox input[type=checkbox]:checked + .lyteCheckBoxDefault::before {
+  cursor: default;
+}
+.cxFieldDisabledCursor lyte-checkbox span {
+  /*Drag icon for Label */
+  cursor: move;
+}
+crux-column-list .restrict.cxColListItem::after,
+crux-column-list .cxColListItem.restrict .dragIcon {
+  visibility: hidden !important;
+}
+/* Column List On Popup Styles Starts */
+.cxColumnListOnPopup crux-column-list {
+  box-shadow: none;
+}
+.cxColumnListOnPopup lyte-popover-content,
+.cxColumnListOnPopup lyte-modal-content {
+  padding: 0px !important;
+}
+.cxColumnListOnPopupWithHeader crux-column-list .cxColListSearchWrap {
+  margin: 10px 30px;
+}
+.cxColumnListNonSortable crux-column-list .cxColListSearchWrap {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.cxColumnListNonSortable crux-column-list .divTopBorder {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.cxColumnListNonSortable crux-column-list .cxColListItem {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.cxColumnListOnPopup lyte-modal-content .cxColListNoResult {
+  padding-bottom: 20px;
+}
+.cxColumnListOnPopup lyte-modal-header {
+  padding-bottom: 10px;
+  background: var(--lyte-crux-column-list-modal-bg);
+}
+.cxColumnListOnPopup .lyteModal,
+.cxColumnListOnPopup lyte-modal-footer {
+  background: var(--lyte-crux-column-list-modal-bg);
+}
+/* Column List On Popup Styles ends */
+/* Grouper Box Style Starts */
+.cxGrouperEnabledWrapper {
+  display: flex;
+  align-items: start;
+}
+.cxGrouperEnabledWrapper crux-dropdown {
+  max-width: 150px;
+  margin-right: -1px;
+  flex-shrink: 0;
+}
+.cxGrouperEnabledWrapper .cxColListSearchWrap {
+  margin: 0;
+}
+.cxGrouperEnabledBox {
+  margin: 10px 30px;
+}
+.cxGrouperEnabledBox .cxColListSearchWrap {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+crux-column-list .cxColPinIcon,
+crux-column-list .cxColPinActiveIcon {
+  margin-left: auto;
+}
+.cxGrouperEnabledWrapper .cxFakeDropButton,
+.cxGrouperEnabledWrapper crux-dropdown lyte-drop-button,
+.cxGrouperEnabledWrapper lyte-drop-button.lyteDropButtonDown,
+.cxGrouperEnabledWrapper lyte-drop-button.lyteDropButtonUp {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.cxGrouperEnabledWrapper lyte-drop-button.lyteDropButtonDown,
+.cxGrouperEnabledWrapper lyte-drop-button.lyteDropButtonUp {
+  z-index: 1;
+}
+.cxGrouperEnabledWrapper lyte-input[lt-prop-type=search] .lyteField {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+/* Grouper Box Style Ends*/
+/* Column List with Wrapped List Item, 
+".cxColumnListWrapItem" - This class needs to be added at top, if wrap item needed, this class needs to be added
+*/
+.cxColumnListWrapItem .lyteCheckbox,
+.cxColumnListWrapItem .lyteCheckBoxDefault {
+  width: 100%;
+}
+.cxColumnListWrapItem .lyteCheckBoxDefault span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*# sourceMappingURL=crux-column-list.css.map */

@@ -1,0 +1,78 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/***** CRUX SEPARATE STYLES FOR BOOLEAN COMP MIXIN STARTS ******/
+/***** CRUX SEPARATE STYLES FOR BOOLEAN COMP MIXIN ENDS ******/
+.criteria-yes {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -68px -176px;
+  display: inline-block;
+  padding: 0 !important;
+  width: 14px;
+  height: 10px;
+  cursor: default;
+}
+crux-boolean-component .lyteCheckBoxDefault::before,
+crux-boolean-component .lyteCheckBoxPrimary::before {
+  margin: 0;
+}
+.cxBooleanCompWithLabel .lyteCheckBoxDefault::before {
+  margin-right: 6px;
+  top: 0px;
+  flex-shrink: 0px;
+}
+.cxBooleanCompWithLabel input[type=checkbox] + .lyteCheckBoxDefault::after {
+  top: 3px;
+}
+crux-boolean-component .lyteCheckBoxDefault {
+  display: flex;
+}
+crux-boolean-component .lyteCheckBoxDefault,
+crux-boolean-component .lyteCheckBoxPrimary,
+crux-subform .criteria-yes {
+  margin: 0 auto;
+  display: flex;
+}
+.cxcreateFormComponentRow crux-boolean-component .cxElementLabel,
+.cxcreateFormComponentRow crux-boolean-component .cxFieldLabel {
+  padding-top: 3px;
+}
+.cxcreateFormComponentRow .cxElementValue lyte-checkbox {
+  top: 2px;
+}
+.cxcreateFormComponentRow .cxElementValue lyte-checkbox[lt-prop-type="primary"] {
+  top: 2px;
+}
+/*# sourceMappingURL=crux-boolean-component.css.map */

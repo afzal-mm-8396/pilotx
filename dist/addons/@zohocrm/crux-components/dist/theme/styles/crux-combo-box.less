@@ -1,0 +1,670 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-combo-box.variables.less";
+
+@import "../themes/default/less-variables/crux-combo-box-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-combo-box";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-combo-box-variables.less";
+}
+
+.comboboxCloseIcon.lyteModalClose {
+	.cxComboboxCloseIconMixin();
+	top: @top;
+    @{property-right}: @right;
+}
+.op5_op1_parent > .op5_op1_child {
+	opacity: 0.5;
+}
+.op5_op1_parent:hover > .op5_op1_child {
+	opacity: 1;
+}
+.comboxBoxHeader {
+	.comboxBoxHeaderMixin();
+	display: inline-block;
+	vertical-align: middle;
+	max-width: @max-w;
+	word-break: break-word;
+}
+.cxComboHeaderInfo {
+	.cxComboHeaderInfoMixin();
+	background: @bg;
+	border-radius: @border-radius;
+	padding: @padding;
+	font-size: @font-size;
+	color: @color;
+	font-family: @font-family;
+	display: inline-block;
+	vertical-align: middle;
+	@{property-margin-left}: @margin-left;
+}
+.cxComboboxheader {
+	.cxComboboxheaderMixin();
+	font-size: @font-size;
+	padding:@padding;
+}
+.cxComboboxHeaderInfoIcon {
+	.cxComboboxHeaderInfoIconMixin();
+	background: @bg;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	display: inline-block;
+@{property-margin-right}: 5px;
+	vertical-align: middle;
+}
+.cxComboHeaderLimitMsg {
+	display:inline-block;
+	vertical-align: middle;
+}
+.combo-box-content, 
+.cxComboBoxContent {
+	.cxComboboxContentMixin();
+	padding-top: @padding-top;
+	align-items: flex-start;
+}
+.cxUserSearch .clear-search {
+	.cxUserSearchClearSearchMixin();
+	height: @h;
+	width: @w;
+    @{property-right}: @right;
+	top: @top;
+	cursor: pointer;
+	position: absolute;
+	opacity: @opacity;
+}
+.cxUserSearch input::placeholder {
+	.cxUserSearchInputPlaceholderMixin();
+	color: @color;
+	font-size: @font-size;
+}
+.cxUserSearch .clear-search:hover {
+    .cxUserSearchClearSearchHoverMixin();
+	opacity: @opacity;
+}
+.cxUserSearch .clear-search::before {
+	.cxUserSearchClearSearchBeforeMixin();
+	content: '';
+	background: @bg;
+	width: @w;
+	height: @h;
+	position: absolute;
+	top: @top;
+    @{property-right}: @right;
+}
+.combo-box-nophoto {
+    .cxComboNoPhotoMixin();
+	background: @bg-img;
+	display: inline-block;
+	border-radius: @border-radius;
+	background-size: @bg-size;
+	vertical-align: middle;
+	width: @w;
+	height: @h;
+}
+.cxComboUser .combo-box-nophoto {
+	.cxUserListNoPhotoMixin();
+	width: @w;
+	height: @h;
+}
+.selected-user-list .combo-box-nophoto {
+	.cxSelectedUserListNoPhotoMixin();
+	width: @w;
+	height: @h;
+}
+.cxComboSearchLoader {
+	.cxSearchLoaderMixin();
+    background: @bg;
+    height: @h;
+    width: @w;
+    background-size: @bg-size;
+    display: inline-block;
+}
+.cxUserSearch .cxComboSearchLoader {
+    @{property-right}: 0;
+    top: 0;
+    position: absolute;
+}
+.cxComboLeftColHeadSection {
+	align-items: center;
+}
+.cxComboboxSectionHeading {
+	.cxComboboxSectionHeadingMixin();
+	color: @color;
+	font-family: @cruxSecondaryFont;
+	font-weight: @font-weight;
+}
+.cxUserSelectionPart .cxComboboxSectionHeading {
+	.cxUserSelectionPartHeadingMixin();
+	@{property-margin-left}: @margin-left;
+}
+.cxComboboxUserOnlyModalContent .cxComboboxSectionHeading {
+	.cxComboboxUserOnlyModalSectionHeadingMixin();
+	padding: @padding;
+}
+.cxComboLeftColHeadSection lyte-drop-button {
+	.cxComboLeftColHeadDropButtonMixin();
+	padding: @padding;
+}
+.cxUserSelectionPart {
+	.cxUserSelectionPartMixin();
+    width: @w;
+    min-width: @min-w;
+}
+.user-selected-part {
+	.cxUserSelectedPartMixin();
+    width: @w;
+    min-width: @min-w;
+}
+.cxComboUserSelectedHeaderContentWrap {
+	display: flex;
+	justify-content: space-between;
+}
+.cxComboboxWithoutHeader .cxComboboxTotalRecipientCount {
+	.cxComboboxWithoutHeaderRecipientCountMixin();
+	@{property-margin-right}: @margin-right;
+	font-size: @cxFontSize14px;
+	color:@color;
+}
+.cxComboBtnUserOnly {
+	@{property-margin-left}: auto;
+}
+// if( (@direction = rtl), scale(1.3) rotate(90deg), scale(1.3) rotate(-90deg));
+.user-selection-content,
+.cxUserSelectionContent,
+.cxComboUserSelectedContent {
+	.cxUserSelectionAndSelectedContentMixin();
+    height: @h;
+    border: @border;
+	margin-top: @margin-top;
+}
+.cxComboAdditionalRecipientPresent {
+	.cxComboAdditionalRecipientPresentMixin();
+	font-size: @font-size;
+}
+.cxComboAdditionalRecipientPresent .user-selection-content,
+.cxComboAdditionalRecipientPresent .cxComboUserSelectedContent {
+    .cxComboAdditionalRecipientSelectionAndSelectedContentMixin();
+    height: @h;
+}
+.cxComboUserSelectedContent {
+	.cxUserSelectedContentMixin();
+    @{property-border-left}: @border-left;
+    overflow: auto;
+	// margin-top: 10px;
+	border-radius: if( (@direction = rtl), 6px 0 0 6px, 0 6px 6px 0);
+}
+.cxUserSelectionContent {
+	@{property-margin-right}: -1px;
+	border-radius: if( (@direction = rtl), 0 6px 6px 0, 6px 0 0 6px);
+}
+.cxUserSelectionOption {
+	.cxUserSelectionOptionMixin();
+    @{property-border-right}: @border-right;
+    line-height: @line-height;
+}
+.cxUserDDSearchWrapper {
+    display: flex;
+}
+.cxUserDDSearchWrapper .cxUserSearch {
+	flex-grow: 1;
+	position: relative;
+}
+.cxComboBoxFilterDD,
+.cxComboBoxSearch {
+	display: block;
+}
+.cxUserSelectionOption .cxFakeDropButton,
+.cxUserSelectionOption lyte-dropdown lyte-drop-button {
+	.cxuserSelectionOptionDropButtonMixin();
+	border: @border;
+	border-bottom: @border-bottom;
+	border-radius: @border-radius;
+	max-width: @max-w;
+	padding: @padding;
+	font-size: @font-size;
+	display: block;
+	box-shadow: @box-shadow;
+}
+.cxUserSelectionOption .cxFakeDropButton .cxFakeDropdownLabel {
+	font-size: inherit;
+}
+.cxComboBoxSearch .cxComboBoxSearchInput:disabled,
+.cxComboBoxSearch.lyteInputDisabled {
+	.cxComboBoxSearchInputdisabledMixin();
+	background: @bg;
+	cursor: not-allowed;
+}
+.cxUserSearch .cxComboBoxSearchInput {
+	.cxComboBoxSearchInputMixin();
+	height: @h;
+	width: @w;
+	padding: @padding;
+}
+.cxComboUserWrapper {
+	.userListsContainerWrapperMixin();
+	height: @h;
+}
+.user-lists-container {
+    .cxUserListsContainerMixin();
+	height: @h;
+	overflow: auto;
+	position: relative;
+}
+.user-image {
+	.cxUserImageMixin();
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+.cxComboUserDetail .user-image { 
+	margin-top: 3px;
+}
+.cxComboBoxImg {
+    .cxComboBoxImgMixin();
+	width: @w;
+}
+.cxComboUserList {
+	.cxUserListMixin();
+	padding: @padding;
+	cursor: pointer;
+	display: flex;
+}
+.cxComboUserList:hover {
+	.cxUserListhoverMixin();
+	background: @bg;
+}
+.user-detail {
+	flex-grow: 1;
+}
+// .cxComboUserDesc {
+// 	.cxUserDescMixin();
+// 	width: @w;
+// }
+.cxComboUserDetail{
+	.cxUserDetailMixin();
+	width: @w;
+	display: flex;
+}
+.cxComboUserDescWrap {
+	// display: inline-block;
+	// vertical-align: middle;
+	flex: 1;
+    max-width: 100%;
+    min-width: 0;
+    @{property-padding-right}: 10px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.selected-user-name {
+	.cxSelectedUserNameMixin();
+	max-width: @max-w;
+	font-size: @font-size;
+	margin: @margin;
+	overflow: hidden;
+}
+.cxComboUserNameSelector {
+	.cxComboUserNameSelectorMixin();
+	max-width: @max-w;
+	overflow: hidden;
+    text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.cxComboUserDescSelector {
+	.cxComboUserDescSelectorMixin();
+	max-width: @max-w;
+	overflow: hidden;
+    text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-top: 3px;
+	color:@color;
+}
+
+.comboBoxMW250 {
+	.cxComboBoxMW250Mixin();
+	max-width: @max-w;
+}
+.user-add-option {
+	display: flex;
+	align-items: center;
+}
+.cxComboUserList .user-add-option lyte-button{
+	@{property-margin-right}: 0;
+}
+.cxComboBoxAddedLabel {
+	.cxComboBoxAddedLabelMixin();
+	color: @color;
+	font-size: @font-size;
+	display: inline-flex;
+	align-items: center;
+}
+.cxComboBoxAddedLabel::before {
+	.cxComboBoxAddedLabelBeforeMixin();
+	content: '';
+	-webkit-mask-image: @mask-image;
+	mask-image: @mask-image;
+	-webkit-mask-position: @mask-position;
+	mask-position: @mask-position;
+	width: @w;
+	height: @h;
+	background-color: @bg-color;
+	@{property-margin-right}: @margin-right;
+}
+.cxComboBoxAddBtn {
+	.cxComboBoxAddBtnMixin();
+	border-radius: @border-radius;
+	visibility: hidden;
+	padding: @padding;
+	font-size: @font-size;
+	font-family: @font-family;
+	font-weight: @font-weight;
+	text-transform: @text-transform;
+	white-space: nowrap;
+}
+.cxComboUserList:hover .cxComboBoxAddBtn {
+	visibility: visible;
+}
+.no-results-found {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+.cxComboUserSelectedListContainer {
+	.cxSelectedUserListContainerMixin();
+	padding: @padding;
+	outline: none;
+	box-sizing: border-box;
+	font-size: @cxFontSize14px;
+}
+.cxComboBoxDisContainer{
+	.cxComboBoxDisContainerMixin();
+	color: @color;
+}
+.selected-user-count{
+	.selected-user-countMixin();
+	color: @color;
+}
+.selected-user-list-section,
+.cxComboUserSelectedListSection {
+	.cxSelectedUserListSectionMixin();
+	padding: @padding;
+	border: @border !important;
+	background: @bg;
+	border-radius: @border-radius;
+	margin: @margin;
+}
+.cxComboUserSelectedListSection.lyteAccordionActive{
+	.cxSelectedUserListSectionActiveMixin();
+	padding-bottom: @padding-bottom;
+}
+
+.selected-user-list-section:hover,
+.cxComboUserSelectedListSection:hover {
+	.cxSelectedUserListSectionhoverMixin();
+	border: @border;
+}
+.selected-user-list-last-section{
+	.cxSelectedUserListLastSectionMixin();
+	margin-bottom: @margin-bottom;
+}
+.selected-user-list-section lyte-accordion-body,
+.cxComboUserSelectedListSection lyte-accordion-body {
+    .cxSelectedUserListSectionAccordionBodyMixin();
+	width: auto;
+	padding: @padding;
+	box-sizing: content-box;
+	transition: @transition;
+}
+.selected-user-list-section.lyteAccordionActive lyte-accordion-body,
+.cxComboUserSelectedListSection.lyteAccordionActive lyte-accordion-body {
+	.cxSelectedUserListSectionAccordionActiveBodyMixin();
+	padding-top: @padding-top;
+}
+.selected-user-type-detail {
+	.cxComboboxUserTypeDetailMixin();
+	color: @color;
+}
+.cxComboboxAccordionBody .selected-user-type-detail {
+	.cxComboboxAccordionBodyTypeDetailMixin();
+	font-family: @font-family;
+	font-size: @font-size;
+	margin-bottom: @margin-bottom;
+}
+.cxComboboxSelectedHead {
+	// .cxComboboxSelectedHeadMixin();
+	font-family: @cruxSecondaryFont;
+}
+.cxComboboxRecipientSelectedList {
+	display: flex;
+	flex-wrap: wrap;
+}
+.cxComboSelectedList {
+	.cxSelectedUserListMixin();
+	border: @border;
+	border-radius: @border-radius;
+	padding: @padding;
+	background: @bg;
+	margin: @margin;
+	position: relative;
+	display: flex;
+	align-items: center;
+	// height: @h;
+	box-sizing: border-box;
+}
+.cxComboSelectedList .selected-user-img {
+	.cxSelectedUserListUserImgMixin();
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	overflow: hidden;
+	border: @border;
+	box-sizing: border-box;
+}
+.close-selected-wrap {
+	.cxCloseSelectedWrapMixin();
+	position: absolute;
+	top: @top;
+    @{property-right}: @right;
+	bottom: @bottom;
+	border-radius: @border-radius;
+	width: @w;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.close-selected-wrap:hover {
+	.cxCloseSelectedWraphoverMixin();
+	background: @bg;
+}
+.cxComboSelectedList .close-selected-user-icon {
+	.cxSelectedUserListUserIconMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	transform: @transform;
+}
+.emptySelected,
+.no-user-selected-div + .cxComboUserSelectedListContainer {
+	display: none;
+}
+.msgboxBoldText {
+	.cxMsgboxBoldTextMixin();
+	font-family: @font-family;
+	font-weight: @font-weight;
+	font-size: @font-size;
+	color: @color;
+}
+.cxComboBoxEmptyMessage {
+	.cxComboBoxEmptyMessageMixin();
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: @color;
+	height: @h;
+	text-align: center;
+}
+.filter-switching-loader {
+	.cxFilterSwitchingLoaderMixin();
+    position: absolute;
+    top: @top;
+    @{property-left}: @left;
+    width: @w;
+    height: @h;
+}
+.cxComboBoxContent {
+	max-height: unset;
+}
+.cxSearch-loaderContent{
+	.cxSearch-loaderContentMixin();
+	font-size: @font-size;
+}
+.cxComboBoxFooter {
+    display: flex;
+    flex-wrap: wrap;
+}
+.cxComboRecipientWrapper {
+    .cxComboRecipientWrapperMixin();
+    width: @w;
+}
+.cxComboRecipientWrap {
+    .cxComboRecipientWrapMixin();
+    position: relative;
+	    margin-bottom: @margin-bottom;
+text-align: @value-textalign-left;
+}
+.cxComboReciCloseIcon {
+    .cxComboReciCloseIconMixin();
+    background-image: @bg-img;
+    background-position: @bg-pos;
+    width: @w;
+    height: @h;
+    @{property-right}: @right;
+    cursor: pointer;
+    opacity: @opacity;
+}
+.cxComboReciCloseIcon:hover {
+    .cxComboReciCloseIconHoverMixin();
+    opacity: @opacity;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect li {
+    .cxComboRecipientWrapMultiSelectLiMixin();
+    padding: @padding;
+    border-radius: @border-radius;
+    height: @h;
+    display: inline-flex;
+    align-items: center;
+    border: @border;
+    background: @bg;
+	@{property-margin-right}: @margin-right;	/*	Crux Tag overwrite line added */
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect li.cxTagHighlight {
+	.cxComboRecipientWrapMultiSelectLiHighlightMixin();
+	border: @border;
+	background: @bg;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect li.cxComboBoxErrorRecipient {
+    .cxComboBoxErrorRecipientMixin();
+    background: @bg;
+    border: @border;
+    color: @color;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .cxComboBoxErrorRecipient.cxTagHighlight {
+	border-style: dashed !important;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect li:hover .lyteCloseIcon,
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .lyteCloseIcon {
+    .cxComboRecipientWrapCloseIconMixin();
+    position: absolute;
+    top: @top;
+    @{property-right}: @right !important;	/*	Crux Tag overwrite !important added */
+	@{property-left}: @left;	/*	Crux Tag overwrite line added */
+    bottom: @bottom;
+	transform: @transform;	/*	Crux Tag overwrite line added */
+    border-radius: @border-radius;
+    width: @w;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .lyteCloseIcon:hover {
+	.cxComboRecipientWrapCloseIconHoverMixin();
+	background: @bg;	/*	Crux Tag overwrite line added */
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .cxComboBoxErrorRecipient .lyteCloseIcon:hover {
+    .cxComboBoxErrorRecipientMixinCloseIconHoverMixin();
+    background: @bg;
+}
+.cxComboRecipientWrap lyte-dropdown.cxTagTagsPresent[lt-prop-type="multisearch"] lyte-drop-button {
+    .cxComboRecipientWrapTagsPresentDropButtonMixin();
+    padding-bottom: @padding-bottom;
+    max-height: @max-height;
+    overflow: auto;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .lyteMultiselectInput {
+    border: 0 !important;	/*	Crux Tag overwrite !important added */
+    padding: 0;
+    margin: 0;
+}
+.cxComboRecipientWrap lyte-dropdown.cxBoxDropdown .lyteMultiselect .cxAddedTags .lyteCloseIcon::before {
+	.cxComboRecipientWrapCloseIconBeforeMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;	/*	Crux Tag overwrite line added */
+	top: @top;	/*	Crux Tag overwrite line added */
+	@{property-left}: @left;	/*	Crux Tag overwrite line added */
+}
+
+.selected-user-list-section lyte-icon.lyteAccordionArrow {
+	.cxSelectedUserListSectionAccordionArrowMixin();
+	@{property-left}: @left;
+    @{property-right}: @right;
+}
+.cxComboRecipientWrap .cxTagBgSpan::before,
+.cxComboRecipientWrap .cxAddedTags::before,
+.cxComboRecipientWrap .cxAddedTags::after {
+	content: none;
+}
+.cxComboRecipient {
+	font-family: @cruxSecondaryFont;
+	font-weight: @cruxFontWeightBold;
+}
+.cxComboRecipientPlaceholder {
+	.cxComboRecipientPlaceholderMixin();
+	color: @color;
+	@{property-margin-left}: @margin-left;
+display: inline-block;
+	vertical-align: middle;
+}
+.cxComboboxRecipientHeadArea {
+	align-items: center;
+margin-bottom: 15px;
+}
+// .cxComboboxRecipientSelectedList {
+// 	.cxComboboxRecipientSelectedListMixin();
+// 	height: @h;
+// 	border: @border;
+// 	padding: @padding;
+// 	border-radius: @border-radius;
+// 	box-sizing: border-box;
+// 	overflow: auto;
+// }
+.cxComboboxNoRecipientUl {
+	.cxComboboxNoRecipientUlMixin();
+	background: @bg;
+}
+
+.cxUserSelectionOption lyte-dropdown.cxBoxDropdown:not([lt-prop-type=multiple]):not([lt-prop-type=multisearch]) lyte-drop-button {
+	.cxuserSelectionOptionDropButtonTempMixin();
+	padding-top: @padding-top !important;
+	padding-bottom: @padding-bottom !important
+}

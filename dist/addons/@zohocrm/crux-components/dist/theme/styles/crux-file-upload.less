@@ -1,0 +1,783 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-file-upload/crux-file-upload.variables.less";
+
+@import "../themes/default/less-variables/crux-file-upload-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@cruxUseCssMaskForBg: true;
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-file-upload-variables.less";
+}
+
+.cxSelectAreaWrapperDiv{
+    .cxSelectAreaWrapperDivMixin();
+    border: @border;
+    border-radius: @border-radius;
+    padding: @padding;
+    // font-size: @font-size;
+    // cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    // min-height: @min-h;
+    box-sizing: border-box;
+}
+
+.cxSelectAreaWrapperDiv.cxTypeFileSelected{
+    .cxTypeFileSelectedMixin();
+    padding: @padding;
+}
+
+.cxSelectAreaWrapperDiv .cxFileUpdList{
+    .cxLyteFileUpdListMixin();
+    margin-top: @margin-top;
+    flex: 1;
+    overflow: auto;
+    padding: @padding;
+}
+
+.cxFileUpdListFile.lyteSortableElem{
+    .cxFileUpFileListSortableElemMixin();
+    background: @bg;
+    box-shadow: @box-shadow;
+}
+
+.cxSelectAreaWrapperDiv.cxTypeFileSelected .cxFileUpdList{
+    .cxLyteFileUpdListOnSelectMixin();
+    min-height: @min-h;
+    padding: @padding;
+}
+
+.cxSelectAreaWrapperDiv .cxFileUpdList .cruxFileUploadSortableDiv{
+    .cxCruxFileUploadSortableDivMixin();
+    position: relative;
+    @{property-left}: @left;
+    display: grid;
+    grid-template-columns: @grid-template-columns;
+    // column-gap: @column-gap;
+    // row-gap: @row-gap;
+    gap: @row-gap @column-gap;
+    padding: @padding;
+}
+
+.cxFileUpdList .cruxFileUploadSortableDiv{
+    .cxFileUpdListSortableDivMixin();
+    position: relative;
+    display: grid;
+    grid-template-columns: @grid-template-columns;
+    column-gap: @column-gap;
+}
+
+.cxFileUpdList.cxSingleFileList .cruxFileUploadSortableDiv{
+    .cxFileUpdListSingleColSortableDivMixin();
+    grid-template-columns: @grid-template-columns;
+    row-gap: @row-gap;
+}
+
+.cxFileUploadImageThumb{
+    .cxFileUploadImageThumbMixin();
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    border: @border;
+    display: block;
+    @{property-margin-right}: @margin-right;
+    object-fit: cover;
+}
+
+.cxFileUpdListFile{
+    .cxFileUpdListFileMixin();
+    box-sizing: border-box;
+    margin: @margin;
+    padding: @padding;
+    border-radius: @border-radius;
+}
+
+.cxFileUpdListFile.cxFileUpdListSortableSelectedElem{
+    .cxFileUplListSortableSelectItemMixin();
+    border: @border;
+    box-shadow: @box-shadow;
+}
+
+.cxFileUpdListFile.sortable-element-selected.cxFileUplListSortableSelectItemOndrag{
+    .cxFileUplListSortableSelectItemOndragMixin();
+    border: @border;
+}
+
+// .cxSelectAreaWrapperDiv .cxFileUpdListFile:not(.sortable-element-selected){
+//     .cxUnsortableFileUploadListElemMixin();
+//     border: @border;
+//     background: @bg;
+// }
+
+.cxImgUploadModaHeader{
+    .cxImgUploadModaHeaderMixin();
+    padding-bottom: @padding-bottom;
+}
+
+.cxImgUpModalFileUpdListFile.cxFileUpdListFile,
+.cxImgUploadModalContent .cxSelectAreaWrapperDiv .cxFileUpdListFile{
+    .cxFileUploadListOnImageModalMixin();
+    padding: @padding;
+}
+
+.cxFileUpdFileNameWrap{
+    .cxFileUpdFileNameWrapMixin();
+    min-width: @min-w;
+}
+
+.cxFileUpdListFile .cxFileUpdFileName{
+    .cxcxFileUpdFileNameMixin();
+    max-width: @max-w;
+    font-size: @font-size;
+    line-height: @line-height;
+    @{property-margin-right}: @margin-right;
+    min-width: @min-w;
+}
+
+.fileDragEnter .cxSelectAreaWrapperDiv{
+    .cxFileDragEnterCxSelectAreaWrapperDivMixin();
+    border-color: @border-color;
+}
+
+.fileDragEnter .cxSelectAreaWrapperDiv::after{
+    .cxSelectAreaWrapperDivAfterMixin();
+    background-color: @bg-color;
+    content: '';
+    position: absolute;
+    width: @w;
+    top: @top;
+    @{property-left}: @left;
+    height: @h;
+    border-radius: @border-radius;
+    z-index: @z-index;
+}
+
+.fileDragEnter .cxTypeFileSelected.cxSelectAreaWrapperDiv::after{
+    .cxTypeFileSelectedCxSelectAreaWrapperDivAfterMixin();
+    z-index: @z-index;
+    opacity: @opacity;
+}
+
+.cxSelectAreaWrapperDiv .selectionAreaDiv{
+    .cxSelectionAreaDivMixin();
+    text-align: center;
+    font-size: @font-size;
+}
+
+.cxSelectAreaWrapperDiv.cxTypeFileSelected .typeFilePrimaryMsg{
+    .cxTypeFilePrimaryMsgMixin();
+    margin-top: @margin-top;
+    padding: @padding;
+    font-size: @font-size;
+}
+
+.cxSelectAreaWrapperDiv .selectionAreaDiv .typeFilePrimaryMsg{
+    .cxSelectionAreaDivTypeFilePrimaryMsgMixin();
+    color: @color;
+    font-family: @font-family;
+}
+
+.cxSelectAreaWrapperDiv .selectionAreaDiv .typeFileSecondaryMsg{
+    .cxTypeFileSecondaryMsgMixin();
+    color: @color;
+    margin-top: @margin-top;
+}
+
+/*.cxSelectAreaWrapperDiv .typeFilePrimaryMsg{
+    color: #616e88;
+}*/
+
+.cxDisableElement{
+    pointer-events: none;
+    opacity: .6;
+}
+
+.cxSelectAreaWrapperDiv .cxFileUploadAttachment{
+    .cxFileUploadAttachmentMixin();
+    display: inline-block;
+    @{property-margin-right}: @margin-right;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+	width: @w;
+	height: @h;
+    vertical-align: middle;
+    flex-shrink: @flex-shrink;
+}
+
+.cxSelectAreaWrapperDiv .cxFileUploadHeadIcon_Attachment{
+    .cxFileUploadHeadIconAttachmentMixin();
+    width: @w;
+	height: @h;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxSelectAreaWrapperDiv .cxImageUploadHeadIcon_Attachment{
+    .cxImageUploadHeadIconAttachmentMixin();
+    width: @w;
+	height: @h;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxSelectAreaWrapperDiv .cxFileUpdHeadCloudIcon_Attachment{
+    .cxFileUpdHeadCloudIconAttachmentMixin();
+    width: @w;
+	height: @h;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+
+.cxSelectAreaWrapperDiv .cxFileUploadHeadIcon{
+    .cxFileUploadHeadIconMixin();
+    display: inline-block;
+    background-image: @bg-img;
+    background-repeat: no-repeat;
+    background-position: @bg-pos;
+	width: @w;
+	height: @h;
+    margin-bottom: @margin-bottom;
+}
+
+.cxFileUploadHeadIconContainer{
+    .cxFileUploadHeadIconContainerMixin();
+    margin-bottom: @margin-bottom;
+    display: inline-block;
+}
+
+.cxSelectAreaWrapperDiv .cxImageUploadHeadIcon{
+    .cxImageUploadHeadIconMixin();
+    display: inline-block;
+    background-image: @bg-img;
+    background-repeat: no-repeat;
+    background-position: @bg-pos;
+	width: @w;
+	height: @h;
+    margin-bottom: @margin-bottom;
+}
+
+.cxSelectAreaWrapperDiv .cxFileUpdHeadCloudIcon{
+    .cxFileUpdHeadCloudIconMixin();
+    display: inline-block;
+    background-image: @bg-img;
+    background-repeat: no-repeat;
+    background-position: @bg-pos;
+	width: @w;
+	height: @h;
+    margin-bottom: @margin-bottom;
+}
+
+.cxFileSeperatorText{
+    .cxFileSeperatorTextMixin();
+    color: @color;
+    margin: @margin;
+    font-family: @font-family;
+}
+
+// .cxFileUploaded{
+//     .cxFileUploadedMixin();
+//     margin-bottom: @margin-bottom;
+//     color: @color;
+//     font-size: @font-size;
+//     font-family: @font-family;
+// }
+
+.cxFileUploadedCount{
+    .cxFileUploadedCountMixin();
+    border: @border;
+    border-radius: @border-radius;
+    padding: @padding;
+    min-width: @min-w;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.cxSelectAreaWrapperDiv .cxFileUpdList.cxSingleFileList .cruxFileUploadSortableDiv{
+    .cxSingleFileListCruxFileUploadSortableDivMixin();
+    grid-template-columns: @grid-template-columns;
+    // column-gap: @column-gap;
+    gap: @row-gap @column-gap;
+    @{property-padding-right}: @padding-right;
+    width: @w;
+}
+
+// .cxSelectAreaWrapperDiv .cxFileUpdList.cxSingleFileList{
+//     .cxLyteFileUpdListSingleFileListMixin();
+//     @{property-padding-right}: @padding-right;
+// }
+
+.cxUploadedBrowseButton{
+    .cxUploadedBrowseButtonMixin();
+    @{property-margin-left}: @margin-left;
+    display: inline-block;
+}
+
+.cxFileUploadActionIconWrap{
+    .cxFileUploadActionIconWrapMixin();
+    position: relative;
+    @{property-margin-right} : @margin-right;
+    // @{property-margin-left} : @margin-left;   
+    // visibility: hidden;
+    display: none;
+    cursor: pointer;
+}
+
+.cxFileUpdLiDownIconWrap.cxFileUploadActionIconWrap,
+.cxFileUploadFileStatus.cxFileUploadPredefinedFileStatus .cxFileUploadActionIconWrap,
+.cxFileUploadActionIconWrap.cxFileUploadEditIconWrap{
+    display: flex;
+    visibility: hidden;
+}
+
+.cxFileUploadActionIconWrap::before{
+    .cxFileUploadActionIconWrapBeforeMixin();
+    content: '';
+    display: inline-block;
+    border: @border;
+    background: @bg;
+    width: @w;
+    height: @h;
+    position: absolute;
+    @{property-left}: @left;
+    top: @top;
+    visibility: hidden;
+    border-radius: @border-radius;
+    transform: @transform;
+    opacity:  @opacity;
+    transition: @transition;
+}
+
+.cxImgUploadModalContent .cxFileUploadActionIconWrap::before{
+    .cxFileUploadActionIconWrapOnImageUploadMixin(); 
+    width: @w;
+    height: @h;  
+    @{property-left}: @left;
+    top: @top;
+}
+
+.cxFileUploadActionIconWrap:hover::before{
+    .cxFileUploadActionIconWrapHoverBeforeMixin();
+    visibility: visible;
+    transform: @transform;
+    opacity:  @opacity;
+}
+
+.cxFileUploadRetryIconWrap{
+    .cxFileUploadRetryIconWrapMixin();
+    display: flex;
+    @{property-margin-right}: @margin-right;
+}
+
+.cxFileUploadEditIcon{
+    .cxFileUploadEditIconMixin();
+    display: inline-block;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+	width: @w;
+	height: @h;
+    vertical-align: middle;
+    z-index: @z-index;
+}
+
+.cxFileUploadRemoveIcon{
+    .cxFileUploadRemoveIconMixin();
+    display: inline-block;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+	width: @w;
+	height: @h;
+    vertical-align: middle;
+    z-index: @z-index;   
+}
+
+.cxFileUploadSuccessIcon{
+    .cxFileUploadSuccessIconMixin();
+    display: inline-block;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+	width: @w;
+	height: @h;
+    // vertical-align: middle;
+    // position: absolute;
+    // top: @top;
+    // bottom: @bottom;
+    // margin: @margin;
+    // @{property-right}: @right;
+}
+
+.cxFileUploadRetryIcon{
+    .cxFileUploadRetryIconMixin();
+    display: inline-block;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+	width: @w;
+	height: @h;
+    z-index: @z-index;   
+}
+
+.cxFileUploadWarningIcon{
+    .cxFileUploadWarningIconMixin();
+    display: inline-block;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+	width: @w;
+	height: @h;
+}
+
+.cxFileUpdLiDownIcon{
+    .cxFileUpdLiDownIconMixin();
+    display: inline-block;
+    .cruxIconBgImageMixin(@bg-img,@bg-pos,@bg-color);
+	width: @w;
+	height: @h;
+}
+
+.cxFileUpdListFile:hover .cxFileUploadWarningIcon,
+.cxFileUpdListFile:hover .cxFileUploadSuccessIcon{
+    display: none;
+}
+
+.cxFileUploadRemoveIconWrap{
+    .cxFileUploadRemoveIconWrapMixin();
+    // @{property-margin-left}: @margin-left;
+    @{property-margin-right} : @margin-right;
+}
+
+// .cxFileUploadActionIconWrap + .cxFileUploadRemoveIconWrap{
+//     .cxFileUploadRemoveIconWrapOnEditIconShowMixin();
+//     @{property-margin-left}: @margin-left;
+// }
+
+.cxFileUpdListFile:hover .cxFileUploadActionIconWrap{
+    // .cxFileUploadActionIconWrapListFileHover();
+    // @{property-margin-left}: @margin-left;
+    visibility: visible;
+    display: flex;
+}
+
+.cxSelectAreaWrapperDiv .cxFileUpdListFile:hover .cxFileUploadRetryIconWrap{
+    .cxFileUploadRetryIconOnListHoverMixin();   
+    @{property-margin-right}: @margin-right;
+}
+
+// .cxSelectAreaWrapperDiv .cxFileUpdListFile:hover .cxFileUploadActionIconWrap + .cxFileUploadRemoveIconWrap{
+//     .cxFileUploadRemoveIconWrapOnEditIconShowMixin();
+//     @{property-margin-left}: @margin-left;
+// }
+
+.cxFileAfterUploadedMsg{
+    display: flex;
+    align-items: center;
+}
+
+.cxFileAfterUploadedSecondaryMsg{
+    .cxFileAfterUploadedSecondaryMsgMixin();
+    margin-top: @margin-top;
+    color: @color;
+}
+
+.cxFileScanningTxt{
+    .cxFileScanningTxtMixin();
+    font-size: @font-size;
+    color: @color;
+    white-space: nowrap;
+    flex: 1;
+}
+
+.cxFileUploadFileStatus{
+    .cxFileUploadFileStatusMixin();
+    @{property-margin-left}: @margin-left;
+    display: flex;
+    align-items: center;
+    max-width: @max-w;
+    // min-width: @min-w;
+    box-sizing: border-box;
+    @{property-padding-left}: @padding-left;
+}
+
+.cxFileStatusError{
+    .cxFileStatusErrorMixin();
+    border-color: @border-color;
+    background: @bg;
+}
+
+.cxFileUploadListCustMessage{
+    .cxFileUploadListCustMessageMixin();
+    font-size: @font-size;
+    @{property-margin-right}: @margin-right;
+    flex: 1;
+    overflow: hidden;
+}
+
+.cxFileUploadListCustMessage lyte-text{
+    vertical-align: top;
+}
+
+.cxFileUploadListCustMessage.cxFileUploadList_info lyte-text{
+    .cxFileUploadListInfoMsgMixin();
+    color: @color;
+}
+
+.cxFileUploadListCustMessage.cxFileUploadList_warning lyte-text{
+    .cxFileUploadListWarningMsgMixin();
+    color: @color;
+}
+
+.cxFileUploadListCustMessage.cxFileUploadList_error lyte-text{
+    .cxFileUploadListErrorMsgMixin();
+    color: @color;
+}
+
+.cxFileUploadListCustMessage.cxFileUploadList_success lyte-text{
+    .cxFileUploadListSuccessMsgMixin();
+    color: @color;
+}
+.cruxFileUploadSortableDiv .cxFileUpdListFile.lyteFileSuccess .lyteFileUpdFileStatus {
+    display: block;
+}
+.cruxFileUploadSortableDiv .lyteFileSuccess .successIcon {
+    .cxFileUploadSuccessStatusIconMixin();
+    background-image: @bg-img;
+    background-repeat: no-repeat;
+    background-position: @bg-pos;
+	width: @w;
+	height: @h;
+    display: inline-block;
+    @{property-margin-left}: 10px;
+} 
+
+.cxFileUploadFailMsg{
+    .cxFileUploadFailMsgMixin();
+    @{property-margin-right}: @margin-right;
+    white-space: nowrap;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cxFileUploadFailMsg lyte-text{
+    vertical-align: top;
+}
+
+.cxFileUploadListFileTypeIconWrap{
+    .cxFileUploadListFileTypeIconWrapMixin();
+    width: @w;
+    height: @h;
+    @{property-margin-right}: @margin-right;
+}
+
+.cxSelectAreaWrapperDiv .typeFileSelectionArea lyte-button{
+    .cxFileUploadInitialButtonMixin();
+    @{property-margin-right}: @margin-right;
+}
+
+.cxFileUploadedMsgLableColor{
+    .cxFileUploadedMsgLableColorMixin();
+    color: @color;
+}
+
+.cxFileUploadSupportFormatMsg{
+    .cxFileUploadSupportFormatMsgMixin();
+    color: @color;
+    font-size: @font-size;
+}
+
+.cxSelectAreaWrapperDiv .cxFileUpdListFile.sortable-element{
+    cursor: grab;
+}
+
+.cxSelectAreaWrapperDiv .cxFileUpdListFile.cxFileUpdListSortableSelectedElem,
+.cxSelectAreaWrapperDiv .cxFileUpdListFile.sortable-element-selected,
+.cxFileUpListOnDrag .cxFileUpdListFile.sortable-element,
+.cxFileUpListOnDrag{
+    cursor: grabbing;
+}
+
+.cxSelectAreaWrapperDiv .cxFileUpdListFile.cxFileUpdListSortableSelectedElem .cxFileUploadActionIconWrap,
+.cxSelectAreaWrapperDiv .cxFileUpdListFile.sortable-element-selected .cxFileUploadActionIconWrap,
+.cxSelectAreaWrapperDiv .cxFileUpListOnDrag .cxFileUpdListFile:hover .cxFileUploadActionIconWrap{
+    visibility: hidden;
+    display: flex;
+}
+
+.cxSelectAreaWrapperDiv .cxFileUpdListFile.sortable-element-selected .cxFileUploadSuccessIcon,
+.cxSelectAreaWrapperDiv .cxFileUpdListFile.sortable-element-selected .cxFileUploadWarningIcon{
+    display: none;
+}
+
+.cxFileUpdListFile.lyteSortableElem .cxFileUploadSuccessIcon,
+.cxSelectAreaWrapperDiv .cxFileUpListOnDrag .cxFileUpdListFile .cxFileUploadSuccessIcon, 
+.cxSelectAreaWrapperDiv .cxFileUpListOnDrag .cxFileUpdListFile .cxFileUploadWarningIcon{
+    visibility: hidden;
+}
+
+.cxFileUpdLiNameSeparator{
+    .cxFileUpdLiNameSeparatorMixin();
+    margin: @margin;
+}
+
+.cxFileUploadedOrSeparator{
+    .cxFileUploadedOrSeparatorMixin();
+    @{property-margin-left}: @margin-left;
+}
+
+.cxFileUpdLiFileSize{
+    .cxFileUpdLiFileSizeMixin();
+    @{property-margin-right}: @margin-right;
+}
+
+.cxFileUpdLiDownIconWrap{
+    .cxFileUpdLiDownIconWrapMixin();
+    @{property-margin-right}: @margin-right;
+}
+
+.cxSelectAreaWrapperDiv.cxFileUpdOuterAreaWrapper.cxTypeFileSelected .typeFilePrimaryMsg{
+    .cxFileUpdOuterPrimaryMsgMixin();
+    margin-top:  @margin-top;
+}
+
+.cxFileUpdListOuterWrapper{
+    .cxFileUpdListOuterWrapperMixin();
+    margin-top:  @margin-top;
+}
+
+.cxFileUpdLiCircleLoader.cxCircleLoader{
+    .cxFileUpdLiCircleLoaderMixin();
+    width: @w;
+    height: @h;
+    @{property-margin-left}: @margin-left;
+}
+
+.cxFileUpdLiCircleLoader .cxCircleLoader2{
+    .cxFileUpdLiCircleLoaderSecMixin();
+    height: @h;
+    width: @w;
+    background: @bg;
+}
+
+.cxFileUpdLiCircleLoader.cxCircleLoader::before{
+    .cxFileUpdLiCircleLoaderBeforeMixin();
+    background: rgba(@bg);
+}
+
+.cxFileUpdLiCircleLoader .cxCircleLoader1::after,
+.cxFileUpdLiCircleLoader .cxCircleLoader1::before{
+    .cxFileUpdLiCircleLoader1Mixin();
+    background: linear-gradient(rgba(@bg),rgba(@bg,0.5));
+}
+
+.cxFileUpdLiCircleLoader .cxCircleLoader1::after{
+    .cxFileUpdLiCircleLoader1AfterMixin();
+    background: linear-gradient(rgba(@bg,0.05),rgba(@bg,0.25),rgba(@bg,0.5));
+}
+
+// .cxFileUpdLiCircleLoader .cxCircleLoader2{
+//     background: @cxFileUploadCircleLoaderBg;
+// }
+
+/* CRUX File Type Icons Starts (this styles already in file-upload-component.less)*/ 
+.cxFileUploadListSprite {
+	.cxFileUploadListSpriteMixin();
+	background-image: @bg-img;
+	display: inline-block;
+	width: @w;
+	height: @h;
+}
+
+.cxFileUploadIcon_allfile,
+.cxFileUploadIcon_html {
+	.cxFileUploadIcon_htmlMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+
+.cxFileUploadIcon_image {
+	.cxFileUploadIcon_imageMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_pdf {
+	.cxFileUploadIcon_pdfMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_zip {
+	.cxFileUploadIcon_zipMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_video {
+	.cxFileUploadIcon_videoMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_audio {
+	.cxFileUploadIcon_audioMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_docx {
+	.cxFileUploadIcon_docxMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_ppt {
+	.cxFileUploadIcon_pptMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxFileUploadIcon_notes {
+	.cxFileUploadIcon_notesMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+
+.cxFileUploadIcon_xlsx,
+.cxFileUploadIcon_csv,
+.cxFileUploadIcon_xls{
+	.cxFileUploadIcon_xlsMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+
+
+/* CRUX File Type Icons Ends*/
+
+
+/** CRUX Simgle File Upload With Preview style starts **/
+
+
+.cxSelectAreaWrapperDiv.cxFileUpSingleImgSelected{
+    .cxFileUpSingleImgSelectedMixin();
+    padding: @padding;
+    overflow: hidden;
+}
+
+.cxFileUpSingleImgView,
+.cxFileUpSingleImgViewCont{
+    .cxFileUpSingleImgViewContMixin();
+    width: @w;
+    height: @h;
+}
+
+/** CRUX Simgle File Upload With Preview style ends **/
+
+
+.cxFileUploadFreezeLayer{
+    position: relative;
+}
+
+.cxFileUploadFreezeLayer::after{
+    .cxFileUploadFreezeLayerAfterMixin();
+    content: '';
+    position: absolute;
+    inset: @inset;
+}

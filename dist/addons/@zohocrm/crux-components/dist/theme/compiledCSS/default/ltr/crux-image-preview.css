@@ -1,0 +1,588 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*Image crop mixin ends*/
+/*Image crop mixin ends*/
+.cxImagePreviewTooltip {
+  font-size: 0.857rem;
+}
+.cxImgPrevContainer {
+  background: var(--lyte-crux-img-prev-container-bg-color);
+}
+.cxImgPrevContainer::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 120px;
+  background: var(--lyte-crux-img-prev-contain-after-bg-color);
+  width: 100%;
+  top: 0px;
+}
+.cxImgCropWrapperCont::after {
+  z-index: -1;
+}
+.cxImgPrevContent {
+  background: transparent;
+  bottom: 97px;
+  outline: none;
+}
+.cxImgPrevContent .lyteCBoxPhoto {
+  box-shadow: 0 0 15px var(--lyte-crux-img-prev-convert-photo-box-shadow-color);
+}
+.cxImgPrevHeader {
+  background: var(--lyte-crux-img-prev-header-bg-color);
+}
+.cxImagePreviewHeaderWrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.cxImgPrevNameWrap {
+  width: 100%;
+  max-width: 280px;
+}
+.cxImgPrevNameViewWrap,
+.cxImgPrevNameEditWrap {
+  width: 100%;
+  padding: 6px 30px 6px 10px;
+  box-sizing: border-box;
+  display: flex;
+  color: var(--lyte-crux-img-prev-name-edit-color);
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cxImgPrevNameViewWrap {
+  cursor: default;
+}
+.cxImgPrevNameEditWrap:hover {
+  border: 1px solid var(--lyte-crux-img-prev-name-edit-hover-border-color);
+  background: var(--lyte-crux-img-prev-name-edit-hover-bg-color);
+}
+.cxImgPrevFileName {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cxImgPrevFileExtn {
+  display: inline-block;
+  flex: 1;
+}
+.cxImgPrevFileNameEditIcon {
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -69px -152px;
+  mask-position: -69px -152px;
+  background-color: var(--lyte-crux-img-prev-file-name-edit-icon-bg-color);
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 8px;
+  margin: auto;
+  visibility: hidden;
+}
+.cxImgPrevNameEditWrap:hover .cxImgPrevFileNameEditIcon {
+  visibility: visible;
+}
+.cxImageNameInputWrap {
+  width: 100%;
+}
+.cxImageNameInputWrap.lyteInputBox .lyteField {
+  background: transparent;
+}
+.cxImageNameInputWrap.lyteInputBox input {
+  padding: 6px 10px;
+  background: transparent;
+  color: var(--lyte-crux-img-prev-input-field-color);
+}
+.cxImgPrevHeaderActionsWrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+.cxImgPrevHeaderActionIcon {
+  width: 38px;
+  height: 30px;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.cxImgPrevHeaderActionIcon:hover {
+  background: var(--lyte-crux-img-prev-header-action-icon-hover-bg-color);
+}
+.cxImgPrevHeadActionCropIcon {
+  width: 19px;
+  height: 19px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -367px -202px;
+  mask-position: -367px -202px;
+  background-color: var(--lyte-crux-img-prev-header-crop-icon-bg-color);
+}
+.cxImgPrevHeadActionDownloadIcon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -112px -199px;
+  mask-position: -112px -199px;
+  background-color: var(--lyte-crux-img-prev-header-download-icon-bg-color);
+}
+.cxImgPrevHeadActionInfoIcon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -6px -126px;
+  mask-position: -6px -126px;
+  background-color: var(--lyte-crux-img-prev-header-info-icon-bg-color);
+}
+.cxImgPrevHeadActionDeleteIcon {
+  width: 11px;
+  height: 13px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -93px -154px;
+  mask-position: -93px -154px;
+  background-color: var(--lyte-crux-img-prev-header-delete-icon-bg-color);
+}
+.cxImgPrevHeaderActionsWrap lyte-colorbox-download,
+.cxImgPrevDeleteIconWrap,
+.cxImgPrevInfoIconWrap {
+  margin-left: 5px;
+}
+.cxImgPrevInfoIconWrap {
+  cursor: default;
+}
+.cxImagePreviewFooterWrap {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+.cxImgPrevThumbnail {
+  height: 97px;
+  position: relative;
+}
+.cxImgPrevThumbListWrap {
+  display: flex;
+  height: 100%;
+  margin: 0px;
+}
+.cxImgPrevThumbImgWrap {
+  width: 110px;
+  height: 97px;
+  padding-bottom: 3px;
+  border: 0px;
+  border-bottom: 4px solid transparent;
+  border-radius: 0px;
+  margin-right: 2px;
+}
+.cxImgPrevThumbImgWrap:hover {
+  background: var(--lyte-crux-img-prev-thumb-wrap-hover-bg-color);
+  border: 0px;
+  border-bottom: 4px solid transparent;
+}
+.cxImgPrevThumbImgWrap.cxSelected {
+  border-color: var(--lyte-crux-img-prev-thumb-sel-border-color);
+  background: var(--lyte-crux-img-prev-thumb-img-selected-bg-color);
+  cursor: default;
+}
+.cxImgPrevThumbListWrap .cxImgPrevThumbImg {
+  width: 94px;
+  height: 64px;
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+}
+.cxImgPrevContainer .lyteColorboxUtilDiv.cxImgPrevZoomInOutWrap {
+  bottom: 97px;
+  box-shadow: -2px -2px 18px 0 var(--lyte-crux-img-prev-zoom-in-out-wrap-box-shadow-color);
+  background: var(--lyte-crux-img-prev-zoom-in-out-wrap-bg-color);
+}
+.cxImgPrevZoomRatioWrap {
+  width: 54px;
+  padding: 10px 12px;
+  color: var(--lyte-crux-img-prev-zoom-radio-wrap-text-color);
+  font-size: 0.857rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lyte-crux-img-prev-zoom-radio-wrap-bg-color);
+  box-shadow: none !important;
+  position: relative;
+  border-radius: 0 !important;
+}
+.cxImgPrevZoomRatioWrap::after {
+  content: '';
+  width: 11px;
+  height: 7px;
+  display: inline-block;
+  position: absolute;
+  bottom: 2px;
+  right: 0px;
+  transform: rotate(-45deg) scale(0.8);
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -338px -179px;
+  mask-position: -338px -179px;
+  background-color: var(--lyte-crux-img-prev-zoom-radio-wrap-after-bg-color);
+}
+.cxImgPrevZoomRatioWrap:hover {
+  background: var(--lyte-crux-img-prev-zoom-radio-wrap-hover-bg-color);
+}
+.cxImageDescriptionWrap {
+  width: 40%;
+  min-height: 60px;
+  margin-left: 10px;
+}
+.cxImageDescInputWrap {
+  width: 100%;
+  box-shadow: 0 0 30px var(--lyte-crux-img-prev-desc-input-box-shadow-color);
+  border-radius: 2px;
+}
+.cxImageDescriptionWrap .cxImageDescInputWrap .lyteField {
+  padding: 9px 10px;
+  background: var(--lyte-crux-img-prev-desc-bg-color);
+  border-radius: 3px;
+  box-shadow: none;
+}
+.cxImageDescriptionWrap .cxImageDescInputWrap .cxImageDescInputTextarea {
+  color: var(--lyte-crux-img-prev-desc-input-bg-color);
+  padding: 0px;
+  background: transparent;
+  font-size: 0.857rem;
+}
+.cxImgPrevDescPlaceholder {
+  color: var(--lyte-crux-img-prev-desc-placeholder-color);
+  width: 100%;
+  height: 60px;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 9px 10px;
+  border: 1px solid transparent;
+  font-size: 0.786rem;
+  border-radius: 3px;
+}
+.cxImgPrevDescPlaceholder:hover {
+  border: 1px solid var(--lyte-crux-img-prev-desc-hover-border-color);
+  background: var(--lyte-crux-img-prev-desc-bg-color);
+  box-shadow: 0 0 30px var(--lyte-crux-img-prev-desc-hover-box-shadow-color);
+}
+.cxImgPrevDescSavedValue {
+  height: 60px;
+  width: 100%;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 9px 10px 0px;
+  color: var(--lyte-crux-img-prev-desc-view-input-color);
+  font-size: 0.857rem;
+  overflow: auto;
+}
+.cxImgPrevDescSavedValue:hover {
+  border: 1px solid var(--lyte-crux-img-prev-desc-hover-border-color);
+  background: var(--lyte-crux-img-prev-desc-bg-color);
+  box-shadow: 0 0 30px var(--lyte-crux-img-prev-desc-hover-box-shadow-color);
+}
+.cxImagePreviewInfoDetailPopover .lytePopoverArrowIcon,
+.cxImagePreviewInfoDetailPopover .lytePopover {
+  background: var(--lyte-crux-img-prev-info-popup-bg-color) !important;
+  box-shadow: none;
+}
+.cxImagePreviewInfoDetailPopover .lytePopover {
+  padding: 5px 10px;
+  box-shadow: 0 3px 8px 2px var(--lyte-crux-img-prev-info-popup-box-shadow-color);
+  color: var(--lyte-crux-img-prev-info-popup-text-color);
+  border: none;
+  font-size: 0.786rem;
+}
+.cxImgPrevInfoWrap {
+  display: table-row;
+}
+.cxImgPrevInfoWrap:first-child .cxImgPrevInfoDetailPopLabel {
+  padding-bottom: 8px;
+}
+.cxImagePreviewInfoDetailPopover .cxImgPrevInfoDetailPopLabel {
+  padding-right: 7px;
+  opacity: 0.4;
+  text-align: end;
+  display: table-cell;
+}
+.cxImagePreviewInfoDetailPopover .cxImgPrevInfoDetailValue {
+  white-space: nowrap;
+  display: table-cell;
+}
+.cxImgPreviewScaleMenu {
+  background: var(--lyte-crux-img-prev-scale-menu-text-color);
+  border: none;
+}
+.cxImgPreviewScaleMenu .lyteDropdownSelection {
+  background: var(--lyte-crux-img-prev-scale-menu-item-bg-color);
+}
+.cxImgPreviewScaleMenu .cxImgPreviewScaleMenuLabel {
+  color: var(--lyte-crux-img-prev-scale-menu-label-color);
+}
+.cxImgPreviewScaleMenu .lyteArrow {
+  display: none !important;
+}
+.cxImagePrevZoomInAction {
+  width: 38px;
+  cursor: pointer;
+}
+.cxImagePrevZoomInAction:hover {
+  background: var(--lyte-crux-img-prev-zoom-in-action-hover-bg-color);
+}
+.cxImgPreviewZoomInIcon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -127px -266px;
+  mask-position: -127px -266px;
+  background-color: var(--lyte-crux-img-prev-zoom-in-icon-bg-color);
+}
+.cxImgPreviewZoomOutIcon {
+  display: inline-block;
+  width: 11px;
+  height: 2px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -146px -271px;
+  mask-position: -146px -271px;
+  background-color: var(--lyte-crux-img-prev-zoom-out-icon-bg-color);
+}
+.cxImageDescWrapContainer {
+  border-bottom: 1px solid var(--lyte-crux-img-prev-desc-wrap-border-color);
+}
+.cxImagePrevCountDiv {
+  position: absolute;
+  right: 20px;
+  bottom: 150px;
+  padding: 8px 15px;
+  border-radius: 3px;
+  background: var(--lyte-crux-img-prev-count-bg-color);
+  color: var(--lyte-crux-img-prev-count-text-color);
+  font-size: 0.857rem;
+}
+/*Image crop ui style starts*/
+.cxImgCropContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  padding: 10px 20px;
+}
+.cxImgCropBtnWrap {
+  flex: 1;
+  text-align: end;
+}
+.cxImgCropWidthHeightInputCont {
+  color: var(--lyte-crux-img-prev-crop-input-container-text-color);
+  display: flex;
+}
+.cxImgCropWHInputDiv {
+  display: inline-flex;
+  align-items: center;
+  color: var(--lyte-crux-img-prev-crop-wh-input-color);
+  font-size: 0.725rem;
+}
+.cxImgCropWHInputDiv:first-child {
+  margin-right: 5px;
+}
+.cxImgCropWHInputDiv lyte-number {
+  margin: 0px 3px;
+}
+.cxImgCropWHInputDiv input {
+  padding: 2px 4px;
+  width: 40px;
+  font-size: 0.857rem;
+  background: transparent;
+  color: var(--lyte-crux-img-prev-crop-wh-input-field-color);
+}
+.cxImgCropWHInputDiv .lyteInputFocus .lyteField,
+.cxImgCropWHInputDiv .lyteField:hover,
+.cxImgCropWHInputDiv .lyteField {
+  border: 1px solid var(--lyte-crux-img-prev-input-field-border-color);
+  background: transparent;
+}
+.cxImgCropRatioWrap {
+  display: flex;
+}
+.cxImgCropSeparationSpan {
+  display: inline-block;
+  border-right: 1px solid var(--lyte-crux-img-prev-crop-separation-border-color);
+  margin: 0px 10px;
+  height: 18px;
+}
+.cxImgCropIconWrap {
+  cursor: pointer;
+  padding: 2px 7px;
+  margin-right: 6px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cxImgCropIconWrap:hover {
+  background: var(--lyte-crux-img-prev-crop-icon-wrap-bg-color);
+}
+.cxImgCropIconWrap.cxSelected {
+  border: 1px solid var(--lyte-crux-img-prev-crop-icon-sel-border-color);
+  background: var(--lyte-crux-img-prev-crop-icon-sel-bg-color);
+}
+.cxImgCropRatioCustomIcon {
+  width: 26px;
+  height: 25px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -169px -230px;
+  mask-position: -169px -230px;
+  background-color: var(--lyte-crux-img-prev-crop-radio-icon-bg-color);
+}
+.cxImgCropRatioSqaureIcon {
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -276px -199px;
+  mask-position: -276px -199px;
+  background-color: var(--lyte-crux-img-prev-crop-radio-square-icon-bg-color);
+}
+.cxImgCropRatioFourThirdIcon {
+  width: 32px;
+  height: 23px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -235px -201px;
+  mask-position: -235px -201px;
+  background-color: var(--lyte-crux-img-prev-crop-radio-four-third-icon-bg-color);
+}
+.cxImgCropRatioLandscapeIcon {
+  width: 32px;
+  height: 17px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -194px -201px;
+  mask-position: -194px -201px;
+  background-color: var(--lyte-crux-img-prev-crop-radio-landscape-icon-bg-color);
+}
+.cxImgCropSwapIcon {
+  width: 13px;
+  height: 11px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -314px -208px;
+  mask-position: -314px -208px;
+  background-color: var(--lyte-crux-img-prev-crop-swap-icon-bg-color);
+}
+.cxImgCropRotateIcon {
+  width: 20px;
+  height: 18px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -337px -199px;
+  mask-position: -337px -199px;
+  background-color: var(--lyte-crux-img-prev-crop-rotate-icon-bg-color);
+}
+.cxImgCropIconCont {
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+}
+lyte-colorbox-loading-icon.cxImgCropLoadingIconWrap {
+  top: 42%;
+}
+.cxImageCropLoadWrap {
+  width: 35px;
+  height: 35px;
+  position: relative;
+}
+.cxImgPrevContainer .lyteCropDivImage {
+  border: 1px dashed var(--lyte-crux-img-prev-crop-div-border-color);
+}
+.cxImageCropLoadRotateElem {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 2px solid var(--lyte-crux-img-prev-crop-load-rotate-icon-bg-color);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: 1s linear infinite cxImgCropRotateElemAnim;
+}
+@keyframes cxImgCropRotateElemAnim {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*Image crop ui style ends*/
+.savedImageNameReadOnly {
+  font-size: 0.929rem;
+}
+.savedImageName {
+  font-size: 0.929rem;
+}
+.exDetailKey {
+  font-size: 0.857rem;
+}
+.exDetailsValue {
+  font-size: 0.857rem;
+}
+.openAddDescriptionInit {
+  font-size: 0.857rem;
+}
+/*# sourceMappingURL=crux-image-preview.css.map */

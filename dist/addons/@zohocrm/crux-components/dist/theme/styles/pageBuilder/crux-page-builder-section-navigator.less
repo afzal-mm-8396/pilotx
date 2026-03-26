@@ -1,0 +1,68 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/pageBuilder/crux-page-builder-section-navigator.variables.less";
+
+@import "../themes/default/less-variables/crux-page-builder-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+crux-page-builder-section-navigator{
+	.cxPbSectionNavigator();
+	position: absolute;
+	@{property-left} : @left;
+	top: @top;
+	z-index: @z-index;
+}
+
+.cxPbSectionNavWrapper {
+	.cxPbSectionNavWrapperMixin();
+	cursor: pointer;
+	font-family: @font-family;
+}
+
+.cxPbSectionNavWrapper .cxPbSprite{
+	.cxPbSectionNavSpriteMixin();
+	display: block;
+	margin: @margin;
+}
+
+.cxPbSecNavCount{
+	.cxPbSecNavCountMixin();
+	display: block;
+	font-size: @font-size;
+	text-align: center;
+	margin: @margin;
+	cursor: pointer;
+	font-family: @font-family;
+	font-weight: @font-weight;
+}
+
+.cxPbSecNavIconWrap{
+	.cxPbSecNavIconWrapMixin();
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: @margin;
+}
+
+.cxPbSecNavIconWrap::after{
+    display: none !important;
+}
+
+.cxPbSecNavIconWrap:not(.lyteDisabled):hover{
+	.cxPbSecNavIconWrapHoverMixin();
+	background: @bg;
+}
+
+.cxPbSecNavIconWrap.lyteDisabled{
+	pointer-events: none;
+}
+
+.cxPbSecNavIconWrap.lyteDisabled .cxPbSprite{
+	.cxPbSecDisableNavIconMixin();
+	opacity: @opacity;
+}

@@ -1,0 +1,783 @@
+.cxNoteNewUI {
+	padding: 20px;
+}
+.cxNoteHeadingSection {
+	padding-bottom: 8px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #d9e6ef;
+}
+.cxNoteHeadingInnerDiv {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.cxNoteHeading {
+	color: #313949;
+	font-size: 1.7rem;
+}
+.cruxNotes {
+	padding: 0 20px;
+}
+.cxNoteNewUI .notesTextInputBoxWrap {
+	box-sizing: border-box;
+	background: #fff;
+	border: solid 1px #babec2;
+	border-radius: 4px;
+	padding-top: 10px;
+	margin: 5px 0;
+}
+.cxNoteNewUI .inputBeforeNote,
+.cxNoteNewUI .cxNotesTextarea {
+	width: 100%;
+	box-sizing: border-box;
+}
+.cxNoteNewUI .cxNotesTextarea {
+	padding: 0 12px 10px 10px;
+	height: auto !important;
+}
+.cxNoteNewUI .cxNoteTitleInput .lyteField,
+.cxNoteNewUI .cxNotesTextarea .lyteField,
+.cxNoteNewUI .inputBeforeNote .lyteField {
+	padding: 0;
+	border: 0;
+}
+.cxNoteNewUI .inputBeforeNote .cxNoteBeforeOpenInput {
+	padding: 3px 20px 13px;
+}
+.cxNoteNewUI .cxNoteTitleInputElem {
+	color: #313949;
+	font-size: 1.5rem;
+	font-family: var(--crux-bold-font);
+	font-weight: var(--crux-font-weight-bold);
+	padding: 0;
+}
+.cxNoteNewUI .cxNoteTitleInputElem::placeholder {
+	font-family: var(--crux-bold-font);
+	font-weight: var(--crux-font-weight-bold);
+}
+.cxNoteTitleSpan {
+	font-size: 1.5rem;
+	padding-top: 5px;
+	color: #313949;
+	font-family: LatoBlack, sans-serif;
+}
+.cxNotesFooter {
+	border-top: 1px solid #D9E6EF;
+	padding: 7px 12px 10px 20px;
+	display: flex;
+	align-items: center;
+}
+.cxNotesAttachIcon {
+    background: transparent url(/crm/images/svgicons.svg) no-repeat -562px -154px;
+    width: 15px;
+    height: 16px;
+}
+.cxNotesAddTitle {
+	border-left: 1px solid #d4d8dd;
+    color: #616E88;
+    font-size: 1.3rem;
+}
+.cxNotesTextarea.lyteInput .cxNotesTextareaElem {
+	height: 60px;
+	padding: 1px 10px;
+	transition: none !important;
+}
+.cxNotesTextarea .lyteTextareaResize {
+	width: 11px;
+	height: 11px;
+	cursor: ns-resize;
+}
+.cxNotesTextarea .lyteMentions {
+	padding: 1px 10px;
+}
+.cxNotesTextarea .lyteMentionsStrongDiv {
+	font-family: var(--crux-primary-font);
+}
+.cxNotesUl {
+	padding: 0;
+	margin: 0;
+}
+.cxNotesLi {
+	display: flex;
+	padding: 7px 0;
+	margin: 0;
+	position: relative;
+}
+.cxNotesLi .cxNotesAddedUserImg { 
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+.cxNoteDefaultUserImage {
+	background-image: url(../images/nophoto.png);
+	background-size: 100%;
+}
+.cxNotesContentWrap {
+	position: relative;
+	overflow: auto;
+	flex-grow: 1;
+	padding: 0 10px 5px;
+}
+.cruxNoteSeeMore {
+	font-size: 1.2rem;
+	cursor: pointer;
+}
+.notesAddedContent {
+	font-size: 1.5rem;
+	color: #22242B;
+	line-height: 20px;
+	width: 600px;
+	max-width: 100%;
+	white-space: pre-line;
+	overflow-wrap: break-word;
+}
+.cxNotesGreyColorWithoutHover,
+.cxNotesGreyColor {
+	color: #616E88;
+}
+.cxNotesGreyColor:hover {
+	color: #313949;
+}
+.cxNotesNoteActionDetails {
+	flex-wrap: wrap;
+	line-height: 20px;
+}
+.cxNotesAddAnotherNote,
+.cxNotesModuleRecordName,
+.cxNotesModuleName {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.cxNotesAddAnotherNote {
+	max-width: 100px;
+}
+.cxNotesModifiedTimeInfo {
+	cursor: default;
+}
+.cxNotesModuleName {
+	color: #616E88;
+	max-width: 100px;
+	cursor: default;
+}
+.cxNotesModuleRecordName {
+	max-width: 100px;
+	display: inline-block;
+	font-size: 1.3rem;
+}
+
+.cxNotesModuleRecordName:hover {
+	text-decoration: underline;
+}
+.cxNotesListDot {
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: #C3CDDB;
+	align-self: center;
+	margin: 0 10px;
+}
+.cxNoteNewUI .cxNotesTimerIcon {
+	background-position: -682px -79px;
+}
+
+.cxNoteEditDeleteWrap {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: flex;
+	visibility: hidden;
+}
+.cxNotesLi:hover .cxNoteEditDeleteWrap {
+	visibility: visible;
+}
+.cxNoteEditIconWrap,
+.cxNoteDeleteIconWrap {
+	width: 24px;
+	height: 24px;
+	border: 1px solid #eee;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.cxDisableEditBtn,
+.cxDisableDeleteBtn {
+	opacity: 0.4;
+	cursor: default;
+}
+.cxNoteEditIconWrap:hover {
+	border: 1px solid #4a99e5;
+}
+.cxNoteDeleteIconWrap:hover {
+	border: 1px solid #F78985;
+}
+.cxDisableEditBtn:hover,
+.cxDisableDeleteBtn:hover {
+	border: 1px solid #eee;
+}
+.cxNoteDeleteIconWrap.cxDisableDeleteBtn:hover .cxNoteDeleteIcon,
+.cxNoteEditIconWrap.cxDisableEditBtn:hover .cxNoteEditIcon,
+.cxNoteDeleteIcon,
+.cxNoteEditIcon {
+	-webkit-mask-image: url(../images/crux-sprite-icons.svg);
+	mask-image: url(../images/crux-sprite-icons.svg);
+	background-color: #616e88
+}
+.cxNoteEditIcon {
+	-webkit-mask-position: -69px -153px;
+	mask-position: -69px -153px;
+	width: 13px;
+	height: 13px;
+}
+.cxNoteDeleteIcon {
+	-webkit-mask-position: -93px -154px;
+	mask-position: -93px -154px;
+	width: 11px;
+	height: 12px;
+}
+.cxNoteEditIconWrap:hover .cxNoteEditIcon {
+	background-color: #4a8de9
+}
+.cxNoteDeleteIconWrap:hover .cxNoteDeleteIcon {
+	background-color: #f56d6d
+}
+.cxNotesAttachElemImg {
+	max-width: 100px;
+	max-height: 100px;
+}
+.cxNotesAttachElem {
+	width: 100px;
+	height: 100px;
+	border: 1px solid #f0f0f0;
+	padding: 10px;
+	overflow: hidden;
+	text-align: center;
+}
+.cxNotesAttachmentIcons {
+	background-image: url(../../images/crux-sprite-icons.svg);
+}
+.cxNoteNewUI .bmp-icon,
+.cxNoteNewUI .jpg-icon,
+.cxNoteNewUI .gif-icon,
+.cxNoteNewUI .png-icon {
+	background-position: -274px -151px;
+	width: 17px;
+	height: 15px;
+}
+.cxNoteNewUI .word-icon {
+	background-position: -159px -150px;
+	width: 15px;
+	height: 17px;
+}
+.cxNoteNewUI .txt-icon {
+	background-position: -137px -150px;
+	width: 15px;
+	height: 17px;
+}
+.cxNoteNewUI .movie-icon {
+	background-position: -113px -152px;
+	width: 17px;
+	height: 14px;
+}
+.cxNoteNewUI .mp3-icon {
+	background-position: -205px -150px;
+	width: 11px;
+	height: 17px;
+}
+.cxNoteNewUI .pdf-icon {
+	background-position: -181px -150px;
+	width: 15px;
+	height: 17px;
+}
+.cxNoteNewUI .csv-icon,
+.cxNoteNewUI .excel-icon {
+	background-position: -251px -150px;
+	width: 15px;
+	height: 17px;
+}
+.cxNoteNewUI .ppt-icon {
+	background-position: -298px -150px;
+	width: 15px;
+	height: 17px;
+}
+.cxNoteNewUI .zip-icon,
+.cxNoteNewUI .file-icon,
+.cxNoteNewUI .exe-icon {
+	background-position: -321px -150px;
+	width: 15px;
+	height: 17px;
+	display: inline-block;
+}
+.cxNotesAttachmentRemoveIcon {
+	-webkit-mask-image: url(../images/crux-sprite-icons.svg);
+	mask-image: url(../images/crux-sprite-icons.svg);
+	-webkit-mask-position: -337px -115px;
+	mask-position: -337px -115px;
+	width: 9px;
+	height: 10px;
+	background-color: #3e5f78;
+	display: inline-block;
+	top:2px;
+	position: relative;
+}
+.cxNotesAttachementUl {
+	display: flex;
+	overflow: auto;
+}
+.cxNotesAttachementList {
+	padding: 0;
+	margin-right: 10px;
+}
+.cxNotesAttachementList:last-child {
+	margin-right: 0;
+}
+.cxNotesAttachActions {
+	background: #d3d3d3;
+	position: absolute;
+	padding: 5px 10px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transform: translateY(100%);
+	transition: transform .3s;
+}
+
+.cxNotesAttachementList:hover .cxNotesAttachActions {
+	transform: translateY(0);
+}
+.cxNoteNewUI #noteMoreFiles > .dz-preview > .dz-details {
+	display: inline-flex;
+	align-items: center;
+	/*width: calc(100% - 150px) !important;*/
+	width: calc(100% - 320px) !important;
+}
+.cxNoteNewUI .noteMoreFiles > .dz-preview .dz-size {
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+.cxNoteNewUI #noteMoreFiles > .dz-preview .dz-filename {
+	max-width: 80%;
+	overflow: auto;
+}
+.cxNoteNewUI .dz-filename > span {
+	max-width: 100%;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.cxNoteDownloadIcon,
+.cxNotePreviewIcon {
+	vertical-align: middle;
+	cursor: pointer;
+	display: inline-block;
+}
+.cxNotePreviewIcon {
+	background-position: -269px -366px;
+	width: 17px;
+	height: 11px;
+	margin-right: 10px;
+}
+.cxNoteDownloadIcon {
+	background-position: -439px -158px;
+	width: 13px;
+	height: 15px;
+}
+.cxNoteNewUI .notesTextInputBoxWrap.cxNoteTextareaOpen {
+	border-color: #1c9efc;
+	box-shadow: 0 0 4px #1c9DFB80;
+}
+.cxNotesUl .cxNoteTextareaOpen {
+	margin: 7px 0;
+}
+.cxShowMoreNotes {
+	background: #f8f8f8;
+	width: 720px;
+	padding: 10px 20px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+}
+.cxShowMoreNotes:hover {
+	background: #f1f1f1;
+}
+.cruxNoteOwnerNameImg {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background: #f8f8f8;
+	color: #111;
+	border: 1px solid #d8d8d8;
+	font-size: 24px;
+	text-align: center;
+	line-height: 48px;
+	font-family: var(--crux-light-font);
+	text-transform: capitalize;
+}
+.cruxNoteOwnerImg img {
+	width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    max-width: 100px;
+    max-height: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 0;
+    margin-right: 25px;
+    margin-bottom: 30px;
+}
+
+.cruxNoteToggleArrow{
+	width: 10px;
+    height: 8px;
+    cursor: pointer;
+    padding: 4px 4px 4px 3px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+
+.cruxNoteToggleArrow:hover {
+	background: #f1f1f1;
+}
+
+.cruxNoteToggleArrow:after {
+	content: '';
+	display: block;
+	position: absolute;
+    background: url('../images/crux-sprite-icons.svg') no-repeat -14px -2px;
+    width: 9px;
+    height: 5px;
+    top: 6px;
+    left: 4px;
+    opacity: 0.7;
+}
+.cruxNoteToggleOptions lyte-menu-group {
+	margin: 5px 0;
+	padding-bottom: 5px;
+}
+.cruxNoteToggleOptions lyte-menu-item {
+	padding: 5px 20px;
+	position: relative;
+	line-height: normal;
+}
+
+.cruxNoteToggleOptions .cruxNoteSelectedToggle:before{
+	content: '';
+	position: absolute;
+	display: block;
+	background: url('../images/crux-sprite-icons.svg') no-repeat -33px -15px;
+	width: 10px;
+	height: 7px;
+	left: 5px;
+	top: 11px;
+	opacity: 0.6;
+}
+
+
+.cxNotesAttachementList{
+	padding: 0;
+	float: left;
+    margin: 15px 5px;
+}
+.cxNotesAttachElemImg{
+    height: 120px;
+    width: 120px;
+    border: 1px solid #eee;
+    object-fit: cover;
+}
+.cxNotesAttachActions{
+    background: #d3d3d3;
+    position: absolute;
+    width: 120px;
+    bottom: 0;
+    margin-left: 1px;
+    height: 0;
+    opacity: 0;
+}
+.cxNotePreviewIcon,
+.cxNoteDownloadIcon {
+    vertical-align: middle;
+    cursor: pointer;
+    display: inline-block;
+}
+	.cxNotePreviewIcon {
+		background-position: -269px -366px;
+		width: 17px;
+		height: 11px;
+		margin-right: 10px;
+	}
+	.cxNoteDownloadIcon {
+		width: 17px;
+		height: 14px;
+		background-position: -112px -273px;
+	}
+	.cxImageName{
+		color: #555;
+		width: 100px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		text-align: center;
+		padding: 0 10px;
+	}
+	.cxNotesAttachElem {
+		width: 120px;
+		text-align: center;
+		border: 1px solid #f0f0f0;
+		height: 120px;
+	}
+.cxNotesAttachElemImgWrap{
+	height: 120px;
+}
+.cxNotesAttachNameWrap {
+	height: 100px;
+	line-height: 100px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: calc(100% - 20px);
+	padding: 10px;
+}
+.cxNotesAttachementList:hover .cxNotesAttachActions {
+    height: 25px;
+    opacity: 1;
+}
+.noteMoreFiles > .dz-preview > .dz-details {
+    max-width: 70%;
+    width: inherit;
+}
+.noteMoreFiles .dz-error .dz-error-message,
+.noteMoreFiles .dz-processing .dz-progress,
+.noteMoreFiles > .dz-success > .dz-progress,
+.noteMoreFiles .dz-file-preview .dz-progress {
+		margin-left: 10px;
+}
+.noteMoreFiles > .dz-preview div .dz-filename{
+		max-width: 80%;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+}
+.cxNotesAttachedListName{
+		max-width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.noteTitle.vertical input::placeholder{
+    font-family: var(--crux-bold-font);
+	font-weight: var(--crux-font-weight-bold);
+}
+
+.cxDisableEditBtn,
+.cxDisableDeleteBtn {
+    opacity: 0.5;
+}
+.cxNotesOnwerLookupLabel {
+	color: #666;
+}
+.cxNoteCount {
+	height: 10px;
+	padding: 2px 5px;
+	background: #e0e0e0;
+	border-radius: 2px;
+	line-height: 12px;
+	display: inline-block;
+	text-align: center;
+	font-size: 12px;
+	margin-left: 5px;
+	cursor: default;
+}
+.cxNotesOnwerLookupValue {
+	color: #333;
+}
+
+
+.cxNoteStorageLimitContent {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.cxNotesStorageLimitShadow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 120px solid #ffabab;
+    border-left: 38px solid #ffabab;
+    border-right: 30px solid transparent;
+    opacity: .1;
+    border-radius: 5px 0 0 5px;
+    left: 0;
+    top: 0;
+}
+.cxNotesStorageLimitWarnIcon {
+    background: url(../images/ico_storage_exceed.svg) -9px -4px no-repeat;
+    width: 34px;
+    height: 33px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 35px;
+}
+.cxNotesStorageLimitInfo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 450px;
+    padding-right: 55px;
+}
+.cxNoteStorageLimitModalWrapper .lyteModal {
+    border-radius: 6px;
+}
+.cxNotesStorageLimitWarnMsg {
+    color: #f35b50;
+    font-family: var(--crux-bold-font);
+	font-weight: var(--crux-font-weight-bold);
+    display: inline-block;
+}
+.cxNotesStorageLimitLink {
+    color: #fff;
+    text-decoration: none;
+}
+.cxNoteStorageLimitManageBtn {
+    margin-right: 20px;
+}
+.cxNotesStorageLimitClose {
+    background: url(../images/ico_storage_exceed.svg) -48px -4px no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.notesTextInputBox .lyteMIWrapper {
+    width: 100%;
+}
+.cxNotesCommonLinkColor {
+	color: #338cf0;
+}
+.cxNotesCommonLinkColor:hover {
+	color: #1d7fed;
+}
+.cxNotesUl crux-note-loading {
+	display: block;
+	padding: 7px 0;
+}
+.cxNotesAddedNotesLoader {
+	height: 35px;
+	margin: 10px 0;
+	display: flex;
+}
+.cxNotesUl.cxNotesRecentFirst .cxNotesAddedNotesLoader {
+	margin-bottom: 0;
+}
+.cxNotesUl.cxNotesRecentLast .cxNotesAddedNotesLoader {
+	margin-top: 0;
+}
+.cxNotesLoaderCircle {
+	background: #f5f5f5;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+}
+.cxNotesLoaderRightSection {
+	margin-left: 10px;
+	flex-grow: 1;
+}
+.cxNotesLoaderLine {
+	background: #f5f5f5;
+	height: 10px;
+	border-radius: 3px;
+	position: relative;
+	overflow: hidden;
+}
+.cxNotesLoaderLine1 {
+	width: 50%;
+	margin: 3px 0 7px;
+}
+.cxNotesLoaderLine2 {
+	width: 25%;
+}
+.cxNotesLoaderRunner {
+	height: 100%;
+	background: linear-gradient(to right, #f5f5f5, #eee, #f5f5f5);
+	width: 30%;
+	border-radius: 3px;
+	position: absolute;
+	animation: cxNotesLoaderRunnerFrame 3s ease infinite;
+}
+.cxNotesCircleLoaderRunner {
+	height: 200%;
+	width: 200%;
+	background: linear-gradient(to bottom right, #eee, #f5f5f5, #eee, #f5f5f5, #eee);
+	position: absolute;
+	animation: cxNotesCircleLoaderRunnerFrame 3s linear infinite;
+	border-radius: 50%;
+}
+
+@keyframes cxNotesLoaderRunnerFrame {
+	0% {
+		left: -30%;
+	}
+	100% {
+		left: 100%;
+	}
+}
+@keyframes cxNotesCircleLoaderRunnerFrame {
+	0% {
+        top: -65%;
+		left: -65%;
+	}
+	100% {
+        top: -15%;
+		left: -15%;
+	}
+}
+.cxNoteVoiceFileIcon{
+	background-image: url(/crm/images/voicefileicon.png);
+	width: 16px;
+	height: 19px;
+}
+.cxNotesSortDropdown lyte-drop-button {
+	padding: 4px 23px 4px 13px;
+}
+.cruxNoteSelectedToggle::before {
+	content: '';
+	background-image: url(../images/crux-sprite-icons.svg);
+	background-position: -4px -77px;
+	width: 11px;
+	height: 9px;
+	display: inline-block;
+	position: absolute;
+	left: 7px;
+	top: calc(50% - 5px);
+	opacity: 0.8;
+}
+.cxNoteCkboxLabel {
+	margin-top: 2px;
+	font-size: 0.857rem;
+}
+/*
+.cxNoteCheckbox .lyteCheckBoxDefault::before {
+	transform: scale(0.8);
+	margin-right: 0;
+}*/
+.cxNoteCheckbox input[type="checkbox"] + .lyteCheckBoxDefault::after {
+	transform: scale(0.7);
+}
+.cxNotesGraytxt {
+	color: #787878;
+} 
+.cruxNoteToggleOptions .moduleBasedGroup {
+	border-bottom: 1px solid #EDF0F4;
+    display: block;
+}
+#noteMoreFiles .dz-remove {
+	float: right;
+    top: 9px;
+}

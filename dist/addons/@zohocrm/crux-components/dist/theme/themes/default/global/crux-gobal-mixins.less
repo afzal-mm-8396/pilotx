@@ -1,0 +1,61 @@
+/* CSS Mask Mixins for Background Image Starts */
+.cruxIconBgImageMixin(@image, @position, @bgColor){
+	& when (@cruxUseCssMaskForBg = true) {
+		& when not( @image = '' ) {
+			-webkit-mask-image: @image;
+			mask-image: @image;
+		}
+		& when not ( @position = '' ) {
+			-webkit-mask-position: @position;
+			mask-position: @position;
+		}
+		& when not ( @bgColor = '' ) {
+			background-color: @bgColor;
+		}
+	}
+	& when not (@cruxUseCssMaskForBg = true) {
+		background-image: @image;
+		background-position: @position;
+	}
+}
+/* CSS Mask Mixins for Background Image Starts */
+
+.cruxMaskImageMixin(@image,@position,@bgColor){
+	display: inline-block;
+	vertical-align: top;
+	-webkit-mask-image: @image;
+	mask-image: @image;
+	-webkit-mask-position: @position;
+	mask-position: @position;
+	background-color: @bgColor;
+}
+
+
+.cruxHandleLtrRtlForMarginPaddingMixin(@cssPropertVal) {
+	@numberOfValue: length(@cssPropertVal);
+	@topPadding: extract(@cssPropertVal, 1);
+	@rightPadding: if((@numberOfValue > 1), extract(@cssPropertVal, 2), false);
+	@bottomPadding: if((@numberOfValue > 2), extract(@cssPropertVal, 3), false);
+	@leftPadding: if((@numberOfValue > 3), extract(@cssPropertVal, 4), false);
+	@rtlPadding: @topPadding @leftPadding @bottomPadding @rightPadding;
+	@resultCSSValue: if( (@direction = rtl and (@numberOfValue = 4)), @rtlPadding, @cssPropertVal);
+}
+
+.cruxLESSPaddingMixin(@paddingVal) {
+	@padding: .cruxHandleLtrRtlForMarginPaddingMixin(@paddingVal)[@resultCSSValue];
+}
+.cruxLESSMarginMixin(@marginVal) {
+	@margin: .cruxHandleLtrRtlForMarginPaddingMixin(@marginVal)[@resultCSSValue];
+}
+
+.cxEllipsisMixin(){
+	overflow: hidden;
+    text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 100%;
+}
+.cxWBMixin(){
+	white-space: normal;
+	overflow:auto;
+	max-width: 100%;
+}

@@ -1,0 +1,181 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-error-message.variables.less";
+
+@import "../../themes/default/less-variables/crux-error-message-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-error-message";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../themes/default/css-variables/crux-error-message-variables.less";
+}
+
+crux-error-message {
+	display: block;
+}
+.cruxErrMsg {
+	.cruxErrMsgMixin();
+	font-family: @font-family;
+	color: @color;
+	font-size: @font-size;
+	display: block;
+}
+.cruxErrMsg.cruxErrorMsgDesc {
+	.cxErrorMsgDescMixin();
+	position: absolute;
+	font-family: @font-family;
+	z-index: @z-index;
+	color: @color;
+	font-size: @font-size;
+	width: @w;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	@{property-left}: @left;
+	display: block;
+}
+.cruxErrMsg.cruxErrorMultiline { /*Added Important - as in LUX this style gets added at start itself */
+	white-space: normal !important;
+    position: relative !important;
+	overflow-wrap: break-word;
+}
+.cruxErrorField .lyteField {
+	.cxErrorFieldLyteFieldMixin();
+	border-bottom: @border-bottom;
+}
+/**************************************************
+	.cxStaticErrorMsg - Used specifically in in places where single line static message needed.
+					- can be passed using cx-prop-error-class from wrapper eg: {crux-text-component}
+	.cxErrorMsgMultiLines - class will add Dynamically from crux based script calculation.
+					.cxErrorMsgMultiLines - DO NOT pass as cx-prop-erro-class. 
+					It will be removed Automatically.
+***************************************************/
+.cxStaticErrorMsg .cruxErrMsg.cruxErrorMsgDesc,
+.cxErrorMsgMultiLines .cruxErrMsg.cruxErrorMsgDesc {
+	position: static;
+	white-space: normal;
+	overflow-wrap: anywhere;
+}
+
+
+.cxFieldWarningMsg {
+	.cxFieldWarningMsgMixin();
+    color: @color;
+    font-size: @font-size;
+	top: @top;
+    transform: @transform;
+	position: @position;
+    font-family: @font-family;
+    z-index: @z-index;
+	width: @width;
+    white-space: @white-space;
+    text-overflow: @text-overflow;
+    overflow: @overflow;
+    @{property-left}: @left;
+    display: @display;
+}
+.cxPropWarningIconSpacing {
+	.cxPropWarningIconSpacingMixin();
+	@{property-margin-right}: @margin-right;
+	top: @top;
+    position: @position;
+}
+.cxPropWarningMsgTxt {
+	.cxPropWarningMsgTxtMixin();
+	max-width: @max-width;
+}
+
+
+
+/* CRUX Error Hover Card Message Starts */
+.cxErrorHoverCard .lytePopover {
+	.cxErrorHoverCardPopoverMixin();
+	background-color:@bg-color;
+	color:@cxErrorHoverTextColor;
+    // border: none;
+	box-shadow: @box-shadow;
+    line-height: 18px;
+	border:1px solid @border;
+}
+// .cxErrorHoverCard .lytePopoverArrowIcon {
+// 	display: none !important;
+// }
+.cxErrorHoverCard lyte-hovercard-content {
+	.cxErrorHoverCardContentMixin();
+	padding: @padding;
+	font-size: @font-size;
+}
+.cxErrorHoverCard .lytePopover a {
+	.cxErrorHoverCardPopupLinkMixin();
+	color: @color;
+}
+
+
+/* CRUX Error message with small Info Icon for accessibility Starts */
+.cruxErrMsg.cxHasWarnIcon {
+    display: flex;
+	color: @cxErrorMsgColor;
+	font-size: @cxFontSize13px;
+}
+.cxHasWarnIcon .cxWarnIcon {
+    /* border: 1px solid #ddd; */
+    display: inline-block;
+    min-width: 0;
+    @{property-margin-right}: 5px;
+    flex-shrink: 0;
+}
+/* CRUX Error message with small Info Icon for accessibility Ends*/
+
+
+// .cxErrorHoverCard .lytePopoverArrowIcon {
+// 	.cxErrorHoverCardArrowStyleMixin();
+//     background: @cxThemeBg;
+// }
+// .cxErrorHoverCard .lytePopoverArrowIcon.lytePopoverArrowTop {
+// 	.cxErrorHoverCardArrowStyleMixin();
+//     box-shadow: -1px -1px 0 0 @boxShadowColor;
+// }
+// .cxErrorHoverCard .lytePopoverArrowIcon.lytePopoverArrowBottom {
+// 	.cxErrorHoverCardArrowStyleMixin();
+//     box-shadow: 1px 1px 0 0 @boxShadowColor;
+// }
+// .cxErrorHoverCard .lytePopoverArrowIcon.lytePopoverArrowRight {
+// 	.cxErrorHoverCardArrowStyleMixin();
+//     box-shadow: 1px -1px 0 0 @boxShadowColor;
+// }
+// .cxErrorHoverCard .lytePopoverArrowIcon.lytePopoverArrowLeft {
+// 	.cxErrorHoverCardArrowStyleMixin();
+//     box-shadow: -1px 1px 0 0 @boxShadowColor;
+// }
+/* CRUX Error Hover Card Message Ends */
+
+
+/* Error message Shake Animation Starts */
+.cxShakeErrorHovercard .lytePopover {
+	/* @keyframes duration | easing-function | delay | iteration-count | direction | fill-mode | play-state | name */
+	animation: cx-animation-shake-horizontal  0.5s linear 1;
+}
+@keyframes cx-animation-shake-horizontal {
+	0% { transform: translateX(0) }
+	25% { transform: translateX(5px) }
+	50% { transform: translateX(-5px) }
+	75% { transform: translateX(5px) }
+	100% { transform: translateX(0) }
+}
+/* Error message Shake Animation Ends */
+
+.cxShakeErrorMessage.cruxErrMsg.cruxErrorMsgDesc{
+	animation: cx-error-shake-anim 0.5s linear 1;
+}
+
+@keyframes cx-error-shake-anim {
+	0%{transform: translateX(3px);}
+	30%{transform: translateX(-3px);}
+	60%{transform: translateX(3px);}
+	100%{transform: translateX(0px);}		
+}

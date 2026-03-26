@@ -1,0 +1,153 @@
+.cxLookupComponent .cxBoxLeftContent {
+    cursor: text;
+    background: #fff;
+    border-radius: 5px 0px 0px 5px;
+}
+.cxLookupComponent lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox input,
+.cxLookupComponent lyte-dropdown {
+    border-radius: 4px 0 0 4px;
+}
+.cxLookupComponent lyte-input,
+.cxLookupComponent lyte-autocomplete {
+    flex-grow: 1;
+    border-radius: 4px 0 0 4px;
+    display: block;
+    width: 100%;
+}
+.cxLookupComponent lyte-autocomplete lyte-dropdown lyte-drop-button {
+    padding: 0;
+    border-radius: 4px 0 0 4px;
+    display: block;
+}
+.cxLookupComponent lyte-autocomplete .lyteDropButtonDown lyte-input.lyteInputBox .lyteField,
+.cxLookupComponent .lyteInputBox .lyteField {
+    padding: 0;
+    border: 0;
+    border-radius: 4px 0 0 4px;
+}
+.cxLookupComponent lyte-autocomplete lyte-input input,
+.cxLookupComponent lyte-input input {
+    outline: none;
+    box-shadow: none;
+    /* text-overflow: ellipsis; */
+}
+.cxLookupComponent:hover input {
+	text-overflow: initial; /*On Hover removed ellipsis in input to faciliate input default mouse scroll */
+}
+.cxLookupComponent lyte-autocomplete lyte-input .cxLookupCompInputElem {
+    padding-right: 30px;
+}
+/* .cxLookupComponent lyte-autocomplete.cxLookupInputLoading lyte-input .cxLookupCompInputElem {
+    padding-right: 0;
+} */
+.cxLookupComponent .cxBoxCloseIconWrap {
+    width: 20px;
+    cursor: pointer;
+	visibility: hidden;
+}
+.cxLookupComponent:hover .cxBoxCloseIconWrap {
+    visibility: visible;
+}
+.cxLookupComponent .cxBoxSpin {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+.cxLookupDropbox .lyteautocompleteHighlight {
+    background: transparent;
+}
+.cxLookupDropboxLabel {
+    max-width: calc(100% - 14px);
+}
+.cxLookupInfoIcon {
+    background-image: url(../images/crux-sprite-icons.svg);
+    background-position: -41px -75px;
+    width: 14px;
+    height: 14px;
+    opacity: 0.3;
+	margin: 0 !important;
+}
+.cxLookupDropbox .cxLookupInfoIcon {
+    margin-left: 3px !important;
+}
+.cxLookupDropbox lyte-autocomplete-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cxLookupComponent .lyteInputBox[lt-prop-disabled=true] .lyteField:hover {
+    border: 0;
+    box-shadow: none;
+}
+.cxLookupComponent .lyteInputBox input:disabled {
+    cursor: not-allowed;
+ /* cursor: text;
+    background: #fff; Commented as disabled field will have gray bg*/
+}
+.popoverWrapper.cxLookupPopoverWrapper {
+    z-index: 10125;
+}
+.cxLookupPopoverWrapper .lytePopover {
+	max-width: calc(100vw - 200px);
+    border-radius: 6px;
+}
+.cxLookupPopoverWrapper .lytePopoverArrowIcon {
+    background: #000;
+}
+.cxLookupPopoverWrapper .cxLookupPopTd {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 13px;
+    border: 0;
+    word-break: break-word;
+    vertical-align: top;
+}
+.cxLookupPopoverWrapper .cxLookupPopTd:first-child {
+	/* white-space: nowrap; for label - nowrap is not needed */
+	text-align: right;
+}
+.cxLookupPopoverWrapper lyte-tr:first-of-type .cxLookupPopTd {
+    padding-top: 15px; 
+}
+/* .cxLookupPopoverWrapper lyte-tr:last-of-type .cxLookupPopTd {
+    padding-bottom: 15px; 
+    padding-top: 15px;
+} */
+.cxLookupPopoverWrapper lyte-tr:last-of-type .cxLookupPopTd {
+    padding-bottom: 15px;
+}
+.cxLookupPopoverWrapper,.cxLookupPopoverWrapper .lytePopover{
+    pointer-events: none;
+}
+.cxLookupPopoverWrapper .lv_data_user {
+    max-width: 370px;
+}
+
+.cxLookupMultiModuleWrap {
+	display: flex;
+	align-items: center;
+}
+.cxLookupMultiModuleWrap .cxMultiModuleCriteriaDropdown {
+	flex-grow: 1;
+	overflow: auto;
+	min-width: 70px;
+}
+.cxMultiModuleCriteriaDropdown .lyteDropdownLabel {
+	max-width: 100%;
+	margin-right: 0;
+}
+.cxMultiModuleDropdown {
+	max-width: 30%;
+    min-width: 100px;
+}
+.cxLookupComponent .cxMultiModuleDropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxMultiModuleDropdown .cxFakeDummyEventContainer:focus .cxFakeDropButton,
+.cxMultiModuleDropdown lyte-drop-button:hover,
+.cxMultiModuleDropdown .cxFakeDropButton:hover,
+.cxMultiModuleDropdown .cxFakeDropButton,
+.cxMultiModuleDropdown lyte-drop-button {
+	border: 0;
+	border-right: 1px solid #c0c6cc;
+	border-radius: 4px 0 0 4px;
+	box-shadow: none;
+}

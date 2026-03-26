@@ -1,0 +1,73 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-subform-table-filter-th-border-color: #ddd;
+  --lyte-crux-subform-table-input-hover-border-color: var(--crux-element-border-color);
+  --lyte-crux-subform-table-input-focus-border-color: var(--crux-element-focus-border-color);
+  --lyte-crux-subform-edit-and-more-icon-before-bg: #e1e6ec;
+  --lyte-crux-subform-show-all-label-color: #0078FF;
+  --lyte-crux-subform-show-all-label-box-shadow-color: #00000027;
+  --lyte-crux-subform-show-all-label-hover-bg-color: #f0f0f0;
+  --lyte-crux-subform-show-all-label-bg-color: #f0f0f0;
+  --lyte-crux-subform-show-all-label-border-color: #D2D9E0;
+  --lyte-crux-subform-save-and-cancel-btn-border-color: #bbb;
+  --lyte-crux-subform-save-btn-bg-color: #4daeee;
+  --lyte-crux-subform-save-btn-border-color: #4daeee;
+  --lyte-crux-subform-save-before-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-subform-row-edit-mode-td-border-color: #4CA2FB;
+  --lyte-crux-subform-edit-mode-td-border-color: #edf0f4;
+  --lyte-crux-subform-row-edit-mode-td-bg-color: #f7f7fb;
+  --lyte-crux-subform-row-edit-mode-td-first-child-border-color: #4CA2FB;
+  --lyte-crux-subform-row-edit-mode-td-last-child-border-color: #4CA2FB;
+  --lyte-crux-subform-highlight-row-bg-color: #fffced;
+  --lyte-crux-subform-row-animation-bg-highlight-color: #fffced;
+  --lyte-crux-subform-row-animation-bg-white-color: var(--crux-element-bg-color);
+  --lyte-crux-subform-table-file-upload-btn-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-subform-table-no-result-border-color: #e5e5e5;
+  --lyte-crux-subform-table-sticky-column-border-color: rgba(0, 0, 0, 0.2);
+  --lyte-crux-subform-dot-bullet-bg-color: #ccc;
+  --lyte-crux-subform-placeholder-loader-bg-color: #F0F4FF;
+  --lyte-crux-subform-scroll-top-action-label-color: var(--crux-base-text-color);
+  --lyte-crux-subform-agg-td-label-color: var(--crux-base-text-color);
+  --lyte-crux-subform-table-no-result-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-subform-table-td-freeze-input-btn-bg-color: var(--crux-element-disabled-bg-color);
+  --lyte-crux-subform-lyte-num-disabled-border-color: var(--crux-element-disabled-bg-color);
+  --lyte-crux-subform-textarea-disabled-pseudo-border-color: var(--crux-element-disabled-bg-color);
+  --lyte-crux-subform-placeholder-loader-bg-gradient-color: linear-gradient(to right, #F0F4FF 8%, #E2EEFF 18%, #F0F4FF 33%);
+  --lyte-crux-subform-table-file-upload-btn-border-color: var(--crux-element-border-color);
+  --lyte-crux-subform-table-bg-color: var(bg_white);
+}
+/*# sourceMappingURL=crux-subform-variables.css.map */

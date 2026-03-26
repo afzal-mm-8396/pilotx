@@ -1,0 +1,36 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+.getRootVariables(){
+    --@{cssPrefix}-color-palette-dropper-border-color : #dae0e3;
+    --@{cssPrefix}-color-palette-dropper-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-color-palette-dropper-hover-border-color: var(--crux-element-border-color);
+    --@{cssPrefix}-color-palette-dropper-hover-box-shadow-color: #c3c6ca;
+    --@{cssPrefix}-color-palette-popup-opened-hover-bg-color: #3c9df7;
+    --@{cssPrefix}-color-palette-popup-opened-hover-box-shadow-color: var(--crux-element-focus-shadow-color);
+    --@{cssPrefix}-color-palette-text-container-bg-color: #4ea8dd;
+    --@{cssPrefix}-color-palette-text-container-before-border-color: rgba(0,0,0,.2);
+    --@{cssPrefix}-color-palette-slider-circle-border-color: rgba(0,0,0,.5);
+    --@{cssPrefix}-color-palette-proceed-btn-border-color: #ebebeb;
+    --@{cssPrefix}-color-palette-popup-content-no-fill-border-color: #adadad;
+    --@{cssPrefix}-color-palette-popup-circle-no-fill-after-bg-color: #f27f7e;
+    --@{cssPrefix}-color-palette-popup-circle-hover-after-border-color: rgba(0,0,0,.3);
+    --@{cssPrefix}-color-palette-dropper-circle-before-border-color: rgba(0,0,0,.2);
+    --@{cssPrefix}-color-palette-dropper-circle-no-fill-after-bg-color: #f27f7e;
+    --@{cssPrefix}-color-palette-tags-popup-border-color: rgba(0,0,0,0.2);
+    --@{cssPrefix}-color-palette-tags-popup-infinite-scroll-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-color-palette-picker-icon-color: var(--crux-base-icon-color);
+    --@{cssPrefix}-color-palette-more-btn-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-color-palette-tags-popup-header-border-color: #d7e2ed;
+    --@{cssPrefix}-color-palette-more-btn-border-color: #E8F0F8;
+
+}

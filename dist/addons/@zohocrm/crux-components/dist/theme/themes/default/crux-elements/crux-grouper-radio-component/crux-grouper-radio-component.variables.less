@@ -1,0 +1,229 @@
+@cxGroupRadioBtnViewTagBr: rgba(0,0,0,0.2);
+// .cruxGrouperRadioComponentMixin(){
+//     @color: @cxLabelColor;
+// }
+.cxGrouperRadioElementLabelMixin() {
+    @margin-right: 30px;
+}
+
+.cxGrouperRadioContMixin(){
+	@border: 0;
+	@padding: 0;
+    @margin: 0;
+    @min-w: 0;
+    @max-w: 100%;
+}
+
+.cxGrouperRadioContSingleChoiceMixin(){
+    @flex-basis: 100%;
+}
+
+.cxGrouperGroupBtnMixin(){
+    @border: 1px solid @cxGrouperRadioBtnBorder;
+    @border-radius : 6px;
+    @w: 100%;
+}
+
+.cxGrouperGroupBtnMandatoryMixin(){
+    @w: 0px;
+    @top: 0px;
+    @bottom: 0px;
+    @left: -1px;
+    @border-radius: 3px 0 0 3px;
+    @border-left: 3px solid @cxGrouperGroupBtnMandatoryBorder;
+    @bg: 0 0!important;
+    @z-index: 3;
+}
+
+.cxGrouperRadioBtnMandatoryMixin(){
+    @border-radius: 6px 0 0 6px;
+    @w: 4px;
+}
+
+.cxGrouperGroupBtnElemMixin(){
+    @padding: 8px 15px;
+    @border-right: 1px solid @cxGrouperRadioBtnBorder;
+    // @min-w: 55px;
+    @font-size: @cxFontSize14px;
+    @max-w: fit-content;
+}
+
+.cxGrouperGroupBtnElemFocusMixin(){
+    @outline: none;
+}
+
+.cxGroupBtnFocusedMixin(){
+    @outline: 2px solid @cxGrouperGroupBtnFocusBorder;
+    @z-index: 1;
+    @outline-offset: -1px;
+}
+
+.cxGroupBtnErrorFocusedMixin(){
+    @outline: none;
+}
+
+.cxGrouperGroupBtnElemFirstChildMixin(){
+    @border-radius: 5px 0 0 5px;
+}
+
+.cxGrouperGroupBtnElemLastChildMixin(){
+    @border-radius: 0 5px 5px 0;
+    @border-right: none;
+}
+
+.cxGrouperGroupBtnSingleElemMixin(){
+    @border-radius: 5px;
+}
+
+.cxGrouperInputDisabledMixin(){
+    @opacity: 0.5;
+}
+
+.cxGrouperGroupBtnDisabledElemMixin(){
+    @bg: @cxGrouperGroupBtnDisabledBg !important;
+}
+
+.cxGrouperTickIconMixin(){
+    @w: 11px;
+    @min-w: 11px;
+    @h:9px;
+    @margin-right: 5px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -16px -13px;
+    @bg-color: @cxGrouperRadioBaseTickIconBg;
+}
+
+.cxGrouperWhiteTickIconMixin(){
+    // @bg-pos: -316px -115px;
+    @bg-color: @cxGrouperRadioWhiteTickIconBg;
+}
+
+.cxGrouperGroupBtnDefaultMixin(){
+    @bg-color: @cxGrouperRadioBtnDefaultSelectBg;
+}
+
+// .cxGrouperGroupBtnElemSeletedMixin(){
+//     @min-w: 75px;
+// }
+
+.cxGrouperRadioBtnMixin(){
+    @border-radius: 6px;
+    @border: 1px solid transparent;
+    @w: 100%;
+}
+
+.cxMandatoryGrouperRadioBtnMixin(){
+    @padding-left: 9px;
+}
+
+.cxMandatoryOptEnabledRadioBtnMixin(){
+    @padding-left: 0px;
+}
+
+.cxGrouperRadioBtnBgTagMixin(){
+    @padding: 3px 0px;
+    @border-radius: 100px;
+    @border: 1px solid transparent;
+    @w: 100%;
+    @z-index: 1;
+}
+
+.cxGrouperRadioBtnLyteRadioNotLastChildMixin(){
+    @margin-bottom: 4px;
+}
+
+.cxGrouperRadioBtnResetMixin(){
+    @padding: 5px 0px 0px;
+    @color: @cxGrouperRadioBtnResetColor;
+}
+
+.cxGrouperRadioBtnDisableResetMixin(){
+    @opacity: 0.5;
+}
+
+.cxGrouperRadioBtnBgTagHoverSelectedMixin(){
+    @border: 1px solid @cxGrouperRadioColorEnableBtnBorder;
+    @padding: 3px 9px;
+}
+
+// .cxGrouperRadioBtnDefaultSelectedMixin(){
+//     @bg-color: #EDF6FF;
+// }
+
+.cxGrouperRadioBtnDummyLabelMixin(){
+	@left: 0px;
+	@top: 0px;
+    @bottom: -1px;
+    @right: 0px;
+}
+
+.cxGrouperBreakFlexWrapMixin(){
+    @flex-basis: 100%;
+}
+
+.cxGrouperColorFFFMixin(){
+    @color: @cxGrouperRadioDefaultBg;
+}
+
+.cxGrouperBtnNoneOptionMixin(){
+    @opacity: 1;
+}
+
+.cxGrouperBtnNoneOptionAfterMixin(){
+    @w: 10px;
+    @h: 1px;
+    @bg: @cxGrouperRadioBtnEmptyIconBg;
+    @opacity: 0.35;
+}
+
+.cxGrouperRadioBtnInputMixin(){
+    @margin-top: 4px;
+    @margin-right: 9px;
+}
+
+.cxGrouperRadioMandatoryErrorMixin(){
+    @border-color: @cxGrouperRadioBtnErrorBorder;
+}
+
+.cxGrouperRadioBtnRadioLableMixin(){
+    @max-w: 100%;
+}
+
+.cxSelectionErrorRadioBtnMixin(){
+    @border-color: @cxGrouperRadioBtnErrorBorder;
+}
+
+.cxGrouperRadioBtnCheckedMandErrorMixin(){
+    @border-color: @cxGrouperRadioBtnErrorBorder;
+}
+
+.cxGrouperRadioBtnMandErrorMixin{
+    @outline: none;
+    @border-color: @cxGrouperRadioBtnErrorBorder;
+}
+
+.cxSelectionErrorRadioBtnCheckMixin(){
+    @bg: @cxGrouperRadioBtnErrorBg;
+}
+
+.cxGrouperGroupBtnSelectionErrorMixin(){
+    @outline: 1px solid @cxGrouperRadioBtnErrorBorder;
+    @border-color: transparent;
+    @z-index: 2;
+}
+
+.cxGrouperRadioBtnViewModeLayerMixin(){
+    @bg: @cxGrouperRadioBtnViewModeBg; 
+    @border-color: @cxGrouperRadioBtnViewModeBr;
+    @outline: none;
+}
+
+.cxGrouperRadioBtnViewModeCheckedLayerMixin(){
+    @opacity: 0.5;
+}
+
+.cxGroupRadioBtnViewTagMixin(){
+    @padding: 2px 11px;
+    @border-radius: 12px;
+    @border: 1px solid @cxGroupRadioBtnViewTagBr;    
+}

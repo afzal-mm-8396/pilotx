@@ -1,0 +1,53 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-grouper-radio-btn-border-color: var(--crux-element-border-color);
+  --lyte-crux-grouper-radio-btn-default-select-bg-color: #EDF6FF;
+  --lyte-crux-grouper-radio-btn-error-border-color: #FF5D5A;
+  --lyte-crux-grouper-radio-btn-error-bg-color: #FF5D5A;
+  --lyte-crux-grouper-radio-color-enable-btn-border-color: rgba(0, 0, 0, 0.2);
+  --lyte-crux-grouper-radio-btn-empty-icon-bg-color: #000;
+  --lyte-crux-grouper-radio-base-tick-icon-bg-color: var(--crux-base-icon-color);
+  --lyte-crux-grouper-radio-white-tick-icon-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-grouper-radio-default-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-grouper-group-btn-focus-border-color: #59A6E9;
+  --lyte-crux-grouper-group-btn-disabled-bg-color: #F4F5F6;
+  --lyte-crux-grouper-group-btn-view-mode-bg-color: #F5F5F5;
+  --lyte-crux-grouper-group-btn-view-mode-border-color: #DDDDDD;
+  --lyte-crux-grouper-group-btn-reset-color: var(--crux-link-color);
+  --lyte-crux-grouper-group-btn-mandatory-color: #FF5D5A;
+}
+/*# sourceMappingURL=crux-grouper-radio-component-variables.css.map */

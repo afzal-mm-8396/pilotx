@@ -1,0 +1,64 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-permission-denied-alert/crux-permission-denied-alert.variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-permission-denied-alert";
+
+.cxPermissionDeniedAlert .alertPopup{
+    .cxPermissionDeniedAlertPopMixin();
+	max-width: @max-w;
+    border-radius: @border-radius;
+    padding: @padding;
+}
+.cxPermissionDeniedAlert lyte-alert-header {
+    .cxPermissionDeniedAlertHeaderMixin();
+    font-size: @font-size;
+    padding: @padding;
+    font-family: @font-family;
+    display: flex;
+    align-items: flex-start;
+    // align-items: center;
+}
+lyte-alert-header.cxPermDenyWithIcon {
+    .cxPermissionDeniedAlertHeaderWithIconMixin();
+    // padding: @padding;
+}
+.cxPermissionDeniedAlert lyte-alert-content {
+    .cxPermissionDeniedAlertContentMixin();
+	font-size: @font-size;
+    padding: @padding;
+}
+// .cxPermissionDeniedAlert lyte-alert-content.cxPermDenyWithIcon {
+//     .cxPermissionDeniedAlertWithIconMixin();
+//     @{property-padding-left}: @padding-left; 
+//Overlaps conflict b/w .cxAlertWrapper and .cxPermissionDeniedAlert
+// }
+/*
+lyte-alert-content.cxPermDenyWithIcon {
+    .cxPermissionDeniedAlertContentWithIconMixin();
+    @{property-margin-left}: @margin-left;
+}
+*/
+.cxPermissionDeniedAlert .alertFooter {
+    .cxPermissionDeniedAlertFooterMixin();
+	padding: @padding;
+    border-radius: @border-radius;
+}
+.cxPermissionDeniedIcon {
+    .cxPermissionDeniedIconMixin();
+    background-image: @bg-img;
+    background-position: @bg-pos;
+    width: @w;
+    height: @h;
+    @{property-margin-right}: @margin-right;
+    display: @display;
+}
+.cxPermissionDeniedText {
+    .cxPermissionDeniedTextMixin();
+    flex: @flex;
+    padding-top: @padding-top;
+}

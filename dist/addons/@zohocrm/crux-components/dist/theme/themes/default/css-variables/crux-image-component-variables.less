@@ -1,0 +1,32 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-image-preview-overlay-bg-color: rgba(0, 0, 0, 0.5);
+    --@{cssPrefix}-image-camera-icon-color: #fff;
+    --@{cssPrefix}-image-alphabet-text-color: #fff;
+    --@{cssPrefix}-image-loader-bg-color: #e7f2ff;
+    --@{cssPrefix}-image-loader-animation-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-image-loader-animation-box-shadow-color: #fff;
+    --@{cssPrefix}-image-list-border-color: #aaa;
+    --@{cssPrefix}-image-list-hover-bg-color: rgba(0, 0, 0, 0.5);
+    --@{cssPrefix}-image-list-select-border-color: #338CF0;
+    --@{cssPrefix}-image-list-select-box-shadow-color: rgba(0, 0, 0, 0.30);
+    --@{cssPrefix}-image-list-delete-icon-color: #fff;
+    --@{cssPrefix}-image-list-delete-icon-hover-color: #FF5D5A;
+    --@{cssPrefix}-image-list-preview-icon-color: #fff;
+    --@{cssPrefix}-image-hyphen-icon-color: #616E88;
+    --@{cssPrefix}-image-upload-icon-color: #616E88;
+    --@{cssPrefix}-image-list-collapse-text-color: #338CF0;
+    --@{cssPrefix}-image-subform-show-more-icon-bg-color: #338CF0;
+}

@@ -1,0 +1,622 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/* CRUX Single File Upload Component Mixin Starts */
+/* CRUX Single File Upload Component Mixin Ends */
+/* CRUX Single File Upload Component Mixin Starts */
+/* CRUX Single File Upload Component Mixin Ends */
+/*********************************************************
+        File Upload Button CSS
+        1. File Upload Basic Styles
+        2. Uploaded Files Section Styling
+        3. mandatory Styling
+        4. File Upload Options - Single, Multiple, Drag and Drop etc
+        5. Error Message and Border Styling
+        6. Disabled/ ReadOnly Styling
+
+**********************************************************/
+/****************************************************************/
+.cxFileUploadButton {
+  width: 100%;
+  display: block;
+  margin: 0px;
+}
+.cxFileUploadButton .cxFileUpCompPlaceholder {
+  font-family: 'LatoRegular', sans-serif;
+  max-width: 100%;
+  flex: 1;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+  color: #A2A9B7;
+  padding: 8px 30px 8px 10px;
+}
+.cxFileUploadButton .lyte-button,
+.cxFileUploadButton .lyte-button.lyteSecondary {
+  /* outline: 2px solid red; */
+  width: 100%;
+  display: block;
+  border: 1px solid var(--lyte-crux-input-border-color);
+  border-radius: 6px;
+  background: var(--lyte-crux-input-bg-color);
+  color: var(--lyte-crux-input-placeholder-text-color);
+  text-align: left;
+  padding: 0px;
+  position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.cxFileUploadButton .lyte-button:hover {
+  border: 1px solid var(--lyte-crux-input-hover-border-color);
+}
+.cxFileUploadButton .lyte-button:focus,
+.cxFileUploadButton .lyte-button.lyteMenuSelected {
+  border-color: var(--lyte-crux-input-focus-border-color);
+  box-shadow: 0 0 6px var(--lyte-crux-input-focus-box-shadow-color);
+  outline: none;
+}
+.cxFileUploadButton .cxFileUpCompDropBtnLabel {
+  padding: 8px 30px 8px 10px;
+  color: #A2A9B7;
+  flex: 1;
+}
+.cxFileUploadButton .lyte-button .cxFileUpCompBtnYield {
+  width: 100%;
+}
+.cxFileUploadButton .lyte-button .dropdown {
+  /*.cxboxdropdownDropdownIcon(); */
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -1px -2px;
+  width: 8px;
+  height: 4px;
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 2px);
+  transform: scale(1.3);
+  opacity: 0.5;
+}
+.cxFileUploadCreateWrap {
+  position: relative;
+}
+/****************************************************************
+    1. File Upload Basic Styles 
+    2. Menu & Uploaded Files Section Styling 
+****************************************************************/
+.cxFileMenuItem lyte-menu-label {
+  display: flex;
+  position: relative;
+  padding-left: 25px;
+}
+.cxFileMenuItem lyte-menu-item {
+  padding: 7px 15px 7px 25px;
+  position: relative;
+}
+.cxFileMenuItem .cxFileUploadSprite {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  width: 17px;
+  height: 17px;
+}
+.cxFileUploadContainer ul {
+  margin: 0;
+  padding: 0;
+}
+.cxFileUploadContainer li {
+  background: var(--lyte-crux-file-upload-comp-list-bg-color);
+  border: 1px solid var(--lyte-crux-file-upload-comp-list-border-color);
+  border-radius: 6px;
+  list-style: none;
+  padding: 7px 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  line-height: 16px;
+  cursor: pointer;
+}
+crux-file-upload-component[cx-prop-from="view"] .cxFileUploadContainer li:first-of-type {
+  margin-top: 0;
+}
+.cxFileUploadDetail {
+  padding-left: 24px;
+  padding-right: 28px;
+  position: relative;
+  flex: 1;
+  font-size: 13px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.cxFileUploadViewContainer .cxFileUploadDetail {
+  padding-right: 0px;
+}
+.cxFileUploadDetail .cxFileUploadTypeIconWrap {
+  position: absolute;
+  margin-right: 10px;
+  left: 0;
+  width: 17px;
+}
+.cxFileUpdCompWrappedNameDiv .cxFileUploadTypeIconWrap {
+  align-self: flex-start;
+}
+.cxFileUploadSprite {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  display: inline-block;
+  background-position: -321px -150px;
+  width: 15px;
+  height: 17px;
+}
+.cxFileUploadName {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cxFileUpdCompWrappedName {
+  word-break: break-all;
+  white-space: normal;
+}
+.cxFileUploadSize {
+  color: var(--lyte-crux-file-upload-comp-size-text-color);
+  white-space: nowrap;
+}
+.cxFileUploadContainer .cxFileUploadRemoveIcon,
+.cxFileUploadContainer .cxFileUploadLoadingIcon {
+  display: none;
+}
+.cxFileUploadContainer li:focus-visible .cxFileUploadRemoveIcon,
+.cxFileUploadContainer li:hover .cxFileUploadRemoveIcon {
+  display: block;
+}
+.cxFileUploadContainer li:hover .cxFileUploadWarningIcon,
+.cxFileUploadContainer li:focus-visible .cxFileUploadTickIcon,
+.cxFileUploadContainer li:hover .cxFileUploadTickIcon {
+  display: none;
+}
+.cxFileUploadStatus {
+  align-self: flex-end;
+  height: fit-content;
+  position: absolute;
+  inset: 0px auto;
+  right: 10px;
+  margin: auto;
+  display: flex;
+}
+.cxFileUploadDriveLogos {
+  position: absolute;
+  left: 0;
+}
+/****************************************************************
+    4. File Upload - All Icons 
+****************************************************************/
+.cxFileUploadModalLoaderIcon {
+  width: 32px;
+  height: 32px;
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-size: 100%;
+  display: inline-block;
+}
+.cxFileUploadModalAttachmentTypeIcon {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -321px -150px;
+  width: 15px;
+  height: 17px;
+  margin-right: 5px;
+}
+.cxFileUploadModalAttachmentName {
+  flex-grow: 1;
+}
+.cxFileUpCompIcon_allfile,
+.cxFileUploadIcon_html {
+  background-position: -321px -150px;
+  width: 15px;
+  height: 17px;
+}
+/*File Upload Menu icons Starts */
+.cxFileUploadIcon_uploadfile {
+  background-position: -111px -176px;
+  width: 14px;
+  height: 17px;
+}
+.cxFileUploadIcon_documents {
+  background-position: -132px -175px;
+  width: 15px;
+  height: 17px;
+}
+.cxFileUploadIcon_zwdrive {
+  background-position: -155px -176px;
+  width: 17px;
+  height: 15px;
+}
+.cxFileUploadIcon_zdocs {
+  background-position: -180px -176px;
+  width: 17px;
+  height: 15px;
+}
+.cxFileUploadIcon_gdrive {
+  background-position: -204px -177px;
+  width: 17px;
+  height: 15px;
+}
+/*File Upload Menu icons Ends */
+.cxFileUploadIcon_image {
+  background-position: -274px -151px;
+  width: 17px;
+  height: 15px;
+}
+.cxFileUploadIcon_pdf {
+  background-position: -181px -150px;
+  width: 15px;
+  height: 17px;
+}
+.cxFileUploadIcon_zip {
+  background-position: -226px -150px;
+  width: 15px;
+  height: 17px;
+}
+.cxFileUploadIcon_video {
+  background-position: -113px -152px;
+  width: 17px;
+  height: 14px;
+}
+.cxFileUploadIcon_audio {
+  background-position: -205px -150px;
+  width: 17px;
+  height: 17px;
+}
+.cxFileUploadIcon_docx {
+  background-position: -159px -150px;
+  width: 15px;
+  height: 17px;
+}
+.cxFileUploadIcon_ppt {
+  background-position: -298px -150px;
+  width: 15px;
+  height: 17px;
+}
+.cxFileUploadIcon_notes {
+  background-position: -137px -150px;
+  width: 15px;
+  height: 17px;
+}
+/*
+ppt
+audio
+note
+*/
+.cxFileUploadIcon_xlsx,
+.cxFileUploadIcon_csv,
+.cxFileUploadIcon_xls {
+  background-position: -251px -150px;
+  width: 15px;
+  height: 17px;
+}
+.cxFileUploadTickIcon {
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -229px -177px;
+  mask-position: -229px -177px;
+  background-color: var(--lyte-crux-file-upload-comp-success-icon-color);
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+}
+.cxFileUploadRemoveIcon {
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -250px -177px;
+  mask-position: -250px -177px;
+  background-color: var(--lyte-crux-file-upload-comp-remove-icon-color);
+  width: 14px;
+  height: 14px;
+  z-index: 1;
+  position: relative;
+}
+.cxFileUploadContainer .cxFileDownloadButtonIcon {
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -114px -201px;
+  mask-position: -114px -201px;
+  background-color: var(--lyte-crux-file-upload-comp-download-icon-color);
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  position: relative !important;
+  visibility: hidden;
+  padding-right: 0;
+  vertical-align: top;
+}
+.cxFileUploadContainer li:focus-visible .cxFileDownloadButtonIcon,
+.cxFileUploadContainer li:hover .cxFileDownloadButtonIcon {
+  visibility: visible;
+}
+.cxFileUploadIcon {
+  background-position: -271px -175px;
+  width: 17px;
+  height: 16px;
+}
+.cxFileUploadStatus .cxFileUploadRemoveIcon {
+  cursor: pointer;
+  top: 0;
+}
+.cxFileUploadLoadingIcon {
+  width: 14px;
+  height: 14px;
+}
+/****************************************************************
+    3. mandatory Styling
+
+****************************************************************/
+.cxSFileUpCompElem.mandatoryField::before,
+crux-file-upload-component .mandatoryField .lyte-button::before {
+  border-left: 3px solid var(--lyte-crux-input-mandatory-color);
+  content: '';
+  height: 100%;
+  width: 3px;
+  background: 0 0;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  border-radius: 4px 0 0 4px;
+  z-index: 1;
+}
+crux-file-upload-component .cxMandatoryOptEnabled.mandatoryField .lyte-button::before {
+  display: none !important;
+}
+/****************************************************************
+    4. File Upload Options - Single, Multiple, Drag and Drop etc
+****************************************************************/
+/* To be added in Future*/
+.cxFileUpCompReadOnly .cxFileUploadButton {
+  pointer-events: none;
+}
+.cxFileUpCompReadOnly .cxFileUploadRemoveIcon {
+  visibility: hidden;
+}
+.cxFileUpCompReadOnly .cxFileUpdCompActionIconWrap.cxRemoveFile {
+  visibility: hidden;
+}
+/****************************************************************
+     5. Error Message and Border Styling
+****************************************************************/
+crux-file-upload-component .mandatoryField.cxErrorBox .lyte-button,
+crux-file-upload-component .mandatoryField.cxErrorBox .lyte-button:focus,
+crux-file-upload-component .mandatoryField.cxErrorBox .lyte-button:active {
+  box-shadow: none;
+}
+crux-file-upload-component .mandatoryField.cxErrorBox .lyte-button {
+  border: 1px solid var(--lyte-crux-input-error-border-color);
+}
+/****************************************************************
+    6. Disabled/ ReadOnly Styling
+****************************************************************/
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button,
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button:focus,
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button:active {
+  box-shadow: none;
+}
+.cxFileUpCompReadOnly .cxFileUploadButton,
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button {
+  cursor: default;
+}
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button {
+  pointer-events: none;
+}
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button,
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button:hover,
+.cxFileUpCompReadOnly .cxFileUploadButton .lyte-button:focus,
+.cxFileUploadButton button.lyteSecondary[disabled],
+.cxFileUploadButton:hover button.lyteSecondary[disabled] {
+  border: 1px solid var(--lyte-crux-input-disabled-border-color);
+  background: var(--lyte-crux-input-disabled-bg-color);
+}
+.cxFileUploadButton .lyteMenuSelected .dropdown {
+  transform: rotate(-180deg);
+}
+.cxError .cxFileUploadButton .lyte-button,
+.cxError .cxFileUploadButton .lyte-button.lyteMenuSelected {
+  border: 1px var(--lyte-crux-file-upload-error-btn-border-color) solid;
+  box-shadow: none !important;
+}
+.cxFileUploadButton .lyte-button:disabled .dropdown {
+  pointer-events: none;
+}
+.cxFileUploadButton .lyte-button:disabled:hover {
+  border: 1px var(--lyte-crux-file-upload-disabled-btn-border-color) solid;
+}
+.cxFileUpdCompActionIconWrap {
+  position: relative;
+}
+.cxFileUpdCompActionIconWrap::before {
+  content: '';
+  display: inline-block;
+  border: 1px solid var(--lyte-crux-file-upload-comp-icon-hover-effect-border-color);
+  background: var(--lyte-crux-file-upload-comp-icon-hover-effect-bg-color);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: calc(50% - 11px);
+  top: calc(50% - 11px);
+  visibility: hidden;
+  border-radius: 100%;
+  transform: scale(0.9);
+  opacity: 0.5;
+  transition: opacity 0.1s, transform 0.1s;
+}
+.cxFileUpdCompActionIconWrap:focus-visible::before,
+.cxFileUpdCompActionIconWrap:hover::before {
+  visibility: visible;
+  transform: scale(1);
+  opacity: 1;
+}
+.cxFileUpdCompActionIconWrap:focus-visible .cxFileDownloadButtonIcon,
+.cxFileUpdCompActionIconWrap:focus-visible .cxFileUploadRemoveIcon {
+  visibility: visible;
+}
+.cxFileUpCompDownloadIconWrap {
+  margin: 0 5px 0px 10px;
+}
+.cxSFileUpCompElem.cxFileUpCompReadOnly:hover,
+.cxSFileUpCompElem.cxFileUpCompReadOnly {
+  cursor: not-allowed;
+  background: var(--lyte-crux-input-disabled-bg-color);
+  border-color: var(--lyte-crux-input-disabled-bg-color);
+}
+.cxFileUpCompReadOnly .cxSFileUploadIconWrap,
+.cxFileUpCompReadOnly .cxSFileUpPlaceholder {
+  pointer-events: none;
+}
+.cxFileUpCompReadOnly .cxFileUpCompIcon {
+  visibility: hidden;
+}
+/* CRUX Single File Upload Component Styles Starts */
+.cxSFileUpCompElem {
+  border: 1px solid var(--lyte-crux-input-border-color);
+  display: flex;
+  border-radius: 6px;
+  position: relative;
+}
+.cxSFileUpCompElem:hover {
+  border: 1px solid var(--lyte-crux-input-hover-border-color);
+}
+.cxSFileUpCompElem.cxFileCompFocus {
+  border: 1px solid var(--lyte-crux-input-focus-border-color);
+  box-shadow: var(--lyte-crux-input-focus-box-shadow-color);
+}
+.cxSFileUpCompElem.cxSFileUpCompErrorElem:hover,
+.cxSFileUpCompElem.cxSFileUpCompErrorElem {
+  border: 1px solid var(--lyte-crux-input-error-border-color);
+  box-shadow: none;
+}
+.cxSFileUpCompNameWrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 50px;
+  padding: 8px 10px;
+  position: relative;
+}
+.cxSFileUploadIconWrap {
+  padding: 8px;
+  background-color: var(--lyte-crux-input-icon-bg-color);
+  cursor: pointer;
+  border-radius: 0px 5px 5px 0px;
+}
+.cxSFileUploadIcon {
+  display: block;
+  height: 16px;
+  width: 16px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -272px -175px;
+  mask-position: -272px -175px;
+  background-color: var(--lyte-crux-file-upload-comp-upload-icon-color);
+}
+.cxSFileUpPlaceholder {
+  color: var(--lyte-crux-single-file-upload-placeholder-color);
+  display: flex;
+  flex: 1;
+  padding: 0px 10px 0px 12px;
+  align-items: center;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 20px;
+}
+.cxSFileRemoveIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: var(--lyte-crux-file-upload-comp-remove-icon-hover-effect-bg-color);
+  cursor: pointer;
+  flex-shrink: 0;
+  visibility: hidden;
+}
+.cxSFileUpCompNameWrapper:focus-visible .cxSFileRemoveIconWrap,
+.cxSFileUpCompNameWrapper:hover .cxSFileRemoveIconWrap {
+  visibility: visible;
+}
+.cxSFileRemoveIcon {
+  display: block;
+  height: 8px;
+  width: 8px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -57px -118px;
+  mask-position: -57px -118px;
+  background-color: var(--lyte-crux-file-upload-comp-remove-icon-color);
+}
+.cxSFileUpName {
+  display: flex;
+  flex: 1;
+  min-width: 20px;
+  box-sizing: border-box;
+}
+.cxSFileUpNameWithExtn {
+  padding-left: 10px;
+  min-width: 10px;
+}
+.cxSFileUpName .cxFileUploadSize {
+  padding-right: 10px;
+}
+.cxSFileUploadTypeIconWrap {
+  height: 16px;
+}
+.cxFileUploadCompStatusIcon {
+  position: absolute;
+  right: 11px;
+}
+.cxSFileUpCompNameWrapper:hover .cxFileUploadCompStatusIcon {
+  visibility: hidden;
+}
+/* CRUX Single File Upload Component Styles Ends */
+/* File Upload Component Prefix yield case styles starts */
+.cxFileUploadViewContainer {
+  display: flex;
+}
+.cxFileUploadViewContainer .cxFileUplCompViewListWrap {
+  flex: 1;
+  min-width: 10px;
+}
+/* File Upload Component Prefix yield case styles ends */
+/*# sourceMappingURL=crux-file-upload-component.css.map */

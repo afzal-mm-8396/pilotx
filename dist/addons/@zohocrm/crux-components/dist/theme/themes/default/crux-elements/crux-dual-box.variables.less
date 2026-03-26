@@ -1,0 +1,72 @@
+.cruxDualBoxLeftPanelMixin() {
+	@margin-right: 15px;
+	@margin-left: 0;
+}
+.cxDualBoxLyteBoxResetMixin() {
+	@margin: 0 10px;
+}
+.cxDualBoxLeftRightPanelMixin() {
+	@padding-top: 10px;
+}
+.cxDualBoxLyteListBoxLeftElementMixin() {
+	@padding: 7px 15px;
+}
+.cxDualBoxLyteListBoxRightElementMixin() {
+	// @padding: 7px 15px 7px 5px;
+	@padding: .cruxLESSPaddingMixin(7px 25px 7px 5px)[@padding];
+}
+.cxDualBoxDragIconMixin() {
+	@-webkit-mask-position: -165px -123px;
+	@mask-position: -165px -123px;
+	@color: @cxDualBoxDragIconColor;
+	@w: 6px;
+	@h: 18px;
+	@margin-right: 5px;
+}
+.cxDualBoxLabelMixin() {
+	@margin-right: auto;
+}
+.cxColPinActiveIconMixin() {
+	@bg-img: @cruxSprite;
+	@w: 15px;
+	@h: 15px;
+}
+.cxColPinIconMixin() {
+	@bg-pos: -266px -107px;
+}
+.cxColPinActiveIconMixin() {
+	@bg-pos: -244px -107px;
+}
+.cruxDualBoxMixin(){
+	// @border-radius: @cxBoxElementsBorderRadius;
+	@border-radius: 10px;
+}
+.cruxDualBoxAddRemoveMixin() {
+	@bg-img: none;
+	@bg-pos: none;
+	@w: 17px;
+	@h: 17px;
+	@background-color: @cxDualBoxLBAddRemoveBg;
+}
+.cruxDualBoxAddMixin() {
+	@-webkit-mask-position: -334px -87px;
+	@mask-position: -334px -87px;
+}
+.cruxDualBoxRemoveMixin() {
+	@-webkit-mask-position: -310px -87px;
+	@mask-position: -310px -87px;
+}
+.cxDualBoxMandatorySignMixin() {
+	@color: @cxDualBoxMandatorySignColor;
+}
+.cruxDualBoxNoResultsFoundMixin() {
+	@h: calc(100% - 20px);
+}
+.cxDualBoxcruxFormViewComponentMixin() {
+	@min-w: auto;
+}
+.cxDualBoxcruxFormViewLyteFieldMixin() {
+	@min-w: auto !important;
+	@background-color: inherit;
+	@max-w: 45%;
+}

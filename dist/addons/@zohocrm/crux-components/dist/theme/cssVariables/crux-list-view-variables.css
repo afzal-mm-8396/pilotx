@@ -1,0 +1,88 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-list-view-separation-radius-bg-color: #90939A;
+  --lyte-crux-list-view-un-sort-btn-border-color: #cacaca;
+  --lyte-crux-list-view-select-all-btn-color: #338CF0;
+  --lyte-crux-list-view-checkbox-border-color: #cacaca;
+  --lyte-crux-list-view-checkbox-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-list-view-checkbox-hover-border-color: #90939A;
+  --lyte-crux-list-view-checkbox-focus-border-color: #338CF0;
+  --lyte-crux-list-view-checkbox-checked-border-color: #338CF0;
+  --lyte-crux-list-view-checkbox-checked-bg-color: #338CF0;
+  --lyte-crux-list-view-checkbox-tick-icon-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-list-view-checkbox-partial-icon-bg-color: #cacaca;
+  --lyte-crux-list-view-table-menu-btn-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-list-view-table-menu-border-color: #90939A;
+  --lyte-crux-list-view-table-menu-selected-border-color: #efefef;
+  --lyte-crux-list-view-table-menu-hover-bg-color: #efefef;
+  --lyte-crux-list-view-table-menu-selected-box-shadow-color: rgba(0, 0, 0, 0.35);
+  --lyte-crux-list-view-table-menu-li-hover-color: #ebebeb;
+  --lyte-crux-list-view-table-menu-popup-border-color: #cacaca;
+  --lyte-crux-list-view-table-row-hover-bg-color: #e0e1e3;
+  --lyte-crux-list-view-table-selected-border-color: #9197a4;
+  --lyte-crux-list-view-table-icon-wrap-border-color: #90939A;
+  --lyte-crux-list-view-table-icon-wrap-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-list-view-alpha-sort-btn-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-list-view-alpha-sort-btn-border-color: transparent;
+  --lyte-crux-list-view-alpha-sort-btn-active-bg-color: #F0F0F0;
+  --lyte-crux-list-view-alpha-sort-btn-active-border-color: #c9d4e0;
+  --lyte-crux-list-view-alpha-sort-btn-edit-hover-bg-color: #DFDFDF;
+  --lyte-crux-list-view-alpha-sort-menu-selection-color: #338CF0;
+  --lyte-crux-list-view-activity-text-color: #fff;
+  --lyte-crux-list-view-activity-today-task-bg-color: #E89D25;
+  --lyte-crux-list-view-activity-later-task-bg-color: #12aa67;
+  --lyte-crux-list-view-activity-over-due-bg-color: #338CF0;
+  --lyte-crux-list-view-tick-icon-bg-color: #338CF0;
+  --lyte-crux-list-view-menu-split-border-color: #CACACA;
+  --lyte-crux-list-view-online-entity-bg-color: #12aa67;
+  --lyte-crux-list-view-loader-over-lay-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-list-view-loader-border-color: #cacaca;
+  --lyte-crux-list-view-loader-gap-border-color: #000;
+  --lyte-crux-list-view-not-found-text-color: var(--crux-no-result-color);
+  --lyte-crux-list-view-color-picklist-border-color: rgba(0, 0, 0, 0.2);
+  --lyte-crux-list-view-base-color: #313949;
+  --lyte-crux-list-view-text-area-pop-toggle-btn-border-color: #d0d6e0;
+  --lyte-crux-list-view-text-area-pop-toggle-btn-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-list-view-record-loader-bg-img: url(../../images/crux-moreloading.gif);
+  --lyte-crux-list-view-table-border-color: #d7e2ed;
+  --lyte-crux-list-view-resize-handle-bg-color: #d7e2ed;
+  --lyte-crux-list-view-resize-handle-hover-bg-color: #338CF0;
+  --lyte-crux-list-view-text-area-pop-close-btn-hover-bg-color: #E8EAF4;
+  --lyte-crux-list-view-text-red-icon-bg-color: #FF5D5A;
+  --lyte-crux-list-view-custom-popup-label-color: var(--crux-base-text-color);
+}
+/*# sourceMappingURL=crux-list-view-variables.css.map */

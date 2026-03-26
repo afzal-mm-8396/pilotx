@@ -1,0 +1,91 @@
+.cruxCreateFieldMixin(){
+    @margin-bottom: 20px;
+}
+
+.cxcreateFormComponentRowMixin(){
+    @w: 100%;
+    @padding: 0px;
+}
+.cxcreateFormComponentDropDownMixin(){
+    @padding:8px 12px ;
+    @border-radius: 6px 0px 0px 6px;
+}
+.cxSalutationElemWrapperDropDownMixin(){
+    // @border-right: 0 !important;
+    // @border-left: 0 !important;
+    // @border-top: 0 !important;
+    // @border-bottom: 0 !important;
+    @border: 0 !important;
+    @border-radius: 0;
+    @box-shadow: none !important;
+}
+.cxSalutationElemWrapperPickListMixin(){
+    @border-right: 1px solid @cxCreateFieldSalPickListBorderColor;
+}
+.cxcreateElementLabelMixin(){
+    // @padding-right: 36px; 
+    @padding-right: 35px; 
+    @w: 220px; 
+    @min-w: 20px;
+    @max-w: 220px;
+    @padding-top: 9px;
+    @color: @cxCreateFieldElementLabelColor;
+    // @cxLabelColor: var(--textColor);
+}
+.cxcreateElementLabelInHeaderMixin() {
+    @padding-right: 36px; 
+    @w: 220px; 
+    @min-w: 20px;
+    @max-w: 50%;
+    @padding-top: 9px;
+    @color: @cxCreateFieldHeaderLabelColor;
+}
+
+.cxcreateElementValueMixin(){
+    @min-w: 230px;
+    @max-w: 390px;
+    @max-h:36.5px;
+}
+
+.cxcreateSingleContElementValueMixin(){
+    @max-w: 58%;
+    @min-w: 390px;
+}
+
+.cxCreateCheckboxMixin(){
+    @padding-top: 0.7rem;
+    @padding-bottom: 0.7rem;
+}
+
+// .cxCreareFormElementValDropDownMixin(){
+//     @border: @cxCreateFrmValDropDownBorderColor;
+// }
+
+.cxSalutationElemWrapperMixin(){
+    @border: @cxCreateSalutationElementBorderColor;
+    @bg: @cxCreateSalutationElementBg;
+}
+
+.cxSalutationEleWrapHoverMixin(){
+    @border: @cxCreateSalutationEleHoverBorderColor;
+}
+.cxSalutationWrapFocusMixin(){
+    @border: @cxSalutationWrapFocusBorderColor;
+    @boxShadow: @cxSalutationWrapFocusBoxShadow;
+}
+.cxCreateSingleRadioContMixin(){
+    @padding-top: 4px;
+}
+
+/***** AUTO WIDTH ROWS STARTS *******/
+.cxAutoWidthRowLabelMixin() {
+    @w: auto; 
+    @min-w: auto;
+    @max-w: none;
+}
+.cxAutoWidthRowValueMixin() {
+    @w: 100%; 
+    @min-w: auto;
+    @max-w: none;
+}
+/***** AUTO WIDTH ROWS ENDS *******/

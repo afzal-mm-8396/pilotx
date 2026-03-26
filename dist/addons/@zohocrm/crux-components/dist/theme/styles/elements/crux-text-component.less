@@ -1,0 +1,54 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-text-component.variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-text-component";
+
+.cxElementsWrap {
+	display: inline-flex;
+}
+.cxElementsWrap.horizontal .cxElementLabel {
+	.cxElementsWrapHorizontalElementLabelMixin();
+	@{property-margin-right}: @margin-right;
+}
+.cxElementsWrap.horizontal.cxFlatAppear {
+	align-items: flex-end;
+}
+.cxElementsWrap.horizontal.cxBoxAppear {
+	align-items: center;
+}
+.cxElementsWrap.vertical {
+	flex-direction: column;
+}
+.cxElementsWrap.vertical .cxElementLabel {
+	.cxElementsWrapVerticalElementLabelMixin();
+	margin-bottom: @margin-bottom;
+	@{property-margin-right}: @margin-right;
+}
+.cxElementsWrap.vertical.cxFlatAppear .cxElementLabel {
+	.cxElementsWrapVerticalFlatAppearElementLabelMixin();
+	margin-bottom: @margin-bottom;
+}
+
+.cxTextCompExpandable .cxBoxInput.lyteInputBox:not(.lyteInputFocus) .lyteField:not(:hover){
+	.cxTextCompExpandableLyteFieldMixin();
+	border-color: @border-color;
+}
+
+.cxTextCompExpandable lyte-input,
+.cxTextCompExpandable lyte-input input{
+	.cxTextCompExpandableInputMixin();
+	max-width: @max-w;
+}
+
+crux-text-component lyte-input,
+crux-text-component .cxTextAutoCompWrapper{
+	.cxTextCompWrapperMixin();
+	flex: 1;
+	width: @w;
+	box-sizing: border-box;
+}

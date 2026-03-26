@@ -1,0 +1,359 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+.cxSelectModalcheckboxWrapper {
+  display: flex;
+  padding: 7px 20px;
+  align-items: center;
+  border-radius: 6px;
+  margin: 3px 0px;
+  position: relative;
+}
+.cxSelectModalExpModFilterDivWrap {
+  padding: 18px 0px 10px;
+  border-bottom: 1px solid var(--lyte-crux-select-modal-border-color);
+  margin-bottom: 5px;
+}
+.cxSelectModalNameAndEmailWrapper {
+  display: inline-flex;
+  padding-right: 25px;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.cxSelectModalNameAndEmailText {
+  flex: 1;
+  min-width: 0px;
+}
+.cxSelectModalcheckboxWrapper .lyteCheckBoxDefault::before {
+  vertical-align: top;
+  position: absolute;
+  right: 0px;
+}
+.cxSelectModalContainer lyte-accordion lyte-accordion-body {
+  padding-left: 0px;
+  border: none;
+}
+.cxSelectModalUserImage {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 8px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.cxSelectModalHeaderWrapper {
+  padding: 0px 30px;
+  margin: 10px 0px 7px;
+}
+.cxSelectModalContainer lyte-accordion-body {
+  padding: 0px;
+}
+.cxSelectModalContainer lyte-accordion lyte-accordion-item {
+  margin: 0px;
+  border: 0px;
+}
+.cxSelectModSearchWrap lyte-input .lyteField.lyteInputBoxSearch {
+  border: none;
+  box-shadow: none;
+}
+.cxSelModUsrLabel {
+  flex: 1;
+  overflow: hidden;
+}
+.cxSelModUsrSelActionBtn {
+  color: var(--lyte-crux-select-modal-user-selected-color);
+  cursor: pointer;
+  flex: 1;
+  text-align: left;
+  margin-right: 10px;
+}
+.cxSelectModalUserSelecteAll {
+  font-size: 0.929rem;
+  font-family: 'LatoBold', sans-serif;
+  color: var(--lyte-crux-select-modal-all-user-selected-color);
+}
+.cxSelectModalcheckboxWrapper.sortable-element {
+  cursor: move;
+}
+.cxSelectModalcheckboxWrapper.sortable-element:hover {
+  background: var(--lyte-crux-select-modal-sort-element-hover-bg-color);
+}
+.cxSelectModalcheckboxWrapper.sortable-element-selected {
+  background: var(--lyte-crux-select-modal-sort-element-bg-color);
+  box-shadow: var(--lyte-crux-select-modal-checkbox-sort-element-box-shadow-color);
+}
+.cxSelectModalDragIcon.cxDragIcon {
+  display: none;
+  position: absolute;
+  right: 6px;
+  background-color: #616E88;
+}
+.cxSelectModalAccDragSel .cxSelectModalcheckboxWrapper.sortable-element.sortable-element-selected .cxSelectModalDragIcon,
+.cxSelectModalcheckboxWrapper.sortable-element-selected .cxSelectModalDragIcon,
+.cxSelectModalcheckboxWrapper.sortable-element:hover .cxSelectModalDragIcon {
+  display: block;
+}
+.cxSelectModalAccDragSel .cxSelectModalcheckboxWrapper.sortable-element .cxSelectModalDragIcon {
+  display: none;
+}
+.cxSelectModalAccDragSel .cxSelectModalcheckboxWrapper.sortable-element:not(.lyteSortablePlaceholder):hover {
+  background: transparent;
+}
+.cxSelectModSearchWrap crux-dropdown {
+  max-width: 130px;
+}
+.cxSelectModSearchWrap .cxFakeDropButton,
+.cxSelectModSearchWrap .cxFakeDummyEventContainer:focus .cxFakeDropButton,
+.cxSelectModSearchWrap lyte-dropdown.cxBoxDropdown lyte-drop-button,
+.cxSelectModSearchWrap .cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxSelectModSearchWrap .cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button:hover {
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left: 1px solid var(--lyte-crux-select-modal-drop-btn-border-color);
+  box-shadow: none;
+}
+.cxSelectModUserSearch {
+  width: 100%;
+}
+lyte-checkbox.cxPartialSelect input[type=checkbox] + .lyteCheckBoxDefault::after {
+  content: " ";
+  display: inline-block;
+  width: 8px;
+  height: 2px;
+  background-color: var(--lyte-crux-select-modal-partial-selected-bg-color);
+  position: absolute;
+  right: 3.5px;
+  top: 8.5px;
+  border-radius: 2px;
+  transition: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.cxSelectModalContainer .lyteCheckDisabled .cxSelectModalGroupName {
+  opacity: 0.5;
+}
+.cxSelectModalGroupContainer lyte-accordion-header {
+  display: flex;
+  align-items: center;
+  padding: 0px 20px 7px;
+  margin-top: 20px;
+}
+.cxSelectModalGroupContainer lyte-accordion-header lyte-icon {
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}
+.cxSelectModalGroupContainer lyte-accordion-header lyte-icon:hover {
+  background-color: #E9EEF4;
+}
+.cxSelectModalGroupName {
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  word-break: break-word;
+}
+.cxSelectModalGroupContainer lyte-accordion-body {
+  padding: 0px;
+}
+.cxSelectModalGroupContainer lyte-accordion-item {
+  border-bottom: none;
+}
+.cxSelectModalGroupContainer .sortable-parent {
+  max-height: none;
+}
+.cxSelectModalContent {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden !important;
+  padding: 0px;
+  border-radius: 0px;
+  max-height: inherit;
+}
+.cxSelectModalWrapper.lyteModalSlideFromLeft .cxSelectModalContent,
+.cxSelectModalWrapper.lyteModalSlideFromRight .cxSelectModalContent {
+  max-height: 100%;
+  height: 100%;
+}
+.cxSelectModalContent .cxSelectModalContainer {
+  overflow-y: auto;
+  padding: 0px 10px;
+}
+.cxSelectModalLoader,
+.cxSelectModalNoResult {
+  width: 100%;
+  box-sizing: border-box;
+}
+.cxSelectModalNoResult.cxSelModWoutFooterNoRes {
+  padding-bottom: 30px;
+}
+.cxSelectModalHeader {
+  padding-bottom: 10px;
+}
+.cxSelModalDisplayLabel,
+.cxSelModalDisplayMail {
+  display: block;
+}
+.cxSelModalDisplayMail {
+  font-size: 0.857rem;
+  color: var(--lyte-crux-select-modal-display-mail-color);
+  margin-top: 5px;
+}
+.cxSelectModalcheckboxWrapper lyte-checkbox,
+.cxSelectModalcheckboxWrapper label.lyteCheckbox,
+.cxSelectModalcheckboxWrapper label.lyteCheckbox .lyteCheckBoxDefault,
+.cxSelectModalcheckboxWrapper label.lyteCheckbox .lyteCheckBoxDefault > span {
+  max-width: 100%;
+}
+.cxSelectModalCheckbox input,
+.cxSelectModalCheckbox .lyteCheckBoxDefault::before,
+.cxSelectModalCheckbox .lyteCheckBoxDefault::after {
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+}
+.cxSelectModalCheckbox .lyteCheckBoxDefault::after {
+  bottom: 4px;
+}
+.cxSelectModalCheckbox input {
+  height: 15px;
+}
+.cxSelectModalContent lyte-accordion lyte-accordion-item:first-of-type lyte-accordion-header {
+  margin-top: 3px;
+}
+.cxSelectModalAccDragSel label.lyteCheckbox,
+.cxSelectModalAccDragSel .cxSelectModalcheckboxWrapper {
+  cursor: move;
+}
+.cxSelctModalNoUserPhoto {
+  overflow: hidden;
+  background-image: url(../../images/nophoto.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+.cxSelModYield {
+  align-self: flex-start;
+}
+.cxSelectModalGroupNameWrap {
+  display: inline-flex;
+  padding-right: 25px;
+}
+.cxSelModGroupNameCheckbox .lyteCheckBoxDefault::before {
+  right: 0px;
+  position: absolute;
+}
+.cxSelectModalContent {
+  display: flex;
+}
+/************ select panel poup and page styles starts *************/
+.cxSelectPanelOnPopup lyte-popover-content,
+.cxSelectPanelOnPopup lyte-modal-content {
+  padding: 0px;
+}
+.cxSelectPanelOnPopup lyte-popover-header,
+.cxSelectPanelOnPopup lyte-modal-header {
+  padding-bottom: 10px;
+}
+.cxSelectPanelOnPopup lyte-popover-content .cxSelectModalHeaderWrapper {
+  margin-top: 15px;
+  padding: 0px 15px;
+}
+.cxSelectPanelOnPopup lyte-popover-content .cxSelectModalExpModFilterDivWrap {
+  margin: 0px 20px 5px;
+}
+.cxSelectPanelOnPopup lyte-popover-content .cxSelectModalContainer {
+  padding: 0px 15px;
+}
+.cxSelectPanelOnPopup .lyteModalSlideFromLeft .cxSelectModalContent,
+.cxSelectPanelOnPopup .lyteModalSlideFromRight .cxSelectModalContent {
+  max-height: 100%;
+  height: 100%;
+}
+/************ select panel poup and page styles ends *************/
+/*# sourceMappingURL=crux-select-panel.css.map */

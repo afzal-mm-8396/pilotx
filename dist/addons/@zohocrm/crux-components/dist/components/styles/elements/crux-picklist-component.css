@@ -1,0 +1,76 @@
+.cxNoneSelected .lyteDropdownLabel {
+	color: #999; 
+}
+.colorEnabledPicklist:not(.colorEnabledPKNone) .activitesColor,
+crux-picklist-component .colorEnabledPicklist:not(.colorEnabledPKNone) .activitesColor {
+	top: 11px;
+}
+.colorEnabledPicklist:not(.colorEnabledPKNone) {
+	position: relative;
+}
+/* .colorEnabledPicklist:not(.colorEnabledPKNone) lyte-drop-button, 
+crm-create-fields .colorEnabledPicklist:not(.colorEnabledPKNone) lyte-drop-button {
+	padding: 8px 30px 8px 33px;
+	position: relative;
+} */
+.colorEnabledPicklist:not(.colorEnabledPKNone) lyte-dropdown:not(.cxDropdownIconNodePresent) lyte-drop-button, 
+crm-create-fields .colorEnabledPicklist:not(.colorEnabledPKNone) lyte-drop-button {
+	padding: 8px 30px 8px 33px;
+	position: relative;
+}
+crux-picklist-component .colorEnabledPicklist:not(.colorEnabledPKNone) lyte-dropdown:not(.cxDropdownIconNodePresent) lyte-drop-button {
+	padding: 8px 30px 8px 33px;
+}
+.colorEnabledPKDropBox lyte-drop-item:not(.colorEnabledSelect2None) {
+	padding: 8px 25px 8px 50px;
+}
+.colorEnabledPicklist.colorEnabledPKNone .activitesColor,
+.colorEnabledPKDropBox .colorEnabledSelect2None .activitesColor,
+crux-picklist-component .colorEnabledPKNone .activitesColor {
+	display: none !important;
+}
+.colorEnabledPKDropBox .activitesColor {
+	top: calc(50% - 7px);
+	left: 25px;
+}
+.cxDropbox lyte-drop-item.cxDropboxNoneItem[selected="true"]::before {
+	content: none;
+}
+crux-picklist-component lyte-text {   
+    vertical-align: top;
+}
+
+crux-picklist-component .activitesColor{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    z-index: 1;
+    padding: 0 !important;
+}
+
+crux-picklist-component .activitesColor::after {
+    content: '';
+    position: absolute;
+    border: 1px solid rgba(0, 0, 0, .2);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+crux-picklist-component .colorAppliedPicklist{
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.cxElementDisabled lyte-dropdown[lt-prop-type="multisearch"] .lyteMultipleSelect .lyteField {
+	border: none !important;
+}
+.cxNoUserSelected .lyteDummyEventContainer:focus lyte-drop-button {
+	box-shadow: none !important;
+}

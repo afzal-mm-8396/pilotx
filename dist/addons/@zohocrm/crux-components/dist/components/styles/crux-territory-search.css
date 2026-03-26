@@ -1,0 +1,20 @@
+crux-territory-search lyte-drop-button {
+	padding: 0;
+}
+.cxTerritorySearchElement .lyteField {
+	border: 0 !important;
+	box-shadow: none !important;
+}
+.cxTerritorySearchDropItem {
+	display: flex;
+	flex-direction: column;
+}
+.cxTerritorySearchDropItemPrimaryLabel {
+	color: #191A1B;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+.cxTerritorySearchDropItemSecondaryLabel {
+	color: #585B5F;
+	font-size: 13px;
+}

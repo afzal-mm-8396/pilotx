@@ -1,0 +1,70 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-textarea-border-color: var(--crux-element-border-color);
+  --lyte-crux-textarea-text-color: var(--crux-base-text-color);
+  --lyte-crux-textarea-label-text-color: #aaa;
+  --lyte-crux-textarea-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-textarea-placeholder-color: var(--crux-placeholder-color);
+  --lyte-crux-textarea-box-shadow-color: var(--crux-element-hover-shadow-color);
+  --lyte-crux-textarea-mandatory-color: var(--crux-mandatory-color);
+  --lyte-crux-textarea-hover-border-color: var(--crux-element-hover-border-color);
+  --lyte-crux-textarea-hover-text-color: var(--crux-base-text-color);
+  --lyte-crux-textarea-hover-label-text-color: #aaa;
+  --lyte-crux-textarea-hover-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-textarea-hover-box-shadow-color: var(--crux-element-hover-shadow-color);
+  --lyte-crux-textarea-focus-border-color: var(--crux-element-focus-border-color);
+  --lyte-crux-textarea-focus-text-color: var(--crux-base-text-color);
+  --lyte-crux-textarea-focus-label-text-color: #aaa;
+  --lyte-crux-textarea-focus-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-textarea-focus-box-shadow-color: var(--crux-element-focus-shadow-color);
+  --lyte-crux-textarea-error-border-color: var(--crux-element-error-border-color);
+  --lyte-crux-textarea-error-text-color: var(--crux-element-error-border-color);
+  --lyte-crux-textarea-readonly-border-color: var(--crux-element-hover-border-color);
+  --lyte-crux-textarea-no-result-text-color: var(--crux-no-result-color);
+}
+/********************** 
+    Common Color State to be considered for Dropdown, Input States
+    
+    1. Default State Color
+    2. Hover State Color
+    3. Focus State Color
+    4. Error State Color
+    5. ReadOnly State Color
+    6. Disabled State Color
+    7. Not Found State Color
+**********************/
+/*# sourceMappingURL=crux-textarea-component-variables.css.map */

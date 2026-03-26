@@ -1,0 +1,144 @@
+.cxStarEmptyMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -68px -199px;
+	@w: 14px;
+	@h: 15px;
+}
+.cxStarSelectedMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -89px -199px;
+	@w: 14px;
+	@h: 15px;
+}	
+.cxStarFavoritedMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -378px -177px;
+	@w: 20px;
+	@h: 20px;
+}
+// .cxStarMoveIconMixin() {
+// 	@bg-img: @cruxSprite;
+// 	@bg-pos: -325px -177px;
+// 	@w: 6px;
+// 	@h: 11px;
+// }
+.cxCvSortableItemSelectedMixin(){
+	@color: var(--baseColor);
+    @background: var(--dropdownItemSelected);
+}
+
+.cxCvAccordionArwMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -1px -2px;
+	@bg-color: @cxIconBaseMaskBg;
+	@w: 8px;
+	@h: 4px;
+	@margin-right: 5px;
+	@transform: rotate(-90deg);
+	@top: -3px;
+	@left: -2px;
+	@transition: all 0.15s ease-in;
+}
+
+.cxCvAccordionArwOnActiveMixin(){
+	@transform: rotate(0deg);
+}
+
+.cxStarFavoritedSortableMixin() {
+	@bg-img: @cruxSprite;
+	// @bg-pos: -165px -123px;
+	@bg-pos: -325px -177px;
+	@h: 11px;
+	@w: 6px;
+    @display: inline-block;
+    @right: 10px;
+    @position: absolute;
+	@top: 11px;
+}
+.cxCvDropBoxAccordionHeaderMixin() {
+	@padding-left:12px;
+	@padding-right:25px;
+	@font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+	@font-size:@cxFontSize15px;
+	@padding-top: 10px;
+}
+.cxCvDropdownMixin() {
+    @overflow: hidden;
+    @text-overflow: ellipsis;
+    @display: inline-block;
+    @vertical-align: top;
+	@max-width: 196px;
+	@font-family: @cruxPrimaryFont;
+	// @font-family: @cruxSecondaryFont;
+}
+.cxNoResultStyleMixin() {
+	@padding: .cruxLESSPaddingMixin(8px 15px 8px 20px)[@padding];
+    @text-align: center;
+    @font-size: @cxFontSize14px;
+    @color: @cxCVDropDownNoResultColor;
+	@margin-bottom: 5px;
+}
+.cxStarMixin() {
+	@bg-img: @cruxSprite;
+	@display: inline-block;
+	@width: 14px;
+    @height: 14px;
+    @position: absolute;
+    @right: 22px;
+    @top: 8px;
+	@visibility: hidden;
+    @opacity: 0;
+	@transition: opacity 0.2s ease-in;
+}
+.cxCvDropBoxAccordionDropItemMixin(){
+	@right: 35px;
+}
+
+.cxCvDropBodyMixin(){
+	@max-h: calc(90vh - 200px);
+}
+
+.cxCvDropBodyAnimationMixin(){
+	@transition: height 0.1s;
+}
+
+.cxCvAccordionBodyMixin(){
+	@padding: 0px;
+}
+
+.cxCvDropBoxHeaderMixin(){
+	@padding-bottom: 5px;
+}
+
+.cxCvDropBoxMixin(){
+	@w: 240px;
+	@z-index: 290;
+}
+
+.cxCvDotLoaderWrapMixin(){
+	@max-h: 50px;
+}
+
+.cxCvDropItemFavStarIconMixin(){
+	@opacity: 1;
+}
+
+.cxCvFavoritesAccordionHeader(){
+	@padding-left: 25px;
+	@padding-top: 5px;
+}
+
+.cxCVPrefixYieldWrapperMixin(){
+	@h: 15px;
+	// @margin: 0px 5px;
+}
+
+.cxCVAccHeaderMixin(){
+	@color: @cxCVAccordionHeaderColor;
+}
+
+.cxCvDisabledAccordionArwMixin(){
+	@bg-color: @cxCVDisabledAccordionArrowBg;
+}
+

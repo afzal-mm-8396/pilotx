@@ -1,0 +1,204 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+
+@import './crux-gobal-mixins.less';
+
+/******** GLOBAL File Imports Ends *********/
+
+
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+
+@cssPrefix: lyte-crux; //css variable prefix class
+@importCssVariable: false; //loading css variable in each file
+@rtlEnabled: false;
+
+/******** GLOBAL Condition Ends *********/
+
+
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+
+@property-left: left;
+@property-right: right;
+@property-margin-right: margin-right;
+@property-margin-left: margin-left;
+@property-padding-left: padding-left;
+@property-padding-right: padding-right;
+@property-border-right: border-right;
+@property-border-left: border-left;
+@property-border-left-color: border-left-color;
+@property-border-right-color: border-right-color;
+@property-border-bottom-left-radius: border-bottom-left-radius;
+@property-border-bottom-right-radius: border-bottom-right-radius;
+@property-border-top-right-radius: border-top-right-radius;
+@property-border-top-left-radius: border-top-left-radius;
+@property-border-right-width: border-right-width;
+@property-border-left-width: border-left-width;
+
+@value-float-left: left;
+@value-textalign-left: left;
+@value-textalign-right: right;
+@value-transition-left: left;
+@value-sw-resize: sw-resize;
+@value-se-resize: se-resize;
+@value-nw-resize: nw-resize;
+@value-ne-resize: ne-resize;
+@value-rotate-0deg: rotate(0deg);
+@value-rotate-90deg: rotate(90deg);
+@value-rotate-180deg: rotate(180deg);
+
+
+
+@cruxPrimaryFont: 'LatoRegular', sans-serif;
+@cruxSecondaryFont: 'LatoBold', sans-serif;
+@cruxTertiaryFont: 'LatoSemiBold', sans-serif;
+@cruxFontWeightBold: var(--crux-font-weight-bold);
+@cruxSprite: url(../../images/crux-sprite-icons.svg);
+@cruxSearchLoaderImage: url(../../images/crux-search-loader.svg);
+@cruxTableLoadingPlaceholder: url(../../images/crux-table-loading.svg);
+@cruxNoPhotoImage: url(../../images/nophoto.png);
+@cruxLoggedinUserImg: url(../../images/ico_loggedinuser.svg);
+@cruxImagePreviewSprite: url(../../images/crux-image-preview-sprite.png);
+@cruxUseCssMaskForBg: false;
+
+
+@cxFontSize20px: 1.355rem;
+@cxFontSize18px: 1.213rem;
+@cxFontSize15px: 1rem;
+@cxFontSize14px: 0.929rem;
+@cxFontSize13px: 0.857rem;
+@cxFontSize12px: 0.786rem;
+@cxFontSize11px: 0.725rem;
+
+
+@cxFontSize1rem: @cxFontSize15px;
+@cxFontSize0929rem: @cxFontSize14px;
+@cxFontSize0857rem: @cxFontSize13px;
+@cxFontSize0786rem: @cxFontSize12px;
+@cxFontSize0725rem: @cxFontSize11px;
+
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+
+@cruxBaseFontSize : var(--crux-base-font-size);
+@cruxHeadingFontSize : var(--crux-heading-font-size);
+@cruxSubHeadingFontSize : var(--crux-subheading-font-size);
+@cruxSmallFontSize : var(--crux-small-font-size);
+@cruxExtraSmallFontSize : var(--crux-extra-small-font-size);
+@cruxLargeFontSize : var(--crux-large-font-size);
+@cruxExtraLargeFontSize : var(--crux-extra-large-font-size);
+@cruxFormLabelFontSize : var(--crux-form-label-font-size);
+
+
+/* Mandatory Global Variables Starts */
+
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+@cxHeadingColor: #111;
+@cxLabelColor: #222;
+@cxIconBaseMaskBg : #333;
+@cxBaseColor : #333;
+@cxMaskIconGrayBg : #a4a4a4; //var used for disabled icon use @cxIconGrayBg for gray bg
+@cxLinkColor: #3c9df7;
+@cxIconHoverEffectBg: #E9EEF4;
+@cxNoResultColor: #5a5a5a;
+// @cxLinkColor: @cxBoxElementsBorderFocusColor;
+// @cxBoxElementDisabledBackgroundColor: @cxBoxElementsDisabledBgColor; //deprecated
+@cxPlaceholderColor: #a4a4a4;
+@cxDisabledColor: #a4a4a4;
+@cxMandatoryBg: #FF5D5A;
+@cxErrorMsgColor: #FF5D5A;
+@cxSuccessMsgColor: #009653;
+@cxSearchClearIconBg: #E9EEF4;
+// @cxCircleLoaderRgb: 51, 139, 240;
+// @cxCircleLoaderBg: #fff;
+@cxPrimaryBtnLoaderBg: #2385EF;
+@cxPrimaryBtnCircleLoaderRgb: 255,255,255;
+/* For Search Input Clear Bg */
+
+@cxIconErrorMaskBg: @cxMandatoryBg;
+@cxIconGrayBg: #616E88;
+@cxMaskIconWhiteBg: #fff;
+@cxMaskIconGreenBg: #12AA67;
+/* Crux - common Color Code Variables Ends */
+
+
+@cxBoxElementsBorderColor: #c3c6ca;
+@cxBoxElementsBorderHoverColor: @cxBoxElementsBorderColor;
+@cxBoxElementsBorderFocusColor: #3c9df7;
+@cxBoxElementsBorderRadius: 5px;
+@cxBoxInnerElementsBorderRadius: 4px;
+@cxBoxElementsFocusShadowColor: #8dc4ff;
+@cxThemeBg: #fff;
+@cxBoxElementsDisabledBorderColor: #dbe0e5;
+@cxElemPlaceholderColor: #A2A9B7;
+
+@cxBoxElementsDisabledBgColor: #e8e8e8;
+@cxBoxElementErrorBorderColor: #FF5D5A;
+@cxBoxElementMandatoryBorderColor: #ff5d5a;
+
+@cxBoxElemPrefixSuffixBg: #f4f5f6;
+//  Input Box Model related variables Begins
+
+@cxBoxInputBg: @cxThemeBg;
+@cxBoxInputTextColor: #222;
+@cxBoxInputBorderColor: @cxBoxElementsBorderColor;
+@cxBoxInputBorderHoverColor: @cxBoxElementsBorderHoverColor;
+@cxBoxInputHoverShadow: 0 0 6px @cxBoxElementsBorderHoverColor;
+@cxBoxInputBorderFocusColor: @cxBoxElementsBorderFocusColor;
+@cxBoxInputFocusShadow: 0 0 6px @cxBoxElementsFocusShadowColor;
+@cxBoxInputFontSize: @cxFontSize1rem;
+@cxBoxInputLabelFontSize: @cxFontSize1rem;
+@cxBoxInputBorderRadius: @cxBoxElementsBorderRadius;
+@cxBoxInputInnerElemBorderRadius: @cxBoxInnerElementsBorderRadius;
+@cxBoxInputRightIconBg: @cxBoxElemPrefixSuffixBg;
+
+//  Input Box Model related variables Ends
+
+
+//  Dropdown Box Model related variables Begins
+@cxBoxDropdownFontSize: @cxFontSize1rem;
+@cxBoxDropboxFontSize: @cxFontSize1rem;
+@cxBoxDropdownBorderRadius: @cxBoxElementsBorderRadius;
+@cxBoxDropdownInnerElemBorderRadius: @cxBoxInnerElementsBorderRadius;
+//  Dropdown Box Model related variables Ends
+
+
+//  Criteria editor related variables Begins
+@cxCriteriaBoxBorderRadius: @cxBoxElementsBorderRadius;
+@cxCriteriaCommonFontSize: @cxFontSize1rem;
+@cxCriteriaErrorMessage:@cxFontSize13px;
+//  Criteria editor related variables Ends
+
+
+/******** CRUX Div Table Variables Starts *********/
+@cxTableOuterBorderRadius: 10px;
+/******** CRUX Div Table Variables Ends *********/
+
+
+/******** CRUX Dual List Variables Starts *********/ 
+
+@cxDualListLinkColor: @cxLinkColor;
+@cxDualListSelectedItemBeforeBg: @cxLinkColor;
+
+/******** CRUX Dual List Variables Starts *********/ 
+
+/******** GLOBAL Variable Declaration Ends *********/
+
+
+
+

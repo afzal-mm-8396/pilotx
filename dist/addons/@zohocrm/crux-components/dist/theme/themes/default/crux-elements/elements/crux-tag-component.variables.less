@@ -1,0 +1,38 @@
+.cxTagListview_taglistsAddedTagsMixin() {
+	@margin: .cruxLESSMarginMixin(0 5px 2px 0)[@margin];
+	@padding: .cruxLESSPaddingMixin(2px 5px 4px 10px)[@padding] !important;
+	@line-height: 16px;
+	@vertical-align: middle;
+}
+.cxTagListview_taglistsAddedTagsSpanMixin() {
+	@w: calc(100% + 7px);
+}
+.cxTagContentMixin(){
+	@font-family:@cruxPrimaryFont;
+	@font-size: @cxFontSize11px;
+	@color: @cxTagContentColor;
+}
+.tagElementListMixin() {
+	@font-size:@cxFontSize12px;
+}
+.cxTagMoreCountUnderlineBeforeMixin(){
+	@w: 0px;
+	@h: 1px;
+	@bg: @cxTagCountUnderlineHoverBg;
+	@left: 0px;
+	@bottom: -1px;
+	@z-index: 1;
+	@transition: 0.1s;
+}
+
+.cxTagMoreCountUnderlineAfterMixin(){
+	@w: 100%;
+	@h: 1px;
+	@bg: @cxTagCountUnderlineAfterBg;
+	@left: 0px;
+	@bottom: -1px;
+}
+
+.cxTagMoreCountUnderlineBeforeHoverMixin(){
+	@w: 100%;
+}

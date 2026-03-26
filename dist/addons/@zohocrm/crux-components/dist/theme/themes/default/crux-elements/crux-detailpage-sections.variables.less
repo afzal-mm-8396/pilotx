@@ -1,0 +1,101 @@
+.cxDvSectionNameMixin() {
+	@font-family: @cruxTertiaryFont;
+	@color: @cxDVSectionNameColor;
+	@font-size: @cxFontSize1rem;
+	@margin-bottom: 25px;
+}
+.cxDvSubformMixin() {
+	@border-top: 0 !important;
+	@border-bottom: 2px solid @cxDVSubformTHBorderBottom !important;
+}
+.cxDvSubformLyteTdMixin() {
+	@border-left: 1px solid @cxDVSubformTDBorder;
+	@border-right: 0;
+}
+.cxDvSubformLyteTdFirstChildMixin() {
+	@border-left: 0;
+}
+.cxDvSubformLyteTdLastChildMixin() {
+	@border-left: 0;
+}
+.cxDvInfoContMixin() {
+	@margin-bottom: 20px;
+}
+.cxDvBcInfoFormFieldMixin() {
+	@color: @cxDVFormInfoColor;
+	@min-w: 200px;
+	@w: 200px;
+	// @padding: 8px 0;
+	@padding: .cruxLESSPaddingMixin(8px 17px 8px 0)[@padding];
+	@margin-right: 5px;
+}
+.cxDvInfoValueMixin() {
+	@w: 100%;
+	// @max-w: 450px;
+	@max-w: 390px;	
+	// @margin-left: 10px;
+	// @margin-right: 6px;
+	@margin-left: 0;
+	@margin-right: 0;
+}
+.cxDvCompParentMixin() {
+	@border: 1px solid transparent;
+	@border-radius: 6px;
+	@padding: 8px 12px;
+}
+.cxDvCompParentHoverMixin() {
+	@border: 1px solid @cxDVCompParentHoverBorderColor;
+}
+.cxDvFieldEditIconMixin() {
+	@right: 15px;
+}
+.cxDvAjaxEditMixin() {
+    @width: auto;
+	@min-width: 220px;
+	@min-height: 34px;
+    @height: auto;
+	@padding-right: 30px;
+}
+.cxDvSaveCancelSectionMixin() {
+	@margin-left: 12px;
+}
+.cxDvRecordEditMixin() {
+	@margin-left: 8px;
+}
+.cxDvFieldSectionContainerMixin() {
+	@w: 100%;
+}
+.cxDvFieldEmptyMixin() {
+	@width: 10px;
+	@height: 1px;
+	@display: inline-block;
+	@margin-bottom: 0;
+	@opacity: .35;
+	@vertical-align: middle;
+	@background-color: @cxDVEmptyFieldBg;
+}
+.cxDvInfoFormField .cxInfoGrayBgIcon {
+	top:9px;
+	position: absolute;
+	@{property-margin-left}: 5px;
+}
+
+.cxUnsupportedFieldmixin() {
+	@position: absolute;
+	@background: @cxBoxElementsDisabledBgColor;
+	@top: -1px;
+	@bottom: -1px;
+	@left: -1px;
+	@right: -1px;
+	@border-radius: 5px;
+}
+.cxGroupedSubformWrapMixin() {
+    @padding: 0 !important;
+    @border-color: @cxGroupedSubformWrapBorder !important;
+    @border-radius: 10px;
+    @margin-bottom: 20px;
+}
+.cxGroupedSubformWrapInfoContMixin(){
+	@border-radius: 0 0 10px 10px;
+	@background: @cxGroupedSubformWrapBackground;
+}

@@ -1,0 +1,106 @@
+crux-number-component lyte-input.cxFlatInput {
+    position: relative;
+    display: inline-flex;
+}
+crux-number-component lyte-input.cxBoxInput {
+    display: flex;
+}
+crux-number-component lyte-input.cxFlatInput.horizontal .lyteLabel {
+    min-width: auto;
+    width: auto;
+    flex-grow: 0;
+}
+crux-number-component lyte-input.cxFlatInput.horizontal .lyteField {
+    flex-grow: 1;
+}
+/*Changed to left for PFQA Public fields. 
+Ref: Chinnaiya & Saravanan
+
+	For Currency Fields: Right Aligned
+	Default, Number Fields : Left Aligned
+	Subform Table: Left Aligned.
+	Aggregate fields: right aligned
+*/
+.numberDivCurrencyView{
+	text-align: right;
+	/* white-space: nowrap; */
+}
+.numberDivNumberView,
+crux-form-component .numberDivCurrencyView {
+	text-align: left;
+	/* white-space: nowrap; */
+}
+.cxSubformAggTable .numberDivCurrencyView,
+.cxSubformAggTable .numberDivNumberView,
+.cxSubformAggTable .numberDivCurrencyView lyte-text,
+.cxSubformAggTable .numberDivNumberView lyte-text {
+	white-space: nowrap;
+}
+crux-number-component lyte-number.cxFlatInput.horizontal .lyteLabel {
+    min-width: auto;
+    width: auto;
+    flex-grow: 0;
+}
+.cxCalculatorIcon{
+    background: url(../images/crux-sprite-icons.svg) no-repeat -68px -2px;
+    width: 17px;
+    height: 17px;
+}
+
+.cxBoxWithRightIcon .cxElementValue {
+    flex-grow: 1;
+}
+.cxNumInfoPop .lytePopover {
+    transform: translateX(10px);
+}
+.cxNumInfoPop .lytePopoverArrowIcon {
+    transform: translateX(-10px) rotate(45deg);
+}
+.cxNumResPopContent {
+    color: #333;
+    font-size: 14px;
+    padding: 10px 15px;
+    font-family: var(--crux-bold-font);
+    font-weight: var(--crux-font-weight-bold);
+    cursor: pointer;
+}
+.cxNumInfoPopContent {
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 280px;
+    color: #111;
+}
+.cxNumDefaultInfo {
+    font-size: 0.929rem;
+}
+.cxNumInfoExpr {
+    color: #2C7BD0;
+}
+crux-number-component .cxBoxWithRightIcon .cxBoxLeftContent {
+    overflow: visible;
+}
+
+/*Slider within Crux-picklist Less Starts */
+crux-number-component lyte-slider {
+	margin: 10px 0 0 0;
+}
+
+/*Slider within Crux-picklist Less Ends */
+
+crux-number-component .cxBoxInputInsideLabel.lyteInputReadonly .lyteLabel {
+    background-color: var(--formBackgroundDisabled);
+    color: var(--baseColor);
+}
+crux-number-component .cxBoxInputInsideLabel.lyteInputReadonly .lyteField input {
+    border-radius: 0 4px 4px 0;
+}
+/*
+    z-index overridden for making popover in currency field appear below crm header and subform fixed left menu
+    commented - causes common issue in widget and related cases
+    */
+/* .cxNumberCalcPopup.popoverWrapper {
+    z-index: 11; 
+} */
+/* .cxNumberCalcPopup.popoverWrapper { 
+	z-index: 1; z-index overridden for making popover in currency field appear below crm header and subform fixed left menu
+} */

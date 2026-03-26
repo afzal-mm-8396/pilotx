@@ -1,0 +1,40 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-file-upload-image-thumb-border-color : #D7E2ED;
+    --@{cssPrefix}-file-upload-count-border-color: #D2D9E0;
+    --@{cssPrefix}-file-upload-drop-area-border-color: #c0c6cc;
+    --@{cssPrefix}-file-upload-drop-area-active-border-color: #338CF0;
+    --@{cssPrefix}-file-upload-drop-area-active-bg-color: #F5FAFF;
+    --@{cssPrefix}-file-upload-primary-msg-color: #313949;
+    --@{cssPrefix}-file-upload-secondary-msg-color: #616e88;
+    --@{cssPrefix}-file-upload-yield-color: #202123;
+    --@{cssPrefix}-file-upload-edit-icon-hover-effect-border-color: #C0C6CC;
+    --@{cssPrefix}-file-upload-edit-icon-hover-effect-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-file-upload-icon-bg-color: #616e88;
+    --@{cssPrefix}-file-upload-remove-icon-bg-color: #FF5D5A;
+    --@{cssPrefix}-file-upload-success-icon-bg-color: #338CF0;
+    --@{cssPrefix}-file-upload-list-border-color: #f1f1f1;
+    --@{cssPrefix}-file-upload-list-bg-color: #F8FAFF;
+    --@{cssPrefix}-file-upload-list-box-shadow-color: rgba(0, 0, 0, 0.30);
+    --@{cssPrefix}-file-upload-list-error-border-color: #FFADAC;
+    --@{cssPrefix}-file-upload-list-error-bg-color: #FFF4F4;
+    --@{cssPrefix}-file-upload-list-sort-border-color: #338CF0;
+    --@{cssPrefix}-file-upload-info-color: #338CF0;
+    --@{cssPrefix}-file-upload-warning-color: #E49000;
+    --@{cssPrefix}-file-upload-success-color: #12AA67;
+    --@{cssPrefix}-file-upload-error-color: #FF5D5A;
+    --@{cssPrefix}-file-upload-circle-loader-rgb-color: rgb(245, 123, 0);
+    --@{cssPrefix}-file-upload-circle-loader-bg-color: #F8FAFF;
+}

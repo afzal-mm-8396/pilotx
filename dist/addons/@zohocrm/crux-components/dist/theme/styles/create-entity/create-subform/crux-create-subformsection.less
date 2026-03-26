@@ -1,0 +1,221 @@
+/* $Id$ */
+@import "../../../themes/default/global/global.variables.less";
+
+@import "../../../themes/default/crux-elements/create-entity/create-subform/crux-create-subformsection.variables.less";
+
+@import "../../../themes/default/less-variables/create-entity/crux-create-subformsection-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+/*stylelint-disable declaration-property-value-allowed-list*/
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../../themes/default/css-variables/create-entity/crux-create-subformsection-rootvar.less";
+}
+
+
+.cxcreateSubFormLabel{
+    .cxcreateSubFormLabelMixin();
+    font-family: @font-family;
+    font-weight: @font-weight;
+    color: @color;
+    position: relative;
+    display: inline-block;
+}
+
+.cxcreateSFThLabel{
+    position: relative;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.cxcreateSubFormMandatory .cxcreateSubFormLabel::after{
+    .cxcreateSubFormLabelMandatoryMixin();
+    content: '';
+    display: inline-block;
+    position: absolute;
+    height: @h;
+    width: @w;
+    @{property-left}: @left;
+    top: @top;
+    background: @bg;
+}
+
+.cxcreateSubFTableHeadMandatory{
+    .cxcreateSubFTableHeadMandatoryMixin();
+    @{property-padding-left}: @padding-left;
+}
+
+.cxcreateSubFTableHeadMandatory::before{
+    .cxcreateSubFTableHeadMandatoryBeforeMixin();
+    content: '';
+    display: inline-block;
+    height: @h;
+    width: @w;
+    position: absolute;
+    bottom: initial !important;
+    z-index: @z-index;
+    @{property-left}: @left;
+    top: @top;
+    background: @bg;
+}
+
+.cxcreateSubFormInfoCont{
+    .cxcreateSubFormInfoContMixin();
+    width: @w;
+}
+
+.cxcreateSubFrmTableWrapper{
+    .cxcreateSubFrmTableWrapperMixin();
+    max-width: @max-w;
+    width: @w;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.cxcreateSFReorderCol{
+    .cxcreateSFReorderColMixin();
+    padding: @padding;
+    min-width: @min-w;
+    @{property-border-right}: @border-right;
+}
+
+.cxcreateSubFormTable lyte-td{
+    .cxcreateSubFormTableTdMixin();
+    padding: @padding;
+    vertical-align: top;
+}
+
+.cxcreateSubFormTable lyte-td.cxcreateSFReorderColTd{
+    .cxcreateSFReorderColTdMixin();
+    @{property-padding-left}: @padding-left;
+    @{property-padding-right}: @padding-right;
+    min-width: @min-w;
+    @{property-border-right}: @border-right;
+}
+
+.cxcreateSubFormTable lyte-tr:last-of-type lyte-td{
+    .cxcreateSubFormTableLastRowTdMixin();
+    padding-bottom: @padding-bottom;
+}
+
+.cxcreateSFDragIcon{
+    .cxcreateSFDragIconMixin();
+    display: inline-block;
+    background-image: @bg-img;
+    background-position: @bg-pos;
+    width: @w;
+    height: @h;
+    @{property-margin-left}: @margin-left;
+    margin-top: @margin-top;
+}
+
+.cxcreateSFUicon{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.cxcreateSubFormTable lyte-tr:hover .cxcreateSFUicon{
+    visibility: visible;
+    opacity: 1;
+}
+
+.cxcreateSubFormTable .lyteSortableParent lyte-td{
+    cursor: move;
+}
+
+
+.cxcreateSubFrmAggTableWrapper{
+    .cxcreateSubFrmAggTableWrapperMixin();
+    margin-top: @margin-top;
+}
+
+.cxcreateSubFrmAggTableWrapper::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.cxcreateSubFormAggTable{
+    .cxcreateSubFormAggTableMixin();
+    float: @property-right;
+    margin-top: @margin-top;
+    overflow: hidden;
+}
+
+.cxcreateSubFormAggTable lyte-tr:hover{
+    .cxcreateSubFormAggTableRowHoverMixin();
+    background: @bg;
+}
+
+.cxcreateNewButton:hover,
+.cxcreateNewButton{
+    .cxcreateNewButtonMixin();
+    @{property-padding-left}: @padding-left;
+}
+
+.cxcreateNewButton::after{
+    .cxcreateNewButtonIconMixin();
+    content: '';
+    display: inline-block;
+    background-image: @bg-img;
+    background-position: @bg-pos;
+    position: absolute;
+    height: @h;
+    width: @w;
+    @{property-left}: @left;
+    top: @top;
+    bottom: @bottom;
+    margin: auto;
+}
+
+crux-create-section .cxcreateCurrentSubRowRemoveIcon {
+    .cxcreateCurrentSubRowRemoveIconMixin();
+    @{property-padding-right}: @padding-right;
+    align-items: center;
+    z-index: @z-index;
+    @{property-left}: @left;
+    display: none;
+    height: @h;
+    position: absolute;
+}
+
+
+crux-create-section .cxcreateShowSubRowRemoveIcon {
+    display: flex !important;
+}
+
+.cxcreateSFDelIconWrap{
+    .cxcreateSFDelIconWrapMixin();
+    width: @w;
+    height: @h;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.cxcreateSubFTooltipIcon {
+    .cxcreateSubFTooltipIconMixin();
+    background-image: @bg-img;
+    background-position: @bg-pos;
+    width: @w;
+    height: @h;
+    display: inline-block;
+    position: absolute;
+    cursor: pointer;
+    @{property-margin-left}: @margin-left;
+}
+
+.cxcreateSubFormTable .cxUserComponent .cxBoxRightIcon,
+.cxcreateSubFormTable .cxLookupComponent .cxLookupIcon{
+	.cxcreateSubFLookupIcon();
+	visibility: hidden;
+	display: flex;
+	background: @bg;
+}
+
+.cxcreateSubFormTable lyte-tr:hover .cxUserComponent .cxBoxRightIcon,
+.cxcreateSubFormTable lyte-tr:hover .cxLookupComponent .cxLookupIcon{
+	visibility: visible;
+}

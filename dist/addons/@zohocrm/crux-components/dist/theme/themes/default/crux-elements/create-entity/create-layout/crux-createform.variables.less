@@ -1,0 +1,82 @@
+.cxcreateTitlebarMixin(){
+    @bg-color: @cxCreateFormTitleBgColor;
+    @font-family: @cruxPrimaryFont;
+    @padding: 20px 0px 10px 0px;
+    @border-bottom: 1px solid @cxCreateFormTitleBorderColor;
+    @z-index: 5;
+}
+
+.cxcreateTitleBtns(){
+    @padding-right: 37px;
+}
+
+.cxcreateHeadingTitleMixin(){
+    // @padding: 0px 30px;
+    @padding: .cruxLESSPaddingMixin(5px 15px 0 30px)[@padding];
+}
+
+.cxcreateHeadingLabelMixin(){
+    @font-family : @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+    @color: @cxCreateFormHeadingLabelColor;
+    @font-size: 2rem;
+}
+
+.cxcreateTitlebarLyteBtnMixin(){
+    @margin-bottom: 0.5rem;
+}
+
+.cxcreateSectionsContMixin(){
+    @padding: 30px;
+    @padding-left: 30px;
+    @padding-right: 30px;
+}
+
+.cxCreateLyteButtonMixin(){
+    @margin-right : 8px;
+}
+.cxBtnHasShowMoreMixin() {
+	@margin-right: -3px !important;
+	@border-right: 1px solid @cxCreateFormShowMoreBorder;
+}
+.cxPropMessageTypeSuccessMixin(){
+	@color: @cxCreateFormSuccessMsgColor;
+}
+.cxPropMessageTypeFailureMixin() {
+	@color: @cxCreateFormErrorMsgColor;
+}
+
+/* Success Message Banner Mixins */
+.cxSuccessMessageWrapperMixin() {
+	@border-color: @cxCreateFormSuccessMsgColor;
+	@border-radius: @cxBoxElementsBorderRadius;
+	@bg-color: @cxCreateFormSuccessBannerBgColor;
+}
+.cxSuccessHeaderMsgMixin() {
+	@font-size: @cxFontSize14px;
+	@font-family: @cruxSecondaryFont;
+	@color: @cxHeadingColor;
+}
+.cxSuccessRecordNameMixin() {
+	@font-size: @cxFontSize13px;
+	@font-family: @cruxPrimaryFont;
+	@color: @cxLabelColor;
+}
+
+/* Error Message Banner Mixins */
+.cxErrorMessageWrapperMixin() {
+	@border-color: @cxCreateFormErrorMsgColor;
+	@border-radius: @cxBoxElementsBorderRadius;
+	@bg-color: @cxCreateFormErrorBannerBgColor;
+}
+.cxErrorMsgTextMixin() {
+	@font-size: @cxFontSize13px;
+	@font-family: @cruxPrimaryFont;
+	@color: @cxCreateFormErrorMsgColor;
+}
+.cxDuplicateInfoTblRecordLabelMixin(){
+    @color: @cxCreateFormDupTblRecordLabelColor;
+}
+.cxcDuplicateInfoTblRecordValueMixin(){
+    @color: @cxCreateFormDupTblRecordValueColor;
+}

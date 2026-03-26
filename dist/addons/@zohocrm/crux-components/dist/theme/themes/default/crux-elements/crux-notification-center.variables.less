@@ -1,0 +1,176 @@
+@cxNotifyModalBoxShadow: none;
+@cxNotifyModalBorder: none;
+@cxNotifyModalBg: transparent;
+@cxNotifyContBoxShadow: rgba(0, 0, 0, 0.15);
+@cxNotifyContBrColor: #D7E2ED;
+@cxNotifyContBg: #fff;
+@cxNotifyHeadIconWrapCompleteBg: #E5FAF1;
+@cxNotifyHeadIconWrapProgressBg: #EDF6FF;
+@cxNotifyHeadIconWrapWarningBg: #FFF2DE;
+@cxNotifyHeadIconWrapErrorBg: #FFE8E9;
+@cxNotifyHeadIconCompleteBg: #12AA67;
+@cxNotifyHeadIconProgressBg: #338CF0;
+@cxNotifyHeadIconWarningBg: #F18E0A;
+@cxNotifyHeadIconErrorBg: #FF5D5A;
+
+// .cxNotifyModalWrapperMixin(){
+//     @left: unset !important;
+//     @top: unset !important;
+// }
+
+.cxNotifyModalElemMixin(){
+    @transition: none !important;
+    // @max-h: 100vh !important;
+}
+
+.cxNotifyModalContentMixin(){
+    @padding: 20px;
+    @bg: @cxNotifyModalContentBg;
+    @backdrop-filter: blur(2px);
+    @max-h: inherit;
+}
+
+.cxNotifyModalMixin(){
+    @box-shadow: none;
+    @border: none;
+    @bg: transparent;
+}
+
+.cxNotifyMsgContMixin(){
+    @box-shadow: 0px 2px 20px 0px @cxNotifyContBoxShadow;
+    @border: 1px solid @cxNotifyContBrColor;
+    @bg: @cxNotifyContBg;
+    @border-radius: 8px;
+    @padding: 12px 0px 0px;
+    @min-w: 450px;
+    @max-w: 450px;
+    @max-h: 312px;
+    @left: calc(100% + 30px);
+}
+
+.cxNotifyMsgContNotLastChildMixin(){
+    @margin-bottom: 10px;
+}
+
+.cxNotificationAnimMixin(){
+    @startLeft: calc(100% + 30px);
+    @endLeft: 0px;
+}
+
+.cxNotifyMsgContCloseAnimMixin(){
+    @max-h: 0px;
+    @padding: 0px;
+    @margin-bottom: 0px !important;
+    @border: 0px solid;
+}
+
+.cxNotifyHeaderMixin(){
+    @font-family: @cruxSecondaryFont;
+    @font-size: @cxFontSize15px;
+    @padding: 0px 20px 12px;
+}
+
+.cxNotifyActionIconWrapMixin(){
+    @h: 24px;
+    @w: 24px;
+}
+
+.cxNotifyActionIconWrapFirstChildMixin(){
+    @margin-right: 5px;
+}
+
+.cxNotifyHeaderIconWrapMixin(){
+    @h: 26px;
+    @w: 26px;
+    @margin-right: 5px;
+    @border-radius: 26px;
+}
+
+.cxNotifyContentMixin(){
+    @padding: 0px 20px 12px;
+}
+
+.cxNotifyContentMinimizeMixin(){
+    @max-h: 0px !important;
+    @padding-bottom: 0px;
+}
+
+.cxNotifyCloseIconMixin(){
+    @w: 8px;
+    @h: 8px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -71px -118px;
+    @bg-color: @cxIconBaseMaskBg;
+}
+
+.cxNotifyMinimizeIconMixin(){
+    @w: 10px;
+    @h: 11px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -82px -385px;
+    @bg-color: @cxIconBaseMaskBg;
+}
+
+.cxNotifyExpandIconMixin(){
+    @w: 10px;
+    @h: 3px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -347px -238px;
+    @bg-color: @cxIconBaseMaskBg;   
+}
+
+.cxNotifyHeaderIconWrapCompleteMixin(){
+    @bg-color: @cxNotifyHeadIconWrapCompleteBg;
+}
+
+.cxNotifyHeaderIconWrapInProgessMixin(){
+    @bg-color: @cxNotifyHeadIconWrapProgressBg;
+}
+
+.cxNotifyHeaderIconWrapWarningMixin(){
+    @bg-color: @cxNotifyHeadIconWrapWarningBg;
+}
+
+.cxNotifyHeaderIconCompleteMixin(){
+    @w: 14px;
+    @h: 14px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -229px -177px;
+    @bg-color: @cxNotifyHeadIconCompleteBg;
+}
+
+.cxNotifyHeaderIconInprogressMixin(){
+    @w: 15px;
+    @h: 15px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -99px -383px;
+    @bg-color: @cxNotifyHeadIconProgressBg;
+}
+
+.cxNotifyHeaderIconWarningMixin(){
+    @w: 15px;
+    @h: 14px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -125px -223px;
+    @bg-color: @cxNotifyHeadIconWarningBg;  
+}
+
+.cxNotifyHeaderIconInfoMixin(){
+    @w: 13px;
+    @h: 14px;
+    @bg-img: @cruxSprite;
+    @bg-pos: -7px -126px;
+    @bg-color: @cxNotifyHeadIconProgressBg;
+}
+
+.cxNotifyBtnContMixin(){
+    @margin-top: 15px;
+}
+
+.cxNotifyHeaderIconWrapErrorMixin(){
+    @bg-color: @cxNotifyHeadIconWrapErrorBg;
+}
+
+.cxNotifyHeaderIconErrorMixin(){
+    @bg-color: @cxNotifyHeadIconErrorBg;
+}

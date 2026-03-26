@@ -1,0 +1,716 @@
+.cxNoteNewUIMixin() {
+	@padding: 10px 0 0 0;
+}
+.cxPortalErrorNoteMixin(){
+	@line-height:20px;
+}
+.cxNoteHeadingSectionMixin() {
+	@padding: 0 20px 8px;
+	@margin-bottom: 0; /* Removed 20px and change to 0, as in detailview, on toggle, space must not be there */
+	@border-bottom: 1px solid @cxNotesHeadingBorder;
+}
+.cxNoteHeadingMixin() {
+	@color: @cxNoteEditorHeaderColor;
+	@font-size: 1.7rem;
+}
+.cruxNotesMixin() {
+	@padding: 20px 20px 15px 20px;
+	// @margin-top: 20px;
+	// @margin-bottom: 20px;
+}
+.cxNoteNewUIWrapMixin() {
+	@bg: @cxNoteNewUIWrapBg;
+	@border: solid 1px @cxNoteNewUIWrapBorderColor;
+	@border-radius: 6px;
+	@padding-top: 8px;
+	@margin: 0 0 5px 0;
+	@min-width:210px;
+}
+.cxNoteNewUIWrapHoverMixin() {
+	@border: 1px solid @cxNoteNewUIWrapHoverBorderColor;
+}
+.cxNoteNewUIInputsMixin() {
+	@w: 100%;
+}
+.cxNoteNewUITextareaMixin() {
+	@padding: 0 12px 10px 10px;
+	// @h: auto;
+}
+.cxNoteNewUITextareaFieldMixin() {
+	@padding: 0;
+	@border: 0;
+}
+.cxNoteBeforeOpenInputMixin() {
+	@padding: 3px 20px 11px;
+}
+.cxNoteNewUITitlePlaceholderElemMixin() {
+	@color: @cxNoteEditorHeaderColor;
+	// @font-size: 1.5rem;
+	@font-family: @cruxPrimaryFont;
+	@padding: 0;
+	@font-size: @cxFontSize15px;
+}
+.cxNoteNewUIlyteEditorPlaceholderDivMixin(){
+	@font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+}
+.cxNotesTextareaWrapMixin(){
+	@border-radius: 0 0 6px 6px;
+    @overflow: hidden;
+}
+.cxNotesFooterIconActiveMixin() {
+	@border-color: @cxNotesFooterActiveIconBorder;
+    @box-shadow: 0 0 4px @cxNotesFooterActiveIconBoxShadow;
+	@background-color: @cxNotesFooterIconActiveBg; 
+}
+// .cxNoteNewUITitleInputElemMixin (){}
+.cxNoteTitleSpanMixin() {
+	@font-size: @cxFontSize15px;
+	@padding-top: 5px;
+	@color: @cxNoteEditorHeaderColor;
+	/*@font-family: LatoBlack, sans-serif;*/
+	@font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+}
+// .cxNotesEditorWrapperClassIconMixin() {
+// 	@background-color: #e2e9ef;
+// }
+.cxNotesFooterMixin() {
+	// @padding: 0px 12px 10px 20px;
+	// @padding: .cruxLESSPaddingMixin(0px 10px 0px 15px)[@padding];
+	@padding: .cruxLESSPaddingMixin(5px 15px 5px 15px)[@padding];
+	// @padding-bottom: 5px;
+	// @padding-bottom: 0;
+
+	// padding: @padding;
+	@display: flex;
+	@align-items: center;
+	@flex-wrap: wrap;
+	@position: relative;
+	@z-index: 1;
+	@border-radius:0 0 3px 3px;
+	@border-top: 1px solid @cxNotesFooterBorder;
+	@background: @cxNotesFooterBg;
+}
+.cxNotesAttachIconMixin() {
+	@bg-img:@cruxSprite;
+    @bg-pos: -356px -179px;
+    @w: 15px;
+    @h: 14px;
+}
+.cxNotesFooterLeftMixin(){
+	@display: flex;
+    @flex-wrap: wrap;
+    @margin-bottom: 5px;
+}
+.cxNotesFooterBgMixin(){
+	@padding: .cruxLESSPaddingMixin(5px 15px 5px 15px)[@padding];
+	@display: flex;
+	@align-items: center;
+	@flex-wrap: wrap;
+	@position: relative;
+	@z-index: 1;
+	@border-radius:0 0 3px 3px;
+	@border-top: 1px solid @cxNotesFooterBorder;
+	@background: @cxNotesFooterBg;
+}
+.cxNotesAddTitleMixin() {
+    @color: @cxNoteEditorGrayColor;
+	@margin-bottom: 10px;
+	@margin-right: 10px;
+	@margin-left: 7px;
+	@border-left: 1px solid @cxNotesFooterAddTitleBorder;
+	@padding-left: 7px;
+}
+.cxNoteCheckboxColorMixin() {
+	@color: @cxNoteEditorGrayColor;
+}
+.cxNoteCheckboxStyleMixin(){
+	@margin-left: 10px;
+}
+.cxNotesTextareaElemMixin() {
+	@h: 60px;
+	@padding: 1px 5px;
+	@transition: none !important;
+}
+.cxNotesTextareaResizeMixin() {
+	@w: 11px;
+	@h: 11px;
+}
+.cxNotesTextareaMentionsMixin() {
+	@padding: 1px 10px;
+}
+.cxNotesTextareaMentionsStrongDivMixin() {
+	@font-family: @cruxPrimaryFont;
+}
+.cxNotesUlMixin() {
+	@padding: 0;
+	@margin: 0;
+}
+.cxNotesLiMixin() {
+	@padding: 0 0 7px 0;
+	@margin: 0;
+}
+.cxNotesLiAddedUserImgMixin() {
+	@w: 34px;
+	@h: 34px;
+	@border-radius: 50%;
+	@margin-top: 7px;
+}
+.cxNoteDefaultUserImageMixin() {
+	@bg-img: @cruxNoPhotoImage;
+	@bg-size: 100%;
+	@margin-top:7px;
+}
+.cxNotesContentWrapMixin() {
+	@padding: .cruxLESSPaddingMixin(5px 10px 5px 10px)[@padding];
+}
+.cruxNoteSeeMoreMixin() {
+	@font-size: 1.3rem;
+}
+.cxNotesOtherActionMixin(){ //not used style
+	// @padding-left: 20px;
+	@color: @cxNotesOtherActionColor;
+	@margin-top: 10px;
+}
+.notesAddedContentMixin() {
+	@font-size: @cxFontSize14px;
+	@color: @cxNotesAddedContentColor;
+	@line-height: 20px;
+	// @max-w: 580px;
+	@max-w:680px;
+	@w: 100%;
+}
+.cxNotesGreyColorMixin() {
+	@color: @cxNoteEditorGrayColor;
+}
+.cxNotesNoteActionDetailsMixin(){
+	@font-size: @cxFontSize13px;
+	@line-height: 20px;
+}
+.cxNotesGreyColorHoverMixin() {
+	@color: @cxNotesGreyHoverColor;
+}
+.cxNotesAddAnotherNoteMixin() {
+	@max-w: 100px;
+}
+.cxNoteNewUITitleSpanMixin() {
+	@max-w: 680px;
+}
+.cxNotesModuleNameMixin() {
+	@color: @cxNoteEditorGrayColor;
+	@max-w: 100px;
+}
+.cxNotesModuleRecordNameMixin() {
+	@max-w: 150px;
+	@font-size: @cxFontSize13px;
+}
+.cxNotesListDotMixin() {
+	@w: 5px;
+	@h: 5px;
+	@border-radius: 50%;
+	@bg: @cxNotesListDotBg;
+	@margin: 0 10px;
+}
+.cxNotesTimerIconMixin() {
+	@bg-pos: -682px -79px;
+}
+.cxNoteEditDeleteWrapMixin() {
+	@top: 10px;
+	@right: 10px;
+	@bg: @cxNotesEditDeleteWrapBg;
+}
+.cxNoteEditDeleteIconWrapCommonMixin() {
+	@w: 24px;
+	@h: 24px;
+	@border: 1px solid @cxNotesEditDeleteIconWrapBorder;
+	@border-radius: 50%;
+	@background-color: @cxNoteEditorWhiteBg;
+}
+.cxNoteDisabledEditDeleteIconWrapCommonMixin() {
+	@opacity: 0.4;
+	@cursor: not-allowed;
+}
+.cxNoteEditIconWrapHoverMixin() {
+	@border: 1px solid @cxNotesEditIconHoverBorder;
+}
+.cxNoteDeleteIconWrapHoverMixin() {
+	@border: 1px solid @cxNotesDeleteIconHoverBorder;
+}
+.cxNoteDisabledEditDeleteIconWrapHoverCommonMixin() {
+	@border: 1px solid @cxNotesDisabledIconWrapHoverBorder;
+}
+.cxNoteEditDeleteIconMixin() {
+	@mask-img: @cruxSprite;
+	@bg-color: @cxNoteEditorGrayColor;
+}
+.cxNoteEditIconMixin() {
+	@mask-pos: -69px -153px;
+	@w: 13px;
+	@h: 13px;
+}
+.cxNoteDeleteIconMixin() {
+	@mask-pos: -93px -154px;
+	@w: 11px;
+	@h: 12px;
+}
+.cxNoteEditIconWrapHoverEditIconMixin() {
+	@bg-color: @cxNotesEditIconHoverBg;
+}
+.cxNoteDeleteIconWrapHoverDeleteIconMixin() {
+	@bg-color: @cxNotesDeleteIconHoverBg;
+}
+.cxNotesAttachElemImgMixin() {
+	@max-w: 100px;
+	@max-h: 100px;
+}
+.cxNotesAttachElemMixin() {
+	@w: 100px;
+	@h: 100px;
+	@border: 1px solid @cxNotesAttachElementBorder;
+	@padding: 10px;
+	@border-radius: 4px;
+}
+.cxNotesAttachementListMixin() {
+	@padding: 0;
+	@margin-right: 10px;
+}
+.cxNotesAttachementListLastChildMixin() {
+	@margin-right: 0;
+}
+.cxNotesAttachActionsMixin() {
+	@bg: @cxNotesAttachActionsBg;
+	@padding: 5px 10px;
+	@bottom: 0;
+	@left: 0;
+	@right: 0;
+	@transform: translateY(100%);
+	@transition: transform 0.3s ease;
+}
+.cxNotesAttachementListHoverAttachActionsMixin() {
+	@transform: translateY(0px);
+}
+// .cxNotePreviewIconMixin() {
+// 	@bg-pos: -460px -160px;
+// 	@w: 17px;
+// 	@h: 11px;
+// 	@margin-right: 10px;
+// }
+.cxNoteDownloadIconMixin() {
+	@bg-pos: -439px -158px;
+	@w: 13px;
+	@h: 15px;
+}
+.cxNoteNewUITextareaOpenMixin() {
+	@border-color: @cxNotesNewUITextAreaBorder;
+	@box-shadow: 0 0 4px @cxNotesNewUITextAreaBoxShadow;
+}
+.cxNoteNewUITextareaErrorMixin() {
+	@border-color: @cxNoteNewUIErrorTextareaBorder;
+	@box-shadow: none;
+}
+.cxNotesUlTextareaOpenMixin() {
+	@margin: 7px 0;
+}
+.cxShowMoreNotesMixin() {
+	@bg: @cxNoteEditorPrevNextBg;
+	@max-w: 720px;
+	@w: 100%;
+	@padding: 12px 20px;
+}
+// .cxNotesMaxWidthMixin() {
+// 	@max-w: 845px;
+// }
+.cxNotesMaxWidthMixin() {
+	@max-w: 830px;
+}
+.cxShowMoreNotesHoverMixin() {
+	@bg: @cxNotesShowMoreHoverBg;
+}
+.cxNoteOwnerNameImgMixin() {
+    @w: 48px;
+    @h: 48px;
+    @border-radius: 50%;
+    @bg: @cxNotesOwnerImgBg;
+    @color: @cxNotesOwnerImgTextColor;
+    @border: 1px solid @cxNotesOwnerImgBorderColor;
+    @font-size: 24px;
+    @line-height: 48px;
+    @font-family: @cruxTertiaryFont;
+}
+.cxNoteOwnerImgMixin() {
+    @w: 48px;
+    @h: 48px;
+    @border-radius: 50%;
+    @max-w: 100px;
+    @max-h: 100px;
+    @margin-top: 0;
+}
+.cxNotesOnwerLookupLabelMixin() {
+    @color: @cxNotesOwnerLookupLabelColor;
+}
+.cxNotesOnwerLookupValueMixin() {
+    @color: @cxNotesOwnerLookupValueColor;
+}
+.cxNotePreviewIconMixin() {
+    @bg-pos: -269px -366px;
+    @w: 17px;
+    @h: 11px;
+    @margin-right: 10px;
+}
+.cxNoteMoreFilesDetailMixin() {
+	/* @w: calc(100% - 150px) !important;*/
+	@w: calc(100% - 320px) !important;
+	@min-width: 145px;
+}
+.cxNoteMoreFilesMarginLeftMixin() {
+    @margin-left: 10px;
+}
+.cxNoteMoreFilesDzPreviewFilenameMixin() {
+	@max-w: 80%;
+}
+.cxNoteMoreFilesMixin() {
+	@bg: @cxNotesMoreFilesBg;
+	@margin-top: 10px !important; /*Temporary fix to override style in CRM*/
+	@paddingLeft: 15px !important;
+	@paddingRight: 15px;
+	@border-top: 1px solid @cxNotesMoreFilesBorder;
+}
+.cxNotesAttachmentIconsMixin() {
+	@bg-img: @cruxSprite;
+	// @bg-default-position: -321px -150px;
+	// @width: 15px;
+	// @height: 17px;
+	@top: 2px;
+}
+.cxNotesPngIconMixin() {
+	@bg-pos: -274px -151px;
+	@w: 17px;
+	@h: 15px;
+}
+.cxNotesWordIconMixin() {
+	@bg-pos: -159px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxNotesTxtIconMixin() {
+	@bg-pos: -137px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxNoteMovieIconMixin() {
+	@bg-pos: -113px -152px;
+	@w: 17px;
+	@h: 14px;
+}
+.cxNoteMp3IconMixin() {
+	@bg-pos: -205px -150px;
+	@w: 11px;
+	@h: 17px;
+}
+.cxNotePdfIconMixin() {
+	@bg-pos: -181px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxNoteExcelIconMixin() {
+	@bg-pos: -251px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxNotePptIconMixin() {
+	@bg-pos: -298px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxNoteZipIconMixin() {
+	@bg-pos: -321px -150px;
+	@w: 15px;
+	@h: 17px;
+}
+.cxNotesAttachmentRemoveIconMixin() {
+	@mask-img: @cruxSprite;
+	@mask-pos: -337px -115px;
+	@w: 9px;
+	@h: 10px;
+	@bg-color: @cxNotesAttachmentRemoveIconBg;
+	@top: 2px;
+	@margin-left: 10px;
+}
+.cxNoteTitlePlaceholderMixin() {
+	@font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+}
+.cxNoteCountMixin() {
+	@h: 10px;
+	@padding: 2px 5px;
+	@bg: @cxNotesCountBg;
+	@border-radius: 2px;
+	@line-height: 12px;
+	@font-size: 12px;
+	@margin-left: 5px;
+}
+.cxNotesStorageLimitShadowMixin() {
+    @w: 0;
+    @h: 0;
+    @border-top: 120px solid @cxNotesStorageLimitShadowBorder;
+    @border-left: 38px solid @cxNotesStorageLimitShadowBorder;
+    @border-right: 30px solid transparent;
+    @opacity: .1;
+    @border-radius: 5px 0 0 5px;
+    @left: 0;
+    @top: 0;
+}
+.cxNotesStorageLimitWarnMsgMixin() {
+	@color: @cxNotesStorageLimitWarnMsgColor;
+	@font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+}
+.cxNotesGrayTxtContentMixin{
+	@font-size: @cxFontSize13px;
+}
+.cxVoiceNoteContentMixin(){
+	@font-size: @cxFontSize13px;
+}
+.cxNotesCommonLinkColorMixin() {
+	@color: @cxNotesCommonLinkColor;
+}
+.cxNotesCommonLinkColorHoverMixin() {
+	@color: @cxNotesCommonLinkHoverColor;
+}
+.cxShowMoreNotesContentMixin(){
+	@font-size: @cxFontSize13px;
+}
+.cxNotesUlNoteLoadingMixin() {
+	@padding: 7px 0;
+}
+.cxNotesUlFirstNoteElemLoadingMixin() {
+	@margin-bottom: 0;
+}
+.cxNotesUlLastNoteElemLoadingMixin() {
+	@margin-top: 0;
+}
+.cxNotesSortDropButtonMixin() {
+	// @padding: 4px 23px 4px 13px !important;
+	@padding: .cruxLESSPaddingMixin(4px 23px 4px 13px)[@padding] !important;
+}
+.cxNotesSortDropButtonAfterMixin(){
+    @top: 9px !important;
+}
+.cxNoteSelectedToggleMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -4px -77px;
+	@w: 11px;
+	@h: 9px;
+	@left: 7px;
+	@top: calc(50% - 5px);
+	@opacity: 0.8;
+}
+.cxNoteCkboxLabelMixin() {
+	@margin-top: 2px;
+	@font-size: @cxFontSize14px;
+}
+// .cxNoteCheckboxDefaultBeforeMixin() {
+	/*@transform: scale(0.8);
+	@margin-right: 0;*/
+// }
+.cxNoteCheckboxDefaultAfterMixin() {
+	@transform: scale(0.7);
+}
+.cxNotesGraytxtMixin() {
+	@color: @cxNotesGreyTextColor;
+}
+.cxNotesSortModuleGroupMixin() {
+	@border-bottom: 1px solid @cxNotesSortModuleGroupBorder;
+}
+.cxNotesFileUploadCloseMixin() {
+	// @float: @property-right;  
+	// @top: 9px;
+	@float: none;  
+	@top: 0;
+}
+.cxNotesAttachedListNameMixin() {
+	@margin-right: 10px;
+}
+.cruxNoteOnwerProfileInfoMixin() {
+	@display: flex;
+}
+.cruxNoteOwnerNameMixin() {
+	@flex-one: 1;
+	@min-width:0;
+    @display: inline-block;
+    @width: 100%;
+    @flex-direction: column;
+}
+.cruxNoteOnwerSecInfoOverflowNormalMixin() {
+	@white-space: normal;
+    @overflow-wrap: break-word;
+	@line-height:20px;
+	@font-size:@cxFontSize14px;
+}
+.cxNotesSmallFontMixin(){
+    @font-size: @cxFontSize13px;
+}
+.cxNotesStorageLimitInfoContentMixin(){
+	@font-size:@cxFontSize15px;
+}
+.cruxNoteOwnerProfileInfoMixin() {
+	@display: flex;
+}
+.timelineNotesAddedContentMixin() {
+	@max-w: 440px;
+}
+
+.cxNotesFooterRightMixin(){
+	@margin-bottom: 10px;
+	@display: flex;
+    @align-items: center;
+	@flex-wrap: nowrap;
+}
+.cxFooterRightPrefixYieldMixin(){
+	@margin-bottom: 10px;
+}
+.cxNoteRightPrefixIconMixin() {
+	@display: inline-block;
+	@margin-right: 15px;
+}
+.cruxAttachActionAreaMixin(){
+ 	@font-size:13px;   
+}
+.cxNotesNoRecordMixin(){
+	@color: @cxNotesNoRecordsColor;
+	@padding-bottom: 5px;
+}
+.cxNotesEditorTextareaMixin(){
+	@border: none;
+	@padding-right:0;
+	// padding-bottom: 0;
+	// @padding: .cruxLESSPaddingMixin(0 0 20px 15px)[@padding];
+	@padding: .cruxLESSPaddingMixin(0 0 0 15px)[@padding];
+    // @min-height: 46px;
+	@min-height: 104px;
+}
+.cxNotesAddedContentBoldMixin() {
+	@font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+}
+.cxNoteRichTextIconMixin() {
+	@mask-img: @cruxSprite;
+	@mask-pos: -127px -245px;;
+    @w: 13px;
+    @h:13px ;
+}
+.cxNoteIconSpanMixin() {
+	// @margin-bottom: 5px;
+	@margin-top: 5px;
+    @margin-right: 10px;
+}
+.cxNotesFooterIcoWrapMixin (){
+	@margin-top: 5px;
+    @margin-right: 10px;
+}
+.cxNotesFooterIcoWrapHoverMixin(){
+	@border: 1px solid @cxNotesFooterIconWrapHoverBorder;
+}
+.cxNoteCheckboxMixin() {
+	@margin-left: 10px;
+}
+.cxNoteEditorPanelPopoverBorderRadiusMixin(){
+	@border-radius: 0 6px 6px 0;
+}
+.cxNoteMoreFilesFileNameMixin(){
+	@margin-right: 10px;
+	@margin-left: initial;
+}
+.cxNoteEditorPanelColorPickerBorderRadiusMixin(){
+	@border-radius: 6px 6px 0 0;
+}
+.cxNoteEditorPanelPopoverIconsDivMixin(){
+	// @border-radius:4px;
+	@border-radius:@cxBoxInnerElementsBorderRadius;
+}
+.cxNotesEditorWrapperClassPopoverMixin() {
+    @box-shadow: 0px 2px 8px 0px @cxNotesEditorPopupBoxShadow;
+    @border-radius: 6px;
+    @border: 1px solid @cxNotesEditorPopupBorder;
+}
+.cxNoteEditorPanelPopovericonDivMixin(){
+	@background: @cxNotesEditorMoreWrapperIconsBg !important;
+}
+/* CRUX Feeds Ui Startsc*/
+.cxBubbleNotesContentmixin() {
+	// @background: @cxNotesRtfFooterBg;
+	@background: @cxNotesBubbleContentBg;
+	@border-radius: 10px;
+	@border: @cxNoteEditorBubbleContBorder;
+	@max-w: calc(100% - 75px);
+	@padding: 8px 10px;
+}
+.cxNotesBubbleContentIconsMixin(){
+	@bg: @cxNotesBubbleContentIconsBg;
+}
+.cxNotesMoreFileDzErrorMixin(){
+	@color: @cxNotesMoreFileDzErrorColor;
+}
+.cxNoteFooterLinkSepBeforeMixin(){
+	@border: @cxNoteFooterLinkSepBeforeBorder;
+}
+.cxNotesStorageLimitLinkMixin(){
+	@color: @cxNoteEditorWhiteBg;
+}
+.cxNotesLoaderCircleMixin(){
+	@bg: @cxNotesLoaderCircleBg;
+}
+.cxNotesLoaderLineMixin(){
+	@bg: @cxNotesLoaderLineBg;
+}
+.cxNotesLoaderRunnerMixin(){
+	@bg: @cxNotesLoaderRunnerBg;
+}
+.cxNotesCircleLoaderRunnerMixin(){
+	@bg: @cxNotesCircleLoaderRunnerBg;
+}
+.cxNotesEditorPanelPopoverIconHoverMixin(){
+	@bg: @cxNotesEditorPanelPopoverIconHoverBg;
+}
+.cxNoteEditorPanelIconSelectedMixin(){
+	@border: @cxNoteEditorPanelIconSelectedBorder;
+	@bg: @cxNoteEditorPanelIconSelectedBg;
+}
+.cxNotesAddedContentMixin(){
+	@bg: @cxNotesAddedContentBg;
+}
+.cxAttachZoneDragHoverMixin(){
+	@border: @cxNotesAttachZoneDragHoverBorder;
+	@bg: @cxNotesAttachZoneDragHoverBg;
+}
+.cxAttachZonePreviewMixin(){
+	@bg: @cxNotesAttachZonePreviewBg;
+	@border: @cxNotesAttachZonePreviewBorder;
+	@shadow: @cxNotesAttachZonePreviewShadow;
+}
+.cxAttachZonePreviewDetailsMixin(){
+	@bg: @cxAttachZonePreviewDetailsBg;
+}
+.cxAttachZonePreviewDetailsSizeMixin(){
+	@color: @cxNotesAttachZonePreviewDetailsSizeColor;
+}
+.cxAttachZonePreviewProgressMixin(){
+	@bg: @cxNotesAttachZonePreviewProgressBg;
+}
+.cxAttachZonePreviewErrorMessageMixin(){
+	@bg: @cxNotesAttachZonePreviewErrorBg;
+	@color: @cxNotesAttachZonePreviewErrorMsgColor;
+}
+.cxAttachZoneDefaultMessageMixin(){
+	@border: @cxNotesAttachZoneDefaultMsgBorder;
+}
+.cxAttachZoneDzErrorUploadMixin(){
+	@bg: @cxNotesAttachZoneDzErrorBg;
+}
+.cxAttachZoneDzProgressUploadMixin(){
+	@bg: @cxNotesAttachZoneDzProgressBg;
+}
+.cxAttachZoneDzRemoveMixin(){
+	@color: @cxNotesAttachZoneDzRemoveColor;
+}

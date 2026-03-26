@@ -1,0 +1,255 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-div-table-component.variables.less";
+
+@import "../themes/default/less-variables/crux-div-table-component-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-div-table-component";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-div-table-component-variables.less";
+}
+
+.cxDivTable {
+    .cxTableMixin();
+    display: @display;
+    width: @width;
+    // border: 1px solid @cxTableBorderColor;
+    border: @border;
+    border-radius: @border-radius;
+    overflow: @overflow;
+    box-sizing: border-box;
+}
+.cxDivTableBody {
+    display: table-row-group;
+}
+.cxDivTableTr {
+    display: table-row;
+}
+
+.cxDivTableTh {
+    .cxDivTableThMixin();
+    display: table-cell;
+    font-size: @cxFontSize15px;
+    cursor: auto;
+    color: @color;
+    background: @bg;
+    padding: 8px 10px;
+    border-bottom: 2px solid @border;
+    vertical-align: middle;
+    font-family: @cruxSecondaryFont;
+    font-weight: @cruxFontWeightBold;
+}
+
+.cxDivTableTd {
+    .cxDivTableTdMixin();
+    display: table-cell;
+    color: @color;
+    border-bottom: 1px solid @border;
+    font-size: @cxFontSize15px;
+    text-align: @value-textalign-left;
+    padding: 11px 10px 10px;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.cxDivTable .cxDivTableTr:last-child .divTableTd,
+.cxDivTable .cxDivTableTr:last-child .cxDivTableTd {
+    border-bottom: none
+}
+
+.cxDivTableTr .cxDivTableTd:first-child,.cxDivTableTr .cxDivTableTh:first-child {
+    @{property-padding-left}: 20px;
+}
+
+.cxDivTableTr:hover {
+    .cxDivTableTrHoverMixin();
+    background: @bg;
+}
+
+.cxDivTableTr.sortable-element::before {
+    content: none;
+}
+.cxDivTableWrapperIcon .cxDivTableEditIcon,
+.cxDivTableWrapperIcon .cxDivTableDeleteIcon {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    margin-top: 4px;
+}
+.cxDivTableEditIcon,
+.cxDivTableDeleteIcon{
+    .cxDivTableDeleteAndEditIconMixin();
+    -webkit-mask-image: @cruxSprite;
+    mask-image: @cruxSprite;
+    background-color: @bg-color;
+}
+.cxDivTableEditIcon{
+    .cxDivTableEditIconMixin();
+    mask-position: @mask-Position;
+    width: @w;
+    height:@h;
+}
+.cxDivTableDeleteIcon{
+    .cxDivTableDeleteIconMixin();
+    mask-position: @mask-Position;
+    width: @w;
+    height:@h;
+}
+
+.cxDivTableWrapperIcon{
+    .cxDivTableWrapperIconMixin();
+    display: flex;
+    gap: @gap;
+	@{property-padding-left}: @padding-left;
+}
+
+.cxDivTableWrapperIcon .cxIconAnimationWrapper {
+    position: relative;
+    
+}
+
+.cxDivTableWrapperIcon .cxIconAnimationWrapper::after {
+    .cxIconAnimationWrapperAfterMixin();
+    content: "";
+    position: absolute;
+    width: @w;
+    height: @h;
+    display: inline-block;
+    border-radius: 50%;
+    z-index: 1;
+    @{property-right}:@right;
+    top:@left; 
+    background-color:@bg-color;
+    border: @border;
+    visibility: hidden;
+    cursor: pointer;
+    transform: scale(0.7);
+
+}
+.cxDivTableWrapperIcon .cxIconAnimationWrapper:hover.cxIconAnimationWrapper::after {
+//  scale: 10;
+transition: 0.2s;
+visibility: visible;
+transform: scale(1);
+
+}
+.cxDivTableTh crux-dropdown {
+    display: inline-block;
+}
+.cxDivTableTh .cxFakeDropButton,
+.cxDivTableTh lyte-dropdown.cxBoxDropdown lyte-drop-button,
+.cxDivTableTh .cxFakeDummyEventContainer:focus .cxFakeDropButton {
+    .cxDivTableThDropButtonMixin();
+	padding: 0;
+	border: 0;
+	// color: #777;
+	@{property-padding-right}: 25px;
+	box-shadow: none !important;
+    color: @color;
+    font-family: @cruxSecondaryFont;
+    font-weight: @cruxFontWeightBold;
+    font-size: @cxFontSize14px;
+}
+// .cxDivTableThDropButtonMixin() {
+//     color: @cxTableHeadingColor;
+//     font-family: @cruxSecondaryFont;
+//     font-size: @cxFontSize14px;
+// }
+.cxDivTableTh lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxDivTableTh lyte-dropdown.cxBoxDropdown lyte-drop-button.lyteDropButtonUp,
+.cxDivTableTh lyte-dropdown.cxBoxDropdown lyte-drop-button.lyteDropButtonDown,
+.cxDivTableTh lyte-dropdown.cxBoxDropdown lyte-drop-button:hover {
+	border: 0 !important;
+	box-shadow: none !important;
+}
+.cxTableInfoSection {
+    .cxTableInfoSectionMixin();
+    display: flex;
+    margin-bottom: @margin-bottom;
+}
+.cxTableInfoSectionRight {
+    @{property-margin-left}: auto;
+}
+.cxDivTableTr .cxDivTableDeleteIcon,
+.cxDivTableTr .cxDivTableEditIcon,
+.cxDivTableTr .editDeleteHoverAnimation,
+.cxDivTable .sortable-parent .sortable-element::after{
+    visibility: hidden;
+}
+.cxDivTableTr:hover .cxDivTableDeleteIcon,
+.cxDivTableTr:hover .cxDivTableEditIcon,
+.cxDivTableTr:hover .cxIconAnimationWrapper,
+.cxDivTableTr:hover.sortable-element::after {
+    visibility: visible;
+}
+.cxDivTableNoResultTr {
+    position: relative;
+}
+.cxDivTableNoResultTr .cxDivTableTd {
+    padding: 20px 10px;
+}
+.cxDivTableNoResultMsg {
+    .cxDivTableNoResultMsgMixin();
+    position: absolute;
+    width: 100%;
+    @{property-left}: 0;
+    text-align: center;
+    color: @color;
+}
+.cxDivTableTrDisabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.cxDivTableUserDp{
+    .cxDivTableUserDpMixin();
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    overflow: hidden;
+    
+}
+.cxDivTableUserDpAndDate{
+    display: flex;
+    align-items: center;
+
+}
+.cxDivTableUserDateAndTime{
+    .cxDivTableUserDateAndTimeMixin();
+    @{property-margin-left}:  @margin-left;
+    white-space: nowrap;
+    font-size: @font-size;
+}
+.cxDivTable .sortable-parent .sortable-element:not(.lyteSortablePlaceholder)::after{
+    .sortableElementAfterMixin();
+    content:" ";
+    width: @w;
+    height:@h;
+    mask-image: @mask-image;
+    mask-position: @mask-position;
+   -webkit-mask-image: @mask-image;
+   -webkit-mask-position:  @mask-position;
+   display: inline-block;
+   position: absolute;
+   background-color: @bg-color;
+   top: @top;
+   @{property-left}:@left ;
+}
+.cxDivTable .cxDivTableTr.sortable-element{
+    position: relative;
+}
+.cxDateAndtimeContent{
+    .cxDivTableDateAndTimeContentMixin();
+    color: @color;
+}
+.cxDivThDescWidth,
+.cxDivTdDescWidth {
+    width: 30%;
+}

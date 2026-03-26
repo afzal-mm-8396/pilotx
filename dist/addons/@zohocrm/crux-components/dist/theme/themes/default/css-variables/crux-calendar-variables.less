@@ -1,0 +1,27 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+.getRootVariables(){
+    --@{cssPrefix}-calendar-popup-box-shadow-color :  rgba(0, 0, 0, 0.30);
+    --@{cssPrefix}-calendar-popup-border-color: #CACACA;
+    --@{cssPrefix}-calendar-hover-border-color: #D9E2EA; 
+    --@{cssPrefix}-calendar-hover-bg-color: #E8F2FC;
+    --@{cssPrefix}-calendar-sel-bg-color: #338CF0;
+    --@{cssPrefix}-calendar-sel-border-color: #338CF0;
+    --@{cssPrefix}-calendar-sel-color: #fff;
+    --@{cssPrefix}-calendar-today-bg-color: #EDF6FF;
+    --@{cssPrefix}-calendar-today-color: #338CF0;
+    --@{cssPrefix}-calendar-today-border-color: #338CF0; 
+    --@{cssPrefix}-calendar-nav-head-bg-color : #F5F7FA;
+    --@{cssPrefix}-calendar-year-cont-border-color: #E5E8EF;
+    --@{cssPrefix}-calendar-nav-icon-color: #111;
+}

@@ -1,0 +1,24 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-smart-filter-cross-field-drop-btn-bg-color: #dfeeff;
+    --@{cssPrefix}-smart-filter-cross-field-btn-text-color: var(--crux-link-color);
+    --@{cssPrefix}-smart-filter-cross-drop-btn-focus-bg-color: #3c9df7;
+    --@{cssPrefix}-smart-filter-list-hover-bg-color: #d9edff;
+    --@{cssPrefix}-smart-filter-cross-close-icon-bg-color: #FF5D5A;
+    --@{cssPrefix}-smart-filter-accordion-header-hover-bg-color: #eff1f5;
+    --@{cssPrefix}-smart-filter-dropdown-focus-box-shadow-color: var(--crux-element-focus-shadow-color);
+    --@{cssPrefix}-smart-filter-label-content-color: #333;
+    --@{cssPrefix}-smart-filter-no-result-color: var(--crux-no-result-color);
+}

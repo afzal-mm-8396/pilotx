@@ -1,0 +1,385 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-number-component.variables.less";
+
+@import "../../themes/default/less-variables/crux-number-component-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-number-component";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../themes/default/css-variables/crux-number-component-variables.less";
+}
+
+crux-number-component lyte-input.cxFlatInput {
+	position: relative;
+	display: inline-flex;
+}
+crux-number-component lyte-input.cxBoxInput {
+	display: flex;
+}
+crux-number-component lyte-input.cxFlatInput.horizontal .lyteLabel {
+	.cxNumberFlatInputHorizontalLabelMixin();
+	min-width: @min-w;
+	width: @w;
+	flex-grow: 0;
+}
+crux-number-component lyte-input.cxFlatInput.horizontal .lyteField {
+	flex-grow: 1;
+}
+/************************************* 
+	**Number and Curreny Fields**
+
+Ref: Chinnaiya & Saravanan
+
+	By Default:
+		- For Currency Fields: Right Aligned
+		- Number Fields : Left Aligned
+	Subform Table: Left Aligned.
+	Aggregate fields: Right aligned.
+
+	Left Aligned (Number and Curreny Fields):
+		- crux-form-component
+		- Public Fields
+*************************************/
+
+.numberDivCurrencyView {
+	.cxNumberDivCurrencyViewMixin();
+	text-align: @text-align;
+}
+.numberDivNumberView,
+crux-form-component .numberDivCurrencyView,
+.cxDvFieldDetailComp .numberDivCurrencyView {
+	.cxNumberDivNumberViewMixin();
+	text-align: @text-align;
+}
+// .numberDivCurrencyView,
+// .numberDivNumberView {
+// 	white-space: nowrap;
+// }
+crux-number-component lyte-number.cxFlatInput.horizontal .lyteLabel {
+	.cxNumberLyteNumberFlatInputHorizontalLabelMixin();
+	min-width: @min-w;
+	width: @w;
+	flex-grow: 0;
+}
+// .cxCalculatorIcon {
+// 	.cxCalculatorIconMixin();
+// 	background: @bg;
+// 	width: @w;
+// 	height: @h;
+// }
+/* .cxCalculatorIcon - chnaged to CSS mask Mode */
+.cxCalculatorIcon {
+	background-image: none;
+	@background-position: -68px -2px;
+	width: 17px;
+	height: 17px;
+	.cruxMaskImageMixin(@cruxSprite,@background-position,@cxIconBaseMaskBg);
+	vertical-align: middle;
+}
+
+.cxBoxWithRightIcon .cxElementValue {
+	flex-grow: 1;
+}
+.cxNumInfoPop .lytePopover {
+	.cxNumInfoPopMixin();
+	transform: @transform;
+}
+.cxNumInfoPop .lytePopoverArrowIcon {
+	.cxNumInfoPopArrowIconMixin();
+	transform: @transform;
+}
+.cxNumResPopContent {
+	.cxNumResPopContentMixin();
+	color: @color;
+	font-size: @font-size;
+	padding: @padding;
+	font-family: @font-family;
+	font-weight: @font-weight;
+	cursor: pointer;
+}
+.cxNumInfoPopContent {
+	.cxNumInfoPopContentMixin();
+	padding: @padding;
+	border-radius: @border-radius;
+	max-width: @max-w;
+	color: @color;
+	overflow-wrap: break-word;
+	white-space: normal;
+}
+.cxNumDefaultInfo {
+	.cxNumDefaultInfoMixin();
+	font-size: @font-size;
+}
+// .cxNumInfoExpr {
+// 	.cxNumInfoExprMixin();
+// 	color: @color;
+// }
+crux-number-component .cxBoxWithRightIcon .cxBoxLeftContent {
+	overflow: visible;
+}
+
+/*Slider within Crux-picklist Less Starts */
+crux-number-component .cxNumberCompSlider {
+	.cruxNumberCompSliderMixin();
+	margin: @margin;
+	// width:@w;
+	// padding-bottom: @padding-bottom;
+}
+
+.cxNumberCompSlider .cxNumScaleLable{
+	.cxNumScaleLableMixin();
+	// transform: @transform;
+	// max-width: @max-w;
+	padding-top: @padding-top;
+	margin-top: @margin-top;
+	// direction: ltr;
+}
+
+.cxNumScaleLable .cxNumScaleLableFirstValue{
+	// .cxNumScaleLableFirstValueMixin();
+	// height: @h;
+	// width: @w;
+	// background: @bg;
+	// position: static;
+	display: inline-block;
+	white-space: nowrap;
+	vertical-align: top;
+}
+
+.cxNumberCompSlider .lyteScaleLine:first-child .cxNumScaleLable{
+	.cxNumScaleLableFirstChildMixin();
+	// transform: @transform;
+	text-align: @text-align;
+	position: absolute;
+	@{property-left}: @left;
+}
+
+.cxNumberCompSlider .lyteScaleLine:last-child .cxNumScaleLable{
+	.cxNumScaleLableLastChildMixin();
+	// transform: @transform;
+	text-align: @text-align;
+	position: absolute;
+	@{property-right}: @right;
+}
+
+.cxNumberCompSlider .lyteScaleLine:first-child .cxNumScaleLable.cxNumScaleSingDigLabel{
+	.cxNumScaleSingDigLabelFirstChildMixin();
+	@{property-left}: @left;
+}
+
+.cxNumberCompSlider .lyteScaleLine:last-child .cxNumScaleLable.cxNumScaleSingDigLabel{
+	.cxNumScaleSingDigLabelLastChildMixin();
+	@{property-right}: @right;
+}
+
+
+.cxNumScaleLable .cxNumScaleLableSecondValue{
+	.cxNumScaleLableSecondValueMixin();
+	display: inline-flex;
+	white-space: nowrap;
+	// max-width: @max-w;
+	margin-top: @margin-top;
+	color: @color;
+}
+
+.cxNumberCompSlider .lyteScaleLine:last-child .cxNumScaleLableSecondValue{
+	justify-content: flex-end;
+}
+
+
+.cxNumScaleLable .cxNumScaleLableSecondValue lyte-text{
+	.cxNumScaleLableSecondValueTextMixin();
+	vertical-align: top;
+	// max-width: @max-w;	
+}
+
+.cxNumberCompSlider .lyteRangeSlider .lyteSliderFill,
+.cxNumberCompSlider .lyteRangeSlider{
+	.cxNumberCompRangeSliderMixin();
+	border-radius: @border-radius;
+	// height: @h;
+}
+
+// .cxNumberCompSlider .lyteCircle.lyteSliderHandler,
+// .cxNumberCompSlider .lyteSquare.lyteSliderHandler{
+// 	.cxNumberCompSliderHandlerMixin();
+// 	height: @h;
+// 	width: @w;
+// 	border-radius: @border-radius;
+// 	top: @top;
+// }
+
+.cxNumberCompSlider .lyteRangeSlider::after,
+.cxNumberCompSlider .lyteRangeSlider::before{
+	.cxNumberCompRangeSliderBeforeMixin();
+	content: '';
+	width: @w;
+	height: @h;
+	display: block;
+	border-radius: @border-radius;
+	@{property-left}: @left;
+	position: absolute;
+	background: @bg;
+	z-index: @z-index;
+}
+
+.cxNumberCompSlider .lyteRangeSlider::after{
+	.cxNumberCompRangeSliderAfterMixin();
+	@{property-left}: @left;
+	@{property-right}: @right;
+	border-radius: @border-radius;
+	background: @bg;
+	width: @w;
+}
+
+.cxNumberCompSlider .lyteRangeSlider.lyteHorizontal .lyteScaleOption{
+	.cxNumberCompSliderScaleOptMixin();
+	top: @top;
+}
+
+.cxNumberCompSlider .lyteRangeSlider .lyteScaleLine{
+	.cxNumberCompSliderScaleLineMixin();
+	height: @h;
+}
+
+.cxNumberCompSlider .lyteRangeSlider .lyteScaleLine span:first-child{
+	.cxNumberCompSliderScaleLineFirstChildMixin();
+	border-radius: @border-radius;
+}
+
+.cxNumberCompSlider .lyteScaleLine:first-child,
+.cxNumberCompSlider .lyteScaleLine:last-child{
+	.cxNumberCompSliderScaleLineFirstLastMixin();
+	height: @h;
+}
+
+.cxNumberCompSlider .lyteRangeSlider .lyteSliderFill{
+	.cxNumberCompSliderFillMixin();
+	z-index: @z-index;
+}
+
+.cxNumberCompSliderReadOnly{
+	pointer-events: none;
+}
+
+.cxNumberCompSliderReadOnly .lyteSliderDisabled{
+	.cxNumberCompSliderReadOnlyMixin();
+	opacity: @opacity;
+}
+
+/*Slider within Crux-picklist Less Ends */
+
+crux-number-component .cxBoxInputInsideLabel.lyteInputDisabled .lyteLabel,
+crux-number-component .cxBoxInputInsideLabel.lyteInputReadonly .lyteLabel {
+// crux-number-component .cxBoxInputInsideLabel.lyteInputReadonly .lyteLabel
+	.cxNumberCompBoxDisabledLabelMixin();
+	background-color: @bg-color;
+	color: @color;
+}
+crux-number-component .cxBoxInputInsideLabel.lyteInputReadonly .lyteField input {
+    .cxNumberComponentWithCurrencyDisabledBorderRadiusMixin();
+    border-radius: @border-radius;
+}
+// .cxNumberCalcPopup.popoverWrapper {
+// 	z-index: 1; z-index overridden for making popover in currency field appear below crm header and subform fixed left menu
+// }
+/* temp Code -Suffix Label Styling Starts */
+crux-number-component .cxSymbolSuffix .lyteLabel,
+crux-number-component .cxSymbolSuffix .lyteNumberUnitElem,
+crux-number-component .cxBoxInputInsideLabel .lyteNumberUnitElem {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding: 8px 10px 8px 10px;
+    flex-grow: 0;
+    opacity: 1;
+    width: auto;
+    line-height: 16px;
+    @{property-margin-right}: 0;
+}
+/* temp Code -Suffix Label Styling Ends */
+crux-number-component lyte-input .lyteLabel,
+crux-twitter-component lyte-input .lyteLabel,
+crux-number-component .cxSymbolSuffix .lyteLabel,
+crux-number-component .cxBoxInputInsideLabel .lyteNumberUnitElem,
+crux-number-component .cxBoxLeftContent .lyteNumberUnitElem {
+	@{property-padding-left}: 10px;
+	@{property-padding-right}: 10px;
+	white-space: nowrap;
+    align-items: center;
+    background: transparent;
+    display: flex;
+	position: relative;
+}
+crux-number-component .cxBoxLeftContent .lyteNumberUnitElem { 
+	@{property-margin-right}: 0 !important;
+}
+crux-number-component lyte-input .lyteLabel::after,
+crux-number-component .cxSymbolPrefix .lyteLabel::after,
+crux-number-component .cxSymbolSuffix .lyteLabel::after,
+crux-number-component .cxBoxInputInsideLabel .lyteNumberUnitElem::after,
+crux-number-component .cxBoxLeftContent .lyteNumberUnitElem::after {
+    
+    content:'';
+	// min-height: 16px;
+	position:absolute;
+	width: 1px;
+	height: 20px;
+    top:6px;
+    // bottom: 0;
+    display: inline-block;
+	z-index:1;
+    background: var(--formBorder);
+    z-index: 1;
+}
+crux-number-component .cxBoxInputInsideLabel  .lyteField {
+	display: flex;
+}
+crux-number-component .cxSymbolSuffix {
+	flex-direction: row-reverse;
+}
+crux-number-component .cxSymbolSuffix .lyteLabel::after,
+crux-number-component .cxBoxInputInsideLabel .lyteNumberUnitElem::after,
+crux-number-component .cxBoxLeftContent .lyteNumberUnitElem::after {
+	@{property-left}:0;
+	// @{property-border-left}:1px solid #C0C6CC;
+}
+crux-number-component .cxSymbolPrefix .lyteLabel::after {
+	@{property-right}:0;
+	// @{property-border-right}:1px solid #C0C6CC;
+}
+
+/* For Label Right aligned Currency FIeld with Ctrl ++ */
+.cxBoxWithRightIcon .cxBoxLeftContent .lyteNumberUnitElem {
+    white-space: nowrap;
+	height: 100%;
+}
+
+// 	z-index: 11; 
+// }
+/*
+.cxNumberCalcPopup.popoverWrapper {
+	z-index: 11; z-index overridden for making popover in currency field appear below crm header and subform fixed left menu
+}
+// 	z-index: 11; 
+// }
+/*
+    z-index overridden for making popover in currency field appear below crm header and subform fixed left menu
+    commented - causes common issue in widget and related cases
+    */
+/* .cxNumberCalcPopup.popoverWrapper {
+    z-index: 11; 
+} */
+// .cxNumberCalcPopup.popoverWrapper {
+// 	z-index: 1; z-index overridden for making popover in currency field appear below crm header and subform fixed left menu
+// }
+
+.cxNumScaleLable lyte-text{
+	font-variant-ligatures: normal;
+}

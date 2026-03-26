@@ -1,0 +1,230 @@
+/*	$Id$	*/
+crux-user-dropdown{
+	font-size: 15px;
+	max-width: 100%;
+}
+crux-user-dropdown lyte-dropdown {
+	max-width: 100%;
+	display: block;
+}
+.userDropbox .userSearchBox::after{
+	content: '';
+	background: url('../images/crux-sprite-icons.svg') no-repeat -180px -4px;
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	right: 7px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	opacity: 0.3;
+}
+.userDropbox .cxUserDropboxSearchLoadingIcon {
+    position: absolute;
+    right: 2px;
+    top: 3px;
+    width: 25px;
+    height: 25px;
+    background-image: url(../images/crux-search-loader.svg);
+	background-size: 100%;
+}
+.userDropbox .userSecondaryDetail {
+	color: #666;
+    display: flex;
+    justify-content: space-between;
+}
+.cxUserDdSuggestUserPercentage {
+	font-family: var(--crux-bold-font);
+	font-weight: var(--crux-font-weight-bold);
+	color: #222;
+	font-size: 13px;
+	white-space: nowrap;
+	margin-left: 20px;
+}
+.userDropbox lyte-drop-item {
+    display: flex;
+    min-width: 250px;
+    align-items: flex-start;
+    line-height: 20px;
+    padding: 5px 15px 5px 25px;
+}
+.crux_dropbox_filter lyte-drop-item {
+    padding: 5px 15px;
+    color: #333;
+}
+.userDropbox .clearField + .userSearchBox::after,
+.crux_dropbox_filter lyte-drop-item[selected=true]::before {
+    content: none;
+}
+.userDropbox lyte-drop-item:hover{
+	background: #f3f3f3;
+}
+.userDropbox .result-selected::before {
+	content: "";
+	width: 10px;
+	height: 7px;
+	position: absolute;
+	left: 7px;
+	top: 50%;
+	margin-top: -6px;
+	background: transparent url("../images/crux-sprite-icons.svg") no-repeat scroll -33px -15px;
+}
+.crux_dropbox_filter{
+	margin-left: -1px;
+}
+.crux_dropbox_filter lyte-drop-body {
+	padding: 5px 0;
+	max-height: 160px;
+	overflow-x: hidden;
+}
+.userDropbox lyte-drop-body {
+	padding: 5px 0;
+	max-height: 235px;
+}
+.wrapperdiv {
+	min-width: 300px;
+}
+
+.cxUserDropboxInitialLoaderWrap {
+    padding: 90px 0;
+}
+.cxUserDropboxItemsLoader {
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/crux-search-loader.svg);
+    background-size: 100%;
+    display: inline-block;
+}
+.userDropbox .displayFlex{
+	display: flex;
+}
+lyte-drop-box.userDropbox .userSearchBox{
+	width: 100%;
+  display: flex;
+  flex: 1;
+	border-bottom: 0;
+}
+
+.cxUserDropdownInnerFilter {
+	max-width: 200px;
+}
+lyte-dropdown.cxUserDropdownInnerFilter lyte-drop-button {
+	/* border-top: 0 !important;
+	border-left: 0 !important; */
+	border: none !important;
+    box-shadow: none !important;
+    border-right: 1px solid #c3c6ca !important;
+    border-radius: 0;
+	display: block;
+}
+
+lyte-drop-box.userDropbox lyte-input.userSearchBox input{
+    padding: 8px 30px 8px 10px;
+}
+.userDropbox .multiSelectDd lyte-drop-item {
+	padding: 5px 15px;
+}
+
+.userDropbox .clearField {
+	background: url('../images/crux-sprite-icons.svg') no-repeat -54px -2px;
+  width: 10px;
+  height: 8px;
+  transform: scale(1.3);
+  z-index: 10002;
+	content: '';
+	position: absolute;
+	right: 7px;
+	top: 12px;
+	cursor: pointer;
+	opacity: 0.3;
+}
+.userDropbox .noUsersDiv{
+	display: block;
+	padding: 20px 0px 30px 0px;
+	color: #555;
+	text-align: center;
+    text-transform: capitalize;
+}
+
+.userDropbox .lyteDropdownNoResult {
+	display: none !important;
+}
+
+.cxUserDropboxScrollLoaderIcon {
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/crux-search-loader.svg);
+    background-size: 100%;
+    display: inline-block;
+}
+.cruxUserImgWrap.allUsers,
+.cruxUserImgWrap, .cruxUserImg {
+	height:32px;
+	width:32px;
+	border-radius: 50%;
+	box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.15);
+}
+.loggedInUser .cruxUserImg {
+	width: 22px;
+	height: 15px;
+	opacity: 0.4;
+	border-radius: 0;
+	box-shadow: none;
+    background-image: url(../images/ico_loggedinuser.svg);
+    background-size: 100%;
+}
+.cxUserDropboxNoUserPhoto .cruxUserImg {
+    background-image: url(../images/nophoto.png);
+    background-size: 100%;
+    box-shadow: none;
+    display: inline-block;
+}
+.userDropbox lyte-drop-item.lyteDropdownActive,
+.crux_userdrop_multi_placeholder ~ .lyteMultipleSelect {
+	display: none;
+}
+.loggedInUser,
+.cruxUserImgWrap.allUsers {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #f6f6f6;
+}
+.cruxUserImgWrap .allUsersImg {
+	background: url(../images/crux-sprite-icons.svg);
+	width: 18px;
+	height: 10px;
+	display: inline-block;
+	background-position: -193px -57px;
+	opacity: 0.4;
+}
+.cruxDropAlluser {
+	display: flex;
+    align-self: center;
+}
+.userDetail,
+.cxUserDetail {
+  word-break: break-all;
+  max-width: calc(100% - 42px);
+  flex-grow: 1;
+}
+.cxUserDropdownLoadingWithZia {
+    height: 90px;
+}
+crux-user-dropdown lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button {
+    padding-top: 5px;
+    padding-bottom: 1px;
+}
+.cxNoUserSelected.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button {
+    padding-top: 7px;
+    padding-bottom: 8px;
+}
+
+.cxUserDropFilterWrapperCont{
+	display: flex;
+	width: 100%;
+}
+.cxUserDropbox .cxComboBoxEmptyMessage {
+	height: auto;
+    min-height: 50px;
+}

@@ -1,0 +1,24 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-user-drop-down-secondary-detail-color: #666;
+    --@{cssPrefix}-user-drop-down-suggested-user-percentage-color: var(--crux-base-text-color);
+    --@{cssPrefix}-user-drop-down-filter-item-color: #333;
+    --@{cssPrefix}-user-drop-box-selection-bg-color: #f3f3f3;
+    --@{cssPrefix}-user-drop-down-inner-filter-btn-border-color: var(--crux-element-border-color);
+    --@{cssPrefix}-user-drop-box-no-user-text-color: var(--crux-element-label-color);
+    --@{cssPrefix}-user-drop-down-img-box-shadow-color: rgba(0,0,0,0.15);
+    --@{cssPrefix}-user-drop-down-all-user-bg-color: #f6f6f6;
+    --@{cssPrefix}-user-drop-down-sel-user-img-border-color: #D2D9E0;
+}

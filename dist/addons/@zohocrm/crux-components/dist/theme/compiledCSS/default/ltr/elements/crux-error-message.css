@@ -1,0 +1,173 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+crux-error-message {
+  display: block;
+}
+.cruxErrMsg {
+  font-family: 'LatoRegular', sans-serif;
+  color: var(--lyte-crux-error-msg-color);
+  font-size: 0.786rem;
+  display: block;
+}
+.cruxErrMsg.cruxErrorMsgDesc {
+  position: absolute;
+  font-family: 'LatoRegular', sans-serif;
+  z-index: 2;
+  color: var(--lyte-crux-field-error-msg-color);
+  font-size: 12px;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  left: 0;
+  display: block;
+}
+.cruxErrMsg.cruxErrorMultiline {
+  /*Added Important - as in LUX this style gets added at start itself */
+  white-space: normal !important;
+  position: relative !important;
+  overflow-wrap: break-word;
+}
+.cruxErrorField .lyteField {
+  border-bottom: 1px solid var(--lyte-crux-error-field-border-color) !important;
+}
+/**************************************************
+	.cxStaticErrorMsg - Used specifically in in places where single line static message needed.
+					- can be passed using cx-prop-error-class from wrapper eg: {crux-text-component}
+	.cxErrorMsgMultiLines - class will add Dynamically from crux based script calculation.
+					.cxErrorMsgMultiLines - DO NOT pass as cx-prop-erro-class. 
+					It will be removed Automatically.
+***************************************************/
+.cxStaticErrorMsg .cruxErrMsg.cruxErrorMsgDesc,
+.cxErrorMsgMultiLines .cruxErrMsg.cruxErrorMsgDesc {
+  position: static;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.cxFieldWarningMsg {
+  color: var(--lyte-crux-field-warning-msg-color);
+  font-size: 0.725rem;
+  top: 100%;
+  transform: translateY(4px);
+  position: absolute;
+  font-family: 'LatoRegular', sans-serif;
+  z-index: 2;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  left: 0;
+  display: block;
+}
+.cxPropWarningIconSpacing {
+  margin-right: 5px;
+  top: 1px;
+  position: relative;
+}
+.cxPropWarningMsgTxt {
+  max-width: calc(100% - 30px);
+}
+/* CRUX Error Hover Card Message Starts */
+.cxErrorHoverCard .lytePopover {
+  background-color: var(--lyte-crux-field-error-popup-background);
+  color: var(--lyte-crux-field-error-popup-color);
+  box-shadow: 0px 3px 12px var(--lyte-crux-field-error-popup-box-shadow-color);
+  line-height: 18px;
+  border: 1px solid var(--lyte-crux-error-hover-card-popup-border-color);
+}
+.cxErrorHoverCard lyte-hovercard-content {
+  padding: 8px 12px;
+  font-size: 0.929rem;
+}
+.cxErrorHoverCard .lytePopover a {
+  color: var(--lyte-crux-error-hover-card-popup-link-color);
+}
+/* CRUX Error message with small Info Icon for accessibility Starts */
+.cruxErrMsg.cxHasWarnIcon {
+  display: flex;
+  color: var(--lyte-crux-error-msg-color);
+  font-size: 0.857rem;
+}
+.cxHasWarnIcon .cxWarnIcon {
+  /* border: 1px solid #ddd; */
+  display: inline-block;
+  min-width: 0;
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+/* CRUX Error message with small Info Icon for accessibility Ends*/
+/* CRUX Error Hover Card Message Ends */
+/* Error message Shake Animation Starts */
+.cxShakeErrorHovercard .lytePopover {
+  /* @keyframes duration | easing-function | delay | iteration-count | direction | fill-mode | play-state | name */
+  animation: cx-animation-shake-horizontal 0.5s linear 1;
+}
+@keyframes cx-animation-shake-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* Error message Shake Animation Ends */
+.cxShakeErrorMessage.cruxErrMsg.cruxErrorMsgDesc {
+  animation: cx-error-shake-anim 0.5s linear 1;
+}
+@keyframes cx-error-shake-anim {
+  0% {
+    transform: translateX(3px);
+  }
+  30% {
+    transform: translateX(-3px);
+  }
+  60% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+/*# sourceMappingURL=crux-error-message.css.map */

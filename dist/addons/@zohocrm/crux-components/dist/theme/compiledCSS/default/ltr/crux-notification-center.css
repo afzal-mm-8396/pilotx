@@ -1,0 +1,243 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cxNotifyModalWrapper .lyteModalElement {
+  transition: none !important;
+}
+.cxNotifyModalContent {
+  padding: 20px;
+  background: var('--lyte-crux-notification-center-modal-content-bg-color');
+  backdrop-filter: blur(2px);
+  max-height: inherit;
+  overflow-x: hidden !important;
+}
+.cxNotifyModalWrapper .lyteModalElement,
+.cxNotifyModalWrapper .lyteModal {
+  box-shadow: none;
+  background: transparent;
+  border: none;
+}
+.cxNotifyMsgCont {
+  border: 1px solid var('--lyte-crux-notification-center-cont-br-color');
+  box-shadow: 0px 2px 20px 0px var('--lyte-crux-notification-center-cont-box-shadow');
+  background: var('--lyte-crux-notification-center-cont-bg');
+  border-radius: 8px;
+  padding: 12px 0px 0px;
+  min-width: 450px;
+  max-width: 450px;
+  transition: max-height 0.2s, padding 0.1s, border 0.1s, margin 0.1s;
+  transition-delay: 0.15s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-height: 312px;
+  left: calc(100% + 30px);
+  animation: cxnotifycont-anim 0.2s forwards;
+}
+.cxNotifyMsgCont:not(:last-child) {
+  margin-bottom: 10px;
+}
+@keyframes cxnotifycont-anim {
+  0% {
+    left: calc(100% + 30px);
+  }
+  100% {
+    left: 0px;
+  }
+}
+.cxNotifyMsgCont.cxNotifyMsgContCloseAnim {
+  animation: cxnotifycont-close-anim 0.2s forwards;
+  max-height: 0px;
+  padding: 0px;
+  margin-bottom: 0px !important;
+  border: 0px solid;
+}
+@keyframes cxnotifycont-close-anim {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: calc(100% + 30px);
+  }
+}
+.cxNotifyHeader {
+  display: flex;
+  align-items: center;
+  font-family: 'LatoBold', sans-serif;
+  font-size: 1rem;
+  word-break: break-word;
+  padding: 0px 20px 12px;
+}
+.cxNotifyActionIconWrap {
+  height: 24px;
+  width: 24px;
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.cxNotifyActionIconWrap:first-of-type {
+  margin-right: 5px;
+}
+.cxNotifyHeaderIconWrap {
+  height: 26px;
+  width: 26px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-right: 5px;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cxNotifyHeaderIcon {
+  position: absolute;
+}
+.cxNotifyContent {
+  transition: max-height 0.2s, padding 0.2s;
+  overflow: auto;
+  padding: 0px 20px 12px;
+}
+.cxNotifyContentMinimize {
+  max-height: 0px !important;
+  padding-bottom: 0px;
+}
+.cxNotifyCloseIcon {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -71px -118px;
+  mask-position: -71px -118px;
+  background-color: #333;
+  position: absolute;
+}
+.cxNotifyMinimizeIcon {
+  width: 10px;
+  height: 11px;
+  position: absolute;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -82px -385px;
+  mask-position: -82px -385px;
+  background-color: #333;
+}
+.cxNotifyExpandIcon {
+  width: 10px;
+  height: 3px;
+  position: absolute;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -347px -238px;
+  mask-position: -347px -238px;
+  background-color: #333;
+}
+.cxNotifyHeaderIconWrap_Complete {
+  background-color: var('--lyte-crux-notification-center-head-icon-wrap-complete-bg');
+}
+.cxNotifyHeaderIconWrap_Info,
+.cxNotifyHeaderIconWrap_InProgress {
+  background-color: var('--lyte-crux-notification-center-head-icon-wrap-progress-bg');
+}
+.cxNotifyHeaderIconWrap_Error,
+.cxNotifyHeaderIconWrap_Warning {
+  background-color: var('--lyte-crux-notification-center-head-icon-wrap-warning-bg');
+}
+.cxNotifyHeaderIcon_Complete {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -229px -177px;
+  mask-position: -229px -177px;
+  background-color: var('--lyte-crux-notification-center-head-icon-complete-bg');
+}
+.cxNotifyHeaderIcon_InProgress {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -99px -383px;
+  mask-position: -99px -383px;
+  background-color: var('--lyte-crux-notification-center-head-icon-progress-bg');
+}
+.cxNotifyHeaderIcon_Error,
+.cxNotifyHeaderIcon_Warning {
+  width: 15px;
+  height: 14px;
+  position: absolute;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -125px -223px;
+  mask-position: -125px -223px;
+  background-color: var('--lyte-crux-notification-center-head-icon-warning-bg');
+}
+.cxNotifyHeaderIcon_Info {
+  width: 13px;
+  height: 14px;
+  position: absolute;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -7px -126px;
+  mask-position: -7px -126px;
+  background-color: var('--lyte-crux-notification-center-head-icon-progress-bg');
+}
+.cxNotifyBtnCont {
+  margin-top: 15px;
+}
+.cxNotifyHeaderIconWrap_Error {
+  background-color: var('--lyte-crux-notification-center-head-icon-wrap-error-bg');
+}
+.cxNotifyHeaderIcon_Error {
+  background-color: var('--lyte-crux-notification-center-head-icon-error-bg');
+}
+/*# sourceMappingURL=crux-notification-center.css.map */

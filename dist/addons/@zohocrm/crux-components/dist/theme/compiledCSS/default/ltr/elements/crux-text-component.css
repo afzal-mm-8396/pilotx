@@ -1,0 +1,71 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cxElementsWrap {
+  display: inline-flex;
+}
+.cxElementsWrap.horizontal .cxElementLabel {
+  margin-right: 30px;
+}
+.cxElementsWrap.horizontal.cxFlatAppear {
+  align-items: flex-end;
+}
+.cxElementsWrap.horizontal.cxBoxAppear {
+  align-items: center;
+}
+.cxElementsWrap.vertical {
+  flex-direction: column;
+}
+.cxElementsWrap.vertical .cxElementLabel {
+  margin-bottom: 8px;
+  margin-right: 0;
+}
+.cxElementsWrap.vertical.cxFlatAppear .cxElementLabel {
+  margin-bottom: 0;
+}
+.cxTextCompExpandable .cxBoxInput.lyteInputBox:not(.lyteInputFocus) .lyteField:not(:hover) {
+  border-color: transparent;
+}
+.cxTextCompExpandable lyte-input,
+.cxTextCompExpandable lyte-input input {
+  max-width: 100%;
+}
+crux-text-component lyte-input,
+crux-text-component .cxTextAutoCompWrapper {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+/*# sourceMappingURL=crux-text-component.css.map */

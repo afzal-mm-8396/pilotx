@@ -1,0 +1,254 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-notification-center.variables.less";
+
+@import "../themes/default/less-variables/crux-notification-center-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-notification-center-variables.less";
+}
+
+// .cxNotifyModalWrapper{
+//     .cxNotifyModalWrapperMixin();
+//     @{property-left}: @left;
+//     top: @top;
+// }
+
+.cxNotifyModalWrapper .lyteModalElement{
+    .cxNotifyModalElemMixin();
+    transition: @transition;
+    // max-height: 100vh !important;
+}
+
+.cxNotifyModalContent{
+    .cxNotifyModalContentMixin();
+    padding: @padding;
+    background: @bg;
+    backdrop-filter: @backdrop-filter;
+    max-height: @max-h;
+    overflow-x: hidden !important;
+}
+
+.cxNotifyModalWrapper .lyteModalElement,
+.cxNotifyModalWrapper .lyteModal{
+    .cxNotifyModalMixin();
+    box-shadow: @box-shadow;
+    background: @bg;
+    border: @border;
+}
+
+.cxNotifyMsgCont{
+    .cxNotifyMsgContMixin();
+    border: @border;
+    box-shadow: @box-shadow;
+    background: @bg;
+    border-radius: @border-radius;
+    padding: @padding;
+    min-width: @min-w;
+    max-width: @max-w;
+    transition: max-height 0.2s,padding 0.1s,border 0.1s,margin 0.1s;
+    transition-delay: 0.15s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-height: @max-h;
+    @{property-left}: @left;
+    animation: cxnotifycont-anim 0.2s forwards;
+}
+
+.cxNotifyMsgCont:not(:last-child){
+    .cxNotifyMsgContNotLastChildMixin();
+    margin-bottom: @margin-bottom;
+}
+
+
+@keyframes cxnotifycont-anim {
+    0%{
+        .cxNotificationAnimMixin();
+        @{property-left}: @startLeft;
+    }
+    100%{
+        .cxNotificationAnimMixin();
+        @{property-left}: @endLeft;
+    }
+}
+
+.cxNotifyMsgCont.cxNotifyMsgContCloseAnim{
+    .cxNotifyMsgContCloseAnimMixin();
+    animation: cxnotifycont-close-anim 0.2s forwards;
+    max-height: @max-h;
+    padding: @padding;
+    margin-bottom: @margin-bottom;
+    border: @border;
+}
+
+@keyframes cxnotifycont-close-anim {
+    0%{
+        .cxNotificationAnimMixin();
+        @{property-left}: @endLeft;
+    }
+    100%{
+        .cxNotificationAnimMixin();
+        @{property-left}: @startLeft;
+    }
+}
+
+.cxNotifyHeader{
+    .cxNotifyHeaderMixin();
+    display: flex;
+    align-items: center;
+    font-family: @font-family;
+    font-size: @font-size;
+    word-break: break-word;
+    padding: @padding;
+}
+
+.cxNotifyActionIconWrap{
+    .cxNotifyActionIconWrapMixin();
+    height: @h;
+    width: @w;
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cxNotifyActionIconWrap:first-of-type{
+    .cxNotifyActionIconWrapFirstChildMixin();
+    @{property-margin-right}: @margin-right;
+}
+
+.cxNotifyHeaderIconWrap{
+    .cxNotifyHeaderIconWrapMixin();
+    height: @h;
+    width: @w;
+    flex-shrink: 0;
+    align-self: flex-start;
+    @{property-margin-right}: @margin-right;
+    border-radius: @border-radius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cxNotifyHeaderIcon{
+    position: absolute;
+}
+
+.cxNotifyContent{
+    .cxNotifyContentMixin();
+    transition: max-height 0.2s,padding 0.2s;
+    overflow: auto;
+    padding: @padding;
+}
+
+.cxNotifyContentMinimize{
+    .cxNotifyContentMinimizeMixin();
+    max-height: @max-h;
+    padding-bottom: @padding-bottom;
+}
+
+// .cxNotifyContentExpand{
+//     max-height: 200px;
+// }
+
+
+.cxNotifyCloseIcon {
+    .cxNotifyCloseIconMixin();
+	width: @w;
+	height: @h;
+    display: inline-block;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    position: absolute;
+}
+
+.cxNotifyMinimizeIcon {
+    .cxNotifyMinimizeIconMixin();
+	width: @w;
+	height: @h;
+    display: inline-block;
+    position: absolute;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxNotifyExpandIcon {
+    .cxNotifyExpandIconMixin();
+	width: @w;
+	height: @h;
+    display: inline-block;
+    position: absolute;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxNotifyHeaderIconWrap_Complete{
+    .cxNotifyHeaderIconWrapCompleteMixin();
+    background-color: @bg-color;
+}
+
+.cxNotifyHeaderIconWrap_Info,
+.cxNotifyHeaderIconWrap_InProgress{
+    .cxNotifyHeaderIconWrapInProgessMixin();
+    background-color: @bg-color;
+}
+
+.cxNotifyHeaderIconWrap_Error,
+.cxNotifyHeaderIconWrap_Warning{
+    .cxNotifyHeaderIconWrapWarningMixin();
+    background-color: @bg-color;
+}
+
+.cxNotifyHeaderIcon_Complete{
+    .cxNotifyHeaderIconCompleteMixin();
+    width: @w;
+	height: @h;
+    display: inline-block;
+    position: absolute;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxNotifyHeaderIcon_InProgress{
+    .cxNotifyHeaderIconInprogressMixin();
+    width: @w;
+	height: @h;
+    display: inline-block;
+    position: absolute;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxNotifyHeaderIcon_Error,
+.cxNotifyHeaderIcon_Warning{
+    .cxNotifyHeaderIconWarningMixin();
+    width: @w;
+	height: @h;
+    display: inline-block;
+    position: absolute;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxNotifyHeaderIcon_Info{
+    .cxNotifyHeaderIconInfoMixin();
+    width: @w;
+	height: @h;
+    display: inline-block;
+    position: absolute;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxNotifyBtnCont{
+    .cxNotifyBtnContMixin();
+    margin-top: @margin-top;
+}
+
+.cxNotifyHeaderIconWrap_Error{
+    .cxNotifyHeaderIconWrapErrorMixin();
+    background-color: @bg-color;
+}
+
+.cxNotifyHeaderIcon_Error{
+    .cxNotifyHeaderIconErrorMixin();
+    background-color: @bg-color;
+}

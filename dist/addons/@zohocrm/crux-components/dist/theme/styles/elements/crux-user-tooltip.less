@@ -1,0 +1,353 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-user-tooltip.variables.less";
+
+@import "../../themes/default/less-variables/crux-user-tooltip-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less"; 
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-user-tooltip";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../themes/default/css-variables/crux-user-tooltip-variables.less";
+}
+
+.cxUserbcpopup {
+	.cxUserbcpopupMixin();
+	box-shadow: @box-shadow;
+	background-color: @bg-color;
+	border-radius: @border-radius;
+}
+.cxUpSpace {
+	.cxUpSpaceMixin();
+	background-color: @bg-color;
+	padding: @padding;
+}
+.cxUpSpaceContent{
+	.cxUpSpaceContentMixin();
+	font-size: @font-size;
+	color: @color;
+	margin-top: @margin-top;
+	word-break: break-word;
+}
+.cxEmailIconWrap,
+.cxPhoneIconWrap,
+.cxUserbcInfoContent,
+.cxUpSizeWrap,
+.cxbcUserNameWrap{
+	display: table-cell;
+}
+.cxUpSize {
+	.cxUpSizeMixin();
+	border-radius: @border-radius;
+	width: @w;
+	height: @h;
+}
+.cxUserbcInfo {
+	.cxUserbcInfoMixin();
+	padding: @padding;
+	font-size: @font-size;
+}
+.cxMailLnk{
+	.cxMailLnkMixin();
+	color: @color;
+}
+.cxUserbcInfoIconWrapper
+.cxUserinfoMax {
+	.cxUserinfoMaxMixin();
+	word-wrap: break-word;
+	max-width: @max-w;
+}
+.cxNormaltag {
+	.cxNormaltagMixin();
+	font-size: @font-size;
+	font-weight:normal;
+	padding: @padding;
+	border-radius: @border-radius;
+	display:inline-block;
+	color: @color;
+	border: @border;
+}
+// .cxRedColcxUserbcpopupContent {
+// 	.cxRedColcxUserbcpopupContentMixin();
+// 	font-size:@font-size;
+// 	padding-bottom: @padding-bottom;
+// }
+.cxUserbcpopupContent{
+	.cxUserbcpopupContentMixin();
+	padding: @padding;
+}
+// .cxUserbcInfoItem {
+// 	.cxUserbcInfoItemMixin();
+// 	padding-bottom:@padding-bottom;
+// padding-top: @padding-top;
+// }
+// .cxUserbcInfoItem,
+// .cxMobileIconWrapParent,
+// .cxPhoneIconWrapParent{
+// 	padding-top:0 Added temporarily as padding bottom is used in css and padding-top in html. need to be removed
+// }
+// .cxPhoneIconWrapParent{
+// 	.cxPhoneIconWrapParentMixin();
+// 	padding-bottom: @padding-bottom;
+// }
+
+.cxUserbcInfoItem,
+.cxMobileIconWrapParent,
+.cxPhoneIconWrapParent {
+	display: flex;
+	align-items: center;
+}
+
+.cxEmailIcon,
+.cxPhoneIcon,
+.cxMobileIcon,
+.cxBcChatIcon,
+.cxBcCallIcon,
+.cxVideoCallIcon {
+	.cxUserTooltipIconsMixin();
+	background-image: @bg-img;
+	display: inline-block;
+}
+.cxEmailIcon {
+	.cxEmailIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	margin: @margin;
+}
+.cxPhoneIcon {
+	.cxPhoneIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	margin: @margin;
+}
+.cxPhoneIconContent{
+	.cxPhoneIconContentMixin();
+	// color: @color;
+	display: table-cell;
+}
+.cxMobileIconWrap{
+	display: table-cell;
+}
+// .cxMobileIconWrapParent{
+// 	.cxMobileIconWrapParentMixin();
+// 	padding-bottom: @padding-bottom;
+// }
+.cxMobileIcon {
+	.cxMobileIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	margin: @margin;
+}
+.cxDismiss-btn {
+	.cxDismissBtnMixin();
+	min-width: @min-w;
+	color: @color;
+	background: @bg;
+	border: @border;
+	border-radius: @border-radius;
+	margin: @margin;
+	padding: @padding;
+	display: inline-block;
+	cursor: pointer;
+	@{property-margin-right}: @margin-right;
+	text-transform:capitalize;
+}
+
+// .cxInfoPopover .lytePopoverArrowLeft  {
+// 	.cxInfoPopoverArrowLeftMixin();
+// 	box-shadow: @box-shadow;
+// 	@{property-border-left}: @border-left;
+// 	border-bottom: @border-bottom;
+// 	border-radius: @border-radius;
+// 	@{property-left}: @left;
+// }
+
+// .cxInfoPopover .lytePopoverArrowRight {
+// 	.cxInfoPopoverArrowRightMixin();
+// 	box-shadow: @box-shadow;
+// 	@{property-border-right}: @border-right;
+// 	border-top: @border-top;
+// 	border-radius: @border-radius;
+// 	@{property-right}: @right;
+// }
+
+.cxInfoPopover .lytePopover {
+	.cxInfoPopoverLytePopoverMixin();
+	// background-color: @bg-color;
+	// border-radius: @border-radius;
+	// box-shadow: @box-shadow;
+	z-index: @z-index;
+	min-width: @min-w;
+	border:@border;
+}
+
+.cxEllipsis {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	vertical-align: top;
+}
+
+.cxUpSpace .cxEllipsis {
+	.cxUpSpaceEllipsisMixin();
+	max-width: @max-w;
+}
+
+.cxUserbcInfo .cxEllipsis {
+	.cxUserbcInfoEllipsisMixin();
+	max-width: @max-w;
+}
+
+.cxRedCol {
+	.cxRedColMixin();
+	color: @color;
+}
+
+.cxDashBorder {
+	.cxDashBorderMixin();
+	border-bottom: @border-bottom;
+	height: @h;
+	margin: @margin;
+}
+
+.cxBcActionIcons {
+	.cxBcActionIconsMixin();
+	height: @h;
+	width: @w;
+	@{property-margin-right}: @margin-right;
+	display: inline-block;
+	border: @border;
+	border-radius: @border-radius;
+	cursor: pointer;
+	position: relative;
+}
+
+.cxBcActionIcons:hover {
+	.cxBcActionIconsHoverMixin();
+	background: @bg;
+}
+
+.cxBcCallIcon {
+	.cxBcCallIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	display: inline-block;
+	position: absolute;
+	@{property-left}: @left;
+	top: @top;
+}
+
+.cxBcActionIcons:hover .cxBcCallIcon {
+	.cxBcActionIconsHoverBcCallIconMixin();
+	background-position: @bg-pos;
+}
+
+.cxBcChatIcon {
+	.cxBcChatIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	display: inline-block;
+	position: absolute;
+	@{property-left}: @left;
+	top: @top;
+}
+
+.cxBcActionIcons:hover .cxBcChatIcon {
+	.cxBcActionIconsHoverBcChatIconMixin();
+	background-position: @bg-pos;
+}
+
+.cxVideoCallIcon {
+	.cxVideoCallIconMixin();
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	display: inline-block;
+	position: absolute;
+	@{property-left}: @left;
+	top: @top;
+}
+
+.cxBcActionIcons:hover .cxVideoCallIcon {
+	.cxBcActionIconsHoverVideoCallIconMixin();
+	background-position: @bg-pos;
+}
+
+.cxUpSecond .cxEllipsis {
+	.cxUpSecondMixin();
+	max-width: @max-w;
+}
+.cxUserTooltipRedBadge,
+.cxUserTooltipClientPortalUserLabel {
+	border-radius: @cxBoxInnerElementsBorderRadius;
+}
+
+.cxUserTooltipClientPortalUserLabel { 
+	.cxUserTooltipClientPortalUserLabelMixin();
+	border: @border;
+    background-color: @bg-color;
+    padding: @padding;
+    font-size: @font-size;
+    display: inline-block;
+	font-family: @font-family;
+	font-weight: @font-weight;
+}
+
+.cxbcUserName {
+	.cxbcUserNameMixin();
+    color: @color;
+    font-size: @font-size;
+    margin-bottom: @margin-bottom;
+    word-break: break-word;
+	font-family: @font-family;
+	font-weight: @font-weight;
+}
+.cxInfoPopover .lytePopoverArrow,
+.cxInfoPopover .lytePopoverArrowIcon {
+	z-index: 0;
+	display: inline-block;
+}
+
+.cxbcUserNamePointer{
+	cursor: pointer;
+}
+
+.cxUpSizeWrap{
+	.cxUpSizeWrapMixin();
+	padding-top: @padding-top;
+}
+
+.cxbcUserNameWrap{
+	.cxbcUserNameWrapMixin();
+	@{property-padding-left}: @padding-left;
+}
+
+.cxMobileIconWrap,
+.cxPhoneIconWrap,
+.cxEmailIconWrap{
+	.cxUserTooltipIconMixin();
+	width: @w;
+}
+
+.cxPhoneIconContent,
+.cxUserbcInfoContent{
+	.cxUserTooltipContentMixin();
+	@{property-padding-left}: @padding-left;
+	word-break: break-word;
+}
+
+.cxUserbcInfoItem:not(:last-child),
+.cxMobileIconWrapParent:not(:last-child),
+.cxPhoneIconWrapParent:not(:last-child){
+	.cxUserTooltipContentWrapMixin();
+	padding-bottom: @padding-bottom;
+}

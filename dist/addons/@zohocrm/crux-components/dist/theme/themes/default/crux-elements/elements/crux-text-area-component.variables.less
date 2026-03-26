@@ -1,0 +1,81 @@
+.cxTextareaViewModeMixin() {
+	@min-w: 300px;
+	@max-w: 100%;
+	@width:100%;
+	@display: block;
+}
+.cxTextareaShowMoreMixin() {
+	@display: inline-block; /* Added inline-block for canvas issue */
+	@position: relative;
+	@color: @cxTextAreaShowMoreColor;
+}
+.cxTextareaLyteFieldMixin() {
+	@flex-grow: unset;
+}
+.cxTextareaShowHoverCardMixin(){
+	@padding-right: 25px;
+}
+.cxTextarealyte-inputMixin(){
+	@right:0px;
+	@bottom: 0px;
+
+}
+
+.cxTextAreaToggleShowBtnMixin(){
+	@w: 20px;
+	@h: 18px;
+	@border: 1px solid @cxTextAreaPopToggleBtnBorder;
+	@bg: @cxTextAreaPopToggleBtnBg;
+	@border-radius: 4px;
+	@margin-left: 5px;
+	@right: 0px;
+	@top: -2px;
+}
+
+.cxTextAreaToggleShowBtnIconMixin(){
+	@bg-image: @cruxSprite;
+	@bg-position: -1px -2px;
+	@w: 8px;
+	@h: 4px;
+	@left: 6px;
+	@top: 7px;
+}
+
+.cxTextareHovercardPopoverMixin(){
+	@border-radius:6px;
+}
+
+.cxTextareHovercardPopoverContentMixin(){
+	@padding: .cruxLESSPaddingMixin(15px 0px 15px 0px)[@padding] !important;
+	@line-height: 18px;
+}
+
+.cxTextareHovercardPopoverPreMixin(){
+	@font-size: @cxFontSize14px;
+	@font-family: @cruxPrimaryFont;
+	@padding: .cruxLESSPaddingMixin(0px 43px 0px 15px)[@padding];
+}
+
+.cxTextAreaHovercardPopoverCloseIcon(){
+	@bg-img: @cruxSprite;
+	@bg-pos: -71px -118px;
+	@bg-color: @cxIconBaseMaskBg;
+	@w: 8px;
+	@h: 8px;
+	@inset: 0px;
+	@margin: auto;
+}
+
+.cxTextAreaHovercardPopoverCloseIconWrapHover(){
+	@bg: @cxTextAreaPopCloseIconHoverBg;
+}
+
+.cxTextAreaHovercardPopoverCloseIconWrap(){
+	@opacity: 1;
+	@w: 18px;
+	@h: 18px;
+	@border-radius: 9px;
+	@top: 15px !important;
+	@right: 20px;
+	@bg: none;
+}

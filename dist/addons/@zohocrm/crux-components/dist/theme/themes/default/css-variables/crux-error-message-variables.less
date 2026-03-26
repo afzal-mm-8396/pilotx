@@ -1,0 +1,25 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-field-error-msg-color : #e64c48;
+    --@{cssPrefix}-field-error-border-color: var( --crux-element-error-border-color);
+    --@{cssPrefix}-field-warning-msg-color: #e49000;
+    --@{cssPrefix}-field-error-popup-background: #F14949;
+    --@{cssPrefix}-field-error-popup-color: #fff;
+    --@{cssPrefix}-field-error-popup-box-shadow-color: rgba(0, 0, 0, 0.30);
+    --@{cssPrefix}-error-hover-card-popup-link-color: var(--crux-link-color);
+    --@{cssPrefix}-error-msg-color: #FF5D5A;
+    --@{cssPrefix}-error-field-border-color: #FF5D5A;
+    --@{cssPrefix}-error-hover-card-popup-border-color: #e0e0e0;
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["theme/themes/css-variables/ui-elements/banner/banner.css-variables.less"],"names":[],"mappings":";;;;;;;AAEA;EACC,yBAAA;EACA,yBAAA;EACA,yBAAyB,4BAAzB","sourcesContent":["@import \"../../global/global.variables.less\";\n\n:root {\n\t--lyte-banner-bg: #2f363d;\n\t--lyte-banner-color: #fff;\n\t--lyte-banner-font-size: var(--lyte-font-size-medium);\n}"]}

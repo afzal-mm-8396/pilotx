@@ -1,0 +1,966 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-formula-editor.variables.less";
+
+@import "../themes/default/less-variables/crux-formula-editor-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+:root{
+    --crux-formula-editor-bg-color: @cxFrmlaEdtrBg;
+    --crux-formula-editor-line-highlight-bg-color: @cxFrmlaEdtrLineHighlightBg;
+    --crux-formula-editor-dark-bg-color: @cxFrmlaEdtrDarkBg;
+    --crux-formula-editor-dark-line-highlight-bg-color: @cxFrmlaEdtrDarkLineHighlightBg;
+    --crux-formula-editor-font-family: @cxFrmlaEdtrFontFamily;
+}
+
+crux-formula-editor lyte-editor{
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+}
+
+.cxFrmlHideBtn{
+    display: none !important;
+}
+
+.cxFrmlaEdtrContainer{
+    .cxFrmlaEdtrContainerMixin();
+    width: @w;
+    height: @h;
+    border: @border;
+    border-radius: @border-radius;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    background-color: @bg-color;
+    // max-width: @max-width;
+    // max-height: @max-h;
+}
+.cxFrmlaEdtrSpaceContainer{
+    .cxFrmlaEdtrSpaceContainerMixin();
+    display: flex;
+    flex-direction: column;
+    min-height: @min-h;
+    // max-width: @max-w;
+    // min-width: @min-w;
+    flex-grow: @flex-grow;
+    overflow: hidden;
+    background-color: @bg-color;
+}
+
+.cxFrmlaEdtrTopPanelContainer{
+    .cxFrmlaEdtrTopPanelContainerMixin();
+    border-bottom: @border-bottom;
+    padding: @padding;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: @font-size;
+    background: @bg;
+    box-sizing: border-box;
+    @{property-margin-left}: @margin-left;
+    gap: @gap;
+}
+.cxFrmlaEdtrPanelIsClosed .cxFrmlaEdtrTopPanelContainer {
+    @{property-margin-left}: 0;
+}
+.cxFrmlaEdtrTopPanelLabel{
+    .cxFrmlaEdtrTopPanelLabelMixin();
+    color: @color;
+    @{property-margin-right}: @margin-right;
+}
+
+.cxFrmlaEdtrTopPanelDropdown:not(:last-child){
+    .cxFrmlaEdtrTopPanelDropdownMixin();
+    @{property-margin-right}: @margin-right;
+}
+
+.cxFrmlaEdtrTopPanelDropdown lyte-dropdown.cxBoxDropdown lyte-drop-button,
+.cxFrmlaEdtrTopPanelDropdown .cxFakeDropButton{
+    .cxFrmlaEdtrTopPanelDropdownBtmMixin();
+    padding: @padding;
+    font-size: @font-size;
+}
+
+.cxFrmlaEdtrTopPanelDropdown .cxFakeDropPlaceholderNormal,
+.cxFrmlaEdtrTopPanelDropdown lyte-dropdown.cxBoxDropdown .lyteDropPlaceholderNormal{
+    .cxFrmlaEdtrTopPanelDropdownBtmMixin();
+    font-size: @font-size;
+}
+
+.cxFrmlaEdtrTopPanelDropdown lyte-drop-button lyte-text{
+    vertical-align: top;
+}
+
+.cxPropFrmlaEdtrTypeDrop{
+    .cxPropFrmlaEdtrTypeDropMixin();
+    width: @w;
+}
+
+.cxPropFrmlaEdtrNumDrop{
+    .cxPropFrmlaEdtrNumDropMixin();
+    width: @w;
+}
+
+.cxFrmlaEdtrTopPanelSeparator{
+    .cxFrmlaEdtrTopPanelSeparatorMixin();
+    display: block;
+    height: @h;
+    @{property-border-right}: @border-right;
+    margin: @margin;
+}
+
+.cxFrmlaEdtrRunBtn{
+    .cxFrmlaEdtrRunBtnMixin();
+    color: @color;
+    cursor: pointer;
+    font-family: @font-family;
+    padding: @padding;
+    display: flex;
+    align-items: center;
+    gap: @gap;
+    font-weight: @font-weight;
+    font-size: @font-size;
+    border-radius: @border-radius;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cxFrmlaRunIcon{
+    .cxFrmlaRunIconMixin();
+    width: @width;
+    height: @height;
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color);
+}
+
+// /* Fix for placeholder position and yielded toolbar hide from lyte */
+// .lyteEditor{
+//     position: relative;
+//     height: calc(100% - 45px);
+// }
+
+/* Widget Styles */
+.cxFrmlaEdtrWidget{
+    .cxFrmlaEdtrWidgetMixin();
+    display: block;
+    width: @w;
+    padding: @padding;
+    font-size: @font-size;
+    // color: @color;
+    box-sizing: border-box;
+    margin: @margin;
+    // background: @bg;
+    // border-radius: @border-radius;
+    // box-shadow: @box-shadow;
+}
+
+.cxFrmlaPopEdtrWidget{
+    .cxFrmlaEdtrWidgetMixin();
+    font-size: @font-size;
+}
+
+// .cxFrmlaPopEdtrWidget .cxFrmlaEdtrExmplCont{
+//     .cxFrmlaEdtrPopExmplContMixin();
+//     background-color: @bg-color;
+// }
+
+.cxFrmlaEdtrWdgtSytx{
+    display: flex;
+}
+
+// .cxFrmlaEdtrWdgtSytx a{
+//     font-style: italic;
+// }
+
+// .cxFrmlaEdtrWdgtMoreInfoBtn{
+//     .cxFrmlaEdtrWdgtMoreInfoBtnMixin();
+//     font-size: @font-size;
+//     text-decoration: none;
+//     color: @color;
+//     white-space: nowrap;
+//     @{property-margin-left}: @margin-left;
+// }
+
+// .cxFrmlaEdtrDescCont{
+//     .cxFrmlaEdtrDescContMixin();
+//     margin-top: @margin-top;
+// }
+
+// .cxFrmlaEdtrExmplCont{
+//     .cxFrmlaEdtrExmplContMixin();
+//     margin-top: @margin-top;
+//     padding: @padding;
+//     border-radius: @border-radius;
+//     background: @bg;
+// }
+
+// .cxWidgetContent{
+//     padding: 5px;
+//     width: auto;
+// }
+// .cxContentAlignment{
+//     display: flex;
+//     justify-content: space-between;
+//     padding: 5px;
+// }
+
+// .cxSyntaxContent a{
+//     cursor: pointer;
+// }
+// .cxSampleContent{
+//     width: auto;
+// }
+// .cxSampleInputContent{
+//     width: 100%;
+// }
+// .cxSampleFormulaContent, .cxSampleInputContent input{
+//     width: -webkit-fill-available; /* Not Supported in IE Browser */
+//     border: 1px solid black;
+//     border-radius: 5px;
+//     margin: 0px 10px 0px 10px;
+//     /* height: 25px; */
+//     padding: 5px;
+//     background: #dae2ed;
+// }
+
+.cxFrmlaEdtrWidget .cxFrmlaLabel,
+.cxFrmlaHelpTitle{
+    .cxFrmlaHelpTitleMixin();
+    font-family: @font-family;
+    font-weight: @font-weight;
+}
+
+.cxFrmlaEdtrWidget .cxFrmlaLabel{
+    .cxFrmlaEdtrWidgetHelpLabelMixin();
+    margin-bottom: @margin-bottom;
+}
+
+.cxFrmlaHelpValue{
+    .cxFrmlaHelpValueMixin();
+    @{property-margin-left}: @margin-left;
+}
+
+.cxFrmlaPopEdtrWidget .cxFrmlaLabel{
+    .cxFrmlaPopHelpLabelMixin();
+    color: @color;
+    width: @w;
+    text-align: @value-textalign-right;
+    flex-shrink: 0;
+}
+
+.cxFrmlaPopEdtrWidget .cxFrmlaHelpTitle{
+    .cxFrmlaPropHelpTitleMixin();
+    margin-bottom: @margin-bottom;
+}
+
+.cxFrmlaPopEdtrWidget .cxFrmlaHelpSec{
+    .cxFrmlaPropHelpSecMixin();
+    margin-bottom: @margin-bottom;
+}
+
+.cxFrmlaEdtrWidget .cxFrmlaHelpSec:not(:last-child){
+    .cxFrmlaWidgetHelpSecMixin();
+    margin-bottom: @margin-bottom;
+}
+
+.cxFrmlaEdtrResultTitleContainer{
+    .cxFrmlaEdtrResultTitleContainerMixin();
+    height: @h;
+    // background-color: @bg-color;
+    // background-color: #fff;
+    // border-top: @border-top;
+    border-bottom: @border-bottom;
+    display: flex;
+    align-items: center;
+}
+
+.cxFrmlaEdtrResultTitle{
+    .cxFrmlaEdtrResultTitleMixin();
+    font-size: @font-size;
+    padding: @padding;
+    font-family:@font-family;
+    margin: @margin; // remove
+    @{property-margin-left}: @margin-left;
+}
+
+.cxFrmlaEdtrResultContentContainer{
+    .cxFrmlaEdtrResultContentContainerMixin();
+    overflow: auto;
+    background-color: @bg-color;
+}
+
+.cxFrmlaEdtrResultContent{
+    .cxFrmlaEdtrResultContentMixin();
+    display: flex;
+    padding:@padding;
+    margin-bottom:@margin-bottom; 
+    align-items: center;
+}
+
+// .cxFrmlaEdtrWidget:last-child,
+.cxFrmlaEdtrResultContent:last-child{
+    .cxFrmlaEdtrResultContentLastChildMixin();
+    margin-bottom: @margin-bottom;
+}
+
+// .cxFrmlaEdtrWidget:first-child,
+.cxFrmlaEdtrResultContent:first-child{
+    .cxFrmlaEdtrResultContentFirstChildMixin();
+    margin-top: @margin-top;
+}
+
+// .cxFrmlaEdtrWidget:hover,
+.cxFrmlaEdtrResultContent:hover{
+    .cxFrmlaEdtrResultContentHoverMixin();
+    background-color:@bg;
+}
+
+// .cxFrmlaEdtrResultText{
+//     .cxFrmlaEdtrResultTextMixin();
+//     display: block;
+//     flex-grow:@flex-grow;
+//     font-size: @cxFontSize13px;
+//     @{property-padding-left}: @padding-left;
+//     color: @color; 
+//     word-break: break-word;  
+// }
+
+.cxFrmlaEdtrNoErrorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cxFrmlaEdtrNoErrorContainer .cxFrmlaEdtrResultContent {
+    .cxFrmlaEdtrNoErrResContMixin();
+    padding: @padding;
+    margin: @margin;
+}
+
+.cxFrmlaEdtrNoErrorContainer .cxFrmlaEdtrResultContent:hover{
+    .cxFrmlaEdtrNoErrResContHoverMixin();
+    background-color:  @background-color;
+}
+
+.cxFrmlaEdtrNoErrorContainer .cxFrmlaEdtrViewPreview{
+    .cxFrmlaEdtrViewPreviewMixin();
+    color: @color;
+    border-bottom: @border-bottom;
+    @{property-margin-left}: @margin-left;  
+    font-size:  @font-size;                            
+   
+}
+
+.cxFrmlaEdtrWarningIcon{
+    .cxFrmlaEdtrWarningIconMixin();
+    width: @w;
+    height: @h;
+    display: inline-block;
+    .cruxMaskImageMixin(@bg,@bg-pos,@bg-color);
+    flex-shrink: @flex-shrink;
+    margin-top: @margin-top;
+    @{property-margin-right}: @margin-right;
+    align-self: flex-start;
+}
+
+//CRUX FORMULA EDITOR New Styles
+.cxFrmlaEdtrHeader{
+    .cxFrmlaEdtrHeaderMixin();
+    // border-top: @border-bottom;
+    border-top: @border-top;
+    padding: @padding;
+    font-size: @font-size;
+    background-color: @bg-color;
+    justify-content: space-between;
+}
+.cxFrmlaEdtrHeaderDropdowns{
+    .cxFrmlaEdtrHeaderDropdownsMixin();
+    display: flex;
+    align-items: center;
+    flex-grow: @flex-grow;
+    min-width: @min-w;
+}
+.cxFrmlaEdtrHeaderDropWrap{
+    .cxFrmlaEdtrHeaderDropWrapMixin();
+    display: flex;
+    align-items: center;
+    font-size: @font-size;
+    max-width: @max-w;
+}
+.cxFrmlaEdtrHeaderDropWrap:not(:last-child){
+    .cxFrmlaEdtrHeaderDropWrapMixin();
+    @{property-margin-right}: @margin-right;
+}
+.cxFrmlaEdtrDDLabel{
+    .cxFrmlaEdtrDDLabelMixin();
+    color: @color;
+    @{property-margin-right}: @margin-right;
+}
+// .cxFrmlaEdtrTopPanelContainer.cxFrmlaEdtrInsertContainer{
+//     .cxFrmlaEdtrResultTitleContainerMixin();
+//     background: none;
+//     border-top: @border-top;
+// }
+// .cxFrmlaEdtrplaceHolderText{
+//     color: #b0cae6;
+//     position: relative;
+//     z-index: 1;
+// }
+
+.cxFrmlaPropIcon{
+    .cxFrmlaPropIconMixin();
+    width: @width;
+    height: @height;
+    border-radius: @border-radius;
+    // margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.cxFrmlaPropIcon:focus-visible,
+.cxFrmlaPropIcon:hover{
+    .cxFrmlaPropIconHoverMixin();
+    border: @border;
+    background-color: @bg-color;
+}
+
+.cxFrmlaPropIcon:focus-visible .cxFrmlaPropIconSpan,
+.cxFrmlaPropIcon:hover .cxFrmlaPropIconSpan{
+    .cxFrmlaPropIconSpanHoverMixin();
+    background-color: @bg-color
+}
+
+.cxFrmlaOperMoreIcon{
+    .cxFrmlaOperMoreIconMixin();
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    cursor: pointer;
+}
+
+.cxFrmlaOperMoreIcon:focus-visible,
+.cxFrmlaOperMoreIcon:hover{
+    .cxFrmlaOperMoreIconHoverMixin();
+    background-color: @bg-color;
+}
+
+.cxFrmlaOperMoreIcon .cxArrowDownLineIcon{
+    .cxFrmlaOperMoreIconArrowMixin();
+    background-color: @bg-color;
+}
+
+.cxFrmlaPropWrapper{
+    .cxFrmlaPropWrapperMixin();
+    display: flex;
+    align-items: center;
+    gap: @gap;
+    flex: 1;
+    overflow: hidden;
+}
+//CRUX FORMULA EDITOR New Styles
+
+.cxFrmlaEdtrPanelContainer{
+    .cxFrmlaEdtrPanelContainerMixin();
+    min-width: @min-width;
+    max-width: @max-width;
+    box-sizing: border-box;
+    // padding-top: @padding-top;
+    display: flex;
+    overflow: hidden;
+    transition: min-width 0.3s ease, max-width 0.3s ease;
+}
+
+.cxFrmlaEdtrSpaceContainerEditor{
+    .cxFrmlaEdtrSpaceContainerLyteEditorMixin();
+    height: @height;
+    min-height: @min-h;
+    // max-width: @max-w;
+    // min-width: @min-w;
+}
+
+.cxFrmlaEdtrSpaceContainerEditor.cxFrmlaEdtrWithFooter{
+    .cxFrmlaEdtrContainerWithFooterMixin();
+    min-height: @min-h;
+}
+
+.cxFrmlaEdtrSpaceContainerEditor.cxFrmlaEdtrWithFooterDD{
+    .cxFrmlaEdtrContainerWithFooterDDMixin();
+    min-height: @min-h;
+}
+
+.cxFrmlaEdtrPanelContainerTabBody{
+    .cxFrmlaEdtrPanelContainerTabBodyMixin();
+    // border: @border;
+    padding: @padding;
+}
+
+.cxFrmlaEdtrPanelContainerTabBody lyte-tab-content:not(.lyteTabHide){
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cxFrmlaEdtrPanelContainerTabHead{
+    .cxFrmlaEdtrPanelContainerTabHeadMixin();
+    padding: @padding;
+    min-height: @min-h;
+    border-color: @border-color;
+}
+
+.cxFrmlaEdtrPanelAccordion{
+    .cxFrmlaEdtrPanelAccordionMixin();
+    flex: 1;
+    overflow: auto;
+    padding: @padding;
+}
+
+.cxFrmlaEdtrPanelAccordionHeader{
+    .cxFrmlaEdtrPanelAccordionHeaderMixin();
+    padding: @padding;
+    position: relative;
+    border-radius: @border-radius;
+    margin-bottom: @margin-bottom;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: @font-size;
+}
+
+.cxFrmlaEdtrPanelSearch{
+    .cxFrmlaEdtrPanelSearchMixin();
+    margin: @margin;
+    display: block;
+}
+
+.cxFrmlaEdtrPanelExitBtn{
+    .cxFrmlaEdtrPanelExitBtnMixin();
+    width: @width;
+    height: @height;
+    position: absolute;
+    @{property-left}: @left;
+    top: @top;
+    // padding: @padding;
+    box-sizing: border-box;
+    z-index: @z-index;
+    @{property-border-right}: @border-right;
+    border-bottom: @border-bottom;
+    transition: @transition;
+    background-color: @bg-color;
+}
+
+.cxFrmlaEdtrPanelAccordionHeaderIcon{
+    .cxFrmlaEdtrPanelAccordionHeaderIconMixin();
+    display: block;
+    position: absolute;
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color);
+    width: @width;
+    height: @height;
+    top: @top;
+    @{property-left}: @left;
+    transition: @transition;
+    transform: @transform;
+}
+.lyteAccordionActive .cxFrmlaEdtrPanelAccordionHeaderIcon{
+    .cxFrmlaEdtrPanelAccordionHeaderIconActiveMixin();
+    transform: @transform;
+    top: @top;
+}
+
+// .cxFrmlaEdtrPanelExitIcon{
+//     .cxFrmlaEdtrPanelExitIconMixin();
+//     position: relative;
+//     padding: @padding;
+//     width: @width;
+//     height: @height;
+//     border-radius: @border-radius;
+//     cursor: pointer;
+// }
+
+.cxFrmlaEdtrPanelExitIcon{
+    .cxFrmlaEdtrPanelExitIconSpanMixin();
+    width: @width;
+    height: @height;
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color);
+}
+
+.cxFrmlaEdtrPanelIsOpen .cxFrmlaEdtrPanelExitIcon{
+    .cxFrmlaEdtrPanelOpenExitIconSpanMixin();
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color);
+}
+
+// .cxFrmlaEdtrPanelExitIcon:hover{
+//     .cxFrmlaEdtrPanelExitIconHoverMixin();
+//     background-color: @bg-color;
+// }
+
+.cxIconHoverEffect.cxFrmlaEdtrExitIconWrap{
+    .cxFrmlaEdtrExitIconWrapMixin();
+    width: @w;
+    height: @h;
+}
+
+.cxFrmlaEdtrExitIconWrap:hover .cxFrmlaEdtrPanelExitIcon{
+    .cxFrmlaEdtrPanelExitIconSpanHoverMixin();
+    background-color: @bg-color;
+}
+
+.cxFrmlaEdtrPanelAccordionHeader:hover{
+    .cxFrmlaEdtrPanelAccordionHeaderHoverMixin();
+    background-color: @bg-color;
+}
+
+.cxFrmlaEdtrPanelAccordionitem{
+    .cxFrmlaEdtrPanelAccordionitemMixin();
+    border: @border;
+    margin: @margin;
+}
+
+.cxFrmlaEdtrPanelAccordionBodyItems{
+    .cxFrmlaEdtrPanelAccordionBodyItemsMixin();
+    padding: @padding;
+    display: flex;
+    align-items: center;
+    margin-bottom: @margin-bottom;
+    justify-content: flex-end;
+    border-radius: @border-radius;
+}
+
+.cxFrmlaEdtrLeftPanelItemActive,
+.cxFrmlaEdtrPanelAccordionBodyItems:focus-visible,
+.cxFrmlaEdtrPanelAccordionBodyItems:hover{
+    .cxFrmlaEdtrPanelAccordionBodyItemsHoverMixin();
+    gap: @gap;
+    background-color: @bg-color;
+}
+
+.cxFrmlaEdtrPanelAccordionBody{
+    .cxFrmlaEdtrPanelAccordionBodyMixin();
+    padding: @padding;
+    width: @width;
+}
+
+.cxFrmlaEdtrPanelAccordionText{
+    .cxFrmlaEdtrPanelAccordionTextMixin();
+    display: flex;
+    align-items: center;
+    gap: @gap;
+    flex-grow: @flex-grow;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.cxFrmlaEdtrPanelAccordionInfoIcon{
+    .cxFrmlaEdtrPanelAccordionInfoIconMixin();
+    // background-image: @background-image;
+    // background-position: @background-position;
+    min-width: @width;
+    min-height: @height;
+    visibility: hidden;
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color);
+    display: none;
+    cursor: pointer;
+}
+
+.cxFrmlaEdtrLeftPanelItemActive .cxFrmlaEdtrPanelAccordionInfoIcon,
+.cxFrmlaEdtrPanelAccordionInfoIcon:hover{
+    .cxFrmlaEdtrPanelAccordionInfoIconHoverMixin();
+    background-color: @bg-color
+}
+.cxFrmlaEdtrLeftPanelItemActive .cxFrmlaEdtrPanelAccordionInfoIcon,
+.cxFrmlaEdtrPanelAccordionBodyItems:focus-visible .cxFrmlaEdtrPanelAccordionInfoIcon,
+.cxFrmlaEdtrPanelAccordionBodyItems:hover .cxFrmlaEdtrPanelAccordionInfoIcon{
+    display: block;
+}
+.cxFrmlaEdtrPanelAccordionInsertBtn{
+    .cxFrmlaEdtrPanelAccordionInsertBtnMixin();
+    // padding: @padding;
+    // background-color: @bg-color;
+    color: @color;
+    font-size: @font-size;
+    font-family: @font-family;
+    // margin: @margin;
+    // border-radius: @border-radius;
+    // border: @border;
+    visibility: hidden;
+    cursor: pointer;
+    max-width: @max-width;
+    // @{property-padding-left}: @padding-left;
+    // @{property-padding-right}: @padding-right;
+    overflow: hidden;
+}
+
+.cxFrmlaEdtrLeftPanelItemActive .cxFrmlaEdtrPanelAccordionInsertBtn,
+.cxFrmlaEdtrPanelAccordionBodyItems:focus-visible .cxFrmlaEdtrPanelAccordionInsertBtn,
+.cxFrmlaEdtrPanelAccordionBodyItems:hover .cxFrmlaEdtrPanelAccordionInsertBtn{
+    .cxFrmlaEdtrPanelAccordionInsertBtnMixin();
+    // padding: @padding;
+    max-width: @max-width-hover;
+    flex-shrink: @flex-shrink;
+}
+
+.cxFrmlaEdtrPanelAccordionInsertBtn:hover{
+    .cxFrmlaEdtrPanelAccordionInsertBtnHoverMixin();
+    color: @color;
+}
+
+.cxFrmlaEdtrLeftPanelItemActive .cxFrmlaEdtrPanelAccordionInfoIcon,
+.cxFrmlaEdtrLeftPanelItemActive .cxFrmlaEdtrPanelAccordionInsertBtn,
+.cxFrmlaEdtrPanelAccordionBodyItems:hover .cxFrmlaEdtrPanelAccordionInsertBtn,
+.cxFrmlaEdtrPanelAccordionBodyItems:hover .cxFrmlaEdtrPanelAccordionInfoIcon{
+    visibility: visible;
+}
+
+.cxFrmlaOperatorsHeading{
+    .cxFrmlaOperatorsHeadingMixin();
+    @{property-margin-right}: @margin-right;
+    display: block;
+    color: @color;
+    font-size: @font-size;
+    font-weight: @font-weight;
+}
+.cxFrmlaOperatorsContainer{
+    // .cxFrmlaOperatorsContainerMixin();
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.cxFrmlaOperatorsWrapper{
+    .cxFrmlaOperatorsWrapperMixin();
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    gap: @gap;
+}
+.cxFrmlaOperatorsMenuListWrap{
+    display: flex;
+    align-items: center;
+}
+.cxFrmlaOperatorsMenuListWrap .cxFrmlaPropIconSpan{
+    .cxFrmlaOperatorsMenuIconMixin();
+    @{property-margin-right}: @margin-right;
+}
+.cxFrmlaOperatorVisible{
+    // .cxFrmlaOperatorVisibleMixin();
+    display: flex;
+    align-items: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.cxFrmlaOperatorVisible{
+    display: flex
+}
+.cxFrmlaOperatorHidden{
+    display: none;
+}
+
+.cxFrmlaEdtrPanelIsOpen .cxFrmlaEdtrPanelContainer{
+    .cxFrmlaEdtrPanelIsOpenMixin();
+    max-width: @max-w;
+    min-width: @min-w;
+    @{property-border-right}: @border-right;
+}
+
+.cxFrmlaEdtrPanelIsOpen .cxFrmlaEdtrPanelExitBtn{
+    .cxFrmlaEdtrPanelExitIconPanelOpenMixin();
+    @{property-left}: @left;
+    // @{property-border-right}: @border-right;
+    // border-bottom: @border-bottom;
+}
+
+.cxFrmlaEdtrPanelIsOpen .cxFrmlaEdtrTopPanelContainer{
+    .cxFrmlaEdtrTopPanelContainerPanelOpenMixin();
+    @{property-margin-left}: @margin-left;
+}
+
+.cxFrmlaEdtrPanelIsClosed .cxFrmlaEdtrTopPanelContainer{
+    .cxFrmlaEdtrTopPanelContainerPanelOpenMixin();
+}
+
+.cxFrmlaEdtrSpaceContainer .cxForlaEdtrResTabYield{
+    flex: 1;
+    overflow: hidden;
+}
+
+// .cxFrmlaEdtrPanelIsOpen .cxFrmlaEdtrSpaceContainer{
+//     .cxFrmlaEdtrSpaceContainerPanelOpenMixin();
+//     max-width: @max-w;
+//     min-width: @min-w;
+// }
+
+.cxFrmlaEdtrRunBtn:hover{
+    .cxFrmlaEdtrRunBtnHoverMixin();
+    background-color: @bg-color;
+}
+
+.cxFrmlaEdtrResultContainer{
+    .cxFrmlaEdtrResultContainerMixin();
+    // max-height: @max-h;
+    border-top: @border-top;
+    height: @h;
+}
+
+.cxFrmlaEdtrResultContainer.cxOuterTab lyte-tab-head{
+    .cxFrmlaEdtrResultContainerTabHeadMixin();
+    border-bottom: @border-bottom;
+}
+
+.cxFrmlaEdtrResultContainer lyte-tab-body{
+    .cxFrmlaEdtrResultContainerTabBodyMixin();
+    padding: @padding;
+}
+
+.cxFrmlaEdtrResultContainer lyte-tab-content,
+.cxFrmlaEdtrResultContainer .cxFrmlaEdtrResultContentContainer{
+    height: 100%;
+}
+
+// .cxFrmlaEdtrResultContentText{
+//     .cxFrmlaEdtrResultContentTextMixin();
+//     color: @color;
+//     font-size: @font-size;
+// }
+
+// .cxFrmlaEdtrResultContent:hover{
+//     .cxFrmlaEdtrResultContentFristChildMixin();
+//     background-color: @bg-color;
+// }
+
+.cxFrmlaEdtrResultTabContent{
+    .cxFrmlaEdtrResultTabContentMixin();
+    height: @height;
+    overflow-y: scroll;
+}
+
+.cxFrmlaEdtrResultTabBody{
+    .cxFrmlaEdtrResultTabBodyMixin();
+    padding: @padding;
+}
+
+// .cxFrmlaEdtrNoResultFound{
+//     .cxFrmlaEdtrNoResultFoundMixin();
+//     color: @color;
+//     font-size: @font-size;
+// }
+.cxFrmlaEdtrNoResultDiv{
+    .cxFrmlaEdtrNoResultDivMixin();
+    width: @width;
+    height: @height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cxFrmlaEdtrHeaderDropWrap .cxFakeDropdownLabel,
+.cxFrmlaEdtrHeaderDropWrap .cxFrmlaEdtrTopPanelDropdown .lyteDropdownLabel{
+    .cxFrmlaEdtrHeaderDropWrapDropdownMixin();
+    font-size: @font-size;
+}
+
+.cxFrmlaPropIconSpan{
+    .cxFrmlaPropIconSpanMixin();
+    width: @width;
+    height: @height;
+}
+
+.cxFrmlaPlusIcon{
+    .cxFrmlaPlusIconMixin();
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color);
+}
+
+.cxFrmlaMinusIcon{
+    .cxFrmlaMinusIconMixin();
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color);
+}
+
+.cxFrmlaSlashIcon{
+    .cxFrmlaSlashIconMixin();
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color)
+}
+
+.cxFrmlaPercentageIcon{
+    .cxFrmlaPercentageIconMixin();
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color)
+}
+
+.cxFrmlaStarIcon{
+    .cxFrmlaStarIconMixin();
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color)
+}
+
+.cxFrmlaUpArrowIcon{
+    .cxFrmlaUpArrowIconMixin();
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color)
+}
+
+.cxFrmlaOpenBracketIcon{
+    .cxFrmlaOpenBracketIconMixin();
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color)
+}
+
+.cxFrmlaCloseBracketIcon{
+    .cxFrmlaCloseBracketIconMixin();
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color)
+}
+
+.cxFrmlaNotEqualIcon{
+    .cxFrmlaNotEqualIconMixin();
+    width: @width;
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color)
+}
+
+.cxFrmlaDoubleEqualIcon{
+    .cxFrmlaDoubleEqualIconMixin();
+    width: @width;
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color)
+}
+
+.cxFrmlaLessThanIcon{
+    .cxFrmlaLessThanIconIconMixin();
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color)
+}
+
+.cxFrmlaGreaterThanIcon{
+    .cxFrmlaGreaterThanIconIconMixin();
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color)
+}
+
+.cxFrmlaLessThanOrEqualIcon{
+    .cxFrmlaLessThanOrEqualIconMixin();
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color)
+}
+
+.cxFrmlaGreaterThanOrEqualIcon{
+    .cxFrmlaGreaterThanOrEqualIconMixin();
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color)
+}
+
+// .cxFrmlaEdtrPanelAccordionFuncName, .cxFrmlaEdtrPanelAccordionFieldName{
+//     .cxFrmlaEdtrPanelAccordionFuncNameMixin();
+//     max-width: @max-width;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     white-space: nowrap;
+// }
+
+.cxFrmlaEdtrPanelAccordionFXIcon{
+    .cxFrmlaEdtrPanelAccordionFXIconMixin();
+    width: @width;
+    height: @height;
+    .cruxMaskImageMixin(@cruxSprite,@background-position,@bg-color)
+}
+crux-formula-editor crux-error-message {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.cxFrmlaNoResText{
+    .cxFrmlaNoResTextMixin();
+    color: @color;
+}

@@ -1,0 +1,50 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-subform-table-filter-th-border-color: #ddd;
+    --@{cssPrefix}-subform-table-input-hover-border-color: var(--crux-element-border-color);
+    --@{cssPrefix}-subform-table-input-focus-border-color: var(--crux-element-focus-border-color);
+    --@{cssPrefix}-subform-edit-and-more-icon-before-bg: #e1e6ec;
+    --@{cssPrefix}-subform-show-all-label-color: #0078FF;
+    --@{cssPrefix}-subform-show-all-label-box-shadow-color: #00000027;
+    --@{cssPrefix}-subform-show-all-label-hover-bg-color: #f0f0f0;
+    --@{cssPrefix}-subform-show-all-label-bg-color: #f0f0f0;
+    --@{cssPrefix}-subform-show-all-label-border-color: #D2D9E0;
+    --@{cssPrefix}-subform-save-and-cancel-btn-border-color: #bbb;
+    --@{cssPrefix}-subform-save-btn-bg-color: #4daeee;
+    --@{cssPrefix}-subform-save-btn-border-color: #4daeee;
+    --@{cssPrefix}-subform-save-before-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-subform-row-edit-mode-td-border-color: #4CA2FB;
+    --@{cssPrefix}-subform-edit-mode-td-border-color: #edf0f4;
+    --@{cssPrefix}-subform-row-edit-mode-td-bg-color: #f7f7fb;
+    --@{cssPrefix}-subform-row-edit-mode-td-first-child-border-color: #4CA2FB;
+    --@{cssPrefix}-subform-row-edit-mode-td-last-child-border-color: #4CA2FB;
+    --@{cssPrefix}-subform-highlight-row-bg-color: #fffced;
+    --@{cssPrefix}-subform-row-animation-bg-highlight-color: #fffced; 
+    --@{cssPrefix}-subform-row-animation-bg-white-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-subform-table-file-upload-btn-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-subform-table-no-result-border-color: #e5e5e5;
+    --@{cssPrefix}-subform-table-sticky-column-border-color: rgb(0 0 0 / 20%);
+    --@{cssPrefix}-subform-dot-bullet-bg-color: #ccc;
+    --@{cssPrefix}-subform-placeholder-loader-bg-color: #F0F4FF;
+    --@{cssPrefix}-subform-scroll-top-action-label-color: var(--crux-base-text-color);
+    --@{cssPrefix}-subform-agg-td-label-color: var(--crux-base-text-color);
+    --@{cssPrefix}-subform-table-no-result-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-subform-table-td-freeze-input-btn-bg-color: var( --crux-element-disabled-bg-color);
+    --@{cssPrefix}-subform-lyte-num-disabled-border-color: var( --crux-element-disabled-bg-color);
+    --@{cssPrefix}-subform-textarea-disabled-pseudo-border-color: var( --crux-element-disabled-bg-color);
+    --@{cssPrefix}-subform-placeholder-loader-bg-gradient-color: linear-gradient(to right, #F0F4FF 8%, #E2EEFF 18%, #F0F4FF 33%);
+    --@{cssPrefix}-subform-table-file-upload-btn-border-color: var(--crux-element-border-color);
+    --@{cssPrefix}-subform-table-bg-color : var(bg_white);
+}

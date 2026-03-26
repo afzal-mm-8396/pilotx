@@ -1,0 +1,95 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-criteria-pattern-label-color: #666;
+  --lyte-crux-criteria-box-pattern-label-color: #616E88;
+  --lyte-crux-criteria-pattern-input-border-color: #e5e5e5;
+  --lyte-crux-criteria-pattern-value-color: #333;
+  --lyte-crux-criteria-btn-link-color: #338CF0;
+  --lyte-crux-criteria-box-btn-border: #bbb;
+  --lyte-crux-criteria-box-save-btn-bg: #4daeee;
+  --lyte-crux-criteria-box-save-btn-border: #4daeee;
+  --lyte-crux-criteria-cancel-btn-text-color: #999;
+  --lyte-crux-criteria-label-edit-mode-border-color: #e5e5e5;
+  --lyte-crux-criteria-index-view-span-color: #889bb7;
+  --lyte-crux-criteria-number-bg-color: #dadada;
+  --lyte-crux-criteria-disabled-border-color: #f0f0f0;
+  --lyte-crux-criteria-pattern-number-bg-color: #f6f6f6;
+  --lyte-crux-criteria-pattern-number-border-color: #b3b3b3;
+  --lyte-crux-criteria-number-text-color: #333;
+  --lyte-crux-criteria-pattern-number-hover-bg-color: #eee;
+  --lyte-crux-criteria-selected-sortable-number-bg-color: #4B72E5;
+  --lyte-crux-criteria-selected-sortable-number-text-color: #fff;
+  --lyte-crux-criteria-sort-bottom-border-color: #4B72E5;
+  --lyte-crux-criteria-sort-bottom-bg-color: #F5F8FF;
+  --lyte-crux-criteria-pattern-brackets-color: #999;
+  --lyte-crux-criteria-date-input-first-child-border-color: var(--crux-element-border-color);
+  --lyte-crux-criteria-module-value-text-color: #8b9ab9;
+  --lyte-crux-criteria-age-in-day-drop-button-border-color: var(--crux-element-border-color);
+  --lyte-crux-criteria-error-msg-color: #e64c48;
+  --lyte-crux-criteria-view-box-border-color: #C0C6CC;
+  --lyte-crux-criteria-view-box-bg-color: #F8FAFF;
+  --lyte-crux-criteria-tag-border-color: #C0C6CC;
+  --lyte-crux-criteria-view-mode-child-border-color: #d2e2ed;
+  --lyte-crux-criteria-view-box-wrap-border-color: #C0C6CC;
+  --lyte-crux-criteria-view-box-wrap-bg-color: #F8FAFF;
+  --lyte-crux-criteria-flat-border-color: #ddd;
+  --lyte-crux-criteria-flat-border-hover-color: #a5a5a5;
+  --lyte-crux-criteria-flat-border-focus-color: #4ab4fe;
+  --lyte-crux-criteria-editor-border-color: var(--crux-element-border-color);
+  --lyte-crux-criteria-editor-hover-border-color: var(--crux-element-border-color);
+  --lyte-crux-criteria-editor-hover-box-shadow-color: #c3c6ca;
+  --lyte-crux-criteria-editor-focus-border-color: var(--crux-element-focus-border-color);
+  --lyte-crux-criteria-editor-focus-box-shadow-color: var(--crux-element-focus-shadow-color);
+  --lyte-crux-criteria-elements-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-criteria-elements-grey-bg-color: #eee;
+  --lyte-crux-criteria-view-text-color: #303a48;
+  --lyte-crux-criteria-view-comparator-color: #34b8a9;
+  --lyte-crux-criteria-text-color: var(--crux-heading-color);
+  --lyte-crux-criteria-disabled-input-color: #333;
+  --lyte-crux-criteria-row-and-or-text-color: #2687d3;
+  --lyte-crux-criteria-patten-edit-and-or-text-color: var(--crux-link-color);
+  --lyte-crux-criteria-editor-error-cell-border-color: #FF5D5A;
+  --lyte-crux-criteria-child-header-row-before-bg-color: #dadada;
+  --lyte-crux-criteria-child-field-icon-show-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-criteria-delete-link-color: #FF5D5A;
+  --lyte-crux-criteria-pattern-error-color: #FF5D5A;
+  --lyte-crux-criteria-box-pattern-num-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-criteria-input-number-text-color: var(--crux-heading-color);
+  --lyte-crux-criteria-and-or-input-text-color: var(--crux-base-text-color);
+  --lyte-crux-criteria-label-color: var(--crux-label-color);
+}
+/*# sourceMappingURL=crux-criteria-editor-variables.css.map */

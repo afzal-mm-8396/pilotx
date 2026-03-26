@@ -1,0 +1,193 @@
+.cxPbElemSectionMixin() {
+	@border: 1px solid @cxPbSectionBorder;
+	@border-radius: 6px;
+	@margin: .cruxLESSMarginMixin(15px 30px)[@margin];
+	@padding: 15px 15px 10px;
+	@w: calc(100% - 60px);
+	@bg: @cxPbSectionBg;
+	@max-w: calc(100% - 450px);
+	@min-w: 540px;
+	@max-w1: 1000px;
+}
+
+.cxPbElemSecOnDragMixin(){
+	@padding: 20px;
+	@bg-color: @cxPbWhiteBg;
+	@max-h: 58px;	
+}
+
+.cxPbSectionSortPlaceholderMixin(){
+	@max-w: calc(100% - 450px);
+	@max-w1: 1000px;
+	@h: 125px;
+	@margin: 0px 30px 15px;
+	@min-w: 540px;
+	@w: calc(100% - 10px);
+}
+
+.cxPbElementSectionDragSelMixin(){
+	@margin: 0px !important;
+}
+
+.cxPbElementSectionHoverMixin(){
+	@border: 1px solid @cxPbSectionHoverBorder;
+}
+
+.cxPbElemSectionHeaderMixin() {
+	@padding-bottom: 15px;
+}
+
+.cxPbTitleSectionInputMixin(){
+	@w: 220px;
+}
+
+.cxPbElemSectionHeaderFieldMixin() {
+	@bg: @cxPbSectionTitleBg;
+	@border: 1px solid @cxPbSectionTitleBorder;
+	@border-radius: 6px;
+}
+.cxPbElemSectionHeaderFieldInputMixin() {
+	@bg: @cxPbSectionTitleInputBg;
+	@padding: 6px;
+	// @box-shadow: none;
+	// @w: 100%;
+	@border-radius: 6px;
+	@color: @cxPbSectionTitleInputColor;
+	@font-family: @cruxSecondaryFont;
+	@font-weight: @cruxFontWeightBold;
+}
+.cxPbElemSecHeaderFieldHoverMixin() {
+	@border: 1px solid @cxPbSectionTitleHoverBorder;
+}
+.cxPbElemSecHeadInputBgMixin() {
+	@bg: @cxPbSectionTitleInputHoverBg;
+}
+.cxPbElemSecInputFocusMixin() {
+	@border: 1px solid @cxPbSectionFormBorderFocusColor !important;
+	@box-shadow: @cxPbSectionFormBorderFocusBoxShadow;
+}
+
+.cxPbElemSecInputErrorFieldMixin(){
+	@border: 1px solid @cxPbSectionTitleErrorBorder !important;
+	@bg: @cxPbSectionTitleInputHoverBg !important;
+	@box-shadow: none !important;
+}
+
+.cxPbTitleSectionInfoIconMixin(){
+	@margin-left: 8px;
+}
+
+.cxPbSingleColElemSectionMixin(){
+	@w: 50% !important;
+}
+
+.cxPbQuickCreateSectionRowMixin(){
+	@padding: 0px !important;
+}
+
+.cxPbQuickCreateSectionColumnMixin(){
+	@w: 50% !important;
+	@margin: auto;
+	@min-h: inherit;
+}
+
+// .cxPbNewSectionBtnMixin() {
+// 	@left: 50%;
+// 	// @bottom: -35px;
+// 	@bg: @cxPbNewSectionBtnBg;
+// 	@border-radius: 12px;
+// 	@color: @cxPbNewSectionBtnColor;
+// 	@font-size: @cxFontSize12px;
+// 	@padding: .cruxLESSPaddingMixin(5px 10px 5px 25px)[@padding];
+// 	@margin-left: -55px;
+// 	@top: calc(100% + 11px);
+// }
+// .cxPbNewSecBtnSpriteMixin() {
+// 	@left: 10px;
+// 	@top: 7px;
+// }
+// .cxPbNewSectionBtnAfterBeforeMixin() {
+// 	@left:50%;
+// 	@border-left: 2px solid @cxPbNewSectionBtnBorder;
+// 	@h: 10px;
+// 	@margin-left: -1px;
+// }
+// .cxPbNewSectionBtnAfterMixin() {
+// 	@bottom: -10px;
+// }
+// .cxPbNewSectionBtnBeforeMixin() {
+// 	@top: -10px;
+// }
+.cxPbSectionFirstChildMixin(){
+	@margin-top: 20px;	
+}
+
+// .cxPbSectionLastChildMixin(){
+// 	@margin-bottom: 20px;
+// }
+.cxPbElementDraggableIconMixin() {
+	@margin: .cruxLESSMarginMixin(0px 8px 0px 0px)[@margin];
+}
+
+.cxPbElementLabelInputMixin(){
+	@padding: 3px 5px !important;
+}
+
+.cxPbElementLabelInputFieldMixin(){
+	@box-shadow: none !important;
+}
+
+.cxPbElemLabelInputDefStateMixin(){
+	@border-color: transparent;
+}
+
+.cxPbElemFieldMetaTextMixin(){
+	@color: @cxPbElemLabelColor;
+	@margin-left: 10px;
+	@text-align: @property-right;
+}
+
+.cxPbElemSecActionIconMixin() {
+	@right: 13px;
+	@z-index: 1;
+}
+.cxPbElemSecActionIconsWrapMixin() {
+	@w: 30px;
+	@h: 30px;
+	@border-radius: 15px;
+}
+
+.cxPbElemSecActionIconsWrapNotFirstMixin(){
+	@margin-left: 6px;
+}
+
+.cxPbElemSecActionIconsWrapHoverMixin() {
+	@background-color: @cxPbSectionActionIconHoverBg;
+}
+
+.cxPbElemSecActionIconWrapperHoverIconMixin(){
+	@bg-color: @cxPbIconBaseColor;
+}
+
+.cxPbElemSecActionIconDisabledMixin(){
+	@opacity: 0.7;	
+}
+
+.cxPbElementGridTemplateMixin(){
+	@padding: 15px 0px 0px;
+	@min-h: 65px;
+}
+
+.cxPbElementSectionDragMsgMixin(){
+	@color: @cxPbLabelColor;	
+}
+
+.cxPbQuickCreateSecGridTemplateMixin(){
+	@padding: 0px;
+}
+
+.cxPbSectionOnDragHeadingMixin(){
+	@font-family: @cruxTertiaryFont;
+	@font-weight: @cruxFontWeightBold;
+	@color: @cxPbSectionTitleInputColor;
+}

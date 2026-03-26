@@ -1,0 +1,42 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-date-time-component.variables.less";
+
+@import "../../themes/default/less-variables/crux-date-time-component-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-date-time-component";
+
+// .sepeartor {
+// 	.cxDateTimeSepeartorMixin();
+// 	position: absolute;
+// 	top: @top;
+// 	height: @h;
+// 	width: @w;
+// 	background: @bg;
+// 	@{property-left}: @left;
+// }
+crux-date-time-component .cxElementDisabled .cxBoxInput.lyteInputBox input:first-child {
+	.cxDateTimeDisabledInputBoxInputFirstChildMixin();
+	@{property-padding-right}: @padding-right;
+	border-radius: 5px 0 0 5px;
+}
+.cxDateTimeWrapper lyte-input{
+	.cxDateTimeWrapperMixin();
+	width: @w;
+}
+// .cxDateTimeWrapper::after{
+//     .cxDateTimeWrapperAfterMixin();
+//     content: '';
+// 	.cruxMaskImageMixin(@cruxSprite,@background-position,@cxIconBaseMaskBg);
+//     width: @w;
+// 	height: @h;
+//     display: inline-block;
+//     position: absolute;
+//     @{property-right}: @right;
+//     top: @top;
+//     opacity:@opacity;
+// }

@@ -1,0 +1,173 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+.cxComboBoxViewButtonList {
+  background: var(--lyte-crux-combo-box-view-list-bg-color);
+  border: 1px solid var(--lyte-crux-combo-box-view-list-border-color);
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.929rem;
+  display: inline-flex;
+  align-items: center;
+  text-transform: capitalize;
+  cursor: default;
+}
+.cxComboBoxViewButtonUserCount {
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  font-size: 0.725rem;
+  background: var(--lyte-crux-combo-box-view-count-bg-color);
+  border: 1px solid var(--lyte-crux-combo-box-view-count-border-color);
+  display: inline-block;
+  padding: 0 5px;
+  cursor: default;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+.cxComboBoxViewContent {
+  margin: 15px 0;
+  padding: 0 15px;
+  max-width: 350px;
+  min-width: 60px;
+  max-height: 250px;
+  overflow: auto;
+}
+.cxComboBoxViewHeader {
+  color: var(--lyte-crux-combo-box-view-popover-header-color);
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  padding-bottom: 5px;
+  font-size: 0.857rem;
+}
+.cxComboBoxViewHeaderText {
+  vertical-align: bottom;
+}
+.cxComboBoxViewUserNameLabel {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.857rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.cxComboBoxViewUsersUlWrapLi {
+  padding-bottom: 10px;
+}
+.cxComboBoxViewContent ul {
+  margin: 0;
+  padding: 0;
+}
+.cxComboBoxViewUsersUlWrapLi:last-child {
+  padding-bottom: 0;
+}
+.cxComboBoxViewUserLi {
+  padding: 0 0 10px 0;
+  display: flex;
+}
+.cxComboBoxViewPopover .cxComboBoxViewUserLi:last-of-type {
+  padding-bottom: 0;
+}
+.cxComboBoxViewUserImage {
+  display: inline-block;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  background-size: 100%;
+  vertical-align: middle;
+}
+.cxComboBoxViewUserLi .cxComboBoxViewUserImage {
+  margin-left: 5px;
+}
+.cxComboBoxViewNoPhoto {
+  background-image: url(../../images/nophoto.png);
+  display: inline-block;
+  border-radius: 50%;
+  background-size: 100%;
+  vertical-align: middle;
+}
+.cxComboBoxViewUserPhoto {
+  object-fit: cover;
+}
+.cxComboxViewBtnListCont {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 0px;
+  margin: 0px;
+}
+/*# sourceMappingURL=crux-combo-box-view.css.map */

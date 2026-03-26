@@ -1,0 +1,23 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-detail-view-section-name-color: #202123;
+    --@{cssPrefix}-detail-view-subform-th-border-bottom-color: #d7e2ed;
+    --@{cssPrefix}-detail-view-subform-td-border-color: #edf0f4;
+    --@{cssPrefix}-detail-view-form-info-color: #616e88;
+    --@{cssPrefix}-detail-view-empty-field-bg-color: #333;
+    --@{cssPrefix}-detail-view-parent-hover-border-color: var(--crux-element-border-color);
+    --@{cssPrefix}-detail-grouped-subform-wrap-border: #d2d9e0;
+    --@{cssPrefix}-detail-grouped-subform-wrap-background: #f9faff;
+}

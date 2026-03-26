@@ -1,0 +1,47 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-user-drop-down-secondary-detail-color: #666;
+  --lyte-crux-user-drop-down-suggested-user-percentage-color: var(--crux-base-text-color);
+  --lyte-crux-user-drop-down-filter-item-color: #333;
+  --lyte-crux-user-drop-box-selection-bg-color: #f3f3f3;
+  --lyte-crux-user-drop-down-inner-filter-btn-border-color: var(--crux-element-border-color);
+  --lyte-crux-user-drop-box-no-user-text-color: var(--crux-element-label-color);
+  --lyte-crux-user-drop-down-img-box-shadow-color: rgba(0, 0, 0, 0.15);
+  --lyte-crux-user-drop-down-all-user-bg-color: #f6f6f6;
+  --lyte-crux-user-drop-down-sel-user-img-border-color: #D2D9E0;
+}
+/*# sourceMappingURL=crux-user-dropdown-variables.css.map */

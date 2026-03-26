@@ -1,0 +1,49 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-box-input-placeholder-color: var(--crux-placeholder-color);
+  --lyte-crux-box-input-horizontal-label-color: #000;
+  --lyte-crux-box-date-time-input-border-color: #ddd;
+  --lyte-crux-box-elements-disabled-border-color: #dbe0e5;
+  --lyte-crux-box-input-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-box-input-text-color: var(--crux-base-text-color);
+  --lyte-crux-box-input-border-hover-color: var(--crux-element-border-color);
+  --lyte-crux-box-input-hover-box-shadow-color: #c3c6ca;
+  --lyte-crux-box-input-border-focus-color: var(--crux-element-focus-border-color);
+  --lyte-crux-box-input-focus-box-shadow-color: var(--crux-element-focus-shadow-color);
+  --lyte-crux-box-input-border-border-color: #dbe0e5;
+}
+/*# sourceMappingURL=crux-common-input-variables.css.map */

@@ -1,0 +1,37 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-input-border-color: var(--crux-element-border-color);
+    --@{cssPrefix}-input-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-input-placeholder-text-color: var(--crux-placeholder-color);
+    --@{cssPrefix}-input-hover-border-color: var(--crux-element-hover-border-color);
+    --@{cssPrefix}-input-hover-box-shadow-color: var(--crux-element-hover-shadow-color);
+    --@{cssPrefix}-input-focus-border-color: var(--crux-element-focus-border-color);
+    --@{cssPrefix}-input-focus-box-shadow-color: var(--crux-element-focus-shadow-color);
+    --@{cssPrefix}-input-label-color: var(--crux-element-label-color);
+    --@{cssPrefix}-input-mandatory-color: var(--crux-mandatory-color);
+    --@{cssPrefix}-input-icon-bg-color: #f4f5f6;
+    --@{cssPrefix}-input-error-border-color: var(--crux-element-error-border-color);
+    --@{cssPrefix}-input-error-box-shadow-color: var(--crux-element-error-shadow-color);
+    --@{cssPrefix}-input-info-icon-color: #616e88;
+    --@{cssPrefix}-input-loader-bg-color: #eee;
+    --@{cssPrefix}-input-info-popup-bg-color: var( --crux-element-bg-color);
+    --@{cssPrefix}-input-info-popup-border-color: #333;
+    --@{cssPrefix}-input-info-popup-color: var( --crux-element-bg-color);
+    --@{cssPrefix}-input-info-popup-box-shadow-color: rgba(0,0,0,0.3);
+    --@{cssPrefix}-input-disabled-border-color: var(--crux-element-disabled-border-color);
+    --@{cssPrefix}-input-disabled-bg-color: var(--crux-element-disabled-bg-color);
+    --@{cssPrefix}-input-show-more-icon-color: #3c9df7;
+    --@{cssPrefix}-input-lock-icon-color: var(--crux-base-icon-color);
+}

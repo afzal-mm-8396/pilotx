@@ -1,0 +1,307 @@
+crux-table-component lyte-th.lyteFixedColumn:not(.lytePreventIcon)::after {
+  content: none;
+}
+.wspaceNor{
+	width: 135px!important;
+	white-space: normal!important;
+}
+.scrollbarClass{
+	z-index:10;
+}
+crux-table-component lyte-th.lyteFixedColumn:not(.lytePreventIcon):after {
+	display:none;
+}
+.cxTableLoadingIcon{
+	background: url(../images/crux-table-loading.svg);
+	width:30px;
+	height: 30px;
+	background-size: 100%;
+	margin: auto;
+}
+.cruxHideRow{
+	display: none;
+}
+.cxTableEmptyRow {
+	transform: translate3d(0,0,0);
+	position: relative;
+}
+.cxTableLoadingDiv{
+	height: 30px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	z-index:10;
+}
+.cxTableEmptyRow lyte-exptable-td{
+	padding: 15px;
+}
+.cxListViewLazyLoad {
+    height: 10px;
+    width: 100%;
+    position: relative;
+    background: #efefef;
+    overflow: hidden;
+}
+.cxListViewLazyLoadRunner {
+    height: 10px;
+    width: 40%;
+    background: linear-gradient(to right, #efefef, #ddd, #efefef);
+    animation: listViewLazyLoadAnim 1s linear infinite;
+    position: absolute;
+}
+@keyframes listViewLazyLoadAnim {
+    0% {
+        left: -50%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+.cx_sortIconPlaceholder {
+    width: 8px;
+    height: 6px;
+}
+.cxTableSortIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 28px;
+    width: 28px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+.cxTableSortIconActive,
+.cxTableSortIcon:hover,
+.cxTableSortIcon.lyteMenuSelected {
+    background: #e5e9ef;
+}
+.cxTableSortIcon::before {
+    content: '';
+    width: 13px;
+    height: 10px;
+    display: block;
+    background-image: url(../images/crux-sprite-icons.svg);
+    background-position: -57px -133px;
+}
+crux-table-component .lyteExpOriginalTable{
+	min-width: 100%;
+}
+
+.cxExistingListViewUI .lyteExpTableWrapper {
+    border: 0;
+}
+.cxExistingListViewUI lyte-exptable-th {
+    border-bottom: 3px double #ddd;
+    background: #fff;
+    padding: 5px 20px 5px 10px;
+    color: #777;
+    text-transform: capitalize;
+    font-size: 0.929rem;
+}
+.cxExistingListViewUI lyte-exptable-td {
+    padding: 10px 20px 10px 10px;
+    color: #333;
+    font-size: 1rem;
+}
+.cxTableHeadingElem {
+    vertical-align: bottom;
+}
+.cxTableSortIconNew {
+	background-image: url(../images/crux-sprite-icons.svg);
+	background-position: -1px -2px;
+	width: 8px;
+	height: 4px;
+	margin-left: 5px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.cxTableColumnSort_asc,
+.cxTableColumnSort_ascending {
+	transform: rotate(180deg);
+}
+.cxTableHeaderFilterIcon {
+	background-image: url(../images/crux-sprite-icons.svg);
+	background-position: -380px -156px;
+	width: 17px;
+	height: 16px;
+	cursor: pointer;
+}
+.cxTableNoResultsWrapper .cxTableHeaderFilterIcon {
+	cursor: default;
+}
+/*---Start*/
+.cxTableHeaderFilterOpenedIcon {
+	background-position: -332px -130px;
+	width: 16px;
+	height: 16px;
+}
+.cxTableFilterIcons {
+	background: #fff;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid transparent;
+	/* padding: 7px 12px; */
+	padding: 6px 12px 5px 12px;
+	z-index: 15;
+	border-top-right-radius: 8px;
+}
+.cxTableHeaderIcons {
+	position: absolute;
+	right: 0;
+	/* top: 1px; */
+	top:0;
+	/* background: transparent; */
+}
+.cxTableHeaderIconsFixed {
+	position: fixed;
+	border-right: 1px solid #ddd;
+	border-top-right-radius: 0;
+}
+/*---E*/
+.cxTableLookupFilterComponent {
+	background: #f8faff;
+}
+.cxTableLookupFilterComponent lyte-th {
+	background-color: inherit;
+	padding: 15px 5px 30px;
+	vertical-align: top;
+}
+.cxTableStarLabel {
+    display: inline-block;
+    position: relative;
+    font-size: 20px;
+    height: 15px;
+    top: -2px;
+    left: -2px;
+    overflow: hidden;
+	flex-shrink: 0;
+}
+.cxTableLastPinnedColumn {
+	border-right: 1px solid #d9e0eb;
+}
+.cxTableLastPinnedColEnableUiAnim .cxTableLastPinnedColumn {
+	animation: cxTableLastPinnedColumnAnimKeyframes 2s linear;
+}
+@keyframes cxTableLastPinnedColumnAnimKeyframes {
+	0% {
+		border-right: 1px solid #5483d0;
+	}
+	100% {
+		border-right: 1px solid #d9e0eb;
+	}
+}
+.cxTableLastPinnedColumn .cxTableSortIcon {
+	right: 4px;
+}
+.cxTableStickycolumn {
+	position: sticky;
+	z-index: 7;
+	right: 0;
+}
+.cxTableSortIconHide{
+	display: none;
+}
+/* crux-table-component .activeCell{
+	border: 2px solid #2c7bd0 !important;
+	border-radius: 5px;
+} */
+
+crux-table-component .activeCell {
+    outline: auto;
+    color: var(--formBorderFocus, #2c7bd0);
+    outline-width: thin;
+    border-radius: 5px;
+}
+crux-table-component lyte-exptable-th.activeCell {
+    outline-offset: -2px;
+}
+crux-table-component lyte-exptable-th .cxTableHeadingElem.activeCell {
+    outline-offset: 2px;
+}
+crux-table-component lyte-exptable-td.activeCell {
+    outline-offset: -1px;
+}
+.cxTableVat lyte-tbody lyte-td { /* To make Table content Top Aligned */
+	vertical-align: top;
+}
+
+/*For Express Table Starts */
+.lyteExpOriginalTable lyte-exptable { 
+	width:100%;
+}
+.lyteExpressAccordionTdChild {
+	display: flex;
+}
+.lyteExpressAccordionTdChild .pageCount {
+	align-self: center;
+}
+.cxTableGroupbyCount {  
+    background: #E7F2FF;
+    border-radius: 9px;
+    color: #313949;
+    display: inline-block;
+    font-size: 13px;
+    height: 16px;
+    line-height: normal;
+    min-width: 23px;
+    padding: 1px 1px;
+    text-align: center;
+    margin-left: 8px;
+    font-family: var(--crux-bold-font);
+    border: 1px solid #D9E8F9;
+}
+
+.cxTableGroupbyName {
+	font-family: var(--crux-bold-font);
+}
+.cxExpTableStickyTd {
+    position: sticky;
+    right: 0;
+    z-index: 5;
+}
+.cxPageCount {
+    white-space: nowrap;
+    vertical-align: top;
+    display: inline-block;
+    font-size: 14px;
+    font-family: var(--crux-bold-font);
+    margin-right: 10px;
+}
+.cxTdGroupbyHead {
+    position: relative;
+    padding-left: 15px;
+    display: flex;
+}
+.cxTableArrowDown {
+    /* url(../images/crux-sprite-icons.svg) no-repeat -1px -2px */
+    background-position: -1px -2px;
+    width: 8px;
+    height: 4px;
+    /* background-image: url(/crm/CRMClient/images/crux-sprite-icons.svg); */
+    display: inline-block;
+    position: absolute;
+    transform: scale(1.1);
+    opacity: 0.7;
+    top: 5px;
+    left: 3px;
+}
+.lyteExpTbodyClosed .cxTableArrowDown {
+    transform: rotate(-90deg);
+}
+.cxExpTableStickyTd lyte-navigator {
+    top: -7px;
+    position: relative;
+}
+.lyteExpOriginalTable lyte-exptable {
+    width: auto;
+    min-width: 100%;
+}
+/* .lyteExpressAccordionTdChild {
+	display: flex;
+} */
+/*For Express Table Ends*/

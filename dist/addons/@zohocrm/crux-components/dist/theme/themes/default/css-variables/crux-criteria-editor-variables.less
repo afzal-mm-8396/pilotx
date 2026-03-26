@@ -1,0 +1,72 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-criteria-pattern-label-color: #666;
+    --@{cssPrefix}-criteria-box-pattern-label-color: #616E88;
+    --@{cssPrefix}-criteria-pattern-input-border-color: #e5e5e5;
+    --@{cssPrefix}-criteria-pattern-value-color: #333;
+    --@{cssPrefix}-criteria-btn-link-color: #338CF0;
+    --@{cssPrefix}-criteria-box-btn-border: #bbb;
+    --@{cssPrefix}-criteria-box-save-btn-bg: #4daeee;
+    --@{cssPrefix}-criteria-box-save-btn-border: #4daeee;
+    --@{cssPrefix}-criteria-cancel-btn-text-color: #999;
+    --@{cssPrefix}-criteria-label-edit-mode-border-color: #e5e5e5;
+    --@{cssPrefix}-criteria-index-view-span-color: #889bb7;
+    --@{cssPrefix}-criteria-number-bg-color: #dadada;
+    --@{cssPrefix}-criteria-disabled-border-color: #f0f0f0;
+    --@{cssPrefix}-criteria-pattern-number-bg-color: #f6f6f6;
+    --@{cssPrefix}-criteria-pattern-number-border-color: #b3b3b3;
+    --@{cssPrefix}-criteria-number-text-color: #333;
+    --@{cssPrefix}-criteria-pattern-number-hover-bg-color: #eee;
+    --@{cssPrefix}-criteria-selected-sortable-number-bg-color: #4B72E5;
+    --@{cssPrefix}-criteria-selected-sortable-number-text-color: #fff;
+    --@{cssPrefix}-criteria-sort-bottom-border-color: #4B72E5;
+    --@{cssPrefix}-criteria-sort-bottom-bg-color: #F5F8FF;
+    --@{cssPrefix}-criteria-pattern-brackets-color: #999;
+    --@{cssPrefix}-criteria-date-input-first-child-border-color: var(--crux-element-border-color);
+    --@{cssPrefix}-criteria-module-value-text-color: #8b9ab9;
+    --@{cssPrefix}-criteria-age-in-day-drop-button-border-color: var(--crux-element-border-color);
+    --@{cssPrefix}-criteria-error-msg-color: #e64c48;
+    --@{cssPrefix}-criteria-view-box-border-color: #C0C6CC;
+    --@{cssPrefix}-criteria-view-box-bg-color: #F8FAFF;
+    --@{cssPrefix}-criteria-tag-border-color: #C0C6CC;
+    --@{cssPrefix}-criteria-view-mode-child-border-color: #d2e2ed;
+    --@{cssPrefix}-criteria-view-box-wrap-border-color: #C0C6CC;
+    --@{cssPrefix}-criteria-view-box-wrap-bg-color: #F8FAFF;
+    --@{cssPrefix}-criteria-flat-border-color: #ddd;
+    --@{cssPrefix}-criteria-flat-border-hover-color: #a5a5a5;
+    --@{cssPrefix}-criteria-flat-border-focus-color: #4ab4fe;
+    --@{cssPrefix}-criteria-editor-border-color: var( --crux-element-border-color);
+    --@{cssPrefix}-criteria-editor-hover-border-color: var( --crux-element-border-color);
+    --@{cssPrefix}-criteria-editor-hover-box-shadow-color: #c3c6ca;
+    --@{cssPrefix}-criteria-editor-focus-border-color: var(--crux-element-focus-border-color);
+    --@{cssPrefix}-criteria-editor-focus-box-shadow-color: var( --crux-element-focus-shadow-color);
+    --@{cssPrefix}-criteria-elements-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-criteria-elements-grey-bg-color: #eee;
+    --@{cssPrefix}-criteria-view-text-color: #303a48;
+    --@{cssPrefix}-criteria-view-comparator-color: #34b8a9;
+    --@{cssPrefix}-criteria-text-color: var(--crux-heading-color);
+    --@{cssPrefix}-criteria-disabled-input-color: #333;
+    --@{cssPrefix}-criteria-row-and-or-text-color: #2687d3;
+    --@{cssPrefix}-criteria-patten-edit-and-or-text-color: var( --crux-link-color);
+    --@{cssPrefix}-criteria-editor-error-cell-border-color: #FF5D5A;
+    --@{cssPrefix}-criteria-child-header-row-before-bg-color: #dadada;
+    --@{cssPrefix}-criteria-child-field-icon-show-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-criteria-delete-link-color: #FF5D5A;
+    --@{cssPrefix}-criteria-pattern-error-color: #FF5D5A;
+    --@{cssPrefix}-criteria-box-pattern-num-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-criteria-input-number-text-color: var(--crux-heading-color);
+    --@{cssPrefix}-criteria-and-or-input-text-color: var(--crux-base-text-color);
+    --@{cssPrefix}-criteria-label-color: var(--crux-label-color);
+}

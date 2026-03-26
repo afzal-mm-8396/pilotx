@@ -1,0 +1,106 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-audio-recorder.variables.less";
+
+@import "../themes/default/less-variables/crux-audio-recorder-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-audio-recorder";
+
+
+.cxAudioRecContainer .lyteRecordingControlButtons{
+    .cxAudioRecControlBtnsDivMixin();
+    width: @w;
+}
+
+.cxAudioRecActionDiv{
+    .cxAudioRecActionDivMixin();
+    justify-content: space-between;
+    padding: @padding;
+    align-items: center;
+    border-top: @border;
+    background-color: @bg-color;
+}
+
+.cxAudioRecContainer .lyteAudioRecorderRecording .lyteRecordingControlButtons,
+.cxAudioRecContainer .lyteVoiceNoteControlsWrapper{
+    .cxAudioRecCoontrolWrapMixin();
+    display: block;
+    padding: @padding;
+    margin: @margin;
+}
+
+.cxAudioRecContainer .lyteVoiceNotePrefetchSuccess,
+.cxAudioRecContainer .audioRecorderWrap,
+.cxAudioRecContainer lyte-voicenote{
+    .cxAudioRecNotesDivMixin();
+    padding: @padding;
+    width: @w;
+    border: @border;
+    border-radius: @border-radius;
+    overflow: hidden;
+    box-sizing:border-box;
+}
+
+
+.cxAudioRecContainer .lyteVoiceNoteProgress,
+.cxAudioRecContainer .lyteRecordingCanvas,
+.cxAudioRecContainer .lyteVoiceNoteCanvas{
+    .cxAudioRecPreviewCanvasMixin();
+    width: @w;
+    border: @border;
+    height: @h;
+    margin: @margin;
+    background-color: @bg-color;
+}
+
+.cxAudioRecContainer .lyteRecordingPreview{
+    .cxAudioRecPreviewCanvasMixin();
+    width: @w;
+    height: @h;
+}
+
+.cxAudioRecDummyDiv .audioRecorderWrap::before{
+    .cxAudioRecPreviewCanvasMixin();
+    display: block;
+    content: '';
+    height: @h;
+    width: @w;
+}
+
+.cxAudioRecContainer .lyteVoiceNoteHandler{
+    .cxAudioRecNoteHandlerMixin();
+    height: @h;
+}
+
+.cxAudioRecBtn{
+    .cxAudioRecBtnMixin();
+    margin: @margin;
+}
+
+.cxAudioRecContainer .lyteRecordingCanvas,
+.cxAudioRecContainer .lyteVoiceNoteCanvas,
+.cxAudioRecDummyDiv .audioRecorderWrap::before{
+    .cxAudioRecCanvasBgImageMixin();
+    background-image: @bg-image;
+}
+
+.cxAudioRecHideBtn{
+    .cxAudioRecHideBtnMixin();
+    visibility: hidden;
+    width: @w;
+    margin: @margin;
+}
+
+.cxAudioRecDelIconWrap{
+    .cxAudioRecDelIconWrapMixin();
+    @{property-margin-right}: @margin-right;
+}
+
+.cxAudioRecPausePlayIconWrap{
+    .cxAudioRecPausePlayIconWrapMixin();
+    top: @top;
+}

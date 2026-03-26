@@ -1,0 +1,42 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-twitter-component.variables.less";
+
+@import "../../themes/default/less-variables/crux-twitter-component-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-twitter-component";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../themes/default/css-variables/crux-twitter-component-variables.less";
+}
+
+.cxTwitterInputWrapper .cxBoxInput.lyteInputBox.horizontal .lyteLabel,
+.cxTwitterInputWrapper .lyteLabel {
+	.cxTwitterInputLabelMixin();
+	color: @color;
+}
+.cxTwitterInputWrapper .cxFlatInput.horizontal .lyteLabel {
+	.cxTwitterInputFlatHorizontalLabelMixin();
+	width: @w;
+	min-width: @min-w;
+	flex-grow: 0;
+}
+.cxTwitterInputWrapper .cxFlatInput.horizontal:hover .lyteLabel {
+	.cxTwitterInputFlatHorizontalHoverLabelMixin();
+	border-bottom: @border-bottom;
+}
+.cxTwitterInputWrapper .cxFlatInput.horizontal.lyteInputFocus .lyteLabel {
+	.cxTwitterInputFlatHorizontalFocusLabelMixin();
+	border-bottom: @border-bottom;
+}
+.cxTwitterInputWrapper .cxFlatInput.lyteInput .lyteField {
+	.cxTwitterInputFlatFieldMixin();
+	width: @w;
+	min-width: @min-w;
+	flex-grow: 1;
+}

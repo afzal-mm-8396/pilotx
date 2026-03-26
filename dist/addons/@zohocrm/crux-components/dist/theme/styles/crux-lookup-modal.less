@@ -1,0 +1,600 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-lookup-modal/crux-lookup-modal.variables.less";
+
+@import "../themes/default/less-variables/crux-lookup-modal-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-lookup-modal";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-lookup-modal-variables.less";
+}
+
+.cxLookupSearch {
+	.cxLookupSearchMixin();
+	width: @w;
+}
+.cxLookupModalbuttonLayer {
+    .cxLookupModalbuttonLayerMixin();
+	display: @display;
+	align-items: @align-items;
+    justify-content: @justify-content;
+}
+.cxLookupModalContBtnLayer{
+    .cxLookupModalContBtnLayerMixin();
+    margin: @margin;
+}
+.cxLookupModal lyte-table {
+	overflow: hidden;
+}
+.cxTable lyte-th {
+	.cxTableLyteThMixin();
+	padding: @padding;
+	// border-bottom: @border-bottom;
+	// border-top: @border-top;
+	font-size: @font-size;
+}
+.cxTable lyte-td {
+	.cxTableLyteTdMixin();
+	border-bottom: @border-bottom;
+	padding: @padding;
+	vertical-align: top;
+	font-weight: normal;
+	font-size: @font-size;
+}
+.cxSelectedSingle{
+    .cxSelectedSingleMixin();
+    overflow: @overflow;
+    text-overflow: @text-overflow;
+    white-space: @white-space;
+    flex-grow: @flex-grow;
+    display: @display;
+    text-align: @value-textalign-left;
+}
+
+.cxLookupWidthOnePerc {
+    width : 1%;
+}
+// .cxLookupModal lyte-modal-content {
+    
+// }
+.cxLookupModal .cxTable lyte-table,
+.cxLookupModal .cxTable {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+.cxLookupSearch .searchIcon {
+    cursor: pointer;
+}
+.cxLookupModal .numberDivCurrencyView, .cxLookupPopTd .numberDivCurrencyView{
+    text-align: @value-textalign-left;
+}
+
+.cxLookupModalRelatedDDWrap {
+    .cxLookupModalRelatedDDWrapMixin();
+    width: @w;
+    display: @display;
+    align-items: @align-items;
+    @{property-padding-left}: @padding-left;
+    @{property-margin-right}: @margin-right;
+
+}
+.cxLookupModalContent {
+    .cxLookupModalContentMixin();
+    padding-top: @padding-top;
+    display: @display;
+    flex-direction: @flex-direction;
+    height: @h;
+    border-radius: @border-radius;
+}
+
+.cxLookupModalNew .cxLookupModalContent{
+    .cxLookupModalNewContentMixin();
+    background: @bg;
+    padding: @padding;
+}
+// .cxLookupModalHeader {
+//     .cxLookupModalHeaderMixin();
+//     padding: @padding;
+// }
+.cxLookupModalRelIdName {
+    .cxLookupModalRelIdNameMixin();
+    @{property-padding-left}: @padding-left;
+}
+.cxLookupModalRelIdDropdown {
+    .cxLookupModalRelIdDropdownMixin(); 
+    // @{property-padding-left}: @padding-left;
+    // overflow: @overflow;
+    width: @w;
+}
+
+.cxLookupModalOld .cxLookupModalRelIdDropdown{
+    .cxLookupModalRelIdDropdownMixin(); 
+    @{property-padding-left}: @padding-left;
+    overflow: @overflow;
+    width: @old-w;
+}
+
+/**********************************
+    Modal Lookup Top Header Section STarts 
+***********************************/
+// lyte-modal-header {
+//     display: flex;   
+// }
+// lyte-modal-header {
+
+// }
+
+.cxFilterIconWrap{
+    .cxFilterIconWrapMixin();
+    display: flex;
+    padding: @padding;
+	border: @border;
+	@{property-margin-right}: @margin-right;
+	border-radius: @border-radius;
+    cursor: pointer;
+}
+
+.cxFilterIconWrap:hover {
+    .cxLookupModFilterActiveIconMixin();
+    background-color: @cxLookupfilterIconWrapHoverBg;
+}
+
+.cxLookupModFilterActiveIcon{
+    .cxLookupModFilterActiveIconMixin();
+    box-shadow: @box-shadow;
+    background-color: @cxLookupfilterIconWrapHoverBg;
+}
+
+
+.cxLookupModalContentWrapper{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+}
+// .cxLookupModalContentBottom {
+//     display: flex;
+//     flex: 1;
+//     overflow: hidden;
+// }
+
+.cxLookupModalContent.cxLookupModalResultContent{
+    .cxLookupModalResultContentMixin();
+    padding: @padding;
+}
+
+.cxHeaderLabel{
+    .cxHeaderLabelMixin();
+    align-items: center;
+    display: flex;
+    @{property-margin-right}: @margin-right;
+}
+
+
+// .cxModalSearchBox,
+// .cxLookupModalDDWrap,
+.cxLookupSelParticpantLabel,
+.cxLookupModalRelIdView,
+.cxLookupModalModuleDD,
+// .cxLModalRelatedMod,
+.cxLookupModalRelIdDropdown,
+.cxLookupModalCustomView{
+    .cxLookupModDDInputMixin();
+    @{property-margin-right}: @margin-right;
+}
+
+.cxLookupModalModuleDD,
+.cxLookupModalCustomView{
+    .cxLookupModalMMLHeaderDDMixin();
+    width: @w;
+}
+.cxLookupModalTopWrapper {
+    .cxLookupModalTopWrapperMixin();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: @padding;
+    overflow: auto;
+}
+.cxLookupModalTopLeft {
+    display: flex;
+    align-items: center;
+}
+.cxLookupModalTopRight {
+    display: flex;
+    align-items: center;
+}
+/** Modal Lookup Top Header Section Ends **/
+
+
+
+/**********************************
+    Modal Lookup Top Content Section STarts 
+***********************************/
+.cxLookupSelParticpantCount {
+    .cxLookupSelParticpantCountMixin();
+    font-family: @font-family;
+    font-size: @font-size;
+    display: flex;
+    flex-wrap: wrap;
+    margin: @margin;
+}
+.cxLookupSelParticpantCount .cxLookupSelParticpantLabel{
+    .cxLookupSelParticpantCountLabelMixin();
+    font-family: @font-family;
+    color: @color;
+}
+
+.cxSelTableLookupModalHeader .cxLookupSelParticpantCount .cxLookupSelParticpantLabel{
+    .cxLookupSelTableParticpantCountLabelMixin();
+    color: @color;
+}
+/**********************************
+    Modal Lookup Top Content Section Ends 
+***********************************/
+
+
+.cxLookupModalNew .cxLookupModalHeader{
+    .cxLookupModalHeaderMixin();
+    padding: @padding;
+}
+
+.cxLookupModalBoldText{
+    .cxLookupModalBoldTextMixin();
+    font-family: @font-family;
+}
+
+.cxLookupModalSeparator{
+    .cxLookupModalSeparatorMixin();
+    display: block;
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    background: @bg;
+    margin: @margin;
+}
+
+.cxLookupModalHeadClearBtn{
+	.cxLookupModalHeadClearBtnMixin();
+    position: relative;
+	color: @color;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.cxLookupModalHeadClearBtn::after{
+    .cxLookupModalHeadClearBtnAfterMixin();
+    content: '';
+    display: block;
+    height: @h;
+    width: @w;
+    background: @bg;
+    position: absolute;
+    bottom: @bottom;
+    @{property-left}: @left;
+}
+
+.cxLookupModalTopRight lyte-button{
+    .cxLookupModalTopRightBtnsMixin();
+    @{property-margin-right}: @margin-right;
+}
+
+
+.cxLookupModalContentTop{
+    .cxLookupModalContentTopMixin();
+    padding: @padding;
+    display: flex;
+    align-items: center;
+    min-height: @min-h;
+}
+
+.cxLookupModalFltrClrBtn{
+    .cxLookupModalFltrClrBtnMixin();
+    @{property-margin-left}: @margin-left;
+}
+
+.cxLookupModalSmartFilterContainer {
+    .cxLookupModalSmartFilterContainerMixin();
+    width: @w;
+    display: flex;
+    flex-direction: column;
+    border: @border;
+    padding-top: @padding-top;
+    border-radius: @border-radius;
+    @{property-margin-right}: @margin-right;
+    background: @bg;
+    transition: width 0.2s, margin 0.2s, visibility 0.2s,border-width 0.2s;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: @h;
+}
+
+.cxLookupModalSmartFilterContainer crux-smart-filter{
+    .cxLookupModalSmartFilterMixin();
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: @w;
+}
+
+.cxLookupModalSmartFilterHide {
+    .cxLookupModalSmartFilterHideMixin();
+    width: @w;
+    margin: @h;
+    border-left: @border-left;
+    border-right: @border-right;
+    visibility: hidden;
+}
+
+.cxLookupModalSmartFilterContainer .cxFilterScrollSection{
+    flex: 1;
+    overflow: auto;
+}
+
+.cxLookupModalFilterFooterBtn{
+    .cxLookupModalFilterFooterBtnMixin();
+    padding: @padding;
+    box-shadow: @box-shadow;
+    z-index: @z-index;
+    width: @w;
+}
+
+.cxLookupModalListView{
+    .cxLookupModalListView();
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    min-width: @min-w;
+    overflow: hidden;
+}
+
+.cxLookupModalListView crux-list-view {
+    .cxLookupModalCruxListViewMixin();
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: @h;
+}
+
+.cxLookupModalListView .cxLvViewContainer{
+    flex: 1;
+    overflow: hidden;
+    // background: @bg;
+    display: flex;
+}
+
+.cxLookupModalListView .cxLvViewContainer crux-table-component{
+    .cxLookupModalListVwContainerMixin();
+    // background: @bg;
+    width: @w;
+}
+
+.cxLookupModalListView .cxLvTableManageMenuBtn{
+    .cxLookupModalListManageBtnMixin();
+    @{property-right}: @right;
+    border-radius: @border-radius;
+}
+
+.cxLookupModalListView .lyteExpTableWrapper{
+    .cxLookupModalListVwTableWrapMixin();
+    box-sizing: border-box;
+    background: @bg;
+    border-radius: @border-radius;
+     @{property-border-right}: @border-right;
+}
+
+.cxLookupModalListView .cxLvTableRowSelected lyte-exptable-td,
+.cxLookupModalListView .cxLvTableRowSelected lyte-exptable-td.lyteFixedColumn{
+    .cxLookupModalListViewSelRowMixin();
+    background: @bg;
+}
+
+.cxLookupModalListView .cxLvTableComp #cxLvTableHeaderRow lyte-exptable-th.cxLvEditIconCol{
+    .cxLookupModalLVEditColMixin();
+    width: @w;
+    min-width: @min-w;
+}
+
+.cxMMLModalSelectedPanel {
+    .cxMMLModalSelectedPanelMixin();
+    width: @w;
+    border: @border;
+    border-radius: @border-radius;
+    overflow: auto;
+    background: @bg;
+}
+
+.cxMMLModalSelectedTableHead{
+    .cxMMLModalSelectedTableHeadMixin();
+    justify-content: space-between;
+    background-color: @bg-color;
+    padding: @padding;
+}
+
+.cxMMLModalSelTableCount{
+    .cxMMLModalSelTableCountMixin();
+    background-color: @bg-color;
+    padding: @padding;
+    border-radius: @border-radius;
+    @{property-margin-left}: @margin-left;
+    border: @border;
+    font-size: @font-size;
+}
+
+// .cxLookupModalFooter{
+//     .cxLookupModalFooterMixin();
+//     padding: @padding;
+// }
+
+.cxLookupModalParticipantHead{
+    .cxLookupModalParticipantHeadMixin();
+    // padding-bottom: @padding-bottom;
+    font-family: @font-family;
+    font-size: @font-size;
+}
+
+.cxLookupModalParticipentWrap{
+    .cxLookupModalParticipentWrapMixin();
+    padding-top: @padding-top;
+}
+
+.cxLookupModalParticipantDesc{
+    .cxLookupModalParticipantDescMixin();
+    margin-top: @margin-top;
+    color: @color;
+    font-size: @font-size;
+}
+
+.cxLookupModalParticipantTag{
+    .cxLookupModalParticipantTagMixin();
+    margin-top: @margin-top;
+}
+
+.cxLookupModalParticipantTag lyte-drop-button{
+    .cxLookupModalParticipantDDBtnMixin();
+    height: @h;
+}
+
+.cxLookupModalListView .cxLvCheckboxCol .lyteRadioLabel{
+    display: none;
+}
+
+.cxLookupModalListView .cxLvHeader{
+    .cxLookupModalLvHeaderMixin();
+    padding: @padding;
+}
+
+.cxMLookupModalFooter{
+    .cxMLookupModalFooterMixin();
+    box-shadow: @box-shadow;
+    padding: @padding;
+}
+
+.cxLookupModalParticptSep{
+    .cxLookupModalParticptSepMixin();
+    width: @w;
+    height: @h;
+    background: @bg;
+    margin: @margin;
+    display: block;
+}
+
+.cxLookupModalParticptAddBtn{
+    .cxLookupModalParticptAddBtnMixin();
+    color: @color;
+    font-family: @font-family;
+    @{property-margin-left}: @margin-left;
+    cursor: pointer;
+}
+
+.cxLookupModalParticptTagBtn{
+    .cxLookupModalParticptTagBtnMixin();
+    color: @color;
+    position: relative;
+    cursor: pointer;
+}
+
+.cxLookupModalParticptTagBtn::after{
+    .cxLookupModalParticptTagBtnAfterMixin();
+    content: '';
+    position: absolute;
+    display: block;
+    height: @h;
+    width: @w;
+    bottom: @bottom;
+    @{property-left}: @left;
+    background: @bg;
+}
+
+.cxMMLModalSelTableRemoveBtn{
+    .cxMMLModalSelTableRemoveBtnMixin();
+    color: @color;
+    @{property-margin-right}: @margin-right;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.cxMMLModalSelectedTableWrap:hover .cxMMLModalSelTableRemoveBtn{
+    visibility: visible;
+}
+
+.cxMMLModalSelTableBackIcon{
+    .cxMMLModalSelTableBackIconMixin();
+    display: block;
+    width: @w;
+	height: @h;
+    @{property-left}: @left;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+    position: absolute;
+    cursor: pointer;
+}
+
+.cxMMLModalSelectedTable lyte-tr .cxMMLModalSelectedTableCell:first-child{
+    .cxMMLModalSelectedTableRemoveCellMixin();
+    width: @w;
+    min-width: @min-w;
+    margin: @margin;
+}
+
+.cxMMLSelTableRemoveIconWrap{
+    .cxMMLSelTableRemoveIconWrapMixin();
+    display: block;
+    width: @w;
+    height: @h;
+    margin: @margin;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    visibility: hidden;
+}
+
+.cxMMLModalSelectedTable lyte-tr:hover .cxMMLSelTableRemoveIconWrap{
+    visibility: visible;
+}
+
+.cxMMLSelTableRemoveIcon{
+    .cxMMLSelTableRemoveIconMixin();
+    display: block;
+    width: @w;
+	height: @h;
+    .cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color);
+}
+
+.cxMMLSelTableRemoveIconWrap::before{
+    .cxMMLSelTableRemoveIconWrapBeforeMixin();
+    content: '';
+    display: block;
+    position: absolute;
+    width: @w;
+    height: @h;
+    @{property-left}: @left;
+    top: @top;
+    border-radius: @border-radius;
+    visibility: hidden;
+    background: @bg;
+}
+
+.cxMMLSelTableRemoveIconWrap:hover::before{
+    visibility: visible;
+}
+.lookupCriteriaLabelWrap1{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /*For text overflow issue in Td*/
+}
+
+.cxLookupDisableRow {
+    pointer-events: none;
+    opacity: 0.5;
+}

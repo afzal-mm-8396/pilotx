@@ -1,0 +1,204 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*
+.cxTerritoryTreeTerritoryLabelHoverMixin() {
+	@color: #5ba1e5;
+}*/
+.cxTerritoryModalWrapper .lyteModal > lyte-yield {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.cxTerritoryModalContent {
+  display: flex;
+  flex-direction: column;
+}
+.cxTerritoryTreeWrap,
+.cxTerritoryModalTreeWrap {
+  overflow: auto;
+  margin-top: 10px;
+  padding-bottom: 3rem;
+}
+.cxTerritoryModalTreeWrap {
+  /*min-height: @min-height;*/
+}
+.cxTerritoryTree > .lyteTreeBodyDiv > lyte-tree-body {
+  margin-top: 10px;
+}
+lyte-tree.cxTerritoryTree {
+  padding: 0 50px 0 0;
+  display: inline-block;
+}
+.cxTerritoryTree .lyteCheckBoxDefault::before {
+  margin-right: 0;
+}
+.cxTerritoryTree lyte-tree-content {
+  cursor: default;
+  display: flex;
+}
+.cxTerritoryTreeWrap lyte-tree-content,
+.cxTerritoryModalTreeWrap lyte-tree-content,
+.cxTerritoryTree lyte-tree-content {
+  display: flex;
+}
+.cxTerritoryModalTreeWrap .cxTerritoryTree lyte-tree .lyteTreeNoChildContainer lyte-tree-content::before {
+  /* @width: 55px; Changed for Lyte Ui version update*/
+  width: 41px;
+}
+.cxTerritoryTree lyte-yield {
+  outline: none;
+}
+.cxTerritoryTree .lyteTreeMainContainer > lyte-yield {
+  display: block;
+}
+.cxTerritoryTree lyte-tree-icon {
+  position: relative;
+  cursor: pointer;
+  height: fit-content;
+}
+.cxTerritoryTree .cxTerritoryCheckbox {
+  margin: -1px 0 0 10px;
+}
+.cxTerritoryTree .cxTerritoryCkboxEmptyLabel {
+  display: none;
+}
+.cxTerritoryTreeWrap .cxTerritoryCheckbox .lyteRadioLayer,
+.cxTerritoryModalTreeWrap .cxTerritoryCheckbox .lyteRadioLayer,
+.cxTerritoryTree .cxTerritoryCheckbox .lyteRadioLayer {
+  margin: 0px 5px 0 0;
+}
+.cxTerritoryTree lyte-tree-icon .collapseBox {
+  opacity: 1;
+  display: block;
+}
+.cxTerritoryTree .cxTerritoryLabel {
+  max-width: unset;
+  cursor: pointer;
+  margin-left: 0;
+  white-space: nowrap;
+  z-index: 1;
+}
+/*
+.cxTerritoryTree .cxTerritoryLabel:hover {
+	.cxTerritoryTreeTerritoryLabelHoverMixin();
+	color: @color;
+}*/
+.cxTerritoryTree .cxTerritoryNoSelect {
+  cursor: default;
+}
+.cxTerritoryTreeValueWrapper {
+  flex-grow: 1;
+  margin-left: 7px;
+}
+/*
+.lyteTreeHasNoChild .cxTerritoryTreeValueWrapper {
+	.cxTerritoryTreeNoChildTreeValueWrapperMixin();
+	@{property-margin-left}: @margin-left;
+}*/
+.cxTerritoryCheckbox + .cxTerritoryTreeValueWrapper {
+  margin-left: 5px;
+}
+.cxTerritoryItemYield {
+  display: inline-flex;
+  z-index: 1;
+  position: relative;
+}
+.cxTerritoryTreeValueWrapper::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.cxTerritoryHighlightElement::before {
+  animation: cxTerritoryHighlightAnim 2s ease;
+}
+@keyframes cxTerritoryHighlightAnim {
+  from {
+    background: var(--lyte-crux-territory-highlight-animate-from-bg-color);
+  }
+  to {
+    background: var(--lyte-crux-territory-highlight-animate-to-bg-color);
+  }
+}
+.cxTerritoryItemSuffixWrap {
+  margin-left: 20px;
+}
+.lyteTreeNoChildContainer .cxTerritoryItemSuffixWrap {
+  margin-left: 0;
+}
+.lyteTreeBodyClosed .mainContainer::before {
+  display: none;
+}
+.cxTerritoryCrumb {
+  display: inline-block;
+}
+.cxTerritorySearchWrap {
+  display: flex;
+}
+.cxTerritorySearchWrap crux-territory-search {
+  flex: 1;
+  max-width: 350px;
+}
+.cxTerritorySearchWrap lyte-dropdown {
+  width: 100%;
+}
+.cxTerritorySearchWrap lyte-dropdown lyte-drop-button,
+.cxTerritorySearchWrap lyte-dropdown lyte-drop-button:hover {
+  padding: 0 !important;
+}
+.cxTerritorySearchWrap .lyteInputBox .lyteField,
+.cxTerritorySearchWrap .lyteInputBox .lyteField:hover,
+.cxTerritorySearchWrap .lyteInputBox.lyteInputFocus .lyteField {
+  border: none;
+}
+.cxTerritorySearchWrap .lyteInputBox .lyteField input {
+  background: none;
+}
+.cxTerritorySuffixYield {
+  margin-left: 10px;
+  align-self: center;
+}
+.cxTerritoryHeaderYieldInfo {
+  display: block;
+  font-family: 'LatoRegular', sans-serif;
+  font-weight: normal;
+  font-size: var(--crux-base-font-size);
+  padding-top: 10px;
+}
+.cxTerritoryTree .lyteTreeHasNoChild lyte-tree-icon {
+  display: none;
+}
+/*# sourceMappingURL=crux-territory.css.map */

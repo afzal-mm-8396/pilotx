@@ -1,0 +1,417 @@
+.userLookupModal .currentSelected{
+  background-color: #f7f7f7
+}
+.userLookupModal .crux_transform_0deg{
+  -ms-transform: rotateZ(0deg);
+}
+.userLookupModal .lyteModal {
+  min-width: 40%;
+}
+.userLookupModal .lyteModal > lyte-yield {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.userLookupModal lyte-checkbox{
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.userLookupModal lyte-tbody lyte-tr{
+  cursor: pointer;
+}
+/* .userLookupModal .scrollSearchLoader{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+} */
+.userLookupModal .lyteModalClose{
+    right : 20px;
+    top: 20px;
+}
+.userLookupModal .alignSelectedFooter{
+  vertical-align: middle;
+}
+.userLookupModal .singleUserSelected{
+  color: #555;
+	margin-right: 6px;
+  margin-left: 15px;
+  padding-top: 7px;
+}
+/* .userLookupModal .userSingleImg{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    vertical-align: middle;
+} */
+.userLookupModal .scrollSearchDiv{
+  height: 40px;
+  padding: 5px;
+  display: none;
+  text-align: center;
+}
+.userLookupModal .noHeader{
+  top : 15px;
+}
+.userLookupModal .viewLookupTr{
+  cursor: default;
+}
+.userLookupModal .lookupHeaderStyle{
+    padding-bottom: 10px;
+}
+.userLookupModal .lookupHeaderText{
+display : block;
+width : 95%;
+word-wrap: break-word;
+}
+.userLookupModal .displayFlex,
+.lookupSearch lyte-input,
+.userLookupModal.cruxUserView .lookupSearch{
+  display: flex;
+}
+/* .userLookupModal.cruxUserView .displayFlex{
+  padding: 15px 20px;
+} */
+/* .userLookupModal .displayFlex:after{
+  content: "";
+  display: block;
+  clear: both;
+} */
+/*
+.userLookupModal lyte-modal-header{
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+    padding: 15px 20px;
+    border-bottom: 0;
+}*/
+.userLookupModal lyte-modal-header .user-lookup-section {
+  font-size: 14px;
+    font-weight: normal;
+    color: #333;
+    margin-top: 15px;
+    background: #fff;
+    font-family: var(--crux-primary-font);
+}
+/* .userLookupModal lyte-modal-footer{
+    padding: 15px 20px;
+} */
+/* .userLookupModal.cruxUserView lyte-modal-header{
+  padding: 0;
+} */
+/* .userLookupModal lyte-dropdown lyte-drop-button {
+  border-radius: 5px 0 0 5px;
+  background: #f9f9f9;
+}
+.userLookupModal .innerDrop .lyteDummyEventContainer:focus lyte-drop-button,
+.userLookupModal .innerDrop lyte-drop-button.lyteDropButtonDown:hover,
+.userLookupModal .innerDrop lyte-drop-button.lyteDropButtonDown {
+    border-radius: 5px 0 0 5px;
+    z-index: 5;
+}
+.cxUserLookupNoSearchCont .innerDrop .lyteDummyEventContainer:focus lyte-drop-button,
+.cxUserLookupNoSearchCont lyte-dropdown lyte-drop-button {
+    border-radius: 5px
+} */
+.cxUserLookupSearch .lyteField input {
+    padding-right: 25px;
+    text-overflow: ellipsis;
+}
+/* .cxLookupFilterpresent .lyteInputBox .lyteField input,
+.cxLookupFilterpresent .lyteInputBox .lyteField,
+.cxLookupFilterpresent .lyteInputBox.lyteInputFocus .lyteField input,
+.cxLookupFilterpresent .lyteInputBox.lyteInputFocus .lyteField {
+  border-radius: 0 5px 5px 0;
+} */
+.userLookupModal .lookupSearch {
+  position : relative;
+}
+.userLookupModal .dropdown{
+    background: url('../images/crux-sprite-icons.svg') no-repeat -1px -2px;
+    width: 8px;
+    height: 4px;
+}
+.userLookupModal .lookupModalContent{
+    position: relative;
+    min-height: 100px;
+    flex-grow: 1;
+    box-sizing: content-box;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: flex-start;
+}
+.userLookupModal .lookupFirstMinWidth{
+  min-width: 50px;
+}
+.userLookupModal lyte-th{
+    min-width: 220px;
+    color: #777;
+    padding: 8px 5px;
+    font-size: 1rem;
+    background: #fff;
+    font-family: var(--crux-primary-font);
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 3px double #e5e5e5;
+}
+.userLookupModal lyte-thead lyte-tr:hover{
+    background: transparent;
+}
+/* .userLookupModal .userImg{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+} */
+.cxUserLookupUserImg{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.cxUserLookupNoPhoto{
+  background: url('../images/nophoto.png');
+  background-size: 100%;
+}
+.cxUserLookupSelectedRow lyte-td {
+	background-color: #efefef;
+}
+.userLookupModal lyte-th:first-child,
+.userLookupModal lyte-td:first-child,
+.lookupTableBodypadding {
+  padding-left: 20px;
+}
+.userLookupModal .lookupTableHeaderWidth{
+  width:50px;
+  padding-left:20px;
+}
+.userLookupModal .lyteCheckBoxPrimary::before{
+    background-position: -76px -1px;
+}
+.userLookupModal .lyteCheckBoxPrimary:hover::before{
+    background-position: -59px -1px;
+}
+.cxUserLookupSelCountLabel,
+.userLookupModal .userSelection {
+    font-size: 1rem;
+    align-self: center;
+    color: #338cf0;
+    margin-left: 15px;
+}
+.userLookupModal .userSelection:hover {
+	text-decoration: underline;
+}
+.cxUserLookupSelCountLabel {
+	color: #333;
+}
+
+lyte-drop-box.userLookupFilterDropDown{
+    margin-left: -1px;
+}
+lyte-drop-box.userLookupFilterDropDown  lyte-drop-body{
+    margin: 3px 0;
+    max-height: 140px;
+}
+lyte-drop-box.userLookupFilterDropDown lyte-drop-item{
+    padding: 5px 15px
+}
+.userLookupFilterDropDown lyte-drop-item[selected="true"]::before {
+    content: none;
+}
+
+.userLookupModal .lookupSearchIcon{
+  background: url('../images/crux-sprite-icons.svg') no-repeat -180px -4px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 7px;
+  opacity: 0.6;
+    top: calc(50% - 7px);
+}
+.userLookupModal lyte-input.lyteInputFocus + .lookupSearchIcon {
+  opacity: 1;
+}
+.userLookupModal .lookupSearchIcon.lookupSearchCloseIcon{
+  background: url('../images/crux-sprite-icons.svg') no-repeat -54px -2px;
+  width: 10px;
+  height: 8px;
+  transform: scale(1.3);
+  display : none;
+    top: calc(50% - 4px);
+}
+.userLookupModal .selectedUsersHd{
+  padding-bottom: 10px;
+}
+.userLookupModal .userLookupBackIcon{
+  background: transparent url('../images/crux-sprite-icons.svg') no-repeat -355px -158px;
+  width: 16px;
+  height: 14px;
+  display: inline-block;
+  cursor:pointer;
+  opacity: 0.4;
+  position: absolute;
+  transform: translateX(calc(-100% - 5px)) translateY(5px);
+}
+.cxUserLookupZiaSuggestedRow lyte-td:nth-child(2) .cxUserLookupTextWrap {
+	display: inline-flex;
+	max-width: 160px;
+}
+.userLookupModal .cruxUserLookupText {
+    display: inline-block;
+    max-width: 220px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.userLookupModal .cruxUserLookupImage {
+  /* max-width: 160px; */
+  max-width: 145px;
+}
+.cxUserLookupZiaPercent {
+	font-family: var(--crux-bold-font);
+  font-weight: var(--crux-font-weight-bold);
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+.cxUserLookupTableWrap {
+	max-height: inherit;
+	position: relative;
+	/* overflow: auto; */
+	display: flex;
+	flex-direction: column;
+}
+.userLookupTable{
+	overflow: hidden;
+	max-height: inherit;
+  display: flex;
+	flex-direction: column;
+	transform: translate3d(0,0,0);
+}
+.userLookupTable .lyteTableScroll {
+	max-height: inherit;
+}
+.emptyUserLookupTable{
+	overflow:hidden;
+}
+.cxUserLookupEmptyRow lyte-td {
+	height: 80px;
+}
+
+/* .NoUsersLookupInTable{
+display: block;
+height: 100px;
+text-align: center;
+line-height: 80px;
+color: grey
+} */
+.NoUsersLookup {
+	display: block;
+	text-align: center;
+	line-height: 80px;
+	color: grey;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 1px;
+	pointer-events: none;
+	z-index: 15;
+	background: #fff;
+  border: 1px solid var(--tableBorder);
+  box-sizing: border-box;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.cxUserLookupSearchLoader,
+.cxUserLookupListLoader,
+.cxUserLookupLazyLoader{
+  background: url('../images/crux-search-loader.svg');
+  background-size: 100%;
+  display: inline-block;
+}
+.cxUserLookupListLoader{
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2
+}
+
+.cxUserLookupListLoaderWrap{
+  margin-top: 2rem;
+	position: relative;
+}
+
+.cxUserLookupSearchLoader{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+}
+.cxUserLookupLazyLoader{
+  width: 34px;
+  height: 34px;
+}
+.cxUserLookupSelNameDummy {
+	width: 100px;
+	height: 15px;
+	display: inline-block;
+	vertical-align: middle;
+	background: #eee;
+}
+.cxUserLookupImgDummy {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	vertical-align: middle;
+	background: #eee;
+	border-radius: 50%;
+}
+
+.cxUserLookupListLoaderTr lyte-td,
+.cxUserLookupSubHeadingRow lyte-td {
+  border-bottom: 0;
+}
+.cxUserLookupSubHeadingCell {
+  z-index: 1;
+  height: 35px;
+}
+.cxUserLookupSubHeadingSecondCell {
+  padding-top: 20px;
+  height: 45px;
+}
+.cxUserLookupRowHeading {
+  position: absolute;
+  top: 10px;
+  font-family: var(--crux-bold-font);
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxUserLookupSubHeadingSecondCell .cxUserLookupRowHeading {
+  top: 20px;
+}
+.cxUserLookupListLoaderTr {
+	position: relative;
+}
+.cxUserLookupListLoaderTd {
+	height: 50px;
+	position: static;
+}
+.cxUserLookupNoSuggestion {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #5a5a5a;
+  height: 50px;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  align-items: center;
+}

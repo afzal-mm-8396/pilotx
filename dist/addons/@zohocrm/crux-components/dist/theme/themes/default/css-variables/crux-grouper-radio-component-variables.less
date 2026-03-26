@@ -1,0 +1,30 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-grouper-radio-btn-border-color: var(--crux-element-border-color);
+    --@{cssPrefix}-grouper-radio-btn-default-select-bg-color: #EDF6FF;
+    --@{cssPrefix}-grouper-radio-btn-error-border-color: #FF5D5A;
+    --@{cssPrefix}-grouper-radio-btn-error-bg-color: #FF5D5A;
+    --@{cssPrefix}-grouper-radio-color-enable-btn-border-color: rgba(0, 0, 0, 0.20);
+    --@{cssPrefix}-grouper-radio-btn-empty-icon-bg-color: #000;
+    --@{cssPrefix}-grouper-radio-base-tick-icon-bg-color: var( --crux-base-icon-color);
+    --@{cssPrefix}-grouper-radio-white-tick-icon-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-grouper-radio-default-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-grouper-group-btn-focus-border-color: #59A6E9;
+    --@{cssPrefix}-grouper-group-btn-disabled-bg-color: #F4F5F6;
+    --@{cssPrefix}-grouper-group-btn-view-mode-bg-color: #F5F5F5;
+    --@{cssPrefix}-grouper-group-btn-view-mode-border-color: #DDDDDD; 
+    --@{cssPrefix}-grouper-group-btn-reset-color: var(--crux-link-color);
+    --@{cssPrefix}-grouper-group-btn-mandatory-color: #FF5D5A;
+}

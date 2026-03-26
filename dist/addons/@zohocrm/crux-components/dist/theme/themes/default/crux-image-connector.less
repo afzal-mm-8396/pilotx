@@ -1,0 +1,19 @@
+.selection_xAxisRuler {
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px dashed #000000;
+    pointer-events: none;
+    z-index: 20;
+    transform: translateY(-50%);
+    top: 0.5px;
+}
+
+.selection_yAxisRuler {
+    position: absolute;
+    height: 100%;
+    @{property-border-right}: 1px dashed #000000;
+    pointer-events: none;
+    z-index: 20;
+    transform: translateX(-50%);
+    @{property-left}: 0.5px;
+}

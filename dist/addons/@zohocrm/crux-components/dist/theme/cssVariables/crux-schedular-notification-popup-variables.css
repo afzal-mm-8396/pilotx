@@ -1,0 +1,46 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-schedular-modal-box-shadow-color: rgba(0, 0, 0, 0.3);
+  --lyte-crux-schedular-modal-header-bg: #313949;
+  --lyte-crux-schedular-modal-header-text-color: #fff;
+  --lyte-crux-schedular-notification-border: #ddd;
+  --lyte-crux-schedular-progress-bar-bg: #97dc8d;
+  --lyte-crux-schedular-modal-minimize-before-bg: var(--crux-element-bg-color);
+  --lyte-crux-schedular-progress-bar-loader-bg: linear-gradient(90deg, transparent, #70a46a 50%, transparent);
+  --lyte-crux-schedular-close-icon-bg: #fff;
+}
+/*# sourceMappingURL=crux-schedular-notification-popup-variables.css.map */

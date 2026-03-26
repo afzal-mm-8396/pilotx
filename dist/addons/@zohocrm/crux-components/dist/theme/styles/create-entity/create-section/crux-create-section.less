@@ -1,0 +1,85 @@
+@import "../../../themes/default/global/global.variables.less";
+
+@import "../../../themes/default/crux-elements/create-entity/create-section/crux-create-section.variables.less";
+
+@import "../../../themes/default/less-variables/create-entity/crux-create-section-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../../themes/default/css-variables/create-entity/crux-create-section-rootvar.less";
+}
+
+/******** common styles for crux dx components starts **********/ 
+crm-field{
+    display: block;
+}
+
+crm-criteria-editor,
+crm-field,
+crm-listview,
+crm-relatedlist,
+crm-detailview,
+crm-create-form,
+crm-detailview {
+    position: relative;
+    z-index: 0;
+}
+crm-criteria-editor,
+crm-field,
+crm-listview,
+crm-relatedlist,
+crm-detailview,
+crm-create-form,
+crm-detailview {
+    .cxComponentBaseBg();
+    background: @bg;
+}
+lyte-table crm-field {
+    background: transparent !important;
+}
+
+/********* common styles for crux dx components ends *********/
+
+.cxcreateSectionTitleCont {
+    .cxcreateSectionTitleContMixin();
+	color: @color;
+	font-family: @font-family;
+	font-weight: @font-weight;
+	font-style: normal !important;
+	position: relative;
+    // padding: @padding;
+    margin: @margin;
+    text-align: @value-textalign-left;
+}
+
+.cxcreateSectionInnerCont{
+    .cxcreateSectionInnerContMixin();
+    max-width: @max-w;
+}
+
+.cruxCreateFormComponent .cxCreateSectionDetailsContainer{
+    .cxcreateMainDetailsContainerMixin();
+    width: @w;
+    // margin-bottom: @margin-bottom;
+}
+
+.cruxCreateFormComponent .cxCreateSingleContainer {
+    .cxcreateSingleContainerMixin();
+    width: @w;
+}
+
+.cxcreateSectionTwoColumn {
+    .cxcreateSectionTwoColumn();
+    display: flex;
+    align-content: space-between;
+    column-gap: @column-gap;
+    justify-content: space-between;
+}
+
+.cxcreateSectionTwoColumn .cxCreateContainer1,
+.cxcreateSectionTwoColumn .cxCreateContainer2 {
+    .cxcreateSectionTwoColumnContMixin();
+    width: @w;
+}

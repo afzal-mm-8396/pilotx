@@ -1,0 +1,88 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-disabled-tooltip.variables.less";
+
+@import "../themes/default/less-variables/crux-disabled-tooltip-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-disabled-tooltip-variables.less";
+}
+
+/******************************************
+
+CRUX Dropdwown = Long Tooltip + Disabled Info Tooltip
+
+******************************************/
+
+// .cxPickItemDisabledHoverCard {
+    
+// }
+.cxPickItemDisabledHoverCard .lytePopover {
+	.cxPickItemDisabledHoverCardPopoverMixin();
+   box-shadow: @box-shadow;
+   max-width: @max-width;
+   border-radius: @border-radius;
+   border: @border;
+}
+.cxPickItemDisabledHoverCard lyte-hovercard-content {
+   padding: 6px 10px;
+   box-shadow: none;
+}
+.cxPickItemDisabledHoverCard .cxItemCardText {
+    word-wrap: break-word;
+    margin-bottom: 15px;
+ }
+ // .cxPickItemDisabledHoverCard .cxItemCardTooltipMsg {
+ //    margin-top: 15px;
+ // }
+.cxItemCardTooltipHead {
+   font-family: @cruxSecondaryFont;
+   font-weight: @cruxFontWeightBold;
+   margin-bottom: 5px;
+   position: relative;
+}
+.cxPickItemDisabledHoverCard .cxItemCardTooltipHead .cxSprite {
+    @{property-margin-right}: 5px;
+	position: relative;
+}
+.cxItemCardTooltipHead .cxSprite {
+	vertical-align: middle;
+	background-image: none;
+}
+.lyteHovercardPopover.cxPickItemDisabledHoverWrapper {
+	.cxPickItemDisabledHoverWrapperMixin();
+	z-index: @z-index;
+	//z-index: 10099
+}
+.lyteHovercardPopover.cxPickItemDisabledHoverWrapper .lytePopover {
+	.cxPickItemDisabledHoverWrapperPopoverMixin();
+	z-index: @z-index;
+	//z-index: 10100
+}
+.cxPickItemDisabledHoverWrapper .lytePopover::before {
+	pointer-events: none;
+}
+.cxPropDropButtonPrefixYield {
+	min-width: 0;
+    display: inline-block;
+    flex-shrink: 0;
+	@{property-margin-right}: 5px;
+}
+.cxBoxDropdown .cxDropButtonHasYeild {
+	display: flex;
+}
+.cxDropButtonHasYeild .cxSelectWrapper {
+	align-items: center;
+    flex: 1;
+    max-width: 100%;
+	min-width: 0;
+    flex-shrink: 0;
+}
+.cxDropButtonHasYeild .cxFakeDropButton {
+	max-width: 100%;
+	display: flex;
+}
+/* CRUX Dropdwown = Long Tooltip + Disabled Info Tooltip Ends */

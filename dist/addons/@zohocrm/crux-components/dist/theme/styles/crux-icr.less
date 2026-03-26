@@ -1,0 +1,195 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-icr.variables.less";
+
+@import "../themes/default/less-variables/crux-icr-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-icr-variables.less";
+}
+
+.cxSelectionXaxisRuler {
+	.cxSelectionXaxisRulerMixin();
+	position: absolute;
+	width: @w;
+	border-bottom: @border-bottom;
+	pointer-events: none;
+	z-index: @z-index;
+	transform: @transform;
+	top: @top;
+}
+.cxSelectionYaxisRuler {
+	.cxSelectionYaxisRulerMixin();
+	position: absolute;
+	height: @h;
+	@{property-border-right}: @border-right;
+	pointer-events: none;
+	z-index: @z-index;
+	transform: @transform;
+	@{property-left}: @left;
+}
+
+.cxImageOuterWrapper .lyteSelectionFreezeLayer{
+	display: none !important;
+}
+.cxConnectionContainer .lyteConnectionPath{
+	.cxConnectionContainerPathMixin();
+	stroke: @stroke;
+	stroke-width: @stroke-width;
+	fill: @fill;
+}
+
+.cxConnectionContainer .lyteConnectionFakePath {
+	stroke: transparent;
+	stroke-width:5;
+	fill: none;
+}
+
+.cxConnectionContainer .lyteConnectionFakeContainer, 
+.cxConnectionContainer .lyteConnectionContainer{
+	pointer-events: none;
+	/*will-change: transform;*/
+}
+
+.cxConnectionContainer .lyteConnectionContainer path{
+	pointer-events: auto;
+	/*will-change: d*/
+}
+
+.cxConnectionContainer {
+	.cxConnectionContainerMixin();
+	pointer-events: none;
+	width: @w;
+	height: @h;
+	position: absolute;
+	@{property-left}: @left;
+	top: @top;
+	z-index: @z-index;
+}
+.cxConnectionContainer .lyteSelectorDeleteBtn, 
+.cxConnectionContainer .lyteTEdge, 
+.cxConnectionContainer .lyteBEdge, 
+.cxConnectionContainer .lyteREdge, 
+.cxConnectionContainer .lyteLEdge,
+
+.cxImageOuterWrapper .lyteSelectorDeleteBtn, 
+.cxImageOuterWrapper .lyteTEdge, 
+.cxImageOuterWrapper .lyteBEdge, 
+.cxImageOuterWrapper .lyteREdge, 
+.cxImageOuterWrapper .lyteLEdge{
+	display: none !important;
+}
+.cxMenuSelected{
+	.cxMenuSelectedMixin();
+	pointer-events: none;
+	background-color: @background-color;
+}
+.cxZoom {
+	.cxZoomMixin();
+	// float: none;
+	background: @bg;
+	border: @border;
+	border-radius: @border-radius;
+	font-size: @font-size;
+	cursor: default;
+	position: relative;
+	display: flex;
+	@{property-margin-right}: @margin-right;
+}
+.cxZoomPer{
+	.cxZoomPerMixin();
+	width: @w;
+	padding: @padding;
+	@{property-border-left}: @border-left;
+	@{property-border-right}: @border-right;
+	align-items: center;
+	justify-content: center;
+	font-size: @font-size;
+	display: flex;
+	cursor: pointer;
+}
+.cxZoomIn,
+.cxZoomOut {
+	.cxZoomOutMixin();
+	width: @w;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.cxZoomIn {
+	@{property-border-top-right-radius}: 50%;
+	@{property-border-bottom-right-radius}: 50%;
+}
+.cxZoomOut {
+	@{property-border-top-left-radius}: 50%;
+	@{property-border-bottom-left-radius}: 50%;
+}
+.cxZoomper:hover,
+.cxZoomIn:hover, 
+.cxZoomOut:hover {
+	.cxZoomOutHoverMixin();
+	background-color: @background-color;
+} 
+.cxIcrImage {
+	.cxIcrImageMixin();
+	width: @w;
+	height: @h;
+	max-width: @max-w;
+	max-height: @max-height;
+}
+.cxImageOuterWrapper{
+	.cxImageOuterWrapperMixin();
+	background: @bg;
+}
+.cxImageWrapper{
+	.cxImageWrapperMixin();
+	overflow: auto;
+	padding: @padding;
+	box-sizing: border-box;
+	// display: @display;
+	// justify-content: @justify-content;
+	// max-height: @// max-height;
+	// max-width: @// max-width;
+}
+.cxImageInnerWrapper{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+}
+// .cxZoom{
+	//     display: flex;
+	//     float: right;
+// }
+.cxDisableZoom{
+	cursor: default;
+	pointer-events: none;
+}
+.cxResetZoom {
+	.cxResetZoomMixin();
+	@{property-margin-right}: @margin-right;
+	text-decoration: underline;
+	cursor: pointer;
+	font-size: @font-size;
+	position: absolute;
+	@{property-left}: @left;
+	top: @top;
+}
+// .cxZoomPer{ used in top
+// 	cursor: pointer;
+// }
+.cxCompWrapper{
+	display: flex;
+	position: relative;
+}
+.cxImageOptionsWrapper {
+	.cxImageOptionsWrapperMixin();
+	// justify-content: flex-end;
+	// display: flex;
+	justify-content: @justify-content;
+	display: @display;
+	padding-bottom: @padding-bottom;
+}

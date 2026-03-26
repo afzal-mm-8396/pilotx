@@ -1,0 +1,19 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-icon-save-cancel-border-color: #bbb;
+    --@{cssPrefix}-icon-save-bg-color: #4daeee;
+    --@{cssPrefix}-icon-save-border-color: #4daeee;
+    --@{cssPrefix}-icon-save-before-bg-color: var(--crux-element-bg-color);
+}

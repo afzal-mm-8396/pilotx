@@ -1,0 +1,167 @@
+.cxNumberFlatInputHorizontalLabelMixin() {
+	@min-w: auto;
+	@w: auto;
+}
+/*Changed to left for PFQA Public fields. 
+Ref: Chinnaiya
+
+	For Number, Currency Fields:
+	Default: Left Aligned
+	Subform Table: Left Aligned.
+	Aggregate fields: right aligned
+*/
+.cxNumberDivCurrencyViewMixin() {
+	@text-align: @value-textalign-right;
+}
+.cxNumberDivNumberViewMixin() { 
+	@text-align: @value-textalign-left;
+}
+.cxNumberLyteNumberFlatInputHorizontalLabelMixin() {
+	@min-w: auto;
+	@w: auto;
+}
+// .cxCalculatorIconMixin() {
+// 	@bg: @cruxSprite no-repeat -68px -2px;
+// 	@w: 17px;
+// 	@h: 17px;
+// }
+.cxNumInfoPopMixin() {
+	@transform: translateX(10px);
+}
+.cxNumInfoPopArrowIconMixin() {
+	@transform: translateX(-10px) rotate(45deg);
+}
+.cxNumResPopContentMixin() {
+	@color: @cxNumberPopupContentColor;
+	@font-size: 14px;
+	@padding: 10px 15px;
+	@font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+}
+.cxNumInfoPopContentMixin() {
+	@padding: 15px;
+	@border-radius: 5px;
+	@max-w: 350px;
+	@color: @cxNumberInfoPopupContentColor;
+}
+.cxNumDefaultInfoMixin() {
+	@font-size: @cxFontSize0929rem;
+}
+.cxNumInfoExprMixin() {
+	@color: @cxNumberExprColor;
+}
+.cruxNumberCompSliderMixin() {
+	@margin: .cruxLESSMarginMixin(12px 0px 0px 10px)[@margin];
+	@w: calc(100% - 20px) !important;
+	// @padding-bottom: 5px;
+}
+
+.cxNumberCompRangeSliderMixin(){
+	@border-radius: 0px;
+	// @h: 8px;
+}
+
+// .cxNumberCompSliderHandlerMixin(){
+// 	@h: 22px; 
+// 	@w: 22px;
+// 	@border-radius: 11px;
+// 	@top: -7px;
+// }
+
+.cxNumberCompRangeSliderBeforeMixin(){
+	@w: 10px;
+	@h: 100%;
+	@left: -10px;
+	@border-radius: if(@direction = rtl,0px 10px 10px 0px,10px 0px 0px 10px);
+	@bg: @cxNumCompSliderFillBg;
+	@z-index: 1;
+}
+
+.cxNumberCompRangeSliderAfterMixin(){
+	@left: initial;
+	@right: -10px;
+	@border-radius: if(@direction = rtl,10px 0px 0px 10px,0px 10px 10px 0px);
+	@bg: @cxNumCompSliderBg;
+	@w: 9px;
+}
+
+// .cxNumScaleLableFirstValueMixin(){
+// 	@h: auto;
+// 	@w: auto;
+// 	@bg: none;
+// }
+
+.cxNumScaleLableFirstChildMixin(){
+	@text-align: @value-textalign-left;
+	// @transform: if(@direction = rtl ,translateX(calc(0% - 5px)),translateX(calc(0% + 5px)));
+	@left: 3px;
+}
+
+.cxNumScaleLableLastChildMixin(){
+	@text-align: @value-textalign-right;
+	// @transform: if(@direction = rtl ,translateX(calc(100% - 14px)),translateX(calc(-100% + 14px)));
+	@right: 3px;
+}
+
+.cxNumScaleSingDigLabelFirstChildMixin(){
+	@left: 6px;
+}
+
+.cxNumScaleSingDigLabelLastChildMixin(){
+	@right: 6px;
+}
+
+.cxNumberCompSliderScaleOptMixin(){
+	@top: 0px;
+}
+
+.cxNumberCompSliderScaleLineMixin(){
+	@h: 18px;
+}
+
+.cxNumberCompSliderScaleLineFirstChildMixin(){
+	@border-radius: 4px;
+}
+
+.cxNumberCompSliderScaleLineFirstLastMixin(){
+	@h: 23px;
+}
+
+.cxNumberCompSliderFillMixin(){
+	@z-index: 1;
+}
+
+.cxNumberCompSliderReadOnlyMixin(){
+	@opacity: 1;
+}
+
+// .cxBoxLabelDisabledMixin() {
+// 	@bg-color: var(--formBackgroundDisabled);
+// 	@color: var(--baseColor);
+// }
+
+.cxNumScaleLableMixin(){
+	@padding-top: 0px !important;
+	@margin-top: 28px;
+	// @transform: if(@direction = rtl ,translateX(calc(50% - 9px)),translateX(calc(-50% + 9px)));
+	// @max-w: 70px;
+}
+
+.cxNumScaleLableSecondValueMixin(){
+	// @max-w: 100%;
+	@margin-top: 6px;
+	@color: @cxNumberScaleSecValueColor;
+}
+
+.cxNumScaleLableSecondValueTextMixin(){
+	@max-w: calc(100% - 6px);
+}
+.cxNumberCompBoxDisabledLabelMixin() {
+	// @bg-color: var(--formBackgroundDisabled);
+	// @color: var(--baseColor);
+	@color: @cxNumberBoxDisabledLabelColor;
+	@bg-color: @cxNumberCompBoxDisabledBg;
+}
+.cxNumberComponentWithCurrencyDisabledBorderRadiusMixin() {
+	@border-radius: @cxBoxDropdownInnerElemBorderRadius;
+}

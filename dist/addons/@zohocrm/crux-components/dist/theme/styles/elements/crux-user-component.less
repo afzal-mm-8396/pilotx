@@ -1,0 +1,142 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-user-component.variables.less";
+
+@import "../../themes/default/less-variables/crux-user-component-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-user-component";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../themes/default/css-variables/crux-user-component-variables.less";
+}
+
+.cxViewUserValueWrap,
+.cxViewUserValue {
+	.cxViewUserValueMixin();
+	max-width: @max-w;
+	display: inline-block;
+    vertical-align: top;
+	// line-height: @line-height;
+	cursor: pointer;
+}
+crux-table-component .cxViewUserValue {
+	.cxViewUserValueInTdMixin();
+	max-width: @max-w;
+}
+.cxUserComponent crux-user-dropdown {
+	.cxUserComponentUserDropdownMixin();
+	display: flex;
+	flex-grow: @flex-grow;
+	// max-width: calc(100% - 20px);
+}
+.cxUserComponent crux-user-dropdown lyte-dropdown {
+	.cxUserComponentUserDropdownLyteDropdownMixin();
+	flex-grow: @flex-grow;
+	// @{property-padding-right}: 10px;
+}
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown .lyteDummyEventContainer lyte-drop-button,
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown .lyteDummyEventContainer:focus lyte-drop-button:hover {
+	.cxUserComponentDropButtonMixin();
+	border: @border;
+	box-shadow: @box-shadow;
+	// border-radius: @border-radius;
+	// @{property-padding-right}: @padding-right;
+}
+
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown .lyteDummyEventContainer lyte-drop-button{
+	.cxUserComponentDropButtonMixin();
+	border-radius: @border-radius;
+}
+
+.cxUserComponent.cxUserCompHiddenLookupIcon lyte-dropdown .lyteDummyEventContainer lyte-drop-button{
+	.cxUserCompDropButtonHideLookupIconMixin();
+	border-radius: @border-radius;
+}
+
+.cxUserComponent.cxBoxWithRightIcon.cxUserCompWithClearIcon .cxUserCompValueSelected lyte-dropdown lyte-drop-button,
+.cxUserComponent.cxUserCompWithClearIcon .cxUserCompValueSelected lyte-dropdown lyte-drop-button{
+	.cxUserComponentDropButtonWithClearIconMixin();
+	@{property-padding-right}: @padding-right;
+}
+
+
+// .cxUserComponent.cxBoxWithRightIcon .lyteDropPlaceholderNormal, 
+// .cxUserComponent.cxBoxWithRightIcon .lyteDropdownLabel {
+// 	max-width: calc(100% - 10px);
+// }
+// .cxUserComponent.cxBoxWithRightIcon.cxUserCompWithClearIcon .cxBoxCloseIconWrap {
+// 	position: relative;
+//     @{property-right}: -2px;  
+// }
+// .cxUserComponent.cxBoxWithRightIcon.cxBoxContainsDropdown .cxBoxRightIcon {
+//     position: relative;
+// }
+// .cxUserComponent.cxBoxWithRightIcon .lyteDropPlaceholderNormal, 
+// .cxUserComponent.cxBoxWithRightIcon .lyteDropdownLabel {
+// 	max-width: calc(100% - 10px);
+// }
+// .cxUserComponent.cxBoxWithRightIcon.cxUserCompWithClearIcon .cxBoxCloseIconWrap {
+// 	position: relative;
+//     @{property-right}: -2px;
+// }
+.cxUserComponent.cxBoxWithRightIcon.cxBoxContainsDropdown .cxBoxRightIcon {
+    position: relative;
+}
+.cxUserCompIcon {
+	.cxUserCompIconMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+.cxViewUserTimestamp {
+	.cxViewUserTimestampMixin();
+	font-family: @font-family;
+	display: block;
+	font-size: @font-size;
+	color: @color;
+	line-height: @line-height;
+}
+
+crux-user-component lyte-text{
+	vertical-align: top;
+}
+
+.cxUserComponent lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button{
+	.cxUserCompBoxDropButtonMixin();
+    @{property-padding-right}: @padding-right;
+}
+
+// .cxUserComponent.cxBoxWithRightIcon lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button{
+// 	.cxUserCompMultiBoxDropButtonMixin();
+//     @{property-padding-right}:  @padding-right;
+// }
+
+/* .cxUserComponent lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button::after{
+    content: '';
+}
+
+.cxUserComponent.cxBoxWithRightIcon lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button::after{
+    right: 40px;
+} */
+
+.cxUserComponent.cxBoxWithRightIcon.cxBoxContainsDropdown lyte-icon.dropdown{
+	.cxUserComponentDropDownIconMixin();
+    @{property-right}: @right;
+}
+
+.cxUserComponent.cxBoxWithRightIcon.cxUserCompWithClearIcon .cxBoxCloseIconWrap{
+	.cxUserComponentCloseIconMixin();
+    @{property-right}: @right;
+}
+
+.cxUserComponent.cxBoxContainsDropdown lyte-drop-button {
+	.cxUserComponentLyteDropButton();
+    @{property-padding-right}:@padding-right;
+}

@@ -1,0 +1,63 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-file-upload-image-thumb-border-color: #D7E2ED;
+  --lyte-crux-file-upload-count-border-color: #D2D9E0;
+  --lyte-crux-file-upload-drop-area-border-color: #c0c6cc;
+  --lyte-crux-file-upload-drop-area-active-border-color: #338CF0;
+  --lyte-crux-file-upload-drop-area-active-bg-color: #F5FAFF;
+  --lyte-crux-file-upload-primary-msg-color: #313949;
+  --lyte-crux-file-upload-secondary-msg-color: #616e88;
+  --lyte-crux-file-upload-yield-color: #202123;
+  --lyte-crux-file-upload-edit-icon-hover-effect-border-color: #C0C6CC;
+  --lyte-crux-file-upload-edit-icon-hover-effect-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-file-upload-icon-bg-color: #616e88;
+  --lyte-crux-file-upload-remove-icon-bg-color: #FF5D5A;
+  --lyte-crux-file-upload-success-icon-bg-color: #338CF0;
+  --lyte-crux-file-upload-list-border-color: #f1f1f1;
+  --lyte-crux-file-upload-list-bg-color: #F8FAFF;
+  --lyte-crux-file-upload-list-box-shadow-color: rgba(0, 0, 0, 0.3);
+  --lyte-crux-file-upload-list-error-border-color: #FFADAC;
+  --lyte-crux-file-upload-list-error-bg-color: #FFF4F4;
+  --lyte-crux-file-upload-list-sort-border-color: #338CF0;
+  --lyte-crux-file-upload-info-color: #338CF0;
+  --lyte-crux-file-upload-warning-color: #E49000;
+  --lyte-crux-file-upload-success-color: #12AA67;
+  --lyte-crux-file-upload-error-color: #FF5D5A;
+  --lyte-crux-file-upload-circle-loader-rgb-color: #f57b00;
+  --lyte-crux-file-upload-circle-loader-bg-color: #F8FAFF;
+}
+/*# sourceMappingURL=crux-file-upload-variables.css.map */

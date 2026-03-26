@@ -1,0 +1,68 @@
+.lyteMIDropdown .cruxMentionsLi {
+  align-items: flex-start;
+}
+.mentionsLiImage {
+  width: 32px;
+  height: 32px;
+  margin-top: 3px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cxMentionsSecondaryDetail,
+.cxMentionsPrimaryDetail {
+  white-space: normal;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.groupsLi,
+.rolesLi {
+  border: 1px solid #eee;
+  background: #f7f7f7;
+}
+.mentionsRoleIcon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background: url(/crm/CRMClient/images/ico_crmrole.svg);
+  opacity: 0.3;
+}
+.mentionsGroupIcon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 17px;
+  background: url(/crm/CRMClient/images/ico_crmgroup.svg);
+  opacity: 0.3;
+}
+.mentionsNoPhoto {
+  width: 32px;
+  height: 32px;
+  background: url(/crm/CRMClient/images/nophoto.png);
+  display: inline-block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.mentionsUserImage {
+  height:32px;
+  width:32px;
+}
+.mentionsLiName {
+  color: #111;
+  font-size: 15px;
+}
+.mentionsLiLabel {
+  color: #777;
+  font-style: italic;
+  font-size: 13px;
+}
+.mentionBody {
+  max-height: 37vh;
+  /* overflow: auto; */
+}
+.cruxMentionItem {
+    width: calc(100% - 42px);
+}

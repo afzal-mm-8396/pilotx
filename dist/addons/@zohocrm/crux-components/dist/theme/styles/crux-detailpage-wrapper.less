@@ -1,0 +1,97 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-detailpage-wrapper.variables.less";
+
+@import "../themes/default/less-variables/crux-detailpage-wrapper-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-detailpage-wrapper-variables.less";
+}
+
+/*crux comp base class starts*/
+// .cxFlex{
+// 	display: flex;
+// }
+// .cxAlignItemCenter{
+// 	align-items: center;
+// }
+// .cxCP{
+// 	cursor: pointer;
+// }
+/*crux comp base class ends*/
+
+.cxDvBodyContent{
+	.cxDvBodyContentMixin();
+	// overflow: auto;
+	min-height: @min-height;
+}
+.dvSectionContainer {
+	overflow: auto;
+}
+.cxDvNavItem{
+	.cxDvNavItemMixin();
+	font-family: @font-family;
+	color: @color;
+}
+.cxDvFchildContainer {
+	flex: 1;
+}
+.cxDvInfoLabel {
+	.cxDvInfoLabelMixin();
+	text-align: @value-textalign-right;
+	padding: @padding;
+	flex: @flex;
+	border: @border;
+}
+.cxDvRecordUserImage {
+	.cxDvRecordUserImageMixin();
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	background: @bg;
+	color: @color;
+}
+.cxDvRecTag {
+	.cxDvRecTagMixin();
+	padding: @padding;
+}
+.cxDvWrapParent{
+	.cxDvWrapParentMixin();
+	background-color: @background-color;
+	padding: @padding;
+}
+/*.dv_details_section,*/
+.cxDvTabContent{
+	.cxDvTabContentMixin();
+	border-radius: @border-radius;
+	box-shadow: @box-shadow;
+	border: @border;
+	padding: @padding;
+	background: @bg;
+}
+.cxDvBcSection {
+	.cxDvBcSectionMixin();
+	border-radius: @border-radius;
+	margin: @margin;
+}
+.cxDvLyteNav{
+	.cxDvLyteNavMixin();
+	border-radius: @border-radius;
+	padding: @padding;
+	box-sizing: border-box;
+	width: @w;
+	overflow: auto;
+}
+
+crm-detailview[cx-prop-content-overflow="true"] {
+	height: inherit;
+	overflow: auto;
+	display: block;
+}
+.cxDvTagIconPosition{
+    display : flex;
+    align-items: center;
+}

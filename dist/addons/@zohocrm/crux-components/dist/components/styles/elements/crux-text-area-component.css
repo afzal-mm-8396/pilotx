@@ -1,0 +1,101 @@
+.cxTextareaViewMode {
+    word-wrap : break-word;
+    white-space : pre-wrap;
+    min-width : 280px;
+    max-width :330px;
+    width : 100%;
+    display: inline-block;
+}
+.cxTextareaShowMore {
+	display: inline-block;
+    color: var(--linkColor, #3c9df7);
+    position: relative;
+}
+crux-text-area-component lyte-input .lyteField {
+    flex-grow: unset;
+}
+.cxLineClamp{
+    -webkit-box-orient: vertical;
+    display: -webkit-box!important;
+    overflow: hidden;
+}
+.cxLineNoClamp{
+    display: -webkit-box!important;   
+}
+
+/*Text area hover card styles starts*/
+
+.cxTextareaHoverCard{
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.cxTextareaShowHoverCard{
+    padding-right: 25px;
+}
+
+.cxTextareaShowHoverCard .cxTextareaViewMode{
+    text-overflow: ellipsis;
+}
+
+.cxTextareaHoverCard .cxTextareaViewMode{
+    min-width: auto;
+    max-width: none;
+}
+
+/* .cxTextareaHovercardPopover .lytePopoverClose{
+	background-position: -334px -113px;
+	background-image: url('../images/crux-sprite-icons.svg');
+    border-radius: 15px;
+    opacity: 1;
+    width: 15px;
+    height: 15px;
+}
+
+.cxTextareaHovercardPopover .lytePopoverClose:hover{
+	background-color: #E9EEF4;
+} */
+
+.cxTextAreaToggleShowBtn{
+	display: inline-block;
+    width: 20px;
+    height: 18px;
+    border: 1px solid #d0d6e0;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    visibility: hidden;
+    position: absolute;
+    margin-left: 5px;
+    right: 0px;
+    top: -2px;
+}
+
+crux-text-area-component:hover .cxTextAreaToggleShowBtn{
+	visibility: visible;
+}
+
+.cxTextAreaToggleShowBtn:after {
+    content: '';
+    background-image: url('../../images/crux-sprite-icons.svg');
+    background-position: -1px -2px;
+    width: 8px;
+    height: 4px;
+    display: inline-block;
+    position: absolute;
+    left: 6px;
+    top: 7px;
+}
+
+.cxTextareaHovercardPopover lyte-popover-content{
+    overflow: hidden;
+}
+
+.cxTextareaHovercardPopover lyte-popover-content pre{
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+/*Text area hover card styles ends*/

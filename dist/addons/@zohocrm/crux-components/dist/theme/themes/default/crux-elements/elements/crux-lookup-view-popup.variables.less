@@ -1,0 +1,81 @@
+.cxLookupViewTopSectionMixin(){
+	@margin-bottom: 10px;
+}
+
+.cxLookupViewPopImgMixin(){
+	@w: 36px;
+	@h: 36px;
+	@border-radius: 36px;
+}
+.cxLookupViewPopImgContMixin(){
+	@margin-right: 10px;
+}
+.cxLookupViewLetterCircleMixin() {
+	@w: 36px;
+	@h: 36px;
+	@border-radius: 36px;
+	@bg: @cxLookupViewPopupLetterImgBgColor;
+	@color: @cxLookupViewPopupLetterImgTextColor;
+	@border: 1px solid @cxLookupViewPopupLetterImgBorderColor;
+	@font-size: @cxFontSize15px;
+}
+.cxLookupViewLetterCircleTopMixin(){
+	@margin-right: 10px;
+}
+.cxLookupViewTopContentWrapMixin() {
+	@max-w: 330px;
+	@margin-left: 10px;
+	@overflow-wrap: break-word;
+    @word-break: break-word;
+	@max-width: 670px;
+	@font-size: @cxFontSize13px;
+}
+.cxLookupViewTopHeadingMixin() {
+	@font-size: @cxFontSize13px;
+	@font-family:@cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+}
+.cxLookupViewTopDescMixin() {
+	@color: @cxLookupViewPopupDescColor;
+	@overflow: hidden;
+    @display: block;
+    @word-break: break-word;
+	@margin-top: 5px;
+}
+.cxLookupViewLabelMixin() {
+	@padding: .cruxLESSPaddingMixin(5px 15px 5px 0px)[@padding];
+	@min-w: 100px;
+	@color: @cxLookupViewPopupFormLabelColor;
+	@font-size: @cxFontSize13px;
+	@vertical-align:top;
+	@max-width: 160px;
+	@overflow-wrap: break-word;
+	@margin-right:15px;
+}
+.cxLookupViewValueMixin() {
+	@font-family: @cruxPrimaryFont;
+	@padding: .cruxLESSPaddingMixin(5px 0px 5px 0px)[@padding];
+	@overflow: hidden;
+    @text-overflow: ellipsis;
+	@max-width: 295px;
+	@overflow-wrap: anywhere;
+	@font-size: @cxFontSize13px;
+}
+
+.cxLookupViewPopupHeadingLinkMixin(){
+	@color: @cxLookupViewPopupHeadingColor;
+}
+
+.cxLookupVwPopupPhoneValueMixin(){
+	@padding-right: 65px;
+	@padding-left: 0px;
+}
+
+.cxLookupVwPopupPhoneValueIconMixin(){
+	@top: -3px;
+}
+.cxEmptyProfileImageSizeMixin() {
+    @width: 48px;
+    @height: 48px;
+    @border-radius: 50%;
+}

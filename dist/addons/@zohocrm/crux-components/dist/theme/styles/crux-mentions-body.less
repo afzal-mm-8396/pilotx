@@ -1,0 +1,106 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-mentions-body.variables.less";
+
+@import "../themes/default/less-variables/crux-mentions-body-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-mentions-body";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-mentions-body-variables.less";
+}
+
+.lyteMIDropdown .cruxMentionsLi {
+	align-items: flex-start;
+}
+.mentionsLiImage {
+	.cxMentionsLiImageMixin();
+	width: @w;
+	height: @h;
+	margin-top: @margin-top;
+	@{property-margin-right}: @margin-right;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cxMentionsSecondaryDetail,
+.cxMentionsPrimaryDetail {
+	.cxMentionsPrimaryDetailMixin();
+	white-space: normal;
+	max-width: @max-w;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+.groupsLi,
+.rolesLi {
+	.cxMentionsRolesLiMixin();
+	border: @border;
+	background: @bg;
+}
+.mentionsRoleIcon {
+	.cxMentionsRoleIconMixin();
+	display: inline-block;
+	vertical-align: middle;
+	width: @w;
+	height: @h;
+	background: @bg;
+	opacity: @opacity;
+}
+.mentionsGroupIcon {
+	.cxMentionsGroupIconMixin();
+	display: inline-block;
+	vertical-align: middle;
+	width: @w;
+	height: @h;
+	background: @bg;
+	opacity: @opacity;
+}
+.mentionsNoPhoto {
+	.cxMentionsNoPhotoMixin();
+	width: @w;
+	height: @h;
+	background: @bg;
+	display: inline-block;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.mentionsUserImage {
+	.cxMentionsUserImageMixin();
+	height: @h;
+	width: @w;
+}
+.mentionsLiName {
+	.cxMentionsLiNameMixin();
+	color: @color;
+	font-size: @font-size;
+}
+.mentionsLiLabel {
+	.cxMentionsLiLabelMixin();
+	color: @color;
+	font-style: italic;
+	font-size: @font-size;
+}
+.mentionBody {
+	.cxMentionBodyMixin();
+	max-height: @max-height;
+}
+.cruxMentionItem {
+	.cxMentionItemMixin();
+	width: @w;
+}
+.cxMentionsWrapper {
+	// .cxMentionsWrapperMixin();
+	max-width: 550px;
+}
+.cruxMentionsLi {
+	align-items: start;
+}
+.cxMentionsNoImage,
+.cxMentionsUserImage {
+	border-radius: 50%;
+}

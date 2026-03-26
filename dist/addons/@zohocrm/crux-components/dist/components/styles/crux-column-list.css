@@ -1,0 +1,292 @@
+crux-column-list {
+    display: block;
+    box-sizing: border-box;
+    outline: none;
+    box-shadow: 0px 1px 3px 0px rgba(134, 134, 134, 0.4);
+    font-family: var(--crux-primary-font);
+}
+crux-column-list lyte-menu-body {
+    padding: 0 16px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+crux-column-list lyte-search lyte-input[lt-prop-type="search"] input,
+crux-column-list .cxColumnListSearchInput input{
+    padding-right: 30px;
+}
+crux-column-list lyte-search lyte-input[lt-prop-type="search"]:not(.lyteInputBox) input {
+    font-size: 14px;
+}
+.cxColListSearchWrap {
+    position: relative;
+}
+.cxColListSearchClearWrap {
+    position: absolute;
+    right: 8px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cxColListSearchClearWrap.dN {
+    display: none;
+}
+.cxColListSearchClearWrap:hover {
+    opacity: 1;
+}
+.cxSearchClearIcon {
+    background-image: url(../images/crux-sprite-icons.svg);
+    background-position: -53px -2px;
+    width: 9px;
+    height: 8px;
+    display: block;
+}
+crux-column-list lyte-menu-item {
+    padding: 8px 25px;
+    background: #fff;
+	cursor: default;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    z-index: initial;
+}
+/* crux-column-list lyte-menu-item:hover {
+    z-index: 3005;
+} */
+.cxColListSingleFieldPinned .cxColListPinnedField {
+	background: #fff;
+}
+crux-column-list lyte-menu-item.sortable-element:hover {
+    background: #ebebeb;
+}
+crux-column-list .cxColListItem.sortable-element-selected {
+    background: #ebebeb;
+    z-index: 3010 !important;
+}
+.cxColListPinnedField lyte-checkbox,
+.cxColListUnPinnedField lyte-checkbox {
+	max-width: calc(100% - 25px);
+}
+/* 
+This overrides  column list item with mandatory, but unchecked list item
+crux-column-list .cxColListMandatoryItem .lyteCheckBoxDefault {
+    cursor: default;
+} */
+.cxColListOnlyOneMandatoryChecked .cxColListMandatoryItem .cxColListCheckedElem {
+	pointer-events: none;
+}
+crux-column-list .lyteCheckBoxDefault span,
+crux-column-list .lyteCheckBoxPrimary span {
+	white-space: normal;
+	word-break: break-word;
+	max-width: calc(100% - 20px);
+}
+crux-column-list .divTopBorder {
+    padding: 10px 6px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: calc(100% - 55px);
+}
+crux-column-list lyte-checkbox .cxColumnMandatory::after {
+    content: '*';
+    color: #f22626;
+    position: absolute;
+}
+crux-column-list lyte-menu-item.sortable-element {
+	cursor: move;
+}
+crux-column-list .lyteSortablePlaceholder:hover,
+crux-column-list .lyteSortablePlaceholder {
+    background: transparent;
+    border: 1px dashed #bbb;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+crux-column-list .cxColListItem::after {
+    content: '';
+    background: url(../images/crux-sprite-icons.svg);
+    background-position: -134px -58px;
+    width: 12px;
+    height: 10px;
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    /* top: calc(50% - 5px); */
+    top:13px;
+    opacity: 0.5;
+    visibility: hidden;
+}
+crux-column-list .cxColListItem.lyteSortablePlaceholder::after {
+    content: none;
+}
+crux-column-list .cxColListItem:hover::after {
+	visibility: visible;
+}
+.cxColListItem.cxPropDisableSort:hover::after,
+.cxColListItem.cxPropDisableSort::after,
+.cxColListSingleFieldPinned .cxColListPinnedField::after {
+	visibility: hidden;
+}
+crux-column-list .dragIcon {
+    display: none;
+}
+
+
+/*second type*/
+crux-column-list.borderType {
+    box-shadow: none;
+    display: block;
+    max-width: 480px;
+    padding: 15px 30px;
+}
+crux-column-list.borderType lyte-menu-body {
+    border: 0;
+    box-shadow: none;
+}
+crux-column-list.borderType lyte-search {
+    
+    display: block;
+}
+crux-column-list.borderType .divTopBorder {
+    border: 1px solid #ccc;
+    padding: 3px 0;
+    transform: translate3d(0,0,0);
+}
+crux-column-list.borderType lyte-menu-item {
+	display: flex;
+    padding: 7px 15px 8px 10px;
+    border-bottom: 1px solid #ccc;
+}
+crux-column-list.borderType lyte-menu-item:last-of-type {
+    border-bottom: 0;
+}
+crux-column-list.borderType .sortable-element-selected,
+crux-column-list.borderType lyte-menu-item:hover {
+    background: #fff;
+}
+crux-column-list.borderType lyte-menu-item::after {
+	content: none;
+}
+crux-column-list.borderType .dragIcon {
+    display: inline-flex;
+    margin-left: auto;
+}
+crux-column-list.borderType .lyteSortablePlaceholder {
+	background: #e7f2fa;
+	border: 1px dashed #37a3dc;
+}
+.restrictSortable {
+    pointer-events: none;
+}
+.cxColPinActiveIcon,
+.cxColPinIcon {
+	display: inline-block;
+    background-image: url(../images/crux-sprite-icons.svg);
+    background-position: -266px -107px;
+    width: 15px;
+    height: 15px;
+
+}
+.cxColPinIcon {
+     visibility: hidden;
+}
+.cxColPinActiveIcon {
+    background-position: -244px -107px;
+}
+.cxColumnListMaxLimitReached .cxColPinIcon {
+	opacity: 0.5;
+	cursor: default;
+}
+crux-column-list .lyteMenuItem:hover .cxColPinIcon {
+    visibility: visible;
+}
+.cxColListUnPinnedColumnSorting .lyteMenuItem:hover .cxColPinIcon {
+	visibility: hidden;
+}
+.cxColLineSeparator {
+    border-top: 1px solid #d8d8d8;
+    /* display: block; */
+    margin: 0 25px;
+}
+.cxColListNoResult {
+	text-align: center;
+	color: #5a5a5a;
+	padding: 10px 30px;
+}
+.cxColumnListWithAccordion .divTopBorder,
+.cxColumnListWithAccordion lyte-menu-body {
+    padding: 0;
+}
+.cxColumnListWithAccordion .cxColListSearchWrap {
+	margin: 0 16px;
+}
+.cxColumnListWithAccordion .columnListAccordianBody {
+    border: 0;
+    padding: 0;
+}
+.cxColumnListWithAccordion .lyteAccordionActive lyte-accordion-body {
+	overflow: visible !important;
+}
+.cxColumnListWithAccordion lyte-accordion-item {
+    border: 0;
+    margin: 0;
+}
+.cxColumnListWithAccordion lyte-accordion-header,
+.cxColumnListWithAccordion .lyteAccordionActive lyte-accordion-header {
+    color: #202123;
+    font-family: var(--crux-bold-font);
+    font-weight: var(--crux-font-weight-bold);
+    font-size: 13px;
+    padding-left: 30px;
+}
+.columnListAccordianBody lyte-menu-item {
+    padding: 8px 30px;
+}
+.cxColumnListWithAccordion .lyteAccordionActive .lyteAccordionArrow,
+.cxColumnListWithAccordion .lyteAccordionArrow {
+    background-image: url(../images/crux-sprite-icons.svg);
+    background-position: 0 -1px;
+    width: 10px;
+    height: 6px;
+    transform: rotate(-90deg);
+    margin-top: 5px;
+    left: 15px;
+}
+.cxColumnListWithAccordion .lyteAccordionActive .lyteAccordionArrow {
+    transform: rotate(0deg);
+    margin-top: 6px;
+}
+.cxColListNonActionItems {
+	padding: 0 30px;
+}
+.cxColListAllFieldsSelected {
+	color: #5a5a5a;
+}
+.cxColumnListWithAccordion .cxColListAllFieldsSelected {
+	margin-bottom: 30px;
+}
+.cxColListLoader {
+	background: url('../images/crux-search-loader.svg');
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	background-position: center;
+}
+
+/* lyte-menu-item.cxPropDisableSort {
+    cursor: not-allowed;
+} */
+.cxColListPinnedColumnSorting .cxColListUnPinnedField:hover,
+.cxColListUnPinnedColumnSorting .cxColListPinnedField:hover,
+crux-column-list .cxPropDisableSort:hover {
+    background: transparent;
+}
+/* crux-column-list .cxColListNoResult {
+    padding-top:0;
+} */

@@ -1,0 +1,336 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/crux-base/crux-common-dropdown.variables.less";
+
+@import "../../themes/default/less-variables/crux-dropdown-variables.less";
+
+@import (multiple,optional) "../../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-common-dropdown";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../themes/default/css-variables/crux-dropdown-variables.less";
+}
+
+/* Crux common Lyte Dropdown CSS Begins  */
+
+lyte-dropdown.cxFlatDropdown,
+lyte-dropdown.cxBoxDropdown {
+    .cxboxdropdownMixin();
+    font-family: @font-family;
+    font-size: @font-size;
+    color: @color;
+    display: @display;
+    position: relative;
+    max-width: inherit;
+}
+
+lyte-dropdown.cxFlatDropdown lyte-drop-button {
+    .cxFlatDropdownButtonMixin();
+    text-align: @text-align;
+}
+
+lyte-dropdown.cxBoxDropdown lyte-drop-button {
+    .cxboxdropdownDropbutton();
+    border: @border;
+    border-radius: @border-radius;
+    cursor: pointer;
+    text-align: @text-align;
+    position: relative;
+    display: block;
+    padding: @padding;
+    box-sizing: border-box;
+    color: @color;
+    background: @bg;
+    transition: @transition;
+}
+
+lyte-dropdown.lyteDropNoOptSelected.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button,
+lyte-dropdown.cxBoxDropdown[lt-prop-type="multisearch"] lyte-drop-button,
+lyte-dropdown.lyteDropNoOptSelected.cxBoxDropdown[lt-prop-type="multisearch"] lyte-drop-button {
+    .cxboxdropdownMultisearchDropbutton();
+    cursor: text;
+    padding: @padding;
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+// lyte-dropdown.lyteDropNoOptSelected.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button,
+// lyte-dropdown.cxBoxDropdown[lt-prop-type="multisearch"] lyte-drop-button,
+// lyte-dropdown.lyteDropNoOptSelected.cxBoxDropdown[lt-prop-type="multisearch"] lyte-drop-button {
+//     padding-bottom: 8px;
+//     padding-top: 8px;
+// }
+
+.lyteMultiselectInput.lyteField {
+    border: none;
+    width: 100%;
+}
+
+lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button {
+    cursor: pointer;
+    min-height: auto;
+}
+
+lyte-dropdown.cxBoxDropdown[lt-prop-type="multisearch"] .lyteMultiselect {
+    border-bottom: 0;
+    display: block;
+}
+/* commented - to show dropdown icon for multi user lookup
+lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button::after,
+lyte-dropdown.cxBoxDropdown[lt-prop-type="multisearch"] lyte-drop-button::after {
+     content: none; 
+}
+*/
+lyte-dropdown.cxBoxDropdown[lt-prop-type="multisearch"] .lyteDropdownTextField {
+    .cxBoxDropdownMultisearchTextFieldMixin();
+    padding: @padding;
+}
+
+lyte-dropdown.cxBoxDropdown .lyteDropPlaceholderMultiple,
+lyte-dropdown.cxBoxDropdown .lyteDropPlaceholderNormal,
+lyte-dropdown.cxBoxDropdown .lyteDropdownLabel {
+    .cxBoxDropdownLabelMixin();
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    margin: @margin;
+    padding: @padding;
+    font-size: @font-size;
+}
+
+lyte-dropdown.cxBoxDropdown .lyteDropPlaceholderMultiple,
+lyte-dropdown.cxBoxDropdown .lyteDropPlaceholderNormal {
+    .cxboxdropdownPlaceholderNormal();
+    color: @color;
+    opacity: @opacity;
+}
+
+lyte-dropdown.cxBoxDropdown lyte-icon.dropdown
+// crux-picklist-component[cx-prop-type="multisearch"] .lyteDummyEventContainer::after 
+{
+    .cxboxdropdownDropdownIcon();
+    background-image: @bg-img;
+    background-position: @bg-pos;
+    width: @w;
+    height: @h;
+    display: inline-block;
+    position: absolute;
+    @{property-right}: @right;
+    top: @top;
+    opacity: @opacity;
+}
+/* For Picklist with MultiSearch */
+// crux-picklist-component[cx-prop-type="multisearch"] .lyteDummyEventContainer::after {
+//     content: '';
+//     position: absolute;
+//     top: 15px;
+//     transform: scale(1.3);
+//     transform-origin: center top;
+// }
+// crux-picklist-component[cx-prop-type=multisearch] lyte-dropdown[pos=down] .lyteDummyEventContainer::after {
+//     transform: scale(1.3) rotate(180deg);
+//     top:20px;
+// }
+
+lyte-dropdown.cxBoxDropdown lyte-drop-button:hover {
+    .cxboxdropdownDropbuttonHover();
+    border: @border;
+    box-shadow: @box-shadow;
+}
+lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button,
+lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button:hover,
+lyte-dropdown.cxBoxDropdown lyte-drop-button.lyteDropButtonUp,
+lyte-dropdown.cxBoxDropdown lyte-drop-button.lyteDropButtonDown {
+    .cxboxdropdownDropbuttonOpened();
+    border: @border;
+    box-shadow: @box-shadow;
+}
+
+.cxFlatDropdown .lyteMultipleSelect,
+.cxBoxDropdown .lyteMultipleSelect {
+    .cxCommonDropdownMultipleSelectMixin();
+    margin: @margin;
+    padding: @padding;
+}
+/* Code commented for Inheriting Lyte related css Styles */
+// lyte-dropdown.cxFlatDropdown .lyteMultipleSelect li,
+// lyte-dropdown.cxBoxDropdown .lyteMultipleSelect li {
+//     .cxboxdropdownMultipleselectLi();
+//     margin: @margin;
+//     padding: @padding;
+//     font-size: @font-size;
+//     line-height: @line-height;
+//     background: @bg;
+//     border: @border;
+//     border-radius: @border-radius;
+//     max-width: @max-w;
+//     display: inline-flex;
+// }
+
+// lyte-dropdown.cxFlatDropdown .lyteMultipleSelect li:hover .lyteCloseIcon,
+// lyte-dropdown.cxFlatDropdown .lyteMultipleSelect .lyteCloseIcon,
+// lyte-dropdown.cxBoxDropdown .lyteMultipleSelect li:hover .lyteCloseIcon,
+// lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .lyteCloseIcon {
+//     .cxboxdropdownMultipleSelectClose();
+//     background: @bg;
+//     top: @top;
+//     bottom: @bottom;
+//     @{property-right}: @right;
+//     @{property-left}: @left;
+//     width: @w;
+//     position: absolute;
+//     border-radius: @border-radius;
+//     opacity: @opacity;
+// }
+
+// lyte-dropdown.cxFlatDropdown .lyteMultipleSelect li .lyteCloseIcon:hover,
+// lyte-dropdown.cxBoxDropdown .lyteMultipleSelect li .lyteCloseIcon:hover {
+//     .cxboxdropdownMultipleSelectCloseHover();
+//     background: @bg;
+// }
+
+// lyte-dropdown.cxFlatDropdown .lyteMultipleSelect .lyteCloseIcon::before,
+// lyte-dropdown.cxBoxDropdown .lyteMultipleSelect .lyteCloseIcon::before {
+//     .cxboxdropdownMultipleSelectCloseAfter();
+//     content: '';
+//     background-image: @bg-img;
+//     background-position: @bg-pos;
+//     width: @w;
+//     height: @h;
+//     position: absolute;
+//     display: inline-block;
+//     top: @top;
+//     @{property-left}: @left;
+//     opacity: @opacity;
+//     transform: @transform;
+// }
+
+lyte-dropdown.cxBoxDropdown[lt-prop-type="multisearch"] .lyteMultipleSelect .lyteMultiselectInput input::placeholder {
+    .cxBoxDropdownMultiSearchInputPlaceholderMixin();
+    font-size: @font-size;
+}
+.cxUserComponent lyte-dropdown.cxBoxDropdown[lt-prop-type="multisearch"] lyte-drop-button,
+.cxUserComponent lyte-dropdown.cxBoxDropdown[lt-prop-type="multisearch"] lyte-drop-button:hover {
+    border: none;
+}
+
+/*	Crux dropdown common class - Drop Button CSS Ends	*/
+
+lyte-drop-box.cxDropbox {
+    .cxdropboxMixin();
+    font-family: @cruxPrimaryFont;
+    font-size: @font-size;
+    color: @color;
+    background: @bg;
+    box-sizing: border-box;
+    border: @border;
+    box-shadow: @box-shadow;
+    /*z-index: @z-index;*/
+    position: absolute;
+    display: block;
+    width: auto;
+    transform: none;
+    max-width: @max-w;
+}
+
+.cxDropbox.lyteMultiSelectDropdown lyte-drop-item.lyteDropdownActive,
+lyte-drop-box.cxDropbox.lyteDropdownHidden {
+    display: none;
+}
+
+.cxDropbox .lyteInput.lyteInputFocus .lyteField {
+    .cxDropboxlyteField();
+    border-bottom: @border-bottom;
+}
+
+.cxDropbox lyte-drop-body {
+    .cxDropboxDropbody();
+    padding: @padding;
+}
+
+.cxDropbox lyte-drop-item {
+    .cxDropboxDropitem();
+    position: relative;
+    // cursor: pointer;
+    display: block;
+    // text-align: @value-textalign-left;
+    // color: @color;
+    // padding: @padding;
+    // font-size: @font-size;
+}
+
+.cxDropbox.lyteMultiSelectDropdown lyte-drop-item {
+    .cxDropboxMultiselectdropdownDropitem();
+    // padding: @padding;
+}
+.cxDropbox lyte-drop-item.lyteDropdownSelection {
+    .cxDropboxDropitemSelection();
+    // background: @bg;
+    // color: @color;
+    /* Commented as Gray color comes in crm */
+}
+
+.cxDropbox lyte-drop-item[selected="true"]::before {
+    .cxDropboxSelectedItemBefore();
+    content: '';
+    background-image: @bg-img;
+    background-position: @bg-pos;
+    width: @w;
+    height: @h;
+    display: inline-block;
+    position: absolute;
+    @{property-left}: @left;
+    top: @top;
+    opacity: @opacity;
+}
+
+.cxDropbox .cxDropdownNoResult {
+    .cxDropboxDropdownNoResult();
+    padding: @padding;
+    text-align: @text-align;
+    color: @color;
+    cursor: default;
+}
+.cxDropbox lyte-drop-group {
+    .cxDropboxDropGroupMixin();
+    // display: block; Overrides default - display:none from lyte
+    margin-bottom: @margin-bottom;
+}
+.cxDropbox lyte-drop-group:last-of-type {
+    .cxDropboxDropGroupLastElemMixin();
+    margin-bottom: @margin-bottom;
+}
+.cxDropbox lyte-drop-label {
+    .cxDropboxDropLabelMixin();
+    // color: @color;
+    // font-size: @font-size;
+    // text-align: @text-align;
+    // padding: @padding;
+    cursor: default;
+}
+
+.cxBoxDropdown .lyteDropdownVisible,
+.cxFlatDropdown .lyteDropdownVisible {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+/* Crux common Lyte Dropdown CSS Ends  */
+.cxLookupDropbox lyte-drop-footer lyte-button {
+    width: 100%;
+}
+.cxLookupDropbox lyte-drop-footer .lyte-button {
+    width: 100%;
+    text-align: @value-textalign-left;
+    // border-radius: 0;
+    border: none;
+}
+.cxLookupDropbox lyte-drop-footer .lyte-button::before {
+    display: none; /*To hide +icon in new outline primary button */
+}

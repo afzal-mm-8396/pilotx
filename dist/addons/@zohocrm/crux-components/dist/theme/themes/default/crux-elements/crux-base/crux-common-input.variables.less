@@ -1,0 +1,81 @@
+.cxBoxInput_lyteFieldMixin() {
+	@border: 1px solid @cxBoxInputFieldBorder;
+	@border-radius: @cxBoxInputBorderRadius;
+	@box-shadow: 0 0 0 @cxBoxInputBg;
+    @transition: box-shadow .1s ease-in-out;
+}
+.cxBoxInput_inputMixin() {
+    @font-size: @cxBoxInputFontSize;
+	@color: @cxBoxInputTextColor;
+	@bg: @cxBoxInputBg;
+    @border: 0;
+	@padding: 8px 12px;
+    @w: 100%;
+    @box-shadow: none;
+	@border-radius: @cxBoxInputInnerElemBorderRadius;
+}
+.cxBoxInput_inputHoverMixin() {
+    @border: 0;
+}
+.cxBoxInput_inputPlaceholder() {
+    @font-size: @cxBoxInputFontSize;
+	@color: @cxBoxInputPlaceholderColor;
+    @opacity: 1;
+}
+.cxBoxInput_lyteFieldHover() {
+	@border: 1px solid @cxBoxInputBorderHoverColor;
+	@box-shadow: @cxBoxInputHoverShadow;
+}
+.cxBoxInput_lyteFieldFocus() {
+	@border: 1px solid @cxBoxInputBorderFocusColor;
+	@box-shadow: @cxBoxInputFocusShadow;
+}
+.cxBoxInput_InputboxHorizontalLabel() {
+    @font-size: @cxBoxInputLabelFontSize;
+	@padding-right: 20px;
+	@color: @cxBoxInputHorizontalLabelColor;
+    @vertical-align: middle;
+    @w: auto;
+    @min-w: auto;
+    @text-align: @value-textalign-right;
+}
+.cxBoxInput_InputboxHorizontalFieldMixin() {
+    @vertical-align: middle;
+    @w: auto;
+    @min-w: auto;
+}
+.cxBoxInputDateTimeDateInput() {
+    @border-right: 1px solid @cxBoxDateTimeInputBorder;
+    @border-radius: @cxBoxInputInnerElemBorderRadius 0 0 @cxBoxInputInnerElemBorderRadius;
+}
+.cxBoxInputDateTimeTimeInput() {
+    @border-radius: 0 @cxBoxInputInnerElemBorderRadius @cxBoxInputInnerElemBorderRadius 0;
+}
+.cxBoxTextarea() {
+    @padding: 7px 10px;
+    @h: 34px;
+    @min-h: 34px;
+    @min-w: 100px;
+    @border-radius: @cxBoxInputInnerElemBorderRadius;
+    @bg: @cxBoxInputBg;
+    @transition: height 0.3s ease;
+}
+.cxBoxTextareaFocus() {
+    @h: 68px;
+}
+.cxBoxTextareaResize() {
+    @bg-pos: -267px -4px;
+    @w: 13px;
+    @h: 13px;
+    @right: 3px;
+    @bottom: 3px;
+    @cursor: nwse-resize;
+    @opacity: 0.5;
+    @z-index: 1;
+}
+
+.cxElementsDisabledIconMixin() {
+    @position: absolute;
+    @right: 10px;
+    @top: 7px;
+}

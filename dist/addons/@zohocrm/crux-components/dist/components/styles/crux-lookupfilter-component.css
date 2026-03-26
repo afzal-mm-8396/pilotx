@@ -1,0 +1,22 @@
+crux-lookupfilter-component {
+    display: table-row;
+}
+crux-lookupfilter-component lyte-th.lyteFixedColumn.cxLookupFirstCol:not(.lytePreventIcon)::after {
+    content: none;
+}
+crux-lookupfilter-component lyte-th,
+lyte-table.border crux-lookupfilter-component lyte-th {
+    border: 0;
+    padding-bottom: 20px;
+    text-transform: none;
+}
+.cxLookupFilterButtonWrap {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    white-space: nowrap;
+    z-index: 5;
+}
+.cxLookupFieldList lyte-dropdown {
+	max-width: 100%;
+}

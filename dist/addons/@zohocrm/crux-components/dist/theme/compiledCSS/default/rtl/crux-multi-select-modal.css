@@ -1,0 +1,189 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+.cxMSelModContent {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  position: relative;
+}
+.cxMSelModTable {
+  border: none;
+  overflow: hidden;
+}
+.cxMSelModTable lyte-table-structure {
+  border-spacing: 0px 6px;
+  margin-bottom: -6px;
+}
+.cxMSelModTable .cxMSelModTd {
+  padding: 7px 10px;
+  border: none;
+}
+.cxMSelModTr:hover .cxMSelModTd {
+  background-color: #F8FAFF;
+}
+.cxMSelModTr .cxMSelModTd:first-child {
+  border-radius: 6px 0 0 6px;
+}
+.cxMSelModTr .cxMSelModTd:last-child {
+  border-radius: 0 6px 6px 0;
+}
+.cxMSelModTd:last-child {
+  width: 400px;
+  position: relative;
+  padding-left: 0;
+  vertical-align: top;
+}
+.cxMSelModCheckBox.lyteCboxChecked .cxMSelModCheckBoxLabel {
+  -webkit-text-stroke: 0.6px;
+}
+.cxMSelModCheckBoxLabel {
+  word-break: break-word;
+  text-wrap: wrap;
+}
+.cxMSelModCheckBox .lyteCheckBoxDefault {
+  display: inline-flex;
+  vertical-align: top;
+}
+.cxMSelModCheckBox .lyteCheckBoxDefault::before {
+  flex-shrink: 0;
+  top: 0px;
+  margin-left: 8px;
+}
+.cxMSelModCheckBox .lyteCheckBoxDefault::after {
+  top: 3px !important;
+}
+.cxMSelModLabel {
+  display: block;
+  color: #616E88;
+  font-size: var(--crux-base-font-size);
+  font-family: 'LatoRegular', sans-serif;
+  margin-top: 20px;
+}
+.cxMSelModDropdown lyte-drop-button,
+.cxMSelModDropdown .cxFakeDropButton {
+  width: 120px;
+}
+.cxMSelModDropdownSearch {
+  display: flex;
+  margin-bottom: 14px;
+  margin-top: 20px;
+  gap: 15px;
+  align-items: center;
+}
+.cxMSelModErrorMsg {
+  color: #FF5D5A;
+  margin-left: auto;
+  font-size: 14px;
+  font-family: var(--crm-font-bold);
+}
+.cxMSelModalHeading {
+  display: block;
+}
+.cxMSelModHeader {
+  padding-bottom: 0px;
+}
+.cxMSelModNoResultMsg {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  margin-top: 21px;
+  color: #8B9BB8;
+}
+.cxMSelModErrorIcon {
+  margin-right: 8px;
+}
+.cxMSelModContent .cxRefreshBtnWrap {
+  left: 0;
+}
+.cxMSelModRefreshCompleted .cxRefreshBtnWrap .cxRefreshLyteBtn {
+  top: -80px;
+  transition: top 0.4s ease;
+}
+.cxMSelModRefreshCompleted .cxRefreshBtnWrap {
+  overflow: hidden;
+}
+.cxMSelModRefreshCompleted .cxMSelModTable .cxMSelModHighlightRow .cxMSelModTd {
+  animation: cxHighlightAnimation 2s linear;
+}
+.cxMSelModDropdownSearchWithLabel {
+  margin-top: 8px;
+}
+.cxMSelModErrorMsgOnPopoverOpen {
+  border-bottom: 1px solid #FF5D5A;
+}
+/*# sourceMappingURL=crux-multi-select-modal.css.map */

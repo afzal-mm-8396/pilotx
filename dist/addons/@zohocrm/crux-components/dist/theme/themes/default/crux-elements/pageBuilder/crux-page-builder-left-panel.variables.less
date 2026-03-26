@@ -1,0 +1,382 @@
+.cxPbWrapperLeftBarMixin() {
+	@w:320px;
+	@border-right: none !important;
+	@background-color: @cxPbLeftPanelBg !important;
+	@min-h: 50px;
+}
+.cxPBLeftPanelMixin() {
+	@w: 320px;
+}
+.cxPbLeftPanelTabShowMixin() {
+	@color: @cxPbWhite;
+}
+.cxBuilderElementMixin() {
+	@border: 1px solid transparent;
+	@w: calc(50% - 3px);
+	@border-radius: 6px;
+	@margin-bottom: 8px;
+	@bg: @cxPbLeftColumnElementBackground;
+	@color: @cxPbWhite;
+	@font-size: @cxFontSize13px;
+	@padding: 8px;
+}
+
+.cxPbLeftElemDisableMixin(){
+	@opacity: 0.5;
+	@border: 1px solid transparent !important;
+}
+
+.cxBuilderFullWidthElementMixin(){
+	@w: 100% !important;
+}
+
+.cxBuilderElementOnLeftPanelMixin{
+	@w: calc(50% - 3px) !important;
+	@padding: 8px !important;
+}
+
+.cxBuilderElementDraggableHelperMixin() {
+	@h: 34px !important;
+	@w: fit-content !important;
+	@padding: 6px 32px;
+}
+// .cxBuilderElementDraggableHelperSpriteMixin() {
+// 	@background-color: @cxPbLeftPanelIconColor;
+// 	@margin-right: 8px;
+// }
+.cxBuilderElementDraggableHandleMixin() {
+	@h: auto !important;
+}
+.cxBuilderElementHoverMixin() {
+	@border: 1px dashed @cxPbLeftColumnElementHoverBorder;
+	@bg-color: @cxPbLeftColumnElementHoverBg;
+}
+
+.cxPBLeftPanelTabTitleMixin() {
+	@padding: 15px 5px !important;
+	@border:none;
+	@bg: none;
+	@color: @cxPbLeftTabTitleColor;
+	@margin: 0px 15px;
+}
+.cxPBLeftPanelTabActiveAfterMixin() {
+	@w: 100%;
+	@h: 6px;
+	@border-radius: 3px;
+	@bottom: -3px;
+	@background-color: @cxPbTabActiveBg;
+	@left: 0px;
+}
+.cxPBLeftPanelTabActiveMixin() {
+	@font-weight: normal !important;
+	@font-family: @cruxPrimaryFont;
+	@webkit-stroke: 0.6px;
+	@color: @cxPbLeftTabTitleColor;
+	@border: none;
+}
+
+.cxPBLeftPanelTabTitleSpriteMixin() {
+	@background-color: @cxPbLeftTabTitleIconBg;
+	@margin: 2px 0px;
+}
+
+.cxPBLeftPanelTabHeadMixin() {
+	@border: none;
+	@border-bottom: 1px solid @cxPbLeftColumnTabHeadBorder;
+}
+.cxPBLeftPanelTabBodyMixin() {
+	@border: none;
+	@padding: 0px;
+}
+.cxPBLeftPanelTabsMixin() {
+	@bg: @cxPbLeftColumnBackgroundColor;
+	@color: @cxPbWhite;
+}
+.cxPbLeftPanelPrimaryHeadingMix(){
+	@color: @cxPbWhite;
+    @font-family: @cruxSecondaryFont;
+    @font-weight: @cruxFontWeightBold;
+	@font-size: @cxFontSize15px;
+	@padding: 0px 15px 15px;
+}
+
+.cxPBLeftPanelFieldHeadingMixin() {
+	@w: 100%;
+	@color: @cxPbLeftColumnHeadingElementColor;
+	@font-size: @cxFontSize13px;
+	@margin: 12px 0 10px 0;
+}
+// .cxPbNewFieldTabFldHeadingMixin(){
+// 	@margin-top: 12px;
+// }
+
+.cxPbNewFieldTabContent(){
+	@padding: 8px 15px 15px;
+}
+.cxPbFieldSectionBuilderElemMixin() {
+	@margin-right:0;
+}
+// .cxPbFieldSectionBuilderLastElemMixin() {
+// 	@w: 100%;
+// 	@margin-bottom: 5px;
+// }
+.cxPBLeftPanelBuilderElemSpriteMixin() {
+	@background-color: @cxPbLeftPanelIconColor;
+	@left: -24px;
+}
+.cxPbLeftPanelToggleBtnMixin() {
+	@right: 0px;
+	@top: 55px;
+	@border: 1px solid @cxPbLeftColumnToggleBtnBorder;
+	@h: 61px;
+	@w: 25px;
+	@border-radius: 0px 80px 80px 0px;
+	@background-color: @cxPbLeftColumnToggleBtnBg;
+	@box-shadow: @cxPbLeftColumnToggleBtnBoxShadow;
+	@z-index: 5;
+	@opacity: 0;
+	@transition: left 0.3s,opacity 0.3s,right 0.3s;
+}
+
+.cxPbLeftPanelToggleBtnActiveMixin(){
+	@right: -16px;
+	@opacity: 1;
+}
+
+.cxPbMinLeftPanelToggleBtnActiveMixin(){
+	@left: 112px !important;
+}
+
+// .cxPbLeftPanelToggleBtnBefAftMixin(){
+// 	@w: 9px;
+// 	@h: 13px;
+// 	@top: -8px;
+// 	@left: 16px;	
+// }
+
+// .cxPbLeftPanelToggleBtnAftMixin(){
+// 	@top: calc(100% - 5px);	
+// }
+
+// .cxPbLeftPanelToggleBtnBefAftPseudoMixin(){
+// 	@bg: @cxPbBackgroundColor;
+// 	@transition: opacity 0.1s;
+// 	@w: 9px;
+// 	@h: 10px;
+// 	@right: -7px;
+// 	@top: 2px;
+// 	@transform: rotate(48deg);
+// }
+
+// .cxPbLeftPanelToggleBtnAfterPseudoBefMixin(){
+// 	@right: -6px;
+// 	@top: 1px;
+// 	@transform: rotate(45deg);
+// }
+
+// .cxPbLeftPanelToggleBtnBefAftPseudoAftMixin(){
+// 	@w: 10px;
+// 	@h: 10px;
+// 	@top: -4px;
+// 	@right: -1px;
+//     @border-bottom-left-radius: 12px;
+// 	@transform: rotate(38deg);
+// }
+
+// .cxPbLeftPanelToggleBtnAftPseudoAftMixin(){
+// 	@top: 6px;
+// 	@right: -1px;
+// 	@border-bottom-left-radius: 0px;
+//     @border-top-left-radius: 12px;
+// 	@transform: rotate(-35deg);
+// }
+
+.cxPbLeftPanelToggleBtnIconMixin(){
+	@bg-color: @cxPbLeftColumnToggleBtnIconColor;
+	@left: 7px;
+	@top: 21px;
+	@transform: rotate(180deg);
+}
+
+.cxPbLeftPanelToggleBtnBgIconMixin(){
+	@bg-img: @cruxPageBuilderSprite;
+	@bg-pos: -569px -28px;
+	@w: 25px;
+	@h: 61px;
+	@bg-color:@cxPbLeftColumnBackgroundColor; 
+}
+
+.cxPbMinLeftPanelMixin() {
+	@w: 114px;
+}
+// .cxPbMinLeftPanelBuilderLastElemMixin() {
+// 	@w: calc(50% - 3px);
+// }
+// .cxPbMinLeftPanelToggleBtnMixin() {
+// 	@left: 104px;
+// }
+.cxPbMinLeftPanelToggleBtnIconMixin() {
+	@transform: rotate(0deg);
+	@left: 10px;
+}
+.cxPBLeftPanelElemTextMixin() {
+	@max-w: 100%;
+	@padding-left: 8px;
+}
+.cxPbNewFeatureLoaderMixin(){
+	@margin-left: 3px;
+}
+.cxPbMinLeftPanelBuilderElemSpriteMixin() {
+	@left: 11px;
+}
+
+
+.cxBuilderUnusedElementMixin(){
+	@w: 100% !important;
+	@padding: 8px !important;
+}
+
+.cxPbElemetOnDragMixin(){
+	@w: 350px;
+	@padding: 11px 14px;
+	@border: 1px solid transparent;
+	@bg: @cxPbLeftColumnElementOndragBg;
+	@h: auto !important;
+	@color: @cxPbPropBaseColor;
+	@box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.30);
+}
+
+.cxPbElementTextOnleftDragMixin(){
+	@padding-left: 8px;
+}
+
+.cxBuilderUnusedElementTextMixin(){
+	@padding: 0px 8px;
+}
+
+.cxBuilderUnusedElementDeleteIconMixin(){
+	@bg: @cxPbElemUnusedElemDelIconBg;
+}
+
+.cxPbRestrictedBuilderElemMixin(){
+	@opacity: 0.5;
+}
+
+.cxRestrictDragOnhoverMixin(){
+	@border: 1px solid transparent;
+}
+
+.cxPbUnusedFieldCountMixin(){
+	@padding: 1px 4px;
+	@border: 1px solid @cxPbUnusedFieldCountBorder;
+	@margin-left: 5px;
+	@border-radius: 10px;
+	// @min-w: 20px;
+	// @min-h: 20px;
+	@font-size: @cxFontSize13px;
+}
+
+.cxLeftPanelFooterMixin(){
+	@bg: @cxPbLeftColumnBackgroundColor;
+	@padding: 15px;
+	@border-top: 1px solid @cxPbLeftColumnTabHeadBorder;
+	@color: #fff;
+}
+
+.cxMinLeftPanelFooterMixin(){
+	@color: @cxPbPropLinkColor;
+}
+
+.cxPbLeftPanelWrapperDivMixin(){
+	@padding: 20px 0px 15px;
+	@bg: @cxPbLeftColumnBackgroundColor;
+	@h: 100%;
+}
+
+.cxPbLeftPanelFieldSearchWrapMixin(){
+	@padding: 0px 15px;
+}
+
+.cxPbLeftPanelFieldWrapperMixin(){
+	@padding: 0px 15px;
+}
+
+.cxPbUnusedFldFilterWrapMixin(){
+	@margin: 0px 0px 10px;
+}
+
+.cxPbUnusedFldFilterDDMixin(){
+	// @margin: 0px 0px 10px;
+	@w: fit-content;
+}
+
+.cxPbUnusedFldFilterDropBtnMixin(){
+	@bg: transparent;
+	@color: @cxPbLeftTabTitleColor;
+	@border: none;
+	@box-shadow: none;
+	@w: fit-content;
+	@padding-top: 0px;
+	@padding-bottom: 0px;
+	@padding-left: 0px;
+}
+
+.cxPbUnusedFldFilterDDIconMixin(){
+	@bg-color: @cxPbLeftTabTitleIconBg;
+}
+
+.cxPbUnusedFldClearBtnMixin(){
+	@color: @cxPbLeftColumnHeadingElementColor;
+	@font-size: @cxFontSize14px;	
+}
+
+.cxPbLeftPanelInputMixin(){
+	@margin-bottom: 8px;
+}
+
+.cxPbLeftPanelInputFldMixin(){
+	@bg: transparent;
+	@color: @cxPbWhite;
+}
+
+.cxPbUnusedFldFltrInputPlaceholderMixin(){
+	@color: @cxPbLeftColSearchInputPlaceholderColor;	
+}
+
+.cxPbLeftPanelInputIconMixin(){
+	@bg-color: @cxPbLeftColSearchIconColor;
+}
+
+.cxPbLeftPanelInputFieldMixin(){
+	@border-color: @cxPbLeftColSearchBorderColor;
+	@box-shadow: none;
+	@bg-color: transparent;
+}
+
+.cxPbLeftPanelInputFieldHoverMixin(){
+	@border-color: @cxPbLeftColSearchHoverBorderColor;
+}
+
+.cxPbLeftPanelInputFieldFocusMixin(){
+	@border-color: @cxPbLeftColSearchFocusBorderColor;
+}
+
+.cxPbLeftPanelInputCloseIconMixin(){
+	@bg-color: @cxPbLeftColCloseIconBgColor;
+	@icon-color: @cxPbLeftColCloseIconColor;
+}
+
+.cxPbLeftPanelInputCloseIconHoverMixin(){
+	@bg-color: @cxPbLeftColCloseIconHoverBgColor;
+	@icon-color: @cxPbLeftColCloseIconHoverColor;
+}
+
+.cxPbUnusedFieldSecHeaderMixin(){
+	@padding: 0px 15px;	
+}
+
+.cxPbUnusedFieldSectionMixin(){
+	@h: 100%;
+	@padding-top: 20px;
+	@padding-bottom: 15px;
+}

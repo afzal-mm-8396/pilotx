@@ -1,0 +1,288 @@
+@property-left: right;
+@property-right: left;
+@property-margin-right: margin-left;
+@property-margin-left: margin-right;
+@property-padding-left: padding-right;
+@property-padding-right: padding-left;
+@property-border-right: border-left;
+@property-border-left: border-right;
+@property-border-left-color: border-right-color;
+@property-border-right-color: border-left-color;
+@property-border-bottom-left-radius: border-bottom-right-radius;
+@property-border-bottom-right-radius: border-bottom-left-radius;
+@property-border-top-right-radius: border-top-left-radius;
+@property-border-top-left-radius: border-top-right-radius;
+@property-border-right-width: border-left-width;
+@property-border-left-width: border-right-width;
+
+@value-float-left: right;
+@value-textalign-left: right;
+@value-textalign-right: left;
+@value-transition-left: right;
+@value-sw-resize: se-resize;
+@value-se-resize: sw-resize;
+@value-nw-resize: ne-resize;
+@value-ne-resize: nw-resize;
+@value-rotate-0deg: rotate(180deg);
+@value-rotate-90deg: rotate(-90deg);
+@value-rotate-180deg: rotate(0deg);
+
+@rtlEnabled: true;
+
+
+/*  Crux Kanban view Less Mixin Begins */
+.cruxKanbanItemContent() {
+	@padding: 20px 45px 15px 25px;
+}
+.KanbanItemHeader() {
+	@padding: 15px 45px 0 6px;
+}
+/*  Crux Kanban view Less Mixin Ends */
+
+/*  Crux Combo box LESS Mixin Begins  */
+.cxComboRecipientWrapMultiSelectLiMixin() {
+    @padding: 5px 8px 5px 38px !important;	/*	Crux Tag overwrite !important added */
+}
+.cxComboRecipientWrapCloseIconMixin() {
+    @border-radius: 15px 0 0 15px;
+}
+.cxComboLeftColHeadDropButtonMixin() {
+	@padding: 2px 10px 3px 25px;
+}
+.cxuserSelectionOptionDropButtonMixin() {
+	@padding: 10px 10px 10px 25px;
+}
+.cxComboBoxSearchInputMixin() {
+	@padding: 4px 30px 4px 0;
+}
+.cxSelectedUserNameMixin() {
+	@margin: 0 7px 0 30px;
+}
+.cxSelectedUserListMixin() {
+	@margin: 0 0 5px 7px;
+}
+.cxCloseSelectedWrapMixin() {
+	@border-radius: 15px 0 0 15px;
+}
+/*  Crux Combo box LESS Mixin Ends  */
+
+/*  Crux Criteria editor LESS Mixin Begins  */
+.cxCriteriaTdMixin() {
+    @padding: 35px 0 0 8px;
+}
+.cxCriteriaAndOrMixin() {
+    @transform : translate(5px,-33px);
+}
+.cxCriteriaBoxStyleAgeInDaysDropButtonMixin() {
+    @border-radius: 0 5px 5px 0;
+}
+.cxCriteriaBoxStyleAgeInDaysLyteFieldMixin() {
+    @border-radius: 5px 0 0 5px;
+}
+.cxCriteriaValueColTypeDropButtonMixin() {
+	@border-radius: 0 4px 4px 0;
+}
+.cxCriteriaValueColTypeDropdownDisabledMixin() {
+	@border-radius: 0 4px 4px 0;
+}
+.cxCriteriaBoxValueColDropFieldInputMixin() {
+	@border-radius: 4px 0 0 4px;
+}
+/*  Crux Criteria editor LESS Mixin Ends  */
+
+/*  Crux Dropdown Less Mixin Begins */
+.cruxDropdownButtonMixin() {
+	@padding: 8px 10px 8px 30px;
+}
+.cxFakeDummyEventContainerMandatoryBeforeMixin() {
+	@border-radius: 0 @cxBoxDropdownInnerElemBorderRadius @cxBoxDropdownInnerElemBorderRadius 0;
+}
+.cruxDropdownMultipleSelectLiMixin() {
+	@padding: 2px 5px 2px 20px;
+}
+/*  Crux Dropdown Less Mixin Ends */
+
+
+/*  Crux Form elements Less Mixin Begins */
+.cxBoxInputInsideLabel_cxboxinputHorizontalLabel() {
+	@padding: 7px 10px 8px 7px;
+}
+// .cxBoxInputInsideLabel_cxboxinputHorizontalInput() {
+//     @padding: 7px 0 7px 10px;
+// }
+
+.cxBoxInputDateTimeDateInput() {
+    @border-right: 1px solid #ddd;
+    @border-radius: 0 4px 4px 0;
+}
+.cxBoxTextareaResize() {
+    @cursor: nesw-resize;
+}
+.cxBoxInputDateTimeTimeInput() {
+    @border-radius: 4px 0 0 4px;
+}
+.cxBoxInputMandatoryFieldBefore() {
+    @border-radius: 0 4px 4px 0;
+}
+.cxboxdropdownDropbutton() {
+	@padding: 7px 10px 8px 30px;
+}
+.cxBoxWithRightIconMandatoryFieldLeftContentBeforeMixin() {
+	@border-radius: 0 @cxBoxDropdownInnerElemBorderRadius @cxBoxDropdownInnerElemBorderRadius 0;
+}
+.cxboxdropdownMandatoryDummyEventContainerBefore() {
+	@border-radius: 0 @cxBoxDropdownInnerElemBorderRadius @cxBoxDropdownInnerElemBorderRadius 0;
+}
+.cxboxdropdownMultipleselectLi() {
+    @margin: 0 0 5px 5px;
+	@padding: 2px 5px 2px 20px;
+}
+.cxboxdropdownMultipleSelectClose() {
+	@w: 16px;
+	@border-radius: 1px 0 0 1px;
+}
+.cxBoxRightIconMixin() {
+    @border-radius: @cxBoxInputInnerElemBorderRadius 0 0 @cxBoxInputInnerElemBorderRadius;
+}
+// .cxTxtBoxRightIconMixin(){
+// 	@border-radius: @cxBoxInputInnerElemBorderRadius 0 0 @cxBoxInputInnerElemBorderRadius;
+// }
+
+/*  Crux Form elements Less Mixin Ends */
+
+/*  Crux Lookup modal Less Mixin Begins */
+.cxTableLyteThMixin() {
+	@padding: 9px 25px 9px 0;
+}
+.cxTableLyteTdMixin() {
+	@padding: 7px 25px 7px 0;
+}
+.cxBoxModalHeaderMixin() {
+	@padding: 24px 30px 15px 40px;
+}
+.cxBoxModalContentMixin() {
+	@padding: 0 30px 10px 38px;
+}
+.cxBoxModalFooterMixin() {
+	@padding: 12px 30px 30px 38px;
+}
+/*  Crux Lookup modal Less Mixin Ends */
+
+/*  Crux Note Less Mixin Begins */
+.cxNoteToggleArrowMixin() {
+    @padding: 4px 3px 4px 4px;
+}
+.cxNotesStorageLimitShadowMixin() {
+    @border-radius: 0 5px 5px 0;
+}
+.cxNoteEditorPanelPopoverBorderRadiusMixin(){
+	@border-radius: 6px 0 0 6px;
+}
+/*  Crux Note Less Mixin Ends */
+
+/*  Crux User dropdown LESS Mixin Begins    */
+.cxUserDropdownMultiSelectLiMixin() {
+	@padding: 2px 5px 2px 25px;
+}
+.cxUserDropdownDropButtonMixin() {
+	@padding: 0 0 0 16px;
+}
+// .cxUserDropboxSearchBoxInputMixin() {
+//     @padding: 0 10px 0 30px;
+// }
+.cxUserDropdownInnerFilterFirstBorderRadiusMixin() {
+	@border-radius: 0 6px 6px 0;
+}
+/*  Crux User dropdown LESS Mixin Ends    */
+
+/*  Crux User lookup LESS Mixin Begins    */
+.cxUserLookupModalDropButtonMixin() {
+	@border-radius: 0 5px 5px 0;
+}
+.cxUserLookupModalInnerDropButtonDownMixin() {
+	@border-radius: 0 5px 5px 0;
+}
+.cxUserLookupModalFilterPresentInputFocusFieldMixin() {
+	@border-radius: 5px 0 0 5px;
+}
+.cxUserLookupModalBackIconMixin(){
+	@transform: translateX(calc(100% + 5px)) translateY(5px) scale(-1);
+}
+/*  Crux User lookup LESS Mixin Ends    */
+
+/*  Crux Util Alert Less Mixin Begins   */
+.cxAlertWrapperPopupMixin() {
+	@padding: 24px 30px 30px 40px;
+}
+/*  Crux Util Alert Less Mixin Ends   */
+
+/*	Crux Lookup Component LESS mixin Begins	*/
+.cxMultiModuleDropdownDropButtonMixin() {
+	@border-radius: 0 4px 4px 0;
+}
+/*	Crux Lookup Component LESS mixin Ends	*/
+
+
+/*	Crux Subform Component LESS mixin Starts */
+.cxTableFilterIconsMixin() {
+	// @{property-right}: initial !important;
+	right: initial !important; /* stylelint-disable-line property-disallowed-list */
+	// left: 0 !important;
+}
+.cxDateTimeDisabledInputBoxInputFirstChildMixin() {
+	border-radius: 0 5px 5px 0;
+}
+
+/*	Crux Subform Component LESS mixin Ends	*/
+// Crux Column List Less Mixin Starts
+.cxColumnListAccordionArrowMixin(){
+	@transform: rotate(90deg);
+}
+// Crux Column List Less Mixin Ends
+// .cxNoteEditorPanelPopoverBorderRadiusMixin(){
+// 	@border-radius: 6px 0 0 6px;
+// }
+
+
+
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+	margin-right: 10px;  /* stylelint-disable-line property-disallowed-list */
+	margin-left: 0; /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+    padding-right :10px;  /* stylelint-disable-line property-disallowed-list */
+}
+// .cxLookupViewLetterCircle { 
+// 	margin-left: 10px;
+// }
+
+/* Temp CSS Styles for RLL Ends */
+
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+    @{property-margin-left}: auto;
+	@{property-margin-right}: inherit;
+}
+
+// Crux Grouper Radio Button Less mixin Begins
+.cxGrouperGroupBtnElemFirstChildMixin(){
+	@border-radius: 0 6px 6px 0;
+}
+
+.cxGrouperGroupBtnElemLastChildMixin(){
+	@border-radius: 6px 0px 0px 6px;
+}
+
+.cxGrouperGroupBtnMandatoryMixin(){
+	@border-radius: 0px 3px 3px 0px;
+}
+
+.cxGrouperRadioBtnMandatoryMixin(){
+    @border-radius: 0px 6px 6px 0px;
+}
+
+// Crux Grouper Radio Button Less mixin ends
+

@@ -1,0 +1,18 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-detail-rl-container-box-shadow-color: #00000008;
+    --@{cssPrefix}-detail-rl-container-border-color: #d7e2ed;
+    --@{cssPrefix}-detail-rl-container-bg-color: var(--crux-element-bg-color);
+}

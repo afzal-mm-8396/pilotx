@@ -1,0 +1,11 @@
+.cx_detail_rl_container{
+    border-radius: 6px;
+    box-shadow: 0 3px 4px 0 #00000008;
+    border: 1px solid #d7e2ed;
+    padding: 20px;
+    margin-top: 15px;
+    background: #fff;
+}
+.cruxNotesCompWrap{
+    padding: 0;
+}

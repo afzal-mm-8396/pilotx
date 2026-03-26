@@ -1,0 +1,63 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-user-tooltip-popup-box-shadow-color: rgba(0, 0, 0, 0.2);
+  --lyte-crux-user-tooltip-popup-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-user-tooltip-up-space-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-user-tooltip-normal-tag-text-color: #777;
+  --lyte-crux-user-tooltip-normal-tag-border-color: #ddd;
+  --lyte-crux-user-tooltip-dismiss-btn-color: #ef7575;
+  --lyte-crux-user-tooltip-dismiss-btn-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-user-tooltip-dismiss-btn-border-color: #ffa9a9;
+  --lyte-crux-user-tooltip-info-popup-arrow-left-box-shadow-color: rgba(0, 0, 0, 0.2);
+  --lyte-crux-user-tooltip-info-popup-arrow-left-border-color: #cacaca;
+  --lyte-crux-user-tooltip-info-popup-arrow-right-box-shadow-color: rgba(0, 0, 0, 0.2);
+  --lyte-crux-user-tooltip-info-popup-arrow-right-border-color: #cacaca;
+  --lyte-crux-user-tooltip-info-popup-bg-color: var(--crux-element-bg-color);
+  --lyte-crux-user-tooltip-info-popup-box-shadow-color: rgba(0, 0, 0, 0.2);
+  --lyte-crux-user-tooltip-info-popup-border-color: #cacaca;
+  --lyte-crux-user-tooltip-red-color: #ff3838;
+  --lyte-crux-user-tooltip-dash-border-color: #e8e8e8;
+  --lyte-crux-user-tooltip-actions-icon-border-color: #6497cb;
+  --lyte-crux-user-tooltip-actions-icon-hover-bg-color: #6497cb;
+  --lyte-crux-user-tooltip-client-portal-label-border-color: #EFC06A;
+  --lyte-crux-user-tooltip-client-portal-label-bg-color: #FFF9ED;
+  --lyte-crux-user-tooltip-name-color: #333;
+  --lyte-crux-user-tooltip-phone-content-color: #333;
+  --lyte-crux-user-tooltip-up-space-content-color: #333;
+  --lyte-crux-user-tooltip-mail-link-color: #333;
+}
+/*# sourceMappingURL=crux-user-tooltip-variables.css.map */

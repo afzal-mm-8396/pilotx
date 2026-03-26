@@ -1,0 +1,658 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/pageBuilder/crux-page-builder-left-panel.variables.less";
+
+@import "../themes/default/less-variables/crux-page-builder-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+
+/***********************************************************
+    Crux LeftBar CSS
+
+***********************************************************/
+.cxPbWrapper .lytePbPageLayout .lyPbPlayArea{
+	grid-template-rows: 100%;
+}
+
+.cxPbWrapper .lytePbLeftBar{
+	.cxPbWrapperLeftBarMixin();
+	width: @w;
+	@{property-border-right}: @border-right;
+	background-color: @background-color;
+	overflow: unset !important;
+	min-height: @min-h;
+}
+.cxPbWrapper .cxPBLeftPanel{
+	.cxPBLeftPanelMixin();
+	width: @w;
+	transition: width .3s;
+}
+
+.cxPbLeftPanel .lyteTabShow {
+	.cxPbLeftPanelTabShowMixin();
+	display: flex;
+	flex-wrap: wrap;
+	color: @color;
+}
+
+.cxBuilderUnusedElement,
+.cxBuilderElement {
+	.cxBuilderElementMixin();
+	border: @border;
+	width: @w;
+	box-sizing: border-box;
+	border-radius: @border-radius;
+	margin-bottom: @margin-bottom;
+	background: @bg;
+	color: @color;
+	font-size: @font-size;
+	position: relative;
+	padding: @padding;
+	overflow: hidden;
+	transition: width 0.3s;
+}
+
+.cxPbLeftElemDisable{
+	.cxPbLeftElemDisableMixin();
+	opacity: @opacity;
+	cursor: default;
+	border: @border;
+}
+
+.cxPbFieldSection .cxBuilderElement.cxBuilderFullWidthElement{
+	.cxBuilderFullWidthElementMixin();
+	width: @w;
+}
+
+.cxPbFieldSection .cxBuilderElement{
+	.cxBuilderElementOnLeftPanelMixin();
+	width: @w;
+	padding: @padding;
+}
+
+.cxPbFieldSection .cxBuilderElement.draggable-element{
+	cursor: grab;
+}
+// .cxBuilderElement.draggable-helper{
+// 	.cxBuilderElementDraggableHelperMixin();
+// 	height: @h;
+// 	width: @w;
+// 	padding: @padding;
+// }
+
+.cxBuilderElement.draggable-element .cxPbElementTextWrapper{
+	display: flex;
+	align-items: center;
+}
+
+// .cxBuilderElement.draggable-helper .cxPbSprite{
+// 	.cxBuilderElementDraggableHelperSpriteMixin();
+// 	background-color: @background-color;
+// 	@{property-margin-right}: @margin-right;
+// }
+
+// .cxBuilderElement.draggable-handle {
+// 	.cxBuilderElementDraggableHandleMixin();
+// 	height: @h;
+// }
+.cxBuilderElement:hover {
+	.cxBuilderElementHoverMixin();
+	border: @border;
+	background-color: @bg-color;
+}
+.cxPBLeftPanel .cxPbFieldSection {
+	flex-grow: 1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.cxPBLeftPanel .lyteTabDefaultTop lyte-tab-title{
+	.cxPBLeftPanelTabTitleMixin();
+	padding: @padding;
+	border: @border;
+	background: @bg;
+	position: relative;
+	color: @color;
+	margin: @margin;
+}
+
+.cxPBLeftPanel .lyteTabDefaultTop lyte-tab-title.lyteTabActive::after {
+	.cxPBLeftPanelTabActiveAfterMixin();
+	content: '';
+	position: absolute;
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	bottom: @bottom;
+	background-color: @background-color;
+	@{property-left}: @left;
+}
+
+.cxPBLeftPanel .lyteTabDefaultTop lyte-tab-title.lyteTabActive {
+	.cxPBLeftPanelTabActiveMixin();
+	font-family: @font-family;
+	font-weight: @font-weight;
+	-webkit-text-stroke: @webkit-stroke;
+	color: @color;
+	border: @border;
+}
+
+.cxPBLeftPanel .lyteTabDefaultTop lyte-tab-title .cxPbSprite{
+	.cxPBLeftPanelTabTitleSpriteMixin();
+	background-color: @background-color;
+	margin: @margin;
+}
+
+
+.cxPBLeftPanel .lyteTabDefaultTop lyte-tab-head{
+	.cxPBLeftPanelTabHeadMixin();
+	border: @border;
+	border-bottom: @border-bottom;
+}
+.cxPBLeftPanel .lyteTabDefaultTop lyte-tab-body {
+	.cxPBLeftPanelTabBodyMixin();
+	border: @border;
+	padding: @padding;
+}
+
+// .cxPBLeftPanel .cxPbLeftTabHeading{
+// 	vertical-align: unset;
+// }
+
+.cxPbLeftPanelMinimized lyte-tab-title{
+	text-overflow: initial;
+}
+
+.cxPbLeftPanelMinimized .cxPbUnusedFieldCount,
+.cxPbLeftPanelMinimized .cxPbLeftTabHeading{
+	visibility: hidden;
+    max-width: 0px;
+    margin: 0px;
+    @{property-padding-left}: 0px;
+    @{property-padding-right}: 0px;
+    @{property-border-left}: 0px;
+    @{property-border-right}: 0px;
+}
+
+.cxPBLeftPanel lyte-tabs {
+	.cxPBLeftPanelTabsMixin();
+	background: @bg;
+	color: @color;
+}
+
+.cxPBLeftPanel .cxPbLeftPanelPrimaryHeading{
+	.cxPbLeftPanelPrimaryHeadingMix();
+	color: @color;
+	font-size: @font-size;
+	font-family: @font-family;
+	font-weight: @font-weight;
+	padding: @padding;
+}
+
+.cxPBLeftPanel .cxPbFieldHeading{
+	.cxPBLeftPanelFieldHeadingMixin();
+	width: @w;
+	color: @color;
+	// text-transform: uppercase;
+	font-size: @font-size;
+	margin: @margin;
+	vertical-align: top;
+}
+
+// .cxPbNewFieldTabContent .cxPbFieldHeading{
+// 	.cxPbNewFieldTabFldHeadingMixin();
+// 	margin-top: @margin-top;
+// }
+
+.cxPbNewFieldTabContent{
+	.cxPbNewFieldTabContent();
+	padding: @padding;
+}
+
+.cxPbFieldSection .cxBuilderElement:nth-child(odd){
+	.cxPbFieldSectionBuilderElemMixin();
+	@{property-margin-right}: @margin-right;
+}
+// .cxPbFieldSection .cxBuilderElement:last-of-type{
+// 	.cxPbFieldSectionBuilderLastElemMixin();
+// 	width: @w;
+// 	margin-bottom: @margin-bottom;
+// 	text-align: center;
+// }
+
+crux-page-builder .lytePbLeftBar{
+	transition: width 0.3s;
+}
+
+.cxPBLeftPanel .cxBuilderUnusedElement .cxPbSprite,
+.cxPBLeftPanel .cxBuilderElement .cxPbSprite {
+	.cxPBLeftPanelBuilderElemSpriteMixin();
+	// position: absolute;
+	background-color: @background-color;
+	// @{property-left}: @left;
+	vertical-align: top;
+	flex-shrink: 0;
+}
+
+.cxPbLeftPanelToggleBtn{
+	.cxPbLeftPanelToggleBtnMixin();
+	position: absolute;
+	@{property-right}: @right;
+	top: @top;
+	// border: @border;
+	height: @h;
+	width: @w;
+	border-radius: @border-radius;
+	// background-color: @background-color;
+	display: none;
+	cursor: pointer;
+	transition: @transition;
+	opacity: @opacity;
+	// box-shadow: @box-shadow;
+	z-index: @z-index;
+	// visibility: hidden;
+}
+
+.cxPbLeftPanelNewFldTabTitle.lyteTabActive ~ .cxPbLeftPanelToggleBtn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cxPbLeftPanelToggleBtn::after{
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+// .cxPBLeftPanel lyte-tab-body:hover .cxPbLeftPanelToggleBtn,
+.cxPbMinLeftPanel .cxPbLeftPanelToggleBtn,
+crux-page-builder-left-panel:hover .cxPbLeftPanelNewFldTabTitle.lyteTabActive ~ .cxPbLeftPanelToggleBtn{
+	.cxPbLeftPanelToggleBtnActiveMixin();
+	visibility: visible;
+	@{property-right}: @right;
+	opacity: @opacity;
+}
+
+// .cxPbMinLeftPanel .cxPbLeftPanelToggleBtn{
+// 	.cxPbMinLeftPanelToggleBtnActiveMixin();
+// 	@{property-left}: @left;
+// }
+
+// .cxPbLeftPanelToggleBtnAfter,
+// .cxPbLeftPanelToggleBtnBefore{
+// 	.cxPbLeftPanelToggleBtnBefAftMixin();
+//     position: absolute;
+//     width: @w;
+//     height: @h;
+//     top: @top;
+//     @{property-left}: @left;
+// 	background-color: @cxPbLeftColumnToggleBtnBg;
+// }
+
+// .cxPbLeftPanelToggleBtnAfter{
+// 	.cxPbLeftPanelToggleBtnAftMixin();
+// 	top: @top;
+// }
+
+// .cxPbLeftPanelToggleBtnAfter::after,
+// .cxPbLeftPanelToggleBtnBefore::after,
+// .cxPbLeftPanelToggleBtnAfter::before,
+// .cxPbLeftPanelToggleBtnBefore::before{
+// 	.cxPbLeftPanelToggleBtnBefAftPseudoMixin();
+//     content: '';
+//     display: block;
+//     position: absolute;
+// 	pointer-events: none;
+//     background: @bg;
+// 	transition: @transition;
+// 	width: @w;
+//     height: @h;
+//     @{property-right}: @right;
+//     top: @top;
+//     transform: @transform;
+// }
+
+// .cxPbLeftPanelToggleBtnAfter::before {
+// 	.cxPbLeftPanelToggleBtnAfterPseudoBefMixin();
+//     @{property-right}: @right;
+//     top: @top;
+//     transform: @transform;
+// }
+
+
+// .cxPbLeftPanelToggleBtnAfter::after,
+// .cxPbLeftPanelToggleBtnBefore::after {
+// 	.cxPbLeftPanelToggleBtnBefAftPseudoAftMixin();
+//     width: @w;
+//     height: @h;
+// 	top: @top;
+//     @{property-right}: @right;
+//     @{property-border-bottom-left-radius}: @border-bottom-left-radius;
+//     transform: @transform;
+// }
+
+// .cxPbLeftPanelToggleBtnAfter::after {
+// 	.cxPbLeftPanelToggleBtnAftPseudoAftMixin();
+//     top: @top;
+//     @{property-right}: @right;
+//     @{property-border-bottom-left-radius}: @border-bottom-left-radius;
+//     @{property-border-top-left-radius}: @border-top-left-radius;
+//     transform: @transform;
+// }
+
+.cxPbLeftPanelToggleBtn .cxPbLeftArrowIcon{
+	.cxPbLeftPanelToggleBtnIconMixin();
+	background-color: @bg-color;
+	position: absolute;
+    @{property-left}: @left;
+    top: @top;
+	transform: @transform;
+	pointer-events: none;
+}
+
+.cxPbLeftPanelToggleBtnBgIcon{
+	.cxPbLeftPanelToggleBtnBgIconMixin();
+	width: @w;
+	height: @h;
+	display: block;
+	.cruxMaskImageMixin(@bg-img,@bg-pos,@bg-color)
+}
+
+.cxPbWrapper .lytePbLeftBar.cxPbMinLeftPanel,
+.cxPbMinLeftPanel .cxPBLeftPanel{
+	.cxPbMinLeftPanelMixin();
+	width: @w;
+}   
+
+// .cxPbMinLeftPanel .cxPbFieldSection .cxBuilderElement:last-of-type{
+// 	.cxPbMinLeftPanelBuilderLastElemMixin();
+// 	width: @w;
+// }
+
+.cxPbMinLeftPanel .cxPbLeftPanelToggleBtn .cxPbLeftArrowIcon{
+	.cxPbMinLeftPanelToggleBtnIconMixin();
+	transform: @transform;
+	@{property-left}: @left;
+}
+
+.cxBuilderUnusedElement.draggable-element.selected-element .cxPbElementText,
+.cxBuilderElement.draggable-element.selected-element .cxPbElementText,
+.cxPBLeftPanel .cxPbElementText{
+	.cxPBLeftPanelElemTextMixin();
+	white-space: nowrap;
+	max-width: @max-w;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	@{property-padding-left}: @padding-left;
+}
+
+.cxPBLeftPanel .cxPbElementTextWrapper{
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.cxPbElementTextWrapper .cxPbNewFeatureLoader{
+	.cxPbNewFeatureLoaderMixin();
+	@{property-margin-left}: @margin-left;
+}
+
+.cxPbMinLeftPanel .cxBuilderElement .cxPbElementText{
+	visibility: hidden;
+}
+
+.cxPbMinLeftPanel .cxBuilderElement .cxPbSprite {
+	.cxPbMinLeftPanelBuilderElemSpriteMixin();
+	@{property-left} : @left;
+}
+
+.cxPBLeftPanel .cxBuilderUnusedElement{
+	.cxBuilderUnusedElementMixin();
+	padding: @padding;
+	width: @w;
+}
+
+.cxBuilderElement.draggable-element.selected-element,
+.cxBuilderUnusedElement.draggable-element.selected-element{
+	.cxPbElemetOnDragMixin();
+	background: @bg;
+	width: @w;
+	padding: @padding;
+	border: @border;
+	box-shadow: @box-shadow;
+	color: @color;
+	cursor: grabbing;
+}
+
+.cxBuilderElement.draggable-element.selected-element .cxPbSprite,
+.cxBuilderUnusedElement.draggable-element.selected-element .cxPbSprite{
+	flex-shrink: 0;
+	vertical-align: middle;
+	background: @cxPbIconBaseColor;
+}
+
+.cxBuilderElement.draggable-element.selected-element .cxPbElementText{
+	.cxPbElementTextOnleftDragMixin();
+	@{property-padding-left}: @padding-left;
+}
+
+.cxBuilderUnusedElement .cxPbElementText{
+	.cxBuilderUnusedElementTextMixin();
+	flex: 1;
+	padding: @padding;
+}
+
+.cxBuilderUnusedElement .cxPbSprite.cxPbDeleteIcon{
+	.cxBuilderUnusedElementDeleteIconMixin();
+	background: @bg;
+	cursor: pointer;
+	visibility: hidden;
+}
+
+.cxBuilderUnusedElement:hover .cxPbSprite.cxPbDeleteIcon{
+	visibility: visible;
+}
+
+.cxBuilderUnusedElement.draggable-element.selected-element .cxPbSprite.cxPbDeleteIcon{
+	display: none;
+}
+
+.cxPbFieldSection .cxBuilderElement.cxPbLeftElemDisable .cxPbElementText,
+.cxPbFieldSection .cxBuilderElement.cxPbLeftElemDisable .cxPbSprite{
+	.cxPbRestrictedBuilderElemMixin();
+	opacity: @opacity;
+}
+
+.cxPbFieldSection .cxBuilderElement.cxRestrictDrag:hover{
+	.cxRestrictDragOnhoverMixin();
+	border: @border;
+	cursor: not-allowed;
+}
+
+.cxPbUnusedFieldCount{
+	.cxPbUnusedFieldCountMixin();
+	border: @border;
+	padding: @padding;
+	@{property-margin-left}: @margin-left;
+	border-radius: @border-radius;
+	box-sizing: border-box;
+	// min-width: @min-w;
+	// min-height: @min-h;
+	text-align: center;
+	font-size: @font-size;
+}
+
+.cxLeftPanelFooter{
+	.cxLeftPanelFooterMixin();
+	background: @bg;	
+	padding: @padding;
+	border-top: @border-top;
+	color: @color;
+}
+
+.cxPbMinLeftPanel .cxLeftPanelFooter{
+	.cxMinLeftPanelFooterMixin();
+	color: @color;
+}
+
+.cxPbLeftPanelWrapperDiv{
+	.cxPbLeftPanelWrapperDivMixin();
+	padding: @padding;
+	background: @bg;
+	display: flex;
+	flex-direction: column;
+	height: @h;
+	overflow: hidden;
+}
+
+.cxPbLeftPanelFieldSearchWrap{
+	.cxPbLeftPanelFieldSearchWrapMixin();
+	padding: @padding;
+}
+
+.cxPbLeftPanelFieldWrapper{
+	.cxPbLeftPanelFieldWrapperMixin();
+	overflow: auto;
+	flex: 1;
+	padding: @padding;
+}
+
+.cxPbUnusedFldFilterWrap{
+	.cxPbUnusedFldFilterWrapMixin();
+	margin: @margin;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.cxPbUnusedFldFilterDD{
+	.cxPbUnusedFldFilterDDMixin();
+	// margin: @margin;
+	width: @w;
+}
+
+.cxPbUnusedFldFilterDD lyte-dropdown.cxBoxDropdown .lyteDropButtonDown,
+.cxPbUnusedFldFilterDD lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxPbUnusedFldFilterDD lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button:hover,
+.cxPbUnusedFldFilterDD lyte-dropdown.cxBoxDropdown lyte-drop-button,
+.cxPbUnusedFldFilterDD lyte-dropdown.cxBoxDropdown lyte-drop-button:hover,
+.cxPbUnusedFldFilterDD .cxFakeDummyEventContainer:focus .cxFakeDropButton,
+.cxPbUnusedFldFilterDD .cxFakeDummyEventContainer:focus-visible .cxFakeDropButton,
+.cxPbUnusedFldFilterDD .cxFakeDropButton{
+	.cxPbUnusedFldFilterDropBtnMixin();
+	background: @bg;
+    color: @color;
+    border: @border;
+	box-shadow: @box-shadow;
+	width: @w;
+	padding-top: @padding-top;
+	padding-bottom: @padding-bottom;
+	@{property-padding-left}: @padding-left;
+}
+
+.cxPbUnusedFldFilterDD lyte-dropdown lyte-icon.dropdown,
+.cxPbUnusedFldFilterDD .cxFakeDropButton lyte-icon.dropdown{
+	.cxPbUnusedFldFilterDDIconMixin();
+	background-color: @bg-color;
+}
+
+.cxPbUnusedFldClearBtn{
+	.cxPbUnusedFldClearBtnMixin();
+	font-size: @font-size;
+	color: @color;
+	cursor: pointer;
+}
+
+.cxPbLeftPanelInput{
+	.cxPbLeftPanelInputMixin();
+	display: block;
+	margin-bottom: @margin-bottom;
+}
+
+.cxPbLeftPanelInput .lyteInputBox input{
+	.cxPbLeftPanelInputFldMixin();
+	background: @bg;
+	color: @color;
+}
+
+.cxPbLeftPanelInput lyte-input input::placeholder{
+	.cxPbUnusedFldFltrInputPlaceholderMixin();
+	color: @color;
+}
+
+.cxPbLeftPanelInput lyte-input .searchIcon{
+	.cxPbLeftPanelInputIconMixin();
+	background-color: @bg-color;
+}
+
+.cxPbLeftPanelInput .lyteInputBox .lyteField{
+	.cxPbLeftPanelInputFieldMixin();
+	border-color: @border-color;
+	box-shadow: @box-shadow;
+	background-color: @bg-color;
+}
+
+.cxPbLeftPanelInput .lyteInputBox .lyteField:hover{
+	.cxPbLeftPanelInputFieldHoverMixin();
+	border-color: @border-color;
+}
+
+.cxPbLeftPanelInput .lyteInputBox.lyteInputFocus .lyteField:hover,
+.cxPbLeftPanelInput .lyteInputBox.lyteInputFocus .lyteField{
+	.cxPbLeftPanelInputFieldFocusMixin();
+	border-color: @border-color;
+}
+
+.cxPbLeftPanelInput .inputCloseIcon{
+	.cxPbLeftPanelInputCloseIconMixin();
+	background-color: @bg-color;
+}
+
+.cxPbLeftPanelInput .inputCloseIcon::before{
+	.cxPbLeftPanelInputCloseIconMixin();
+	background-color: @icon-color;
+}
+
+.cxPbLeftPanelInput .inputCloseIcon:hover{
+	.cxPbLeftPanelInputCloseIconHoverMixin();
+	background-color: @bg-color;
+}
+
+.cxPbLeftPanelInput .inputCloseIcon:hover::before{
+	.cxPbLeftPanelInputCloseIconHoverMixin();
+	background-color: @icon-color;
+}
+
+.cxPbUnusedFldMenuCont,
+.cxPbUnusedFieldSecHeader{
+	.cxPbUnusedFieldSecHeaderMixin();
+	padding: @padding;
+}
+
+.cxPbUnusedFldMenuCont{
+	overflow: auto;
+	position: relative;
+}
+
+.cxPbUnusedFieldSection{
+	.cxPbUnusedFieldSectionMixin();
+	height: @h;
+	padding-top: @padding-top;
+	padding-bottom: @padding-bottom;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+/***********************************************************
+    Crux page-builder-section CSS
+    Middle module builder part 
+***********************************************************/

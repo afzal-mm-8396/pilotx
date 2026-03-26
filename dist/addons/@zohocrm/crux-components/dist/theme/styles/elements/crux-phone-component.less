@@ -1,0 +1,99 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-phone-component.variables.less";
+
+@import "../../themes/default/less-variables/crux-phone-component-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-phone-component";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../themes/default/css-variables/crux-phone-component-variables.less";
+}
+
+.cxPhoneViewValue {
+	.cxPhoneViewValueMixin();
+	display: @display;
+    vertical-align: @vertical-align;
+    max-width: @max-width; 
+    // word-break: @word-break;
+    // white-space: @white-space;
+}
+.cxCalliconOuter {
+	.cxCalliconOuterMixin();
+	background: @bg;
+	margin: @margin;
+	border-radius: @border-radius;
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+}
+.cxPhoneViewCallLabel {
+	.cxPhoneViewCallLabelMixin();
+	display: none;
+	padding: @padding;
+	color: @color;
+	vertical-align: middle;
+}
+.cxCalliconOuter:hover .cxPhoneViewCallLabel {
+	display: inline-block;
+}
+.cxCallIcon {
+	.cxCallIconMixin();
+	background: @bg;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	margin: @margin;
+	display: inline-block;
+	vertical-align: middle;
+}
+.cxPhoneViewZPBEnabled {
+	.cxPhoneViewZPBEnabledMixin();
+	position: relative;
+	@{property-padding-right}: @padding-right;
+	min-width: 100%;
+    word-break: break-word;
+    white-space: normal;
+	box-sizing: border-box;
+}
+.cxPhoneViewZPBEnabledIconWrap {
+	position: absolute;
+	// width: 100%;
+	@{property-margin-left}: 5px; /* For normal Phone Icon Field */
+}
+/* crux-phone-component - position:relative added to contain absolute positioned mask, unmask icon - crux_table_masking*/
+crux-phone-component, 
+.cxAdvanceLookupFilterField .cxPhoneViewZPBEnabledIconWrap {
+    position: relative;
+}
+
+/*For Telephony enabled call Icon */
+crux-table-component .cxPhoneViewZPBEnabled {
+	.cxPhoneViewZPBEnabledInTableMixin();
+	@{property-padding-right}: @padding-right;
+	white-space: nowrap;
+}
+.phoneRtlA a {
+	direction: ltr;
+}
+crux-phone-component .cxDropdownDisabled.cxFakeDummyEventContainer .cxFakeDropButton,
+crux-phone-component .cxFakeDummyEventContainer:focus .cxFakeDropButton,
+crux-phone-component .cxErrorBox .cxFakeDropButton { 
+    border: 0 !important;
+	box-shadow: none;
+}
+.cxPhoneViewZPBEnabledIconWrap .zpbCallIconOuter {
+	white-space: nowrap;
+    max-width: 100%;
+    min-width: auto;
+	@{property-margin-left}: 0 !important;
+}
+
+.cxLookupViewValue .phoneRtl.cxPhoneViewZPBEnabled{
+	min-width: 125px;
+}

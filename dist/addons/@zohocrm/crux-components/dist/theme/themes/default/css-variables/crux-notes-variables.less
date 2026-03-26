@@ -1,0 +1,94 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+.getRootVariables(){
+    --@{cssPrefix}-notes-heading-border-color: #d9e6ef;
+    --@{cssPrefix}-notes-footer-active-icon-border-color: #1C9EFC;
+    --@{cssPrefix}-notes-footer-active-icon-box-shadow-color: #1C9DFB80;
+    --@{cssPrefix}-notes-footer-border-color: #D2D9E0;
+    --@{cssPrefix}-notes-footer-bg-color: #F4F7FF;
+    --@{cssPrefix}-notes-footer-add-title-border-color: #d4d8dd;
+    --@{cssPrefix}-notes-other-actions-color: #a2a2a2;
+    --@{cssPrefix}-notes-added-content-color: #22242B;
+    --@{cssPrefix}-notes-list-dot-bg-color: #C3CDDB;
+    --@{cssPrefix}-notes-edit-delete-wrap-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-notes-edit-delete-icon-wrap-border-color: #eee;
+    --@{cssPrefix}-notes-edit-icon-hover-border-color: #4a8de9;
+    --@{cssPrefix}-notes-delete-icon-hover-border-color: #f56d6d;
+    --@{cssPrefix}-notes-disabled-icon-wrap-hover-border-color: #eee;
+    --@{cssPrefix}-notes-edit-icon-hover-bg-color: #4a8de9;
+    --@{cssPrefix}-notes-delete-icon-hover-bg-color: #f56d6d;
+    --@{cssPrefix}-notes-attach-element-border-color: #f0f0f0;
+    --@{cssPrefix}-notes-attach-actions-bg-color: #d3d3d3;
+    --@{cssPrefix}-notes-new-ui-text-area-border-color: #1C9EFC;
+    --@{cssPrefix}-notes-new-ui-text-area-box-shadow-color: #1C9DFB80;
+    --@{cssPrefix}-notes-show-more-hover-bg-color: #f1f1f1;
+    --@{cssPrefix}-notes-owner-img-bg-color: #f8f8f8;
+    --@{cssPrefix}-notes-owner-img-text-color: var(--crux-heading-color);
+    --@{cssPrefix}-notes-owner-img-border-color: #d8d8d8;
+    --@{cssPrefix}-notes-owner-lookup-label-color: #666;
+    --@{cssPrefix}-notes-owner-lookup-value-color: #333;
+    --@{cssPrefix}-notes-more-files-bg-color: #F8FAFF;
+    --@{cssPrefix}-notes-more-files-border-color: #D7E2ED;
+    --@{cssPrefix}-notes-attachment-remove-icon-bg-color: #3e5f78;
+    --@{cssPrefix}-notes-count-bg-color: #e0e0e0;
+    --@{cssPrefix}-notes-storage-limit-shadow-border-color: #ffabab;
+    --@{cssPrefix}-notes-storage-limit-warn-msg-color: #f35b50;
+    --@{cssPrefix}-notes-common-link-color: #338cf0;
+    --@{cssPrefix}-notes-common-link-hover-color: #1d7fed;
+    --@{cssPrefix}-notes-grey-text-color: #787878;
+    --@{cssPrefix}-notes-sort-module-group-border-color: #EDF0F4;
+    --@{cssPrefix}-notes-footer-icon-wrap-hover-border-color:  #c1c8d2;
+    --@{cssPrefix}-notes-editor-popup-box-shadow-color: rgba(0, 0, 0, 0.30);
+    --@{cssPrefix}-notes-editor-popup-border-color: #CACACA;
+    --@{cssPrefix}-notes-editor-more-wrapper-icons-bg-color: #F8FAFF;
+    --@{cssPrefix}-notes-editor-panel-popover-hover-selected-bg-color: #f7fbff;
+    --@{cssPrefix}-notes-editor-panel-popover-hover-selected-border-color: #B2C3DA;
+    --@{cssPrefix}-notes-editor-header-color: #313949;
+    --@{cssPrefix}-notes-editor-white-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-notes-editor-grey-color: #616E88;
+    --@{cssPrefix}-notes-editor-prev-next-bg-color: #f8f8f8;
+    --@{cssPrefix}-notes-editor-bubble-cont-border-color: #d7e2ed;
+    --@{cssPrefix}-notes-bubble-content-icons-bg-color: var(--crux-base-text-color);
+    --@{cssPrefix}-notes-no-records-color: var(--crux-no-result-color);
+    --@{cssPrefix}-notes-more-file-dz-error-color: #FF5D5A;
+    --@{cssPrefix}-note-new-ui-wrap-border-color: var(--crux-element-border-color);
+    --@{cssPrefix}-note-new-ui-wrap-hover-border-color: var(--crux-element-border-color);
+    --@{cssPrefix}-note-new-ui-wrap-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-note-footer-icon-active-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-notes-bubble-content-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-note-new-ui-error-textarea-border-color: #FF5D5A;
+    --@{cssPrefix}-note-footer-link-sep-before-border-color: #B2C2DA;
+    --@{cssPrefix}-notes-loader-circle-bg-color: #f5f5f5;
+    --@{cssPrefix}-notes-loader-line-bg-color: #f5f5f5;
+    --@{cssPrefix}-notes-loader-runner-bg-color: linear-gradient(to right, #f5f5f5, #eee, #f5f5f5);
+    --@{cssPrefix}-notes-circle-loader-runner-bg-color: linear-gradient(to bottom right, #eee, #f5f5f5, #eee, #f5f5f5, #eee);
+    --@{cssPrefix}-notes-editor-panel-popover-icon-hover-bg-color: #f7fbff;
+    --@{cssPrefix}-notes-editor-panel-icon-selected-border-color: #B2C3DA;
+    --@{cssPrefix}-notes-editor-panel-icon-selected-bg-color: #f7fbff;
+    --@{cssPrefix}-notes-added-content-bg-color:  var(--crux-element-bg-color);
+    --@{cssPrefix}-notes-attach-zone-drag-hover-border-color: rgba(0,0,0,.15);
+    --@{cssPrefix}-notes-attach-zone-drag-hover-bg-color: rgba(0,0,0,.04);
+    --@{cssPrefix}-notes-attach-zone-preview-bg-color: rgba(255,255,255,.8);
+    --@{cssPrefix}-notes-attach-zone-preview-border-color: #acacac;
+    --@{cssPrefix}-notes-attach-zone-preview-shadow-color: rgba(0,0,0,.16);
+    --@{cssPrefix}-notes-attach-zone-preview-details-bg-color: #ebebeb;
+    --@{cssPrefix}-notes-attach-zone-preview-details-size-color: #999;
+    --@{cssPrefix}-notes-attach-zone-preview-progress-bg-color: #d7d7d7;
+    --@{cssPrefix}-notes-attach-zone-preview-error-msg-color: #800;
+    --@{cssPrefix}-notes-attach-zone-preview-error-bg-color: rgba(245,245,245,.8);
+    --@{cssPrefix}-notes-attach-zone-default-msg-border-color: #c4c4c4;
+    --@{cssPrefix}-notes-attach-zone-dz-error-bg-color: #ee1e2d;
+    --@{cssPrefix}-notes-attach-zone-dz-progress-bg-color: #8cc657;
+    --@{cssPrefix}-notes-attach-zone-dz-remove-color: #658ac8;
+    --@{cssPrefix}-notes-grey-hover-color: #313949;
+}

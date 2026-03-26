@@ -1,0 +1,146 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+.cxAudioRecContainer .lyteRecordingControlButtons {
+  width: 100%;
+}
+.cxAudioRecActionDiv {
+  justify-content: space-between;
+  padding: 10px 15px;
+  align-items: center;
+  border-top: 1px solid #D6D6E3;
+  background-color: #F4F7FF;
+}
+.cxAudioRecContainer .lyteAudioRecorderRecording .lyteRecordingControlButtons,
+.cxAudioRecContainer .lyteVoiceNoteControlsWrapper {
+  display: block;
+  padding: 0px;
+  margin: 0px;
+}
+.cxAudioRecContainer .lyteVoiceNotePrefetchSuccess,
+.cxAudioRecContainer .audioRecorderWrap,
+.cxAudioRecContainer lyte-voicenote {
+  padding: 0px;
+  width: 100%;
+  border: 1px solid #D6D6E3;
+  border-radius: 5px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.cxAudioRecContainer .lyteVoiceNoteProgress,
+.cxAudioRecContainer .lyteRecordingCanvas,
+.cxAudioRecContainer .lyteVoiceNoteCanvas {
+  width: 100%;
+  border: none;
+  height: 60px;
+  margin: 0px;
+  background-color: #fff;
+}
+.cxAudioRecContainer .lyteRecordingPreview {
+  width: 100%;
+  height: 60px;
+}
+.cxAudioRecDummyDiv .audioRecorderWrap::before {
+  display: block;
+  content: '';
+  height: 60px;
+  width: 100%;
+}
+.cxAudioRecContainer .lyteVoiceNoteHandler {
+  height: calc(100% - 18px);
+}
+.cxAudioRecBtn {
+  margin: auto;
+}
+.cxAudioRecContainer .lyteRecordingCanvas,
+.cxAudioRecContainer .lyteVoiceNoteCanvas,
+.cxAudioRecDummyDiv .audioRecorderWrap::before {
+  background-image: repeating-linear-gradient(to bottom, transparent 0px 8px, #E7E8E9 8px 8.5px), repeating-linear-gradient(to right, transparent 0px 8px, #E7E8E9 8px 8.5px);
+}
+.cxAudioRecHideBtn {
+  visibility: hidden;
+  width: 0px;
+  margin: 0px;
+}
+.cxAudioRecDelIconWrap {
+  margin-left: 5px;
+}
+.cxAudioRecPausePlayIconWrap {
+  top: 1px;
+}
+/*# sourceMappingURL=crux-audio-recorder.css.map */

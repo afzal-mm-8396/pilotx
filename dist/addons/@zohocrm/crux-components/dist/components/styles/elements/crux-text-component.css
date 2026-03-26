@@ -1,0 +1,42 @@
+.cxElementsWrap {
+	display: inline-flex;
+}
+.cxElementsWrap.horizontal .cxElementLabel {
+	margin-right: 30px;
+}
+.cxElementsWrap.horizontal.cxFlatAppear {
+    align-items: flex-end;
+}
+.cxElementsWrap.horizontal.cxBoxAppear {
+    align-items: center;
+}
+.cxElementsWrap.vertical {
+	flex-direction: column;
+}
+.cxElementsWrap.vertical .cxElementLabel {
+	margin-bottom: 8px;
+	margin-right: 0;
+}
+.cxElementsWrap.vertical.cxFlatAppear .cxElementLabel {
+    margin-bottom: 0;
+}
+/* crux-text-component .cxBoxRightIcon {
+    position: absolute;
+    border-radius: 0 6px 6px 0;
+    right: 1px;
+    top: 1px;
+    height: calc( 100% - 2px );
+    width: 32px;
+} */
+
+crux-text-component .cxElementDisabled .cxBoxLeftContent{
+	cursor: not-allowed;
+}
+
+crux-text-component .cxElementDisabled lyte-autocomplete{
+	pointer-events: none;
+}
+
+crux-text-component lyte-autocomplete .cxErrorBox .lyteField{
+	border: none !important;
+}

@@ -1,0 +1,113 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.lyteMIDropdown .cruxMentionsLi {
+  align-items: flex-start;
+}
+.mentionsLiImage {
+  width: 32px;
+  height: 32px;
+  margin-top: 3px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cxMentionsSecondaryDetail,
+.cxMentionsPrimaryDetail {
+  white-space: normal;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.groupsLi,
+.rolesLi {
+  border: 1px solid var(--lyte-crux-mentions-body-roles-li-border-color);
+  background: var(--lyte-crux-mentions-body-roles-li-bg-color);
+}
+.mentionsRoleIcon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background: url(/crm/CRMClient/images/ico_crmrole.svg);
+  opacity: 0.3;
+}
+.mentionsGroupIcon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 17px;
+  background: url(/crm/CRMClient/images/ico_crmgroup.svg);
+  opacity: 0.3;
+}
+.mentionsNoPhoto {
+  width: 32px;
+  height: 32px;
+  background: url(/crm/CRMClient/images/nophoto.png);
+  display: inline-block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.mentionsUserImage {
+  height: 32px;
+  width: 32px;
+}
+.mentionsLiName {
+  color: var(--lyte-crux-mentions-body-li-name-color);
+  font-size: 15px;
+}
+.mentionsLiLabel {
+  color: var(--lyte-crux-mentions-body-li-label-color);
+  font-style: italic;
+  font-size: 13px;
+}
+.mentionBody {
+  max-height: 37vh;
+}
+.cruxMentionItem {
+  width: calc(100% - 42px);
+}
+.cxMentionsWrapper {
+  max-width: 550px;
+}
+.cruxMentionsLi {
+  align-items: start;
+}
+.cxMentionsNoImage,
+.cxMentionsUserImage {
+  border-radius: 50%;
+}
+/*# sourceMappingURL=crux-mentions-body.css.map */

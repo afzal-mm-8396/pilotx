@@ -1,0 +1,149 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-picklist-component.variables.less";
+
+@import "../../themes/default/less-variables/crux-picklist-component-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-picklist-component";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../themes/default/css-variables/crux-picklist-component-variables.less";
+}
+
+.cxNoneSelected .lyteDropdownLabel {
+	.cxPicklistNoneSelectedDropdownLabelMixin();
+	color: @color;
+}
+.colorEnabledPicklist:not(.colorEnabledPKNone) .activitesColor,
+crux-picklist-component .colorEnabledPicklist:not(.colorEnabledPKNone) .activitesColor {
+	.cxPicklistColorEnabledActivitiesColorMixin();
+	top: @top;
+}
+.colorEnabledPicklist:not(.colorEnabledPKNone) {
+	position: relative;
+}
+crux-picklist-component lyte-dropdown{
+    display: block;
+}
+/*Whn no placeholder or empty placeholder comes, this is needed */
+crux-picklist-component .cxPicklistNoPlaceholder lyte-drop-button { 
+	min-height: 35px;
+}
+/*
+    lyte-dropdown:not(.cxDropdownIconNodePresent)
+    This selector will get added if $0.cxProp('isDropdownIconNode', true) is passed
+    This selector is specific for canvas feature. The below padding will not get added in crux-picklist for Canvas.
+*/
+.colorEnabledPicklist:not(.colorEnabledPKNone) lyte-dropdown:not(.cxDropdownIconNodePresent) lyte-drop-button, 
+crm-create-fields .colorEnabledPicklist:not(.colorEnabledPKNone) lyte-dropdown:not(.cxDropdownIconNodePresent) lyte-drop-button {
+	.cxPicklistColorEnabledDropButtonMixin();
+	padding: @padding;
+	position: relative;
+}
+crux-picklist-component .colorEnabledPicklist:not(.colorEnabledPKNone) lyte-dropdown:not(.cxDropdownIconNodePresent) lyte-drop-button {
+	.cxPicklistColorEnabledDropButtonMixin();
+	padding: @padding;
+}
+.colorEnabledPKDropBox lyte-drop-item:not(.colorEnabledSelect2None) {
+	.cxPicklistColorEnabledDropBoxDropItemMixin();
+	padding: @padding;
+}
+
+.colorEnabledPicklist.colorEnabledPKNone .activitesColor,
+.colorEnabledPKDropBox .colorEnabledSelect2None .activitesColor,
+crux-picklist-component .colorEnabledPKNone .activitesColor {
+	display: none !important;
+}
+.cxDropbox lyte-drop-item.cxDropboxNoneItem[selected="true"]::before {
+	content: none;
+}
+crux-picklist-component lyte-text {   
+    vertical-align: top;
+}
+.activitesColor,
+crux-picklist-component .activitesColor,
+.colorEnabledPKDropBox .activitesColor {
+	.cxPicklistColorIndicatorMixin();
+    content: '';
+    display: block;
+    position: absolute;
+    @{property-left}: @left;
+    top: @top;
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    z-index: @z-index;
+    padding: @padding;
+}
+
+.colorEnabledPKDropBox .activitesColor {
+	.cxPicklistColorEnabledDropBoxActivitesColorMixin();
+	top: @top;
+	@{property-left}: @left;
+}
+.activitesColor::after,
+crux-picklist-component .activitesColor::after,
+.colorEnabledPKDropBox .activitesColor::after {
+	.cxPicklistColorIndicatorAfterMixin();
+    content: '';
+    position: absolute;
+    border: @border;
+    top: @top;
+    @{property-right}: @right;
+    bottom: @bottom;
+    @{property-left}: @left;
+    border-radius: @border-radius;
+}
+
+crux-picklist-component .colorAppliedPicklist {
+    .cxPicklistColorAppliedMixin();
+    max-width: @max-w;
+    box-sizing: border-box;
+}
+.cxElementDisabled lyte-dropdown[lt-prop-type="multisearch"] .lyteMultipleSelect .lyteField {
+	border: none;
+}
+.cxNoUserSelected .lyteDummyEventContainer:focus lyte-drop-button {
+	box-shadow: none !important;
+}
+.colorAppliedPicklist {
+    .colorAppliedPicklistMixin();
+	padding: @padding;
+	border-radius: @border-radius;
+	font-size: @font-size;
+	border: @border !important;
+	line-height: @line-height !important;
+	display: @display;
+	vertical-align: @vertical-align;
+	word-break: @word-break !important;
+	position: @position;
+	color-adjust: exact;
+	-webkit-print-color-adjust: exact;
+    cursor: pointer;
+}
+
+.colorAppliedPicklist:not(.colorAppliedPKNone)::before {
+    .colorAppliedPicklistBeforeMixin();
+	content: "";
+	position: @position;
+	border: @border;
+	border-radius: @border-radius;
+	top: 0;
+	@{property-right}: 0;
+	bottom: 0;
+	@{property-left}: 0;
+	pointer-events: none;
+    display: inline-flex;
+}
+.colorAppliedPKNone {
+    .colorAppliedPKNoneMixin();
+	@{property-padding-left}: @padding-left;
+	border: @border;
+	// font-size: @font-size;
+	color: @color !important;
+}

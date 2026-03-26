@@ -1,0 +1,76 @@
+.cxSelectionXaxisRulerMixin() {
+	@w: 100%;
+	@border-bottom: 1px dashed @cxICRSelectionXAxisRulerBorder;
+	@z-index: 20;
+	@transform: translateY(-50%);
+	@top: 0.5px;
+}
+.cxSelectionYaxisRulerMixin() {
+	@h: 100%;
+	@border-right: 1px dashed @cxICRSelectionYAxisRulerBorder;
+	@z-index: 20;
+	@transform: translateX(-50%);
+	@left: 0.5px;
+}
+.cxConnectionContainerMixin() {
+	@w: 100%;
+	@h: 100%;
+	@left: 0;
+	@top: 0;
+	@z-index: 1;
+}
+.cxMenuSelectedMixin() {
+	@background-color: @cxICRSelectedMenuBg;
+}
+.cxZoomMixin() {
+	@bg: @cxICRZoomBg;
+	@border: 1px solid @cxICRZoomBorder;
+	@border-radius: 16px;
+	@font-size: 22px;
+	@margin-right:20px;
+}
+.cxZoomPerMixin() {
+	@w: 40px;
+	@padding: 5px 8px;
+	@border-left: 1px solid @cxICRZoomPerBorder;
+	@border-right: 1px solid @cxICRZoomPerBorder;
+	@font-size: 12px;
+}
+.cxZoomOutMixin() {
+	@w: 30px;
+}
+.cxZoomOutHoverMixin() {
+	@background-color: @cxICRZoomOutBg;
+}
+.cxIcrImageMixin() {
+	@w: 100%;
+	@h: 100%;
+	@max-w: 100%;
+	@max-height: 100%;
+}
+.cxImageOuterWrapperMixin() {
+	@bg: @cxICRImgWrapperBg;
+}
+.cxImageWrapperMixin() {
+	@padding: 50px;
+	@display: flex;
+	@justify-content: center;
+	// max-height: 420px;
+	// max-width: 270px;
+}
+.cxResetZoomMixin() {
+	@margin-right: 10px;
+	@font-size: 14px;
+	@left: -100%;
+	@top: 5px;
+}
+.cxImageOptionsWrapperMixin() {
+	@padding-bottom: 10px;
+	@justify-content: flex-end;
+	@display: flex;
+}
+.cxConnectionContainerPathMixin() {
+	@stroke: @cxICRConnectedPathStroke;
+	@stroke-width: 2;
+	@fill: none;
+}

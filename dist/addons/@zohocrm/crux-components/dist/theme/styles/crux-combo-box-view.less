@@ -1,0 +1,135 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-combo-box-view.variables.less";
+
+@import "../themes/default/less-variables/crux-combo-box-view-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-combo-box-view";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-combo-box-view-variables.less";
+}
+
+.cxComboBoxViewButtonList {
+	.cxComboBoxViewButtonListMixin();
+	background: @bg;
+	border: @border;
+	padding: @padding;
+	border-radius: @border-radius;
+	font-size: @font-size;
+	display: inline-flex;
+	align-items: center;
+	// color: @color;
+	text-transform: capitalize;
+	cursor:default;
+}
+.cxComboBoxViewButtonUserCount {
+	.cxComboBoxViewButtonUserCountMixin();
+	font-family: @font-family;
+	font-weight: @font-weight;
+	font-size: @font-size;
+	// color: @color;
+	background: @bg;
+	border: @border;
+	display: inline-block;
+	padding: @padding;
+	// cursor: pointer;
+	cursor:default;
+	border-radius: @border-radius;
+	@{property-margin-left}: @margin-left;
+}
+// .cxComboBoxViewPopover .lytePopover {
+// 	.cxComboBoxViewPopoverMixin();
+// 	// box-shadow: @box-shadow;
+// 	// border-radius: @border-radius;
+// }
+.cxComboBoxViewContent {
+	.cxComboBoxViewContentMixin();
+	margin: @margin;
+	padding: @padding;
+	max-width: @max-w;
+	min-width: @min-w;
+	max-height: @max-height;
+	overflow: auto;
+}
+.cxComboBoxViewHeader {
+	.cxComboBoxViewHeaderMixin();
+	color: @color;
+	font-family: @font-family;
+	font-weight: @font-weight;
+	padding-bottom: @padding-bottom;
+	font-size: @font-size;
+}
+.cxComboBoxViewHeaderText {
+	vertical-align: bottom;
+}
+.cxComboBoxViewUserNameLabel {
+	.cxComboBoxViewUserNameLabelMixin();
+	display: inline-block;
+	vertical-align: middle;
+	// @{property-margin-left}: @margin-left;
+	// margin-top: @margin-top;
+	// color: @color;
+	font-size: @font-size;
+	// max-width: @max-w;
+	overflow-wrap: break-word;
+	word-break: break-word;
+}
+.cxComboBoxViewUsersUlWrapLi {
+	.cxComboBoxViewUsersUlWrapLiMixin();
+	padding-bottom: @padding-bottom;
+}
+.cxComboBoxViewContent ul {
+	margin:0;
+	padding: 0;
+}
+.cxComboBoxViewUsersUlWrapLi:last-child {
+	.cxComboBoxViewUsersUlWrapLiLastChildMixin();
+	padding-bottom: @padding-bottom;
+}
+.cxComboBoxViewUserLi {
+	.cxComboBoxViewUserLiMixin();
+	padding: @padding;
+	display: flex;
+}
+.cxComboBoxViewPopover .cxComboBoxViewUserLi:last-of-type {
+	padding-bottom:0;
+}
+.cxComboBoxViewUserImage {
+	.cxComboBoxViewUserImageMixin();
+	display: inline-block;
+	border-radius: @border-radius;
+	width: @w;
+	height: @h;
+	flex-shrink: 0;
+	background-size: @bg-size;
+	vertical-align: middle;
+}
+.cxComboBoxViewUserLi .cxComboBoxViewUserImage {
+	@{property-margin-right}: 5px;
+}
+.cxComboBoxViewNoPhoto {
+	.cxComboBoxViewNoPhotoMixin();
+	background-image: @bg-img;
+	display: inline-block;
+	border-radius: @border-radius;
+	background-size: @bg-size;
+	vertical-align: middle
+}
+.cxComboBoxViewUserPhoto {
+	object-fit: cover;
+}
+
+.cxComboxViewBtnListCont{
+	.cxComboxViewBtnListContMixin();
+	display: flex;
+	flex-wrap: wrap;
+	gap: @gap;	
+	padding: @padding;
+	margin: @margin;
+}

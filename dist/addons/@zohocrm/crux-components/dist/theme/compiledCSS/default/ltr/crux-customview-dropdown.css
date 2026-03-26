@@ -1,0 +1,211 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cxCvDropBoxAccordion lyte-accordion-body,
+.cxCvDropBoxAccordion .lyteAccordionActive lyte-accordion-body {
+  padding: 0px;
+}
+.cxCvDropBox lyte-drop-header {
+  padding-bottom: 5px;
+}
+.cxCvDropBox {
+  width: 240px;
+  z-index: 290;
+}
+.cxCvDropBody .cxDotLoaderWrap {
+  min-height: 50px;
+  text-align: center;
+}
+.cxCvDropBox lyte-drop-body {
+  max-height: calc(90vh - 200px);
+}
+.cxCvDropBox lyte-accordion-header,
+.cxCvDropBox lyte-accordion-body {
+  width: auto;
+}
+.cxCvDropBox.lyteAnimate lyte-drop-body {
+  transition: height 0.1s;
+}
+.cxCvDropBoxAccordion lyte-accordion-item {
+  border-bottom: none;
+}
+.cxStar {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  right: 22px;
+  top: 8px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+  cursor: pointer;
+  background-image: url(../../images/crux-sprite-icons.svg);
+}
+.cxCvDropBoxAccordion lyte-drop-item:hover .cxStar,
+.cxCvDropBoxAccordion .cxFavorites lyte-drop-item .cxStar {
+  visibility: visible;
+  opacity: 1;
+}
+.cxStarEmpty {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -68px -199px;
+  height: 15px;
+  width: 14px;
+}
+.cxStarSelected {
+  background-position: -89px -199px;
+  height: 15px;
+  width: 14px;
+}
+.cxStarFavorited lyte-text::after {
+  content: '';
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -325px -177px;
+  height: 11px;
+  width: 6px;
+  display: inline-block;
+  right: 10px;
+  position: absolute;
+  top: 11px;
+  visibility: hidden;
+  cursor: move;
+}
+.cxCvDropdown lyte-text,
+.cxCvDropBody lyte-drop-item lyte-text {
+  vertical-align: top;
+}
+.cxCvAccordionArw {
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -1px -2px;
+  mask-position: -1px -2px;
+  background-color: #333;
+  height: 4px;
+  width: 8px;
+  margin-right: 5px;
+  display: inline-block;
+  transform: rotate(-90deg);
+  top: -3px;
+  position: relative;
+  left: -2px;
+  transition: all 0.15s ease-in;
+}
+.lyteAccordionActive .cxCvAccordionArw {
+  transform: rotate(0deg);
+}
+.cxCvDropBoxAccordion lyte-accordion-header {
+  padding-left: 12px;
+  padding-right: 25px;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  font-size: 1rem;
+  padding-top: 10px;
+}
+.cxCvDropBoxAccordion lyte-accordion-body lyte-drop-item {
+  padding-right: 35px;
+}
+.cxCvDropBoxAccordion lyte-drop-item.sortable-element-selected {
+  color: var(--baseColor);
+  background: var(--dropdownItemSelected);
+}
+.cxFavorites .sortable-element::after {
+  content: '';
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -325px -177px;
+  height: 11px;
+  width: 6px;
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  visibility: hidden;
+  cursor: move;
+  top: 11px;
+}
+.cxCvDropBody .sortable-element:hover::after {
+  visibility: visible;
+}
+.cxCvDropBoxAccordion .cxFavorites .cxStarFavorited::after,
+.cxCV_AccItem_cxFavorites .cxCvAccordionArw {
+  display: none;
+}
+.cxCV_AccItem_cxFavorites lyte-accordion-header {
+  padding-left: 25px;
+  padding-top: 5px;
+  cursor: default;
+}
+.cxCvDropBody .cxStarFavorited:hover::after,
+.cxFavorites lyte-drop-item[selected="true"].sortable-element:hover::after,
+.cxFavorites lyte-drop-item.sortable-element:hover lyte-text::after {
+  visibility: visible;
+  opacity: 1;
+}
+.cxCvDropBody .cxStarFavorited lyte-drop-item {
+  cursor: move;
+}
+.cxCvDropdown {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 196px;
+  font-family: 'LatoRegular', sans-serif;
+}
+.cxCvHorizontalLoading {
+  position: relative;
+}
+.cxCVPrefixYieldWrapper {
+  height: 15px;
+}
+/* No Results State */
+.cxCvDropBody .cxNoResultStyle {
+  padding: 8px 15px 8px 20px;
+  text-align: center;
+  font-size: 0.929rem;
+  color: var(--lyte-crux-cv-drop-down-no-result-color);
+  margin-bottom: 5px;
+}
+.cxFavorites lyte-drop-item.lyteSortablePlaceholder::before {
+  display: none;
+}
+.cxCvDisabledAccItem .cxCV_AccHeader {
+  color: var(--lyte-crux-cv-accordion-header-color);
+}
+.cxCvDisabledAccItem .cxCvAccordionArw {
+  background-color: var(--lyte-crux-cv-disabled-accordion-arrow-bg-color);
+}
+/*# sourceMappingURL=crux-customview-dropdown.css.map */

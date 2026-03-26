@@ -1,0 +1,77 @@
+Lyte.Component.register("crux-file-upload-list", {
+_template:"<template tag-name=\"crux-file-upload-list\"> <div class=\"cruxFileUploadSortableDiv\"> <template is=\"for\" items=\"{{cxPropPredefinedList}}\" item=\"item\" index=\"index\"> <div class=\"lyteFileUpdListFile cxFileUpdListFile {{cxPropListClass}} imagePreviewSelector {{item.cxListClass}}\" data-zcqa=\"fileUploadListRow_{{index}}\" tabindex=\"0\" role=\"listitem\" data-id=\"{{item.id}}\" data-lytecbox-title=\"{{item.name}}\" data-lytecbox-dlink=\"{{item[cxPropDownloadKey]}}\" data-lytecbox-href=\"{{item[cxPropPreviewUrlKey]}}\" onclick=\"{{action('imageClickHandling',event,item)}}\"> <template is=\"if\" value=\"{{item[cxPropSourceKey]}}\"><template case=\"true\"><img class=\"cxFileUploadImageThumb\" src=\"{{item[cxPropSourceKey]}}\"></template><template case=\"false\"><span class=\"cxFileUploadListFileTypeIconWrap cxFlexCenter\"> <span class=\"cxFileUploadListSprite cxFileUploadIcon_allfile cxFileUploadIcon_{{toLowerCase(item.fileType)}}\"></span> </span></template></template> <lyte-text class=\"cxFileUpdFileName\" lt-prop-value=\"{{item.name}}\"></lyte-text> <template is=\"if\" value=\"{{item[cxPropSizeSelector]}}\"><template case=\"true\"><span class=\"cxFileUpdLiNameSeparator\">-</span></template></template> <template is=\"if\" value=\"{{item[cxPropSizeSelector]}}\"><template case=\"true\"><span class=\"lyteFileUpdFileSize cxFileUpdLiFileSize\">( {{lyteUiFileSize(item[cxPropSizeSelector],cxPropFileUnit,cxPropDigits,cxPropSizeFormat)}} )</span></template></template> <template is=\"if\" value=\"{{item[cxPropDownloadKey]}}\"><template case=\"true\"><a target=\"_blank\" href=\"{{item[cxPropDownloadKey]}}\" data-zcqa=\"file_download_{{index}}\" class=\"cxFileUpdLiDownIconWrap cxFileUploadActionIconWrap cxDownload\" rel=\"noopener noreferrer\"> <span class=\"cxFileUpdLiDownIcon cxDownload\"></span> </a></template></template> <div class=\"cxFileUploadFileStatus cxFileUploadPredefinedFileStatus\"> <template is=\"if\" value=\"{{cxPropEditable}}\"><template case=\"true\"><span data-zcqa=\"openEditAndPreview_popup\" lt-prop-title=\"{{cruxGetI18n('crm.label.edit')}}\" class=\"editIconHandler cxFileUploadActionIconWrap cxFileUploadEditIconWrap {{if(cxPropUploadProgress,'cxDisableElement','')}}\"> <span class=\"editIconHandler cxFileUploadEditIcon\"></span> </span></template></template> <span data-value=\"{{item.id}}\" role=\"button\" data-zcqa=\"removeThisUploadedFile\" lt-prop-title=\"{{cruxGetI18n('crm.label.delete')}}\" class=\"deleteBtn cxFileUploadActionIconWrap cxFileUploadRemoveIconWrap\"> <span class=\"cxFileUploadRemoveIcon deleteBtn\"></span> </span> </div> </div> </template> <template is=\"for\" items=\"{{fileList}}\" item=\"item\" index=\"index\"> <div class=\"lyteFileUpdListFile cxFileUpdListFile imagePreviewSelector {{if(ifEquals(item.status,'error'),'cxFileStatusError','')}} {{concat('lyteFile',lyteUiCapitalizeName(item.status))}} {{cxPropListClass}} {{item.cxListClass}}\" data-zcqa=\"fileUploadListRow_{{getSum(index,cxPropPredefinedList.length)}}\" data-id=\"{{item.id}}\" data-lytecbox-title=\"{{item.name}}\" data-lytecbox-dlink=\"{{item[cxPropDownloadKey]}}\" data-lytecbox-href=\"{{item[cxPropPreviewUrlKey]}}\" onclick=\"{{action('imageClickHandling',event,item)}}\"> <template is=\"if\" value=\"{{item.src}}\"><template case=\"true\"><img class=\"cxFileUploadImageThumb\" src=\"{{item.src}}\"></template><template case=\"false\"><span class=\"cxFileUploadListFileTypeIconWrap cxFlexCenter\"> <span class=\"cxFileUploadListSprite cxFileUploadIcon_allfile cxFileUploadIcon_{{toLowerCase(item.fileType)}}\"></span> </span></template></template> <div lt-prop-title=\"{{item.name}}\" class=\"cxFlexCenter cxOH cxFileUpdFileNameWrap\"> <lyte-text class=\"cxFileUpdFileName\" lt-prop-show=\"false\" lt-prop-value=\"{{item.name}}\"></lyte-text> </div> <template is=\"if\" value=\"{{item[cxPropSizeSelector]}}\"><template case=\"true\"><span class=\"cxFileUpdLiNameSeparator\">-</span></template></template> <template is=\"if\" value=\"{{item[cxPropSizeSelector]}}\"><template case=\"true\"><span class=\"lyteFileUpdFileSize cxFileUpdLiFileSize\">( {{lyteUiFileSize(item[cxPropSizeSelector],cxPropFileUnit,cxPropDigits,cxPropSizeFormat)}} )</span></template></template> <template is=\"if\" value=\"{{cruxAnd(item[cxPropDownloadKey],ifEquals(item.status,'success'))}}\"><template case=\"true\"><a href=\"{{item[cxPropDownloadKey]}}\" data-zcqa=\"file_download_{{index}}\" class=\"cxFileUpdLiDownIconWrap cxFileUploadActionIconWrap cxDownload\" rel=\"noopener noreferrer\"> <span class=\"cxFileUpdLiDownIcon cxDownload\"></span> </a></template></template> <div class=\"cxFileUploadFileStatus\"> <template is=\"if\" value=\"{{cruxAnd(cxPropCustomMessage,item.cxMessage)}}\"><template case=\"true\"><div class=\"cxFileUploadListCustMessage cxFileUploadList_{{item.cxMessageType}}\"> <lyte-text lt-prop-value=\"{{item.cxMessage}}\"></lyte-text> </div></template></template> <template is=\"if\" value=\"{{expHandlers(item.status,'==',&quot;error&quot;)}}\"><template case=\"true\"> <template is=\"if\" value=\"{{expHandlers(cxPropCustomMessage,'!')}}\"><template case=\"true\"> <span class=\"lyteFileUpdFailMsg cxFileUploadFailMsg\"> <lyte-text lt-prop-value=\"{{cxPropFailureMessage}}\"></lyte-text> </span> </template></template><template is=\"if\" value=\"{{expHandlers(expHandlers(cxPropUploadMultiple,'!'),'&amp;&amp;',cxPropManualRetry)}}\"><template case=\"true\"> <span class=\"retryBtn cxFileUploadActionIconWrap cxFileUploadRetryIconWrap\"> <span class=\"cxFileUploadRetryIcon lyteFileUpdRetryMsg\"></span> </span> </template></template> </template></template> <template is=\"if\" value=\"{{cruxOr(ifEquals(item.status,'uploading'),ifEquals(item.cxStatus,'uploading'),cruxAnd(cxPropAutoUpload,negate(item.status)))}}\"><template case=\"true\"> <template is=\"if\" value=\"{{cruxAnd(negate(cxPropCustomMessage),ifEquals(item.percentage,100))}}\"><template case=\"true\"><lyte-text class=\"cxFileScanningTxt\" lt-prop-value=\"{{cruxGetI18n('crm.image.scanningforvirus')}}\"></lyte-text></template></template> <template is=\"if\" value=\"{{ifNotEquals(item.percentage,100)}}\"><template case=\"true\"><div><lyte-progressbar lt-prop=\"{&quot;type&quot;:&quot;circle&quot;,&quot;stroke&quot;:&quot;3&quot;,&quot;radius&quot;:&quot;8&quot; , &quot;showPercentage&quot; : false ,&quot;progressProperty&quot; : {&quot;value&quot;: &quot;{{if(item.percentage,item.percentage,0)}}&quot;}}\" lt-prop-stroke=\"5\" lt-prop-progress-fill-color=\"{{cxPropProgressStatusColours.list}}\"> </lyte-progressbar></div></template><template case=\"false\"><span class=\"cxFileUpdLiCircleLoader cxCircleLoader\"> <span class=\"cxCircleLoader1\"></span> <span class=\"cxCircleLoader2\"></span> </span></template></template> </template><template case=\"false\"> <template is=\"if\" value=\"{{if(expHandlers(expHandlers(cxPropEditable,'&amp;&amp;',expHandlers(cxPropUploadProgress,'!')),'&amp;&amp;',expHandlers(item.status,'===','success')),true,false)}}\"><template case=\"true\"><span data-zcqa=\"openEditAndPreview_popup\" lt-prop-title=\"{{cruxGetI18n('crm.label.edit')}}\" class=\"editIconHandler cxFileUploadActionIconWrap cxFileUploadEditIconWrap\"> <span class=\"editIconHandler cxFileUploadEditIcon\"></span> </span></template></template> <span data-value=\"{{item.id}}\" data-zcqa=\"removeThisUploadedFile\" lt-prop-title=\"{{cruxGetI18n('crm.label.delete')}}\" class=\"deleteBtn cxFileUploadActionIconWrap cxFileUploadRemoveIconWrap\"> <span class=\"cxFileUploadRemoveIcon deleteBtn\"></span> </span> <template is=\"if\" value=\"{{ifEquals(item.status,'error')}}\"><template case=\"true\"><div class=\"cxFileUploadWarningIcon\"></div></template><template case=\"false\"><div class=\"cxFileUploadSuccessIcon cxFileIconForSuccess_{{index}}\">{{hideSuccessElement(index)}}</div></template></template> </template></template> </div> </div> </template> </div> </template>",
+_dynamicNodes : [{"type":"attr","position":[1,1]},{"type":"for","position":[1,1],"dynamicNodes":[{"type":"attr","position":[1]},{"type":"attr","position":[1,1]},{"type":"if","position":[1,1],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[0]}]},"false":{"dynamicNodes":[{"type":"attr","position":[0,1]}]}},"default":{}},{"type":"attr","position":[1,3]},{"type":"componentDynamic","position":[1,3]},{"type":"attr","position":[1,5]},{"type":"if","position":[1,5],"cases":{"true":{"dynamicNodes":[]}},"default":{}},{"type":"attr","position":[1,7]},{"type":"if","position":[1,7],"cases":{"true":{"dynamicNodes":[{"type":"text","position":[0,1]}]}},"default":{}},{"type":"attr","position":[1,9]},{"type":"if","position":[1,9],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[0]}]}},"default":{}},{"type":"attr","position":[1,11,1]},{"type":"if","position":[1,11,1],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[0]}]}},"default":{}},{"type":"attr","position":[1,11,3]}]},{"type":"attr","position":[1,3]},{"type":"for","position":[1,3],"dynamicNodes":[{"type":"attr","position":[1]},{"type":"attr","position":[1,1]},{"type":"if","position":[1,1],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[0]}]},"false":{"dynamicNodes":[{"type":"attr","position":[0,1]}]}},"default":{}},{"type":"attr","position":[1,3]},{"type":"attr","position":[1,3,1]},{"type":"componentDynamic","position":[1,3,1]},{"type":"attr","position":[1,5]},{"type":"if","position":[1,5],"cases":{"true":{"dynamicNodes":[]}},"default":{}},{"type":"attr","position":[1,7]},{"type":"if","position":[1,7],"cases":{"true":{"dynamicNodes":[{"type":"text","position":[0,1]}]}},"default":{}},{"type":"attr","position":[1,9]},{"type":"if","position":[1,9],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[0]}]}},"default":{}},{"type":"attr","position":[1,11,1]},{"type":"if","position":[1,11,1],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[0]},{"type":"attr","position":[0,1]},{"type":"componentDynamic","position":[0,1]}]}},"default":{}},{"type":"attr","position":[1,11,3]},{"type":"if","position":[1,11,3],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[1]},{"type":"if","position":[1],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[1,1]},{"type":"componentDynamic","position":[1,1]}]}},"default":{}},{"type":"attr","position":[2]},{"type":"if","position":[2],"cases":{"true":{"dynamicNodes":[]}},"default":{}}]}},"default":{}},{"type":"attr","position":[1,11,5]},{"type":"if","position":[1,11,5],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[1]},{"type":"if","position":[1],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[0]},{"type":"componentDynamic","position":[0]}]}},"default":{}},{"type":"attr","position":[3]},{"type":"if","position":[3],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[0,0]},{"type":"componentDynamic","position":[0,0]}]},"false":{"dynamicNodes":[]}},"default":{}}]},"false":{"dynamicNodes":[{"type":"attr","position":[1]},{"type":"if","position":[1],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[0]}]}},"default":{}},{"type":"attr","position":[3]},{"type":"attr","position":[5]},{"type":"if","position":[5],"cases":{"true":{"dynamicNodes":[]},"false":{"dynamicNodes":[{"type":"attr","position":[0]},{"type":"text","position":[0,0]}]}},"default":{}}]}},"default":{}}]}],
+_observedAttributes :["cxPropPredefinedList","fileList","cxPropListClass","cxPropDownloadKey","cxPropSourceKey","cxPropPreviewUrlKey","cxPropUploadMultiple","cxPropFileUnit","cxPropDigits","cxPropId","cxPropSortable","cxPropEditable","cxPropSizeSelector","cxPropFailureMessage","cxPropShowFailureMessage","cxPropManualRetry","cxPropCustomMessage","cxPropUploadProgress","cxPropProgressStatusColours","cxPropSizeFormat","cxPropAutoUpload"],
+_observedAttributesType :["array","array","string","string","string","string","boolean","string","number","string","boolean","boolean","string","string","boolean","boolean","boolean","boolean","object","string","boolean"],
+
+	data : function(){
+		return {
+			cxPropPredefinedList	: Lyte.attr("array",{ "default" :[]}),//no i18n
+			fileList				: Lyte.attr('array' , {default : []}), //no i18n
+			cxPropListClass			: Lyte.attr( 'string', { "default" : '' } ),//no i18n
+			cxPropDownloadKey		: Lyte.attr( 'string', { "default" : '' } ),//no i18n
+			cxPropSourceKey			: Lyte.attr( 'string', { "default" : '' } ),//no i18n
+			cxPropPreviewUrlKey		: Lyte.attr( 'string', { "default" : '' } ),//no i18n
+			cxPropUploadMultiple	: Lyte.attr( 'boolean', { "default" : false } ),//no i18n
+			cxPropFileUnit			: Lyte.attr( 'string', { "default" : '' } ),//no i18n
+			cxPropDigits			: Lyte.attr( 'number', { "default" : 1 } ),//no i18n
+			cxPropId				: Lyte.attr( 'string', { "default" : '' } ),//no i18n
+			cxPropSortable			: Lyte.attr( 'boolean', { "default" : false } ),//no i18n
+			cxPropEditable			: Lyte.attr( 'boolean', { "default" : false } ),//no i18n
+			cxPropSizeSelector		: Lyte.attr( 'string', { "default" : 'size' } ),//no i18n
+			cxPropFailureMessage	: Lyte.attr( 'string', { "default" : _cruxUtils.getI18n("crm.fileupload.attach.fail") } ), //no i18n
+			cxPropShowFailureMessage: Lyte.attr( 'boolean', { "default" : true } ),//no i18n
+			cxPropManualRetry		: Lyte.attr( 'boolean', { "default" : true } ),//no i18n
+			cxPropCustomMessage		: Lyte.attr( 'boolean', { "default" : false } ),//no i18n
+			cxPropUploadProgress	: Lyte.attr( 'boolean', { "default" : false } ),//no i18n
+			cxPropProgressStatusColours : Lyte.attr('object' , {'default' : {list : "#338CF0"}}), //no i18n
+			cxPropSizeFormat : Lyte.attr( 'string'),//no i18n
+			cxPropAutoUpload		: Lyte.attr( 'boolean', { "default" : true } ) //no i18n
+		}		
+	},
+	didConnect : function(){
+		if(this.data.cxPropSortable){
+			this.$node.closest("crux-file-upload").component.bindSorting();
+		}
+	},
+	actions : {
+		// Functions for event handling
+		// removeFileFromSelected : function(file){
+		// 	this.$node._callee.component.lyteFileUpload.removeUpload(file.id);
+		// },
+		// retryAction : function(file){
+		// 	this.$node._callee.component.lyteFileUpload.lyteFileUpload.upload(file.id);
+		// },
+		// editImage : function(file){
+		// 	this.executeMethod('onEditImage' , file );
+		// },
+		imageClickHandling : function(event , file){
+			event.stopPropagation();
+			var classList = event.target.classList;
+			if(classList.contains('editIconHandler')){ //no i18n
+				this.executeMethod('onEditImage' , event , file ); //no i18n
+			}else if(classList.contains('deleteBtn')){ //no i18n
+				this.$node._callee.component.lyteFileUpload.removeUpload(file.id);
+			}else if(classList.contains('cxFileUploadRetryIconWrap') || classList.contains('cxFileUploadRetryIcon')){ //no i18n
+				Lyte.objectUtils(file , "delete" , "status"); //no i18n
+				if(this.getMethods('onBeforeManualRetry')){
+					var retry = this.executeMethod('onBeforeManualRetry' , file);
+				}
+				if(retry !== false){
+					delete file.cxErrorList;
+					this.$node._callee.component.lyteFileUpload.upload(file.id);
+				}
+			}
+
+		}
+	}
+},{mixins : ["crux-image-preview-util"]});
+
+Lyte.Component.registerHelper('hideSuccessElement' , function(ind){
+	var sClass = ".cxFileIconForSuccess_" + ind;
+	setTimeout(function(){
+		if($L(sClass)[0]){
+			$L(sClass)[0].style.display = "none";
+		}
+	},4000);
+});

@@ -1,0 +1,71 @@
+crux-role-component lyte-dropdown[lt-prop-type="multisearch"] lyte-drop-button.lyteMultipleSelect {
+    padding-right: 30px;
+    box-shadow: none;
+}
+.cx_roleIconPos {
+    position: absolute;
+    top: 7px;
+    right: 3px;
+}
+.cx_roleLookupIcon {
+    background: url(../images/crux-sprite-icons.svg);
+    width: 22px;
+    height: 22px;
+    background-position: -260px -58px;
+    display: inline-block;
+    opacity: 0.5;
+    vertical-align: middle;
+}
+.cx_roleLookupIcon:hover {
+    opacity: 1;
+}
+
+
+.cxRoleModalWrapper lyte-modal-content {
+    max-height: calc(100vh - 200px);
+}
+.cxRoleModalWrapper lyte-modal-content > lyte-tree {
+	display: inline-block;
+	padding-inline-end: 50px;
+}
+.cxRoleModalWrapper lyte-tree-content {
+    display: flex;
+}
+.cxRoleCompLyteTree lyte-tree-icon:hover .treeValue lyte-text,
+.cxRoleCompLyteTree lyte-tree-icon.open .treeValue lyte-text,
+.cxRoleCompLyteTree .treeValue {
+	color: #666;
+	font-family: var(--crux-primary-font);
+	font-size: 1.5rem;
+	max-width: 300px;
+}
+.cxRoleCompLyteTree lyte-tree-icon:hover .treeValue:hover lyte-text,
+.cxRoleCompLyteTree lyte-tree-icon.open .treeValue:hover lyte-text,
+.cxRoleCompLyteTree .treeValue:hover lyte-text {
+    color: #338CF0;
+}
+.cxRoleModalWrapper .lyteTreeMaxedChild::before {
+	visibility: hidden;
+}
+.cxRoleCompLyteTree lyte-tree-icon .collapseBox,
+.cxRoleCompLyteTree lyte-tree-icon.open .collapseBox {
+    opacity: 0.5;
+    display: block;
+}
+.cxRoleModalWrapper lyte-tree-icon {
+    float: none;
+    margin: 0;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+.cxRoleModalWrapper .lyteTreeHasNoChild lyte-tree-icon {
+    display: none;
+}
+.cxRoleModalWrapper .lyteTreeHasNoChild lyte-tree-icon .arrow {
+    background: none;
+    border: 1px solid #333;
+    box-sizing: border-box;
+    border-radius: 3px;
+    cursor: default;
+}

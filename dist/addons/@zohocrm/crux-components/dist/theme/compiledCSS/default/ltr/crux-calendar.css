@@ -1,0 +1,187 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cxdN {
+  display: none;
+}
+crux-calendar .lyteCalendarPopup {
+  border-radius: 6px;
+  box-shadow: 0px 2px 8px 0px var(--lyte-crux-calendar-popup-box-shadow-color);
+  border: 1px solid var(--lyte-crux-calendar-popup-border-color);
+  overflow: hidden;
+}
+crux-calendar .lyteCalendarNavigator {
+  justify-content: space-between;
+  padding: 10px;
+}
+.cruxCalTableRowHeader {
+  margin: 8px 0px 10px;
+}
+crux-calendar .lyteCalendarNavigator.cxHeaderBack {
+  background: var(--lyte-crux-calendar-nav-head-bg-color);
+}
+crux-calendar .yearAndMonthNav {
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  padding: 4px 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: background 0.3s, border 0.3s;
+}
+.cruxCalNav {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transition: background 0.3s, border 0.3s;
+}
+.cxCalHeaderNavIcons {
+  display: flex;
+}
+.cxCalNavIconNext,
+.cxCalNavIconPrev {
+  width: 11px;
+  height: 7px;
+  display: inline-block;
+  transform: rotate(90deg);
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -13px -1px;
+}
+.cxCalNavIconNext {
+  transform: rotate(-90deg);
+}
+.cxCalNavIconCur {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -382px 140px;
+}
+.cruxCalNav:not(:last-of-type):not(:first-of-type) {
+  margin: 0px 4px;
+}
+crux-calendar .lyteCalTableContainer {
+  padding: 0px 5px 5px;
+  border-spacing: 0px;
+}
+crux-calendar .lyteCalTableCell {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  line-height: 26px;
+  font-size: 0.786rem;
+  transition: background 0.3s, border 0.3s;
+}
+crux-calendar[view-type="yearView"] .cruxYearTableCel:hover,
+crux-calendar .lyteCalTableCell:hover {
+  background: var(--lyte-crux-calendar-hover-bg-color);
+  border: 1px solid var(--lyte-crux-calendar-hover-border-color);
+}
+.cruxCalTableCellHeader {
+  display: table-cell;
+  width: 28px;
+  font-size: 0.857rem;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  text-align: center;
+}
+.cruxCalTableContainer,
+.cruxCalContainer {
+  border-spacing: 5px;
+}
+.cruxCalContainer {
+  transition: height 0.3s;
+}
+crux-calendar .lyteCalSel {
+  border: 1px solid var(--lyte-crux-calendar-sel-border-color);
+  background: var(--lyte-crux-calendar-sel-bg-color);
+  color: var(--lyte-crux-calendar-sel-color);
+}
+crux-calendar[view-type="yearView"] .cruxYearTableCel {
+  width: 36px;
+  height: 20px;
+  line-height: 20px;
+  display: table-cell;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  transition: background 0.3s, border 0.3s;
+}
+crux-calendar .yearAndMonthNav:hover {
+  border: 1px solid var(--lyte-crux-calendar-hover-border-color);
+  background: var(--lyte-crux-calendar-hover-bg-color);
+}
+crux-calendar[view-type="yearView"] .cruxCalTableRow {
+  border-spacing: 3px 8px;
+  font-size: 0.857rem;
+}
+crux-calendar[view-type="yearView"] .cxSingleYear {
+  padding: 10px 6px 2px;
+  border-bottom: 1px solid var(--lyte-crux-calendar-year-cont-border-color);
+}
+.cxYearHeader {
+  padding: 0px 11px;
+  font-size: 0.786rem;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+crux-calendar[view-type="yearView"] .lyteCalTableContainer {
+  padding: 0px 0px 5px;
+}
+crux-calendar .cruxCalNav:hover {
+  background-color: var(--lyte-crux-calendar-hover-bg-color);
+  border: 1px solid var(--lyte-crux-calendar-hover-border-color);
+}
+crux-calendar[view-type="yearView"] .cxCalSelMonth:hover,
+crux-calendar[view-type="yearView"] .cxCalSelMonth,
+crux-calendar .lyteCalToday:hover,
+crux-calendar .lyteCalToday {
+  border: 1px solid var(--lyte-crux-calendar-today-border-color);
+  background: var(--lyte-crux-calendar-today-bg-color);
+  color: var(--lyte-crux-calendar-today-color);
+}
+crux-calendar .cruxCalYearContainer {
+  visibility: hidden;
+}
+crux-calendar[view-type="yearView"] .cruxCalYearContainer {
+  visibility: visible;
+}
+/*# sourceMappingURL=crux-calendar.css.map */

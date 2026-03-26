@@ -1,0 +1,83 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-lookup-modal/crux-lookup-modal.variables.less";
+
+@import "../themes/default/less-variables/crux-lookup-modal-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-lookup-filter-modal";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-lookup-modal-variables.less";
+}
+
+.cxLookupSearch {
+	.cxLookupSearchMixin();
+	width: @w;
+}
+.cxLookupModalbuttonLayer {
+	display: flex;
+	align-items: center;
+    justify-content: space-between;
+}
+.cxLookupModalFooter {
+    padding:0 30px;
+}
+.cxMlAuto {
+    @{property-margin-left}: auto;
+}
+.cxTable lyte-th {
+	.cxTableLyteThMixin();
+	padding: @padding;
+	// border-bottom: @border-bottom;
+	// border-top: @border-top;
+	font-size: @font-size;
+	color: @color;
+}
+.cxTable lyte-td {
+	.cxTableLyteTdMixin();
+	// border-bottom: @border-bottom;
+	padding: @padding;
+	vertical-align: top;
+	font-weight: normal;
+	font-size: @font-size;
+}
+.cxSelectedSingle{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-grow: 1;
+    display: flex;
+    text-align: @value-textalign-left;
+}
+
+.cxLookupWidthOnePerc{
+    width : 1%;
+}
+.cxLookupModal lyte-modal-content {
+    display: flex;
+    flex-direction: column;
+}
+.cxLookupModal .cxTable lyte-table,
+.cxLookupModal .cxTable {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+.cxLookupSearch .searchIcon {
+    cursor: pointer;
+}
+.cxLookupModal .numberDivCurrencyView, .cxLookupPopTd .numberDivCurrencyView{
+    text-align: @value-textalign-left;
+}
+
+.cxLookupModalRelatedDDWrap {
+    .cxLookupModalRelatedDDWrapMixin();
+    width: @w;
+    display: flex;
+    align-items: center;
+}

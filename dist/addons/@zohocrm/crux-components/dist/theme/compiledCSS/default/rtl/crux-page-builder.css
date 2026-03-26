@@ -1,0 +1,2948 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/***********************************************************
+    lyte-page-builder - CSS Variables Starts
+***********************************************************/
+/*Page Builder Header */
+/*Page Builder Left Column */
+/*Page Builder Section */
+/***********************************************************
+    lyte-page-builder - CSS Variables Ends
+***********************************************************/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+crux-page-builder-element {
+  display: block;
+  margin: 0px 5px 10px;
+}
+crux-page-builder-element.draggable-element {
+  cursor: grab;
+}
+crux-page-builder .lytePbRejectDrag {
+  cursor: default;
+}
+.cxPbElementClass {
+  display: flex;
+  align-items: center;
+}
+.cxPbMandatoryClass {
+  position: relative;
+}
+.cxPbMandatoryClass::before {
+  content: '';
+  border-right: 3px solid #FF5D5A !important;
+  border-radius: 4px 0px 0px 4px;
+  width: 0px;
+  height: 100%;
+  position: absolute;
+  display: inline-block;
+  right: -1px;
+  top: 0px;
+}
+crux-page-builder-subform .cxPbTitleSection.cxPbMandatoryClass::before {
+  right: -16px;
+}
+.cxPbElementDraggable {
+  border: 1px solid #EDF0F4;
+  border-radius: 6px;
+  background: #fff;
+  position: relative;
+  padding: 11px 14px 11px 20px;
+}
+.cxPbEditableLabelElement.cxPbElementDraggable {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.cxPbEditableLabelElement.cxPbElementDraggable .cxPbElementIcon {
+  margin-left: 2px;
+}
+.cxPbAddressElementComp {
+  background: #fff;
+}
+.cxPbAddressElem .cxPbElementLabelInput input,
+.cxPbAddressElementComp .cxPbAddressElem .cxPbElementLabel {
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxPbAddressElementComp .cxPbAddressElem {
+  border-bottom: none;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.cxPbAddressElementFieldsWrap {
+  padding: 0px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #EDF0F4;
+  border-top: 0px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.cxPbAddressElementFieldsWrap .cxPbElementClass {
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.cxPbAddressElementFieldsWrap .cxPbElementClass:hover {
+  border: 1px solid #EDF0F4;
+}
+.cxPbAddressElementComp:hover .cxPbAddressElementFieldsWrap,
+.cxPbAddressElementComp:hover .cxPbAddressElem,
+.cxPbElementDraggable:hover {
+  border-color: #787D83;
+}
+.cxPbAddressElementComp.lytePbActiveEntityItem .cxPbAddressElem,
+.cxPbAddressElementComp.lytePbActiveEntityItem .cxPbAddressElementFieldsWrap,
+crux-page-builder-element:not(.cxPbAddressElementComp):not(.cxPbElementErrorDiv).lytePbActiveEntityItem .cxPbElementDraggable:hover,
+crux-page-builder-element:not(.cxPbAddressElementComp):not(.cxPbElementErrorDiv).lytePbActiveEntityItem .cxPbElementDraggable {
+  border-color: #338CF0;
+  box-shadow: 0 0 6px 0 #4796ED;
+}
+.cxPbAddressElementComp.lytePbActiveEntityItem .cxPbAddressElem,
+.cxPbAddressElementComp.lytePbActiveEntityItem .cxPbAddressElementFieldsWrap {
+  box-shadow: none;
+}
+.cxPbAddressElementComp.lytePbActiveEntityItem:not(.cxPbElementErrorDiv) {
+  box-shadow: 0 0 6px 0 #4796ED;
+}
+crux-page-builder-element.lytePbActiveEntityItem .cxPbElementDraggable .lyteField {
+  border-color: #C5C4D3 !important;
+}
+.cxPbAddressElementFieldsWrap .cxPbAddressElemDoubleColField {
+  width: calc(50% - 5px);
+  box-sizing: border-box;
+}
+.cxPbElemActionIconWrap {
+  position: absolute;
+  left: 10px;
+  width: 26px;
+  height: 26px;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.cxPbElemActionIconWrap.lyteMenuSelected,
+.cxPbElemActionIconWrap:not(.cxPbDisabled):focus-visible,
+.cxPbElemActionIconWrap:not(.cxPbDisabled):hover {
+  background-color: #E9EEF4;
+}
+.cxPbElemMoreIcon.cxMoreIcon {
+  display: block;
+  transform: rotate(90deg);
+  visibility: hidden;
+}
+.cxPbElemActionIconWrap.lyteMenuSelected .cxPbElemMoreIcon,
+.cxPbElemActionIconWrap:focus-visible .cxPbElemMoreIcon,
+.cxPbAddressElementComp:focus-visible .cxPbElemMoreIcon,
+.cxPbAddressElementComp:hover .cxPbElemMoreIcon,
+.cxPbElementClass:focus-visible .cxPbElemMoreIcon,
+.cxPbElementClass:hover .cxPbElemMoreIcon {
+  visibility: visible;
+}
+.cxPbElementErrorDiv .cxPbElemMoreIcon,
+.cxPbAddressElementComp.cxPbElementErrorDiv .cxPbElemMoreIcon {
+  visibility: hidden !important;
+}
+.cxPbErrorElement {
+  border-color: #FF5D5A;
+  background: #FFF7FA;
+}
+.cxPbErrorElement::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  width: 15px;
+  height: 14px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -125px -223px;
+  mask-position: -125px -223px;
+  background-color: #FF5D5A;
+}
+.cxPbElementClass.cxPbElementWithMinus {
+  padding-left: 32px;
+}
+.cxPbElementClass.cxPbElementWithMoreIcon {
+  padding-left: 40px;
+}
+.cxPbElementWithMinus .cxPbQcMinusIconWrapper {
+  flex-shrink: 0;
+  visibility: hidden;
+  cursor: pointer;
+  position: absolute;
+  left: 10px;
+}
+.cxPbQcMinusIconWrapper.cxIconHoverEffect::before {
+  background-color: #FFE8E9;
+}
+.cxPbAddressElementComp:focus-visible .cxPbElementWithMinus .cxPbQcMinusIconWrapper,
+.cxPbAddressElementComp:hover .cxPbElementWithMinus .cxPbQcMinusIconWrapper,
+.cxPbElementWithMinus:focus-visible .cxPbQcMinusIconWrapper,
+.cxPbElementWithMinus:hover .cxPbQcMinusIconWrapper {
+  visibility: visible;
+}
+crux-page-builder-element.selected-element .cxPbQcMinusIconWrapper {
+  cursor: move;
+  visibility: hidden !important;
+}
+crux-page-builder-element.selected-element {
+  z-index: 1200 !important;
+  cursor: grabbing;
+}
+.cxPbQcMinusIconWrapper .cxMinusRoundedIcon {
+  background-color: #FF5D5A;
+}
+.cxPbElementSortPlaceholder {
+  transform: translateY(-6px);
+}
+.cxPbElementSortPlaceholderDiv {
+  background-color: #E7F0FA;
+  border: 1px dashed #338CF0;
+  border-radius: 6px;
+  box-sizing: border-box;
+  width: calc(100% - 10px);
+  padding: 11px;
+  margin: 0px 5px 10px;
+}
+.cxPbElementSortPlaceholderDiv span {
+  visibility: hidden;
+}
+.cxPbElementClass.cxPbElemWithDropdown {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.cxPbElemDepDropdown {
+  margin-right: auto;
+  margin-left: 8px;
+  pointer-events: none;
+}
+.cxPbElemDepDropdown .cxBoxDropdown lyte-drop-button,
+.cxPbElemDepDropdown .cxFakeDropButton {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.cxPbElemDepDropdown .cxBoxDropdown .lyteDropdownLabel,
+.cxPbElemDepDropdown .cxFakeDropdownLabel {
+  font-size: 0.857rem;
+}
+.cxPbPreviewElements .cxElemCompPrefixDiv {
+  padding: 0px;
+  background: none;
+}
+.cxPbElemPrevDepDropdown lyte-drop-button,
+.cxPbElemPrevDepDropdown .cxFakeDropButton {
+  border-top: 0px !important;
+  border-bottom: 0px !important;
+  border-right: 0px !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+.cxPbPreviewDoubleElements .cxElementValue {
+  gap: 10px;
+}
+.cxPbPreviewModalContent .cxPbPreviewDoubleElemChild .cxElementValue {
+  width: 100%;
+}
+.cxPbAddressClearBtn {
+  margin-right: auto;
+  color: #616E88;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.cxPbAddressClearBtn.cxPbAddressBtnReadonly {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.cxPbPreviewAddressHeader {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  color: #616E88;
+  font-family: 'LatoSemiBold', sans-serif;
+  background-color: #fff;
+  padding: 0px 12px 7px;
+  right: 7px;
+  top: -8px;
+}
+.cxPbPreviewAddressHeader .cxInfoIcon {
+  margin-right: 5px;
+}
+.cxPbElemMessage {
+  padding: 4px 10px;
+  font-size: 0.857rem;
+  display: flex;
+}
+.cxPbElemMessage .cxInfoIcon {
+  margin-left: 6px;
+}
+.cxPbElementInfoDiv {
+  border-radius: 7px 7px 6px 6px;
+  background-color: #E1E6EC;
+}
+.cxPbElementErrorDiv {
+  border-radius: 7px 7px 6px 6px;
+  background-color: #FFECEC;
+}
+.cxPbElementErrorDiv .cxPbElemMessage {
+  color: #FF5D5A;
+}
+.cxPbAddressElementComp.cxPbElementErrorDiv .cxPbAddressElementFieldsWrap,
+.cxPbAddressElementComp.cxPbElementErrorDiv .cxPbAddressElem,
+.cxPbElementErrorDiv:not(.cxPbAddressElementComp) .cxPbElementClass {
+  border-color: #FF5D5A;
+}
+.cxPbPreviewModalContent .cxImgElemReadOnly,
+.cxPbPreviewModalContent .rtfReadOnly,
+.cxPbPreviewModalContent .rtfReadOnly:hover,
+.cxPbPreviewModalContent .cxElementReadOnly .cxBoxWithRightIcon,
+.cxPbPreviewModalContent .cxElementReadOnly lyte-drop-button,
+.cxPbPreviewModalContent .cxElementReadOnly .lyteInputFocus .lyteField,
+.cxPbPreviewModalContent .cxElementReadOnly .lyteField:hover {
+  border-color: var(--lyte-crux-input-disabled-border-color) !important;
+  box-shadow: none !important;
+}
+/***********************************************************
+    Crux LeftBar CSS
+
+***********************************************************/
+.cxPbWrapper .lytePbPageLayout .lyPbPlayArea {
+  grid-template-rows: 100%;
+}
+.cxPbWrapper .lytePbLeftBar {
+  width: 320px;
+  border-left: none !important;
+  background-color: #f8faff !important;
+  overflow: unset !important;
+  min-height: 50px;
+}
+.cxPbWrapper .cxPBLeftPanel {
+  width: 320px;
+  transition: width 0.3s;
+}
+.cxPbLeftPanel .lyteTabShow {
+  display: flex;
+  flex-wrap: wrap;
+  color: #fff;
+}
+.cxBuilderUnusedElement,
+.cxBuilderElement {
+  border: 1px solid transparent;
+  width: calc(50% - 3px);
+  box-sizing: border-box;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  background: #1D2D46;
+  color: #fff;
+  font-size: 0.857rem;
+  position: relative;
+  padding: 8px;
+  overflow: hidden;
+  transition: width 0.3s;
+}
+.cxPbLeftElemDisable {
+  opacity: 0.5;
+  cursor: default;
+  border: 1px solid transparent !important;
+}
+.cxPbFieldSection .cxBuilderElement.cxBuilderFullWidthElement {
+  width: 100% !important;
+}
+.cxPbFieldSection .cxBuilderElement {
+  width: calc(50% - 3px) !important;
+  padding: 8px !important;
+}
+.cxPbFieldSection .cxBuilderElement.draggable-element {
+  cursor: grab;
+}
+.cxBuilderElement.draggable-element .cxPbElementTextWrapper {
+  display: flex;
+  align-items: center;
+}
+.cxBuilderElement:hover {
+  border: 1px dashed #6A7FA3;
+  background-color: #1D3050;
+}
+.cxPBLeftPanel .cxPbFieldSection {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.cxPBLeftPanel .lyteTabDefaultTop lyte-tab-title {
+  padding: 15px 5px !important;
+  border: none;
+  background: none;
+  position: relative;
+  color: #E4E8F1;
+  margin: 0px 15px;
+}
+.cxPBLeftPanel .lyteTabDefaultTop lyte-tab-title.lyteTabActive::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  bottom: -3px;
+  background-color: #338CF0;
+  right: 0px;
+}
+.cxPBLeftPanel .lyteTabDefaultTop lyte-tab-title.lyteTabActive {
+  font-family: 'LatoRegular', sans-serif;
+  font-weight: normal !important;
+  -webkit-text-stroke: 0.6px;
+  color: #E4E8F1;
+  border: none;
+}
+.cxPBLeftPanel .lyteTabDefaultTop lyte-tab-title .cxPbSprite {
+  background-color: #E4E8F1;
+  margin: 2px 0px;
+}
+.cxPBLeftPanel .lyteTabDefaultTop lyte-tab-head {
+  border: none;
+  border-bottom: 1px solid #3D5073;
+}
+.cxPBLeftPanel .lyteTabDefaultTop lyte-tab-body {
+  border: none;
+  padding: 0px;
+}
+.cxPbLeftPanelMinimized lyte-tab-title {
+  text-overflow: initial;
+}
+.cxPbLeftPanelMinimized .cxPbUnusedFieldCount,
+.cxPbLeftPanelMinimized .cxPbLeftTabHeading {
+  visibility: hidden;
+  max-width: 0px;
+  margin: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  border-right: 0px;
+  border-left: 0px;
+}
+.cxPBLeftPanel lyte-tabs {
+  background: #10203B;
+  color: #fff;
+}
+.cxPBLeftPanel .cxPbLeftPanelPrimaryHeading {
+  color: #fff;
+  font-size: 1rem;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  padding: 0px 15px 15px;
+}
+.cxPBLeftPanel .cxPbFieldHeading {
+  width: 100%;
+  color: #E4E8F1;
+  font-size: 0.857rem;
+  margin: 12px 0 10px 0;
+  vertical-align: top;
+}
+.cxPbNewFieldTabContent {
+  padding: 8px 15px 15px;
+}
+.cxPbFieldSection .cxBuilderElement:nth-child(odd) {
+  margin-left: 0;
+}
+crux-page-builder .lytePbLeftBar {
+  transition: width 0.3s;
+}
+.cxPBLeftPanel .cxBuilderUnusedElement .cxPbSprite,
+.cxPBLeftPanel .cxBuilderElement .cxPbSprite {
+  background-color: #fff;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.cxPbLeftPanelToggleBtn {
+  position: absolute;
+  left: 0px;
+  top: 55px;
+  height: 61px;
+  width: 25px;
+  border-radius: 0px 80px 80px 0px;
+  display: none;
+  cursor: pointer;
+  transition: left 0.3s, opacity 0.3s, right 0.3s;
+  opacity: 0;
+  z-index: 5;
+}
+.cxPbLeftPanelNewFldTabTitle.lyteTabActive ~ .cxPbLeftPanelToggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cxPbLeftPanelToggleBtn::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.cxPbMinLeftPanel .cxPbLeftPanelToggleBtn,
+crux-page-builder-left-panel:hover .cxPbLeftPanelNewFldTabTitle.lyteTabActive ~ .cxPbLeftPanelToggleBtn {
+  visibility: visible;
+  left: -16px;
+  opacity: 1;
+}
+.cxPbLeftPanelToggleBtn .cxPbLeftArrowIcon {
+  background-color: #A2B3CE;
+  position: absolute;
+  right: 7px;
+  top: 21px;
+  transform: rotate(180deg);
+  pointer-events: none;
+}
+.cxPbLeftPanelToggleBtnBgIcon {
+  width: 25px;
+  height: 61px;
+  display: block;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url('../../../../components/images/crux-pb-sprite.svg');
+  mask-image: url('../../../../components/images/crux-pb-sprite.svg');
+  -webkit-mask-position: -569px -28px;
+  mask-position: -569px -28px;
+  background-color: #10203B;
+}
+.cxPbWrapper .lytePbLeftBar.cxPbMinLeftPanel,
+.cxPbMinLeftPanel .cxPBLeftPanel {
+  width: 114px;
+}
+.cxPbMinLeftPanel .cxPbLeftPanelToggleBtn .cxPbLeftArrowIcon {
+  transform: rotate(0deg);
+  right: 10px;
+}
+.cxBuilderUnusedElement.draggable-element.selected-element .cxPbElementText,
+.cxBuilderElement.draggable-element.selected-element .cxPbElementText,
+.cxPBLeftPanel .cxPbElementText {
+  white-space: nowrap;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 8px;
+}
+.cxPBLeftPanel .cxPbElementTextWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.cxPbElementTextWrapper .cxPbNewFeatureLoader {
+  margin-right: 3px;
+}
+.cxPbMinLeftPanel .cxBuilderElement .cxPbElementText {
+  visibility: hidden;
+}
+.cxPbMinLeftPanel .cxBuilderElement .cxPbSprite {
+  right: 11px;
+}
+.cxPBLeftPanel .cxBuilderUnusedElement {
+  padding: 8px !important;
+  width: 100% !important;
+}
+.cxBuilderElement.draggable-element.selected-element,
+.cxBuilderUnusedElement.draggable-element.selected-element {
+  background: #fff;
+  width: 350px;
+  padding: 11px 14px;
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+  color: #313949;
+  cursor: grabbing;
+}
+.cxBuilderElement.draggable-element.selected-element .cxPbSprite,
+.cxBuilderUnusedElement.draggable-element.selected-element .cxPbSprite {
+  flex-shrink: 0;
+  vertical-align: middle;
+  background: #313949;
+}
+.cxBuilderElement.draggable-element.selected-element .cxPbElementText {
+  padding-right: 8px;
+}
+.cxBuilderUnusedElement .cxPbElementText {
+  flex: 1;
+  padding: 0px 8px;
+}
+.cxBuilderUnusedElement .cxPbSprite.cxPbDeleteIcon {
+  background: #A2B3CE;
+  cursor: pointer;
+  visibility: hidden;
+}
+.cxBuilderUnusedElement:hover .cxPbSprite.cxPbDeleteIcon {
+  visibility: visible;
+}
+.cxBuilderUnusedElement.draggable-element.selected-element .cxPbSprite.cxPbDeleteIcon {
+  display: none;
+}
+.cxPbFieldSection .cxBuilderElement.cxPbLeftElemDisable .cxPbElementText,
+.cxPbFieldSection .cxBuilderElement.cxPbLeftElemDisable .cxPbSprite {
+  opacity: 0.5;
+}
+.cxPbFieldSection .cxBuilderElement.cxRestrictDrag:hover {
+  border: 1px solid transparent;
+  cursor: not-allowed;
+}
+.cxPbUnusedFieldCount {
+  border: 1px solid #6A7FA3;
+  padding: 1px 4px;
+  margin-right: 5px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 0.857rem;
+}
+.cxLeftPanelFooter {
+  background: #10203B;
+  padding: 15px;
+  border-top: 1px solid #3D5073;
+  color: #fff;
+}
+.cxPbMinLeftPanel .cxLeftPanelFooter {
+  color: #338CF0;
+}
+.cxPbLeftPanelWrapperDiv {
+  padding: 20px 0px 15px;
+  background: #10203B;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+.cxPbLeftPanelFieldSearchWrap {
+  padding: 0px 15px;
+}
+.cxPbLeftPanelFieldWrapper {
+  overflow: auto;
+  flex: 1;
+  padding: 0px 15px;
+}
+.cxPbUnusedFldFilterWrap {
+  margin: 0px 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cxPbUnusedFldFilterDD {
+  width: fit-content;
+}
+.cxPbUnusedFldFilterDD lyte-dropdown.cxBoxDropdown .lyteDropButtonDown,
+.cxPbUnusedFldFilterDD lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxPbUnusedFldFilterDD lyte-dropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button:hover,
+.cxPbUnusedFldFilterDD lyte-dropdown.cxBoxDropdown lyte-drop-button,
+.cxPbUnusedFldFilterDD lyte-dropdown.cxBoxDropdown lyte-drop-button:hover,
+.cxPbUnusedFldFilterDD .cxFakeDummyEventContainer:focus .cxFakeDropButton,
+.cxPbUnusedFldFilterDD .cxFakeDummyEventContainer:focus-visible .cxFakeDropButton,
+.cxPbUnusedFldFilterDD .cxFakeDropButton {
+  background: transparent;
+  color: #E4E8F1;
+  border: none;
+  box-shadow: none;
+  width: fit-content;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+}
+.cxPbUnusedFldFilterDD lyte-dropdown lyte-icon.dropdown,
+.cxPbUnusedFldFilterDD .cxFakeDropButton lyte-icon.dropdown {
+  background-color: #E4E8F1;
+}
+.cxPbUnusedFldClearBtn {
+  font-size: 0.929rem;
+  color: #E4E8F1;
+  cursor: pointer;
+}
+.cxPbLeftPanelInput {
+  display: block;
+  margin-bottom: 8px;
+}
+.cxPbLeftPanelInput .lyteInputBox input {
+  background: transparent;
+  color: #fff;
+}
+.cxPbLeftPanelInput lyte-input input::placeholder {
+  color: #7C8BAE;
+}
+.cxPbLeftPanelInput lyte-input .searchIcon {
+  background-color: #7C8BAE;
+}
+.cxPbLeftPanelInput .lyteInputBox .lyteField {
+  border-color: #3D5073;
+  box-shadow: none;
+  background-color: transparent;
+}
+.cxPbLeftPanelInput .lyteInputBox .lyteField:hover {
+  border-color: #6A7FA3;
+}
+.cxPbLeftPanelInput .lyteInputBox.lyteInputFocus .lyteField:hover,
+.cxPbLeftPanelInput .lyteInputBox.lyteInputFocus .lyteField {
+  border-color: #1D7FED;
+}
+.cxPbLeftPanelInput .inputCloseIcon {
+  background-color: #10203B;
+}
+.cxPbLeftPanelInput .inputCloseIcon::before {
+  background-color: #FFFFFF;
+}
+.cxPbLeftPanelInput .inputCloseIcon:hover {
+  background-color: #E9EEF4;
+}
+.cxPbLeftPanelInput .inputCloseIcon:hover::before {
+  background-color: #313949;
+}
+.cxPbUnusedFldMenuCont,
+.cxPbUnusedFieldSecHeader {
+  padding: 0px 15px;
+}
+.cxPbUnusedFldMenuCont {
+  overflow: auto;
+  position: relative;
+}
+.cxPbUnusedFieldSection {
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+/***********************************************************
+    Crux page-builder-section CSS
+    Middle module builder part 
+***********************************************************/
+/* Modal Width */
+.cxPbPropertiesModalSmall .lyteModal {
+  width: 360px !important;
+}
+.cxPbPropertiesModalMedium .lyteModal {
+  width: 571px !important;
+}
+.cxPbPropertiesModalLarge .lyteModal {
+  width: 763px !important;
+}
+.cxPbPropertiesModal .lyteModal {
+  border: none;
+  box-shadow: 0px 1px 16px rgba(208, 221, 234, 0.87);
+}
+.cxPbPropertiesModal .cxPbCp {
+  cursor: pointer;
+}
+.cxPbPropertiesModal lyte-modal-header {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 17px;
+  background: #F8FAFF;
+  border-bottom: 1px solid #EDF0F4;
+  color: #202123;
+  font-family: 'LatoSemiBold', sans-serif;
+}
+.cxPbPropertiesModal .cxPbPropHeaderIcons {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+.cxPbPropertiesModal .cxPbPropHeaderIcons span {
+  width: 26px;
+  height: 26px;
+  margin-right: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  cursor: pointer;
+}
+.cxPbPropertiesModal .cxPbPropHeaderIcons span:hover {
+  background: #E1E6EC;
+}
+.cxPbPropertiesModal lyte-modal-content {
+  height: 100%;
+  overflow: auto;
+  padding: 0px;
+}
+.cxPbPropModalTab lyte-tab-head,
+.cxPbPropModalTab lyte-tab-body {
+  border: none;
+}
+.cxPbPropModalTab lyte-tab-head {
+  border-bottom: 1px solid #E2E7EE;
+}
+.cxPbPropertiesModal .cxPbPropModalTab lyte-tab-title {
+  padding: 18px 5px 15px 5px;
+  color: #313949;
+  border: none;
+  background: none;
+  margin: 0px 15px;
+  position: relative;
+}
+.cxPbPropertiesModal .cxPbPropModalTab lyte-tab-title.lyteTabActive {
+  color: #202123;
+  border: none;
+}
+.cxPbPropertiesModal .cxPbPropModalTab lyte-tab-title.lyteTabActive::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  bottom: -3px;
+  background-color: #338CF0;
+  right: 0px;
+}
+.cxPbPropModalTab lyte-tab-body {
+  padding: 20px 15px 0px 15px;
+  height: calc(100% - 52px) !important;
+}
+.cxPbPropModalTab .cxPbFormHeading {
+  color: #202123;
+  font-family: 'LatoBold', sans-serif;
+  font-size: 0.857rem;
+  margin-bottom: 12px;
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+}
+.cxPbPropModalTab .cxPbFormHeadingInput {
+  display: inline-flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+.cxPbPropModalTab .cxPbFormHeadingInput button {
+  height: 100%;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #C0C6CC;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.cxPbPropModalTab .cxPbFormTwoColumns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.cxPbPropModalTab .cxPbFormTwoColumns .cxPbFormRow {
+  flex-basis: calc(50% - 8px);
+}
+.cxPbPropModalTab .cxPbFormRow {
+  margin-bottom: 18px;
+}
+.cxPbPropModalTab .cxPbFormRow .cxElementLabel {
+  display: flex;
+  color: #616E88;
+  margin-bottom: 8px;
+}
+.cxPbPropModalTab .cxPbFormCbRow .cxPbHelpIcon,
+.cxPbPropModalTab .cxPbFormCbRow .cxPbInfoIcon,
+.cxPbPropModalTab .cxPbFormRow .cxPbInfoIcon {
+  margin-right: 6px;
+}
+.cxPbPropModalTab .cxPbFormRow .cxPbFormulaEditorErrorMsg,
+.cxPbPropModalTab .cxPbFormRow .cxPbFormErrorMsg,
+.cxPbPropModalTab .cxPbFormRow .cxPbFormInfo {
+  display: block;
+  text-align: end;
+  font-size: 0.857rem;
+  color: #616E88;
+  margin-top: 5px;
+}
+.cxPbPropModalTab .cxPbFormRow .cxPbFormulaEditorErrorMsg,
+.cxPbPropModalTab .cxPbFormRow .cxPbFormErrorMsg {
+  color: #FF5D5A;
+}
+.cxPbPropModalTab .cxPbFormRow .cxPbFormulaEditorErrorMsg {
+  text-align: start;
+}
+.cxPbPropModalTab .cxPbFormRow .cxPbFormInfo b {
+  font-family: 'LatoSemiBold', sans-serif;
+}
+.cxPbFormRow crux-number-component lyte-number,
+.cxPbFormRow crux-text-component lyte-input {
+  width: 100%;
+}
+.cxPbPropModalTab .cxPbFormCbRow {
+  margin-bottom: 12px;
+  display: inline-block;
+}
+.cxPbPropModalTab .cxPbFormCbRow .cxPbPropModalBoolean {
+  display: inline-block;
+  vertical-align: middle;
+}
+.cxPbPropModalTab .cxPbFormCbRow .cxElementLabel {
+  display: inline-flex;
+  align-items: center;
+}
+.cxPbPropModalTab .cxPbFormCbRow lyte-checkbox {
+  color: #313949;
+}
+.cxPbPropModalTab .cxPbFormCbRow ~ .cxPbSprite {
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+  position: relative;
+  top: 1px;
+}
+.cxPbPropModalTab .cxPbFormCbRow .cxPbFormCbInfo {
+  display: block;
+  margin-right: 23px;
+  font-size: 0.857rem;
+  color: #616E88;
+  margin-top: 5px;
+}
+.cxPbPropModalTab .cxPbFormCbRow .cxPbFormCbInfoIcon {
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 7px;
+}
+.cxPbPropActionModal .cxPbPropNote,
+.cxPbPropModalTab .cxPbPropNote {
+  width: 100%;
+  font-size: 0.857rem;
+  padding: 9px 15px;
+  color: #56564D;
+  background-color: #FFFFEA;
+  border: 1px solid #E5DEC5;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+.cxPbPropActionModal .cxPbPropNote b,
+.cxPbPropModalTab .cxPbPropNote b {
+  font-family: 'LatoSemiBold', sans-serif;
+}
+.cxPbPropActionModal .cxPbPropNote {
+  width: fit-content;
+}
+.cxPbPropModalTab .cxPbFormCbRow .cxPbPropNote {
+  margin-right: 23px;
+  width: calc(100% - 23px);
+  margin-top: 8px;
+  margin-bottom: 0px;
+}
+.cxPbPropertiesModalLarge .cxPbFormCbRow .cxPbPropNote,
+.cxPbPropertiesModalMedium .cxPbFormCbRow .cxPbPropNote {
+  max-width: 433px;
+}
+.cxPbPropModalTab .cxPbPropInfo {
+  margin-bottom: 12px;
+  color: #434D5E;
+  line-height: 20px;
+}
+.cxPbPropModalTab .cxPbPropInfo a {
+  color: #338CF0;
+  text-decoration: none;
+  line-height: 20px;
+}
+.cxPbPropertiesModal lyte-modal-footer {
+  color: #616E88;
+  padding: 15px;
+  background: #F8FAFF;
+  border-top: 1px solid #EDF0F4;
+  display: flex;
+  align-items: center;
+}
+.cxPbPropertiesModal lyte-modal-footer span {
+  cursor: pointer;
+}
+.cxPbPropertiesModal lyte-modal-footer .cxPbPropFooterAction {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+/* Formula Editor */
+.cxPbPropertiesModal .cxPbFormulaEditor {
+  border: 1px solid #D2D9E0;
+  border-radius: 6px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.cxPbFormulaEditor .cxPbFormulaEditorHead {
+  display: flex;
+  border-bottom: 1px solid #D2D9E0;
+  background-color: #F4F7FF;
+}
+.cxPbFormulaEditor .cxPbFormulaElementLabel {
+  padding: 0px 20px 0px 15px;
+  border-radius: 6px 0px 0px 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #313949;
+  font-family: 'LatoSemiBold', sans-serif;
+}
+.cxPbFormulaEditor .cxPbFormulaElementLabel.required::before {
+  content: '';
+  width: 3px;
+  background-color: #FF5D5A;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+}
+.cxPbFormulaEditor .cxPbFormulaElementValue {
+  padding: 5px 0px;
+  margin-left: 10px;
+}
+.cxPbFormulaEditor .cxPbFormulaEditorBody {
+  height: 200px;
+}
+/* Table Row */
+.cxPbPropModalTab .cxPbFormTableRow {
+  margin-bottom: 18px;
+}
+.cxPbFormTableRow lyte-table {
+  border-radius: 6px 6px 0px 0px;
+}
+.cxPbDynamicSortableTable lyte-td .cxPbTableSortableHandle {
+  cursor: pointer;
+  vertical-align: middle;
+}
+.cxPbFormTableRow .cxPbTableActionTd {
+  height: 100%;
+}
+.cxPbFormTableRow .cxPbTableActionTd span {
+  cursor: pointer;
+  display: inline-flex;
+  visibility: hidden;
+}
+.cxPbFormTableRow .sortable-element-selected .cxPbTableActionTd span,
+.cxPbFormTableRow lyte-tr:hover .cxPbTableActionTd span {
+  visibility: visible;
+}
+.cxPbFormTableRow .cxPbTableActionTd .cxPbActionInfo {
+  margin-right: 8px;
+}
+.cxPbFormTableRow .cxPbDynamicSortableTable .cxPbMinusIconWrapper {
+  position: relative;
+  bottom: 5px;
+  border-color: #FF5D5A;
+}
+.cxPbFormTableRow .cxPbDynamicSortableTable .cxPbMinusIconWrapper .cxPbMinusIcon {
+  background-color: #FF5D5A;
+}
+.cxPbFormTableRow .cxPbDynamicSortableTable .cxPbPlusIconWrapper {
+  margin-right: 7px;
+  border-color: #12AA67;
+}
+.cxPbFormTableRow .cxPbDynamicSortableTable .cxPbPlusIcon {
+  background-color: #12AA67;
+}
+.cxPbFormTableRow .cxPbFormTableFooter {
+  display: flex;
+  align-items: center;
+  border: 1px solid #D2D9E0;
+  border-top: none;
+  height: 50px;
+  padding: 0px 20px;
+  color: #313949;
+  box-sizing: border-box;
+  border-radius: 0px 0px 6px 6px;
+}
+.cxPbFormTableRow .cxPbFormTableFooter .cxPbPlFootFlex1 {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+.cxPbFormTableRow .cxPbFormTableFooter .lyteCheckbox {
+  display: inline-flex;
+  align-items: center;
+}
+.cxPbFormTableRow .cxPbFormTableInfoTr {
+  position: relative;
+}
+.cxPbFormTableRow .cxPbFormTableInfoTr lyte-td {
+  padding-bottom: 31px;
+}
+.cxPbFormTableRow .cxPbFormTableInfoTr .cxPbFormTableInfoTd {
+  overflow: visible;
+}
+.cxPbFormTableRow .cxPbFormTableInfoTr .cxPbFormTableInfoDiv {
+  position: absolute;
+  padding: 0px;
+  border: none;
+  bottom: 8px;
+  font-size: 0.857rem;
+  color: #616E88;
+  min-width: 0px;
+  z-index: 1;
+}
+.cxPbFormTableInfoTr .cxPbFormTableInfoDiv .cxPbTableInfoUndo {
+  color: #338CF0;
+  cursor: pointer;
+}
+.cxPbPropFormElemNote {
+  font-size: 0.857rem;
+  color: #616E88;
+  margin-top: 6px;
+  display: block;
+  text-align: end;
+}
+.cxPbPickListSortSelectorTable.sortable-parent {
+  height: auto;
+}
+.cxPbPicklistOptionHeading {
+  font-family: 'LatoBold', sans-serif;
+  margin-bottom: 8px;
+}
+.cxPbFormTableRow lyte-table .cxPbPicklistSettings {
+  position: relative;
+  padding-right: 0px;
+  width: 65px;
+}
+.cxPbFormTableRow lyte-table .cxPbTablePlActionTd {
+  padding-right: 0px;
+}
+.cxPbFormTableRow lyte-table .cxPbTablePlSortIconTd,
+.cxPbFormTableRow lyte-table .cxPbTablePlSortIconTh {
+  padding-right: 15px;
+  padding-left: 0px;
+  min-width: 10px;
+  width: 10px;
+}
+.cxPbFormPicklistTableMin {
+  height: 365px;
+}
+.cxPbFormPicklistTableMax {
+  height: 730px;
+}
+.cxPbPicklistFormTableCont lyte-table-structure {
+  position: unset;
+}
+.cxPbPlOptActionBtn {
+  width: 40px;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.cxPbPlOptActionBtn:hover {
+  background: #EFF1F5;
+}
+.cxPbPlOptActionSettingsBtn {
+  left: 40px;
+  border-left: 1px solid #D2D9E0;
+  border-right: 1px solid #D2D9E0;
+}
+.cxPbPropActionModalContent {
+  margin-bottom: 10px;
+}
+.cxPbPropPlReplaceForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 25px;
+}
+.cxPbPropPlReFormSwapIconWrap {
+  width: 30px;
+  height: 30px;
+  margin: 0px 15px 3px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: #E9EEF4;
+}
+.cxPbPropPlReplaceFormFld {
+  width: calc(50% - 30px);
+}
+.cxPbPropPlSwapIcon {
+  transform: rotate(90deg);
+}
+.cxPbPropPlReplaceFormFld .cxPbPropPlReplaceFormFldLabel {
+  display: inline-block;
+  font-family: 'LatoSemiBold', sans-serif;
+  margin-bottom: 15px;
+}
+.cxPbPropActionModal .cxPbPropNote.cxPbPlReplaceModalNote {
+  width: 100%;
+  margin: 30px 0px 0px;
+  font-size: initial;
+  padding-right: 30px;
+}
+.cxPbPropNote.cxPbPlReplaceModalNote li {
+  list-style: disc;
+  margin-bottom: 20px;
+}
+.cxPbPlPreOptModalCont {
+  display: flex;
+  border-radius: 6px;
+  border: 1px solid #D7E2ED;
+  height: 500px;
+  overflow: hidden;
+}
+.cxPbPlPreOptModalLeftCont {
+  width: 200px;
+  box-sizing: border-box;
+  padding: 7px;
+  overflow: auto;
+  border-left: 1px solid #D7E2ED;
+  background: #F8FAFF;
+}
+.cxPbPlPreOptModalLeftContItem {
+  padding: 10px 12px;
+  cursor: pointer;
+}
+.cxPbPlPreOptModalLeftContItem.cxPbSelected {
+  background: #E7F2FF;
+  font-family: 'LatoSemiBold', sans-serif;
+  border-radius: 6px;
+}
+.cxPbPlPreOptModalRightCont {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cxPbPlPreOptModalRightContItem {
+  margin: 15px 20px;
+}
+.cxPbPlPreOptModalRightContItem.cxPbPinned {
+  margin: 0px;
+  padding: 15px 20px;
+  border-bottom: 1px solid #D7E2ED;
+}
+.cxPbPlPreOptModalRightContItem .lyteCheckBoxDefault {
+  display: inline-flex;
+}
+.cxPbPlPreOptModalRightContItem .lyteCheckBoxDefault::before {
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+.cxPbPlPreOptModalRightNestedCont {
+  height: 100%;
+  overflow: auto;
+}
+.cxPbPropPlColorFld {
+  margin-left: 10px;
+}
+.cxPbPropPlValueFld {
+  flex: 1;
+}
+.cxPbPropPlGlobalFormField {
+  display: flex;
+  align-items: center;
+}
+.cxPbPropPlGlobalFormLabel {
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+.cxPbPropModalTab .cxPbFormHeading.cxPbFormHeadingWithRightBtn {
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.cxPbPropModalTab .cxPbFormHeadingWithRightBtn .cxPbFormHeadingRightBtn {
+  color: #338CF0;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.cxPbCriteriaViewContainer {
+  padding: 7px 20px 15px;
+  background: #F4F7FF;
+  border: 1px solid #D7E2ED;
+  border-radius: 6px;
+}
+.cxPbPropModalDashedSeparator {
+  display: block;
+  width: 100%;
+  padding: 9px 0px 12px;
+}
+.cxPbPropModalDashedSeparator::before {
+  content: '';
+  position: absolute;
+  display: block;
+  border-top: 1px dashed #D7E2ED;
+  right: 0px;
+  left: 0px;
+}
+.cxPbSectionSettingsMenuBody lyte-menu-item {
+  padding-right: 32px;
+}
+.cxPbSectionSettingsMenuBody .cxPbSecSettingMenuIcon {
+  margin-left: 8px;
+}
+.cxPbSectionSettingsMenuBody .cxPbMenuSelected lyte-menu-label::after {
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 6px;
+  display: inline-block;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -33px -15px;
+  mask-position: -33px -15px;
+  background-color: #313949;
+  right: 15px;
+}
+.cxPbSectionSettingsMenuBody .cxPbMenuSelected {
+  font-family: 'LatoBold', sans-serif;
+}
+.cxPbLookupCriteriaCkbox .cxPbFormCbRow {
+  margin-top: 16px;
+}
+.cxPbFieldOfLookupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'LatoRegular', sans-serif;
+  font-size: 0.929rem;
+  margin-top: 2px;
+}
+.cxPbPropActionModal lyte-modal-content.cxPbFldLookupModalContent {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.cxPbFieldOfLookupTable {
+  border-left: none;
+  border-right: none;
+  border-radius: 0px;
+}
+.cxPbFieldOfLookupTable .lyteTableScroll {
+  border-radius: 0px;
+}
+.cxPbFldLookupTableNoRecord {
+  padding: 25px;
+  text-align: center;
+  color: #A2A9B7;
+}
+.cxPbFldLookupModalFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cxPbFldLookupMsg {
+  display: flex;
+  align-items: center;
+  color: #616E88;
+}
+.cxPbFldLookupMsg .cxPbFldLookupInfoIcon {
+  -webkit-mask-position: -7px -126px;
+  mask-position: -7px -126px;
+  width: 13px;
+  height: 14px;
+  background-color: #616E88;
+  margin-left: 6px;
+}
+.cxPbFldLookupFormRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+.cxPbFldLookupFormRow:last-child {
+  margin-bottom: unset;
+}
+.cxPbFldLookupFormLabel {
+  color: #616E88;
+  text-align: end;
+}
+.cxPbFldLookupFormValue {
+  width: 350px;
+  min-width: 350px;
+}
+.cxPbLkupFltrModalFooter {
+  justify-content: flex-end;
+}
+.cxPbPropRollupSumCont {
+  display: flex;
+  border: 1px solid #D7E2ED;
+  height: 500px;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+.cxPbPropRollupSumLabel {
+  color: #202123;
+  margin-bottom: 15px;
+}
+.cxPbPropRollupSumHead {
+  margin-bottom: 20px;
+}
+.cxPbPropRollupSumLeftCont {
+  width: 200px;
+  border-left: 1px solid #D7E2ED;
+  padding: 4px 0px;
+  background: #f8faff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.cxPbPropRollSumLeftHead {
+  font-family: 'LatoBold', sans-serif;
+  padding: 8px 20px;
+}
+.cxPbPropRollupSumRightCont {
+  flex: 1;
+  overflow: auto;
+  padding: 20px;
+}
+lyte-nav.cxPbPropRollSumLeftNav {
+  flex: 1;
+  height: auto;
+  background: none;
+}
+.cxPbPropRollSumLeftNav .lyteNavDiv {
+  padding: 0px 8px;
+}
+.cxPbPropRollSumLeftNav .cxPbPropRollSumLeftNavItem {
+  padding: 8px 10px;
+  font-size: 0.929rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cxPbPropRollSumLeftNav .cxPbPropRollSumLeftNavItem:hover {
+  background: none;
+}
+.cxPbPropRollSumLeftNav .cxPbPropRollSumLeftNavItem.lyteNavActive,
+.cxPbPropRollSumLeftNav .cxPbPropRollSumLeftNavItem.lyteNavActive:hover {
+  color: #313949;
+  background: #E7F2FF;
+}
+.cxPbPropRollupSumFormRow {
+  margin-bottom: 20px;
+}
+.cxPbPropRollupSumFormLabel {
+  font-family: 'LatoBold', sans-serif;
+  margin-bottom: 10px;
+}
+.cxPbPropRollupSumFieldCont {
+  display: flex;
+  gap: 10px 0px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.cxPbPropRollupSumField {
+  padding: 10px 12px;
+  width: 240px;
+  border-radius: 6px;
+  border: 1px solid #D7E2ED;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+}
+.cxPbPropRollupSumFieldVal {
+  flex: 1;
+}
+.cxPbPropRollSumRecCount {
+  font-family: 'LatoBold', sans-serif;
+}
+.cxPbRollupModFooter {
+  justify-content: flex-end;
+}
+.cxPbModRollupFootContent {
+  color: #616E88;
+}
+.cxPbModRollupFootVal {
+  font-family: 'LatoSemiBold', sans-serif;
+  margin-right: 3px;
+}
+.cxPbPermListComp .cxPermissionTable {
+  margin: 0px -15px;
+}
+.cxPbModalHeaderWrap {
+  width: 100%;
+}
+.cxPbModalHeaderFLabel {
+  flex: 1;
+  overflow: hidden;
+}
+.cxPbModalActionIconsWrap {
+  width: 26px;
+  height: 26px;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.cxPbModalActionIconsWrap:hover {
+  background: #E9EEF4;
+}
+.cxPbModalHeaderWrap .cxPbModalActionIconsWrap {
+  margin-right: 6px;
+}
+.cxPbModalHeaderFLabel .cxPbHelpIcon {
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+.cxPbFormPreviewText {
+  margin-right: auto;
+  color: #338CF0;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.cxPbFormPreviewText.cxPbPrevwTextDisabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+/******* crux pb property panel help icon hovercard style starts ********/
+.cxPbPropHelpHovercard {
+  padding: 20px;
+}
+.cxPbPropHelpHovercardHead {
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+.cxPbPropHelpHovercardTable lyte-th {
+  background: #F4F7FF;
+}
+.cxPbPropHelpHovercardTable lyte-th:not(:last-of-type),
+.cxPbPropHelpHovercardTable lyte-td:not(:last-of-type) {
+  border-right: 1px solid #D9E0EB;
+}
+.cxPbPropHelpHovercardTable lyte-td:not(:first-of-type) {
+  padding: 0px;
+}
+.cxPbPropHelpHovercardTable lyte-td > div {
+  padding: 6px 10px;
+}
+.cxPbPropHelpHovercardTable lyte-td > div:first-of-type {
+  border-bottom: 1px solid #EDF0F4;
+}
+/******* crux pb property panel help icon hovercard style ends ********/
+crux-page-builder-section-navigator {
+  position: absolute;
+  right: 0px;
+  top: 117px;
+  z-index: 1;
+}
+.cxPbSectionNavWrapper {
+  cursor: pointer;
+  font-family: 'LatoBold', sans-serif;
+}
+.cxPbSectionNavWrapper .cxPbSprite {
+  display: block;
+  margin: auto;
+}
+.cxPbSecNavCount {
+  display: block;
+  font-size: 0.857rem;
+  text-align: center;
+  margin: 5px 0px;
+  cursor: pointer;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxPbSecNavIconWrap {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 7px !important;
+}
+.cxPbSecNavIconWrap::after {
+  display: none !important;
+}
+.cxPbSecNavIconWrap:not(.lyteDisabled):hover {
+  background: #E9EEF4;
+}
+.cxPbSecNavIconWrap.lyteDisabled {
+  pointer-events: none;
+}
+.cxPbSecNavIconWrap.lyteDisabled .cxPbSprite {
+  opacity: 0.6;
+}
+/***********************************************************
+    CRUX-Page-Builder Section Starts
+    Middle module builder part
+
+***********************************************************/
+.cxPbElementSection,
+.cxPbQuickCreateSection {
+  border: 1px solid #D7E2ED;
+  border-radius: 6px;
+  margin: 15px 30px;
+  position: relative;
+  padding: 15px 15px 10px;
+  width: calc(100% - 60px);
+  box-sizing: border-box;
+  background: #f8faff;
+  max-width: calc(100% - 450px);
+  min-width: 540px;
+  display: block;
+}
+.cxPbElementSection.cxPbElemSecOnDrag {
+  background-color: #fff;
+  padding: 20px;
+  max-height: 58px;
+}
+.cxPbTemplateDroppable .lytePbDroppableArea > .cxPbElementSortPlaceholderDiv {
+  width: calc(100% - 10px);
+  min-width: 540px;
+  max-width: calc(100% - 450px);
+  margin: 0px 30px 15px;
+  height: 125px;
+}
+.cxPbElementSortPlaceholderDiv.cxPbElemSecPlaceholderOnDrag {
+  max-height: 58px;
+}
+.cxPbScrollInitial .cxPbElementSection.selected-element {
+  margin: 0px !important;
+}
+.cxPbElementSection.cxPbElementActiveSection,
+.cxPbElementSection:hover {
+  border: 1px solid #D2D9E0;
+}
+.cxPbTitleSection {
+  color: #202123;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  display: flex;
+  align-items: center;
+}
+.cxPbElementSection .cxPbTitleSection crux-text-component {
+  width: 220px;
+  display: block;
+}
+.cxPbTitleSection crux-text-component[cx-prop-from='view'] {
+  width: fit-content;
+}
+.cxPbElementSection .cxPbTitleSection .lyteField {
+  background: #F8FAFF;
+  border: 1px solid #F8FAFF;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+.cxPbElementSection .cxPbTitleSection .lyteField input {
+  background: #F8FAFF;
+  padding: 6px;
+  border-radius: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #202123;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+.cxPbElementSection .cxPbTitleSection .lyteField:hover {
+  border: 1px solid #c1c1c1;
+}
+.cxPbElementSection .cxPbTitleSection .lyteInputFocus input,
+.cxPbElementSection .cxPbTitleSection .lyteField:hover input {
+  background: #fff;
+}
+.cxPbElementSection .cxPbTitleSection .lyteInputFocus .lyteField,
+.cxPbElementSection .cxPbTitleSection .lyteInputFocus .lyteField:hover {
+  border: 1px solid #338CF0 !important;
+  box-shadow: 0px 0px 6px #4796ED;
+}
+.cxPbElementSection .cxPbTitleSection .cxErrorBox.lyteInputFocus .lyteField,
+.cxPbElementSection .cxPbTitleSection .cxErrorBox .lyteField {
+  border: 1px solid #FF5D5A !important;
+  box-shadow: none !important;
+}
+.cxPbElementSection .cxPbTitleSection .cxErrorBox input {
+  background-color: #fff !important;
+}
+.cxPbSectionHighlight,
+.cxPbElementHighlight .cxPbElementLabel,
+.cxPbElementHighlight input {
+  animation: cxHighlightAnimation 2s;
+}
+.cxPbTitleSection .cxPbInfoIcon {
+  margin-right: 8px;
+  cursor: pointer;
+}
+.cxPbElementSection.cxPbSingleColElemSection lyte-pb-column-template {
+  width: 50% !important;
+}
+.cxPbQuickCreateSection lyte-pb-row-template {
+  padding: 0px !important;
+}
+.cxPbQuickCreateSection lyte-pb-column-template {
+  width: 50% !important;
+  margin: auto;
+  min-height: inherit;
+}
+/*Add new Section Starts */
+crux-page-builder-image-component:last-child .cxPbNewSectionBtn::after,
+crux-page-builder-section:last-of-type .cxPbNewSectionBtn::after {
+  display: none;
+}
+.cxPbElementDraggable .cxPbElementIcon {
+  margin: 0px 0px 0px 8px;
+  flex-shrink: 0;
+}
+.cxPbElementLabelInput input {
+  padding: 3px 5px !important;
+  text-overflow: ellipsis;
+}
+.cxPbElementLabelInput .lyteField {
+  box-shadow: none !important;
+}
+.cxPbAddressElementComp:not(:hover) .cxPbElementLabelInput .lyteInputBox:not(.lyteInputFocus) .lyteField,
+.cxPbElementDraggable:not(.cxPbAddressElem):not(:hover) .cxPbElementLabelInput .lyteInputBox:not(.lyteInputFocus) .lyteField {
+  border-color: transparent;
+}
+.cxPbElemFieldMetaText {
+  flex: 1;
+  text-align: left;
+  color: #616E88;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+.cxPbElementSection .cxPbElemSecActionIcons {
+  position: absolute;
+  left: 13px;
+  z-index: 1;
+  visibility: hidden;
+}
+.cxPbElementSection.cxPbElementActiveSection .cxPbElemSecActionIcons,
+.cxPbElementSection:hover .cxPbElemSecActionIcons {
+  visibility: visible;
+}
+.cxPbElemSecActionIcons .cxPbElemSecActionIconWrapper {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.cxPbElemSecActionIcons .cxPbElemSecActionIconWrapper:not(:first-child) {
+  margin-right: 6px;
+}
+.cxPbElementSection .cxPbElemSecActionIconWrapper.lyteMenuSelected,
+.cxPbElemSecActionIcons .cxPbElemSecActionIconWrapper:not(.cxPbDisabled):hover {
+  background-color: #E9EEF4;
+}
+.cxPbHideSectionElements .titleSectionContainer,
+.cxPbHideSectionElements .cxPbElemSecActionIcons {
+  display: none;
+}
+.cxPbElemSecActionIcons .cxPbElemSecActionIconWrapper:not(.cxPbDisabled):hover .cxPbSprite {
+  background-color: #313949;
+}
+.cxPbElemActionIconWrap.cxPbDisabled,
+.cxPbElemSecActionIconWrapper.cxPbDisabled {
+  cursor: default;
+  opacity: 0.7;
+}
+/*Add New Section Ends */
+.cxPbElementSection lyte-pb-grid-template {
+  padding: 15px 0px 0px;
+  min-height: 65px;
+}
+.cxPbElementSection lyte-pb-grid-template .lytePbMessage {
+  color: #616E88;
+}
+.cxPbElementSection .lytePbMessage.cxdN {
+  display: none;
+}
+.cxPbQuickCreateSection lyte-pb-grid-template {
+  padding: 0px;
+}
+.cxPbSectionOnDragHeading {
+  font-family: 'LatoSemiBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  color: #202123;
+}
+@media only screen and (min-width: 1720px) {
+  .cxPbElementSection,
+  .cxPbQuickCreateSection {
+    max-width: 1000px;
+  }
+  .cxPbTemplateDroppable .lytePbDroppableArea > .cxPbElementSortPlaceholderDiv {
+    max-width: 1000px;
+  }
+}
+crux-page-builder-subform .lytePbSubformContainer {
+  margin-left: 15px;
+}
+crux-page-builder-subform lyte-pb-subform .lytePbAddButton {
+  background: transparent;
+  padding-bottom: 15px;
+  flex-shrink: 0;
+}
+.cxPbSubformElemTab lyte-yield[yield-name="tabYield"] {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.cxPbSubformElements .cxOuterTab lyte-tab-head {
+  padding: 0px;
+}
+.cxPbSubformElements lyte-tab-body {
+  padding: 0px;
+  height: auto !important;
+  max-height: 350px;
+}
+.cxPbSubformElements lyte-tab-content:not(.lyteTabHide) {
+  max-height: inherit;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.cxPbSubformElements .cxPbSubformFieldContWrapper {
+  flex: 1;
+  overflow: auto;
+}
+.cxPbSubformElements .cxPbSubformFieldSearch {
+  padding: 10px 10px 5px;
+  box-sizing: border-box;
+}
+.cxPbSubformElements .cxPbSubformFieldsHeading {
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  padding: 7px 10px;
+  display: block;
+}
+.cxPbSubformElements .cxPbSubformFieldCont {
+  padding: 7px 10px;
+  margin: 0px 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.cxPbSubformFieldCont .cxPbSprite {
+  flex-shrink: 0;
+}
+.cxPbSubformElements .cxPbSubformFieldCont:hover {
+  background-color: #E7F2FF;
+}
+.cxPbSubformElements .cxPbSubformFieldLabel {
+  margin-right: 10px;
+}
+.cxPbSubformTableWrap {
+  position: relative;
+  margin: 15px 5px 0px;
+}
+.cxPbSubformElemWrapper {
+  position: relative;
+  display: flex;
+  max-width: 100%;
+  background: #fff;
+  border: 1px solid #EDF0F4;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.cxPbSubformElemWrapper lyte-th {
+  white-space: nowrap;
+  background-color: #F4F7FF;
+  padding-top: 7px !important;
+  padding-bottom: 7px !important;
+  min-width: 125px;
+  vertical-align: top;
+}
+.cxPbSubformElemWrapper lyte-th.cxPbSubformSmallTh {
+  min-width: 100px;
+}
+.cxPbSubformElemWrapper .cxPbSubformHeadFieldIcon {
+  flex-shrink: 0;
+  margin-left: 2px;
+}
+.cxPbSubformPinnedTag {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  border-radius: 100px;
+  padding: 5px;
+  background: #616E88;
+  color: #fff;
+  border: 2px solid #F8FAFF;
+  z-index: 12;
+}
+.cxPbSubformPinnedTag .cxPbPinnedIcon {
+  display: block;
+}
+.cxPbSubformActiveBorderElem,
+.cxPbSubformPinnedBorder {
+  position: absolute;
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  border: 1px solid #616E88;
+  pointer-events: none;
+  z-index: 10;
+  box-sizing: border-box;
+}
+.cxPbSubformActiveBorderElem {
+  border-color: #338CF0;
+  display: none;
+}
+.cxPbElementSection.lytePbActiveEntityItem .cxPbSubformActiveBorderElem {
+  display: block;
+}
+.cxPbSubformTableElem {
+  overflow: hidden;
+  border: 0px;
+  border-radius: 0px 6px 6px 0px;
+}
+.cxPbSubformTableElem .lyteTableScroll {
+  border-radius: 0px;
+}
+.cxPbSubformTableElem lyte-tr lyte-td:not(:last-of-type),
+.cxPbSubformTableElem lyte-tr lyte-th:not(:last-of-type) {
+  border-left: 1px solid #D9E0EB;
+}
+.cxPbSubformTableElem lyte-table-structure {
+  table-layout: fixed;
+}
+.cxPbSubformElemAddBtnWrap {
+  padding: 25px 15px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 15;
+  background-color: #fff;
+}
+.cxPbSubformElemAddBtnWrap.boxsh {
+  box-shadow: -6px 0 8px 0 rgba(208, 221, 234, 0.7);
+  z-index: 15;
+}
+.cxPbSubformElemAddBtnWrap lyte-button {
+  margin-left: 0px;
+}
+.cxPbSubformTableThWithIcon {
+  padding: 12px 12px 12px 36px !important;
+}
+.cxPbSubformTableThWithIcon lyte-tablehead-resize {
+  width: 6px !important;
+}
+.cxPbSubformTableThWithIcon:hover .cxPbElemMoreIcon {
+  visibility: visible;
+}
+.cxPbSubformTableThWithIcon .cxPbElemActionIconWrap {
+  top: 6px;
+  left: 6px;
+}
+.cxPbSubformAggregateFieldWrap {
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: 5px;
+  border: 1px solid #EDF0F4;
+  background-color: #fff;
+  width: 350px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.cxPbSubformAggregateFieldLi {
+  padding: 9px 12px;
+}
+.cxPbSubformAggregateFieldBtnLi {
+  text-align: center;
+}
+.cxPbSubformPrimaryField.cxSaveIcon {
+  margin-right: 5px;
+  background-color: #12AA67;
+  display: block;
+}
+.cxPbSubformFieldMenuBody {
+  padding-top: 0px;
+}
+.cxPbSubformUnusedFieldHeader {
+  font-family: 'LatoSemiBold', sans-serif;
+  font-size: 0.857rem;
+  padding: 13px 10px 4px;
+  color: #202123;
+}
+.cxPbSubformUnusedFieldSearch {
+  padding: 8px 10px 0px;
+}
+.cxPbSubformFieldMenuBody {
+  max-height: 320px;
+}
+.cxPbSubformFldNotFoundMsg,
+.cxPbSubformUnusedFldNotFound {
+  color: #5a5a5a;
+  padding: 10px;
+  text-align: center;
+}
+.cxPbSubformUnusedFldLoader {
+  padding: 7px;
+  text-align: center;
+}
+.cxPbSubfrmUnusdFldMenuItem {
+  align-items: center;
+}
+.cxPbSubfrmUnusdFldMenuItem .cxPbSubfrmUnusdFldIcon {
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+.cxPbSubfrmUnusdFldMenuItem .cxPbDeleteIcon {
+  margin-right: auto;
+  visibility: hidden;
+}
+.cxPbSubfrmUnusdFldMenuItem:hover .cxPbDeleteIcon {
+  visibility: visible;
+}
+.cxPbSubformAggregateFieldWrap .cxPbSubformAggBuilderElem {
+  margin: 0px;
+  position: relative;
+}
+.cxPbSubformAggBuilderElem .cxPbElementClass {
+  border-radius: 0px;
+  border: none;
+  border-bottom: 1px solid #EDF0F4;
+}
+.cxPbSubformElemTh:not(:hover) .lyteInputBox:not(.lyteInputFocus) .lyteField {
+  border-color: transparent;
+}
+.cxPbSubformElemTh:not(:hover) .lyteInputBox:not(.lyteInputFocus) .lyteField,
+.cxPbSubformElemTh:not(:hover) .lyteInputBox:not(.lyteInputFocus) input {
+  background: transparent;
+}
+.cxPbSubformTooltip {
+  position: fixed !important;
+}
+.cxPbSubformElemTh .cxPbMandatoryClass::before {
+  right: 0px;
+}
+.cxPbSubformHeaderLabel {
+  color: #616E88;
+  margin-right: 24px;
+  margin-top: 2px;
+  font-family: 'LatoRegular', sans-serif;
+}
+.lytePbActiveEntityItem .cxPbSubformAggBuilderElem.cxPbSubformActiveElem::before {
+  content: '';
+  display: block;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  border: 1px solid #338CF0;
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 3;
+}
+.cxPbSubformAggBuilderElem.cxPbSubformActiveElem:first-of-type::before {
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+/***********************************************************
+    lyte-page-builder - Global Includes
+
+***********************************************************/
+/****** preview mixins starts *******/
+/****** preview mixins ends *******/
+/****** loader mixins starts *******/
+/****** loader mixins ends *******/
+/***********************************************************
+    CRUX-Page-Builder
+    LESS File Structure
+     1. crux-page-builder.less
+     2. crux-page-builder-element-toolbar.less
+     3. crux-page-builder-element.less
+     4. crux-page-builder-left-panel.less
+     5. crux-page-builder-section.less
+     6. crux-page-builder-subform.less
+     7. crux-page-builder-properties.less
+
+***********************************************************/
+/***********************************************************
+    lyte-page-builder Layout Related CSS
+
+***********************************************************/
+/*Resetting Lyte Page Builder Starts */
+.cxPbWrapper .lytePbArtboardDiv {
+  padding: 0;
+}
+.cxPbWrapper .lytePbArtboardArenaBoard {
+  border: none;
+}
+.cxPbWrapper .lytePbPlayAreaWrapper {
+  padding: 0px;
+}
+/*Resetting Lyte Page Builder Ends */
+.cxPbWrapper lyte-yield {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.cxPbWrapper .lytePbLeftBar crux-page-builder-left-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100% !important;
+  border-left: 1px solid transparent;
+}
+.cxPbWrapper .lytePbLeftBar lyte-tab-body {
+  height: 100% !important;
+}
+.cxPbWrapper .lytePbLeftBar lyte-tabs {
+  height: 100% !important;
+  min-height: 200px;
+}
+.cxPbWrapper .lytePbLeftBar .cxPbLeftPanelUnusedTab {
+  height: 100%;
+}
+.cxPbLeftPanelNotFoundMsg {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #E4E8F1;
+}
+/***********************************************************
+//     Crux Header CSS
+
+// ***********************************************************/
+/* .cxPBLeftPanel {
+
+ } */
+.cxPbWrapper .lytePbHeader {
+  border: none;
+  background: #1D3050;
+  color: #fff;
+  font-size: 0.929rem;
+}
+/***********************************************************
+    Crux page-builder-section CSS
+    Middle module builder part 
+***********************************************************/
+crux-page-builder .cxPbTemplateLayout {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: #F8FAFF;
+  min-height: 100%;
+  height: 100%;
+}
+crux-page-builder .lytePbDroppableArea {
+  background: #F8FAFF;
+  padding-top: 5px;
+}
+crux-page-builder .cxPbTemplateHeader {
+  padding: 15px;
+}
+crux-page-builder .cxPbDropAreaContainer {
+  flex: 1;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+.cxPbCreateDropAreaContainer {
+  padding-bottom: 35px;
+}
+.cxPbScrollInitial .cxPbDropAreaContainer {
+  scroll-behavior: initial;
+}
+/***********************************************************
+    Crux crux-page-builder-properties CSS
+    Right Side Properties part 
+***********************************************************/
+/* .cxPbRightModal {
+
+ }  */
+/***********************************************************
+    Crux page-builder-Icons CSS
+    Icons are of three colors
+    1. White COlor - Header Section
+    2. Left Panel Section
+    3. Right Modal and Builder Panel Section 
+***********************************************************/
+.cxPbWrapper lyte-page-builder .lytePbFooter {
+  border: none;
+  padding: 0px;
+}
+.cxPbDropAreaContainer .cxPbSprite,
+.cxPbProperties .cxPbSprite {
+  background-color: #616E88;
+}
+.cxPbWrapper .lytePbHeader .cxPbSprite {
+  background-color: #fff;
+}
+/* Icons Css */
+.cxPbSprite {
+  -webkit-mask-image: url('../../../../components/images/crux-pb-sprite.svg');
+  mask-image: url('../../../../components/images/crux-pb-sprite.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  background-color: #313949;
+  display: inline-block;
+}
+.cxPbDefaultSprite {
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  background-color: #313949;
+  display: inline-block;
+}
+.cxPbSearchIcon {
+  -webkit-mask-position: -258px -64px;
+  mask-position: -258px -64px;
+  width: 13px;
+  height: 13px;
+}
+.cxPbResizeIcon {
+  -webkit-mask-position: -156px -63px;
+  mask-position: -156px -63px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbUndoIcon {
+  -webkit-mask-position: -184px -64px;
+  mask-position: -184px -64px;
+  width: 15px;
+  height: 13px;
+}
+.cxPbCloseIcon {
+  -webkit-mask-position: -130px -63px;
+  mask-position: -130px -63px;
+  width: 14px;
+  height: 15px;
+}
+.cxPbHandleIcon {
+  -webkit-mask-position: -325px -177px;
+  mask-position: -325px -177px;
+  width: 7px;
+  height: 11px;
+}
+.cxPbMinusIcon {
+  -webkit-mask-position: -146px -271px;
+  mask-position: -146px -271px;
+  width: 11px;
+  height: 2px;
+}
+.cxPbMinusIconWrapper,
+.cxPbPlusIconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 14px;
+  border: 1.5px solid;
+}
+.cxPbTextIcon {
+  -webkit-mask-position: -6px -6px;
+  mask-position: -6px -6px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbTextareaIcon {
+  -webkit-mask-position: -35px -6px;
+  mask-position: -35px -6px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbEmailIcon {
+  -webkit-mask-position: -64px -6px;
+  mask-position: -64px -6px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbPhoneIcon {
+  -webkit-mask-position: -93px -6px;
+  mask-position: -93px -6px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbPicklistIcon {
+  -webkit-mask-position: -122px -6px;
+  mask-position: -122px -6px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbMultiselectpicklistIcon {
+  -webkit-mask-position: -152px -6px;
+  mask-position: -152px -6px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbDateIcon {
+  -webkit-mask-position: -180px -7px;
+  mask-position: -180px -7px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbDatetimeIcon {
+  -webkit-mask-position: -210px -7px;
+  mask-position: -210px -7px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbIntegerIcon {
+  -webkit-mask-position: -238px -6px;
+  mask-position: -238px -6px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbAutonumberIcon {
+  -webkit-mask-position: -238px -35px;
+  mask-position: -238px -35px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbCurrencyIcon {
+  -webkit-mask-position: -92px -34px;
+  mask-position: -92px -34px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbDoubleIcon,
+.cxPbDecimalIcon {
+  -webkit-mask-position: -296px -5px;
+  mask-position: -296px -5px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbRollup_summaryIcon {
+  -webkit-mask-position: -324px -7px;
+  mask-position: -324px -7px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbPercentIcon {
+  -webkit-mask-position: -6px -34px;
+  mask-position: -6px -34px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbBigintIcon,
+.cxPbLongintegerIcon {
+  -webkit-mask-position: -267px -5px;
+  mask-position: -267px -5px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbBooleanIcon,
+.cxPbCheckboxIcon {
+  -webkit-mask-position: -498px -35px;
+  mask-position: -498px -35px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbWebsiteIcon {
+  -webkit-mask-position: -64px -35px;
+  mask-position: -64px -35px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbMulti_module_lookupIcon,
+.cxPbLookupIcon {
+  -webkit-mask-position: -121px -34px;
+  mask-position: -121px -34px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbMultiselectlookupIcon {
+  -webkit-mask-position: -324px -35px;
+  mask-position: -324px -35px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbFormulaIcon {
+  -webkit-mask-position: -208px -34px;
+  mask-position: -208px -34px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbMultiuserlookupIcon,
+.cxPbOwnerlookupIcon,
+.cxPbUserlookupIcon {
+  -webkit-mask-position: -150px -36px;
+  mask-position: -150px -36px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbFileuploadIcon {
+  -webkit-mask-position: -267px -35px;
+  mask-position: -267px -35px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbImageuploadIcon {
+  -webkit-mask-position: -295px -35px;
+  mask-position: -295px -35px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbSubformIcon {
+  -webkit-mask-position: -569px -5px;
+  mask-position: -569px -5px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbAddressIcon {
+  -webkit-mask-position: -523px -5px;
+  mask-position: -523px -5px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbAggregateIcon {
+  -webkit-mask-position: -439px -35px;
+  mask-position: -439px -35px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbLeftArrowIcon {
+  -webkit-mask-position: -477px -60px;
+  mask-position: -477px -60px;
+  width: 8px;
+  height: 17px;
+}
+.cxPbSettingsIcon {
+  -webkit-mask-position: -6px -63px;
+  mask-position: -6px -63px;
+  width: 14px;
+  height: 15px;
+}
+.cxPbDeleteIcon {
+  -webkit-mask-position: -79px -62px;
+  mask-position: -79px -62px;
+  width: 14px;
+  height: 16px;
+}
+.cxPbPlusIcon {
+  -webkit-mask-position: -304px -66px;
+  mask-position: -304px -66px;
+  width: 10px;
+  height: 10px;
+}
+.cxPbUpArrowIcon {
+  -webkit-mask-position: -326px -68px;
+  mask-position: -326px -68px;
+  width: 10px;
+  height: 6px;
+  transform: rotate(180deg);
+}
+.cxPbDownArrowIcon {
+  -webkit-mask-position: -326px -68px;
+  mask-position: -326px -68px;
+  width: 10px;
+  height: 6px;
+}
+.cxPbWarningIcon {
+  -webkit-mask-position: -54px -62px;
+  mask-position: -54px -62px;
+  width: 16px;
+  height: 16px;
+}
+.cxPbInfoIcon {
+  -webkit-mask-position: -211px -63px;
+  mask-position: -211px -63px;
+  width: 16px;
+  height: 16px;
+  vertical-align: top;
+}
+.cxPbMoveIcon {
+  -webkit-mask-position: -356px -8px;
+  mask-position: -356px -8px;
+  width: 11px;
+  height: 13px;
+}
+.cxPbReorderIcon {
+  -webkit-mask-position: -500px -6px;
+  mask-position: -500px -6px;
+  width: 15px;
+  height: 16px;
+}
+.cxPbNewFieldIcon {
+  -webkit-mask-position: -353px -37px;
+  mask-position: -353px -37px;
+  width: 17px;
+  height: 14px;
+}
+.cxPbUnusedFieldIcon {
+  -webkit-mask-position: -382px -37px;
+  mask-position: -382px -37px;
+  width: 17px;
+  height: 14px;
+}
+.cxPbHelpIcon {
+  -webkit-mask-position: -104px -62px;
+  mask-position: -104px -62px;
+  width: 15px;
+  height: 17px;
+  vertical-align: top;
+}
+.cxPbSortIcon {
+  -webkit-mask-position: -413px -7px;
+  mask-position: -413px -7px;
+  width: 14px;
+  height: 15px;
+}
+.cxPbSingleColIcon {
+  -webkit-mask-position: -472px -36px;
+  mask-position: -472px -36px;
+  width: 16px;
+  height: 14px;
+}
+.cxPbDoubleColIcon {
+  -webkit-mask-position: -411px -36px;
+  mask-position: -411px -36px;
+  width: 16px;
+  height: 14px;
+}
+.cxPbRadiobuttonIcon,
+.cxPbRadio_buttonIcon {
+  width: 17px;
+  height: 16px;
+  -webkit-mask-position: -546px -5px;
+  mask-position: -546px -5px;
+}
+.cxPbLeftToRightIcon {
+  -webkit-mask-position: -441px -7px;
+  mask-position: -441px -7px;
+  width: 16px;
+  height: 14px;
+}
+.cxPbTopToBottomIcon {
+  -webkit-mask-position: -470px -7px;
+  mask-position: -470px -7px;
+  width: 16px;
+  height: 14px;
+}
+.cxPbMaximizeIcon {
+  -webkit-mask-position: -347px -62px;
+  mask-position: -347px -62px;
+  width: 15px;
+  height: 15px;
+}
+.cxPbMinimizeIcon {
+  -webkit-mask-position: -372px -62px;
+  mask-position: -372px -62px;
+  width: 15px;
+  height: 15px;
+}
+.cxPbSectionIcon {
+  -webkit-mask-position: -496px -61px;
+  mask-position: -496px -61px;
+  width: 17px;
+  height: 14px;
+}
+.cxPbPinnedIcon {
+  -webkit-mask-position: -521px -38px;
+  mask-position: -521px -38px;
+  width: 10px;
+  height: 10px;
+  background-color: #fff !important;
+}
+.cxPbWarningTriFillIcon {
+  -webkit-mask-position: -449px -63px;
+  mask-position: -449px -63px;
+  width: 14px;
+  height: 12px;
+  background-color: #EDA114 !important;
+  margin-right: 5px;
+}
+.cxPbMoreIcon {
+  display: block;
+  width: 16px;
+  height: 5px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -368px -342px;
+  mask-position: -368px -342px;
+  background-color: #333;
+}
+.cxPbWrapper .lytePbPageLayout .lytePbPlayArea.lytePbDesign .lytePbMainArea {
+  border: none;
+  border-radius: 0px;
+}
+.cxPbWrapper .lytePbPageLayout .lytePbPlayArea {
+  gap: 0px;
+}
+.cxPbWrapper lyte-pb-row-template {
+  background: none;
+  column-gap: 0px;
+  padding: 0px;
+}
+/****** preview styles starts *******/
+.cxPbPrevModalLoader {
+  position: relative;
+}
+.cxPbPrevModalTransUnset .lyteModalElement {
+  transform: unset !important;
+}
+.cxPbPreviewModalHeader {
+  padding-top: 20px;
+  padding-left: 60px !important;
+  border-bottom: 1px solid #EDF0F4;
+}
+.cxPbPreviewProfileDDWrap {
+  margin-right: 35px;
+  flex: 1;
+  width: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.cxPbPreviewProfileLabel {
+  font-size: 0.929rem;
+  color: #616E88;
+  margin-left: 15px;
+}
+.cxPbPreviewProfileDD {
+  max-width: 160px;
+}
+.cxPbPreviewModalContent {
+  margin-bottom: 20px;
+  padding-top: 30px;
+}
+.cxPbPreviewModalContent .cxPbElementSection,
+.cxPbPreviewModalContent .cxPbQuickCreateSection {
+  margin: 0px;
+  width: 100%;
+  padding: 0px;
+  border: 0px;
+  max-width: 100%;
+}
+.cxPbPreviewModalContent .cxPbImgSecTitleDiv .cxPbImgSecTitle {
+  margin-right: 0px;
+}
+.cxPbPreviewModalContent .cxPbImgSecTitleDiv {
+  padding-bottom: 20px;
+  padding-top: 0px;
+}
+.cxPbPreviewModalContent .cxPbRecordImageElement {
+  margin-right: 0px;
+}
+.cxPbPreviewModalContent .cxPbElementSection lyte-pb-grid-template {
+  padding-top: 20px;
+}
+.cxPbPreviewModalContent lyte-pb-column-template.lytePbColumnItem {
+  min-height: auto;
+}
+.cxPbPreviewModalContent .cxPbElementSection {
+  background-color: transparent;
+  margin-bottom: 30px;
+}
+.cxPbPreviewModalContent .cxPbQuickCreateSection lyte-pb-column-template {
+  width: 100% !important;
+  margin: 0px;
+}
+.cxPbPreviewModalContent crux-page-builder-element {
+  padding: 0px !important;
+  padding-bottom: 20px !important;
+  margin-bottom: 0px;
+}
+.cxPbPreviewModalContent crux-page-builder-element:last-child {
+  padding-bottom: 0px !important;
+}
+.cxPbPreviewModalContent .cxPbPreviewElements .cxFileUploadCreateWrap,
+.cxPbPreviewModalContent .cxPbPreviewElements {
+  display: flex;
+  width: 100%;
+}
+.cxPbPreviewModalContent .cxFileUploadButton,
+.cxPbPreviewModalContent .cxElementValue {
+  width: 390px;
+  max-width: 390px;
+}
+.cxPbPreviewModalContent .cxElementLabel {
+  width: 150px;
+  max-width: 200px;
+  margin-left: 20px;
+  padding-top: 9px;
+  text-align: left;
+  word-break: break-word;
+}
+.cxPbPreviewModalContent .cxElementLabelNoPadding {
+  padding-top: 2px;
+}
+.cxPbPreviewModalContent crux-boolean-component .cxElementLabel {
+  padding-top: 2px;
+}
+.cxPbPreviewModalContent .cxPbSubformPreview .cxElementValue,
+.cxPbPreviewModalContent .cxElementValue lyte-input,
+.cxPbPreviewModalContent .cxElementValue lyte-autocomplete {
+  width: 100%;
+}
+.cxPbSubformPreview .cxSubform {
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+.cxPbPreviewModalContent crux-page-builder-element.cxPbAddressElementComp {
+  padding: 30px 15px 10px !important;
+  margin-bottom: 20px;
+  position: relative;
+  border: 1px solid #EDF0F4;
+  border-radius: 6px;
+}
+.cxPbPreviewModalContent crux-page-builder-element.cxPbAddressElementComp:hover {
+  border-color: #787D83;
+}
+.cxPbPreviewModalContent crux-page-builder-element .cxPbPreviewModalContent .cxPbAddressElementFieldsWrap {
+  padding: 0px;
+  border: none;
+}
+.cxPbPreviewModalContent .cxPbAddressElementFieldsWrap .cxPbPreviewElements {
+  width: 100%;
+}
+.cxPbPreviewModalContent .cxPbAddressElementFieldsWrap .cxPbPreviewElements:not(:last-child) {
+  margin-bottom: 20px;
+}
+.cxPbRestrictedPreviewElements .cxElementValue {
+  pointer-events: none;
+}
+.cxPbPreviewElements .cxElementLabel .cxInfoIcon {
+  vertical-align: top;
+  margin-top: 1px;
+}
+.cxPbPreviewModalContent lyte-pb-row-template {
+  background-color: #fff;
+}
+.cxPbPreviewModalContent .cxPbSubformAggBuilderElem .cxElementLabel,
+.cxPbPreviewModalContent .cxPbSubformAggregateFieldWrap {
+  width: auto;
+}
+.cxPbPreviewModalContent .cxPbSubformAggBuilderElem .cxElementValue {
+  width: 180px;
+}
+.cxPbPreviewModalContent .cxPbSubformAggBuilderElem {
+  padding: 7px 15px !important;
+}
+.cxPbPreviewModalContent .cxPbSubformAggBuilderElem:not(:last-of-type) {
+  border-bottom: 1px solid #EDF0F4;
+}
+.cxPbPreviewModalContent .cxPbElemActionIconWrap,
+.cxPbPreviewModalContent .cxPbElemSecActionIcons,
+.cxPbPreviewModalContent .cxPbNewSectionBtn {
+  display: none;
+}
+/****** preview styles ends *******/
+.cxPbDropAreaLoaderCont .lytePbDroppableArea,
+.cxPbDropAreaLoaderCont .cxPbTemplateDroppable {
+  width: 100%;
+  height: 100%;
+}
+.cxPbBarLoader {
+  position: absolute !important;
+  pointer-events: none;
+  inset: 0;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+}
+.cxPbBarLoader.cxBarLoader > div {
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 0px 2px;
+}
+.cxPbSplinLoader.cxSpinloader {
+  width: 30px;
+  height: 30px;
+  animation-duration: 0.7s;
+}
+.cxPbActiveClass span.cxPbMinusIconWrapper {
+  visibility: visible;
+}
+/* Image Section Starts */
+.cxPbDefaultUserImage {
+  width: 40px;
+  height: 40px;
+  background-image: url(../../images/nophoto.png);
+  background-size: 100%;
+  display: block;
+  border-radius: 20px;
+}
+.cxPbRecordImageElement {
+  margin-right: 5px;
+  padding-bottom: 10px;
+  height: 40px;
+  transition: height 0.3s, visibility 0s linear 0.2s;
+}
+.cxPbRecordImageElement .cxPbElemActionIconWrap {
+  position: relative;
+  right: 8px;
+  left: initial;
+}
+.cxPbImgSecTitleDiv {
+  padding-bottom: 10px;
+  padding-top: 5px;
+  display: flex;
+  align-items: center;
+}
+.cxPbImgSecTitleDiv .cxPbImgSecTitle {
+  margin: 0px 5px 0px 10px;
+  max-width: calc(100% - 71px);
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  display: block;
+  white-space: nowrap;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1rem;
+}
+.cxPbRecordImageElement.cxPbHideDefaultUserImage {
+  overflow: hidden;
+  visibility: hidden;
+  height: 0px;
+}
+crux-page-builder-record-image:hover .cxPbHideDefaultUserImage .cxPbElemMoreIcon,
+.cxPbHideDefaultUserImage .cxPbElemActionIconWrap,
+.cxPbHideDefaultUserImage .cxPbDefaultUserImage {
+  visibility: hidden;
+}
+.cxPbRecImgHideTitleDiv {
+  padding-bottom: 5px;
+}
+crux-page-builder-record-image:focus-visible .cxPbElemMoreIcon,
+crux-page-builder-record-image:hover .cxPbElemMoreIcon {
+  visibility: visible;
+}
+/* Image Section ends */
+.cxPermTableTitleTd {
+  width: 100%;
+}
+lyte-dropdown .lyteDummyEventContainer:focus .cxPermTableActionBtn,
+lyte-dropdown .lyteDummyEventContainer:focus .cxPermTableActionBtn:hover,
+.cxPermTableActionBtn,
+.cxPermTableActionBtn.lyteDropButtonDown,
+.cxPermTableActionBtn.lyteDropButtonDown:hover,
+.cxPermTableActionBtn.lyteDropButtonUp,
+.cxPermTableActionBtn.lyteDropButtonUp:hover,
+.cxPermTableActionBtn:hover,
+.cxPermTableActionBtn.lyteDefaultBtn:focus,
+.cxPermTableActionBtn.lyteDefaultBtn:hover,
+.cxPermTableActionBtn.lyteDefaultBtn {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 0px;
+  width: 100%;
+}
+.cxPermTableActionText {
+  flex: 1;
+}
+.cxPermTableActionBtnWrap {
+  width: 100%;
+  max-width: 100%;
+}
+.cxPermTableDownArrowIcon {
+  width: 10px;
+  height: 6px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -14px -1px;
+  mask-position: -14px -1px;
+  background-color: #333;
+  vertical-align: middle;
+  margin-right: 7px;
+  margin-top: 2px;
+}
+.cxPermReadWriteIcon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -29px -362px;
+  mask-position: -29px -362px;
+  background-color: #12AA67;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+.cxPermReadOnlyIcon {
+  width: 16px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -78px -363px;
+  mask-position: -78px -363px;
+  background-color: #a4a4a4;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+.cxPermHideIcon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -52px -361px;
+  mask-position: -52px -361px;
+  background-color: #FF5D5A;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+/*# sourceMappingURL=crux-page-builder.css.map */

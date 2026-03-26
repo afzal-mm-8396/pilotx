@@ -1,0 +1,150 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-lookup-view-popup.variables.less";
+
+@import "../../themes/default/less-variables/crux-lookup-view-popup-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-lookup-view-popup";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../themes/default/css-variables/crux-lookup-view-popup-variables.less";
+}
+
+.cxLookupViewTopSection {
+	.cxLookupViewTopSectionMixin();
+	display: flex;
+	// align-items: center;
+	margin-bottom: @margin-bottom;
+}
+.cxLookupViewTopSection .cxLookupHasSingleRow {
+	display: flex;
+	align-items: center;
+}
+.cxLookupViewPopImgCont .cxLookupViewPopRecImg,
+.cxLookupViewPopImgCont{
+	.cxLookupViewPopImgMixin();
+    width: @w;
+    height: @h;
+    border-radius: @border-radius;
+    display: inline-block;
+}
+.cxLookupViewPopImgCont{
+	.cxLookupViewPopImgContMixin();
+    @{property-margin-right}: @margin-right;
+}
+.cxLookupViewLetterCircle,
+.cxEmptyProfileImage img {
+	.cxEmptyProfileImageSizeMixin();
+    width: @width;
+    height: @height;
+    border-radius: @border-radius;
+}
+
+.cxLookupViewLetterCircle {
+	.cxLookupViewLetterCircleMixin();
+	// width: @w;
+	// height: @h;
+	// border-radius: @border-radius;
+	background: @bg;
+	color: @color;
+	border: @border;
+	font-size: @font-size;
+	text-transform: capitalize;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 0;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+.cxLookupViewTopSection .cxLookupViewLetterCircle {
+	.cxLookupViewLetterCircleTopMixin();
+	@{property-margin-right}: @margin-right;
+}
+.cxLookupViewTopContentWrap {
+	.cxLookupViewTopContentWrapMixin();
+	// max-width: @max-w;
+	flex: 1;
+	overflow-wrap: @overflow-wrap;
+    word-break: @word-break;
+	font-size: @font-size;
+}
+.cxLookupViewTopHeading {
+	.cxLookupViewTopHeadingMixin();
+	cursor: pointer;
+	font-size: @font-size;
+	font-family: @font-family;
+	font-weight: @font-weight;
+}
+.cxLookupViewTopDesc {
+	.cxLookupViewTopDescMixin();
+	color: @color;
+	overflow: @overflow;
+    display: @display;
+    word-break: @word-break;
+	margin-top: @margin-top;
+}
+
+.cxDivTable {
+	display: table;
+}
+.cxDivTr {
+	display: table-row;
+}
+.cxDivTd {
+	display: table-cell;
+}
+.cxLookupViewLabel {
+	.cxLookupViewLabelMixin();
+	padding: @padding;
+	min-width: @min-w;
+	color: @color;
+	@{property-margin-right}: @margin-right;
+	font-size: @font-size;
+	vertical-align: @vertical-align;
+	max-width: @max-width;
+	overflow-wrap: @overflow-wrap;
+	box-sizing: border-box;
+}
+.cxLookupViewValue {
+	.cxLookupViewValueMixin();
+	font-family: @font-family;
+	padding: @padding;
+	// overflow: @overflow;
+    // text-overflow: @text-overflow;
+	max-width: @max-width;
+	box-sizing: border-box;
+	overflow-wrap: @overflow-wrap;
+	font-size: @font-size;
+}
+.cxLookupViewValueWrap {
+	max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cxLookupViewPopupHeadingLink{
+	.cxLookupViewPopupHeadingLinkMixin();
+	color: @color;
+}
+
+.cxLookupVwPopupValue.cxLookupViewValue .phoneRtl.cxPhoneViewZPBEnabled{
+	.cxLookupVwPopupPhoneValueMixin();
+	@{property-padding-right}: @padding-right;
+	@{property-padding-left}: @padding-left;
+}
+
+.cxLookupVwPopupValue .cxPhoneViewZPBEnabledIconWrap{
+	.cxLookupVwPopupPhoneValueIconMixin();
+	top: @top;
+}
+.cxEmptyProfileImage {
+    @{property-margin-right}: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}

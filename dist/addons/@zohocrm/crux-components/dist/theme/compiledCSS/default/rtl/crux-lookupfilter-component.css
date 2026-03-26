@@ -1,0 +1,125 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+/*  Crux Kanban view Less Mixin Begins */
+/*  Crux Kanban view Less Mixin Ends */
+/*  Crux Combo box LESS Mixin Begins  */
+/*  Crux Combo box LESS Mixin Ends  */
+/*  Crux Criteria editor LESS Mixin Begins  */
+/*  Crux Criteria editor LESS Mixin Ends  */
+/*  Crux Dropdown Less Mixin Begins */
+/*  Crux Dropdown Less Mixin Ends */
+/*  Crux Form elements Less Mixin Begins */
+/*  Crux Form elements Less Mixin Ends */
+/*  Crux Lookup modal Less Mixin Begins */
+/*  Crux Lookup modal Less Mixin Ends */
+/*  Crux Note Less Mixin Begins */
+/*  Crux Note Less Mixin Ends */
+/*  Crux User dropdown LESS Mixin Begins    */
+/*  Crux User dropdown LESS Mixin Ends    */
+/*  Crux User lookup LESS Mixin Begins    */
+/*  Crux User lookup LESS Mixin Ends    */
+/*  Crux Util Alert Less Mixin Begins   */
+/*  Crux Util Alert Less Mixin Ends   */
+/*	Crux Lookup Component LESS mixin Begins	*/
+/*	Crux Lookup Component LESS mixin Ends	*/
+/*	Crux Subform Component LESS mixin Starts */
+/*	Crux Subform Component LESS mixin Ends	*/
+/* Temp CSS Styles for RLL STarts
+	- will be removed when .less files are used in crm 
+*/
+.cxLookupViewTopContentWrap {
+  margin-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+  margin-left: 0;
+  /* stylelint-disable-line property-disallowed-list */
+}
+.cxLookupViewValue {
+  padding-right: 10px;
+  /* stylelint-disable-line property-disallowed-list */
+}
+/* Temp CSS Styles for RLL Ends */
+/*Temp Fix for margin-left: Auto in rtl*/
+.cxMlAuto {
+  margin-right: auto;
+  margin-left: inherit;
+}
+crux-lookupfilter-component {
+  display: table-row;
+}
+crux-lookupfilter-component lyte-th.lyteFixedColumn.cxLookupFirstCol:not(.lytePreventIcon)::after {
+  content: none;
+}
+crux-lookupfilter-component lyte-th,
+lyte-table.border crux-lookupfilter-component lyte-th {
+  border: 0;
+  padding-bottom: 20px;
+}
+.cxLookupFilterButtonWrap {
+  position: relative;
+  white-space: normal;
+  z-index: 5;
+  margin-top: 20px;
+}
+.cxSFDiscountWrap crux-number-component {
+  max-width: calc(100% - 20px);
+}
+.cxSFDiscountWrap .numberDivNumberView {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cxLookupClearFilter {
+  margin-right: 10px;
+  cursor: pointer;
+  color: var(--lyte-crux-lookup-clear-filter-text-color);
+  display: inline-block;
+}
+.cxLookupFilterButtonWrap .lyte-button {
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+.cxLookupFieldList lyte-dropdown {
+  max-width: 100%;
+}
+crux-lookupfilter-component .cxCriteriaInputSection {
+  margin-top: 20px;
+}
+/* Temp Override styles STarts */
+.cxLookupFilterButtonWrap .lytePrimaryBtn {
+  min-width: 102px;
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+/*# sourceMappingURL=crux-lookupfilter-component.css.map */

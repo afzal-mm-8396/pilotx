@@ -1,0 +1,86 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+.cxMergeFieldBodyPopover .lytePopoverElement {
+  padding: 5px 0px;
+}
+.cxMergeFieldBodyPopover .lytePopoverYield {
+  height: 100%;
+  overflow: hidden;
+}
+.cxMegeFieldPopModuleDropdown {
+  padding: 5px 15px;
+}
+.cxMegeFieldPopContent {
+  padding: 0px;
+  overflow: auto;
+  flex: 1;
+  min-height: 100%;
+}
+.cxMegeFieldPopContent lyte-text {
+  vertical-align: top;
+}
+.cxMergeFieldPopFieldsLabel {
+  padding: 8px 10px 8px;
+  cursor: pointer;
+  margin: 0px 6px;
+  border-radius: 6px;
+}
+.cxMergeFieldLabelActive {
+  background: var(--lyte-crux-merge-field-popup-label-hover-bg-color);
+}
+.cxMegeFieldPopDisabled .cxMergeFieldPopFieldsLabel,
+.cxMegeFieldPopDisabled .cxMergeFieldLabelActive {
+  background: none !important;
+  color: #a4a4a4;
+  pointer-events: none;
+}
+.cxMergeFieldPopSubHeading {
+  padding: 10px 10px 6px;
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  font-size: 0.857rem;
+}
+.cxMergeFieldModuleDropdownVisible::before {
+  content: '';
+  position: absolute;
+  cursor: default;
+  inset: 0px;
+}
+.cxMergeFieldTextBold {
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+}
+/*# sourceMappingURL=crux-merge-field-body.css.map */

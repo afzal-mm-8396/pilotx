@@ -1,0 +1,635 @@
+@cxElemMaskIconWhiteBg: @cxThemeBg;
+@cxElemMaskIconHoverBg: #E9EEF4;
+
+.cxBoxInputInsideLabel_cxboxinput() {
+	@border: 1px solid @cxCommonBoxInputBorderColor;
+	@border-radius: @cxBoxInputBorderRadius;
+    @bg: @cxBoxInputBg;
+}
+.cxDropdownInputGroupMixin() {
+    @border: 1px solid @cxCommonBoxInputBorderColor;
+    @border-radius: 5px;
+}
+.cxElementDisabledDropdownInputGroupMixin(){
+    @border: 1px solid @cxCommonBoxInputBorderColor;
+}
+.cxBoxInputInsideLabel_cxboxinputHover() {
+	@border: 1px solid @cxCommonBoxInputBorderHoverColor;
+	@box-shadow: 0 0 6px @cxCommonBoxInputHoverShadow;
+}
+.cxBoxInputInsideLabel_cxboxinputFocus() {
+	@border: 1px solid @cxCommonBoxInputBorderFocusColor;
+	@box-shadow: 0 0 6px @cxCommonBoxInputFocusShadow;
+}
+.cxBoxInputInsideLabel_cxboxinputHorizontalLabel() {
+    @padding: 7px 7px 7px 12px;
+    @color: @cxCommonBoxInputLabelColor;
+    @opacity: 0.6;
+    @w: auto;
+    @min-w: auto;
+    @line-height:16px;
+}
+.cxBoxInputInsideLabel_cxboxinputHorizontalInput() {
+    // @padding: 7px 10px 7px 0;
+    @padding: 7px 12px;
+}
+.cxBoxBigTextarea() {
+    @min-h: 68px;
+    @h: 68px;
+}
+.cxBoxInputMandatoryFieldBefore() {
+    @h: 99%;
+    @w: 3px;
+    @bg: @cxCommonBoxInputMandatoryBgColor;
+    @top: 0;
+    @left: -1px;
+    @border-radius: @cxBoxInputInnerElemBorderRadius 0 0 @cxBoxInputInnerElemBorderRadius;
+    @z-index: 1;
+}
+.cxDropdownMandatoryFieldMixin(){
+    @h: auto;
+    @top: 1px;
+    @bottom: 1px;
+    @left: 0px;
+}
+.cxBoxLeftSearchInput() {
+    @padding-left: 30px;
+}
+.cxBoxLeftSearchIcon() {
+    @left: 10px;
+}
+
+.cxBoxWithRightIconMixin() {
+    @border: 1px solid @cxCommonBoxInputBorderColor;
+    @border-radius: @cxBoxInputBorderRadius;
+}
+.cxBoxWithRightIconMandatoryFieldLeftContentBeforeMixin() {
+    @h: 100%;
+    @w: 3px;
+    @bg: @cxCommonBoxInputMandatoryBgColor;
+    @top: 0;
+    @left: -1px;
+    @border-radius: @cxBoxDropdownInnerElemBorderRadius 0 0 @cxBoxDropdownInnerElemBorderRadius;
+    @z-index: 1;
+}
+.cxBoxWithRightIconHoverMixin() {
+    @border: 1px solid @cxBoxInputBorderHoverColor;
+    @box-shadow: none;
+}
+.cxBoxWithRightIconLyteFieldMixin() {
+    @border: 0;
+    @box-shadow: none;
+}
+.cxBoxWithRightIconLyteInputFieldMixin(){
+    @border-radius: if(@direction = rtl,0px 6px 6px 0px,6px 0px 0px 6px);
+}
+.cxNumcompWithoutRightIconInputFieldMixin(){
+    @border-radius: 6px;
+}   
+.cxBoxWithRightIconDropdownOpenedMixin() {
+    @border: 1px solid @cxCommonBoxInputBorderFocusColor;
+    @box-shadow: @cxCommonBoxInputFocusShadow;
+}
+.cxBoxRightIconMixin() {
+    @w: 32px;
+    @min-w: 32px;
+    @min-h: 32px;
+    @bg: @cxCommonBoxInputIconBgColor;
+    @border-radius: 0 @cxBoxInputInnerElemBorderRadius @cxBoxInputInnerElemBorderRadius 0;
+    @position: absolute;
+    @right: 1px;
+    @top: 1px;
+    @height: calc( 100% - 2px );
+}
+.cxBoxWithRightIconErrorMsgDescMixin() {
+    @left: 0;
+    @top: auto;
+    @bottom: -15px;
+    @right: auto;
+}
+.cxBoxWithRighIconDropButtonMixin() {
+    @padding-right: 55px;
+}
+.cxBoxWithRighIconWithClearDropButtonMixin() {
+    @padding-right: 70px;
+}
+.cxBoxWithRighIconContainsDropdownIconMixin() {
+    @right: 40px;
+}
+.cxBoxWithRighIconContainsDropdownWithClearIconMixin() {
+    @right: 60px;
+}
+.cxBoxCloseIconWrapMixin() {
+    @right: 40px;
+    @h: 100%;
+}
+.cxBoxWithLeftIconCloseIconWrapMixin() {
+	@right: 5px;
+}
+.cxBoxCloseIconMixin() {
+    @bg-img: @cruxSprite;
+    @bg-pos: -22px -77px;
+    @w: 10px;
+    @h: 10px;
+    @opacity: 0.7;
+}
+.cxBoxCloseIconHoverMixin() {
+    @opacity: 1;
+}
+.cxBoxWithRightIconContainsDropdownRightIconMixin() {
+    @top: 0;
+    @bottom: 0;
+    @right: 0;
+    @z-index: 1;
+}
+.cxBoxErrorField() {
+    @border: 1px solid @cxCommonBoxElementErrorBorderColor;
+    @box-shadow: 0 0 6px @cxCommonBoxInputErrorShadow;
+}
+.cxBoxWithRightIconLyteInputMixin() {
+    @flex-grow: 1;
+}
+.cxBoxWithRightIconInputInsideLabelMixin() {
+    @border: 0;
+    @box-shadow: none;
+}
+.cxboxdropdownMandatoryDummyEventContainerBefore() {
+    @h: auto;
+    @w: 3px;
+    @bg: @cxCommonBoxInputMandatoryBgColor;
+    @top: 1px;
+    @bottom: 1px;
+    @left: 0;
+    @border-radius: @cxBoxDropdownInnerElemBorderRadius 0 0 @cxBoxDropdownInnerElemBorderRadius;
+    @z-index: 1;
+}
+// .cxElementDisabledInputMixin() {
+// 	@padding-right: 32px;
+// }
+.cxElementDisabledFieldMixin() {
+    @background-color: @cxCommonBoxElementsDisabledBgColor;
+}
+.cxElementReadOnlyBackgroundMixin() {
+    @background-color: @cxCommonBoxElementsDisabledBgColor;
+}
+.cxElementDisabledInputAfter() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -239px -60px;
+	@w: 12px;
+    @h: 14px;
+	@right: 10px;
+	@top: calc(50% - 7px);
+}
+.cxReadOnlyIconMixin() {
+    @bg-img: @cruxSprite;
+	@bg-pos: -165px -263px;
+	@w: 14px;
+    @h: 15px;
+	@right: 10px;
+	@top: calc(50% - 7px);
+    @bg-color: @cxIconBaseMaskBg;
+}
+.cxElementDisabledDropdownDisabledMixin() {
+    @opacity: 1;
+}
+
+.cxInfoIconMixin() {
+    @bg: @cruxSprite;
+    @bg-pos: -7px -126px;
+    @w: 13px;
+    @h: 14px;
+    @bg-color: @cxCommonBoxInputInfoIconColor;
+}
+
+.cxViewInfoTooltipIconMixin(){
+    @margin-left: 5px;
+}
+
+.cxElementLabelInfoIconMixin() {
+    @opacity: 0.3;
+    @margin-left: 5px;
+}
+
+.cxInfoIconWithWrapperMixin(){
+    @margin-left: 0px;
+}
+
+.cxLoadOnViewLabelMixin() {
+    @margin-right: 30px;
+    @bg: @cxCommonBoxInputLoaderBg;
+}
+.cxLoadOnViewValueMixin() {
+    @padding: 7px 12px;
+    @border: 1px solid transparent;
+    @border-radius: 5px;
+    @bg: @cxCommonBoxInputLoaderBg;
+    @font-size: @cxFontSize1rem;
+    @flex-grow: 1;
+    @h: 35px;
+}
+.cxElementsHovercardPopoverMixin() {
+    // @border-radius: 2px;
+    @border: none;
+}
+.cxElementsHoverCardContentMixin() {
+    @bg: @cxCommonBoxInputInfoPopupBg;
+    @border: 1px solid @cxCommonBoxInputInfoPopupBorderColor;
+    @padding: 5px 10px;
+    @border-radius: 2px;
+    @color: @cxCommonBoxInputInfoPopupColor;
+    @font-size: @cxFontSize0929rem;
+    @font-family: @cruxPrimaryFont;
+    @box-shadow: 0px 3px 5px 0px @cxCommonBoxInputInfoPopupBoxShadowColor;
+    @max-w: 400px;
+}
+.cxElementsHovercardArrowIconMixin() {
+	@bg: @cxCommonBoxInputInfoPopupBg !important;
+    @box-shadow: none;
+}
+.cxElementViewValueMixin() {
+    @font-size: @cxFontSize14px;
+}
+
+.cxElementViewWrapLabelMixin(){
+    @max-w: 100%;
+}
+
+.cxTooltipMixin() {
+    // @font-size: @cxFontSize14px;
+    @font-size: @cxFontSize13px;
+}
+.cxCommonAlertWrapperMixin() {
+    @border-radius: 0 0 5px 5px;
+}
+.cxElementsLoaderBgMixin() {
+    // @w: 32px;
+    // @h: 32px;
+    // @bg-img: @cruxSearchLoaderImage;
+    // @bg-size: 100%;
+    @width: 18px;
+    @height: 18px;
+    @border: 2px solid @cxCommonElementsLoaderBgColor;
+    @border-bottom-color: @cxCommonElementsLoaderBorderColor;
+    @border-radius: 50%;
+}
+.cxDropdownInputGroupDropdownMixin() {
+    @border-right: 1px solid @cxCommonBoxInputBorderColor;
+}
+.cxLinkMixin() {
+	@color: @cxCommonLinkColor;
+}
+.cxGrayLinkMixin() {
+	@color: @cxCommonGreyLinkColor;
+}
+.cxElementsTooltipMixin() {
+	@margin: 10px;
+}
+.lyteInputBoxDisabledMixin() {
+    border-color: @cxCommonBoxInputDisabledBorderColor;
+}
+.inputPlaceHolderFontSize(){
+    @font-size:14px;
+}
+.cxBoxBlueDropdownIconMixin(){
+    @background-image: @cruxSprite;
+    @background-position: -338px -179px;
+	@width: 11px;
+	@height: 7px;
+    @top: calc(50% - 3px);
+    @display: inline-block;
+    @opacity: 1;
+    @position: absolute;
+    // @background-color : @cxIconBaseMaskBg;
+    @background-color : @cxCommonBoxInputShowMoreIconBg;
+}
+.cxTextareaShowMoreBlueDDMixin() {
+    @margin-left: 5px;
+}
+.cxDropdownWhiteMixin(){
+    @background-color: @cxDropdownWhiteBg;
+}
+.cxElementsDisabledIconMixin() {
+    @position: absolute;
+    @right: 10px;
+    @top: 7px;
+}
+
+.cxPhoneCountryDropDownMixin(){
+    @border-radius: if(@direction=ltr,5px 0px 0px 5px,0px 5px 5px 0px);
+}
+
+.cxTxtBoxRightIconMixin() {
+    @position: absolute;
+	@background: @cxCommonCriteriaGrayBg;
+    // @background: var(--bg_F0F4FF);
+    @border-radius: 0 @cxBoxInputInnerElemBorderRadius @cxBoxInputInnerElemBorderRadius 0;
+    @right: 1px;
+    @top: 1px;
+    @height: calc( 100% - 2px );
+    @width: 32px;
+}
+
+.cxRemoveIconWithCircleAfterMixin(){
+	@bg-img: @cruxSprite;
+	@bg-pos: -71px -118px;
+	@bg-color: @cxCommonIconBaseMaskBg;
+	@w: 8px;
+	@h: 8px;
+	@inset: 0px;
+	@margin: auto;
+}
+
+// .cxRemoveIconWithCircleHoverMixin(){
+	// @bg: #E9EEF4;
+// }
+
+.cxRemoveIconWithCircleMixin(){
+	@bg-img: none;
+	@opacity: 1;
+	@w: 16px;
+	@h: 16px;
+	@border-radius: 8px;
+	@top: 9px !important;
+	@right: 9px;
+}
+/*********** Element prefix case mixins starts ***********/ 
+
+.cxElemCompPrefixDivMixin(){
+	@border-radius: if((@direction=ltr),5px 0px 0px 5px,0px 5px 5px 0px);
+	@max-w: 50%; 
+	@padding: .cruxLESSPaddingMixin(8px 10px 8px 12px)[@padding];
+	@bg: @cxBoxElemPrefixSuffixBg;
+    @flex-shrink: 0;
+}
+
+.cxBooleanCompWithPrefixYieldCheckBoxMixin(){
+    @margin-left: 5px;
+}
+
+.cxBoxWithPrefixYieldElementRadiusMixin(){
+    @border-radius: if(@direction=ltr,0px 5px 5px 0px,5px 0px 0px 5px);
+}
+
+.cxDateTimeElemPrefixDateInputMixin(){
+    @border-radius: 0px;
+}
+
+.cxElemCompWithPrefixYieldDropDownMixin(){
+    // @border-radius: 5px;
+    @padding : 0px;
+}
+
+.cxElmCompWithPreYldMulSerDDNoDataMixin(){
+    @padding: .cruxLESSPaddingMixin(8px 25px 8px 12px)[@padding];
+}
+
+.cxElemCompWithPreYldMulSearchDDMixin(){
+    @padding: .cruxLESSPaddingMixin(4px 25px 1px 12px)[@padding];
+}
+
+.cxElemCompWithPrefixYieldDropDownLabelMixin(){
+    @padding: .cruxLESSPaddingMixin(8px 25px 8px 12px)[@padding];
+    @padding-right: 25px;
+}
+
+.cxElemPrefixYieldMultiSelectIconMixin(){
+    @w: 8px;
+    @h: 5px;
+    @opacity: 0.6;
+    @bg-pos: -1px -1px;
+    @right: 10px;
+    @top: 13px;
+    @transform: scale(1.3);
+}
+
+// .cxTagCompWithPrefixYieldDropDownLabelMixin(){
+//     @padding: 8px 12px;
+// }
+
+.cxPicklistColorElemWithPrefixYieldMixin(){
+    @padding: 0px;
+}
+
+.cxPicklistColorIndicatorWithPrefixYieldMixin(){
+    @inset: 0px;
+    @margin: auto;
+    @margin-left: 8px;
+}
+
+.cxLookupElemPrefixYieldMixin(){
+    @max-w: 100%;
+}
+
+.cxLookupCompInputElemWithPrefixMixin(){
+    @padding-right: 32px;
+}
+
+.cxBoxSpinWrapperWithPrefixMixin(){
+    @right: 32px;
+}
+
+.cxElemCompPrefixVwDivMixin(){
+    @max-width: 50%;
+    @margin-right: 2px;
+}
+
+.cxBooleanCompPrefixYieldMixin(){
+    @max-w: calc(100% - 32px);
+}
+
+.cxBooleanCompSuffixVwDivMixin(){
+    @margin-left: 5px;
+}
+
+
+.cxUserCompElemCompPrefixDivMixin(){
+    @flex-shrink: 0;
+}
+
+// .cxUserCompWithPrefixYieldContentMixin(){
+//     @padding: .cruxLESSPaddingMixin(5px 25px 1px 10px)[@padding]; 
+// }
+
+.cxUserCompWithPrefixYieldPlaceholderMixin(){
+    @padding: .cruxLESSPaddingMixin(8px 25px 8px 12px)[@padding];
+}
+
+.cxElemCompLyteInputYieldMixin(){
+    @padding: 0px;
+}
+
+// .cxUserCompWithRightIconPrefixYieldContentMixin{
+//     @padding-right: 55px;
+// }
+
+.cxElemCompPrefixYieldInputMixin(){
+    @padding-left: 8px !important;
+}
+
+.cxEleComPrefYldColorEnbPicklistMixin(){
+    @padding-left: 10px;
+}
+
+/*********** Element prefix case mixins ends ***********/ 
+
+
+/*********** Element latest view case mixins Starts ***********/ 
+
+.cxElemCompViewWrapTooltipMixin(){
+    @margin-left: 2px;
+}
+
+.cxElemCompViewValueMixin(){
+    @max-w: 100%;
+}
+
+/*********** Element latest view case mixins Ends ***********/ 
+// .cxTxtBoxRightIconMixin() {
+//     @position: absolute;
+// 	@background: @cxCriteriaGrayBg;
+//     // @background: var(--bg_F0F4FF);
+//     @border-radius: 0 @cxBoxInputInnerElemBorderRadius @cxBoxInputInnerElemBorderRadius 0;
+//     @right: 1px;
+//     @top: 1px;
+//     @height: calc( 100% - 2px );
+//     @width: 32px;
+// }
+
+
+
+
+
+
+.cxAriaActiveBorderMixin() {
+    @outline: 1px auto @cxCommonBoxInputBorderFocusColor;
+    // @z-index: 1000 !important;
+    @z-index: 1;
+}
+
+/********* CRUX BUTTON YIELD MIXIN STARTS *********/
+
+.cxElemButtonYieldMixin(){
+    @margin: 5px 0px 10px;
+}
+
+/********* CRUX BUTTON YIELD MIXIN ENDS *********/
+
+/********* CRUX Colmmon CLear icons MIXIN Starts *********/
+.cxColListSearchClearWrapMixin() {
+	@right: 8px;
+	@top: 0px;
+	@bottom : 0px;
+	@margin: auto;
+	@w: 20px;
+	@h: 20px;
+	@opacity: 0.7;
+}
+.cxColListSearchClearWrapHoverMixin() {
+	@opacity: 1;
+}
+.cxSearchClearIconMixin () {
+	@position: relative;
+    // @background: var(--inputCloseIconBg);
+	@background: none;
+    @border-radius: 100%;
+    @cursor: pointer;
+    @width: 24px;
+    @height: 24px;
+    @opacity: 1;
+    @display: flex;
+}
+.cxSearchClearIconHoverMixin (){
+    @background: @cxCommonSearchClearIconBg;
+}
+.cxSearchClearIconAfterMixin() {
+	@bg-img: @cruxSprite;
+	@bg-pos: -71px -118px;
+	@w: 8px;
+	@h: 8px;
+    @position: absolute;
+    @cursor: pointer;
+    @opacity: 1;
+    @display: inline-block;
+    @z-index: 1;
+    @transform: scale(.8);
+    @top: calc(50% - 4px);
+    @left: calc(50% - 4px);
+}
+/********* CRUX Colmmon CLear icons MIXIN Ends *********/
+
+.cxElemMaskIconMixin(){
+    @margin: -3px 4px 0px;
+}
+
+.cxElemMaskIconBeforeMixin(){
+    @w: 24px;
+    @h: 24px;
+    @top: -5px;
+    @left: -4px;
+    @bg: @cxElemMaskIconHoverBg;
+    @border-radius: 4px;
+}
+
+.cxHideMaskIconMixin(){
+    @w: 0px;
+    @transition: 0.15s width,0.15s margin;
+    @margin: -3px 0px 0px;
+}
+
+.cxHideMaskIconHoverMixin(){
+    @w: 16px;
+    @margin: -3px 4px 0px; 
+}
+
+.cxElemMaskIconTooltipMixin(){
+    @margin-top: 4px;
+}
+
+.cxElemSecondaryMaskIconMixin(){
+    // @top: 4px;
+    // @right: 0px;
+    // @margin-top: 3px;
+    @margin: 0px;
+    @margin-left: -20px;
+}
+
+.cxElemSecondaryMaskIconWrapMixin(){
+    @margin-top: 6px;
+}
+
+.cxElemSecPhoneMaskIconMixin(){
+    // @right: 20px;
+    @margin-left: -40px;
+}
+
+.cxElemSecondaryMaskIconBeforeMixin(){
+    @bg-color: @cxElemMaskIconWhiteBg;
+    @box-shadow: -7px 0px 17px 0px @cxElemMaskIconWhiteBg;
+}
+.cxElemSecondaryMaskIconBeforeInTableMixin() {
+    @bg-color: @cxElemSecondaryMaskIconInTableBgColor;
+    @box-shadow: -7px 0px 17px 0px @cxElemSecondaryMaskIconInTableBgColor;
+}
+
+.cxSubformAggTableMaskIconMixin(){
+    @right: 12px;
+    @margin-top: 0px;    
+}
+
+.cxElemSecondaryMaskIconBeforeHoverMixin(){
+    @bg-color: @cxElemMaskIconHoverBg;
+    @box-shadow: none;
+}
+
+.cxElementReadOnlyFieldMixin(){
+    @bg: @cxBoxElementsDisabledBgColor;
+}
+/********* CRUX Colmmon CLear icons MIXIN Ends *********/
+
+.cxMandatoryTypeMixin(){
+    @color: @cxBoxElementMandatoryBorderColor;   
+}
+
+.cxDropdownSearchInputMixin(){
+    @padding: 0px;
+}

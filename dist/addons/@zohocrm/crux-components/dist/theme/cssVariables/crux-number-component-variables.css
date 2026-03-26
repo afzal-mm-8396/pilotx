@@ -1,0 +1,46 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+:root {
+  --lyte-crux-number-popup-content-color: #333;
+  --lyte-crux-number-info-popup-content-color: var(--crux-heading-color);
+  --lyte-crux-number-expr-color: #2C7BD0;
+  --lyte-crux-number-slider-fill-bg-color: #338CF0;
+  --lyte-crux-number-slider-bg-color: #E5EAF2;
+  --lyte-crux-number-scale-sec-value-color: var(--crux-base-text-color);
+  --lyte-crux-number-box-disabled-label-color: var(--crux-base-text-color);
+  --lyte-crux-number-comp-box-disabled-bg-color: var(--crux-element-disabled-bg-color);
+}
+/*# sourceMappingURL=crux-number-component-variables.css.map */

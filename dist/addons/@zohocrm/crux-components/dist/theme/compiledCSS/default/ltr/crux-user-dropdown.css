@@ -1,0 +1,308 @@
+/******************************************* 
+		GLOBAL File Imports Starts
+*******************************************/
+/* CSS Mask Mixins for Background Image Starts */
+/* CSS Mask Mixins for Background Image Starts */
+/******** GLOBAL File Imports Ends *********/
+/******************************************* 
+		GLOBAL Condition Starts
+*******************************************/
+/******** GLOBAL Condition Ends *********/
+/******************************************* 
+		GLOBAL Variable Declaration Starts
+*******************************************/
+/*
+@cxFontSize15px: var(--crm-medium-font-size);
+@cxFontSize14px: var(--crm-base-font-size);
+@cxFontSize13px: var(--crm-small-font-size);
+@cxFontSize12px: var(--crm-small-font-size);
+@cxFontSize11px: var(--crm-extra-small-font-size); 
+
+*/
+/* Mandatory Global Variables Starts */
+/* Mandatory Global Variables Starts */
+/*
+	Crux - common Color Code Variables
+	-- will be used commonly acros crux Variables
+	-- Can be overridden By Any Product 
+*/
+/* For Search Input Clear Bg */
+/* Crux - common Color Code Variables Ends */
+/******** CRUX Div Table Variables Starts *********/
+/******** CRUX Div Table Variables Ends *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** CRUX Dual List Variables Starts *********/
+/******** GLOBAL Variable Declaration Ends *********/
+crux-user-dropdown {
+  font-size: 15px;
+  max-width: 100%;
+}
+crux-user-dropdown lyte-dropdown {
+  max-width: 100%;
+  display: block;
+}
+.cxUserDropbox .userSearchBox {
+  flex: 1;
+}
+.cxUserDropbox .userSearchBox::after {
+  content: '';
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -180px -4px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 7px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 0.3;
+}
+.cxUserDropbox .cxUserDropboxSearchLoadingIcon {
+  position: absolute;
+  right: 2px;
+  top: 3px;
+  width: 25px;
+  height: 25px;
+  background-image: url(../../images/crux-search-loader.svg);
+  background-size: 100%;
+}
+.cxUserDropbox .userSecondaryDetail {
+  color: var(--lyte-crux-user-drop-down-secondary-detail-color);
+  display: flex;
+  justify-content: space-between;
+}
+.cxUserDdSecondaryMsg {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.cxUserDdSuggestUserPercentage {
+  font-family: 'LatoBold', sans-serif;
+  font-weight: var(--crux-font-weight-bold);
+  color: var(--lyte-crux-user-drop-down-suggested-user-percentage-color);
+  font-size: 13px;
+  white-space: nowrap;
+  margin-left: 20px;
+}
+.cxUserDropbox lyte-drop-item {
+  padding: 4px 25px;
+  display: flex;
+  align-items: flex-start;
+}
+.crux_dropbox_filter lyte-drop-item {
+  padding: 5px 15px;
+  color: var(--lyte-crux-user-drop-down-filter-item-color);
+}
+.cxUserDropbox .clearField + .userSearchBox::after,
+.crux_dropbox_filter lyte-drop-item[selected=true]::before {
+  content: none;
+}
+.cxUserDropbox .lyteDropdownSelection {
+  background: var(--lyte-crux-user-drop-box-selection-bg-color);
+}
+.cxUserDropbox .result-selected::before {
+  content: "";
+  width: 10px;
+  height: 7px;
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  margin-top: -6px;
+  -webkit-mask-image: url(../../images/crux-sprite-icons.svg);
+  mask-image: url(../../images/crux-sprite-icons.svg);
+  -webkit-mask-position: -15px -13px;
+  mask-position: -15px -13px;
+  background-color: #333;
+}
+.crux_dropbox_filter {
+  margin-left: -1px;
+}
+.crux_dropbox_filter lyte-drop-body {
+  padding: 3px 0;
+  max-height: 160px;
+  overflow-x: hidden;
+}
+.cxUserDropbox lyte-drop-body {
+  padding: 5px 0;
+  max-height: 235px;
+}
+.cxUserDropboxInitialLoaderWrap {
+  text-align: center;
+}
+.cxUserDropboxItemsLoader {
+  width: 32px;
+  height: 32px;
+  background-image: url(../../images/crux-search-loader.svg);
+  background-size: 100%;
+  display: inline-block;
+}
+.displayFlex {
+  display: flex;
+}
+lyte-drop-box.cxUserDropbox .userSearchBox,
+.user-lookup-right {
+  flex: 1;
+}
+.cxUserDropdownInnerFilter {
+  max-width: 200px;
+}
+.cxUserDropdownInnerFilter lyte-drop-button {
+  box-shadow: none !important;
+  display: block;
+  border: none !important;
+  border-right: 1px solid var(--lyte-crux-user-drop-down-inner-filter-btn-border-color) !important;
+}
+.cxUserDropdownInnerFilter lyte-drop-button:first-of-type {
+  z-index: 2;
+}
+.cxUserDropdownInnerFilter:hover lyte-drop-button {
+  z-index: 3;
+}
+.cxUserDropdownInnerFilter:first-of-type lyte-drop-button {
+  border-radius: 6px 0 0 6px;
+}
+.cxUserDropFilterWrapperCont .cxComboBoxEmptyMessage {
+  height: auto;
+  min-height: 50px;
+}
+/*FOr rtl -ltr padding alignment */
+lyte-drop-box.cxUserDropbox lyte-input.userSearchBox input {
+  padding: 6px 30px;
+}
+.cxUserDropbox .multiSelectDd lyte-drop-item {
+  padding: 5px 15px;
+}
+.cxUserDropbox .clearField {
+  background-image: url(../../images/crux-sprite-icons.svg);
+  background-position: -54px -2px;
+  width: 10px;
+  height: 8px;
+  transform: scale(1.3);
+  z-index: 10002;
+  content: '';
+  position: absolute;
+  right: 7px;
+  top: 12px;
+  cursor: pointer;
+  opacity: 0.3;
+}
+.cxUserDropbox .noUsersDiv {
+  display: block;
+  padding: 20px 0px 30px 0px;
+  color: var(--lyte-crux-user-drop-box-no-user-text-color);
+  text-align: center;
+  text-transform: capitalize;
+}
+.cxUserDropbox .lyteDropdownNoResult {
+  display: none !important;
+}
+.cxUserDropboxScrollLoaderIcon {
+  width: 24px;
+  height: 24px;
+  background-image: url(../../images/crux-search-loader.svg);
+  background-size: 100%;
+  display: inline-block;
+}
+.cruxUserImgWrap {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  box-shadow: none;
+  flex-shrink: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--lyte-crux-user-drop-down-all-user-bg-color);
+}
+.cruxSelUserImgWrap {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  margin-right: 5px;
+  border: 1px solid var(--lyte-crux-user-drop-down-sel-user-img-border-color);
+  box-sizing: border-box;
+}
+.cruxUserImg {
+  max-width: 30px;
+  max-height: 30px;
+  border-radius: 50%;
+}
+.cruxSelUserImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.cxUserDropboxNoUserPhoto .cruxSelUserImg,
+.cxUserDropboxNoUserPhoto .cruxUserImg {
+  background-image: url(../../images/nophoto.png);
+  background-size: 100%;
+  box-shadow: none;
+  display: inline-block;
+}
+.cxUserDropbox lyte-drop-item.lyteDropdownActive,
+.crux_userdrop_multi_placeholder ~ .lyteMultipleSelect {
+  display: none;
+}
+.cruxDropAlluser {
+  display: flex;
+  align-self: center;
+}
+.userDetail,
+.cxUserDetail {
+  word-break: break-all;
+  max-width: calc(100% - 42px);
+  flex-grow: 1;
+  margin-left: 10px;
+}
+.cxUserDropdownLoadingWithZia {
+  height: 90px;
+}
+crux-user-dropdown lyte-dropdown.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button {
+  padding-top: 5px;
+  padding-bottom: 1px;
+  white-space: nowrap;
+  /*overflow: @overflow;*/
+  text-overflow: ellipsis;
+}
+crux-user-dropdown .cxBoxDropdown[lt-prop-type="multiple"] .lyteDropdown-disabled lyte-drop-button::after,
+crux-dropdown .cxDropdownDisabled .cxFakeDropButton:after {
+  opacity: 0.3;
+}
+.cxNoUserSelected.cxBoxDropdown[lt-prop-type="multiple"] lyte-drop-button {
+  padding-top: 7px;
+  padding-bottom: 8px;
+}
+.cxCriteriaTable .cxElementDiv .cxCriteriaValueCol {
+  max-width: 100%;
+}
+.lyteDropdown-disabled lyte-drop-button {
+  border-radius: 6px;
+}
+.cxUserDropFilterWrapperCont {
+  display: flex;
+  width: 100%;
+}
+/* 
+	Border-radius will come by default.
+	But not for LoggedIn USer icon
+	*/
+.cruxUserImgWrap .cruxUserImg.cxSprite,
+.cruxUserImgWrap .cruxUserImg.cxLoggedInUserIcon {
+  border-radius: 0 !important;
+}
+/* Temp Fix for User dropbox override Starts */
+.cxUserDropbox .cxDropdownInputGroupFocused {
+  border-radius: 6px;
+}
+.cxUserDropbox .cxDropdownInputGroupFocused lyte-input .lyteField {
+  border: none !important;
+  border-radius: 0;
+  box-shadow: none !important;
+}
+.cxUserDropbox .cxComboBoxEmptyMessage {
+  height: auto;
+  min-height: 50px;
+}
+/* Temp Fix for User dropbox override Ends */
+/*# sourceMappingURL=crux-user-dropdown.css.map */

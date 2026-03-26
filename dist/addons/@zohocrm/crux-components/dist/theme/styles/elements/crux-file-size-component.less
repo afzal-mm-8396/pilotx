@@ -1,0 +1,47 @@
+@import "../../themes/default/global/global.variables.less";
+
+@import "../../themes/default/crux-elements/elements/crux-file-size-component.variables.less";
+
+@import "../../themes/default/less-variables/crux-input-elements-variables.less";
+
+@import (optional) "../../themes/default/global/@{direction}.less";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../../themes/default/css-variables/crux-input-elements-variables.less";
+}
+
+.cxFileSizeCompContainer.cxBoxWithRightIcon .cxBoxLeftContent{
+    position: relative;
+    overflow: visible;
+}
+
+.cxFileSizeCompContainer .cxBoxLeftContent::after{
+    .cxFileSizeCompLeftContAfterMixin();
+    content: '';
+    position: absolute;
+    display: block;
+    width: @w;
+    height: @h;
+    top: @top;
+    bottom: @bottom;
+    margin: @margin;
+    @{property-right}: @right;
+    background: @bg;
+}
+
+.cxFileSizeDropdown{
+    .cxFileSizeDropdownMixin();
+    width: @w;
+}
+
+.criteriaRow .cxFileSizeCompContainer  lyte-dropdown.cxFileSizeDropdown lyte-drop-button:hover,
+.cxFileSizeDropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button:hover,
+.cxFileSizeDropdown.cxBoxDropdown lyte-drop-button.lyteDropButtonDown,
+.cxFileSizeDropdown.cxBoxDropdown .lyteDummyEventContainer:focus lyte-drop-button,
+.cxFileSizeCompContainer .cxFileSizeDropdown.cxBoxDropdown lyte-drop-button{
+    .cxFileSizeDropdownBtnMixin();
+    border: @border;
+    box-shadow: @box-shadow;   
+    vertical-align: top;
+}

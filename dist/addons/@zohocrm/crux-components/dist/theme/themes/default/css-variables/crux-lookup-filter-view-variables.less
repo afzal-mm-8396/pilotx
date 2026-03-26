@@ -1,0 +1,21 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-lookup-filter-column-list-btn-border-color: #c0c6cc;
+    --@{cssPrefix}-lookup-criteria-filter-border-color: #e3e3e3;
+    --@{cssPrefix}-lookup-fetch-load-div-bg-color: #d6d6d6;
+    --@{cssPrefix}-lookup-advance-filter-task-sub-name-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-lookup-count-error-color: #888;
+    --@{cssPrefix}-lookup-filter-tags-list-table-border-color: #ddd;
+}

@@ -1,0 +1,453 @@
+/* $Id$ */
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-lookup-filter-view.variables.less";
+
+@import "../themes/default/less-variables/crux-lookup-filter-view-variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+
+@import (optional) "@{cruxGlobalVariableFilePath}";
+
+@cruxComponentName : "crux-lookup-filter-view";
+
+@variableWithRootSelector: true;
+& when(@importCssVariable = true){
+    @import "../themes/default/css-variables/crux-lookup-filter-view-variables.less";
+}
+
+@keyframes lookupFetchLoad {
+  0% {
+    top: 6px;
+    height: 51px;
+  }
+  50%, 100% {
+    top: 19px;
+    height: 26px;
+  }
+}
+.cxAdvanceLookupFilterField {
+    margin: 0 30px !important;
+}
+.cxModuleRelatedDropdown {
+    @{property-padding-left}: 30px;
+    @{property-padding-right}: 30px;
+}
+.cxAdvanceLookupFilterField .lookupCriteriaLabelCol {
+    padding: 0 !important;
+}
+.cxLFVCreateYield lyte-button:last-of-type {
+    @{property-margin-right}: 0;
+}
+/* code commented to revert height transition issue in lookup modal*/
+.cxLookupModal .lyteModal{
+    padding: 20px 0;
+}
+
+// .cxAdvanceLookupFilterField {
+//     margin: 0 20px;
+// }
+// .cxAdvanceLookupFilterField .lookupCriteriaLabelCol {
+//     padding: 0;
+// }
+// .cxAdvanceLookupFilterField .lookupCriteriaLabelCol::after {
+//     display: none;
+// }
+// .lookupFieldList lyte-th:first-child{
+// 	box-shadow: 3px 0 7px -2px rgba(0,0,0,0.2)!important;
+//     -webkit-box-shadow: 3px 0 7px -2px rgba(0,0,0,0.2)!important;
+// 	width: 50px;
+// }
+// .lookupFieldList lyte-td{
+// 	word-break: break-all;
+//     width: 180px;
+// }
+// .fromSalesInbox .lookupFieldList lyte-td, .fromSalesInbox .lookupsearch input{
+// 	font-size: 1.5rem;
+// }
+.lookupCriteriaFilter{
+    .cxLookupCriteriaFilterMixin();
+	padding: 7px 10px 10px 20px;
+	border-top: 1px solid @border;
+	text-transform: none;
+}
+.cxLookupFilterViewAdvanceFilterIcon {
+    .cxLookupFilterViewAdvanceFilterIconMixin();
+    @{property-right}: @right;
+    @{property-left}: initial;
+    top: @top;
+    height: @height;
+    z-index: 10 !important; /* added for cxAriaActive - */
+    @border-radius: if( (@direction = rtl), 10px 0 0 0, 0 10px 0 0);
+}
+/* added for cxAriaActive - */
+.cxLookupFilterViewAdvanceFilterIcon { 
+    z-index: 10 !important;
+}
+
+// .lookupFieldList lyte-td:first-child, .lookupFieldList lyte-th:first-child{
+//     width: 30px !important;
+// }
+
+// .cxColumnSelect{
+//     background: url(/crm/images/svgicons.svg) no-repeat -167px -140px;
+// 	width: 20px;
+// 	height: 16px;
+//     @{property-margin-right}: 3px;
+//     margin-top: 3px;
+//     vertical-align: top;
+//     cursor: pointer;
+// }
+// .cxLookupFilterViewAdvanceFilterIcon {
+// 	position: absolute;
+//     @{property-right}: 1px;
+//     width: 35px;
+//     height: 35px;
+//     z-index: 10;
+//     top: 1px;
+//     background: #fdfdfd;
+//     cursor: pointer;
+//     @{property-border-left}: 1px solid #d7e2ed;
+//     border-radius: 0 10px 0 0;
+// }
+// .cxLookupFilterViewAdvanceFilterIcon::after {
+// 	content: '';
+//     background: url(/crm/images/svgicons.svg) no-repeat -191px -2449px;
+//     width: 18px;
+//     height: 16px;
+//     opacity: 0.5;
+//     position: relative;
+//     margin: 0;
+//     top: initial;
+// }
+// .advanceFilterWrap::before{
+// 	content: '';
+//     position: absolute;
+//     width: 1px;
+//     height: 39px;
+//     top: 2px;
+//     z-index: 9;
+//     @{property-right}: 32px;
+//     box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.5);
+// }
+// .cxLookupFilterViewAdvanceFilterIcon.lookupFilterOpen::after {
+// 	background-position: -166px -2449px;
+// }
+// .lookupFieldList .bigLookupTable lyte-table-structure{
+// 	width: calc(100% + 900px) !important;
+// }
+// .entityLookupTable .lyteScrollBar {
+// 	max-height: inherit;
+// }
+// .lookupFetchingWrap{
+// 	padding: 10px 20px 0;
+// }
+// .lookupFetchingWrap.moreRecordsTable::before{
+// 	content: '';
+//     display: block;
+//     position: absolute;
+//     width: 100%;
+//     @{property-left}: 0;
+//     box-shadow: 0px -4px 5px 0 rgba(0,0,0,0.1);
+//     top: 0;
+//     height: 5px;
+//     padding-top: 3px;
+//     z-index: 100;
+//     background: #fff;
+// }
+// .lookupTableBeforeSelect{
+// 	transition: all 500ms linear;
+// }
+// lyte-input.lookupsearch.vertical {
+//     width: 400px;
+// }
+// .lookupSearchInput{
+// 	text-overflow: ellipsis;
+// }
+// .lookupsearch{
+// 	outline: none;
+// }
+/*
+.removeThisLookup{
+	background: url(/crm/CRMClient/images/crux-sprite-icons.svg) no-repeat  -277px -102px;
+	width: 16px;
+	height: 16px;
+    cursor: pointer;
+    @{property-margin-left}: 5px;
+    margin-top: -4px;
+    vertical-align: middle;
+    opacity: 0.7;
+}
+*/
+lyte-th.lookupSortAsc .lookupCriteriaLabel::after {
+    content: '';
+    display: inline-block;
+    background: url(/crm/images/svgicons.svg) no-repeat -211px -272px;
+    width: 7px;
+    height: 4px;
+    @{property-margin-left}: 5px;
+    vertical-align: top;
+    margin-top: 7px;
+}
+lyte-th.lookupSortdesc .lookupCriteriaLabel::after {
+    content: '';
+    display: inline-block;
+    background: url(/crm/images/svgicons.svg) no-repeat -314px -844px;
+    width: 9px;
+    height: 5px;
+    @{property-margin-left}: 5px;
+    vertical-align: top;
+    margin-top: 7px;
+}
+.removeThisLookup:hover{
+	opacity: 1;
+}
+.lookupsearch:hover .lyteField::after{
+	opacity: 1;
+}
+//Commented as it breaks in DX Hub Create Pages
+// .modalWrapper.lookupListTable{
+// 	z-index: 32;
+// 	transform: translate3d(0,0,0);
+// }
+// .modalWrapper.lookupListTable.salesInboxMidpop{
+// 	z-index: 39;
+// }
+/*
+.zI261 {
+	z-index: 261 !important;
+}
+*/
+.modalWrapper.lookupListTable.forSearchCreateLookup{
+	z-index: 260;
+}
+.fromSalesInbox .lookupFiltersInput input, .fromSalesInbox .cxBoxInput.lyteInputBox input::placeholder {
+	font-size: 1.3rem !important;
+}
+.fromSalesInbox .moduleRelatedDropdown .outlineprimaryflat::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: url(/crm/images/svgicons.svg) no-repeat 0 -613px;
+    height: 11px;
+    width: 11px;
+    top: 11px;
+    @{property-left}: 11px;
+    
+}
+.fromSalesInbox .moduleRelatedDropdown .outlineprimaryflat:hover::after {
+	background-position: 0 -641px;
+}
+.moduleRelatedDropdown{
+    padding-bottom: 15px;
+}
+.lookupFieldList .lyteFixedColumn:not(.lytePreventIcon)::after,
+.hideOperators,
+.lookupListTable .lyteModalClose {
+	display: none;
+}
+.lookupFetchLoad {
+  display: inline-block;
+  position: absolute;
+  width: 64px;
+  height: 45px;
+  @{property-left}: 47%;
+  top: -7px;
+  transform: scale(0.6);
+}
+.lookupFetchLoad div {
+    .cxLookupFetchLoadDivMixin();
+  display: inline-block;
+  position: absolute;
+  @{property-left}: 6px;
+  width: 13px;
+  background: @bg;
+  animation: lookupFetchLoad 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lookupFetchLoad div:nth-child(1) {
+  @{property-left}: 6px;
+  animation-delay: -0.24s;
+}
+.lookupFetchLoad div:nth-child(2) {
+  @{property-left}: 26px;
+  animation-delay: -0.12s;
+}
+.lookupFetchLoad div:nth-child(3) {
+  @{property-left}: 45px;
+  animation-delay: 0;
+}
+.cxLookupFilterViewRelatedDropdown {
+	max-width: 375px;
+}
+/* code commented to revert height transition issue in lookup modal*/
+.lookupListTable .lyteModalFromTop{
+	// height: auto !important;
+	max-height: inherit !important;
+	// top: 0 !important;
+    // transform: translate(0,0) !important;
+}
+.lookupFilterEditDiv a, .lookupFilterEditDiv i{
+	display: inline-block;
+	margin-top: 2px;
+	vertical-align: top;
+}
+.taskSubjectNameLookup .advanceFilter::after, .taskSubjectNameLookup .cxColumnSelect{
+   display: none !important;
+}
+.taskSubjectNameLookup .advanceFilter{
+    .cxLookupAdvanceFilterTaskSubNameMixin();
+	@{property-border-left}: none;
+	background-color: @bg;
+}
+.taskSubjectNameLookup .advanceFilter, .taskSubjectNameLookup .cxColumnSelect{
+	pointer-events: none;
+}
+.countErrLookup{
+    .cxLookupCountErrorMixin();
+	margin-top: 3px;
+	font-size: 12px;
+	color: @color;
+}
+.recordsCountWrap{
+	position: absolute;
+    @{property-right}: 30px;
+    top: 6px;
+}
+.lyteDDFilter {
+	text-transform:none;
+}
+.columnCustomizeWrap .lytePopoverArrowIcon{
+	display: none !important;
+}
+.lookupFilterAlert .alertFooter {
+    padding: 0;
+}
+.lookupFilterAlert .lyteAlertCenterContent {
+    border-radius: 0 0 5px 5px;
+    padding: 20px 25px 25px !important;
+}
+.tagslistTable {
+    .cxLookupFilterTagsListTableMixin();
+    border: 1px solid @border;
+    border-radius: 2px;
+    margin: 0 3px 2px 0;
+    padding: 1px 5px;
+}
+.columnCustomizeWrap.decreaseIndex{
+	z-index: 32;
+}
+/* Salesinbox doesn't have this class*/
+.clearAfterB::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.fromSalesInbox .outlineprimaryflat:hover{
+	background: #3c98dd;
+}
+/*New Comp Changes*/
+.lookupColumnCustomize {
+    padding: 15px 5px 0 !important;
+}
+.lookupColumnCustButtons{
+	padding: 0 11px 15px !important;
+}
+.lookupColumnCustomize lyte-menu-body{
+	border: none;
+}
+.lookupColumnCustComp .lyteSortableParent{
+	overflow: auto;
+}
+.cxColumnListBtn {
+    .cxColumnListBtnMixin();
+	border-top: @border-top;
+    text-align: @text-align;
+    padding-top: @padding-top;
+}
+.lookupColumnCustomize .cxColListNoResult {
+    text-align: center !important;
+}
+.lookupFieldList .cruxTableStructure lyte-td {
+    word-break: break-word;
+    width: 180px;
+    white-space: normal;
+}
+.lookupColumnCustComp{
+	box-shadow: none;
+}
+.entityLookupTable .cxLookupFilterButtonWrap{
+	position : inherit;
+	@{property-padding-right} : 8px;
+	@{property-left}: 0;
+}
+.lookupFieldList .entityLookupTable lyte-th:last-child{
+   @{property-padding-right}: 36px !important;
+}
+.entityLookupTable .listview_taglists{
+	white-space: normal;
+}
+
+.lookupColumnCustomize crux-column-list .lyteCheckBoxDefault::before{
+	margin-top: 0;
+}
+.lookupColumnCustomize .lyteCheckDisabled{
+	opacity: 0.5;
+}
+.lookupColumnCustomize .lyteCheckDisabled .lyteCheckBoxDefault::before{
+	opacity: 1;
+}
+.entityLookupTable .lyteRowCopy .cxLookupFieldList, .entityLookupTable .lyteRowCopy .lyteFixedColumn{
+	background: #edf0f4;
+	vertical-align: top;
+}
+lyte-th.cxLookupFieldList .lyteMultipleSelect li {
+    text-transform: initial;
+}
+.lookupErrorMsg .alertContent{
+	display: block !important;
+}
+.lookupErrorMsg .alertSecondaryMsg{
+	font-size: 1.8rem !important;
+}
+.lookupFieldList crux-boolean-component{
+    margin-top: 0;
+}
+.lookupLyteTable {
+    max-height: inherit;
+}
+.lookupLyteTable crux-user-component lyte-text{
+	white-space: normal;
+}
+.lookupLyteTable .listview_taglists .tagElementList.cxAddedTags span{
+	width: calc(100% + 7px) !important;
+    // font-size: @cxFontSize13px; font-size becomes small in crm lookup
+}
+.lookupLyteTable .numberDivCurrencyView, .cxLookupPopTd .numberDivCurrencyView{
+	text-align: @value-textalign-left;
+}
+.cxLookupSortItem .sort_unsort{
+	background-position : -741px -9px;
+	width: 9px;
+	height: 9px;
+	transform: scale(0.8);
+    @{property-margin-left}: 6px;
+    opacity: 0.7;
+}
+.cxLookupSortItem .sort_desc{
+	vertical-align: top;
+	margin-top: 5px;
+}
+// .lookupColumnCustomize .lyteMenuItem {
+//     @{property-padding-left}: 0;
+// }
+
+.lookupFieldList .entityLookupTable .lv_data_username{
+	max-width: inherit !important;
+}
+.cxLookupFilterViewHeading {
+    .cxLookupFilterViewHeadingMixin();
+    font-family: @font-family;
+    font-weight: @font-weight;
+    font-size: @font-size;
+    padding: @padding;
+}

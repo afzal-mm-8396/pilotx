@@ -1,0 +1,31 @@
+@import "../themes/default/global/global.variables.less";
+
+@import "../themes/default/crux-elements/crux-detailpage-field-details.variables.less";
+
+@import (optional) "../themes/default/global/@{direction}.less";
+/*
+.fied_comp_value_container{
+    border: 1px solid transparent;
+    padding: 8px 12px;
+    border-radius: 6px;
+    height: 32px;
+}
+*/
+// .cxDvFieldDetailComp{
+// 	.cxDvFieldDetailCompMixin();
+// 	width: @w;
+// }
+// .cxDvUserComponent{
+// 	.cxDvUserComponentMixin();
+// 	width: @w;
+// }
+.cxDvFieldDetailComp, 
+.cxDvUserComponent {
+    .cxDvFieldDetailCompMixin();
+    width: @w;
+}
+.cxDvFieldDetailComp .yieldObserver {
+    overflow-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width:100%;
+}

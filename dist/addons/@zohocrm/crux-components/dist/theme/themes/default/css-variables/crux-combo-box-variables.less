@@ -1,0 +1,51 @@
+@import '../global/global.variables.less';
+
+& when(@variableWithRootSelector = true){
+    :root{
+        .getRootVariables();
+    }
+}
+
+& when not(@variableWithRootSelector = true){
+    .getRootVariables();
+}
+
+
+.getRootVariables(){
+    --@{cssPrefix}-combo-box-header-info-bg-color: #EDF1F5;
+    --@{cssPrefix}-combo-box-header-info-text-color: #313949;
+    --@{cssPrefix}-combo-box-user-search-input-placeholder-text-color: #999;
+    --@{cssPrefix}-combo-box-section-heading-text-color: #313949;
+    --@{cssPrefix}-combo-box-total-recipients-count-text-color: var(--crux-base-text-color);
+    --@{cssPrefix}-combo-box-selected-user-content-border-color: #dfdfdf;
+    --@{cssPrefix}-combo-box-user-selection-option-border-color: #ddd;
+    --@{cssPrefix}-combo-box-user-option-drop-button-border-color: #ddd;
+    --@{cssPrefix}-combo-box-search-input-disabled-bg-color: #eee;
+    --@{cssPrefix}-combo-box-user-list-hover-bg-color: #f1f6f9;
+    --@{cssPrefix}-combo-box-user-description-text-color: var(--crux-element-label-color);
+    --@{cssPrefix}-combo-box-added-label-text-color: #5bb57c;
+    --@{cssPrefix}-combo-box-added-label-before-bg-color: #5bb57c;
+    --@{cssPrefix}-combo-box-selected-list-section-border-color: #ebebeb;
+    --@{cssPrefix}-combo-box-selected-list-section-bg-color: #f9f9f9;
+    --@{cssPrefix}-combo-box-selected-list-section-hover-border-color: #ebebeb;
+    --@{cssPrefix}-combo-box-user-type-detail-text-color: #313949;
+    --@{cssPrefix}-combo-box-selected-user-list-border-color: #e5e5e5;
+    --@{cssPrefix}-combo-box-selected-user-list-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-combo-box-selected-user-img-border-color: #ddd;
+    --@{cssPrefix}-combo-box-selected-close-wrap-hover-bg-color: #e8e8e8;
+    --@{cssPrefix}-combo-box-msg-box-text-color: var(--crux-heading-color);
+    --@{cssPrefix}-combo-box-empty-msg-text-color: #777;
+    --@{cssPrefix}-combo-box-recipient-multiselect-border-color: #e5e5e5;
+    --@{cssPrefix}-combo-box-recipient-multiselect-bg-color: var(--crux-element-bg-color);
+    --@{cssPrefix}-combo-box-recipient-multiselect-highlight-border-color: #222;
+    --@{cssPrefix}-combo-box-recipient-multiselect-highlight-bg-color: #f4f4f4;
+    --@{cssPrefix}-combo-box-recipient-multiselect-error-bg-color: #fadada;
+    --@{cssPrefix}-combo-box-recipient-multiselect-error-border-color: #f51e1e;
+    --@{cssPrefix}-combo-box-recipient-error-text-color: #444;
+    --@{cssPrefix}-combo-box-recipient-close-icon-hover-bg-color: #f7b0b0;
+    --@{cssPrefix}-combo-box-recipient-placeholder-text-color: #888;
+    --@{cssPrefix}-combo-box-recipient-selected-list-border-color: var(--crux-element-border-color);
+    --@{cssPrefix}-combo-box-no-recipient-ul-bg-color: #f9f9f9;
+    --@{cssPrefix}-combo-box-contain-color: #333;
+    --@{cssPrefix}-combo-box-selected-user-count-color: #333;
+}
