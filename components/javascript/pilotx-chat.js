@@ -12,7 +12,84 @@ Lyte.Component.register("pilotx-chat", {
     const CRM_FUNC_URL = CRM_BASE + '/crm/v7/functions/' + CRM_FUNC_NAME + '/actions/execute?auth_type=apikey&zapikey=' + CRM_FUNC_API_KEY;
 
     const STORAGE_KEY = 'workpilot_sessions';
+    const MEMORY_KEY  = 'workpilot_memory';
     const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#06b6d4', '#f97316'];
+
+    // ─── MEMORY MANAGER ────────────────────────────────────
+    // Persistent cross-session key/value store. Facts are auto-extracted
+    // from AI responses and injected into future prompts as context.
+    var Memory = (function() {
+        var _store = {};
+
+        function load() {
+            try {
+                var raw = localStorage.getItem(MEMORY_KEY);
+                _store = raw ? JSON.parse(raw) : {};
+            } catch(e) { _store = {}; }
+        }
+
+        function save() {
+            localStorage.setItem(MEMORY_KEY, JSON.stringify(_store));
+        }
+
+        function set(key, value) {
+            _store[key] = { value: value, updatedAt: Date.now() };
+            save();
+        }
+
+        function get(key) {
+            return _store[key] ? _store[key].value : null;
+        }
+
+        function getAll() {
+            return _store;
+        }
+
+        function remove(key) {
+            delete _store[key];
+            save();
+        }
+
+        function clear() {
+            _store = {};
+            save();
+        }
+
+        // Auto-extract facts from any AI response text.
+        // Returns array of { key, value } for facts that were stored.
+        function extractAndStore(responseText) {
+            if (!responseText) return [];
+            var extracted = [];
+            var patterns = [
+                { regex: /(?:remember|noted)[^\n]*prefer(?:ence)?[s]?\s+(?:is|are|:)?\s*(.{3,60})/i, key: 'preference' },
+                { regex: /your\s+(?:name|username)\s+is\s+(\w[\w\s]{0,30})/i, key: 'userName' },
+                { regex: /working\s+on\s+(?:the\s+)?(.{3,30})\s+module/i, key: 'currentModule' },
+                { regex: /(?:prefer|like)\s+(\w+)\s+view/i, key: 'preferredView' },
+                { regex: /(?:crm|system)\s+is\s+in\s+(?:the\s+)?(\w+)\s+(?:environment|mode)/i, key: 'crmEnvironment' }
+            ];
+            patterns.forEach(function(p) {
+                var match = responseText.match(p.regex);
+                if (match && match[1]) {
+                    var val = match[1].trim().replace(/[.,"']+$/, '');
+                    set(p.key, val);
+                    extracted.push({ key: p.key, value: val });
+                }
+            });
+            return extracted;
+        }
+
+        // Returns a context summary string to prepend to outgoing prompts.
+        function getSummary() {
+            var entries = Object.keys(_store);
+            if (entries.length === 0) return '';
+            return entries.map(function(k) {
+                return k + '="' + _store[k].value + '"';
+            }).join(', ');
+        }
+
+        load();
+        return { set: set, get: get, getAll: getAll, remove: remove, clear: clear, extractAndStore: extractAndStore, getSummary: getSummary };
+    })();
 
     // ─── FALLBACK SCRIPTS (when API fails to generate cscript) ─────
     // Maps scenario keys to hardcoded client script code + explanation
@@ -77,6 +154,22 @@ Lyte.Component.register("pilotx-chat", {
         if (/revenue|expected revenue|total revenue/.test(p))       return 'number';
         if (/error|document|fail|permission/.test(p))               return 'error';
         return 'records';
+    }
+
+    // ─── CONVERSATION HISTORY BUILDER ─────────────────────────
+    // Returns the last N turns as [{role, content}] for LLM context.
+    function buildConversationHistory(messages, maxTurns) {
+        maxTurns = maxTurns || 10;
+        if (!messages || messages.length === 0) return [];
+        return messages
+            .filter(function(m) { return !m.processing && m.text && (m.role === 'user' || m.role === 'assistant'); })
+            .slice(-maxTurns)
+            .map(function(m) {
+                return {
+                    role: m.role,
+                    content: m.role === 'assistant' ? (m.agentSteps || m.text || '') : m.text
+                };
+            });
     }
 
     // ─── STATE ─────────────────────────────────────────────
@@ -326,13 +419,13 @@ Lyte.Component.register("pilotx-chat", {
                                 crmBtnWrapper.appendChild(crmBtn);
                                 contentEl.appendChild(crmBtnWrapper);
                             }
-                            var vc = buildLyteView(dv.data, dv.activeView || 'table');
+                            var vc = buildMultiViewTabs(dv.viewDataItems || (dv.data ? [dv.data] : []));
                             contentEl.appendChild(vc);
-                            if (dv.crmIframeUrl) {
+                            if (dv.iframeUrl || dv.crmPopupView) {
                                 var iframeWrapper = document.createElement('div');
                                 iframeWrapper.className = 'crm-iframe-wrapper';
                                 var iframe = document.createElement('iframe');
-                                iframe.src = dv.crmIframeUrl;
+                                iframe.src = dv.iframeUrl || dv.crmPopupView;
                                 iframe.style.width = '100%';
                                 iframe.style.height = '500px';
                                 iframeWrapper.appendChild(iframe);
@@ -436,13 +529,13 @@ Lyte.Component.register("pilotx-chat", {
                             crmBtnWrapper.appendChild(crmBtn);
                             contentEl.appendChild(crmBtnWrapper);
                         }
-                        var viewContainer = buildLyteView(dv.data, dv.activeView || 'table');
+                        var viewContainer = buildMultiViewTabs(dv.viewDataItems || (dv.data ? [dv.data] : []));
                         contentEl.appendChild(viewContainer);
-                        if (dv.crmIframeUrl) {
+                        if (dv.iframeUrl || dv.crmPopupView) {
                             var iframeWrapper = document.createElement('div');
                             iframeWrapper.className = 'crm-iframe-wrapper';
                             var iframe = document.createElement('iframe');
-                            iframe.src = dv.crmIframeUrl;
+                            iframe.src = dv.iframeUrl || dv.crmPopupView;
                             iframe.style.width = '100%';
                             iframe.style.height = '500px';
                             iframeWrapper.appendChild(iframe);
@@ -463,13 +556,13 @@ Lyte.Component.register("pilotx-chat", {
                     crmBtnWrapper.appendChild(crmBtn);
                     contentEl.appendChild(crmBtnWrapper);
                 }
-                var viewContainer = buildLyteView(msg.dataView.data, msg.dataView.activeView || 'table');
+                var viewContainer = buildMultiViewTabs(msg.dataView.viewDataItems || [msg.dataView.data]);
                 contentEl.appendChild(viewContainer);
-                if (msg.dataView.crmIframeUrl) {
+                if (msg.dataView.iframeUrl || msg.dataView.crmPopupView) {
                     var iframeWrapper = document.createElement('div');
                     iframeWrapper.className = 'crm-iframe-wrapper';
                     var iframe = document.createElement('iframe');
-                    iframe.src = msg.dataView.crmIframeUrl;
+                    iframe.src = msg.dataView.iframeUrl || msg.dataView.crmPopupView;
                     iframe.style.width = '100%';
                     iframe.style.height = '500px';
                     iframeWrapper.appendChild(iframe);
@@ -655,7 +748,7 @@ Lyte.Component.register("pilotx-chat", {
     // Calls ZOHO.CRM.FUNCTIONS.execute or REST API to get AI-generated cscript
     var _lastPrompt = '';
 
-    async function callCRMFunction(prompt) {
+    async function callCRMFunction(prompt, history) {
         _lastPrompt = prompt;
 
         var isInIframe = window.parent !== window;
@@ -663,11 +756,12 @@ Lyte.Component.register("pilotx-chat", {
         // 1) Try ZOHO.CRM.HTTP.post (routes through Zoho's proxy — no CORS/mTLS issues)
         try {
             if (isInIframe && typeof ZOHO !== 'undefined' && ZOHO.CRM && ZOHO.CRM.HTTP && typeof ZOHO.CRM.HTTP.post === 'function') {
-                var apiUrl = 'https://crmdx5.localzoho.com/crm/v7/functions/' + CRM_FUNC_NAME + '/actions/execute?auth_type=apikey&zapikey=' + CRM_FUNC_API_KEY;
+                // var apiUrl = 'https://crmdx4.localzoho.com/crm/v7/functions/' + CRM_FUNC_NAME + '/actions/execute?auth_type=apikey&zapikey=' + CRM_FUNC_API_KEY;
+                var apiUrl = "http://10.59.1.19:8000/chat";
                 var httpData = await ZOHO.CRM.HTTP.post({
                     url: apiUrl,
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ prompt: prompt, model: 'gpt-5.1', mode: 'agent', feature: 'cscript' })
+                    body: JSON.stringify({ prompt: prompt, history: history || [], model: 'gpt-5.1', mode: 'agent', feature: 'cscript' })
                 });
                 console.log('prompt', prompt, "response", httpData);
 
@@ -702,8 +796,9 @@ Lyte.Component.register("pilotx-chat", {
 
     // ─── FETCH API CALL (backup) ───────────────────────────
 
-    async function callAPI(prompt) {
+    async function callAPI(prompt, history) {
         _lastPrompt = prompt;
+        // history is available here for future real API integration
         // console.log("sending API request with prompt:", prompt);
         // const requestOptions = {
         //     method: "POST",
@@ -745,7 +840,7 @@ Lyte.Component.register("pilotx-chat", {
 
     // ─── executeCScript ────────────────────────────────────
     // Executes the client script code via CScriptBridge and returns data.
-    // Returns { type: 'views', data: [...], crmPopupView, crmIframeUrl } on success
+    // Returns { type: 'views', data: [...], crmPopupView, crmPopupView } on success
     // Returns { type: 'errors', data: 'error message' } on error
     // Falls back to mock results if CScriptBridge is unavailable or fails.
     async function executeCScript(code) {
@@ -755,11 +850,11 @@ Lyte.Component.register("pilotx-chat", {
                 var result = await CScriptBridge.run(code);
                 if (result && result.type === 'errors') {
                     console.warn('[WorkPilot] CScript returned error:', result.data);
-                    return result;
+                    return result.data;
                 }
                 console.log('CScript result came');
                 console.log('final result', result);
-                return result;
+                return result.data;
             } else {
                 console.warn('[WorkPilot] CScriptBridge not available, falling back to mock.');
             }
@@ -778,7 +873,7 @@ Lyte.Component.register("pilotx-chat", {
         }
 
         var mockData = MOCK_CSCRIPT_RESULTS[key] !== undefined ? MOCK_CSCRIPT_RESULTS[key] : MOCK_CSCRIPT_RESULTS.records;
-        return { type: 'views', data: [mockData], crmPopupView: null, crmIframeUrl: null };
+        return { type: 'views', data: [mockData], crmPopupView: null, crmPopupView: null };
     }
 
     // Execution steps derived from the script content
@@ -912,13 +1007,20 @@ Lyte.Component.register("pilotx-chat", {
         showThinkingLoader();
 
         try {
-            // 1) Call CRM Function (primary: ZOHO SDK → REST proxy)
-            var apiResult = await callCRMFunction(text.trim());
+            // 1) Build conversation history (all turns before this new message)
+            var convHistory = buildConversationHistory(session.messages.slice(0, -1));
+
+            // 2) Enrich prompt with persistent memory context
+            var memorySummary = Memory.getSummary();
+            var enrichedPrompt = memorySummary
+                ? '[Memory context: ' + memorySummary + ']\n\n' + text.trim()
+                : text.trim();
+
+            // 3) Call CRM Function (primary: ZOHO SDK → REST proxy)
+            var apiResult = await callCRMFunction(enrichedPrompt, convHistory);
             if (!apiResult) {
                 console.log("expected results not received from CRM function, using fallback Mockup call");
-                // 2) Fallback to callAPI (uses mock data when proxy fails)
-                // console.warn('[WorkPilot] CRM Function failed, falling back to callAPI.');
-                apiResult = await callAPI(text.trim());
+                apiResult = await callAPI(enrichedPrompt, convHistory);
             }
             removeThinkingLoader();
 
@@ -934,12 +1036,22 @@ Lyte.Component.register("pilotx-chat", {
             session.messages.push(assistantMsg);
             saveSessions();
 
+            // Build context badge row (shown in chat header when memory/history is active)
+            var ctxBadges = '';
+            if (memorySummary) {
+                ctxBadges += '<span class="ctx-badge memory-badge"><i class="fas fa-brain"></i> Memory</span>';
+            }
+            if (convHistory.length > 0) {
+                ctxBadges += '<span class="ctx-badge history-badge"><i class="fas fa-history"></i> ' + convHistory.length + ' turn' + (convHistory.length > 1 ? 's' : '') + '</span>';
+            }
+            var ctxBadgeRowHtml = ctxBadges ? '<div class="ctx-badge-row">' + ctxBadges + '</div>' : '';
+
             const msgDiv = document.createElement('div');
             msgDiv.className = 'message assistant';
             msgDiv.innerHTML = `
                 <div class="message-avatar"><i class="fas fa-robot"></i></div>
                 <div class="message-body">
-                    <div class="message-sender">WorkPilot</div>
+                    <div class="message-sender">WorkPilot${ctxBadgeRowHtml}</div>
                     <div class="message-content" id="msg-${assistantMsg.id}"></div>
                 </div>
             `;
@@ -1024,7 +1136,7 @@ Lyte.Component.register("pilotx-chat", {
 
                     // ─── Views result ───
                     var crmPopupCode = cscriptResult.crmPopupView || null;
-                    var resolvedIframeUrl = cscriptResult.crmIframeUrl || null;
+                    var resolvedIframeUrl = cscriptResult.crmPopupView || null;
 
                     // CRM Popup View button (above response component)
                     if (crmPopupCode) {
@@ -1042,14 +1154,9 @@ Lyte.Component.register("pilotx-chat", {
 
                     // Render each data item in result.data
                     var viewDataItems = Array.isArray(cscriptResult.data) ? cscriptResult.data : [cscriptResult.data];
-                    var lastBestView = 'table';
-                    viewDataItems.forEach(function(viewData) {
-                        var resultType = detectDataType(viewData);
-                        lastBestView = getLyteDefaultView(resultType);
-                        console.log('[WorkPilot] viewData:', viewData, 'resultType:', resultType, 'bestView:', lastBestView);
-                        var viewContainer = buildLyteView(viewData, lastBestView);
-                        contentEl.appendChild(viewContainer);
-                    });
+                    console.log('[WorkPilot] viewDataItems:', viewDataItems);
+                    var multiTabsContainer = buildMultiViewTabs(viewDataItems);
+                    contentEl.appendChild(multiTabsContainer);
 
                     // CRM Iframe View (render below response component)
                     if (resolvedIframeUrl && typeof resolvedIframeUrl === 'string') {
@@ -1063,12 +1170,25 @@ Lyte.Component.register("pilotx-chat", {
                         contentEl.appendChild(iframeWrapper);
                     }
 
-                    allDataViews.push({ data: cscriptResult.data, activeView: lastBestView, crmPopupView: crmPopupCode, crmIframeUrl: resolvedIframeUrl });
+                    allDataViews.push({ viewDataItems: viewDataItems, crmPopupView: crmPopupCode, iframeUrl: resolvedIframeUrl });
                 }
                 // Incrementally save data views
                 assistantMsg.dataViewList = allDataViews.slice();
                 assistantMsg.dataView = allDataViews[0];
                 saveSessions();
+            }
+
+            // ─── Auto-extract facts from AI response and show memory chip if found ───
+            var extractedFacts = Memory.extractAndStore(responseText);
+            if (extractedFacts.length > 0) {
+                var factsHtml = extractedFacts.map(function(f) {
+                    return '<span class="memory-fact">' + escapeHtml(f.key) + ' = \u201c' + escapeHtml(f.value) + '\u201d</span>';
+                }).join('');
+                var memChip = document.createElement('div');
+                memChip.className = 'memory-chip';
+                memChip.innerHTML = '<i class="fas fa-brain"></i><span class="memory-chip-label">Memory updated:</span>' + factsHtml;
+                contentEl.appendChild(memChip);
+                scrollToBottom();
             }
 
             // Save final metadata for re-render on session reload
@@ -1730,6 +1850,167 @@ Lyte.Component.register("pilotx-chat", {
                 renderTextView(containerEl, String(data));
                 break;
         }
+    }
+
+    // ─── VIEW DATA LABEL ──────────────────────────────────
+    // Returns a human-readable tab label for a viewData item.
+    function getViewDataLabel(item, idx) {
+        if (item && typeof item === 'object' && !Array.isArray(item) && item.component) {
+            return item.component
+                .replace(/^(data-view-|lyte-)/, '')
+                .replace(/-/g, ' ')
+                .replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+        }
+        var dataType = detectDataType(item);
+        var typeLabels = {
+            records: 'Records', single: 'Record', string: 'Text',
+            number: 'Value', boolean: 'Value',
+            'string-list': 'List', 'number-list': 'Numbers',
+            'mixed-list': 'Mixed', empty: 'Empty'
+        };
+        return typeLabels[dataType] || ('Result ' + (idx + 1));
+    }
+
+    // ─── DIRECT COMPONENT VIEW ────────────────────────────
+    // Builds a container that renders a named Lyte component directly via
+    // Lyte.Component.render once the container is attached to the DOM.
+    // Expected item shape: { component: 'lyte-table', props: { ... } }
+    function buildDirectComponentView(componentName, props) {
+        var container = document.createElement('div');
+        container.className = 'data-view-container lyte-data-view direct-component-view';
+
+        var renderTarget = document.createElement('div');
+        renderTarget.id = 'lyteViewTarget_' + (++_lyteViewCounter);
+        container.appendChild(renderTarget);
+
+        var targetId = renderTarget.id;
+        container._deferredRender = function() {
+            setTimeout(function() {
+                var el = document.getElementById(targetId);
+                if (!el || !document.body.contains(el)) {
+                    console.warn('[WorkPilot] Direct render target not found: #' + targetId);
+                    return;
+                }
+                try {
+                    Lyte.Component.render(componentName, props || {}, '#' + targetId);
+                } catch(e) {
+                    console.warn('[WorkPilot] Direct component render failed:', e.message);
+                    el.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>Failed to render ' +
+                        escapeHtml(componentName) + ': ' + escapeHtml(e.message) + '</span></div>';
+                }
+            }, 0);
+        };
+
+        var _retries = 0;
+        function tryDeferredRenderDirect() {
+            if (!container._deferredRender) return;
+            if (document.body.contains(container)) {
+                container._deferredRender();
+                container._deferredRender = null;
+            } else if (_retries < 20) {
+                _retries++;
+                setTimeout(tryDeferredRenderDirect, 50);
+            } else {
+                console.warn('[WorkPilot] Direct component deferred render timed out for: ' + componentName);
+            }
+        }
+        setTimeout(tryDeferredRenderDirect, 0);
+        return container;
+    }
+
+    // ─── RENDER SINGLE VIEW DATA ITEM ─────────────────────
+    // If item has { component, props } → buildDirectComponentView
+    // Otherwise → auto-detect type and use buildLyteView
+    function renderViewDataItem(item) {
+        if (item && typeof item === 'object' && !Array.isArray(item) && item.component && item.props) {
+            return buildDirectComponentView(item.component, item.props);
+        }
+        var dataType = detectDataType(item);
+        var bestView = getLyteDefaultView(dataType);
+        return buildLyteView(item, bestView);
+    }
+
+    // ─── MULTI-VIEW TAB BUILDER ────────────────────────────
+    // Wraps multiple viewData items in a tabbed interface.
+    // - One item  → rendered directly, no tab chrome.
+    // - Many items → labeled tabs; panels are lazy-rendered on first show.
+    function buildMultiViewTabs(viewDataItems) {
+        var wrapper = document.createElement('div');
+        wrapper.className = 'multi-view-tabs-wrapper';
+
+        if (!viewDataItems || viewDataItems.length === 0) {
+            wrapper.innerHTML = '<div class="string-response"><i class="fas fa-info-circle" style="margin-right:6px;color:var(--text-secondary)"></i>No data returned.</div>';
+            return wrapper;
+        }
+
+        // Single item – no tab chrome needed
+        if (viewDataItems.length === 1) {
+            var singleContainer = renderViewDataItem(viewDataItems[0]);
+            wrapper.appendChild(singleContainer);
+            return wrapper;
+        }
+
+        // Multiple items – tab strip + lazily rendered panels
+        var tabStrip = document.createElement('div');
+        tabStrip.className = 'multi-view-tab-strip view-tabs';
+
+        var panelsHost = document.createElement('div');
+        panelsHost.className = 'multi-view-panels-host';
+
+        var panelRefs = [];
+
+        viewDataItems.forEach(function(item, idx) {
+            var label = getViewDataLabel(item, idx);
+
+            // Tab button
+            var tab = document.createElement('button');
+            tab.className = 'view-tab multi-view-tab' + (idx === 0 ? ' active' : '');
+            tab.innerHTML = '<i class="fas fa-layer-group"></i><span>' + escapeHtml(label) + '</span>';
+            tabStrip.appendChild(tab);
+
+            // Panel
+            var panel = document.createElement('div');
+            panel.className = 'multi-view-panel';
+            if (idx !== 0) panel.style.display = 'none';
+            panel._viewData = item;
+            panel._rendered = false;
+            panelsHost.appendChild(panel);
+            panelRefs.push({ tab: tab, panel: panel });
+
+            tab.addEventListener('click', function() {
+                // Deactivate all
+                panelRefs.forEach(function(ref) {
+                    ref.tab.classList.remove('active');
+                    ref.panel.style.display = 'none';
+                });
+                // Activate this one
+                tab.classList.add('active');
+                panel.style.display = '';
+                // Lazy-render on first show
+                if (!panel._rendered) {
+                    panel._rendered = true;
+                    var vc = renderViewDataItem(panel._viewData);
+                    panel.appendChild(vc);
+                    if (vc._deferredRender) {
+                        vc._deferredRender();
+                        vc._deferredRender = null;
+                    }
+                    scrollToBottom();
+                }
+            });
+        });
+
+        // Eagerly render the first panel
+        if (panelRefs.length > 0 && !panelRefs[0].panel._rendered) {
+            panelRefs[0].panel._rendered = true;
+            var firstVc = renderViewDataItem(panelRefs[0].panel._viewData);
+            panelRefs[0].panel.appendChild(firstVc);
+            // _deferredRender is handled by the child component's own polling
+        }
+
+        wrapper.appendChild(tabStrip);
+        wrapper.appendChild(panelsHost);
+        return wrapper;
     }
 
     function buildLyteView(data, initialView) {

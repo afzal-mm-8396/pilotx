@@ -798,6 +798,38 @@ textarea {
     border-color: var(--primary);
 }
 
+/* ── Multi-view tab wrapper (multiple result sets per response) ── */
+.multi-view-tabs-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+}
+
+.multi-view-tab-strip {
+    /* inherits .view-tabs layout */
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+}
+
+.multi-view-panels-host {
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    overflow: hidden;
+}
+
+.multi-view-panel {
+    /* Each panel is a slot for a data-view-container */
+}
+
+.multi-view-panel > .data-view-container {
+    border: none;
+    border-radius: 0;
+}
+
 .data-view-body {
     padding: 0;
     max-height: 420px;
@@ -1647,4 +1679,75 @@ textarea {
     border: none;
     width: 100%;
     height: 500px;
+}
+
+/* ─── Context Badges (Memory + History indicators in message header) ─── */
+.ctx-badge-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.ctx-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 2px 6px;
+    border-radius: 20px;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.memory-badge {
+    background: rgba(139, 92, 246, 0.12);
+    color: #7c3aed;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+.history-badge {
+    background: rgba(59, 130, 246, 0.10);
+    color: #2563eb;
+    border: 1px solid rgba(59, 130, 246, 0.22);
+}
+
+/* ─── Memory Chip (shown below response when new facts are stored) ─── */
+.memory-chip {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+    padding: 6px 10px;
+    background: rgba(139, 92, 246, 0.07);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #6d28d9;
+    animation: fadeInUp 0.3s ease;
+}
+
+.memory-chip i {
+    font-size: 12px;
+    color: #7c3aed;
+    flex-shrink: 0;
+}
+
+.memory-chip-label {
+    font-weight: 600;
+    color: #5b21b6;
+    flex-shrink: 0;
+}
+
+.memory-fact {
+    background: rgba(139, 92, 246, 0.12);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: 'SF Mono', 'Menlo', monospace;
+    font-size: 10.5px;
+    color: #4c1d95;
 }
