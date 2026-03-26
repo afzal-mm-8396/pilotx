@@ -1136,7 +1136,7 @@ Lyte.Component.register("pilotx-chat", {
 
                     // ─── Views result ───
                     var crmPopupCode = cscriptResult.crmPopupView || null;
-                    var resolvedIframeUrl = cscriptResult.crmPopupView || null;
+                    var resolvedIframeUrl = cscriptResult.crmIframeView || null;
 
                     // CRM Popup View button (above response component)
                     if (crmPopupCode) {
@@ -1882,11 +1882,11 @@ Lyte.Component.register("pilotx-chat", {
             // Friendly aliases for well-known component names
             var friendlyNames = {
                 'lyte-kanbanview':  'Kanban',
-                'data-view-kanban': 'Kanban',
-                'lyte-table':       'Table',
-                'data-view-table':  'Table',
-                'lyte-chart':       'Chart',
-                'data-view-chart':  'Chart'
+                'data-view-kanban': 'Kanban'//,
+                // 'lyte-table':       'Table',
+                // 'data-view-table':  'Table',
+                // 'lyte-chart':       'Chart',
+                // 'data-view-chart':  'Chart'
             };
             var lower = explicitName.toLowerCase();
             if (friendlyNames[lower]) return friendlyNames[lower] + ' ' + (idx + 1);
@@ -1969,25 +1969,25 @@ Lyte.Component.register("pilotx-chat", {
                 var boards = toLyteKanbanData(Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []));
                 return { component: 'data-view-kanban', props: { ltPropBoardDetails: boards } };
             }
-            case 'lyte-table':
-            case 'data-view-table': {
-                var tableData = toLyteTableData(Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []));
-                return { component: 'data-view-table', props: { ltPropHeader: tableData.header, ltPropContent: tableData.content } };
-            }
-            case 'lyte-chart':
-            case 'data-view-chart': {
-                var chartData = toLyteChartData(rawData);
-                return {
-                    component: 'data-view-chart',
-                    props: {
-                        ltPropType: 'bar',
-                        ltPropTitle: '',
-                        ltPropSeriesData: chartData.seriesData,
-                        ltPropMetaDataAxes: chartData.metaDataAxes,
-                        ltPropMetaDataColumns: chartData.metaDataColumns
-                    }
-                };
-            }
+            // case 'lyte-table':
+            // case 'data-view-table': {
+            //     var tableData = toLyteTableData(Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []));
+            //     return { component: 'data-view-table', props: { ltPropHeader: tableData.header, ltPropContent: tableData.content } };
+            // }
+            // case 'lyte-chart':
+            // case 'data-view-chart': {
+            //     var chartData = toLyteChartData(rawData);
+            //     return {
+            //         component: 'data-view-chart',
+            //         props: {
+            //             ltPropType: 'bar',
+            //             ltPropTitle: '',
+            //             ltPropSeriesData: chartData.seriesData,
+            //             ltPropMetaDataAxes: chartData.metaDataAxes,
+            //             ltPropMetaDataColumns: chartData.metaDataColumns
+            //         }
+            //     };
+            // }
             default:
                 // Unknown component — pass raw data directly as-is
                 return { component: compName, props: rawData };
