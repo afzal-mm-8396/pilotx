@@ -2129,13 +2129,7 @@ _dynamicNodes : [],
             return wrapper;
         }
 
-        // Single item – no tab chrome needed
-        if (viewDataItems.length === 1) {
-            var singleContainer = renderViewDataItem(viewDataItems[0]);
-            wrapper.appendChild(singleContainer);
-            return wrapper;
-        }
-
+        // Single item or many – always show tab strip
         // Multiple items – tab strip + lazily rendered panels
         var tabStrip = document.createElement('div');
         tabStrip.className = 'multi-view-tab-strip view-tabs';
