@@ -1592,6 +1592,22 @@ Lyte.Component.register("pilotx-chat", {
     function toLyteKanbanData(items) {
         if (!Array.isArray(items) || items.length === 0) return [];
 
+        // Guard: if items are already in board-details format ({ id, title, cards }), return as-is
+        if (items[0] && items[0].hasOwnProperty('cards') && items[0].hasOwnProperty('title') && items[0].hasOwnProperty('id')) {
+            return items;
+        }
+
+        // Guard: if items contain a nested ltPropBoardDetails array, flatten and return those boards directly
+        if (items[0] && items[0].hasOwnProperty('ltPropBoardDetails')) {
+            var flattened = [];
+            items.forEach(function(item) {
+                if (Array.isArray(item.ltPropBoardDetails)) {
+                    item.ltPropBoardDetails.forEach(function(b) { flattened.push(b); });
+                }
+            });
+            if (flattened.length > 0) return flattened;
+        }
+
         var groupKey = findGroupKey(items);
         var titleKey = Object.keys(items[0] || {}).find(function(k) {
             return /name|title|label/i.test(k);
@@ -1882,7 +1898,8 @@ Lyte.Component.register("pilotx-chat", {
             // Friendly aliases for well-known component names
             var friendlyNames = {
                 'lyte-kanbanview':  'Kanban',
-                'data-view-kanban': 'Kanban'//,
+                'data-view-kanban': 'Kanban',
+                'cardify':          'Cards'//,
                 // 'lyte-table':       'Table',
                 // 'data-view-table':  'Table',
                 // 'lyte-chart':       'Chart',
@@ -2003,6 +2020,11 @@ Lyte.Component.register("pilotx-chat", {
             var compName = item.component || item.componentName;
             var rawData  = item.props    || item.data;
             if (compName) {
+                // 'cardify' is a DOM-based card list — not a Lyte component
+                if ((compName || '').toLowerCase() === 'cardify') {
+                    var cardData = Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []);
+                    return buildLyteView(cardData, 'list');
+                }
                 var resolved = resolveComponentAndProps(compName, rawData);
                 return buildDirectComponentView(resolved.component, resolved.props);
             }
