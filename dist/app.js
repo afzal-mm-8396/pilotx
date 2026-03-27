@@ -2259,8 +2259,9 @@ _dynamicNodes : [],
                     return cardContainer;
                 }
                 var resolved = resolveComponentAndProps(compName, rawData);
-                // All known types route through buildLyteView (our DOM renderers)
-                return buildLyteView(resolved._data, resolved._view);
+                // All known types route through buildLyteView (our DOM renderers).
+                // noToolbar:true — the outer multi-view tab strip already provides navigation.
+                return buildLyteView(resolved._data, resolved._view, { noToolbar: true });
             }
         }
         var dataType = detectDataType(item);
@@ -2345,7 +2346,9 @@ _dynamicNodes : [],
         return wrapper;
     }
 
-    function buildLyteView(data, initialView) {
+    function buildLyteView(data, initialView, options) {
+        var opts = options || {};
+        var noToolbar = !!opts.noToolbar;
         var container = document.createElement('div');
         container.className = 'data-view-container lyte-data-view';
 
@@ -2369,42 +2372,45 @@ _dynamicNodes : [],
         // so tab switches and deferred renders reuse the same ID
         var stableTargetId = 'lyteViewTarget_' + (++_lyteViewCounter);
 
-        // Toolbar
-        var toolbar = document.createElement('div');
-        toolbar.className = 'data-view-toolbar';
-
-        var tabs = document.createElement('div');
-        tabs.className = 'view-tabs';
-
         var body = document.createElement('div');
         body.className = 'data-view-body';
 
-        availableViews.forEach(function(v) {
-            var btn = document.createElement('button');
-            btn.className = 'view-tab' + (v.key === defaultView ? ' active' : '');
-            btn.innerHTML = '<i class="fas ' + v.icon + '"></i><span>' + v.label + '</span>';
-            btn.dataset.view = v.key;
-            btn.addEventListener('click', function() {
-                tabs.querySelectorAll('.view-tab').forEach(function(t) { t.classList.remove('active'); });
-                btn.classList.add('active');
-                renderLyteView(body, normalized, v.key, dataType, stableTargetId);
+        if (!noToolbar) {
+            // Toolbar
+            var toolbar = document.createElement('div');
+            toolbar.className = 'data-view-toolbar';
+
+            var tabs = document.createElement('div');
+            tabs.className = 'view-tabs';
+
+            availableViews.forEach(function(v) {
+                var btn = document.createElement('button');
+                btn.className = 'view-tab' + (v.key === defaultView ? ' active' : '');
+                btn.innerHTML = '<i class="fas ' + v.icon + '"></i><span>' + v.label + '</span>';
+                btn.dataset.view = v.key;
+                btn.addEventListener('click', function() {
+                    tabs.querySelectorAll('.view-tab').forEach(function(t) { t.classList.remove('active'); });
+                    btn.classList.add('active');
+                    renderLyteView(body, normalized, v.key, dataType, stableTargetId);
+                });
+                tabs.appendChild(btn);
             });
-            tabs.appendChild(btn);
-        });
 
-        var actions = document.createElement('div');
-        actions.className = 'data-view-actions';
-        var expandBtn = document.createElement('button');
-        expandBtn.className = 'expand-btn';
-        expandBtn.innerHTML = '<i class="fas fa-expand"></i> Expand';
-        expandBtn.addEventListener('click', function() {
-            openViewModal(data, tabs.querySelector('.view-tab.active').dataset.view);
-        });
-        actions.appendChild(expandBtn);
+            var actions = document.createElement('div');
+            actions.className = 'data-view-actions';
+            var expandBtn = document.createElement('button');
+            expandBtn.className = 'expand-btn';
+            expandBtn.innerHTML = '<i class="fas fa-expand"></i> Expand';
+            expandBtn.addEventListener('click', function() {
+                openViewModal(data, tabs.querySelector('.view-tab.active').dataset.view);
+            });
+            actions.appendChild(expandBtn);
 
-        toolbar.appendChild(tabs);
-        toolbar.appendChild(actions);
-        container.appendChild(toolbar);
+            toolbar.appendChild(tabs);
+            toolbar.appendChild(actions);
+            container.appendChild(toolbar);
+        }
+
         container.appendChild(body);
 
         // Defer initial render until the container is attached to the DOM
