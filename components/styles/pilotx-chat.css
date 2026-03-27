@@ -802,12 +802,70 @@ textarea {
 .multi-view-tabs-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 0;
     width: 100%;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-top: 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Header bar: dark background, tabs left, CRM View right */
+.multi-view-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 14px;
+    background: linear-gradient(135deg, #1e3a5f 0%, #1e4976 100%);
+    flex-wrap: wrap;
+}
+
+/* Tab strip inside header — transparent, no own border */
+.multi-view-header .multi-view-tab-strip {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 2px;
+    gap: 2px;
+}
+
+/* Inactive tab on dark header */
+.multi-view-header .view-tab {
+    color: rgba(255,255,255,0.65);
+}
+
+.multi-view-header .view-tab:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.12);
+}
+
+/* Active tab on dark header — white pill */
+.multi-view-header .view-tab.active {
+    background: #fff;
+    color: #1e3a5f;
+}
+
+/* CRM View button inside header */
+.multi-view-header .crm-view-btn {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.35);
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    box-shadow: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.multi-view-header .crm-view-btn:hover {
+    background: rgba(255,255,255,0.28);
+    box-shadow: none;
 }
 
 .multi-view-tab-strip {
-    /* inherits .view-tabs layout */
+    /* standalone fallback (outside header) */
     margin-bottom: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -815,9 +873,6 @@ textarea {
 }
 
 .multi-view-panels-host {
-    border: 1px solid var(--border);
-    border-top: none;
-    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
     overflow: hidden;
 }
 

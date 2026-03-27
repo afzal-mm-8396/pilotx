@@ -407,19 +407,7 @@ Lyte.Component.register("pilotx-chat", {
                         if (dv.errorText) {
                             contentEl.insertAdjacentHTML('beforeend', '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(dv.errorText) + '</span></div>');
                         } else {
-                            if (dv.crmPopupView) {
-                                var crmBtnWrapper = document.createElement('div');
-                                crmBtnWrapper.className = 'crm-view-btn-wrapper';
-                                var crmBtn = document.createElement('button');
-                                crmBtn.className = 'crm-view-btn';
-                                crmBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> CRM View';
-                                (function(code) {
-                                    crmBtn.addEventListener('click', function() { executeCScript(code); });
-                                })(dv.crmPopupView);
-                                crmBtnWrapper.appendChild(crmBtn);
-                                contentEl.appendChild(crmBtnWrapper);
-                            }
-                            var vc = buildMultiViewTabs(dv.viewDataItems || (dv.data ? [dv.data] : []));
+                            var vc = buildMultiViewTabs(dv.viewDataItems || (dv.data ? [dv.data] : []), dv.crmPopupView || null);
                             contentEl.appendChild(vc);
                             if (dv.iframeUrl || dv.crmPopupView) {
                                 var iframeWrapper = document.createElement('div');
@@ -517,19 +505,7 @@ Lyte.Component.register("pilotx-chat", {
                     if (dv.errorText) {
                         contentEl.insertAdjacentHTML('beforeend', '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(dv.errorText) + '</span></div>');
                     } else {
-                        if (dv.crmPopupView) {
-                            var crmBtnWrapper = document.createElement('div');
-                            crmBtnWrapper.className = 'crm-view-btn-wrapper';
-                            var crmBtn = document.createElement('button');
-                            crmBtn.className = 'crm-view-btn';
-                            crmBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> CRM View';
-                            (function(code) {
-                                crmBtn.addEventListener('click', function() { executeCScript(code); });
-                            })(dv.crmPopupView);
-                            crmBtnWrapper.appendChild(crmBtn);
-                            contentEl.appendChild(crmBtnWrapper);
-                        }
-                        var viewContainer = buildMultiViewTabs(dv.viewDataItems || (dv.data ? [dv.data] : []));
+                        var viewContainer = buildMultiViewTabs(dv.viewDataItems || (dv.data ? [dv.data] : []), dv.crmPopupView || null);
                         contentEl.appendChild(viewContainer);
                         if (dv.iframeUrl || dv.crmPopupView) {
                             var iframeWrapper = document.createElement('div');
@@ -544,19 +520,7 @@ Lyte.Component.register("pilotx-chat", {
                     }
                 });
             } else if (msg.dataView && msg.dataView.data) {
-                if (msg.dataView.crmPopupView) {
-                    var crmBtnWrapper = document.createElement('div');
-                    crmBtnWrapper.className = 'crm-view-btn-wrapper';
-                    var crmBtn = document.createElement('button');
-                    crmBtn.className = 'crm-view-btn';
-                    crmBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> CRM View';
-                    (function(code) {
-                        crmBtn.addEventListener('click', function() { executeCScript(code); });
-                    })(msg.dataView.crmPopupView);
-                    crmBtnWrapper.appendChild(crmBtn);
-                    contentEl.appendChild(crmBtnWrapper);
-                }
-                var viewContainer = buildMultiViewTabs(msg.dataView.viewDataItems || [msg.dataView.data]);
+                var viewContainer = buildMultiViewTabs(msg.dataView.viewDataItems || [msg.dataView.data], msg.dataView.crmPopupView || null);
                 contentEl.appendChild(viewContainer);
                 if (msg.dataView.iframeUrl || msg.dataView.crmPopupView) {
                     var iframeWrapper = document.createElement('div');
@@ -1139,23 +1103,10 @@ Lyte.Component.register("pilotx-chat", {
                     var resolvedIframeUrl = cscriptResult.crmIframeView || null;
 
                     // CRM Popup View button (above response component)
-                    if (crmPopupCode) {
-                        var crmBtnWrapper = document.createElement('div');
-                        crmBtnWrapper.className = 'crm-view-btn-wrapper';
-                        var crmBtn = document.createElement('button');
-                        crmBtn.className = 'crm-view-btn';
-                        crmBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> CRM View';
-                        (function(code) {
-                            crmBtn.addEventListener('click', function() { executeCScript(code); });
-                        })(crmPopupCode);
-                        crmBtnWrapper.appendChild(crmBtn);
-                        contentEl.appendChild(crmBtnWrapper);
-                    }
-
                     // Render each data item in result.data
                     var viewDataItems = Array.isArray(cscriptResult.data) ? cscriptResult.data : [cscriptResult.data];
                     console.log('[WorkPilot] viewDataItems:', viewDataItems);
-                    var multiTabsContainer = buildMultiViewTabs(viewDataItems);
+                    var multiTabsContainer = buildMultiViewTabs(viewDataItems, crmPopupCode || null);
                     contentEl.appendChild(multiTabsContainer);
 
                     // CRM Iframe View (render below response component)
@@ -2157,8 +2108,71 @@ Lyte.Component.register("pilotx-chat", {
             lc === 'crux-detail'        ||
             /detail|record|single/.test(lc)) {
             var detailRaw = unwrapRecords(rawData);
-            var detailRec = detailRaw.length > 0 ? detailRaw[0] : rawData;
-            return { _ownView: true, _data: detailRec, _view: 'detail' };
+            var detailSrc = detailRaw.length > 0 ? detailRaw[0] : (rawData || {});
+
+            // ── Extract actual record + sections from crux wrapper ──
+            var detailRec, detailSections;
+            if (detailSrc && detailSrc.cxPropRecord && typeof detailSrc.cxPropRecord === 'object') {
+                detailRec      = detailSrc.cxPropRecord;
+                detailSections = Array.isArray(detailSrc.cxPropSections) ? detailSrc.cxPropSections : [];
+            } else {
+                detailRec      = detailSrc;
+                detailSections = [];
+            }
+
+            // Helper: resolve a value to a display string, null if empty
+            function _resolveVal(val) {
+                if (val === null || val === undefined || val === '') return null;
+                if (typeof val === 'boolean') return val ? 'Yes' : 'No';
+                if (typeof val !== 'object') return String(val);
+                // Objects: prefer name/display_value/email
+                var label = val.name || val.display_value || val.full_name || val.email || val.value;
+                if (label) return String(label);
+                if (Array.isArray(val)) {
+                    var parts = val.map(function(v) {
+                        if (!v || typeof v !== 'object') return String(v);
+                        return v.display_label || v.name || v.label || v.api_name || JSON.stringify(v);
+                    });
+                    return parts.join(', ') || null;
+                }
+                try { var j = JSON.stringify(val); return j.length > 120 ? j.substring(0, 117) + '\u2026' : j; }
+                catch(e) { return '[Object]'; }
+            }
+
+            // Skip keys that are internal/system
+            var _skipKey = function(k) {
+                return /^id$|^Id$|^ID$|coordinates|__|\$/.test(k);
+            };
+
+            // Build a clean ordered object for renderDetailView
+            var cleanRec = {};
+            var seen = {};
+
+            // 1) Section-ordered fields (using field_label as display key)
+            detailSections.forEach(function(section) {
+                if (!Array.isArray(section.fields)) return;
+                section.fields.forEach(function(fd) {
+                    var api = fd.api_name;
+                    if (!api || seen[api] || _skipKey(api)) return;
+                    if (fd.data_type === 'profileimage') return; // skip image fields
+                    seen[api] = true;
+                    var val = _resolveVal(detailRec[api]);
+                    if (val === null) return; // skip nulls
+                    // Use field_label as the key (formatFieldName won't mangle it further)
+                    cleanRec[fd.field_label || api] = val;
+                });
+            });
+
+            // 2) Supplement with any remaining non-null record fields not covered by sections
+            Object.keys(detailRec).forEach(function(k) {
+                if (seen[k] || _skipKey(k)) return;
+                var val = _resolveVal(detailRec[k]);
+                if (val === null) return;
+                seen[k] = true;
+                cleanRec[k] = val;
+            });
+
+            return { _ownView: true, _data: cleanRec, _view: 'detail' };
         }
 
         // ── Truly unknown — fallback: auto-detect from data shape ──
@@ -2203,7 +2217,7 @@ Lyte.Component.register("pilotx-chat", {
     // Wraps multiple viewData items in a tabbed interface.
     // - One item  → rendered directly, no tab chrome.
     // - Many items → labeled tabs; panels are lazy-rendered on first show.
-    function buildMultiViewTabs(viewDataItems) {
+    function buildMultiViewTabs(viewDataItems, crmPopupCode) {
         var wrapper = document.createElement('div');
         wrapper.className = 'multi-view-tabs-wrapper';
 
@@ -2212,10 +2226,23 @@ Lyte.Component.register("pilotx-chat", {
             return wrapper;
         }
 
-        // Single item or many – always show tab strip
-        // Multiple items – tab strip + lazily rendered panels
+        // ── Header bar: tabs on left, CRM View on right ──
+        var header = document.createElement('div');
+        header.className = 'multi-view-header';
+
         var tabStrip = document.createElement('div');
         tabStrip.className = 'multi-view-tab-strip view-tabs';
+        header.appendChild(tabStrip);
+
+        if (crmPopupCode) {
+            var crmBtn = document.createElement('button');
+            crmBtn.className = 'crm-view-btn';
+            crmBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> CRM View';
+            (function(code) {
+                crmBtn.addEventListener('click', function() { executeCScript(code); });
+            })(crmPopupCode);
+            header.appendChild(crmBtn);
+        }
 
         var panelsHost = document.createElement('div');
         panelsHost.className = 'multi-view-panels-host';
@@ -2268,10 +2295,9 @@ Lyte.Component.register("pilotx-chat", {
             panelRefs[0].panel._rendered = true;
             var firstVc = renderViewDataItem(panelRefs[0].panel._viewData);
             panelRefs[0].panel.appendChild(firstVc);
-            // _deferredRender is handled by the child component's own polling
         }
 
-        wrapper.appendChild(tabStrip);
+        wrapper.appendChild(header);
         wrapper.appendChild(panelsHost);
         return wrapper;
     }
@@ -2635,8 +2661,24 @@ Lyte.Component.register("pilotx-chat", {
         detail.className = 'detail-view';
 
         var keys = Object.keys(item);
-        var titleKey = keys.find(function(k) { return /name|title|label/i.test(k); }) || keys[0];
+
+        // Pick a meaningful title key — prefer Full_Name/Name/name/Subject
+        var titleKey = keys.find(function(k) { return /^(full.?name|name|subject|title)$/i.test(k); })
+                    || keys.find(function(k) { return /name|title|label/i.test(k); })
+                    || keys[0];
         var title = serializeCellValue(item[titleKey]) || '(No Name)';
+        // If title is '—' (null), try the first non-empty key
+        if (title === '—') {
+            for (var ti = 0; ti < keys.length; ti++) {
+                var tv = serializeCellValue(item[keys[ti]]);
+                if (tv && tv !== '—') { title = tv; titleKey = keys[ti]; break; }
+            }
+        }
+
+        // Helper: displayable label — if key already has spaces it's a pre-formatted label
+        function labelFor(k) {
+            return k.indexOf(' ') !== -1 ? k : formatFieldName(k);
+        }
 
         // Header with avatar
         var header = document.createElement('div');
@@ -2647,11 +2689,11 @@ Lyte.Component.register("pilotx-chat", {
             '</div>' +
             '<div class="detail-title-block">' +
                 '<h3 class="detail-name">' + escapeHtml(title) + '</h3>' +
-                '<span class="detail-subtitle">' + escapeHtml(formatFieldName(titleKey)) + '</span>' +
+                '<span class="detail-subtitle">' + escapeHtml(labelFor(titleKey)) + '</span>' +
             '</div>';
         detail.appendChild(header);
 
-        // Fields grid
+        // Fields grid — skip the title key and any empty values
         var fields = document.createElement('div');
         fields.className = 'detail-fields';
 
@@ -2659,12 +2701,14 @@ Lyte.Component.register("pilotx-chat", {
             if (k === titleKey) return;
             var val = item[k];
             var displayVal = serializeCellValue(val);
+            if (!displayVal || displayVal === '—') return; // skip empty / null fields
+
             var isLink = typeof val === 'string' && (/^https?:\/\//i.test(val) || /^[\w.+-]+@[\w-]+\.[\w.]+$/.test(val));
 
             var field = document.createElement('div');
             field.className = 'detail-field';
             field.innerHTML =
-                '<div class="detail-field-label">' + escapeHtml(formatFieldName(k)) + '</div>' +
+                '<div class="detail-field-label">' + escapeHtml(labelFor(k)) + '</div>' +
                 '<div class="detail-field-value">' +
                     (isLink
                         ? '<a href="' + (/^https?/.test(val) ? val : 'mailto:' + val) + '" target="_blank" rel="noopener">' + escapeHtml(displayVal) + '</a>'
