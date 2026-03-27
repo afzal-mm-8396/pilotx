@@ -816,40 +816,41 @@ textarea {
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    padding: 10px 14px;
-    background: linear-gradient(135deg, #1e3a5f 0%, #1e4976 100%);
+    padding: 10px 16px;
+    background: var(--bg-main);
+    border-bottom: 1px solid var(--border);
     flex-wrap: wrap;
 }
 
-/* Tab strip inside header — transparent, no own border */
+/* Tab strip inside header */
 .multi-view-header .multi-view-tab-strip {
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.18);
+    background: var(--bg-white);
+    border: 1px solid var(--border);
     padding: 2px;
     gap: 2px;
 }
 
-/* Inactive tab on dark header */
+/* Inactive tab */
 .multi-view-header .view-tab {
-    color: rgba(255,255,255,0.65);
+    color: var(--text-secondary);
 }
 
 .multi-view-header .view-tab:hover {
-    color: #fff;
-    background: rgba(255,255,255,0.12);
+    color: var(--text-primary);
+    background: var(--bg-main);
 }
 
-/* Active tab on dark header — white pill */
+/* Active tab — matches regular toolbar active style */
 .multi-view-header .view-tab.active {
-    background: #fff;
-    color: #1e3a5f;
+    background: var(--primary);
+    color: #fff;
 }
 
-/* CRM View button inside header */
+/* CRM View button inside header — matches expand-btn style */
 .multi-view-header .crm-view-btn {
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.35);
-    color: #fff;
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
     padding: 5px 12px;
     font-size: 12px;
     font-weight: 500;
@@ -860,7 +861,9 @@ textarea {
 }
 
 .multi-view-header .crm-view-btn:hover {
-    background: rgba(255,255,255,0.28);
+    color: var(--primary);
+    border-color: var(--primary);
+    background: var(--bg-white);
     box-shadow: none;
 }
 
