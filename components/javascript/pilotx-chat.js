@@ -2068,12 +2068,18 @@ Lyte.Component.register("pilotx-chat", {
         return { ltPropTitle: title, ltPropInitials: initials, ltPropFields: fields };
     }
 
-    // resolveComponentAndProps returns either:
-    //   { _ownView: true, _data: <raw records>, _view: 'table'|'kanban'|'chart'|'detail' }
-    //   — handled by buildLyteView (our DOM renderers, no Lyte.Component.render)
-    // OR:
-    //   { component: '<name>', props: <props> }
-    //   — handled by buildDirectComponentView (Lyte.Component.render, for external components)
+    // resolveComponentAndProps returns one of:
+    //   { _ownView: true, _data, _view }  → buildLyteView (our DOM renderers)
+    //   { _direct: true, component, props } → buildDirectComponentView (Lyte.Component.render)
+    //
+    // Rule: if rawData is ALREADY in ltProp* format (pre-built by the API), use _direct so
+    // Lyte.Component.render gets the correct props. Otherwise transform raw records.
+    function _isLyteProps(data) {
+        if (!data || typeof data !== 'object' || Array.isArray(data)) return false;
+        var keys = Object.keys(data);
+        return keys.length > 0 && keys.every(function(k) { return /^ltProp/i.test(k); });
+    }
+
     function resolveComponentAndProps(compName, rawData) {
         var lc = (compName || '').toLowerCase();
 
@@ -2082,6 +2088,7 @@ Lyte.Component.register("pilotx-chat", {
             lc === 'crux-table' || lc === 'crm-table' ||
             lc === 'crux-record-list' || lc === 'crux-list-view' ||
             /table|list|grid|records/.test(lc)) {
+            if (_isLyteProps(rawData)) return { _direct: true, component: 'data-view-table', props: rawData };
             var items = unwrapRecords(rawData);
             return { _ownView: true, _data: items, _view: 'table' };
         }
@@ -2090,6 +2097,7 @@ Lyte.Component.register("pilotx-chat", {
         if (lc === 'data-view-kanban' || lc === 'lyte-kanbanview' ||
             lc === 'crux-kanban'      || lc === 'crm-kanban' ||
             /kanban|board/.test(lc)) {
+            if (_isLyteProps(rawData)) return { _direct: true, component: 'data-view-kanban', props: rawData };
             var kanbanItems = unwrapRecords(rawData);
             return { _ownView: true, _data: kanbanItems, _view: 'kanban' };
         }
@@ -2098,7 +2106,17 @@ Lyte.Component.register("pilotx-chat", {
         if (lc === 'data-view-chart' || lc === 'lyte-chart' ||
             lc === 'crux-chart'      || lc === 'crm-chart' ||
             /chart|graph|plot/.test(lc)) {
-            return { _ownView: true, _data: rawData, _view: 'chart' };
+            // Already-formatted ltProp object — render directly via Lyte.Component.render
+            if (_isLyteProps(rawData)) return { _direct: true, component: 'data-view-chart', props: rawData };
+            // Raw data — transform and use our DOM chart renderer
+            var chartItems = unwrapRecords(rawData);
+            var chartData = toLyteChartData(chartItems.length > 0 ? chartItems : rawData);
+            return { _direct: true, component: 'data-view-chart', props: {
+                ltPropType: 'bar', ltPropTitle: '',
+                ltPropSeriesData: chartData.seriesData,
+                ltPropMetaDataAxes: chartData.metaDataAxes,
+                ltPropMetaDataColumns: chartData.metaDataColumns
+            }};
         }
 
         // ── DETAIL ─────────────────────────────────────────────
@@ -2216,6 +2234,10 @@ Lyte.Component.register("pilotx-chat", {
                     return cardContainer;
                 }
                 var resolved = resolveComponentAndProps(compName, rawData);
+                // Pre-formatted ltProp* object — render via Lyte.Component.render
+                if (resolved._direct) {
+                    return buildDirectComponentView(resolved.component, resolved.props);
+                }
                 // All known types route through buildLyteView (our DOM renderers).
                 // noToolbar:true — the outer multi-view tab strip already provides navigation.
                 return buildLyteView(resolved._data, resolved._view, { noToolbar: true });
