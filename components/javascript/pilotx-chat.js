@@ -1944,9 +1944,9 @@ Lyte.Component.register("pilotx-chat", {
             };
             var lower = explicitName.toLowerCase();
             if (friendlyNames[lower]) return friendlyNames[lower] + ' ' + (idx + 1);
-            // Generic: strip prefix, title-case
+            // Generic: strip known vendor prefixes, title-case
             return explicitName
-                .replace(/^(data-view-|lyte-)/, '')
+                .replace(/^(data-view-|lyte-|crux-|crm-)/, '')
                 .replace(/-/g, ' ')
                 .replace(/\b\w/g, function(c) { return c.toUpperCase(); })
                 + ' ' + (idx + 1);
@@ -2097,9 +2097,30 @@ Lyte.Component.register("pilotx-chat", {
                 return { component: 'data-view-detail', props: _toDetailViewProps(rawData) };
             }
 
-            default:
-                // Unknown component — pass raw data directly as-is
-                return { component: compName, props: rawData };
+            default: {
+                // Fuzzy fallback: route by keyword in component name before giving up
+                var lc = (compName || '').toLowerCase();
+                if (/table|list|grid|records/.test(lc)) {
+                    var fbItems = Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []);
+                    var fbTable = toLyteTableData(fbItems);
+                    return { component: 'data-view-table', props: { ltPropHeader: fbTable.header, ltPropContent: fbTable.content } };
+                }
+                if (/kanban|board/.test(lc)) {
+                    var fbKanban = toLyteKanbanData(Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []));
+                    return { component: 'data-view-kanban', props: { ltPropBoardDetails: fbKanban } };
+                }
+                if (/chart|graph|plot/.test(lc)) {
+                    var fbChart = toLyteChartData(rawData);
+                    return { component: 'data-view-chart', props: { ltPropType: 'bar', ltPropTitle: '', ltPropSeriesData: fbChart.seriesData, ltPropMetaDataAxes: fbChart.metaDataAxes, ltPropMetaDataColumns: fbChart.metaDataColumns } };
+                }
+                if (/detail|record|single|card/.test(lc)) {
+                    return { component: 'data-view-detail', props: _toDetailViewProps(rawData) };
+                }
+                // Truly unknown — auto-detect from the data shape
+                var fbDataType = detectDataType(rawData);
+                var fbView = getLyteDefaultView(fbDataType);
+                return { component: '__lyte_auto__', _data: rawData, _view: fbView };
+            }
         }
     }
 
@@ -2125,6 +2146,10 @@ Lyte.Component.register("pilotx-chat", {
                     return cardContainer;
                 }
                 var resolved = resolveComponentAndProps(compName, rawData);
+                // Sentinel: truly unknown component — fall back to auto-detected Lyte view
+                if (resolved.component === '__lyte_auto__') {
+                    return buildLyteView(resolved._data, resolved._view);
+                }
                 return buildDirectComponentView(resolved.component, resolved.props);
             }
         }
