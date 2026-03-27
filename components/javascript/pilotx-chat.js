@@ -2097,9 +2097,9 @@ Lyte.Component.register("pilotx-chat", {
         if (lc === 'data-view-kanban' || lc === 'lyte-kanbanview' ||
             lc === 'crux-kanban'      || lc === 'crm-kanban' ||
             /kanban|board/.test(lc)) {
-            if (_isLyteProps(rawData)) return { _direct: true, component: 'data-view-kanban', props: rawData };
             var kanbanItems = unwrapRecords(rawData);
-            return { _ownView: true, _data: kanbanItems, _view: 'kanban' };
+            var kanbanBoards = toLyteKanbanData(kanbanItems);
+            return { _direct: true, component: 'data-view-kanban', props: { ltPropBoardDetails: kanbanBoards } };
         }
 
         // ── CHART ──────────────────────────────────────────────

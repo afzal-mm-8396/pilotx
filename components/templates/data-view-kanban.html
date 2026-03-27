@@ -13,8 +13,6 @@
 						<lyte-card>
 							<template is="registerYield" yield-name="yield">
 							<div class="kanban-card-content">
-								{{log(lyteCardItem)}}
-								{{log(field)}}
 								<div class="kanban-card-name">{{lyteCardItem.cardTitle}}</div>
 								<template lyte-for="{{lyteCardItem.cardFields}} as field fIdx">
 									<div class="kanban-card-field">
