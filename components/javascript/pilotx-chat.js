@@ -1548,6 +1548,23 @@ Lyte.Component.register("pilotx-chat", {
         }
     }
 
+    // ─── RECORD UNWRAPPER ─────────────────────────────────
+    // Extracts actual records array from common container shapes:
+    //   crux-table: { cxPropContent: [...], cxPropHeader: [...], cxPropModule: 'Leads' }
+    //   generic:    { data: [...] } / { records: [...] } / { items: [...] } / { rows: [...] }
+    // Falls back to wrapping a single object or returning as-is for plain arrays.
+    function unwrapRecords(rawData) {
+        if (!rawData) return [];
+        if (Array.isArray(rawData)) return rawData;
+        if (typeof rawData !== 'object') return [{ value: rawData }];
+        var containerKeys = ['cxPropContent', 'data', 'records', 'items', 'rows', 'results', 'content'];
+        for (var ci = 0; ci < containerKeys.length; ci++) {
+            var ck = containerKeys[ci];
+            if (Array.isArray(rawData[ck]) && rawData[ck].length > 0) return rawData[ck];
+        }
+        return [rawData]; // single record object
+    }
+
     // Transforms raw data array into lyte-table header/content format
     function toLyteTableData(items) {
         if (!Array.isArray(items) || items.length === 0) return { header: [], content: [] };
@@ -2017,29 +2034,86 @@ Lyte.Component.register("pilotx-chat", {
     // Maps well-known Lyte UI component names to our custom data-view-* components
     // and transforms the raw data into the correct prop shape.
     function _toDetailViewProps(rawData) {
-        var rec = Array.isArray(rawData) ? (rawData[0] || {}) : (rawData || {});
-        var titleKeys = ['Full_Name', 'Name', 'name', 'Subject', 'subject', 'title', 'Title', 'label', 'Label'];
+        var source = Array.isArray(rawData) ? (rawData[0] || {}) : (rawData || {});
+
+        // ── Crux detail-view format: { cxPropRecord, cxPropSections, cxPropModule } ──
+        var rec, sectionDefs;
+        if (source.cxPropRecord && typeof source.cxPropRecord === 'object') {
+            rec = source.cxPropRecord;
+            sectionDefs = Array.isArray(source.cxPropSections) ? source.cxPropSections : [];
+        } else {
+            rec = source;
+            sectionDefs = [];
+        }
+
+        // Derive display title
+        var titleKeys = ['Full_Name', 'Name', 'name', 'Subject', 'subject', 'title', 'Title', 'First_Name', 'Last_Name', 'label'];
         var title = 'Record';
         for (var ti = 0; ti < titleKeys.length; ti++) {
-            if (rec[titleKeys[ti]]) { title = String(rec[titleKeys[ti]]); break; }
+            if (rec[titleKeys[ti]] && String(rec[titleKeys[ti]]).trim()) {
+                title = String(rec[titleKeys[ti]]).trim();
+                break;
+            }
         }
         var initials = title.charAt(0).toUpperCase();
-        var fields = Object.keys(rec).map(function(k) {
-            var val = rec[k];
-            if (val === null || val === undefined) return null;
-            var strVal;
-            if (typeof val === 'object') {
-                try { strVal = JSON.stringify(val); } catch(e) { strVal = '[Object]'; }
-                if (strVal.length > 120) strVal = strVal.substring(0, 117) + '\u2026';
-            } else {
-                strVal = String(val);
+
+        // Helper: serialize a field value to readable string
+        function fieldVal(val) {
+            if (val === null || val === undefined || val === '') return null;
+            if (typeof val === 'boolean') return val ? 'Yes' : 'No';
+            if (typeof val !== 'object') return String(val);
+            // Objects: extract common label properties
+            var label = val.name || val.display_value || val.full_name || val.email || val.value;
+            if (label) return String(label);
+            // Arrays: recursively extract
+            if (Array.isArray(val)) {
+                var parts = val.map(function(v) {
+                    if (!v || typeof v !== 'object') return String(v);
+                    return v.display_label || v.name || v.label || JSON.stringify(v);
+                });
+                return parts.join(', ');
             }
-            return {
+            try {
+                var j = JSON.stringify(val);
+                return j.length > 120 ? j.substring(0, 117) + '\u2026' : j;
+            } catch(e) { return '[Object]'; }
+        }
+
+        var fields = [];
+        var seen = {};
+
+        if (sectionDefs.length > 0) {
+            // Build fields from sections in order, using field_label as the display label
+            sectionDefs.forEach(function(section) {
+                if (!Array.isArray(section.fields)) return;
+                section.fields.forEach(function(fd) {
+                    var apiName = fd.api_name;
+                    if (!apiName || seen[apiName]) return;
+                    seen[apiName] = true;
+                    var val = fieldVal(rec[apiName]);
+                    if (val === null) return; // skip null/empty fields
+                    fields.push({ label: fd.field_label || apiName, value: val });
+                });
+            });
+        }
+
+        // Fallback / supplement: add any remaining non-null record fields not covered by sections
+        // Skip internal/meta keys and already-seen api_names
+        var skipKeys = { id: 1, Id: 1, ID: 1 };
+        Object.keys(rec).forEach(function(k) {
+            if (seen[k] || skipKeys[k]) return;
+            // Skip coordinate / internal fields
+            if (/coordinates|_coordinates|__/i.test(k)) return;
+            var val = fieldVal(rec[k]);
+            if (val === null) return;
+            seen[k] = true;
+            fields.push({
                 label: k.replace(/([A-Z])/g, ' $1').replace(/[_-]/g, ' ')
-                        .replace(/\b\w/g, function(c) { return c.toUpperCase(); }).trim(),
-                value: strVal
-            };
-        }).filter(Boolean);
+                         .replace(/\b\w/g, function(c) { return c.toUpperCase(); }).trim(),
+                value: val
+            });
+        });
+
         return { ltPropTitle: title, ltPropInitials: initials, ltPropFields: fields };
     }
 
@@ -2057,7 +2131,7 @@ Lyte.Component.register("pilotx-chat", {
             lc === 'crux-table' || lc === 'crm-table' ||
             lc === 'crux-record-list' || lc === 'crux-list-view' ||
             /table|list|grid|records/.test(lc)) {
-            var items = Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []);
+            var items = unwrapRecords(rawData);
             return { _ownView: true, _data: items, _view: 'table' };
         }
 
@@ -2065,7 +2139,7 @@ Lyte.Component.register("pilotx-chat", {
         if (lc === 'data-view-kanban' || lc === 'lyte-kanbanview' ||
             lc === 'crux-kanban'      || lc === 'crm-kanban' ||
             /kanban|board/.test(lc)) {
-            var kanbanItems = Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []);
+            var kanbanItems = unwrapRecords(rawData);
             return { _ownView: true, _data: kanbanItems, _view: 'kanban' };
         }
 
@@ -2082,7 +2156,8 @@ Lyte.Component.register("pilotx-chat", {
             lc === 'crux-record-detail' || lc === 'crm-detail-view' ||
             lc === 'crux-detail'        ||
             /detail|record|single/.test(lc)) {
-            var detailRec = Array.isArray(rawData) ? rawData[0] : rawData;
+            var detailRaw = unwrapRecords(rawData);
+            var detailRec = detailRaw.length > 0 ? detailRaw[0] : rawData;
             return { _ownView: true, _data: detailRec, _view: 'detail' };
         }
 
