@@ -2,7 +2,7 @@
 	<div class="lyte-kanban-wrapper">
 		<lyte-kanbanview lt-prop-board-details="{{ltPropBoardDetails}}">
 			<template is="registerYield" yield-name="kanbanYield">
-                <lyte-board lt-prop-board-sortable=true lt-prop-more-stage-record={{lyteBoardItem.moreRecords}} lt-prop-id={{lyteBoardItem.id}} lt-prop-kanban-id={{lyteKanbanId}} lt-prop-board-detail={{lyteBoardItem}} lt-prop-class={{lyteBoardItem.class}} lt-prop-index={{lyteIndex}} >
+                <lyte-board lt-prop-board-sortable = true lt-prop-more-stage-record={{lyteBoardItem.moreRecords}} lt-prop-id={{lyteBoardItem.id}} lt-prop-kanban-id={{lyteKanbanId}} lt-prop-board-detail={{lyteBoardItem}} lt-prop-class={{lyteBoardItem.class}} lt-prop-index={{lyteIndex}} >
 					<template is="registerYield" yield-name="boardHeader">
 						<div class="kanban-board-header">
 							<span class="board-title">{{lyteBoardItem.title}}</span>
@@ -13,6 +13,7 @@
 						<lyte-card>
 							<template is="registerYield" yield-name="yield">
 							<div class="kanban-card-content">
+								{{lyteCardItem}}
 								<div class="kanban-card-name">{{lyteCardItem.cardTitle}}</div>
 								<template lyte-for="{{lyteCardItem.cardFields}} as field fIdx">
 									<div class="kanban-card-field">
