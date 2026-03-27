@@ -46,3 +46,803 @@ LiveServer running in 60296
 Minified Count : 0
 Total Building Time : 6.557 s
 Building completed
+[Removed] => dist/.git/index.lock
+[Removed] => dist/.git/index.lock
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.015 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.008 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 2.428 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes2.428 s
+Generating dist components...
+
+Time to end processing template0.032 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.043 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.142 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 2.978 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes2.979 s
+Generating dist components...
+
+Time to end processing template0.084 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.005 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.004 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.411 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.412 s
+Generating dist components...
+
+Time to end processing template0.03 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.003 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.015 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.323 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.323 s
+Generating dist components...
+
+Time to end processing template0.024 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.003 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.004 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 2.59 s
+Callback function called 0.001 spilotx-chat
+Time to end the dynamic nodes2.591 s
+Generating dist components...
+
+Time to end processing template0.039 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.004 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.009 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.341 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.341 s
+Generating dist components...
+
+Time to end processing template0.022 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.007 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.013 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 2.181 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes2.182 s
+Generating dist components...
+
+Time to end processing template0.035 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.005 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.011 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.313 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.313 s
+Generating dist components...
+
+Time to end processing template0.022 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.004 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.004 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.255 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.255 s
+Generating dist components...
+
+Time to end processing template0.017 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.003 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.003 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.232 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.232 s
+Generating dist components...
+
+Time to end processing template0.028 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Error: Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/.git/index.lock'
+[Removed] => dist/.git/index.lock
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.023 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.05 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 2.731 s
+Callback function called 0.001 spilotx-chat
+Time to end the dynamic nodes2.732 s
+Generating dist components...
+
+Time to end processing template0.053 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.005 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.012 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.271 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.272 s
+Generating dist components...
+
+Time to end processing template0.044 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.011 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.004 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.478 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.478 s
+Generating dist components...
+
+Time to end processing template0.021 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.003 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.01 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.286 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.286 s
+Generating dist components...
+
+Time to end processing template0.026 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.007 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.003 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.261 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.261 s
+Generating dist components...
+
+Time to end processing template0.01 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.046 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.091 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 1.325 s
+Callback function called 0.001 spilotx-chat
+Time to end the dynamic nodes1.326 s
+Generating dist components...
+
+Time to end processing template0.065 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.003 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.008 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.29 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.291 s
+Generating dist components...
+
+Time to end processing template0.028 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Error: Error: ENOENT: no such file or directory, lstat '/Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/.git/index.lock'
+[Removed] => dist/.git/index.lock
+Searching for syntax errors.....
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => undefined
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.014 s
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.015 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.005 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+Browser launched
+page opened
+page opened
+Post method request get caught with url/post
+Time taken for end call back be undefined
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodesundefined
+Generating dist components...
+
+Post method request get caught with url/post
+Time taken for end call back be 0.031 s
+Callback function called 0.001 spilotx-chat
+Time to end the dynamic nodes0.031 s
+Generating dist components...
+
+Time to end processing templateundefined
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Time to end processing template0.008 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.005 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.017 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.294 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.295 s
+Generating dist components...
+
+Time to end processing template0.019 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.003 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.009 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.261 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.261 s
+Generating dist components...
+
+Time to end processing template0.013 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => undefined
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.01 s
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.01 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.002 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+Browser launched
+page opened
+page opened
+Post method request get caught with url/post
+Time taken for end call back be undefined
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodesundefined
+Generating dist components...
+
+Post method request get caught with url/post
+Time taken for end call back be 0.01 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.01 s
+Generating dist components...
+
+Time to end processing templateundefined
+Time to end processing template0 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.037 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.035 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.377 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.377 s
+Generating dist components...
+
+Time to end processing template0.014 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.028 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.025 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.381 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.381 s
+Generating dist components...
+
+Time to end processing template0.047 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.011 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.004 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.276 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.277 s
+Generating dist components...
+
+Time to end processing template0.021 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.004 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.002 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.231 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.231 s
+Generating dist components...
+
+Time to end processing template0.012 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.003 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.011 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.453 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.453 s
+Generating dist components...
+
+Time to end processing template0.049 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.003 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.002 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.267 s
+Callback function called 0.001 spilotx-chat
+Time to end the dynamic nodes0.268 s
+Generating dist components...
+
+Time to end processing template0.018 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.002 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.003 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.225 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.225 s
+Generating dist components...
+
+Time to end processing template0.014 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.001 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.002 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.255 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.255 s
+Generating dist components...
+
+Time to end processing template0.019 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.003 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.002 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.245 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.245 s
+Generating dist components...
+
+Time to end processing template0.012 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.019 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.007 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.517 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.517 s
+Generating dist components...
+
+Time to end processing template0.026 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.003 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.011 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.246 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.246 s
+Generating dist components...
+
+Time to end processing template0.014 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+[Removed] => dist/.git/index.lock
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.017 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.031 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.517 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.517 s
+Generating dist components...
+
+Time to end processing template0.047 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.003 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.003 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.409 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.409 s
+Generating dist components...
+
+Time to end processing template0.062 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.003 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.003 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.261 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.261 s
+Generating dist components...
+
+Time to end processing template0.012 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.001 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.28 s
+Callback function called 0 sdata-view-kanban
+Time to end the dynamic nodes0.28 s
+Generating dist components...
+
+Time to end processing template0.008 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.013 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.013 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.487 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.487 s
+Generating dist components...
+
+Time to end processing template0.056 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0.005 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.014 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+page opened
+Post method request get caught with url/post
+Time taken for end call back be 0.352 s
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodes0.352 s
+Generating dist components...
+
+Time to end processing template0.035 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Searching for syntax errors.....
+Searching for syntax errors.....
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => undefined
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0 s
+Finding the unclosed tags compilation over
+[Time] => find unclosedTags => 0 s
+Running compilerule ...
+[Time] => Convert Lyte syntax => 0.008 s
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+browser Endpoint ws://127.0.0.1:60248/devtools/browser/fc895c39-7672-4192-a302-2f214345a93b
+Browser launched
+Browser launched
+page opened
+page opened
+Post method request get caught with url/post
+Time taken for end call back be undefined
+Callback function called 0 spilotx-chat
+Time to end the dynamic nodesundefined
+Generating dist components...
+
+Time to end processing template0.014 s
+Consolidated file created in the dist/app.js
+
+Consolidated file created in the dist/app.js
+
+Post method request get caught with url/post
+Time taken for end call back be 0.018 s
+Callback function called 0 sdata-view-kanban
+Time to end the dynamic nodes0.019 s
+Generating dist components...
+

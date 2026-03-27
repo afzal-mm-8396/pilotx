@@ -1561,20 +1561,20 @@ Lyte.Component.register("pilotx-chat", {
         if (!Array.isArray(items) || items.length === 0) return [];
 
         // Guard: if items are already in board-details format ({ id, title, cards }), return as-is
-        // but ensure each card has _title/_fields that the template requires.
+        // but ensure each card has cardTitle/cardFields that the template requires.
         if (items[0] && items[0].hasOwnProperty('cards') && items[0].hasOwnProperty('title') && items[0].hasOwnProperty('id')) {
             return items.map(function(board) {
                 var processedCards = Array.isArray(board.cards) ? board.cards.map(function(card) {
                     // Already processed — skip
-                    if (card._title !== undefined) return card;
+                    if (card.cardTitle !== undefined) return card;
                     var cardKeys = Object.keys(card);
                     var cardTitleKey = cardKeys.find(function(k) { return /name|title|label/i.test(k); }) || cardKeys[0];
-                    var processed = { _title: serializeCellValue(card[cardTitleKey]) || '(No Name)', _fields: [] };
+                    var processed = { cardTitle: serializeCellValue(card[cardTitleKey]) || '(No Name)', cardFields: [] };
                     cardKeys.forEach(function(k) {
                         if (k === cardTitleKey) return;
                         var val = card[k];
                         if (val === null || val === undefined) return;
-                        processed._fields.push({ label: formatFieldName(k), value: serializeCellValue(val) });
+                        processed.cardFields.push({ label: formatFieldName(k), value: serializeCellValue(val) });
                     });
                     // Copy original fields for reference
                     cardKeys.forEach(function(k) { processed[k] = card[k]; });
@@ -1593,7 +1593,7 @@ Lyte.Component.register("pilotx-chat", {
                 }
             });
             if (flattened.length > 0) {
-                // Re-process through guard 1 to ensure cards have _title/_fields
+                // Re-process through guard 1 to ensure cards have cardTitle/cardFields
                 return toLyteKanbanData(flattened);
             }
         }
@@ -1612,13 +1612,13 @@ Lyte.Component.register("pilotx-chat", {
                 groupOrder.push(groupVal);
             }
 
-            // Build card with _title and _fields for template rendering
-            var card = { _title: serializeCellValue(item[titleKey]) || '(No Name)', _fields: [] };
+            // Build card with cardTitle and cardFields for template rendering
+            var card = { cardTitle: serializeCellValue(item[titleKey]) || '(No Name)', cardFields: [] };
             Object.keys(item).forEach(function(k) {
                 if (k === titleKey || k === groupKey) return;
                 var val = item[k];
                 if (val === null || val === undefined) return;
-                card._fields.push({ label: formatFieldName(k), value: serializeCellValue(val) });
+                card.cardFields.push({ label: formatFieldName(k), value: serializeCellValue(val) });
             });
             // Copy original fields for reference
             Object.keys(item).forEach(function(k) { card[k] = item[k]; });
@@ -1812,17 +1812,21 @@ Lyte.Component.register("pilotx-chat", {
         // Lyte's internal selector fails if the element was created in the same frame,
         // so we always defer the render to the next setTimeout tick.
         function safeRender(componentName, props, targetId) {
-            setTimeout(function() {
+            var _sr = 0;
+            function attempt() {
                 var el = document.getElementById(targetId);
-                if (!el || !document.body.contains(el)) {
-                    return;
+                if (el && document.body.contains(el)) {
+                    try {
+                        Lyte.Component.render(componentName, props, '#' + targetId);
+                    } catch (e) {
+                        console.warn('[WorkPilot] Lyte render failed for #' + targetId + ':', e.message);
+                    }
+                } else if (_sr < 20) {
+                    _sr++;
+                    setTimeout(attempt, 50);
                 }
-                try {
-                    Lyte.Component.render(componentName, props, '#' + targetId);
-                } catch (e) {
-                    console.warn('[WorkPilot] Lyte render failed for #' + targetId + ':', e.message);
-                }
-            }, 0);
+            }
+            setTimeout(attempt, 0);
         }
 
         switch (viewKey) {

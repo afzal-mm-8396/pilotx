@@ -35,7 +35,7 @@ _observedAttributesType :["string","string","array"],
 });
 
 Lyte.Component.register("data-view-kanban", {
-_template:"<template tag-name=\"data-view-kanban\"> <div class=\"lyte-kanban-wrapper\"> <lyte-kanbanview lt-prop-board-details=\"{{ltPropBoardDetails}}\"> <template is=\"registerYield\" yield-name=\"kanbanYield\"> <lyte-board lt-prop-board-sortable=\"true\" lt-prop-more-stage-record=\"{{lyteBoardItem.moreRecords}}\" on-board-scroll=\"{{method('boardScroll')}}\" lt-prop-id=\"{{lyteBoardItem.id}}\" lt-prop-kanban-id=\"{{lyteKanbanId}}\" lt-prop-board-detail=\"{{lyteBoardItem}}\" lt-prop-class=\"{{lyteBoardItem.class}}\" lt-prop-index=\"{{lyteIndex}}\"> <template is=\"registerYield\" yield-name=\"boardHeader\"> <div class=\"kanban-board-header\"> <span class=\"board-title\">{{lyteBoardItem.title}}</span> <span class=\"board-count\">{{lyteBoardItem.cards.length}}</span> </div> </template> <template is=\"registerYield\" yield-name=\"contentItem\"> <lyte-card> <template is=\"registerYield\" yield-name=\"yield\"> <div class=\"kanban-card-content\"> <div class=\"kanban-card-name\">{{lyteCardItem._title}}</div> <template items=\"{{lyteCardItem._fields}}\" item=\"field\" index=\"fIdx\" is=\"for\"> <div class=\"kanban-card-field\"> <span class=\"kfield-label\">{{field.label}}:</span> <span class=\"kfield-value\">{{field.value}}</span> </div> </template> </div> </template> </lyte-card> </template> </lyte-board> </template> </lyte-kanbanview> </div> <div></div> </template>\n<style>.lyte-kanban-wrapper {\n\twidth: 100%;\n\toverflow-x: auto;\n\tmin-height: 200px;\n}\n.lyte-kanban-wrapper lyte-kanbanview {\n\twidth: 100%;\n}\n.kanban-board-header {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding: 8px 12px;\n\tfont-weight: 600;\n\tfont-size: 13px;\n\tcolor: var(--text-primary, #1e293b);\n}\n.kanban-board-header .board-count {\n\tbackground: var(--primary, #3b82f6);\n\tcolor: #fff;\n\tborder-radius: 10px;\n\tpadding: 2px 8px;\n\tfont-size: 11px;\n\tfont-weight: 600;\n}\n.kanban-card-content {\n\tpadding: 10px;\n}\n.kanban-card-name {\n\tfont-weight: 600;\n\tfont-size: 13px;\n\tcolor: var(--text-primary, #1e293b);\n\tmargin-bottom: 6px;\n}\n.kanban-card-field {\n\tdisplay: flex;\n\tgap: 6px;\n\tfont-size: 12px;\n\tmargin-top: 3px;\n}\n.kfield-label {\n\tcolor: var(--text-tertiary, #94a3b8);\n}\n.kfield-value {\n\tcolor: var(--text-secondary, #64748b);\n}</style>",
+_template:"<template tag-name=\"data-view-kanban\"> <div class=\"lyte-kanban-wrapper\"> <lyte-kanbanview lt-prop-board-details=\"{{ltPropBoardDetails}}\"> <template is=\"registerYield\" yield-name=\"kanbanYield\"> <lyte-board lt-prop-board-sortable=\"true\" lt-prop-more-stage-record=\"{{lyteBoardItem.moreRecords}}\" on-board-scroll=\"{{method('boardScroll')}}\" lt-prop-id=\"{{lyteBoardItem.id}}\" lt-prop-kanban-id=\"{{lyteKanbanId}}\" lt-prop-board-detail=\"{{lyteBoardItem}}\" lt-prop-class=\"{{lyteBoardItem.class}}\" lt-prop-index=\"{{lyteIndex}}\"> <template is=\"registerYield\" yield-name=\"boardHeader\"> <div class=\"kanban-board-header\"> <span class=\"board-title\">{{lyteBoardItem.title}}</span> <span class=\"board-count\">{{lyteBoardItem.cards.length}}</span> </div> </template> <template is=\"registerYield\" yield-name=\"contentItem\"> <lyte-card> <template is=\"registerYield\" yield-name=\"yield\"> <div class=\"kanban-card-content\"> <div class=\"kanban-card-name\">{{lyteCardItem.cardTitle}}</div> <template items=\"{{lyteCardItem.cardFields}}\" item=\"field\" index=\"fIdx\" is=\"for\"> <div class=\"kanban-card-field\"> <span class=\"kfield-label\">{{field.label}}:</span> <span class=\"kfield-value\">{{field.value}}</span> </div> </template> </div> </template> </lyte-card> </template> </lyte-board> </template> </lyte-kanbanview> </div> <div></div> </template>\n<style>.lyte-kanban-wrapper {\n\twidth: 100%;\n\toverflow-x: auto;\n\tmin-height: 200px;\n}\n.lyte-kanban-wrapper lyte-kanbanview {\n\twidth: 100%;\n}\n.kanban-board-header {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding: 8px 12px;\n\tfont-weight: 600;\n\tfont-size: 13px;\n\tcolor: var(--text-primary, #1e293b);\n}\n.kanban-board-header .board-count {\n\tbackground: var(--primary, #3b82f6);\n\tcolor: #fff;\n\tborder-radius: 10px;\n\tpadding: 2px 8px;\n\tfont-size: 11px;\n\tfont-weight: 600;\n}\n.kanban-card-content {\n\tpadding: 10px;\n}\n.kanban-card-name {\n\tfont-weight: 600;\n\tfont-size: 13px;\n\tcolor: var(--text-primary, #1e293b);\n\tmargin-bottom: 6px;\n}\n.kanban-card-field {\n\tdisplay: flex;\n\tgap: 6px;\n\tfont-size: 12px;\n\tmargin-top: 3px;\n}\n.kfield-label {\n\tcolor: var(--text-tertiary, #94a3b8);\n}\n.kfield-value {\n\tcolor: var(--text-secondary, #64748b);\n}</style>",
 _dynamicNodes : [{"type":"attr","position":[1,1]},{"type":"registerYield","position":[1,1,1],"dynamicNodes":[{"type":"attr","position":[1]},{"type":"registerYield","position":[1,1],"dynamicNodes":[{"type":"text","position":[1,1,0]},{"type":"text","position":[1,3,0]}]},{"type":"registerYield","position":[1,3],"dynamicNodes":[{"type":"registerYield","position":[1,1],"dynamicNodes":[{"type":"text","position":[1,1,0]},{"type":"attr","position":[1,3]},{"type":"for","position":[1,3],"dynamicNodes":[{"type":"text","position":[1,1,0]},{"type":"text","position":[1,3,0]}]}]},{"type":"componentDynamic","position":[1]}]},{"type":"componentDynamic","position":[1]}]},{"type":"componentDynamic","position":[1,1]}],
 _observedAttributes :["ltPropBoardDetails"],
 _observedAttributesType :["array"],
@@ -1631,20 +1631,20 @@ _dynamicNodes : [],
         if (!Array.isArray(items) || items.length === 0) return [];
 
         // Guard: if items are already in board-details format ({ id, title, cards }), return as-is
-        // but ensure each card has _title/_fields that the template requires.
+        // but ensure each card has cardTitle/cardFields that the template requires.
         if (items[0] && items[0].hasOwnProperty('cards') && items[0].hasOwnProperty('title') && items[0].hasOwnProperty('id')) {
             return items.map(function(board) {
                 var processedCards = Array.isArray(board.cards) ? board.cards.map(function(card) {
                     // Already processed — skip
-                    if (card._title !== undefined) return card;
+                    if (card.cardTitle !== undefined) return card;
                     var cardKeys = Object.keys(card);
                     var cardTitleKey = cardKeys.find(function(k) { return /name|title|label/i.test(k); }) || cardKeys[0];
-                    var processed = { _title: serializeCellValue(card[cardTitleKey]) || '(No Name)', _fields: [] };
+                    var processed = { cardTitle: serializeCellValue(card[cardTitleKey]) || '(No Name)', cardFields: [] };
                     cardKeys.forEach(function(k) {
                         if (k === cardTitleKey) return;
                         var val = card[k];
                         if (val === null || val === undefined) return;
-                        processed._fields.push({ label: formatFieldName(k), value: serializeCellValue(val) });
+                        processed.cardFields.push({ label: formatFieldName(k), value: serializeCellValue(val) });
                     });
                     // Copy original fields for reference
                     cardKeys.forEach(function(k) { processed[k] = card[k]; });
@@ -1663,7 +1663,7 @@ _dynamicNodes : [],
                 }
             });
             if (flattened.length > 0) {
-                // Re-process through guard 1 to ensure cards have _title/_fields
+                // Re-process through guard 1 to ensure cards have cardTitle/cardFields
                 return toLyteKanbanData(flattened);
             }
         }
@@ -1682,13 +1682,13 @@ _dynamicNodes : [],
                 groupOrder.push(groupVal);
             }
 
-            // Build card with _title and _fields for template rendering
-            var card = { _title: serializeCellValue(item[titleKey]) || '(No Name)', _fields: [] };
+            // Build card with cardTitle and cardFields for template rendering
+            var card = { cardTitle: serializeCellValue(item[titleKey]) || '(No Name)', cardFields: [] };
             Object.keys(item).forEach(function(k) {
                 if (k === titleKey || k === groupKey) return;
                 var val = item[k];
                 if (val === null || val === undefined) return;
-                card._fields.push({ label: formatFieldName(k), value: serializeCellValue(val) });
+                card.cardFields.push({ label: formatFieldName(k), value: serializeCellValue(val) });
             });
             // Copy original fields for reference
             Object.keys(item).forEach(function(k) { card[k] = item[k]; });
@@ -1882,17 +1882,21 @@ _dynamicNodes : [],
         // Lyte's internal selector fails if the element was created in the same frame,
         // so we always defer the render to the next setTimeout tick.
         function safeRender(componentName, props, targetId) {
-            setTimeout(function() {
+            var _sr = 0;
+            function attempt() {
                 var el = document.getElementById(targetId);
-                if (!el || !document.body.contains(el)) {
-                    return;
+                if (el && document.body.contains(el)) {
+                    try {
+                        Lyte.Component.render(componentName, props, '#' + targetId);
+                    } catch (e) {
+                        console.warn('[WorkPilot] Lyte render failed for #' + targetId + ':', e.message);
+                    }
+                } else if (_sr < 20) {
+                    _sr++;
+                    setTimeout(attempt, 50);
                 }
-                try {
-                    Lyte.Component.render(componentName, props, '#' + targetId);
-                } catch (e) {
-                    console.warn('[WorkPilot] Lyte render failed for #' + targetId + ':', e.message);
-                }
-            }, 0);
+            }
+            setTimeout(attempt, 0);
         }
 
         switch (viewKey) {

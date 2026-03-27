@@ -12,15 +12,15 @@
 					<template is="registerYield" yield-name="contentItem">
 						<lyte-card>
 							<template is="registerYield" yield-name="yield">
-								<div class="kanban-card-content">
-									<div class="kanban-card-name">{{lyteCardItem._title}}</div>
-									<template lyte-for="{{lyteCardItem._fields}} as field fIdx">
-										<div class="kanban-card-field">
-											<span class="kfield-label">{{field.label}}:</span>
-											<span class="kfield-value">{{field.value}}</span>
-										</div>
-									</template>
-								</div>
+							<div class="kanban-card-content">
+								<div class="kanban-card-name">{{lyteCardItem.cardTitle}}</div>
+								<template lyte-for="{{lyteCardItem.cardFields}} as field fIdx">
+									<div class="kanban-card-field">
+										<span class="kfield-label">{{field.label}}:</span>
+										<span class="kfield-value">{{field.value}}</span>
+									</div>
+								</template>
+							</div>
 							</template>
 						</lyte-card>
 					</template>
