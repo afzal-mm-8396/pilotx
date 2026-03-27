@@ -409,11 +409,11 @@ Lyte.Component.register("pilotx-chat", {
                         } else {
                             var vc = buildMultiViewTabs(dv.viewDataItems || (dv.data ? [dv.data] : []), dv.crmPopupView || null);
                             contentEl.appendChild(vc);
-                            if (dv.iframeUrl || dv.crmPopupView) {
+                            if (dv.iframeUrl) {
                                 var iframeWrapper = document.createElement('div');
                                 iframeWrapper.className = 'crm-iframe-wrapper';
                                 var iframe = document.createElement('iframe');
-                                iframe.src = dv.iframeUrl || dv.crmPopupView;
+                                iframe.src = dv.iframeUrl;
                                 iframe.style.width = '100%';
                                 iframe.style.height = '500px';
                                 iframeWrapper.appendChild(iframe);
@@ -507,11 +507,11 @@ Lyte.Component.register("pilotx-chat", {
                     } else {
                         var viewContainer = buildMultiViewTabs(dv.viewDataItems || (dv.data ? [dv.data] : []), dv.crmPopupView || null);
                         contentEl.appendChild(viewContainer);
-                        if (dv.iframeUrl || dv.crmPopupView) {
+                        if (dv.iframeUrl) {
                             var iframeWrapper = document.createElement('div');
                             iframeWrapper.className = 'crm-iframe-wrapper';
                             var iframe = document.createElement('iframe');
-                            iframe.src = dv.iframeUrl || dv.crmPopupView;
+                            iframe.src = dv.iframeUrl;
                             iframe.style.width = '100%';
                             iframe.style.height = '500px';
                             iframeWrapper.appendChild(iframe);
@@ -522,11 +522,11 @@ Lyte.Component.register("pilotx-chat", {
             } else if (msg.dataView && msg.dataView.data) {
                 var viewContainer = buildMultiViewTabs(msg.dataView.viewDataItems || [msg.dataView.data], msg.dataView.crmPopupView || null);
                 contentEl.appendChild(viewContainer);
-                if (msg.dataView.iframeUrl || msg.dataView.crmPopupView) {
+                if (msg.dataView.iframeUrl) {
                     var iframeWrapper = document.createElement('div');
                     iframeWrapper.className = 'crm-iframe-wrapper';
                     var iframe = document.createElement('iframe');
-                    iframe.src = msg.dataView.iframeUrl || msg.dataView.crmPopupView;
+                    iframe.src = msg.dataView.iframeUrl;
                     iframe.style.width = '100%';
                     iframe.style.height = '500px';
                     iframeWrapper.appendChild(iframe);
@@ -2103,7 +2103,8 @@ Lyte.Component.register("pilotx-chat", {
             /kanban|board/.test(lc)) {
             if (_isLyteProps(rawData)) return { _direct: true, component: 'data-view-kanban', props: rawData };
             var kanbanItems = unwrapRecords(rawData);
-            return { _ownView: true, _data: kanbanItems, _view: 'kanban' };
+            var kanbanBoards = toLyteKanbanData(kanbanItems);
+            return { _direct: true, component: 'data-view-kanban', props: { ltPropBoardDetails: kanbanBoards } };
         }
 
         // ── CHART ──────────────────────────────────────────────

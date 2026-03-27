@@ -35,7 +35,7 @@ _observedAttributesType :["string","string","array"],
 });
 
 Lyte.Component.register("data-view-kanban", {
-_template:"<template tag-name=\"data-view-kanban\"> <div class=\"lyte-kanban-wrapper\"> <lyte-kanbanview lt-prop-board-details=\"{{ltPropBoardDetails}}\"> <template is=\"registerYield\" yield-name=\"kanbanYield\"> <lyte-board lt-prop-board-sortable=\"true\" lt-prop-more-stage-record=\"{{lyteBoardItem.moreRecords}}\" on-board-scroll=\"{{method('boardScroll')}}\" lt-prop-id=\"{{lyteBoardItem.id}}\" lt-prop-kanban-id=\"{{lyteKanbanId}}\" lt-prop-board-detail=\"{{lyteBoardItem}}\" lt-prop-class=\"{{lyteBoardItem.class}}\" lt-prop-index=\"{{lyteIndex}}\"> <template is=\"registerYield\" yield-name=\"boardHeader\"> <div class=\"kanban-board-header\"> <span class=\"board-title\">{{lyteBoardItem.title}}</span> <span class=\"board-count\">{{lyteBoardItem.cards.length}}</span> </div> </template> <template is=\"registerYield\" yield-name=\"contentItem\"> <lyte-card> <template is=\"registerYield\" yield-name=\"yield\"> <div class=\"kanban-card-content\"> <div class=\"kanban-card-name\">{{lyteCardItem.cardTitle}}</div> <template items=\"{{lyteCardItem.cardFields}}\" item=\"field\" index=\"fIdx\" is=\"for\"> <div class=\"kanban-card-field\"> <span class=\"kfield-label\">{{field.label}}:</span> <span class=\"kfield-value\">{{field.value}}</span> </div> </template> </div> </template> </lyte-card> </template> </lyte-board> </template> </lyte-kanbanview> </div> <div></div> </template>\n<style>.lyte-kanban-wrapper {\n\twidth: 100%;\n\toverflow-x: auto;\n\tmin-height: 200px;\n}\n.lyte-kanban-wrapper lyte-kanbanview {\n\twidth: 100%;\n}\n.kanban-board-header {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding: 8px 12px;\n\tfont-weight: 600;\n\tfont-size: 13px;\n\tcolor: var(--text-primary, #1e293b);\n}\n.kanban-board-header .board-count {\n\tbackground: var(--primary, #3b82f6);\n\tcolor: #fff;\n\tborder-radius: 10px;\n\tpadding: 2px 8px;\n\tfont-size: 11px;\n\tfont-weight: 600;\n}\n.kanban-card-content {\n\tpadding: 10px;\n}\n.kanban-card-name {\n\tfont-weight: 600;\n\tfont-size: 13px;\n\tcolor: var(--text-primary, #1e293b);\n\tmargin-bottom: 6px;\n}\n.kanban-card-field {\n\tdisplay: flex;\n\tgap: 6px;\n\tfont-size: 12px;\n\tmargin-top: 3px;\n}\n.kfield-label {\n\tcolor: var(--text-tertiary, #94a3b8);\n}\n.kfield-value {\n\tcolor: var(--text-secondary, #64748b);\n}</style>",
+_template:"<template tag-name=\"data-view-kanban\"> <div class=\"lyte-kanban-wrapper\"> <lyte-kanbanview lt-prop-board-details=\"{{ltPropBoardDetails}}\"> <template is=\"registerYield\" yield-name=\"kanbanYield\"> <lyte-board lt-prop-board-sortable=\"true\" lt-prop-more-stage-record=\"{{lyteBoardItem.moreRecords}}\" lt-prop-id=\"{{lyteBoardItem.id}}\" lt-prop-kanban-id=\"{{lyteKanbanId}}\" lt-prop-board-detail=\"{{lyteBoardItem}}\" lt-prop-class=\"{{lyteBoardItem.class}}\" lt-prop-index=\"{{lyteIndex}}\"> <template is=\"registerYield\" yield-name=\"boardHeader\"> <div class=\"kanban-board-header\"> <span class=\"board-title\">{{lyteBoardItem.title}}</span> <span class=\"board-count\">{{lyteBoardItem.cards.length}}</span> </div> </template> <template is=\"registerYield\" yield-name=\"contentItem\"> <lyte-card> <template is=\"registerYield\" yield-name=\"yield\"> <div class=\"kanban-card-content\"> <div class=\"kanban-card-name\">{{lyteCardItem.cardTitle}}</div> <template items=\"{{lyteCardItem.cardFields}}\" item=\"field\" index=\"fIdx\" is=\"for\"> <div class=\"kanban-card-field\"> <span class=\"kfield-label\">{{field.label}}:</span> <span class=\"kfield-value\">{{field.value}}</span> </div> </template> </div> </template> </lyte-card> </template> </lyte-board> </template> </lyte-kanbanview> </div> <div></div> </template>\n<style>.lyte-kanban-wrapper {\n\twidth: 100%;\n\toverflow-x: auto;\n\tmin-height: 200px;\n}\n.lyte-kanban-wrapper lyte-kanbanview {\n\twidth: 100%;\n}\n.kanban-board-header {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding: 8px 12px;\n\tfont-weight: 600;\n\tfont-size: 13px;\n\tcolor: var(--text-primary, #1e293b);\n}\n.kanban-board-header .board-count {\n\tbackground: var(--primary, #3b82f6);\n\tcolor: #fff;\n\tborder-radius: 10px;\n\tpadding: 2px 8px;\n\tfont-size: 11px;\n\tfont-weight: 600;\n}\n.kanban-card-content {\n\tpadding: 10px;\n}\n.kanban-card-name {\n\tfont-weight: 600;\n\tfont-size: 13px;\n\tcolor: var(--text-primary, #1e293b);\n\tmargin-bottom: 6px;\n}\n.kanban-card-field {\n\tdisplay: flex;\n\tgap: 6px;\n\tfont-size: 12px;\n\tmargin-top: 3px;\n}\n.kfield-label {\n\tcolor: var(--text-tertiary, #94a3b8);\n}\n.kfield-value {\n\tcolor: var(--text-secondary, #64748b);\n}</style>",
 _dynamicNodes : [{"type":"attr","position":[1,1]},{"type":"registerYield","position":[1,1,1],"dynamicNodes":[{"type":"attr","position":[1]},{"type":"registerYield","position":[1,1],"dynamicNodes":[{"type":"text","position":[1,1,0]},{"type":"text","position":[1,3,0]}]},{"type":"registerYield","position":[1,3],"dynamicNodes":[{"type":"registerYield","position":[1,1],"dynamicNodes":[{"type":"text","position":[1,1,0]},{"type":"attr","position":[1,3]},{"type":"for","position":[1,3],"dynamicNodes":[{"type":"text","position":[1,1,0]},{"type":"text","position":[1,3,0]}]}]},{"type":"componentDynamic","position":[1]}]},{"type":"componentDynamic","position":[1]}]},{"type":"componentDynamic","position":[1,1]}],
 _observedAttributes :["ltPropBoardDetails"],
 _observedAttributesType :["array"],
@@ -479,11 +479,11 @@ _dynamicNodes : [],
                         } else {
                             var vc = buildMultiViewTabs(dv.viewDataItems || (dv.data ? [dv.data] : []), dv.crmPopupView || null);
                             contentEl.appendChild(vc);
-                            if (dv.iframeUrl || dv.crmPopupView) {
+                            if (dv.iframeUrl) {
                                 var iframeWrapper = document.createElement('div');
                                 iframeWrapper.className = 'crm-iframe-wrapper';
                                 var iframe = document.createElement('iframe');
-                                iframe.src = dv.iframeUrl || dv.crmPopupView;
+                                iframe.src = dv.iframeUrl;
                                 iframe.style.width = '100%';
                                 iframe.style.height = '500px';
                                 iframeWrapper.appendChild(iframe);
@@ -577,11 +577,11 @@ _dynamicNodes : [],
                     } else {
                         var viewContainer = buildMultiViewTabs(dv.viewDataItems || (dv.data ? [dv.data] : []), dv.crmPopupView || null);
                         contentEl.appendChild(viewContainer);
-                        if (dv.iframeUrl || dv.crmPopupView) {
+                        if (dv.iframeUrl) {
                             var iframeWrapper = document.createElement('div');
                             iframeWrapper.className = 'crm-iframe-wrapper';
                             var iframe = document.createElement('iframe');
-                            iframe.src = dv.iframeUrl || dv.crmPopupView;
+                            iframe.src = dv.iframeUrl;
                             iframe.style.width = '100%';
                             iframe.style.height = '500px';
                             iframeWrapper.appendChild(iframe);
@@ -592,11 +592,11 @@ _dynamicNodes : [],
             } else if (msg.dataView && msg.dataView.data) {
                 var viewContainer = buildMultiViewTabs(msg.dataView.viewDataItems || [msg.dataView.data], msg.dataView.crmPopupView || null);
                 contentEl.appendChild(viewContainer);
-                if (msg.dataView.iframeUrl || msg.dataView.crmPopupView) {
+                if (msg.dataView.iframeUrl) {
                     var iframeWrapper = document.createElement('div');
                     iframeWrapper.className = 'crm-iframe-wrapper';
                     var iframe = document.createElement('iframe');
-                    iframe.src = msg.dataView.iframeUrl || msg.dataView.crmPopupView;
+                    iframe.src = msg.dataView.iframeUrl;
                     iframe.style.width = '100%';
                     iframe.style.height = '500px';
                     iframeWrapper.appendChild(iframe);
@@ -2173,7 +2173,8 @@ _dynamicNodes : [],
             /kanban|board/.test(lc)) {
             if (_isLyteProps(rawData)) return { _direct: true, component: 'data-view-kanban', props: rawData };
             var kanbanItems = unwrapRecords(rawData);
-            return { _ownView: true, _data: kanbanItems, _view: 'kanban' };
+            var kanbanBoards = toLyteKanbanData(kanbanItems);
+            return { _direct: true, component: 'data-view-kanban', props: { ltPropBoardDetails: kanbanBoards } };
         }
 
         // ── CHART ──────────────────────────────────────────────

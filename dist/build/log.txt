@@ -1,48 +1,48 @@
-Timing to complete init function1.896 s
+Timing to complete init function1.588 s
 /* START CLI DETAILS */ 
 {"cliVersion":"3.6.18","outputPath":"dist","mode":"development","cliLocation":"/usr/local/lib/node_modules/@zoho/lyte-cli"}
 /* END CLI DETAILS */
-Building time of copyAppDir : 0.249 s
+Building time of copyAppDir : 0.216 s
 Building time of routes : 0.001 s
 Building components ....
 Full component compilation triggered
 Total no of files in the components going to compile :6
 Searching for syntax errors.....
 Finding the unclosed tags compilation over
-[Time] => find unclosedTags => 0.03 s
+[Time] => find unclosedTags => 0.023 s
 Running compilerule ...
-[Time] => Convert Lyte syntax => 0.022 s
+[Time] => Convert Lyte syntax => 0.018 s
 Creating new browser instance 
 New browser instance launched
-browser Endpoint ws://127.0.0.1:54623/devtools/browser/5a51ae24-6f59-443b-9677-bb22117e83fd
+browser Endpoint ws://127.0.0.1:59603/devtools/browser/37fd202f-0a26-4342-bb3a-bda713d90c16
 Browser launched
 page opened
 Post method request get caught with url/post
-Time taken for end call back be 4.486 s
-Callback function called 0.001 swelcome-comp,pilotx-chat,data-view-table,data-view-kanban,data-view-detail,data-view-chart
-Time to end the dynamic nodes4.487 s
+Time taken for end call back be 2.759 s
+Callback function called 0 swelcome-comp,pilotx-chat,data-view-table,data-view-kanban,data-view-detail,data-view-chart
+Time to end the dynamic nodes2.759 s
 Generating dist components...
 
-Time to end processing template0.039 s
-Building time of components : 4.584 s
+Time to end processing template0.047 s
+Building time of components : 2.851 s
 Building models ..............
 
 Building time of models : 0 s
 Building helpers .....
 [Copy] components/helpers => dist/components/helpers
 
-Building time of helpers : 0.002 s
-Building time of mixins : 0.001 s
+Building time of helpers : 0 s
+Building time of mixins : 0 s
 Building time of services : 0 s
 build file exists on addons building
 Cache output exists for /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/node_modules/@zoho/lyte-ui-component
 build file exists on addons building
 Cache output exists for /Users/afzal-8396/Desktop/official/CRM-DX-team/Ai/poc/pilotx-lyte-app/node_modules/@zohocrm/crux-components
-Building time of addons : 3.548 s
+Building time of addons : 3.05 s
 Consolidated file created in the dist/app.js
 
-Time for consolidation and minify 0.011 s
-LiveServer running in 54695
+Time for consolidation and minify 0.005 s
+LiveServer running in 59653
 Minified Count : 0
-Total Building Time : 8.403 s
+Total Building Time : 6.129 s
 Building completed
