@@ -1908,13 +1908,9 @@ _dynamicNodes : [],
                 }, renderTarget.id);
                 break;
             }
-            case 'kanban': {
-                var boardDetails = toLyteKanbanData(data);
-                safeRender('data-view-kanban', {
-                    ltPropBoardDetails: boardDetails
-                }, renderTarget.id);
+            case 'kanban':
+                renderKanbanView(containerEl, data);
                 break;
-            }
             case 'chart': {
                 var chartInfo = toLyteChartData(data);
                 safeRender('data-view-chart', {
@@ -2173,8 +2169,7 @@ _dynamicNodes : [],
             /kanban|board/.test(lc)) {
             if (_isLyteProps(rawData)) return { _direct: true, component: 'data-view-kanban', props: rawData };
             var kanbanItems = unwrapRecords(rawData);
-            var kanbanBoards = toLyteKanbanData(kanbanItems);
-            return { _direct: true, component: 'data-view-kanban', props: { ltPropBoardDetails: kanbanBoards } };
+            return { _ownView: true, _data: kanbanItems, _view: 'kanban' };
         }
 
         // ── CHART ──────────────────────────────────────────────
