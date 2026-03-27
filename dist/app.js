@@ -1230,34 +1230,34 @@ _dynamicNodes : [],
 
                     // CRM Iframe View (render below response component)
                     // resolvedIframeUrl is a script — execute it in the parent CRM to get the actual URL
-                    if (resolvedIframeUrl && typeof resolvedIframeUrl === 'string') {
-                        try {
-                            var iframeScriptResult = await executeCScript(resolvedIframeUrl);
-                            var actualIframeUrl = null;
-                            if (typeof iframeScriptResult === 'string') {
-                                actualIframeUrl = iframeScriptResult;
-                            } else if (iframeScriptResult && typeof iframeScriptResult === 'object') {
-                                actualIframeUrl = iframeScriptResult.url || iframeScriptResult.iframeUrl || iframeScriptResult.link || null;
-                            }
-                            if (actualIframeUrl) {
-                                var iframeWrapper = document.createElement('div');
-                                iframeWrapper.className = 'crm-iframe-wrapper';
-                                var iframe = document.createElement('iframe');
-                                iframe.src = actualIframeUrl;
-                                iframe.style.width = '100%';
-                                iframe.style.height = '500px';
-                                iframeWrapper.appendChild(iframe);
-                                contentEl.appendChild(iframeWrapper);
-                                resolvedIframeUrl = actualIframeUrl; // store resolved URL for session save
-                            } else {
-                                console.warn('[WorkPilot] Iframe script did not return a valid URL:', iframeScriptResult);
-                                resolvedIframeUrl = null;
-                            }
-                        } catch (iframeErr) {
-                            console.warn('[WorkPilot] Failed to resolve iframe URL via script:', iframeErr);
-                            resolvedIframeUrl = null;
-                        }
-                    }
+                    // if (resolvedIframeUrl && typeof resolvedIframeUrl === 'string') {
+                    //     try {
+                    //         var iframeScriptResult = await executeCScript(resolvedIframeUrl);
+                    //         var actualIframeUrl = null;
+                    //         if (typeof iframeScriptResult === 'string') {
+                    //             actualIframeUrl = iframeScriptResult;
+                    //         } else if (iframeScriptResult && typeof iframeScriptResult === 'object') {
+                    //             actualIframeUrl = iframeScriptResult.url || iframeScriptResult.iframeUrl || iframeScriptResult.link || null;
+                    //         }
+                    //         if (actualIframeUrl) {
+                    //             var iframeWrapper = document.createElement('div');
+                    //             iframeWrapper.className = 'crm-iframe-wrapper';
+                    //             var iframe = document.createElement('iframe');
+                    //             iframe.src = actualIframeUrl;
+                    //             iframe.style.width = '100%';
+                    //             iframe.style.height = '500px';
+                    //             iframeWrapper.appendChild(iframe);
+                    //             contentEl.appendChild(iframeWrapper);
+                    //             resolvedIframeUrl = actualIframeUrl; // store resolved URL for session save
+                    //         } else {
+                    //             console.warn('[WorkPilot] Iframe script did not return a valid URL:', iframeScriptResult);
+                    //             resolvedIframeUrl = null;
+                    //         }
+                    //     } catch (iframeErr) {
+                    //         console.warn('[WorkPilot] Failed to resolve iframe URL via script:', iframeErr);
+                    //         resolvedIframeUrl = null;
+                    //     }
+                    // }
 
                     allDataViews.push({ viewDataItems: viewDataItems, crmPopupView: crmPopupCode, iframeUrl: resolvedIframeUrl });
                 }
@@ -2113,85 +2113,53 @@ _dynamicNodes : [],
         return { ltPropTitle: title, ltPropInitials: initials, ltPropFields: fields };
     }
 
+    // resolveComponentAndProps returns either:
+    //   { _ownView: true, _data: <raw records>, _view: 'table'|'kanban'|'chart'|'detail' }
+    //   — handled by buildLyteView (our DOM renderers, no Lyte.Component.render)
+    // OR:
+    //   { component: '<name>', props: <props> }
+    //   — handled by buildDirectComponentView (Lyte.Component.render, for external components)
     function resolveComponentAndProps(compName, rawData) {
-        switch ((compName || '').toLowerCase()) {
+        var lc = (compName || '').toLowerCase();
 
-            // ── TABLE ──────────────────────────────────────────
-            case 'crux-table':
-            case 'crm-table':
-            case 'crux-record-list':
-            case 'crux-list-view':
-            case 'lyte-table':
-            case 'data-view-table': {
-                var items = Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []);
-                var tableData = toLyteTableData(items);
-                return { component: 'data-view-table', props: { ltPropHeader: tableData.header, ltPropContent: tableData.content } };
-            }
-
-            // ── KANBAN ─────────────────────────────────────────
-            case 'crux-kanban':
-            case 'crm-kanban':
-            case 'lyte-kanbanview':
-            case 'data-view-kanban': {
-                var kanbanItems = Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []);
-                var boards = toLyteKanbanData(kanbanItems);
-                return { component: 'data-view-kanban', props: { ltPropBoardDetails: boards } };
-            }
-
-            // ── CHART ──────────────────────────────────────────
-            case 'crux-chart':
-            case 'crm-chart':
-            case 'lyte-chart':
-            case 'data-view-chart': {
-                var chartData = toLyteChartData(rawData);
-                return {
-                    component: 'data-view-chart',
-                    props: {
-                        ltPropType: 'bar',
-                        ltPropTitle: '',
-                        ltPropSeriesData: chartData.seriesData,
-                        ltPropMetaDataAxes: chartData.metaDataAxes,
-                        ltPropMetaDataColumns: chartData.metaDataColumns
-                    }
-                };
-            }
-
-            // ── DETAIL ─────────────────────────────────────────
-            case 'crux-detail-view':
-            case 'crux-detailview':
-            case 'crux-record-detail':
-            case 'crm-detail-view':
-            case 'crux-detail':
-            case 'lyte-detail':
-            case 'data-view-detail': {
-                return { component: 'data-view-detail', props: _toDetailViewProps(rawData) };
-            }
-
-            default: {
-                // Fuzzy fallback: route by keyword in component name before giving up
-                var lc = (compName || '').toLowerCase();
-                if (/table|list|grid|records/.test(lc)) {
-                    var fbItems = Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []);
-                    var fbTable = toLyteTableData(fbItems);
-                    return { component: 'data-view-table', props: { ltPropHeader: fbTable.header, ltPropContent: fbTable.content } };
-                }
-                if (/kanban|board/.test(lc)) {
-                    var fbKanban = toLyteKanbanData(Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []));
-                    return { component: 'data-view-kanban', props: { ltPropBoardDetails: fbKanban } };
-                }
-                if (/chart|graph|plot/.test(lc)) {
-                    var fbChart = toLyteChartData(rawData);
-                    return { component: 'data-view-chart', props: { ltPropType: 'bar', ltPropTitle: '', ltPropSeriesData: fbChart.seriesData, ltPropMetaDataAxes: fbChart.metaDataAxes, ltPropMetaDataColumns: fbChart.metaDataColumns } };
-                }
-                if (/detail|record|single|card/.test(lc)) {
-                    return { component: 'data-view-detail', props: _toDetailViewProps(rawData) };
-                }
-                // Truly unknown — auto-detect from the data shape
-                var fbDataType = detectDataType(rawData);
-                var fbView = getLyteDefaultView(fbDataType);
-                return { component: '__lyte_auto__', _data: rawData, _view: fbView };
-            }
+        // ── TABLE ──────────────────────────────────────────────
+        if (lc === 'data-view-table' || lc === 'lyte-table' ||
+            lc === 'crux-table' || lc === 'crm-table' ||
+            lc === 'crux-record-list' || lc === 'crux-list-view' ||
+            /table|list|grid|records/.test(lc)) {
+            var items = Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []);
+            return { _ownView: true, _data: items, _view: 'table' };
         }
+
+        // ── KANBAN ─────────────────────────────────────────────
+        if (lc === 'data-view-kanban' || lc === 'lyte-kanbanview' ||
+            lc === 'crux-kanban'      || lc === 'crm-kanban' ||
+            /kanban|board/.test(lc)) {
+            var kanbanItems = Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []);
+            return { _ownView: true, _data: kanbanItems, _view: 'kanban' };
+        }
+
+        // ── CHART ──────────────────────────────────────────────
+        if (lc === 'data-view-chart' || lc === 'lyte-chart' ||
+            lc === 'crux-chart'      || lc === 'crm-chart' ||
+            /chart|graph|plot/.test(lc)) {
+            return { _ownView: true, _data: rawData, _view: 'chart' };
+        }
+
+        // ── DETAIL ─────────────────────────────────────────────
+        if (lc === 'data-view-detail'   || lc === 'lyte-detail' ||
+            lc === 'crux-detail-view'   || lc === 'crux-detailview' ||
+            lc === 'crux-record-detail' || lc === 'crm-detail-view' ||
+            lc === 'crux-detail'        ||
+            /detail|record|single/.test(lc)) {
+            var detailRec = Array.isArray(rawData) ? rawData[0] : rawData;
+            return { _ownView: true, _data: detailRec, _view: 'detail' };
+        }
+
+        // ── Truly unknown — fallback: auto-detect from data shape ──
+        var fbDataType = detectDataType(rawData);
+        var fbView = getLyteDefaultView(fbDataType);
+        return { _ownView: true, _data: rawData, _view: fbView };
     }
 
     // ─── RENDER SINGLE VIEW DATA ITEM ─────────────────────
@@ -2216,11 +2184,8 @@ _dynamicNodes : [],
                     return cardContainer;
                 }
                 var resolved = resolveComponentAndProps(compName, rawData);
-                // Sentinel: truly unknown component — fall back to auto-detected Lyte view
-                if (resolved.component === '__lyte_auto__') {
-                    return buildLyteView(resolved._data, resolved._view);
-                }
-                return buildDirectComponentView(resolved.component, resolved.props);
+                // All known types route through buildLyteView (our DOM renderers)
+                return buildLyteView(resolved._data, resolved._view);
             }
         }
         var dataType = detectDataType(item);
