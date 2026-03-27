@@ -2245,10 +2245,23 @@ _dynamicNodes : [],
             return { _ownView: true, _data: cleanRec, _view: 'detail' };
         }
 
-        // ── Truly unknown — fallback: auto-detect from data shape ──
-        var fbDataType = detectDataType(rawData);
+        // ── Truly unknown — unwrap lyte/crux internal prop wrappers, then auto-detect ──
+        // e.g. { ltPropValue: "production" } → "production"
+        //      { cxPropData: [...] }         → [...]
+        var fbData = rawData;
+        if (fbData && typeof fbData === 'object' && !Array.isArray(fbData)) {
+            var fbKeys = Object.keys(fbData);
+            // If ALL keys are ltProp* / cxProp* wrappers, extract the first meaningful value
+            var allInternal = fbKeys.length > 0 && fbKeys.every(function(k) { return /^(ltProp|cxProp)/i.test(k); });
+            if (allInternal) {
+                // Prefer ltPropValue / cxPropValue / ltPropData / cxPropContent
+                var valueKey = fbKeys.find(function(k) { return /value|data|content|records|items/i.test(k); }) || fbKeys[0];
+                fbData = fbData[valueKey];
+            }
+        }
+        var fbDataType = detectDataType(fbData);
         var fbView = getLyteDefaultView(fbDataType);
-        return { _ownView: true, _data: rawData, _view: fbView };
+        return { _ownView: true, _data: fbData, _view: fbView };
     }
 
     // ─── RENDER SINGLE VIEW DATA ITEM ─────────────────────
@@ -2730,7 +2743,15 @@ _dynamicNodes : [],
         var detail = document.createElement('div');
         detail.className = 'detail-view';
 
-        var keys = Object.keys(item);
+        // Filter out internal lyte/crux prop keys from display
+        var keys = Object.keys(item).filter(function(k) { return !/^(ltProp|cxProp)/i.test(k); });
+        if (keys.length === 0) {
+            // All keys were internal — show raw value if it's a primitive wrapper
+            var rawKeys = Object.keys(item);
+            var vk = rawKeys.find(function(k) { return /value|data|content/i.test(k); }) || rawKeys[0];
+            renderTextView(container, serializeCellValue(item[vk]));
+            return;
+        }
 
         // Pick a meaningful title key — prefer Full_Name/Name/name/Subject
         var titleKey = keys.find(function(k) { return /^(full.?name|name|subject|title)$/i.test(k); })
@@ -2769,6 +2790,8 @@ _dynamicNodes : [],
 
         keys.forEach(function(k) {
             if (k === titleKey) return;
+            // Skip internal lyte/crux prop keys (e.g. ltPropValue, cxPropModule)
+            if (/^(ltProp|cxProp)/i.test(k)) return;
             var val = item[k];
             var displayVal = serializeCellValue(val);
             if (!displayVal || displayVal === '—') return; // skip empty / null fields
