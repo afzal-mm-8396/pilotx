@@ -1,0 +1,22 @@
+<template tag-name="data-view-detail">
+	<div class="dv-detail-wrapper">
+		<!-- Header: avatar + record title -->
+		<div class="dv-detail-header">
+			<div class="dv-detail-avatar">{{ltPropInitials}}</div>
+			<div class="dv-detail-title-block">
+				<h3 class="dv-detail-name">{{ltPropTitle}}</h3>
+				<span class="dv-detail-badge">CRM Record</span>
+			</div>
+		</div>
+
+		<!-- Fields grid: 2 columns, each field label + value -->
+		<div class="dv-detail-fields">
+			<template lyte-for="{{ltPropFields}} as field fIdx">
+				<div class="dv-detail-field">
+					<div class="dv-detail-field-label">{{field.label}}</div>
+					<div class="dv-detail-field-value">{{field.value}}</div>
+				</div>
+			</template>
+		</div>
+	</div>
+</template>

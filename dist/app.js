@@ -17,6 +17,23 @@ _observedAttributesType :["string","string","object","object","array"],
 	methods : {}
 });
 
+Lyte.Component.register("data-view-detail", {
+_template:"<template tag-name=\"data-view-detail\"> <div class=\"dv-detail-wrapper\"> <div class=\"dv-detail-header\"> <div class=\"dv-detail-avatar\">{{ltPropInitials}}</div> <div class=\"dv-detail-title-block\"> <h3 class=\"dv-detail-name\">{{ltPropTitle}}</h3> <span class=\"dv-detail-badge\">CRM Record</span> </div> </div> <div class=\"dv-detail-fields\"> <template items=\"{{ltPropFields}}\" item=\"field\" index=\"fIdx\" is=\"for\"> <div class=\"dv-detail-field\"> <div class=\"dv-detail-field-label\">{{field.label}}</div> <div class=\"dv-detail-field-value\">{{field.value}}</div> </div> </template> </div> </div> </template>\n<style>/* ── Detail View Wrapper ── */\n.dv-detail-wrapper {\n\twidth: 100%;\n\tpadding: 20px;\n\tbox-sizing: border-box;\n\tbackground: var(--bg-primary, #fff);\n}\n\n/* ── Header ── */\n.dv-detail-header {\n\tdisplay: flex;\n\talign-items: center;\n\tgap: 14px;\n\tmargin-bottom: 20px;\n\tpadding-bottom: 16px;\n\tborder-bottom: 1px solid var(--border, #e2e8f0);\n}\n\n.dv-detail-avatar {\n\twidth: 52px;\n\theight: 52px;\n\tborder-radius: 50%;\n\tbackground: var(--primary, #3b82f6);\n\tcolor: #fff;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\tfont-size: 22px;\n\tfont-weight: 700;\n\tflex-shrink: 0;\n}\n\n.dv-detail-title-block {\n\tdisplay: flex;\n\tflex-direction: column;\n\tgap: 4px;\n}\n\n.dv-detail-name {\n\tmargin: 0;\n\tfont-size: 16px;\n\tfont-weight: 700;\n\tcolor: var(--text-primary, #1e293b);\n}\n\n.dv-detail-badge {\n\tdisplay: inline-block;\n\tfont-size: 11px;\n\tfont-weight: 600;\n\tcolor: var(--primary, #3b82f6);\n\tbackground: rgba(59, 130, 246, 0.1);\n\tpadding: 2px 8px;\n\tborder-radius: 10px;\n\twidth: fit-content;\n}\n\n/* ── Fields Grid ── */\n.dv-detail-fields {\n\tdisplay: grid;\n\tgrid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n\tgap: 14px 28px;\n}\n\n.dv-detail-field {\n\tmin-width: 0;\n}\n\n.dv-detail-field-label {\n\tfont-size: 11px;\n\tfont-weight: 600;\n\ttext-transform: uppercase;\n\tletter-spacing: 0.05em;\n\tcolor: var(--text-tertiary, #94a3b8);\n\tmargin-bottom: 4px;\n}\n\n.dv-detail-field-value {\n\tfont-size: 13px;\n\tcolor: var(--text-primary, #1e293b);\n\tword-break: break-word;\n\tline-height: 1.5;\n}\n</style>",
+_dynamicNodes : [{"type":"text","position":[1,1,1,0]},{"type":"text","position":[1,1,3,1,0]},{"type":"attr","position":[1,3,1]},{"type":"for","position":[1,3,1],"dynamicNodes":[{"type":"text","position":[1,1,0]},{"type":"text","position":[1,3,0]}]}],
+_observedAttributes :["ltPropTitle","ltPropInitials","ltPropFields"],
+_observedAttributesType :["string","string","array"],
+
+	data : function(){
+		return {
+			ltPropTitle    : Lyte.attr("string", { default : "" }),
+			ltPropInitials : Lyte.attr("string", { default : "?" }),
+			ltPropFields   : Lyte.attr("array",  { default : [] })
+		}
+	},
+	actions : {},
+	methods : {}
+});
+
 Lyte.Component.register("data-view-kanban", {
 _template:"<template tag-name=\"data-view-kanban\"> <div class=\"lyte-kanban-wrapper\"> <lyte-kanbanview lt-prop-board-details=\"{{ltPropBoardDetails}}\"> <template is=\"registerYield\" yield-name=\"kanbanYield\"> <lyte-board lt-prop-board-sortable=\"true\" lt-prop-more-stage-record=\"{{lyteBoardItem.moreRecords}}\" on-board-scroll=\"{{method('boardScroll')}}\" lt-prop-id=\"{{lyteBoardItem.id}}\" lt-prop-kanban-id=\"{{lyteKanbanId}}\" lt-prop-board-detail=\"{{lyteBoardItem}}\" lt-prop-class=\"{{lyteBoardItem.class}}\" lt-prop-index=\"{{lyteIndex}}\"> <template is=\"registerYield\" yield-name=\"boardHeader\"> <div class=\"kanban-board-header\"> <span class=\"board-title\">{{lyteBoardItem.title}}</span> <span class=\"board-count\">{{lyteBoardItem.cards.length}}</span> </div> </template> <template is=\"registerYield\" yield-name=\"contentItem\"> <lyte-card> <template is=\"registerYield\" yield-name=\"yield\"> <div class=\"kanban-card-content\"> <div class=\"kanban-card-name\">{{lyteCardItem._title}}</div> <template items=\"{{lyteCardItem._fields}}\" item=\"field\" index=\"fIdx\" is=\"for\"> <div class=\"kanban-card-field\"> <span class=\"kfield-label\">{{field.label}}:</span> <span class=\"kfield-value\">{{field.value}}</span> </div> </template> </div> </template> </lyte-card> </template> </lyte-board> </template> </lyte-kanbanview> </div> <div></div> </template>\n<style>.lyte-kanban-wrapper {\n\twidth: 100%;\n\toverflow-x: auto;\n\tmin-height: 200px;\n}\n.lyte-kanban-wrapper lyte-kanbanview {\n\twidth: 100%;\n}\n.kanban-board-header {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding: 8px 12px;\n\tfont-weight: 600;\n\tfont-size: 13px;\n\tcolor: var(--text-primary, #1e293b);\n}\n.kanban-board-header .board-count {\n\tbackground: var(--primary, #3b82f6);\n\tcolor: #fff;\n\tborder-radius: 10px;\n\tpadding: 2px 8px;\n\tfont-size: 11px;\n\tfont-weight: 600;\n}\n.kanban-card-content {\n\tpadding: 10px;\n}\n.kanban-card-name {\n\tfont-weight: 600;\n\tfont-size: 13px;\n\tcolor: var(--text-primary, #1e293b);\n\tmargin-bottom: 6px;\n}\n.kanban-card-field {\n\tdisplay: flex;\n\tgap: 6px;\n\tfont-size: 12px;\n\tmargin-top: 3px;\n}\n.kfield-label {\n\tcolor: var(--text-tertiary, #94a3b8);\n}\n.kfield-value {\n\tcolor: var(--text-secondary, #64748b);\n}</style>",
 _dynamicNodes : [{"type":"attr","position":[1,1]},{"type":"registerYield","position":[1,1,1],"dynamicNodes":[{"type":"attr","position":[1]},{"type":"registerYield","position":[1,1],"dynamicNodes":[{"type":"text","position":[1,1,0]},{"type":"text","position":[1,3,0]}]},{"type":"registerYield","position":[1,3],"dynamicNodes":[{"type":"registerYield","position":[1,1],"dynamicNodes":[{"type":"text","position":[1,1,0]},{"type":"attr","position":[1,3]},{"type":"for","position":[1,3],"dynamicNodes":[{"type":"text","position":[1,1,0]},{"type":"text","position":[1,3,0]}]}]},{"type":"componentDynamic","position":[1]}]},{"type":"componentDynamic","position":[1]}]},{"type":"componentDynamic","position":[1,1]}],
@@ -1972,13 +1989,28 @@ _dynamicNodes : [],
         if (explicitName) {
             // Friendly aliases for well-known component names
             var friendlyNames = {
-                'lyte-kanbanview':  'Kanban',
-                'data-view-kanban': 'Kanban',
-                'cardify':          'Cards'//,
-                // 'lyte-table':       'Table',
-                // 'data-view-table':  'Table',
-                // 'lyte-chart':       'Chart',
-                // 'data-view-chart':  'Chart'
+                'lyte-kanbanview':      'Kanban',
+                'data-view-kanban':     'Kanban',
+                'crux-kanban':          'Kanban',
+                'crm-kanban':           'Kanban',
+                'lyte-table':           'Table',
+                'data-view-table':      'Table',
+                'crux-table':           'Table',
+                'crm-table':            'Table',
+                'crux-record-list':     'Table',
+                'crux-list-view':       'Table',
+                'lyte-chart':           'Chart',
+                'data-view-chart':      'Chart',
+                'crux-chart':           'Chart',
+                'crm-chart':            'Chart',
+                'data-view-detail':     'Detail',
+                'crux-detail-view':     'Detail',
+                'crux-detailview':      'Detail',
+                'crux-record-detail':   'Detail',
+                'crm-detail-view':      'Detail',
+                'crux-detail':          'Detail',
+                'lyte-detail':          'Detail',
+                'cardify':              'Cards'
             };
             var lower = explicitName.toLowerCase();
             if (friendlyNames[lower]) return friendlyNames[lower] + ' ' + (idx + 1);
@@ -2054,32 +2086,87 @@ _dynamicNodes : [],
     // ─── COMPONENT ALIAS RESOLVER ─────────────────────────
     // Maps well-known Lyte UI component names to our custom data-view-* components
     // and transforms the raw data into the correct prop shape.
+    function _toDetailViewProps(rawData) {
+        var rec = Array.isArray(rawData) ? (rawData[0] || {}) : (rawData || {});
+        var titleKeys = ['Full_Name', 'Name', 'name', 'Subject', 'subject', 'title', 'Title', 'label', 'Label'];
+        var title = 'Record';
+        for (var ti = 0; ti < titleKeys.length; ti++) {
+            if (rec[titleKeys[ti]]) { title = String(rec[titleKeys[ti]]); break; }
+        }
+        var initials = title.charAt(0).toUpperCase();
+        var fields = Object.keys(rec).map(function(k) {
+            var val = rec[k];
+            if (val === null || val === undefined) return null;
+            var strVal;
+            if (typeof val === 'object') {
+                try { strVal = JSON.stringify(val); } catch(e) { strVal = '[Object]'; }
+                if (strVal.length > 120) strVal = strVal.substring(0, 117) + '\u2026';
+            } else {
+                strVal = String(val);
+            }
+            return {
+                label: k.replace(/([A-Z])/g, ' $1').replace(/[_-]/g, ' ')
+                        .replace(/\b\w/g, function(c) { return c.toUpperCase(); }).trim(),
+                value: strVal
+            };
+        }).filter(Boolean);
+        return { ltPropTitle: title, ltPropInitials: initials, ltPropFields: fields };
+    }
+
     function resolveComponentAndProps(compName, rawData) {
         switch ((compName || '').toLowerCase()) {
+
+            // ── TABLE ──────────────────────────────────────────
+            case 'crux-table':
+            case 'crm-table':
+            case 'crux-record-list':
+            case 'crux-list-view':
+            case 'lyte-table':
+            case 'data-view-table': {
+                var items = Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []);
+                var tableData = toLyteTableData(items);
+                return { component: 'data-view-table', props: { ltPropHeader: tableData.header, ltPropContent: tableData.content } };
+            }
+
+            // ── KANBAN ─────────────────────────────────────────
+            case 'crux-kanban':
+            case 'crm-kanban':
             case 'lyte-kanbanview':
             case 'data-view-kanban': {
-                var boards = toLyteKanbanData(Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []));
+                var kanbanItems = Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []);
+                var boards = toLyteKanbanData(kanbanItems);
                 return { component: 'data-view-kanban', props: { ltPropBoardDetails: boards } };
             }
-            // case 'lyte-table':
-            // case 'data-view-table': {
-            //     var tableData = toLyteTableData(Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []));
-            //     return { component: 'data-view-table', props: { ltPropHeader: tableData.header, ltPropContent: tableData.content } };
-            // }
-            // case 'lyte-chart':
-            // case 'data-view-chart': {
-            //     var chartData = toLyteChartData(rawData);
-            //     return {
-            //         component: 'data-view-chart',
-            //         props: {
-            //             ltPropType: 'bar',
-            //             ltPropTitle: '',
-            //             ltPropSeriesData: chartData.seriesData,
-            //             ltPropMetaDataAxes: chartData.metaDataAxes,
-            //             ltPropMetaDataColumns: chartData.metaDataColumns
-            //         }
-            //     };
-            // }
+
+            // ── CHART ──────────────────────────────────────────
+            case 'crux-chart':
+            case 'crm-chart':
+            case 'lyte-chart':
+            case 'data-view-chart': {
+                var chartData = toLyteChartData(rawData);
+                return {
+                    component: 'data-view-chart',
+                    props: {
+                        ltPropType: 'bar',
+                        ltPropTitle: '',
+                        ltPropSeriesData: chartData.seriesData,
+                        ltPropMetaDataAxes: chartData.metaDataAxes,
+                        ltPropMetaDataColumns: chartData.metaDataColumns
+                    }
+                };
+            }
+
+            // ── DETAIL ─────────────────────────────────────────
+            case 'crux-detail-view':
+            case 'crux-detailview':
+            case 'crux-record-detail':
+            case 'crm-detail-view':
+            case 'crux-detail':
+            case 'lyte-detail':
+            case 'data-view-detail': {
+                return { component: 'data-view-detail', props: _toDetailViewProps(rawData) };
+            }
+
             default:
                 // Unknown component — pass raw data directly as-is
                 return { component: compName, props: rawData };

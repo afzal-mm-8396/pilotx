@@ -1919,13 +1919,28 @@ Lyte.Component.register("pilotx-chat", {
         if (explicitName) {
             // Friendly aliases for well-known component names
             var friendlyNames = {
-                'lyte-kanbanview':  'Kanban',
-                'data-view-kanban': 'Kanban',
-                'cardify':          'Cards'//,
-                // 'lyte-table':       'Table',
-                // 'data-view-table':  'Table',
-                // 'lyte-chart':       'Chart',
-                // 'data-view-chart':  'Chart'
+                'lyte-kanbanview':      'Kanban',
+                'data-view-kanban':     'Kanban',
+                'crux-kanban':          'Kanban',
+                'crm-kanban':           'Kanban',
+                'lyte-table':           'Table',
+                'data-view-table':      'Table',
+                'crux-table':           'Table',
+                'crm-table':            'Table',
+                'crux-record-list':     'Table',
+                'crux-list-view':       'Table',
+                'lyte-chart':           'Chart',
+                'data-view-chart':      'Chart',
+                'crux-chart':           'Chart',
+                'crm-chart':            'Chart',
+                'data-view-detail':     'Detail',
+                'crux-detail-view':     'Detail',
+                'crux-detailview':      'Detail',
+                'crux-record-detail':   'Detail',
+                'crm-detail-view':      'Detail',
+                'crux-detail':          'Detail',
+                'lyte-detail':          'Detail',
+                'cardify':              'Cards'
             };
             var lower = explicitName.toLowerCase();
             if (friendlyNames[lower]) return friendlyNames[lower] + ' ' + (idx + 1);
@@ -2001,32 +2016,87 @@ Lyte.Component.register("pilotx-chat", {
     // ─── COMPONENT ALIAS RESOLVER ─────────────────────────
     // Maps well-known Lyte UI component names to our custom data-view-* components
     // and transforms the raw data into the correct prop shape.
+    function _toDetailViewProps(rawData) {
+        var rec = Array.isArray(rawData) ? (rawData[0] || {}) : (rawData || {});
+        var titleKeys = ['Full_Name', 'Name', 'name', 'Subject', 'subject', 'title', 'Title', 'label', 'Label'];
+        var title = 'Record';
+        for (var ti = 0; ti < titleKeys.length; ti++) {
+            if (rec[titleKeys[ti]]) { title = String(rec[titleKeys[ti]]); break; }
+        }
+        var initials = title.charAt(0).toUpperCase();
+        var fields = Object.keys(rec).map(function(k) {
+            var val = rec[k];
+            if (val === null || val === undefined) return null;
+            var strVal;
+            if (typeof val === 'object') {
+                try { strVal = JSON.stringify(val); } catch(e) { strVal = '[Object]'; }
+                if (strVal.length > 120) strVal = strVal.substring(0, 117) + '\u2026';
+            } else {
+                strVal = String(val);
+            }
+            return {
+                label: k.replace(/([A-Z])/g, ' $1').replace(/[_-]/g, ' ')
+                        .replace(/\b\w/g, function(c) { return c.toUpperCase(); }).trim(),
+                value: strVal
+            };
+        }).filter(Boolean);
+        return { ltPropTitle: title, ltPropInitials: initials, ltPropFields: fields };
+    }
+
     function resolveComponentAndProps(compName, rawData) {
         switch ((compName || '').toLowerCase()) {
+
+            // ── TABLE ──────────────────────────────────────────
+            case 'crux-table':
+            case 'crm-table':
+            case 'crux-record-list':
+            case 'crux-list-view':
+            case 'lyte-table':
+            case 'data-view-table': {
+                var items = Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []);
+                var tableData = toLyteTableData(items);
+                return { component: 'data-view-table', props: { ltPropHeader: tableData.header, ltPropContent: tableData.content } };
+            }
+
+            // ── KANBAN ─────────────────────────────────────────
+            case 'crux-kanban':
+            case 'crm-kanban':
             case 'lyte-kanbanview':
             case 'data-view-kanban': {
-                var boards = toLyteKanbanData(Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []));
+                var kanbanItems = Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []);
+                var boards = toLyteKanbanData(kanbanItems);
                 return { component: 'data-view-kanban', props: { ltPropBoardDetails: boards } };
             }
-            // case 'lyte-table':
-            // case 'data-view-table': {
-            //     var tableData = toLyteTableData(Array.isArray(rawData) ? rawData : (rawData ? [rawData] : []));
-            //     return { component: 'data-view-table', props: { ltPropHeader: tableData.header, ltPropContent: tableData.content } };
-            // }
-            // case 'lyte-chart':
-            // case 'data-view-chart': {
-            //     var chartData = toLyteChartData(rawData);
-            //     return {
-            //         component: 'data-view-chart',
-            //         props: {
-            //             ltPropType: 'bar',
-            //             ltPropTitle: '',
-            //             ltPropSeriesData: chartData.seriesData,
-            //             ltPropMetaDataAxes: chartData.metaDataAxes,
-            //             ltPropMetaDataColumns: chartData.metaDataColumns
-            //         }
-            //     };
-            // }
+
+            // ── CHART ──────────────────────────────────────────
+            case 'crux-chart':
+            case 'crm-chart':
+            case 'lyte-chart':
+            case 'data-view-chart': {
+                var chartData = toLyteChartData(rawData);
+                return {
+                    component: 'data-view-chart',
+                    props: {
+                        ltPropType: 'bar',
+                        ltPropTitle: '',
+                        ltPropSeriesData: chartData.seriesData,
+                        ltPropMetaDataAxes: chartData.metaDataAxes,
+                        ltPropMetaDataColumns: chartData.metaDataColumns
+                    }
+                };
+            }
+
+            // ── DETAIL ─────────────────────────────────────────
+            case 'crux-detail-view':
+            case 'crux-detailview':
+            case 'crux-record-detail':
+            case 'crm-detail-view':
+            case 'crux-detail':
+            case 'lyte-detail':
+            case 'data-view-detail': {
+                return { component: 'data-view-detail', props: _toDetailViewProps(rawData) };
+            }
+
             default:
                 // Unknown component — pass raw data directly as-is
                 return { component: compName, props: rawData };
