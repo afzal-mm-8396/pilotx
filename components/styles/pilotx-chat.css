@@ -35,27 +35,28 @@
     --topbar-height: 56px;
 }
 
-/* ---- Reset ---- */
-*, *::before, *::after {
+/* ---- Scoped Reset (do NOT leak to host page) ---- */
+/* Exclude .slyte-runtime-outlet descendants so rendered components keep their own CSS */
+pilotx-chat *:not(.slyte-runtime-outlet *),
+pilotx-chat *::before:not(.slyte-runtime-outlet *),
+pilotx-chat *::after:not(.slyte-runtime-outlet *) {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
+pilotx-chat {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
-}
-
-body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--bg-main);
     color: var(--text-primary);
-    height: 100vh;
-    overflow: hidden;
+    line-height: 1.5;
 }
 
-button {
+/* Reset buttons/textareas inside the chat panel only — NOT the launcher.
+   Use :where() so this reset has ZERO specificity and any component
+   class (.send-btn, .new-chat-btn, etc.) naturally overrides it. */
+pilotx-chat :where(.chat-wrapper button:not(.slyte-runtime-outlet button)) {
     cursor: pointer;
     border: none;
     background: none;
@@ -63,7 +64,7 @@ button {
     font-size: inherit;
 }
 
-textarea {
+pilotx-chat :where(.chat-wrapper textarea:not(.slyte-runtime-outlet textarea)) {
     font-family: inherit;
     font-size: inherit;
     border: none;
@@ -74,7 +75,7 @@ textarea {
 /* ---- Layout ---- */
 .app-container {
     display: flex;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -339,7 +340,7 @@ textarea {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - var(--topbar-height) - 120px);
+    min-height: calc(100% - 120px);
     padding: 40px 20px;
     text-align: center;
 }
@@ -1486,7 +1487,7 @@ textarea {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.5);
-    z-index: 1000;
+    z-index: 10000;
     display: none;
     align-items: center;
     justify-content: center;
@@ -1808,4 +1809,285 @@ textarea {
     font-family: 'SF Mono', 'Menlo', monospace;
     font-size: 10.5px;
     color: #4c1d95;
+}
+
+/* ============================================
+   FLOATING LAUNCHER
+   ============================================ */
+.chat-launcher {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--primary), #6366f1);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 6px 24px rgba(31,122,236,0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+.chat-launcher:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(31,122,236,0.55);
+}
+
+.chat-launcher-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.chat-launcher-label {
+    white-space: nowrap;
+}
+
+/* Loading state for launcher */
+.chat-launcher.loading {
+    pointer-events: none;
+    opacity: 0.85;
+}
+
+.chat-launcher.loading .chat-launcher-icon {
+    animation: launcherPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes launcherPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Hide launcher when chat is open */
+.chat-launcher.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px) scale(0.9);
+}
+
+/* ============================================
+   CHAT WRAPPER – default hidden
+   ============================================ */
+.chat-wrapper {
+    display: none;
+    position: fixed;
+    z-index: 8999;
+}
+
+.chat-backdrop {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 0;
+    animation: backdropFadeIn 0.25s ease;
+}
+
+@keyframes backdropFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.chat-panel {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--bg-white);
+    position: relative;
+    z-index: 8999;
+}
+
+/* ============================================
+   POPUP MODE
+   ============================================ */
+.chat-wrapper.popup {
+    display: block;
+    bottom: 100px;
+    right: 28px;
+    width: 400px;
+    height: 580px;
+    animation: popupSlideIn 0.25s ease;
+}
+
+@keyframes popupSlideIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.96); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.chat-wrapper.popup .chat-panel {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.22);
+}
+
+/* Hide sidebar in popup mode */
+.chat-wrapper.popup .sidebar {
+    display: none !important;
+}
+
+/* Hide sidebar-toggle (it's a hamburger) in popup — we expose it for the modal */
+.chat-wrapper.popup .sidebar-toggle {
+    display: none !important;
+}
+
+/* Fit app-container fully inside panel */
+.chat-wrapper.popup .app-container,
+.chat-wrapper.modal .app-container {
+    height: 100%;
+}
+
+/* Popup topbar: show expand, hide collapse */
+.chat-wrapper.popup .chat-mode-expand {
+    display: flex;
+}
+.chat-wrapper.popup .chat-mode-collapse {
+    display: none;
+}
+
+/* Shrink welcome screen in popup */
+.chat-wrapper.popup .welcome-screen {
+    min-height: unset;
+    padding: 20px 16px;
+    gap: 12px;
+}
+.chat-wrapper.popup .welcome-screen h1 {
+    font-size: 20px;
+}
+.chat-wrapper.popup .welcome-screen p {
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+.chat-wrapper.popup .suggestions {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    max-width: 100%;
+}
+.chat-wrapper.popup .suggestion-chip {
+    padding: 10px 8px;
+}
+.chat-wrapper.popup .suggestion-chip i {
+    font-size: 16px;
+}
+
+/* ============================================
+   MODAL MODE
+   ============================================ */
+.chat-wrapper.modal {
+    display: block;
+    position: fixed;
+    inset: 0;
+    animation: modalFadeIn 0.25s ease;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.chat-wrapper.modal .chat-backdrop {
+    display: none;
+}
+
+.chat-wrapper.modal .chat-panel {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 9000;
+    animation: modalPanelIn 0.2s ease;
+}
+
+@keyframes modalPanelIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Modal topbar: hide expand, show collapse */
+.chat-wrapper.modal .chat-mode-expand {
+    display: none;
+}
+.chat-wrapper.modal .chat-mode-collapse {
+    display: flex;
+}
+
+/* Show sidebar toggle in modal too (for narrow viewports) */
+.chat-wrapper.modal .sidebar-toggle {
+    display: flex;
+}
+
+/* ============================================
+   TOPBAR MODE BUTTONS – base hidden
+   ============================================ */
+.chat-mode-expand,
+.chat-mode-collapse {
+    display: none;
+}
+
+/* ============================================
+   SLYTE RUNTIME OUTLET – isolated sandbox
+   Components rendered here must not inherit
+   the pilotx-chat reset.
+   ============================================ */
+.slyte-runtime-outlet {
+    margin: 12px 0;
+    padding: 0;
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    min-height: 200px;
+    width: 100%;
+    overflow: auto;
+    /* CSS containment: isolate layout/style */
+    contain: style;
+    position: relative;
+}
+
+/* Give the direct Lyte custom-element child a block layout so it isn't inline/0×0 */
+.slyte-runtime-outlet > * {
+    display: block;
+    width: 100%;
+    min-height: inherit;
+}
+
+/* Undo the pilotx-chat reset for everything inside the outlet,
+   but DON'T use `all:revert` — that reverts display/width on custom
+   elements to `inline` (0×0). Instead, only undo the specific
+   properties our scoped reset sets. */
+.slyte-runtime-outlet *,
+.slyte-runtime-outlet *::before,
+.slyte-runtime-outlet *::after {
+    /* undo the pilotx-chat * reset */
+    margin: revert;
+    padding: revert;
+    /* keep border-box — it's universally helpful */
+    box-sizing: border-box;
+}
+
+.slyte-runtime-outlet:empty::before {
+    content: 'Loading Slyte component...';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary, #6b7280);
+    font-size: 13px;
+    min-height: 150px;
+    margin: 0;
+    padding: 16px;
 }

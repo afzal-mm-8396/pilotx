@@ -406,6 +406,9 @@ Lyte.Component.register("pilotx-chat", {
                     msg.dataViewList.forEach(function(dv) {
                         if (dv.errorText) {
                             contentEl.insertAdjacentHTML('beforeend', '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(dv.errorText) + '</span></div>');
+                        } else if (dv.slyteHtml && dv.slyteJs) {
+                            // Re-render Slyte component
+                            renderSlyteViewFromSaved(contentEl, dv);
                         } else {
                             var vc = buildMultiViewTabs(dv.viewDataItems || (dv.data ? [dv.data] : []), dv.crmPopupView || null);
                             contentEl.appendChild(vc);
@@ -504,6 +507,9 @@ Lyte.Component.register("pilotx-chat", {
                 msg.dataViewList.forEach(function(dv) {
                     if (dv.errorText) {
                         contentEl.insertAdjacentHTML('beforeend', '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(dv.errorText) + '</span></div>');
+                    } else if (dv.slyteHtml && dv.slyteJs) {
+                        // Re-render Slyte component
+                        renderSlyteViewFromSaved(contentEl, dv);
                     } else {
                         var viewContainer = buildMultiViewTabs(dv.viewDataItems || (dv.data ? [dv.data] : []), dv.crmPopupView || null);
                         contentEl.appendChild(viewContainer);
@@ -721,11 +727,11 @@ Lyte.Component.register("pilotx-chat", {
         try {
             if (isInIframe && typeof ZOHO !== 'undefined' && ZOHO.CRM && ZOHO.CRM.HTTP && typeof ZOHO.CRM.HTTP.post === 'function') {
                 // var apiUrl = 'https://crmdx4.localzoho.com/crm/v7/functions/' + CRM_FUNC_NAME + '/actions/execute?auth_type=apikey&zapikey=' + CRM_FUNC_API_KEY;
-                var apiUrl = "http://10.59.3.181:8000/chat";
+                var apiUrl = "http://localhost:8000/chat";
                 var httpData = await ZOHO.CRM.HTTP.post({
                     url: apiUrl,
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ prompt: prompt, history: history || [], model: 'gpt-5.1', mode: 'agent', feature: 'cscript' })
+                    body: JSON.stringify({ prompt: prompt, history: history || [], model: 'gpt-5.1', mode: 'agent', feature: 'cscriptAndSlyteui' })
                 });
                 console.log('prompt', prompt, "response", httpData);
 
@@ -756,6 +762,74 @@ Lyte.Component.register("pilotx-chat", {
 
         // If both fail, return null to trigger callAPI fallback (mock data)
         return null;
+    }
+
+    // ─── ZIDEX API CALL (fetch-based, no ZOHO dependency) ───────────────────────
+    async function callZidex(prompt, history) {
+        _lastPrompt = prompt;
+        debugger
+        var apiUrl = "http://localhost:8000/chat";
+
+        try {
+            var controller = new AbortController();
+            var timeoutId = setTimeout(function() { controller.abort(); }, 200000);
+
+            var response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    prompt: prompt,
+                    // history: history || [],
+                    model: 'gpt-5.4',
+                    mode: 'agent',
+                    feature: 'cscriptAndSlyteui'
+                }),
+                signal: controller.signal
+            });
+
+            clearTimeout(timeoutId);
+
+            if (!response.ok) {
+                console.log('[WorkPilot] callZidex failed with status:', response.status, response.statusText);
+                return null;
+            }
+
+            var responseText = await response.text();
+            console.log('[WorkPilot] callZidex raw response:', responseText);
+
+            var parsed = null;
+            try {
+                parsed = JSON.parse(responseText);
+            } catch(e) {
+                console.log('[WorkPilot] callZidex: Failed to parse response JSON:', e);
+                return null;
+            }
+
+            console.log('prompt', prompt, 'response', parsed);
+
+            if (parsed) {
+                // Handle wrapper: details.output contains the actual response
+                if (parsed.details && parsed.details.output) {
+                    parsed = typeof parsed.details.output === 'string' ? JSON.parse(parsed.details.output) : parsed.details.output;
+                }
+                var edits = (parsed && Array.isArray(parsed.edits)) ? parsed.edits : [];
+                console.log('response edits', edits);
+                debugger;
+                var hasScript = edits.length > 0 && edits.some(function(e) { return e && e.explanation; });
+                if (hasScript || (parsed.response && parsed.response.content)) {
+                    return parsed;
+                }
+            }
+            console.log('[WorkPilot] callZidex: No usable data in response.');
+            return null;
+        } catch(err) {
+            if (err.name === 'AbortError') {
+                console.log('[WorkPilot] callZidex: Request timed out.');
+            } else {
+                console.log('[WorkPilot] callZidex: Network error:', err.message || err);
+            }
+            return null;
+        }
     }
 
     // ─── FETCH API CALL (backup) ───────────────────────────
@@ -947,6 +1021,12 @@ Lyte.Component.register("pilotx-chat", {
         sendBtn.disabled = true;
 
         const session = getActiveSession();
+        const originalSessionId = session.id;   // capture for DOM-write guards
+
+        // Helper: only write to DOM if user is still viewing this session
+        function stillOnThisSession() {
+            return activeSessionId === originalSessionId;
+        }
 
         // Hide welcome
         welcomeScreen.classList.add('hidden');
@@ -961,7 +1041,7 @@ Lyte.Component.register("pilotx-chat", {
             session.title = text.trim().substring(0, 50) + (text.length > 50 ? '…' : '');
             currentSessionTitle.textContent = session.title;
             renderSessionList();
-        }
+        }   
 
         saveSessions();
         promptInput.value = '';
@@ -980,18 +1060,18 @@ Lyte.Component.register("pilotx-chat", {
                 ? '[Memory context: ' + memorySummary + ']\n\n' + text.trim()
                 : text.trim();
 
-            // 3) Call CRM Function (primary: ZOHO SDK → REST proxy)
-            var apiResult = await callCRMFunction(enrichedPrompt, convHistory);
+            // 3) Call Zidex API (XMLHttpRequest-based, no ZOHO dependency)
+            var apiResult = await callZidex(enrichedPrompt, convHistory);
             if (!apiResult) {
-                console.log("expected results not received from CRM function, using fallback Mockup call");
+                console.log("expected results not received from Zidex, using fallback Mockup call");
                 apiResult = await callAPI(enrichedPrompt, convHistory);
             }
-            removeThinkingLoader();
+            if (stillOnThisSession()) removeThinkingLoader();
 
             // 2) Safely extract response parts
             const responseText = (apiResult && apiResult.response && apiResult.response.content) ? apiResult.response.content : '';
             const edits = (apiResult && Array.isArray(apiResult.edits)) ? apiResult.edits : [];
-            const hasEdits = edits.length > 0 && edits.some(function(e) { return e && e.content; });
+            const hasEdits = edits.length > 0 ;//&& edits.some(function(e) { return e && e.explanation; });
 
             // 3) Create assistant message container
             const assistantMsg = { id: uid(), role: 'assistant', text: '', ts: Date.now(), processing: true };
@@ -1010,27 +1090,35 @@ Lyte.Component.register("pilotx-chat", {
             }
             var ctxBadgeRowHtml = ctxBadges ? '<div class="ctx-badge-row">' + ctxBadges + '</div>' : '';
 
-            const msgDiv = document.createElement('div');
-            msgDiv.className = 'message assistant';
-            msgDiv.innerHTML = `
-                <div class="message-avatar"><i class="fas fa-robot"></i></div>
-                <div class="message-body">
-                    <div class="message-sender">WorkPilot${ctxBadgeRowHtml}</div>
-                    <div class="message-content" id="msg-${assistantMsg.id}"></div>
-                </div>
-            `;
-            messagesWrapper.appendChild(msgDiv);
-
-            const contentEl = msgDiv.querySelector('.message-content');
+            // Only render to DOM if user is still on this session
+            let contentEl = null;
+            if (stillOnThisSession()) {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = 'message assistant';
+                msgDiv.innerHTML = `
+                    <div class="message-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="message-body">
+                        <div class="message-sender">WorkPilot${ctxBadgeRowHtml}</div>
+                        <div class="message-content" id="msg-${assistantMsg.id}"></div>
+                    </div>
+                `;
+                messagesWrapper.appendChild(msgDiv);
+                contentEl = msgDiv.querySelector('.message-content');
+            }
 
             // ───────────────────────────────────────────────
             // PATH A: No edits → show response.content as readable output
             // ───────────────────────────────────────────────
             if (!hasEdits) {
                 assistantMsg.text = responseText;
-                contentEl.innerHTML = formatMarkdown(responseText);
+                assistantMsg.processing = false;
+                _processingSessionId = null;
+                _processingMsgId = null;
+                if (stillOnThisSession() && contentEl) {
+                    contentEl.innerHTML = formatMarkdown(responseText);
+                }
                 saveSessions();
-                scrollToBottom();
+                if (stillOnThisSession()) scrollToBottom();
                 return;
             }
 
@@ -1042,21 +1130,202 @@ Lyte.Component.register("pilotx-chat", {
 
             // 4) Show response.content as agent thinking steps
             const steps = parseResponseIntoSteps(responseText);
-            if (steps.length > 0) {
+            if (steps.length > 0 && stillOnThisSession() && contentEl) {
                 const stepsUI = createAgentStepsContainer(contentEl);
                 await animateAgentSteps(stepsUI, steps);
             }
 
-            // 5) Loop through each edit with type replace_file and execute
+            // 5) Loop through each edit and process based on actualCodeType
             var allExecSteps = [];
             var allDataViews = [];
 
+            // ── Collect slyteui edits separately for tabbed rendering ──
+            var slyteEdits = [];
+            var cscriptEdits = [];
+
             for (var ei = 0; ei < edits.length; ei++) {
                 var edit = edits[ei];
-                if (!edit || !edit.content) continue;
+                if (!edit) continue;
+                var actualCodeType = edit.actualCodeType || 'cscript';
+                if (actualCodeType === 'slyteui') {
+                    slyteEdits.push({ edit: edit, idx: ei });
+                } else {
+                    cscriptEdits.push({ edit: edit, idx: ei });
+                }
+            }
+
+            // ───────────────────────────────────────────────
+            // PATH: slyteui → render Slyte components in tabs
+            // ───────────────────────────────────────────────
+            if (slyteEdits.length > 0 && stillOnThisSession() && contentEl) {
+                // Filter valid edits
+                var validSlyteEdits = slyteEdits.filter(function(se) {
+                    return (se.edit.html_content && se.edit.js_content);
+                });
+
+                if (validSlyteEdits.length === 1) {
+                    // Single slyteui → render directly (no tabs)
+                    var sEdit = validSlyteEdits[0].edit;
+                    var sIdx = validSlyteEdits[0].idx;
+                    var slyteOutlet = document.createElement('div');
+                    slyteOutlet.className = 'slyte-runtime-outlet';
+                    slyteOutlet.id = 'slyte-outlet-' + Date.now() + '-' + sIdx;
+                    contentEl.appendChild(slyteOutlet);
+                    scrollToBottom();
+
+                    var slyteClassName = sEdit.js_content.match(/class\s+([A-Za-z_$][\w$]*)/) ? sEdit.js_content.match(/class\s+([A-Za-z_$][\w$]*)/)[1] : 'slyte-comp-' + Date.now() + '-' + sIdx;
+
+                    try {
+                        await renderSlyteRuntime({
+                            html: sEdit.html_content,
+                            js: sEdit.js_content,
+                            css: sEdit.css_content || '',
+                            className: slyteClassName,
+                            outlet: '#' + slyteOutlet.id,
+                            data: null
+                        });
+                        console.log('[WorkPilot] Slyte component rendered successfully');
+                    } catch (slyteErr) {
+                        console.error('[WorkPilot] Slyte runtime render failed:', slyteErr);
+                        slyteOutlet.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>Failed to render Slyte component: ' + escapeHtml(slyteErr.message || String(slyteErr)) + '</span></div>';
+                    }
+
+                    allDataViews.push({
+                        slyteHtml: sEdit.html_content,
+                        slyteJs: sEdit.js_content,
+                        slyteCss: sEdit.css_content || '',
+                        slyteData: null
+                    });
+
+                } else if (validSlyteEdits.length > 1) {
+                    // Multiple slyteui → render as tabbed view
+                    var tabsWrapper = document.createElement('div');
+                    tabsWrapper.className = 'multi-view-tabs-wrapper slyte-tabs-wrapper';
+
+                    var tabHeader = document.createElement('div');
+                    tabHeader.className = 'multi-view-header';
+
+                    var tabStrip = document.createElement('div');
+                    tabStrip.className = 'multi-view-tab-strip view-tabs';
+                    tabHeader.appendChild(tabStrip);
+
+                    var tabPanelsHost = document.createElement('div');
+                    tabPanelsHost.className = 'multi-view-panels-host';
+
+                    var tabPanelRefs = [];
+
+                    validSlyteEdits.forEach(function(se, tabIdx) {
+                        // Short tab label: prefer view_name, then extract "X View" from explanation, fallback to "View N"
+                        var tabLabel = se.edit.view_name || (function(exp) {
+                            if (!exp) return 'View ' + (tabIdx + 1);
+                            // Extract "Timeline View", "Table View", etc. from explanation
+                            var match = exp.match(/(\w+\s+view)/i);
+                            return match ? match[1] : (exp.length > 20 ? exp.substring(0, 20) + '…' : exp);
+                        })(se.edit.explanation);
+
+                        // Tab button
+                        var tabBtn = document.createElement('button');
+                        tabBtn.className = 'view-tab multi-view-tab' + (tabIdx === 0 ? ' active' : '');
+                        tabBtn.innerHTML = '<i class="fas fa-cube"></i><span>' + escapeHtml(tabLabel) + '</span>';
+                        tabStrip.appendChild(tabBtn);
+
+                        // Panel
+                        var panel = document.createElement('div');
+                        panel.className = 'multi-view-panel';
+                        if (tabIdx !== 0) panel.style.display = 'none';
+                        panel._slyteEdit = se.edit;
+                        panel._slyteIdx = se.idx;
+                        panel._rendered = false;
+                        tabPanelsHost.appendChild(panel);
+                        tabPanelRefs.push({ tab: tabBtn, panel: panel });
+
+                        tabBtn.addEventListener('click', function() {
+                            // Deactivate all
+                            tabPanelRefs.forEach(function(ref) {
+                                ref.tab.classList.remove('active');
+                                ref.panel.style.display = 'none';
+                            });
+                            // Activate this one
+                            tabBtn.classList.add('active');
+                            panel.style.display = '';
+                            // Lazy-render on first show
+                            if (!panel._rendered) {
+                                panel._rendered = true;
+                                renderSlytePanel(panel);
+                            }
+                        });
+
+                        // Save to allDataViews
+                        allDataViews.push({
+                            slyteHtml: se.edit.html_content,
+                            slyteJs: se.edit.js_content,
+                            slyteCss: se.edit.css_content || '',
+                            slyteData: null
+                        });
+                    });
+
+                    // Render Slyte inside a panel
+                    async function renderSlytePanel(panel) {
+                        var pEdit = panel._slyteEdit;
+                        var pIdx = panel._slyteIdx;
+                        var outlet = document.createElement('div');
+                        outlet.className = 'slyte-runtime-outlet';
+                        outlet.id = 'slyte-outlet-' + Date.now() + '-' + pIdx;
+                        panel.appendChild(outlet);
+
+                        var cn = pEdit.js_content.match(/class\s+([A-Za-z_$][\w$]*)/) ? pEdit.js_content.match(/class\s+([A-Za-z_$][\w$]*)/)[1] : 'slyte-comp-' + Date.now() + '-' + pIdx;
+
+                        try {
+                            await renderSlyteRuntime({
+                                html: pEdit.html_content,
+                                js: pEdit.js_content,
+                                css: pEdit.css_content || '',
+                                className: cn,
+                                outlet: '#' + outlet.id,
+                                data: null
+                            });
+                            console.log('[WorkPilot] Slyte tab component rendered');
+                        } catch (err) {
+                            console.error('[WorkPilot] Slyte tab render failed:', err);
+                            outlet.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>Failed to render: ' + escapeHtml(err.message || String(err)) + '</span></div>';
+                        }
+                        scrollToBottom();
+                    }
+
+                    tabsWrapper.appendChild(tabHeader);
+                    tabsWrapper.appendChild(tabPanelsHost);
+                    contentEl.appendChild(tabsWrapper);
+                    scrollToBottom();
+
+                    // Eagerly render the first tab
+                    if (tabPanelRefs.length > 0 && !tabPanelRefs[0].panel._rendered) {
+                        tabPanelRefs[0].panel._rendered = true;
+                        await renderSlytePanel(tabPanelRefs[0].panel);
+                    }
+                }
+
+                // Save incrementally
+                assistantMsg.dataViewList = allDataViews.slice();
+                assistantMsg.dataView = allDataViews[0];
+                saveSessions();
+            }
+
+            // ───────────────────────────────────────────────
+            // PATH: cscript edits → execute via CScriptBridge
+            // ───────────────────────────────────────────────
+            for (var ci = 0; ci < cscriptEdits.length; ci++) {
+                var edit = cscriptEdits[ci].edit;
+                var ei = cscriptEdits[ci].idx;
+                if (!edit) continue;
+
+                var explanation = edit.explanation || ('Script ' + (ei + 1));
+
+                if (!edit.content) {
+                    console.warn('[WorkPilot] cscript edit missing content, skipping');
+                    continue;
+                }
 
                 var scriptContent = edit.content;
-                var explanation = edit.explanation || ('Script ' + (ei + 1));
 
                 // Save exec steps metadata
                 var execStepsMeta = parseScriptIntoExecSteps(scriptContent, explanation);
@@ -1070,8 +1339,14 @@ Lyte.Component.register("pilotx-chat", {
                 var cscriptResult;
                 var execError = null;
                 console.log('Gonna pass cscript content: -- ', scriptContent);
+
+                // Only show stepper animation if user is still viewing this session
+                var stepperPromise = (stillOnThisSession() && contentEl)
+                    ? showExecStepper(contentEl, scriptContent, explanation)
+                    : Promise.resolve();
+
                 await Promise.all([
-                    showExecStepper(contentEl, scriptContent, explanation),
+                    stepperPromise,
                     executeCScript(scriptContent)
                         .then(function(result) { cscriptResult = result; })
                         .catch(function(err) { execError = err; })
@@ -1079,21 +1354,25 @@ Lyte.Component.register("pilotx-chat", {
 
                 if (execError) {
                     var execErrText = 'Script execution failed: ' + (execError.message || String(execError));
-                    var errorHtml = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(execErrText) + '</span></div>';
-                    contentEl.insertAdjacentHTML('beforeend', errorHtml);
+                    if (stillOnThisSession() && contentEl) {
+                        var errorHtml = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(execErrText) + '</span></div>';
+                        contentEl.insertAdjacentHTML('beforeend', errorHtml);
+                    }
                     allDataViews.push({ errorText: execErrText });
                     continue;
                 }
 
-                // 6) Detect result type and render appropriate Lyte UI view
+                // Detect result type and render appropriate Lyte UI view
                 if (cscriptResult !== null && cscriptResult !== undefined) {
                     console.log('CScript result came', cscriptResult);
 
                     // ─── Error result ───
                     if (cscriptResult.type === 'errors') {
                         var cscriptErrText = cscriptResult.data || 'Unknown error';
-                        var errHtml = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(String(cscriptErrText)) + '</span></div>';
-                        contentEl.insertAdjacentHTML('beforeend', errHtml);
+                        if (stillOnThisSession() && contentEl) {
+                            var errHtml = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(String(cscriptErrText)) + '</span></div>';
+                            contentEl.insertAdjacentHTML('beforeend', errHtml);
+                        }
                         allDataViews.push({ errorText: String(cscriptErrText) });
                         continue;
                     }
@@ -1102,46 +1381,16 @@ Lyte.Component.register("pilotx-chat", {
                     var crmPopupCode = cscriptResult.crmPopupView || null;
                     var resolvedIframeUrl = cscriptResult.crmIframeView || null;
 
-                    // CRM Popup View button (above response component)
-                    // Render each data item in result.data
                     var viewDataItems = Array.isArray(cscriptResult.data) ? cscriptResult.data : [cscriptResult.data];
                     console.log('[WorkPilot] viewDataItems:', viewDataItems);
-                    var multiTabsContainer = buildMultiViewTabs(viewDataItems, crmPopupCode || null);
-                    contentEl.appendChild(multiTabsContainer);
-
-                    // CRM Iframe View (render below response component)
-                    // resolvedIframeUrl is a script — execute it in the parent CRM to get the actual URL
-                    // if (resolvedIframeUrl && typeof resolvedIframeUrl === 'string') {
-                    //     try {
-                    //         var iframeScriptResult = await executeCScript(resolvedIframeUrl);
-                    //         var actualIframeUrl = null;
-                    //         if (typeof iframeScriptResult === 'string') {
-                    //             actualIframeUrl = iframeScriptResult;
-                    //         } else if (iframeScriptResult && typeof iframeScriptResult === 'object') {
-                    //             actualIframeUrl = iframeScriptResult.url || iframeScriptResult.iframeUrl || iframeScriptResult.link || null;
-                    //         }
-                    //         if (actualIframeUrl) {
-                    //             var iframeWrapper = document.createElement('div');
-                    //             iframeWrapper.className = 'crm-iframe-wrapper';
-                    //             var iframe = document.createElement('iframe');
-                    //             iframe.src = actualIframeUrl;
-                    //             iframe.style.width = '100%';
-                    //             iframe.style.height = '500px';
-                    //             iframeWrapper.appendChild(iframe);
-                    //             contentEl.appendChild(iframeWrapper);
-                    //             resolvedIframeUrl = actualIframeUrl; // store resolved URL for session save
-                    //         } else {
-                    //             console.warn('[WorkPilot] Iframe script did not return a valid URL:', iframeScriptResult);
-                    //             resolvedIframeUrl = null;
-                    //         }
-                    //     } catch (iframeErr) {
-                    //         console.warn('[WorkPilot] Failed to resolve iframe URL via script:', iframeErr);
-                    //         resolvedIframeUrl = null;
-                    //     }
-                    // }
+                    if (stillOnThisSession() && contentEl) {
+                        var multiTabsContainer = buildMultiViewTabs(viewDataItems, crmPopupCode || null);
+                        contentEl.appendChild(multiTabsContainer);
+                    }
 
                     allDataViews.push({ viewDataItems: viewDataItems, crmPopupView: crmPopupCode, iframeUrl: resolvedIframeUrl });
                 }
+
                 // Incrementally save data views
                 assistantMsg.dataViewList = allDataViews.slice();
                 assistantMsg.dataView = allDataViews[0];
@@ -1150,7 +1399,7 @@ Lyte.Component.register("pilotx-chat", {
 
             // ─── Auto-extract facts from AI response and show memory chip if found ───
             var extractedFacts = Memory.extractAndStore(responseText);
-            if (extractedFacts.length > 0) {
+            if (extractedFacts.length > 0 && stillOnThisSession() && contentEl) {
                 var factsHtml = extractedFacts.map(function(f) {
                     return '<span class="memory-fact">' + escapeHtml(f.key) + ' = \u201c' + escapeHtml(f.value) + '\u201d</span>';
                 }).join('');
@@ -1186,7 +1435,7 @@ Lyte.Component.register("pilotx-chat", {
             _userSwitchedDuringProcessing = false;
 
         } catch (err) {
-            removeThinkingLoader();
+            if (stillOnThisSession()) removeThinkingLoader();
             // Clear processing flag on the in-progress message if it exists
             if (_processingMsgId) {
                 var procMsg = session.messages.find(function(m) { return m.id === _processingMsgId; });
@@ -1196,15 +1445,257 @@ Lyte.Component.register("pilotx-chat", {
             _processingMsgId = null;
             var errMsg = { id: uid(), role: 'assistant', text: 'Something went wrong: ' + err.message, error: true, ts: Date.now() };
             session.messages.push(errMsg);
-            appendMessageToDOM(errMsg, true);
+            if (stillOnThisSession()) appendMessageToDOM(errMsg, true);
             saveSessions();
         } finally {
             isProcessing = false;
             sendBtn.disabled = false;
-            scrollToBottom();
+            if (stillOnThisSession()) scrollToBottom();
         }
     }
 
+    // Helper to re-render Slyte views from saved session data
+    function renderSlyteViewFromSaved(containerEl, savedView) {
+        var slyteOutlet = document.createElement('div');
+        slyteOutlet.className = 'slyte-runtime-outlet';
+        slyteOutlet.id = 'slyte-outlet-' + Date.now() + '-' + Math.random().toString(36).substr(2, 5);
+        containerEl.appendChild(slyteOutlet);
+
+        var slyteClassName = 'slyte-comp-' + Date.now();
+
+        // Fire-and-forget async render (we're in a sync forEach)
+        renderSlyteRuntime({
+            html: savedView.slyteHtml,
+            js: savedView.slyteJs,
+            css: savedView.slyteCss || '',
+            className: slyteClassName,
+            outlet: '#' + slyteOutlet.id,
+            data: savedView.slyteData || null
+        }).then(function() {
+            console.log('[WorkPilot] Slyte view re-rendered from saved data');
+        }).catch(function(err) {
+            console.error('[WorkPilot] Failed to re-render Slyte view:', err);
+            slyteOutlet.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>Failed to render Slyte component</span></div>';
+        });
+    }
+
+    async function renderSlyteRuntime(options) {
+        var { html: rawHtml, js: rawJs, css: rawCss, className: cn, outlet } = options;
+
+        if (!window.lyteWidgetFrame) {
+            window.dispatchEvent(new Event("loadWidgetIframe"));
+        }
+
+        var compId   = 'runtime_' + Date.now();
+        var idb_name = compId + '_runtime';
+        var component_record = { class_name: cn, id: compId, source: undefined };
+
+        // ── DUMMY meta_data ──────────────────────────────────────────────────────────
+        var meta_data = {
+        namespace:    cn,
+        lux_filename: cn,
+        components: { [cn]: { compiled: 'widget' } },
+        mixins: {
+            [`${cn}-mixin`]: { compiled: 'mixin' },
+            'lux-default-f141de14-520d-mixin': { compiled: 'mixin' }
+        },
+        helpers: { [`${cn}-helper`]: { compiled: 'helper' } },
+        compiled: {
+            components: { widget: [cn] },
+            mixins:     { mixin: [`${cn}-mixin`, 'lux-default-f141de14-520d-mixin'] },
+            helpers:    { helper: [`${cn}-helper`] }
+        },
+        threshold: { components: 1, mixins: 3, helpers: 3 }
+        };
+
+        // ── WRITE TO IDB ─────────────────────────────────────────────────────────────
+        var idb = await IdbUtil.wrap_idb(idb_name, 1, idb_name, { keyPath: 'filepath' });
+        await Promise.all([
+        idb.update({ key: `/${cn}/${cn}.html`, data: { filepath: `/${cn}/${cn}.html`, data: rawHtml, language: 'html' } }),
+        idb.update({ key: `/${cn}/${cn}.js`,   data: { filepath: `/${cn}/${cn}.js`,   data: rawJs,   language: 'javascript' } }),
+        idb.update({ key: `/${cn}/${cn}.css`,  data: { filepath: `/${cn}/${cn}.css`,  data: rawCss,  language: 'css' } })
+        ]);
+        console.log('IDB written');
+
+        // ── WORKER ───────────────────────────────────────────────────────────────────
+        var urlPrefix    = FingerPrint.isCdnEnabled ? '' : location.origin;
+        var worker       = new Worker('/crm/CRMClient/addons/lux/LuxWorker.js');
+        var req_holder   = {};
+        var req_timeouts = {};
+        var blobIframe;
+
+        function workerRequest(request, toBlobFrame) {
+        return new Promise(function(resolve, reject) {
+            var reqId = crypto.randomUUID();
+            request.reqId = reqId;
+            req_holder[reqId] = { resolve: resolve, reject: reject };
+            req_timeouts[reqId] = setTimeout(function() {
+            delete req_holder[reqId];
+            reject(new Error('Timeout: ' + reqId));
+            }, 30000);
+            if (toBlobFrame) {
+            blobIframe.contentWindow.postMessage(request, '*');
+            } else {
+            worker.postMessage(request);
+            }
+        });
+        }
+
+        worker.onmessage = function(event) {
+        var p = event.data;
+        console.log('worker →', p.action, p);
+        if (p.reqId && req_holder[p.reqId]) {
+            clearTimeout(req_timeouts[p.reqId]);
+            p.error
+            ? req_holder[p.reqId].reject(new Error(JSON.stringify(p.error)))
+            : req_holder[p.reqId].resolve(p);
+            delete req_holder[p.reqId];
+        }
+        };
+        worker.onerror = function(e) { console.error('Worker error', e); };
+
+        worker.postMessage({
+        action: 'init',
+        objStore: idb_name, dbname: idb_name, component_record,
+        __zgid: crmZgid, __token: csrfToken,
+        dependency_files: networkUtils.returnDependencyFiles(['IdbUtil.js', 'lux/lux-browser.js'], ResourceConstants.CRMClient),
+        mixinUrl:  urlPrefix + networkUtils.returnDependencyFiles(['lux/DefaultMixin.js'],  ResourceConstants.CRMClient, ResourceConstants.ADDONS)[0],
+        helperUrl: urlPrefix + networkUtils.returnDependencyFiles(['lux/luxDhHelpers.js'], ResourceConstants.CRMClient)[0]
+        });
+        await new Promise(function(r) { setTimeout(r, 3000); });
+        console.log('Worker ready');
+
+        // ── BLOB IFRAME ──────────────────────────────────────────────────────────────
+        blobIframe = document.createElement('iframe');
+        blobIframe.src = networkUtils.returnDependencyFiles(['lux/LuxBlobholder.html'], ResourceConstants.CRMClient, ResourceConstants.ADDONS)[0];
+        blobIframe.id  = 'runtime-blob-iframe';
+        blobIframe.style.cssText = 'display:none;position:absolute;width:0;height:0;border:0;';
+        document.body.appendChild(blobIframe);
+        await new Promise(function(r) { blobIframe.onload = r; });
+        console.log('Blob iframe ready');
+
+        window.addEventListener('message', function(event) {
+        var p = event.data;
+        if (p && p.reqId && req_holder[p.reqId]) {
+            clearTimeout(req_timeouts[p.reqId]);
+            p.error
+            ? req_holder[p.reqId].reject(new Error(JSON.stringify(p.error)))
+            : req_holder[p.reqId].resolve(p);
+            delete req_holder[p.reqId];
+        }
+        });
+
+        // ── COMPILE ──────────────────────────────────────────────────────────────────
+        console.log('Compiling...');
+        var compileResult = await workerRequest({
+        action:    'idb_compile',
+        meta_data: JSON.stringify(meta_data)
+        });
+        console.log('Compile result:', compileResult);
+
+        var compiled_files = compileResult.compiled_files;
+        var lang_vs_mime = {
+        javascript: 'application/javascript', js: 'application/javascript',
+        css: 'text/css', html: 'text/html', json: 'application/json'
+        };
+        var files = [], components_info = {};
+
+        Object.keys(compiled_files).forEach(function(fileType) {
+        Object.keys(compiled_files[fileType]).forEach(function(basepath) {
+            Object.entries(compiled_files[fileType][basepath])
+            .filter(function(entry) { return entry[0] !== 'intelliSenseObj' && entry[0] !== 'map'; })
+            .forEach(function(entry) {
+                var language = entry[0], content = entry[1];
+                if (language === 'componentsInfo') {
+                if (Object.keys(content).length) components_info = content[cn];
+                return;
+                }
+                files.push({ filepath: basepath + '.' + language, type: lang_vs_mime[language], content: content });
+            });
+        });
+        });
+
+        // ── BLOBS ────────────────────────────────────────────────────────────────────
+        console.log('Creating blobs...');
+        var blobResult = await workerRequest(
+        { type: 'blob_creator', files: files, components_info: components_info, parameter_info: [] },
+        true
+        );
+        console.log('blob_map:', blobResult.blob_map);
+
+        var blob_map       = blobResult.blob_map;
+        var parameter_info = blobResult.parameter_info;
+        Lyte.objectUtils(component_record, 'add', { blob_map: blob_map, components_info: components_info, parameter_info: parameter_info });
+
+        // ── FIX: force bootstrap flags ────────────────────────────────────────────────
+        LuxHandler.__resource_loaded     = true;
+        LuxHandler.__is_allowed_in_route = true;
+
+        // ── RENDER ────────────────────────────────────────────────────────────────────
+        await new Lux()
+        .luxComp(component_record)
+        .parentElement($L(outlet))
+        .blobMap(blob_map)
+        .isPreview(true)
+        .render();
+
+        console.log('Render done!');
+
+    }
+
+    async function loadLuxDependencies() {
+        function getLuxEditorResources() {
+            let editorJs = networkUtils.returnDependencyFiles(['IdbUtil.js', 'lyte-tree.js', 'dx-editor/dx-editor.js', 'crm-lux-editor.js', 'lytecombobox.js','function-model.js','lyte-editor.js','lyte-page-builder.js',"crm-kanban-resources.js"],ResourceConstants.CRMClient);
+            const editor_config = Crm.userDetails.CUSTOMIZE_INFO.cscript_editor && JSON.parse(Crm.userDetails.CUSTOMIZE_INFO.cscript_editor);
+            if(editor_config && editor_config.theme==='vs'){
+                editor_config.theme = 'vs-light';// No I18n
+                Crm.userDetails.CUSTOMIZE_INFO.cscript_editor = JSON.stringify(editor_config);
+            }
+            let editorCss = networkUtils.returnDependencyFiles(['dx-editor/dx-editor-themeing.css'],ResourceConstants.CRMClient,getDxStaticPath(editor_config && editor_config.theme, 'lux'))[0]
+            let editorI18n = networkUtils.returnDependencyFiles([networkUtils.getI18nJSUrl('dxeditor')], ResourceConstants.CRM)[0];
+            let luxEditorCss = networkUtils.returnDependencyFiles(['lux/crm-lux-bundle.css'],ResourceConstants.CRMClient);
+            let luxPreviewSource = networkUtils.returnDependencyFiles(['crm-lux-preview.js'],ResourceConstants.CRMClient).concat(networkUtils.returnDependencyFiles(['lux/crm-lux-preview.css'],ResourceConstants.CRMClient));
+            let jszip = networkUtils.returnDependencyFiles(["zohocrm_detail_canvas_common.js"],ResourceConstants.CRM);
+            var customFunctionJs = networkUtils.returnDependencyFiles(["zcrm_custom_functions.min.js",networkUtils.getI18nJSUrl("customfunctions") ],ResourceConstants.CRM); //NO I18N
+            customFunctionJs = customFunctionJs.concat(networkUtils.returnDependencyFiles(["custom-function-editor.js","crm-functions-helper.js"],ResourceConstants.CRMClient));
+            return customFunctionJs.concat(editorJs).concat(editorCss).concat(editorI18n).concat(luxEditorCss).concat(luxPreviewSource).concat(jszip).concat([
+                ...networkUtils.returnDependencyFiles(["crm-datahub-setup.css", "crm-datahub-setup-list.css", "lyte-json-viewer.css"], ResourceConstants.CRMClient,ResourceConstants.LESSDEFAULT),
+                ...networkUtils.returnDependencyFiles([networkUtils.getI18nJSUrl('data-hub')], ResourceConstants.CRM),
+                ...networkUtils.returnDependencyFiles(["lyte-tree.js", "lyte-progressbar.js", "lyte-resize.js",  "lyte-editor.js","lyte-code-snippet.js", "lyte-scrollspy.js" , "lytecombobox.js","lyte-ui-code-snippet.css", "crm-help-link.js",  "crux-criteria-conditions.js",  "crux-criteria-component.js", "crux-form-component.js","datahub/crm-datahub-global-mixin.js","datahub/crm-datahub-source.js"],ResourceConstants.CRMClient)  //NO I18N
+            ]);
+        }
+        function getDxStaticPath(monaco_theme, feature) {
+            if (feature === 'lux' && !monaco_theme) {
+                return ResourceConstants.LESSDEFAULT; //As of now, for components feature default theme is light.
+            }
+            if(monaco_theme === 'vs-light'){
+                return ResourceConstants.LESSDEFAULT || "default"; //no i18n
+            }else if(monaco_theme === 'vs-blue'){//no i18n
+                return ResourceConstants.LESSFEATUREBlUE || "feature-blue"; //no i18n
+            }else if(monaco_theme === 'vs-darkplus'){// No I18n
+                return ResourceConstants.LESSFEATUREBLACKPLUS || "feature-black-plus"; //no i18n
+            }else{
+                return ResourceConstants.LESSFEATURE || "feature-black"; //no i18n
+            }
+        }
+        return new Promise(function(resolve, reject) {
+            Lyte.injectResources(getLuxEditorResources(), function(event) {
+                if (event.type === "error") {
+                    console.log("Error - lux dependencies Not downloaded");
+                    reject(new Error("Lux dependencies failed to download"));
+                } else {
+                    console.log("Success - lux dependencies downloaded");
+                    resolve(true);
+                }
+            }, function(successFiles, failureFiles) {
+                /* successFiles contains the list of files which were successfully downloaded
+                failureFiles contains the list of files that failed to be downloaded. */
+                if (failureFiles && failureFiles.length > 0) {
+                    console.warn("Some lux dependencies failed:", failureFiles);
+                }
+            });
+        });
+    }
     // ─── DATA TYPE DETECTION ───────────────────────────────
     function detectDataType(data) {
         if (data === null || data === undefined) return 'empty';
@@ -2269,15 +2760,15 @@ Lyte.Component.register("pilotx-chat", {
         tabStrip.className = 'multi-view-tab-strip view-tabs';
         header.appendChild(tabStrip);
 
-        if (crmPopupCode) {
-            var crmBtn = document.createElement('button');
-            crmBtn.className = 'crm-view-btn';
-            crmBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> CRM View';
-            (function(code) {
-                crmBtn.addEventListener('click', function() { executeCScript(code); });
-            })(crmPopupCode);
-            header.appendChild(crmBtn);
-        }
+        // if (crmPopupCode) {
+        //     var crmBtn = document.createElement('button');
+        //     crmBtn.className = 'crm-view-btn';
+        //     crmBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> CRM View';
+        //     (function(code) {
+        //         crmBtn.addEventListener('click', function() { executeCScript(code); });
+        //     })(crmPopupCode);
+        //     header.appendChild(crmBtn);
+        // }
 
         var panelsHost = document.createElement('div');
         panelsHost.className = 'multi-view-panels-host';
@@ -2896,7 +3387,12 @@ Lyte.Component.register("pilotx-chat", {
 
         // New chat
         newChatBtn.addEventListener('click', () => {
-            if (isProcessing) return;
+            // Allow creating a new chat even while a message is processing.
+            // Mark that the user switched away so the processing response
+            // gets re-rendered when they come back to that session.
+            if (_processingSessionId && activeSessionId === _processingSessionId) {
+                _userSwitchedDuringProcessing = true;
+            }
             createNewSession();
             closeSidebar();
         });
@@ -2904,10 +3400,12 @@ Lyte.Component.register("pilotx-chat", {
         // Clear all
         clearAllBtn.addEventListener('click', clearAllSessions);
 
-        // Delete current session
-        deleteSessionBtn.addEventListener('click', () => {
-            if (activeSessionId) deleteSession(activeSessionId);
-        });
+        // Delete current session (button may not exist if removed from template)
+        if (deleteSessionBtn) {
+            deleteSessionBtn.addEventListener('click', () => {
+                if (activeSessionId) deleteSession(activeSessionId);
+            });
+        }
 
         // Sidebar toggle (mobile)
         sidebarToggle.addEventListener('click', toggleSidebar);
@@ -3102,6 +3600,79 @@ Lyte.Component.register("pilotx-chat", {
         };
     })();
 
+    // ─── FLOATING CHAT LAUNCHER & MODE SWITCHER ────────────────
+    (function() {
+        var launcher     = document.getElementById('chatLauncher');
+        var chatWrapper  = document.getElementById('chatWrapper');
+        var chatBackdrop = document.getElementById('chatBackdrop');
+        var expandBtn    = document.getElementById('expandChatBtn');
+        var collapseBtn  = document.getElementById('collapseChatBtn');
+        var closeBtn     = document.getElementById('closeChatBtn');
+
+        var _luxLoaded = false;
+        var _luxLoading = false;
+
+        function setLauncherLoading(loading) {
+            if (!launcher) return;
+            if (loading) {
+                launcher.classList.add('loading');
+                launcher.querySelector('.chat-launcher-icon').innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                launcher.querySelector('.chat-launcher-label').textContent = 'Loading…';
+            } else {
+                launcher.classList.remove('loading');
+                launcher.querySelector('.chat-launcher-icon').innerHTML = '<i class="fas fa-robot"></i>';
+                launcher.querySelector('.chat-launcher-label').textContent = 'WorkPilot';
+            }
+        }
+
+        async function ensureLuxLoaded() {
+            if (_luxLoaded) return true;
+            if (_luxLoading) return false; // already in progress, ignore duplicate click
+            _luxLoading = true;
+            setLauncherLoading(true);
+            try {
+                await loadLuxDependencies();
+                _luxLoaded = true;
+                console.log('[WorkPilot] Lux dependencies loaded successfully');
+                return true;
+            } catch (err) {
+                console.warn('[WorkPilot] Lux dependencies failed, opening chat anyway:', err.message || err);
+                _luxLoaded = true; // don't block chat on failure
+                return true;
+            } finally {
+                _luxLoading = false;
+                setLauncherLoading(false);
+            }
+        }
+
+        function openPopup() {
+            chatWrapper.classList.remove('modal');
+            chatWrapper.classList.add('popup');
+            launcher.classList.add('hidden');
+        }
+
+        function openModal() {
+            chatWrapper.classList.remove('popup');
+            chatWrapper.classList.add('modal');
+            launcher.classList.add('hidden');
+        }
+
+        function closeChat() {
+            chatWrapper.classList.remove('popup', 'modal');
+            launcher.classList.remove('hidden');
+        }
+
+        async function onLauncherClick() {
+            var loaded =  await ensureLuxLoaded(); //true; //
+            if (loaded) openPopup();
+        }
+
+        if (launcher)     launcher.addEventListener('click', onLauncherClick);
+        if (expandBtn)    expandBtn.addEventListener('click', openModal);
+        if (collapseBtn)  collapseBtn.addEventListener('click', openPopup);
+        if (closeBtn)     closeBtn.addEventListener('click', closeChat);
+        if (chatBackdrop) chatBackdrop.addEventListener('click', closeChat);
+    })();
 
 
 	},
@@ -3112,3 +3683,43 @@ Lyte.Component.register("pilotx-chat", {
 		// Functions which can be used as callback in the component.
 	}
 });
+
+function pilotx() {
+    'use strict';
+
+    function initPilotXChat() {
+        // Check if Lyte is available
+        if (typeof Lyte === 'undefined' || !Lyte.Component) {
+            console.warn('[PilotX] Lyte framework not found. Make sure Lyte.js is loaded before this script.');
+            return;
+        }
+
+        // Check if pilotx-chat already exists
+        if (document.querySelector('pilotx-chat')) {
+            console.log('[PilotX] pilotx-chat element already exists on page.');
+            return;
+        }
+
+        // Create and insert pilotx-chat element
+        var chatElement = document.createElement('pilotx-chat');
+        document.body.appendChild(chatElement);
+        console.log('[PilotX] pilotx-chat element inserted successfully.');
+
+        // Ensure Font Awesome is available (for icons)
+        if (!document.querySelector('link[href*="font-awesome"], link[href*="fontawesome"]')) {
+            var faLink = document.createElement('link');
+            faLink.rel = 'stylesheet';
+            faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+            document.head.appendChild(faLink);
+            console.log('[PilotX] Font Awesome stylesheet injected.');
+        }
+    }
+
+    // Run when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPilotXChat);
+    } else {
+        // DOM is already ready
+        initPilotXChat();
+    }
+}

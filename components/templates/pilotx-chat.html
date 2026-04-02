@@ -1,12 +1,18 @@
 <template tag-name="pilotx-chat">
+    <!-- Floating Chat Launcher -->
+    <button class="chat-launcher" id="chatLauncher">
+        <span class="chat-launcher-icon"><i class="fas fa-robot"></i></span>
+        <span class="chat-launcher-label">WorkPilot</span>
+    </button>
+
+    <!-- Chat Wrapper: states → popup | modal -->
+    <div class="chat-wrapper" id="chatWrapper">
+        <div class="chat-backdrop" id="chatBackdrop"></div>
+        <div class="chat-panel" id="chatPanel">
     <div class="app-container">
         <!-- Sidebar -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <div class="logo">
-                    <i class="fas fa-robot"></i>
-                    <span>WorkPilot</span>
-                </div>
                 <button class="new-chat-btn" id="newChatBtn" title="New Chat">
                     <i class="fas fa-plus"></i>
                     <span>New Chat</span>
@@ -34,9 +40,16 @@
                     <span id="currentSessionTitle">New Chat</span>
                 </div>
                 <div class="topbar-actions">
-                    <button class="topbar-btn" id="deleteSessionBtn" title="Delete Chat">
-                        <i class="fas fa-trash"></i>
+                    <button class="topbar-btn chat-mode-expand" id="expandChatBtn" title="Expand to full view">
+                        <i class="fas fa-expand-alt"></i>
                     </button>
+                    <button class="topbar-btn chat-mode-collapse" id="collapseChatBtn" title="Collapse to popup">
+                        <i class="fas fa-compress-alt"></i>
+                    </button>
+                    <button class="topbar-btn" id="closeChatBtn" title="Close chat">
+                        <i class="fas fa-times"></i>
+                    </button>
+
                 </div>
             </header>
 
@@ -105,7 +118,9 @@
                 </div>
             </div>
         </main>
-    </div>
+    </div><!-- .app-container -->
+        </div><!-- .chat-panel -->
+    </div><!-- .chat-wrapper -->
 
     <!-- View Modal for expanded views -->
     <div class="view-modal-overlay" id="viewModalOverlay">

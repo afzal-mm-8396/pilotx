@@ -98,7 +98,7 @@ _observedAttributesType :["array","array"],
 });
 
 Lyte.Component.register("pilotx-chat", {
-_template:"<template tag-name=\"pilotx-chat\"> <div class=\"app-container\"> <aside class=\"sidebar\" id=\"sidebar\"> <div class=\"sidebar-header\"> <div class=\"logo\"> <i class=\"fas fa-robot\"></i> <span>WorkPilot</span> </div> <button class=\"new-chat-btn\" id=\"newChatBtn\" title=\"New Chat\"> <i class=\"fas fa-plus\"></i> <span>New Chat</span> </button> </div> <div class=\"sidebar-sessions\" id=\"sessionList\"> </div> <div class=\"sidebar-footer\"> <button class=\"clear-all-btn\" id=\"clearAllBtn\"> <i class=\"fas fa-trash-alt\"></i> <span>Clear All Chats</span> </button> </div> </aside> <main class=\"main-content\"> <header class=\"topbar\"> <button class=\"sidebar-toggle\" id=\"sidebarToggle\" title=\"Toggle Sidebar\"> <i class=\"fas fa-bars\"></i> </button> <div class=\"topbar-title\"> <span id=\"currentSessionTitle\">New Chat</span> </div> <div class=\"topbar-actions\"> <button class=\"topbar-btn\" id=\"deleteSessionBtn\" title=\"Delete Chat\"> <i class=\"fas fa-trash\"></i> </button> </div> </header> <div class=\"chat-container\" id=\"chatContainer\"> <div class=\"welcome-screen\" id=\"welcomeScreen\"> <div class=\"welcome-icon\"> <i class=\"fas fa-robot\"></i> </div> <h1>WorkPilot</h1> <p>Your AI-powered CRM assistant. Ask about leads, deals, follow-ups, or pipeline activity.</p> <div class=\"suggestions\" id=\"suggestions\"> <button class=\"suggestion-chip\" data-prompt=\"Get top 10 leads\"> <i class=\"fas fa-users\"></i> <span>Top 10 leads</span> <small>Array of records</small> </button> <button class=\"suggestion-chip\" data-prompt=\"Get first lead detail\"> <i class=\"fas fa-id-card\"></i> <span>Lead detail</span> <small>Single record</small> </button> <button class=\"suggestion-chip\" data-prompt=\"Get current CRM environment\"> <i class=\"fas fa-server\"></i> <span>CRM Environment</span> <small>String response</small> </button> <button class=\"suggestion-chip\" data-prompt=\"Get all the deal stages\"> <i class=\"fas fa-list-ul\"></i> <span>Deal stages</span> <small>String array</small> </button> <button class=\"suggestion-chip\" data-prompt=\"Get total expected revenue from deals\"> <i class=\"fas fa-dollar-sign\"></i> <span>Total revenue</span> <small>Number</small> </button> <button class=\"suggestion-chip\" data-prompt=\"Get Documents module\"> <i class=\"fas fa-exclamation-triangle\"></i> <span>Error scenario</span> <small>Error response</small> </button> </div> </div> <div class=\"messages-wrapper\" id=\"messagesWrapper\"></div> </div> <div class=\"input-area\"> <div class=\"input-container\"> <textarea id=\"promptInput\" placeholder=\"Ask WorkPilot about leads, deals, follow-ups, or pipeline changes\" rows=\"1\" autofocus=\"\"></textarea> <button class=\"send-btn\" id=\"sendBtn\" title=\"Send\"> <i class=\"fas fa-arrow-up\"></i> </button> </div> <div class=\"input-footer\"> <span>WorkPilot can make mistakes. Verify important information.</span> </div> </div> </main> </div> <div class=\"view-modal-overlay\" id=\"viewModalOverlay\"> <div class=\"view-modal\" id=\"viewModal\"> <div class=\"view-modal-header\"> <h3 id=\"viewModalTitle\">Data View</h3> <button class=\"view-modal-close\" id=\"viewModalClose\"> <i class=\"fas fa-times\"></i> </button> </div> <div class=\"view-modal-body\" id=\"viewModalBody\"></div> </div> </div> </template>\n<style>/* ============================================\n   WorkPilot – CRM AI Chat UI\n   Zoho CRM Design + ChatGPT UX\n   ============================================ */\n\n:root {\n    /* Zoho CRM-inspired palette */\n    --primary: #1F7AEC;\n    --primary-hover: #1565d8;\n    --primary-light: #e8f2ff;\n    --bg-main: #f5f6fa;\n    --bg-white: #ffffff;\n    --bg-sidebar: #1a1a2e;\n    --bg-sidebar-hover: #252545;\n    --bg-sidebar-active: #2d2d55;\n    --text-primary: #1a1a2e;\n    --text-secondary: #6b7280;\n    --text-sidebar: #c4c8d4;\n    --text-sidebar-active: #ffffff;\n    --border: #e5e7eb;\n    --border-light: #f0f1f4;\n    --success: #10b981;\n    --error: #ef4444;\n    --warning: #f59e0b;\n    --info: #3b82f6;\n    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);\n    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);\n    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);\n    --radius-sm: 8px;\n    --radius-md: 12px;\n    --radius-lg: 16px;\n    --radius-xl: 20px;\n    --transition: 0.2s ease;\n    --sidebar-width: 280px;\n    --topbar-height: 56px;\n}\n\n/* ---- Reset ---- */\n*, *::before, *::after {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n\nhtml {\n    font-size: 16px;\n    -webkit-font-smoothing: antialiased;\n}\n\nbody {\n    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;\n    background: var(--bg-main);\n    color: var(--text-primary);\n    height: 100vh;\n    overflow: hidden;\n}\n\nbutton {\n    cursor: pointer;\n    border: none;\n    background: none;\n    font-family: inherit;\n    font-size: inherit;\n}\n\ntextarea {\n    font-family: inherit;\n    font-size: inherit;\n    border: none;\n    outline: none;\n    resize: none;\n}\n\n/* ---- Layout ---- */\n.app-container {\n    display: flex;\n    height: 100vh;\n    overflow: hidden;\n}\n\n/* ============================================\n   SIDEBAR\n   ============================================ */\n.sidebar {\n    width: var(--sidebar-width);\n    min-width: var(--sidebar-width);\n    background: var(--bg-sidebar);\n    display: flex;\n    flex-direction: column;\n    transition: transform var(--transition), width var(--transition);\n    z-index: 100;\n    overflow: hidden;\n}\n\n.sidebar-header {\n    padding: 16px;\n    display: flex;\n    flex-direction: column;\n    gap: 12px;\n    border-bottom: 1px solid rgba(255,255,255,0.06);\n}\n\n.logo {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    color: #fff;\n    font-size: 18px;\n    font-weight: 700;\n    padding: 4px 0;\n}\n\n.logo i {\n    font-size: 22px;\n    color: var(--primary);\n}\n\n.new-chat-btn {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    padding: 10px 14px;\n    border-radius: var(--radius-sm);\n    border: 1px solid rgba(255,255,255,0.12);\n    color: var(--text-sidebar);\n    font-size: 14px;\n    font-weight: 500;\n    transition: all var(--transition);\n}\n\n.new-chat-btn:hover {\n    background: var(--bg-sidebar-hover);\n    color: #fff;\n    border-color: rgba(255,255,255,0.2);\n}\n\n/* Session list */\n.sidebar-sessions {\n    flex: 1;\n    overflow-y: auto;\n    padding: 8px;\n}\n\n.sidebar-sessions::-webkit-scrollbar {\n    width: 4px;\n}\n\n.sidebar-sessions::-webkit-scrollbar-thumb {\n    background: rgba(255,255,255,0.15);\n    border-radius: 4px;\n}\n\n.session-item {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    padding: 10px 12px;\n    border-radius: var(--radius-sm);\n    color: var(--text-sidebar);\n    font-size: 13px;\n    cursor: pointer;\n    transition: all var(--transition);\n    position: relative;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n}\n\n.session-item:hover {\n    background: var(--bg-sidebar-hover);\n    color: #fff;\n}\n\n.session-item.active {\n    background: var(--bg-sidebar-active);\n    color: var(--text-sidebar-active);\n}\n\n.session-item .session-icon {\n    font-size: 14px;\n    flex-shrink: 0;\n}\n\n.session-item .session-label {\n    overflow: hidden;\n    text-overflow: ellipsis;\n    flex: 1;\n}\n\n.session-item .session-delete {\n    opacity: 0;\n    flex-shrink: 0;\n    color: var(--text-sidebar);\n    font-size: 12px;\n    padding: 4px;\n    border-radius: 4px;\n    transition: all var(--transition);\n}\n\n.session-item:hover .session-delete {\n    opacity: 1;\n}\n\n.session-item .session-delete:hover {\n    color: var(--error);\n    background: rgba(239,68,68,0.15);\n}\n\n/* Sidebar footer */\n.sidebar-footer {\n    padding: 12px 16px;\n    border-top: 1px solid rgba(255,255,255,0.06);\n}\n\n.clear-all-btn {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    padding: 10px 12px;\n    width: 100%;\n    border-radius: var(--radius-sm);\n    color: var(--text-sidebar);\n    font-size: 13px;\n    transition: all var(--transition);\n}\n\n.clear-all-btn:hover {\n    background: rgba(239,68,68,0.12);\n    color: var(--error);\n}\n\n/* ============================================\n   MAIN CONTENT\n   ============================================ */\n.main-content {\n    flex: 1;\n    display: flex;\n    flex-direction: column;\n    min-width: 0;\n    position: relative;\n}\n\n/* Topbar */\n.topbar {\n    height: var(--topbar-height);\n    display: flex;\n    align-items: center;\n    gap: 12px;\n    padding: 0 16px;\n    background: var(--bg-white);\n    border-bottom: 1px solid var(--border);\n    flex-shrink: 0;\n}\n\n.sidebar-toggle {\n    display: none;\n    font-size: 18px;\n    color: var(--text-secondary);\n    padding: 8px;\n    border-radius: var(--radius-sm);\n    transition: all var(--transition);\n}\n\n.sidebar-toggle:hover {\n    background: var(--bg-main);\n    color: var(--text-primary);\n}\n\n.topbar-title {\n    flex: 1;\n    font-size: 15px;\n    font-weight: 600;\n    color: var(--text-primary);\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n}\n\n.topbar-actions {\n    display: flex;\n    gap: 4px;\n}\n\n.topbar-btn {\n    padding: 8px;\n    border-radius: var(--radius-sm);\n    color: var(--text-secondary);\n    font-size: 14px;\n    transition: all var(--transition);\n}\n\n.topbar-btn:hover {\n    background: var(--bg-main);\n    color: var(--error);\n}\n\n/* Exec stepper accent */\n.agent-steps.exec-steps .agent-steps-body {\n    border-left-color: var(--warning);\n}\n\n.agent-steps.exec-steps .steps-spinner {\n    border-top-color: var(--warning);\n}\n\n.agent-steps.exec-steps .step-icon.done {\n    color: var(--warning);\n}\n\n.agent-steps.exec-steps .steps-done-icon {\n    color: var(--warning);\n}\n\n.agent-steps.exec-steps .step-cursor {\n    background: var(--warning);\n}\n\n/* ============================================\n   CHAT CONTAINER\n   ============================================ */\n.chat-container {\n    flex: 1;\n    overflow-y: auto;\n    scroll-behavior: smooth;\n}\n\n.chat-container::-webkit-scrollbar {\n    width: 6px;\n}\n\n.chat-container::-webkit-scrollbar-thumb {\n    background: #d1d5db;\n    border-radius: 6px;\n}\n\n/* Welcome Screen */\n.welcome-screen {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    min-height: calc(100vh - var(--topbar-height) - 120px);\n    padding: 40px 20px;\n    text-align: center;\n}\n\n.welcome-screen.hidden {\n    display: none;\n}\n\n.welcome-icon {\n    width: 64px;\n    height: 64px;\n    border-radius: 50%;\n    background: linear-gradient(135deg, var(--primary), #6366f1);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin-bottom: 20px;\n}\n\n.welcome-icon i {\n    font-size: 28px;\n    color: #fff;\n}\n\n.welcome-screen h1 {\n    font-size: 28px;\n    font-weight: 700;\n    color: var(--text-primary);\n    margin-bottom: 8px;\n}\n\n.welcome-screen p {\n    font-size: 15px;\n    color: var(--text-secondary);\n    max-width: 480px;\n    line-height: 1.5;\n    margin-bottom: 32px;\n}\n\n.suggestions {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 10px;\n    max-width: 720px;\n    width: 100%;\n}\n\n.suggestion-chip {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 6px;\n    padding: 16px 12px;\n    border: 1px solid var(--border);\n    border-radius: var(--radius-md);\n    background: var(--bg-white);\n    color: var(--text-primary);\n    font-size: 12px;\n    font-weight: 500;\n    text-align: center;\n    transition: all var(--transition);\n    box-shadow: var(--shadow-sm);\n    position: relative;\n}\n\n.suggestion-chip i {\n    color: var(--primary);\n    font-size: 20px;\n    flex-shrink: 0;\n    margin-bottom: 2px;\n}\n\n.suggestion-chip span {\n    line-height: 1.3;\n}\n\n.suggestion-chip small {\n    display: block;\n    font-size: 10px;\n    font-weight: 400;\n    color: var(--text-secondary);\n    margin-top: 1px;\n    letter-spacing: 0.2px;\n}\n\n.suggestion-chip:hover {\n    border-color: var(--primary);\n    background: var(--primary-light);\n    box-shadow: var(--shadow-md);\n    transform: translateY(-1px);\n}\n\n/* Messages */\n.messages-wrapper {\n    max-width: 820px;\n    margin: 0 auto;\n    padding: 24px 20px 16px;\n    width: 100%;\n}\n\n/* Message bubble */\n.message {\n    display: flex;\n    gap: 14px;\n    margin-bottom: 24px;\n    animation: fadeInUp 0.3s ease;\n}\n\n@keyframes fadeInUp {\n    from { opacity: 0; transform: translateY(8px); }\n    to   { opacity: 1; transform: translateY(0); }\n}\n\n.message-avatar {\n    width: 34px;\n    height: 34px;\n    border-radius: 50%;\n    flex-shrink: 0;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 14px;\n    font-weight: 600;\n    margin-top: 2px;\n}\n\n.message.user .message-avatar {\n    background: var(--primary);\n    color: #fff;\n}\n\n.message.assistant .message-avatar {\n    background: linear-gradient(135deg, #6366f1, var(--primary));\n    color: #fff;\n}\n\n.message-body {\n    flex: 1;\n    min-width: 0;\n}\n\n.message-sender {\n    font-size: 13px;\n    font-weight: 600;\n    margin-bottom: 6px;\n    color: var(--text-primary);\n}\n\n.message-content {\n    font-size: 14px;\n    line-height: 1.65;\n    color: var(--text-primary);\n}\n\n.message.user .message-content {\n    background: var(--primary);\n    color: #fff;\n    padding: 12px 18px;\n    border-radius: var(--radius-md) var(--radius-md) 4px var(--radius-md);\n    display: inline-block;\n    max-width: 100%;\n    word-break: break-word;\n}\n\n.message.assistant .message-content {\n    background: var(--bg-white);\n    padding: 16px 20px;\n    border-radius: 4px var(--radius-md) var(--radius-md) var(--radius-md);\n    border: 1px solid var(--border-light);\n    box-shadow: var(--shadow-sm);\n}\n\n/* Typewriter / Marquee text */\n.typewriter-text {\n    display: inline;\n}\n\n.typewriter-cursor {\n    display: inline-block;\n    width: 2px;\n    height: 16px;\n    background: var(--primary);\n    margin-left: 2px;\n    vertical-align: text-bottom;\n    animation: blink 0.8s infinite;\n}\n\n@keyframes blink {\n    0%, 100% { opacity: 1; }\n    50% { opacity: 0; }\n}\n\n/* ── Agent Steps (Copilot-like thinking UI) ── */\n.agent-steps {\n    margin-bottom: 8px;\n}\n\n.agent-steps-toggle {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    padding: 8px 12px;\n    border-radius: var(--radius-sm);\n    font-size: 13px;\n    font-weight: 500;\n    color: var(--text-secondary);\n    cursor: pointer;\n    transition: all var(--transition);\n    background: none;\n    width: 100%;\n    text-align: left;\n}\n\n.agent-steps-toggle:hover {\n    background: var(--bg-main);\n    color: var(--text-primary);\n}\n\n.agent-steps-toggle .toggle-icon {\n    transition: transform 0.25s ease;\n    font-size: 10px;\n}\n\n.agent-steps-toggle .toggle-icon.expanded {\n    transform: rotate(90deg);\n}\n\n.agent-steps-toggle .steps-spinner {\n    width: 14px;\n    height: 14px;\n    border: 2px solid var(--border);\n    border-top-color: var(--primary);\n    border-radius: 50%;\n    animation: spin 0.7s linear infinite;\n}\n\n.agent-steps-toggle .steps-done-icon {\n    color: var(--success);\n    font-size: 14px;\n}\n\n.agent-steps-body {\n    overflow: hidden;\n    transition: max-height 0.35s ease, opacity 0.25s ease;\n    max-height: 600px;\n    opacity: 1;\n    padding-left: 12px;\n    border-left: 2px solid var(--border-light);\n    margin-left: 18px;\n    margin-top: 4px;\n}\n\n.agent-steps-body.collapsed {\n    max-height: 0;\n    opacity: 0;\n    margin-top: 0;\n}\n\n.agent-step {\n    display: flex;\n    align-items: flex-start;\n    gap: 10px;\n    padding: 7px 12px;\n    font-size: 13px;\n    color: var(--text-secondary);\n    animation: stepFadeIn 0.4s ease;\n    line-height: 1.5;\n}\n\n@keyframes stepFadeIn {\n    from { opacity: 0; transform: translateX(-6px); }\n    to   { opacity: 1; transform: translateX(0); }\n}\n\n.agent-step .step-icon {\n    flex-shrink: 0;\n    margin-top: 3px;\n    font-size: 11px;\n    width: 16px;\n    text-align: center;\n}\n\n.agent-step .step-icon.spinning {\n    width: 14px;\n    height: 14px;\n    border: 2px solid var(--border);\n    border-top-color: var(--primary);\n    border-radius: 50%;\n    animation: spin 0.7s linear infinite;\n    margin-top: 3px;\n}\n\n.agent-step .step-icon.done {\n    color: var(--success);\n}\n\n.agent-step .step-text {\n    flex: 1;\n}\n\n.agent-step .step-text .step-marquee {\n    display: inline;\n    overflow: hidden;\n}\n\n.agent-step .step-text .step-cursor {\n    display: inline-block;\n    width: 2px;\n    height: 13px;\n    background: var(--primary);\n    margin-left: 1px;\n    vertical-align: text-bottom;\n    animation: blink 0.8s infinite;\n}\n\n/* Loader */\n.thinking-loader {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    padding: 16px 20px;\n    background: var(--bg-white);\n    border-radius: 4px var(--radius-md) var(--radius-md) var(--radius-md);\n    border: 1px solid var(--border-light);\n    box-shadow: var(--shadow-sm);\n}\n\n.thinking-dots {\n    display: flex;\n    gap: 4px;\n}\n\n.thinking-dots span {\n    width: 8px;\n    height: 8px;\n    border-radius: 50%;\n    background: var(--primary);\n    animation: dotPulse 1.2s infinite;\n}\n\n.thinking-dots span:nth-child(2) { animation-delay: 0.2s; }\n.thinking-dots span:nth-child(3) { animation-delay: 0.4s; }\n\n@keyframes dotPulse {\n    0%, 60%, 100% { transform: scale(0.6); opacity: 0.4; }\n    30% { transform: scale(1); opacity: 1; }\n}\n\n.thinking-label {\n    font-size: 13px;\n    color: var(--text-secondary);\n    font-weight: 500;\n}\n\n/* Execution Loader */\n.exec-loader {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    padding: 12px 16px;\n    background: #fefce8;\n    border: 1px solid #fde68a;\n    border-radius: var(--radius-sm);\n    margin-top: 12px;\n}\n\n.exec-spinner {\n    width: 18px;\n    height: 18px;\n    border: 2px solid #fde68a;\n    border-top-color: var(--warning);\n    border-radius: 50%;\n    animation: spin 0.8s linear infinite;\n}\n\n@keyframes spin {\n    to { transform: rotate(360deg); }\n}\n\n.exec-loader-text {\n    font-size: 13px;\n    color: #92400e;\n    font-weight: 500;\n}\n\n/* ============================================\n   DATA VIEW COMPONENT\n   ============================================ */\n.data-view-container {\n    margin-top: 16px;\n    border: 1px solid var(--border);\n    border-radius: var(--radius-md);\n    overflow: hidden;\n    background: var(--bg-white);\n}\n\n.data-view-toolbar {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 10px 16px;\n    background: var(--bg-main);\n    border-bottom: 1px solid var(--border);\n    flex-wrap: wrap;\n    gap: 8px;\n}\n\n.view-tabs {\n    display: flex;\n    gap: 2px;\n    background: var(--bg-white);\n    border-radius: var(--radius-sm);\n    padding: 2px;\n    border: 1px solid var(--border);\n}\n\n.view-tab {\n    padding: 6px 14px;\n    font-size: 12px;\n    font-weight: 500;\n    border-radius: 6px;\n    color: var(--text-secondary);\n    transition: all var(--transition);\n    display: flex;\n    align-items: center;\n    gap: 6px;\n}\n\n.view-tab:hover {\n    color: var(--text-primary);\n    background: var(--bg-main);\n}\n\n.view-tab.active {\n    background: var(--primary);\n    color: #fff;\n}\n\n.data-view-actions {\n    display: flex;\n    gap: 6px;\n}\n\n.expand-btn {\n    padding: 6px 10px;\n    font-size: 12px;\n    color: var(--text-secondary);\n    border-radius: 6px;\n    border: 1px solid var(--border);\n    background: var(--bg-white);\n    transition: all var(--transition);\n}\n\n.expand-btn:hover {\n    color: var(--primary);\n    border-color: var(--primary);\n}\n\n/* ── Multi-view tab wrapper (multiple result sets per response) ── */\n.multi-view-tabs-wrapper {\n    display: flex;\n    flex-direction: column;\n    width: 100%;\n    border: 1px solid var(--border);\n    border-radius: var(--radius-md);\n    overflow: hidden;\n    margin-top: 16px;\n    box-shadow: var(--shadow-sm);\n}\n\n/* Header bar: dark background, tabs left, CRM View right */\n.multi-view-header {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 12px;\n    padding: 10px 16px;\n    background: var(--bg-main);\n    border-bottom: 1px solid var(--border);\n    flex-wrap: wrap;\n}\n\n/* Tab strip inside header */\n.multi-view-header .multi-view-tab-strip {\n    background: var(--bg-white);\n    border: 1px solid var(--border);\n    padding: 2px;\n    gap: 2px;\n}\n\n/* Inactive tab */\n.multi-view-header .view-tab {\n    color: var(--text-secondary);\n}\n\n.multi-view-header .view-tab:hover {\n    color: var(--text-primary);\n    background: var(--bg-main);\n}\n\n/* Active tab — matches regular toolbar active style */\n.multi-view-header .view-tab.active {\n    background: var(--primary);\n    color: #fff;\n}\n\n/* CRM View button inside header — matches expand-btn style */\n.multi-view-header .crm-view-btn {\n    background: var(--bg-white);\n    border: 1px solid var(--border);\n    color: var(--text-secondary);\n    padding: 5px 12px;\n    font-size: 12px;\n    font-weight: 500;\n    border-radius: var(--radius-sm);\n    box-shadow: none;\n    white-space: nowrap;\n    flex-shrink: 0;\n}\n\n.multi-view-header .crm-view-btn:hover {\n    color: var(--primary);\n    border-color: var(--primary);\n    background: var(--bg-white);\n    box-shadow: none;\n}\n\n.multi-view-tab-strip {\n    /* standalone fallback (outside header) */\n    margin-bottom: 0;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n    border-bottom: none;\n}\n\n.multi-view-panels-host {\n    overflow: hidden;\n}\n\n.multi-view-panel {\n    /* Each panel is a slot for a data-view-container */\n}\n\n.multi-view-panel > .data-view-container {\n    border: none;\n    border-radius: 0;\n}\n\n.data-view-body {\n    padding: 0;\n    max-height: 420px;\n    overflow: auto;\n}\n\n/* ---- List View ---- */\n.list-view {\n    display: grid;\n    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));\n    gap: 12px;\n    padding: 16px;\n}\n\n.list-card {\n    background: var(--bg-white);\n    border: 1px solid var(--border);\n    border-radius: var(--radius-sm);\n    padding: 16px;\n    transition: all var(--transition);\n    cursor: default;\n}\n\n.list-card:hover {\n    border-color: var(--primary);\n    box-shadow: var(--shadow-md);\n    transform: translateY(-1px);\n}\n\n.list-card-title {\n    font-size: 14px;\n    font-weight: 600;\n    color: var(--text-primary);\n    margin-bottom: 10px;\n    display: flex;\n    align-items: center;\n    gap: 8px;\n}\n\n.list-card-title .card-icon {\n    width: 28px;\n    height: 28px;\n    border-radius: 6px;\n    background: var(--primary-light);\n    color: var(--primary);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 12px;\n    flex-shrink: 0;\n}\n\n.list-card-field {\n    display: flex;\n    justify-content: space-between;\n    padding: 4px 0;\n    font-size: 12px;\n}\n\n.list-card-field .field-label {\n    color: var(--text-secondary);\n    text-transform: uppercase;\n    font-weight: 600;\n    letter-spacing: 0.5px;\n    font-size: 10px;\n}\n\n.list-card-field .field-value {\n    color: var(--text-primary);\n    font-weight: 500;\n    text-align: right;\n    max-width: 60%;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n}\n\n/* ---- Table View ---- */\n.table-view {\n    width: 100%;\n    overflow-x: auto;\n}\n\n.table-view table {\n    width: 100%;\n    border-collapse: collapse;\n    font-size: 13px;\n}\n\n.table-view th {\n    background: var(--bg-main);\n    padding: 10px 16px;\n    text-align: left;\n    font-weight: 600;\n    font-size: 11px;\n    text-transform: uppercase;\n    letter-spacing: 0.5px;\n    color: var(--text-secondary);\n    border-bottom: 1px solid var(--border);\n    white-space: nowrap;\n    position: sticky;\n    top: 0;\n    z-index: 1;\n}\n\n.table-view td {\n    padding: 10px 16px;\n    border-bottom: 1px solid var(--border-light);\n    color: var(--text-primary);\n    white-space: nowrap;\n    max-width: 200px;\n    overflow: hidden;\n    text-overflow: ellipsis;\n}\n\n.table-view tr:hover td {\n    background: var(--primary-light);\n}\n\n.table-view tr:last-child td {\n    border-bottom: none;\n}\n\n/* ---- Kanban View ---- */\n.kanban-view {\n    display: flex;\n    gap: 14px;\n    padding: 16px;\n    overflow-x: auto;\n    min-height: 200px;\n}\n\n.kanban-column {\n    min-width: 220px;\n    max-width: 260px;\n    flex-shrink: 0;\n    background: var(--bg-main);\n    border-radius: var(--radius-sm);\n    display: flex;\n    flex-direction: column;\n}\n\n.kanban-column-header {\n    padding: 10px 14px;\n    font-size: 12px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 0.5px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    border-bottom: 2px solid var(--primary);\n}\n\n.kanban-column-header .col-count {\n    background: var(--primary);\n    color: #fff;\n    width: 22px;\n    height: 22px;\n    border-radius: 50%;\n    font-size: 11px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.kanban-cards {\n    padding: 8px;\n    flex: 1;\n    display: flex;\n    flex-direction: column;\n    gap: 8px;\n}\n\n.kanban-card {\n    background: var(--bg-white);\n    border: 1px solid var(--border);\n    border-radius: var(--radius-sm);\n    padding: 12px;\n    font-size: 13px;\n    transition: all var(--transition);\n    cursor: default;\n}\n\n.kanban-card:hover {\n    box-shadow: var(--shadow-md);\n    transform: translateY(-1px);\n}\n\n.kanban-card-title {\n    font-weight: 600;\n    margin-bottom: 6px;\n}\n\n.kanban-card-meta {\n    font-size: 11px;\n    color: var(--text-secondary);\n}\n\n/* ---- Chart View ---- */\n.chart-view {\n    padding: 20px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-direction: column;\n    min-height: 300px;\n}\n\n.chart-bars {\n    display: flex;\n    align-items: flex-end;\n    gap: 16px;\n    height: 220px;\n    padding: 0 20px;\n    width: 100%;\n    max-width: 600px;\n}\n\n.chart-bar-group {\n    flex: 1;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    height: 100%;\n    justify-content: flex-end;\n}\n\n.chart-bar {\n    width: 100%;\n    max-width: 50px;\n    border-radius: 6px 6px 0 0;\n    transition: all 0.5s ease;\n    position: relative;\n    min-height: 4px;\n}\n\n.chart-bar:hover {\n    filter: brightness(1.1);\n}\n\n.chart-bar-value {\n    position: absolute;\n    top: -20px;\n    left: 50%;\n    transform: translateX(-50%);\n    font-size: 11px;\n    font-weight: 600;\n    color: var(--text-secondary);\n    white-space: nowrap;\n}\n\n.chart-bar-label {\n    margin-top: 8px;\n    font-size: 11px;\n    color: var(--text-secondary);\n    text-align: center;\n    max-width: 70px;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n}\n\n/* ---- Error Message ---- */\n.error-message {\n    padding: 14px 18px;\n    background: #fef2f2;\n    border: 1px solid #fecaca;\n    border-radius: var(--radius-sm);\n    color: #991b1b;\n    font-size: 13px;\n    display: flex;\n    align-items: flex-start;\n    gap: 10px;\n    margin-top: 12px;\n}\n\n.error-message i {\n    color: var(--error);\n    margin-top: 2px;\n    flex-shrink: 0;\n}\n\n/* ---- String Response ---- */\n.string-response {\n    margin-top: 12px;\n    padding: 14px 18px;\n    background: var(--bg-main);\n    border-radius: var(--radius-sm);\n    border: 1px solid var(--border);\n    font-size: 14px;\n    line-height: 1.6;\n    color: var(--text-primary);\n    display: flex;\n    align-items: center;\n}\n\n/* ---- Detail View (single record) ---- */\n.detail-view {\n    padding: 20px;\n}\n\n.detail-header {\n    display: flex;\n    align-items: center;\n    gap: 16px;\n    margin-bottom: 24px;\n    padding-bottom: 16px;\n    border-bottom: 1px solid var(--border);\n}\n\n.detail-avatar {\n    width: 52px;\n    height: 52px;\n    border-radius: 50%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: #fff;\n    font-size: 20px;\n    flex-shrink: 0;\n}\n\n.detail-title-block {\n    flex: 1;\n    min-width: 0;\n}\n\n.detail-name {\n    font-size: 18px;\n    font-weight: 700;\n    color: var(--text-primary);\n    margin: 0;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n}\n\n.detail-subtitle {\n    font-size: 12px;\n    color: var(--text-secondary);\n    text-transform: uppercase;\n    letter-spacing: 0.5px;\n    font-weight: 500;\n}\n\n.detail-fields {\n    display: grid;\n    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));\n    gap: 16px;\n}\n\n.detail-field {\n    padding: 12px 14px;\n    background: var(--bg-main);\n    border-radius: var(--radius-sm);\n    border: 1px solid var(--border-light);\n}\n\n.detail-field-label {\n    font-size: 10px;\n    text-transform: uppercase;\n    letter-spacing: 0.6px;\n    color: var(--text-secondary);\n    font-weight: 600;\n    margin-bottom: 4px;\n}\n\n.detail-field-value {\n    font-size: 14px;\n    font-weight: 500;\n    color: var(--text-primary);\n    word-break: break-word;\n}\n\n.detail-field-value a {\n    color: var(--primary);\n    text-decoration: none;\n}\n\n.detail-field-value a:hover {\n    text-decoration: underline;\n}\n\n/* ---- JSON View ---- */\n.json-view {\n    background: #1a1a2e;\n    color: #e2e8f0;\n    padding: 16px 20px;\n    border-radius: var(--radius-sm);\n    overflow-x: auto;\n    font-size: 13px;\n    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;\n    line-height: 1.55;\n    margin: 0;\n    max-height: 400px;\n}\n\n.json-view code {\n    background: none;\n    padding: 0;\n    color: inherit;\n    font-size: inherit;\n}\n\n/* ---- Text View ---- */\n.text-view {\n    padding: 16px 20px;\n    font-size: 14px;\n    line-height: 1.65;\n    color: var(--text-primary);\n}\n\n/* ---- Simple List View ---- */\n.simple-list-view {\n    padding: 12px 16px;\n}\n\n.simple-list-item {\n    display: flex;\n    align-items: flex-start;\n    gap: 12px;\n    padding: 10px 12px;\n    border-bottom: 1px solid var(--border-light);\n    transition: background var(--transition);\n}\n\n.simple-list-item:last-child {\n    border-bottom: none;\n}\n\n.simple-list-item:hover {\n    background: var(--primary-light);\n}\n\n.simple-list-num {\n    width: 26px;\n    height: 26px;\n    border-radius: 50%;\n    background: var(--primary-light);\n    color: var(--primary);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 12px;\n    font-weight: 600;\n    flex-shrink: 0;\n}\n\n.simple-list-val {\n    font-size: 14px;\n    color: var(--text-primary);\n    line-height: 1.5;\n    padding-top: 2px;\n    word-break: break-word;\n    flex: 1;\n}\n\n/* ---- Stat View (single number / boolean) ---- */\n.stat-view {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    padding: 40px 20px;\n    min-height: 180px;\n}\n\n.stat-icon {\n    font-size: 36px;\n    margin-bottom: 12px;\n    opacity: 0.8;\n}\n\n.stat-value {\n    font-size: 48px;\n    font-weight: 700;\n    line-height: 1;\n    margin-bottom: 8px;\n}\n\n.stat-label {\n    font-size: 12px;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n    color: var(--text-secondary);\n    font-weight: 600;\n}\n\n@media (max-width: 480px) {\n    .suggestions {\n        grid-template-columns: repeat(2, 1fr);\n    }\n\n    .detail-fields {\n        grid-template-columns: 1fr;\n    }\n\n    .detail-header {\n        gap: 12px;\n    }\n\n    .detail-avatar {\n        width: 42px;\n        height: 42px;\n        font-size: 16px;\n    }\n\n    .detail-name {\n        font-size: 16px;\n    }\n\n    .stat-value {\n        font-size: 36px;\n    }\n}\n\n/* ============================================\n   INPUT AREA\n   ============================================ */\n.input-area {\n    padding: 12px 20px 16px;\n    background: var(--bg-main);\n    flex-shrink: 0;\n}\n\n.input-container {\n    max-width: 820px;\n    margin: 0 auto;\n    display: flex;\n    align-items: flex-end;\n    gap: 8px;\n    background: var(--bg-white);\n    border: 1px solid var(--border);\n    border-radius: var(--radius-lg);\n    padding: 8px 8px 8px 18px;\n    transition: all var(--transition);\n    box-shadow: var(--shadow-sm);\n}\n\n.input-container:focus-within {\n    border-color: var(--primary);\n    box-shadow: 0 0 0 3px rgba(31,122,236,0.12);\n}\n\n.input-container textarea {\n    flex: 1;\n    min-height: 24px;\n    max-height: 160px;\n    padding: 6px 0;\n    color: var(--text-primary);\n    line-height: 1.5;\n    background: transparent;\n}\n\n.input-container textarea::placeholder {\n    color: #9ca3af;\n}\n\n.send-btn {\n    width: 36px;\n    height: 36px;\n    border-radius: 50%;\n    background: var(--primary);\n    color: #fff;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 14px;\n    flex-shrink: 0;\n    transition: all var(--transition);\n}\n\n.send-btn:hover {\n    background: var(--primary-hover);\n    transform: scale(1.05);\n}\n\n.send-btn:disabled {\n    background: #d1d5db;\n    cursor: not-allowed;\n    transform: none;\n}\n\n.input-footer {\n    text-align: center;\n    font-size: 11px;\n    color: var(--text-secondary);\n    margin-top: 8px;\n}\n\n/* ============================================\n   VIEW MODAL (expanded view)\n   ============================================ */\n.view-modal-overlay {\n    position: fixed;\n    inset: 0;\n    background: rgba(0,0,0,0.5);\n    z-index: 1000;\n    display: none;\n    align-items: center;\n    justify-content: center;\n    padding: 20px;\n    backdrop-filter: blur(2px);\n}\n\n.view-modal-overlay.active {\n    display: flex;\n}\n\n.view-modal {\n    background: var(--bg-white);\n    border-radius: var(--radius-lg);\n    width: 100%;\n    max-width: 1100px;\n    max-height: 85vh;\n    display: flex;\n    flex-direction: column;\n    box-shadow: var(--shadow-lg);\n    animation: modalIn 0.25s ease;\n}\n\n@keyframes modalIn {\n    from { opacity: 0; transform: scale(0.95) translateY(10px); }\n    to   { opacity: 1; transform: scale(1) translateY(0); }\n}\n\n.view-modal-header {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 16px 24px;\n    border-bottom: 1px solid var(--border);\n}\n\n.view-modal-header h3 {\n    font-size: 16px;\n    font-weight: 600;\n}\n\n.view-modal-close {\n    width: 32px;\n    height: 32px;\n    border-radius: 50%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: var(--text-secondary);\n    transition: all var(--transition);\n}\n\n.view-modal-close:hover {\n    background: var(--bg-main);\n    color: var(--text-primary);\n}\n\n.view-modal-body {\n    flex: 1;\n    overflow: auto;\n    padding: 0;\n}\n\n/* ============================================\n   RESPONSIVE\n   ============================================ */\n@media (max-width: 768px) {\n    .sidebar {\n        position: fixed;\n        left: 0;\n        top: 0;\n        bottom: 0;\n        transform: translateX(-100%);\n    }\n\n    .sidebar.open {\n        transform: translateX(0);\n    }\n\n    .sidebar-toggle {\n        display: flex;\n    }\n\n    .suggestions {\n        grid-template-columns: repeat(2, 1fr);\n    }\n\n    .welcome-screen h1 {\n        font-size: 22px;\n    }\n\n    .list-view {\n        grid-template-columns: 1fr;\n    }\n\n    .kanban-view {\n        padding: 12px;\n        gap: 10px;\n    }\n\n    .kanban-column {\n        min-width: 200px;\n    }\n\n    .view-modal {\n        max-height: 95vh;\n        border-radius: var(--radius-md);\n    }\n}\n\n@media (max-width: 480px) {\n    .input-container {\n        border-radius: var(--radius-md);\n        padding: 6px 6px 6px 14px;\n    }\n\n    .message {\n        gap: 10px;\n    }\n\n    .message-avatar {\n        width: 28px;\n        height: 28px;\n        font-size: 12px;\n    }\n\n    .message.user .message-content,\n    .message.assistant .message-content {\n        padding: 10px 14px;\n    }\n\n    .topbar {\n        padding: 0 12px;\n    }\n\n    .data-view-toolbar {\n        padding: 8px 12px;\n    }\n}\n\n/* Sidebar overlay for mobile */\n.sidebar-overlay {\n    display: none;\n    position: fixed;\n    inset: 0;\n    background: rgba(0,0,0,0.4);\n    z-index: 99;\n}\n\n.sidebar-overlay.active {\n    display: block;\n}\n\n/* Scrollbar for data view body */\n.data-view-body::-webkit-scrollbar {\n    width: 5px;\n    height: 5px;\n}\n\n.data-view-body::-webkit-scrollbar-thumb {\n    background: #d1d5db;\n    border-radius: 5px;\n}\n\n/* Markdown-like content in messages */\n.message-content p {\n    margin-bottom: 8px;\n}\n\n.message-content p:last-child {\n    margin-bottom: 0;\n}\n\n.message-content ul, .message-content ol {\n    margin: 8px 0;\n    padding-left: 20px;\n}\n\n.message-content li {\n    margin-bottom: 4px;\n}\n\n.message-content code {\n    background: #f3f4f6;\n    padding: 2px 6px;\n    border-radius: 4px;\n    font-size: 13px;\n    font-family: 'SF Mono', 'Fira Code', monospace;\n}\n\n.message-content pre {\n    background: #1a1a2e;\n    color: #e2e8f0;\n    padding: 14px 18px;\n    border-radius: var(--radius-sm);\n    overflow-x: auto;\n    margin: 8px 0;\n    font-size: 13px;\n    font-family: 'SF Mono', 'Fira Code', monospace;\n    line-height: 1.5;\n}\n\n.message-content pre code {\n    background: none;\n    padding: 0;\n    color: inherit;\n}\n\n/* ─── CRM View Button ─────────────────────────────────── */\n.crm-view-btn-wrapper {\n    margin-bottom: 10px;\n}\n\n.crm-view-btn {\n    display: inline-flex;\n    align-items: center;\n    gap: 6px;\n    padding: 7px 14px;\n    background: var(--primary);\n    color: #fff;\n    border-radius: var(--radius-sm);\n    font-size: 13px;\n    font-weight: 500;\n    transition: background var(--transition), box-shadow var(--transition);\n    box-shadow: var(--shadow-sm);\n}\n\n.crm-view-btn:hover {\n    background: var(--primary-hover);\n    box-shadow: var(--shadow-md);\n}\n\n.crm-view-btn i {\n    font-size: 12px;\n}\n\n/* ─── CRM Iframe View ─────────────────────────────────── */\n.crm-iframe-wrapper {\n    margin-top: 10px;\n    border-radius: var(--radius-md);\n    overflow: hidden;\n    border: 1px solid var(--border);\n    box-shadow: var(--shadow-sm);\n}\n\n.crm-iframe-wrapper iframe {\n    display: block;\n    border: none;\n    width: 100%;\n    height: 500px;\n}\n\n/* ─── Context Badges (Memory + History indicators in message header) ─── */\n.ctx-badge-row {\n    display: inline-flex;\n    align-items: center;\n    gap: 5px;\n    margin-left: 8px;\n    vertical-align: middle;\n}\n\n.ctx-badge {\n    display: inline-flex;\n    align-items: center;\n    gap: 3px;\n    font-size: 10px;\n    font-weight: 600;\n    letter-spacing: 0.02em;\n    padding: 2px 6px;\n    border-radius: 20px;\n    line-height: 1.4;\n    white-space: nowrap;\n}\n\n.memory-badge {\n    background: rgba(139, 92, 246, 0.12);\n    color: #7c3aed;\n    border: 1px solid rgba(139, 92, 246, 0.25);\n}\n\n.history-badge {\n    background: rgba(59, 130, 246, 0.10);\n    color: #2563eb;\n    border: 1px solid rgba(59, 130, 246, 0.22);\n}\n\n/* ─── Memory Chip (shown below response when new facts are stored) ─── */\n.memory-chip {\n    display: inline-flex;\n    align-items: center;\n    flex-wrap: wrap;\n    gap: 5px;\n    margin-top: 10px;\n    padding: 6px 10px;\n    background: rgba(139, 92, 246, 0.07);\n    border: 1px solid rgba(139, 92, 246, 0.2);\n    border-radius: 8px;\n    font-size: 11.5px;\n    color: #6d28d9;\n    animation: fadeInUp 0.3s ease;\n}\n\n.memory-chip i {\n    font-size: 12px;\n    color: #7c3aed;\n    flex-shrink: 0;\n}\n\n.memory-chip-label {\n    font-weight: 600;\n    color: #5b21b6;\n    flex-shrink: 0;\n}\n\n.memory-fact {\n    background: rgba(139, 92, 246, 0.12);\n    border-radius: 4px;\n    padding: 1px 6px;\n    font-family: 'SF Mono', 'Menlo', monospace;\n    font-size: 10.5px;\n    color: #4c1d95;\n}\n</style>",
+_template:"<template tag-name=\"pilotx-chat\"> <button class=\"chat-launcher\" id=\"chatLauncher\"> <span class=\"chat-launcher-icon\"><i class=\"fas fa-robot\"></i></span> <span class=\"chat-launcher-label\">WorkPilot</span> </button> <div class=\"chat-wrapper\" id=\"chatWrapper\"> <div class=\"chat-backdrop\" id=\"chatBackdrop\"></div> <div class=\"chat-panel\" id=\"chatPanel\"> <div class=\"app-container\"> <aside class=\"sidebar\" id=\"sidebar\"> <div class=\"sidebar-header\"> <button class=\"new-chat-btn\" id=\"newChatBtn\" title=\"New Chat\"> <i class=\"fas fa-plus\"></i> <span>New Chat</span> </button> </div> <div class=\"sidebar-sessions\" id=\"sessionList\"> </div> <div class=\"sidebar-footer\"> <button class=\"clear-all-btn\" id=\"clearAllBtn\"> <i class=\"fas fa-trash-alt\"></i> <span>Clear All Chats</span> </button> </div> </aside> <main class=\"main-content\"> <header class=\"topbar\"> <button class=\"sidebar-toggle\" id=\"sidebarToggle\" title=\"Toggle Sidebar\"> <i class=\"fas fa-bars\"></i> </button> <div class=\"topbar-title\"> <span id=\"currentSessionTitle\">New Chat</span> </div> <div class=\"topbar-actions\"> <button class=\"topbar-btn chat-mode-expand\" id=\"expandChatBtn\" title=\"Expand to full view\"> <i class=\"fas fa-expand-alt\"></i> </button> <button class=\"topbar-btn chat-mode-collapse\" id=\"collapseChatBtn\" title=\"Collapse to popup\"> <i class=\"fas fa-compress-alt\"></i> </button> <button class=\"topbar-btn\" id=\"closeChatBtn\" title=\"Close chat\"> <i class=\"fas fa-times\"></i> </button> </div> </header> <div class=\"chat-container\" id=\"chatContainer\"> <div class=\"welcome-screen\" id=\"welcomeScreen\"> <div class=\"welcome-icon\"> <i class=\"fas fa-robot\"></i> </div> <h1>WorkPilot</h1> <p>Your AI-powered CRM assistant. Ask about leads, deals, follow-ups, or pipeline activity.</p> <div class=\"suggestions\" id=\"suggestions\"> <button class=\"suggestion-chip\" data-prompt=\"Get top 10 leads\"> <i class=\"fas fa-users\"></i> <span>Top 10 leads</span> <small>Array of records</small> </button> <button class=\"suggestion-chip\" data-prompt=\"Get first lead detail\"> <i class=\"fas fa-id-card\"></i> <span>Lead detail</span> <small>Single record</small> </button> <button class=\"suggestion-chip\" data-prompt=\"Get current CRM environment\"> <i class=\"fas fa-server\"></i> <span>CRM Environment</span> <small>String response</small> </button> <button class=\"suggestion-chip\" data-prompt=\"Get all the deal stages\"> <i class=\"fas fa-list-ul\"></i> <span>Deal stages</span> <small>String array</small> </button> <button class=\"suggestion-chip\" data-prompt=\"Get total expected revenue from deals\"> <i class=\"fas fa-dollar-sign\"></i> <span>Total revenue</span> <small>Number</small> </button> <button class=\"suggestion-chip\" data-prompt=\"Get Documents module\"> <i class=\"fas fa-exclamation-triangle\"></i> <span>Error scenario</span> <small>Error response</small> </button> </div> </div> <div class=\"messages-wrapper\" id=\"messagesWrapper\"></div> </div> <div class=\"input-area\"> <div class=\"input-container\"> <textarea id=\"promptInput\" placeholder=\"Ask WorkPilot about leads, deals, follow-ups, or pipeline changes\" rows=\"1\" autofocus=\"\"></textarea> <button class=\"send-btn\" id=\"sendBtn\" title=\"Send\"> <i class=\"fas fa-arrow-up\"></i> </button> </div> <div class=\"input-footer\"> <span>WorkPilot can make mistakes. Verify important information.</span> </div> </div> </main> </div> </div> </div> <div class=\"view-modal-overlay\" id=\"viewModalOverlay\"> <div class=\"view-modal\" id=\"viewModal\"> <div class=\"view-modal-header\"> <h3 id=\"viewModalTitle\">Data View</h3> <button class=\"view-modal-close\" id=\"viewModalClose\"> <i class=\"fas fa-times\"></i> </button> </div> <div class=\"view-modal-body\" id=\"viewModalBody\"></div> </div> </div> </template>\n<style>/* ============================================\n   WorkPilot – CRM AI Chat UI\n   Zoho CRM Design + ChatGPT UX\n   ============================================ */\n\n:root {\n    /* Zoho CRM-inspired palette */\n    --primary: #1F7AEC;\n    --primary-hover: #1565d8;\n    --primary-light: #e8f2ff;\n    --bg-main: #f5f6fa;\n    --bg-white: #ffffff;\n    --bg-sidebar: #1a1a2e;\n    --bg-sidebar-hover: #252545;\n    --bg-sidebar-active: #2d2d55;\n    --text-primary: #1a1a2e;\n    --text-secondary: #6b7280;\n    --text-sidebar: #c4c8d4;\n    --text-sidebar-active: #ffffff;\n    --border: #e5e7eb;\n    --border-light: #f0f1f4;\n    --success: #10b981;\n    --error: #ef4444;\n    --warning: #f59e0b;\n    --info: #3b82f6;\n    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);\n    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);\n    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);\n    --radius-sm: 8px;\n    --radius-md: 12px;\n    --radius-lg: 16px;\n    --radius-xl: 20px;\n    --transition: 0.2s ease;\n    --sidebar-width: 280px;\n    --topbar-height: 56px;\n}\n\n/* ---- Scoped Reset (do NOT leak to host page) ---- */\n/* Exclude .slyte-runtime-outlet descendants so rendered components keep their own CSS */\npilotx-chat *:not(.slyte-runtime-outlet *),\npilotx-chat *::before:not(.slyte-runtime-outlet *),\npilotx-chat *::after:not(.slyte-runtime-outlet *) {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n\npilotx-chat {\n    font-size: 16px;\n    -webkit-font-smoothing: antialiased;\n    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;\n    color: var(--text-primary);\n    line-height: 1.5;\n}\n\n/* Reset buttons/textareas inside the chat panel only — NOT the launcher.\n   Use :where() so this reset has ZERO specificity and any component\n   class (.send-btn, .new-chat-btn, etc.) naturally overrides it. */\npilotx-chat :where(.chat-wrapper button:not(.slyte-runtime-outlet button)) {\n    cursor: pointer;\n    border: none;\n    background: none;\n    font-family: inherit;\n    font-size: inherit;\n}\n\npilotx-chat :where(.chat-wrapper textarea:not(.slyte-runtime-outlet textarea)) {\n    font-family: inherit;\n    font-size: inherit;\n    border: none;\n    outline: none;\n    resize: none;\n}\n\n/* ---- Layout ---- */\n.app-container {\n    display: flex;\n    height: 100%;\n    overflow: hidden;\n}\n\n/* ============================================\n   SIDEBAR\n   ============================================ */\n.sidebar {\n    width: var(--sidebar-width);\n    min-width: var(--sidebar-width);\n    background: var(--bg-sidebar);\n    display: flex;\n    flex-direction: column;\n    transition: transform var(--transition), width var(--transition);\n    z-index: 100;\n    overflow: hidden;\n}\n\n.sidebar-header {\n    padding: 16px;\n    display: flex;\n    flex-direction: column;\n    gap: 12px;\n    border-bottom: 1px solid rgba(255,255,255,0.06);\n}\n\n.logo {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    color: #fff;\n    font-size: 18px;\n    font-weight: 700;\n    padding: 4px 0;\n}\n\n.logo i {\n    font-size: 22px;\n    color: var(--primary);\n}\n\n.new-chat-btn {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    padding: 10px 14px;\n    border-radius: var(--radius-sm);\n    border: 1px solid rgba(255,255,255,0.12);\n    color: var(--text-sidebar);\n    font-size: 14px;\n    font-weight: 500;\n    transition: all var(--transition);\n}\n\n.new-chat-btn:hover {\n    background: var(--bg-sidebar-hover);\n    color: #fff;\n    border-color: rgba(255,255,255,0.2);\n}\n\n/* Session list */\n.sidebar-sessions {\n    flex: 1;\n    overflow-y: auto;\n    padding: 8px;\n}\n\n.sidebar-sessions::-webkit-scrollbar {\n    width: 4px;\n}\n\n.sidebar-sessions::-webkit-scrollbar-thumb {\n    background: rgba(255,255,255,0.15);\n    border-radius: 4px;\n}\n\n.session-item {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    padding: 10px 12px;\n    border-radius: var(--radius-sm);\n    color: var(--text-sidebar);\n    font-size: 13px;\n    cursor: pointer;\n    transition: all var(--transition);\n    position: relative;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n}\n\n.session-item:hover {\n    background: var(--bg-sidebar-hover);\n    color: #fff;\n}\n\n.session-item.active {\n    background: var(--bg-sidebar-active);\n    color: var(--text-sidebar-active);\n}\n\n.session-item .session-icon {\n    font-size: 14px;\n    flex-shrink: 0;\n}\n\n.session-item .session-label {\n    overflow: hidden;\n    text-overflow: ellipsis;\n    flex: 1;\n}\n\n.session-item .session-delete {\n    opacity: 0;\n    flex-shrink: 0;\n    color: var(--text-sidebar);\n    font-size: 12px;\n    padding: 4px;\n    border-radius: 4px;\n    transition: all var(--transition);\n}\n\n.session-item:hover .session-delete {\n    opacity: 1;\n}\n\n.session-item .session-delete:hover {\n    color: var(--error);\n    background: rgba(239,68,68,0.15);\n}\n\n/* Sidebar footer */\n.sidebar-footer {\n    padding: 12px 16px;\n    border-top: 1px solid rgba(255,255,255,0.06);\n}\n\n.clear-all-btn {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    padding: 10px 12px;\n    width: 100%;\n    border-radius: var(--radius-sm);\n    color: var(--text-sidebar);\n    font-size: 13px;\n    transition: all var(--transition);\n}\n\n.clear-all-btn:hover {\n    background: rgba(239,68,68,0.12);\n    color: var(--error);\n}\n\n/* ============================================\n   MAIN CONTENT\n   ============================================ */\n.main-content {\n    flex: 1;\n    display: flex;\n    flex-direction: column;\n    min-width: 0;\n    position: relative;\n}\n\n/* Topbar */\n.topbar {\n    height: var(--topbar-height);\n    display: flex;\n    align-items: center;\n    gap: 12px;\n    padding: 0 16px;\n    background: var(--bg-white);\n    border-bottom: 1px solid var(--border);\n    flex-shrink: 0;\n}\n\n.sidebar-toggle {\n    display: none;\n    font-size: 18px;\n    color: var(--text-secondary);\n    padding: 8px;\n    border-radius: var(--radius-sm);\n    transition: all var(--transition);\n}\n\n.sidebar-toggle:hover {\n    background: var(--bg-main);\n    color: var(--text-primary);\n}\n\n.topbar-title {\n    flex: 1;\n    font-size: 15px;\n    font-weight: 600;\n    color: var(--text-primary);\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n}\n\n.topbar-actions {\n    display: flex;\n    gap: 4px;\n}\n\n.topbar-btn {\n    padding: 8px;\n    border-radius: var(--radius-sm);\n    color: var(--text-secondary);\n    font-size: 14px;\n    transition: all var(--transition);\n}\n\n.topbar-btn:hover {\n    background: var(--bg-main);\n    color: var(--error);\n}\n\n/* Exec stepper accent */\n.agent-steps.exec-steps .agent-steps-body {\n    border-left-color: var(--warning);\n}\n\n.agent-steps.exec-steps .steps-spinner {\n    border-top-color: var(--warning);\n}\n\n.agent-steps.exec-steps .step-icon.done {\n    color: var(--warning);\n}\n\n.agent-steps.exec-steps .steps-done-icon {\n    color: var(--warning);\n}\n\n.agent-steps.exec-steps .step-cursor {\n    background: var(--warning);\n}\n\n/* ============================================\n   CHAT CONTAINER\n   ============================================ */\n.chat-container {\n    flex: 1;\n    overflow-y: auto;\n    scroll-behavior: smooth;\n}\n\n.chat-container::-webkit-scrollbar {\n    width: 6px;\n}\n\n.chat-container::-webkit-scrollbar-thumb {\n    background: #d1d5db;\n    border-radius: 6px;\n}\n\n/* Welcome Screen */\n.welcome-screen {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    min-height: calc(100% - 120px);\n    padding: 40px 20px;\n    text-align: center;\n}\n\n.welcome-screen.hidden {\n    display: none;\n}\n\n.welcome-icon {\n    width: 64px;\n    height: 64px;\n    border-radius: 50%;\n    background: linear-gradient(135deg, var(--primary), #6366f1);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin-bottom: 20px;\n}\n\n.welcome-icon i {\n    font-size: 28px;\n    color: #fff;\n}\n\n.welcome-screen h1 {\n    font-size: 28px;\n    font-weight: 700;\n    color: var(--text-primary);\n    margin-bottom: 8px;\n}\n\n.welcome-screen p {\n    font-size: 15px;\n    color: var(--text-secondary);\n    max-width: 480px;\n    line-height: 1.5;\n    margin-bottom: 32px;\n}\n\n.suggestions {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 10px;\n    max-width: 720px;\n    width: 100%;\n}\n\n.suggestion-chip {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 6px;\n    padding: 16px 12px;\n    border: 1px solid var(--border);\n    border-radius: var(--radius-md);\n    background: var(--bg-white);\n    color: var(--text-primary);\n    font-size: 12px;\n    font-weight: 500;\n    text-align: center;\n    transition: all var(--transition);\n    box-shadow: var(--shadow-sm);\n    position: relative;\n}\n\n.suggestion-chip i {\n    color: var(--primary);\n    font-size: 20px;\n    flex-shrink: 0;\n    margin-bottom: 2px;\n}\n\n.suggestion-chip span {\n    line-height: 1.3;\n}\n\n.suggestion-chip small {\n    display: block;\n    font-size: 10px;\n    font-weight: 400;\n    color: var(--text-secondary);\n    margin-top: 1px;\n    letter-spacing: 0.2px;\n}\n\n.suggestion-chip:hover {\n    border-color: var(--primary);\n    background: var(--primary-light);\n    box-shadow: var(--shadow-md);\n    transform: translateY(-1px);\n}\n\n/* Messages */\n.messages-wrapper {\n    max-width: 820px;\n    margin: 0 auto;\n    padding: 24px 20px 16px;\n    width: 100%;\n}\n\n/* Message bubble */\n.message {\n    display: flex;\n    gap: 14px;\n    margin-bottom: 24px;\n    animation: fadeInUp 0.3s ease;\n}\n\n@keyframes fadeInUp {\n    from { opacity: 0; transform: translateY(8px); }\n    to   { opacity: 1; transform: translateY(0); }\n}\n\n.message-avatar {\n    width: 34px;\n    height: 34px;\n    border-radius: 50%;\n    flex-shrink: 0;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 14px;\n    font-weight: 600;\n    margin-top: 2px;\n}\n\n.message.user .message-avatar {\n    background: var(--primary);\n    color: #fff;\n}\n\n.message.assistant .message-avatar {\n    background: linear-gradient(135deg, #6366f1, var(--primary));\n    color: #fff;\n}\n\n.message-body {\n    flex: 1;\n    min-width: 0;\n}\n\n.message-sender {\n    font-size: 13px;\n    font-weight: 600;\n    margin-bottom: 6px;\n    color: var(--text-primary);\n}\n\n.message-content {\n    font-size: 14px;\n    line-height: 1.65;\n    color: var(--text-primary);\n}\n\n.message.user .message-content {\n    background: var(--primary);\n    color: #fff;\n    padding: 12px 18px;\n    border-radius: var(--radius-md) var(--radius-md) 4px var(--radius-md);\n    display: inline-block;\n    max-width: 100%;\n    word-break: break-word;\n}\n\n.message.assistant .message-content {\n    background: var(--bg-white);\n    padding: 16px 20px;\n    border-radius: 4px var(--radius-md) var(--radius-md) var(--radius-md);\n    border: 1px solid var(--border-light);\n    box-shadow: var(--shadow-sm);\n}\n\n/* Typewriter / Marquee text */\n.typewriter-text {\n    display: inline;\n}\n\n.typewriter-cursor {\n    display: inline-block;\n    width: 2px;\n    height: 16px;\n    background: var(--primary);\n    margin-left: 2px;\n    vertical-align: text-bottom;\n    animation: blink 0.8s infinite;\n}\n\n@keyframes blink {\n    0%, 100% { opacity: 1; }\n    50% { opacity: 0; }\n}\n\n/* ── Agent Steps (Copilot-like thinking UI) ── */\n.agent-steps {\n    margin-bottom: 8px;\n}\n\n.agent-steps-toggle {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    padding: 8px 12px;\n    border-radius: var(--radius-sm);\n    font-size: 13px;\n    font-weight: 500;\n    color: var(--text-secondary);\n    cursor: pointer;\n    transition: all var(--transition);\n    background: none;\n    width: 100%;\n    text-align: left;\n}\n\n.agent-steps-toggle:hover {\n    background: var(--bg-main);\n    color: var(--text-primary);\n}\n\n.agent-steps-toggle .toggle-icon {\n    transition: transform 0.25s ease;\n    font-size: 10px;\n}\n\n.agent-steps-toggle .toggle-icon.expanded {\n    transform: rotate(90deg);\n}\n\n.agent-steps-toggle .steps-spinner {\n    width: 14px;\n    height: 14px;\n    border: 2px solid var(--border);\n    border-top-color: var(--primary);\n    border-radius: 50%;\n    animation: spin 0.7s linear infinite;\n}\n\n.agent-steps-toggle .steps-done-icon {\n    color: var(--success);\n    font-size: 14px;\n}\n\n.agent-steps-body {\n    overflow: hidden;\n    transition: max-height 0.35s ease, opacity 0.25s ease;\n    max-height: 600px;\n    opacity: 1;\n    padding-left: 12px;\n    border-left: 2px solid var(--border-light);\n    margin-left: 18px;\n    margin-top: 4px;\n}\n\n.agent-steps-body.collapsed {\n    max-height: 0;\n    opacity: 0;\n    margin-top: 0;\n}\n\n.agent-step {\n    display: flex;\n    align-items: flex-start;\n    gap: 10px;\n    padding: 7px 12px;\n    font-size: 13px;\n    color: var(--text-secondary);\n    animation: stepFadeIn 0.4s ease;\n    line-height: 1.5;\n}\n\n@keyframes stepFadeIn {\n    from { opacity: 0; transform: translateX(-6px); }\n    to   { opacity: 1; transform: translateX(0); }\n}\n\n.agent-step .step-icon {\n    flex-shrink: 0;\n    margin-top: 3px;\n    font-size: 11px;\n    width: 16px;\n    text-align: center;\n}\n\n.agent-step .step-icon.spinning {\n    width: 14px;\n    height: 14px;\n    border: 2px solid var(--border);\n    border-top-color: var(--primary);\n    border-radius: 50%;\n    animation: spin 0.7s linear infinite;\n    margin-top: 3px;\n}\n\n.agent-step .step-icon.done {\n    color: var(--success);\n}\n\n.agent-step .step-text {\n    flex: 1;\n}\n\n.agent-step .step-text .step-marquee {\n    display: inline;\n    overflow: hidden;\n}\n\n.agent-step .step-text .step-cursor {\n    display: inline-block;\n    width: 2px;\n    height: 13px;\n    background: var(--primary);\n    margin-left: 1px;\n    vertical-align: text-bottom;\n    animation: blink 0.8s infinite;\n}\n\n/* Loader */\n.thinking-loader {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    padding: 16px 20px;\n    background: var(--bg-white);\n    border-radius: 4px var(--radius-md) var(--radius-md) var(--radius-md);\n    border: 1px solid var(--border-light);\n    box-shadow: var(--shadow-sm);\n}\n\n.thinking-dots {\n    display: flex;\n    gap: 4px;\n}\n\n.thinking-dots span {\n    width: 8px;\n    height: 8px;\n    border-radius: 50%;\n    background: var(--primary);\n    animation: dotPulse 1.2s infinite;\n}\n\n.thinking-dots span:nth-child(2) { animation-delay: 0.2s; }\n.thinking-dots span:nth-child(3) { animation-delay: 0.4s; }\n\n@keyframes dotPulse {\n    0%, 60%, 100% { transform: scale(0.6); opacity: 0.4; }\n    30% { transform: scale(1); opacity: 1; }\n}\n\n.thinking-label {\n    font-size: 13px;\n    color: var(--text-secondary);\n    font-weight: 500;\n}\n\n/* Execution Loader */\n.exec-loader {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    padding: 12px 16px;\n    background: #fefce8;\n    border: 1px solid #fde68a;\n    border-radius: var(--radius-sm);\n    margin-top: 12px;\n}\n\n.exec-spinner {\n    width: 18px;\n    height: 18px;\n    border: 2px solid #fde68a;\n    border-top-color: var(--warning);\n    border-radius: 50%;\n    animation: spin 0.8s linear infinite;\n}\n\n@keyframes spin {\n    to { transform: rotate(360deg); }\n}\n\n.exec-loader-text {\n    font-size: 13px;\n    color: #92400e;\n    font-weight: 500;\n}\n\n/* ============================================\n   DATA VIEW COMPONENT\n   ============================================ */\n.data-view-container {\n    margin-top: 16px;\n    border: 1px solid var(--border);\n    border-radius: var(--radius-md);\n    overflow: hidden;\n    background: var(--bg-white);\n}\n\n.data-view-toolbar {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 10px 16px;\n    background: var(--bg-main);\n    border-bottom: 1px solid var(--border);\n    flex-wrap: wrap;\n    gap: 8px;\n}\n\n.view-tabs {\n    display: flex;\n    gap: 2px;\n    background: var(--bg-white);\n    border-radius: var(--radius-sm);\n    padding: 2px;\n    border: 1px solid var(--border);\n}\n\n.view-tab {\n    padding: 6px 14px;\n    font-size: 12px;\n    font-weight: 500;\n    border-radius: 6px;\n    color: var(--text-secondary);\n    transition: all var(--transition);\n    display: flex;\n    align-items: center;\n    gap: 6px;\n}\n\n.view-tab:hover {\n    color: var(--text-primary);\n    background: var(--bg-main);\n}\n\n.view-tab.active {\n    background: var(--primary);\n    color: #fff;\n}\n\n.data-view-actions {\n    display: flex;\n    gap: 6px;\n}\n\n.expand-btn {\n    padding: 6px 10px;\n    font-size: 12px;\n    color: var(--text-secondary);\n    border-radius: 6px;\n    border: 1px solid var(--border);\n    background: var(--bg-white);\n    transition: all var(--transition);\n}\n\n.expand-btn:hover {\n    color: var(--primary);\n    border-color: var(--primary);\n}\n\n/* ── Multi-view tab wrapper (multiple result sets per response) ── */\n.multi-view-tabs-wrapper {\n    display: flex;\n    flex-direction: column;\n    width: 100%;\n    border: 1px solid var(--border);\n    border-radius: var(--radius-md);\n    overflow: hidden;\n    margin-top: 16px;\n    box-shadow: var(--shadow-sm);\n}\n\n/* Header bar: dark background, tabs left, CRM View right */\n.multi-view-header {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 12px;\n    padding: 10px 16px;\n    background: var(--bg-main);\n    border-bottom: 1px solid var(--border);\n    flex-wrap: wrap;\n}\n\n/* Tab strip inside header */\n.multi-view-header .multi-view-tab-strip {\n    background: var(--bg-white);\n    border: 1px solid var(--border);\n    padding: 2px;\n    gap: 2px;\n}\n\n/* Inactive tab */\n.multi-view-header .view-tab {\n    color: var(--text-secondary);\n}\n\n.multi-view-header .view-tab:hover {\n    color: var(--text-primary);\n    background: var(--bg-main);\n}\n\n/* Active tab — matches regular toolbar active style */\n.multi-view-header .view-tab.active {\n    background: var(--primary);\n    color: #fff;\n}\n\n/* CRM View button inside header — matches expand-btn style */\n.multi-view-header .crm-view-btn {\n    background: var(--bg-white);\n    border: 1px solid var(--border);\n    color: var(--text-secondary);\n    padding: 5px 12px;\n    font-size: 12px;\n    font-weight: 500;\n    border-radius: var(--radius-sm);\n    box-shadow: none;\n    white-space: nowrap;\n    flex-shrink: 0;\n}\n\n.multi-view-header .crm-view-btn:hover {\n    color: var(--primary);\n    border-color: var(--primary);\n    background: var(--bg-white);\n    box-shadow: none;\n}\n\n.multi-view-tab-strip {\n    /* standalone fallback (outside header) */\n    margin-bottom: 0;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n    border-bottom: none;\n}\n\n.multi-view-panels-host {\n    overflow: hidden;\n}\n\n.multi-view-panel {\n    /* Each panel is a slot for a data-view-container */\n}\n\n.multi-view-panel > .data-view-container {\n    border: none;\n    border-radius: 0;\n}\n\n.data-view-body {\n    padding: 0;\n    max-height: 420px;\n    overflow: auto;\n}\n\n/* ---- List View ---- */\n.list-view {\n    display: grid;\n    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));\n    gap: 12px;\n    padding: 16px;\n}\n\n.list-card {\n    background: var(--bg-white);\n    border: 1px solid var(--border);\n    border-radius: var(--radius-sm);\n    padding: 16px;\n    transition: all var(--transition);\n    cursor: default;\n}\n\n.list-card:hover {\n    border-color: var(--primary);\n    box-shadow: var(--shadow-md);\n    transform: translateY(-1px);\n}\n\n.list-card-title {\n    font-size: 14px;\n    font-weight: 600;\n    color: var(--text-primary);\n    margin-bottom: 10px;\n    display: flex;\n    align-items: center;\n    gap: 8px;\n}\n\n.list-card-title .card-icon {\n    width: 28px;\n    height: 28px;\n    border-radius: 6px;\n    background: var(--primary-light);\n    color: var(--primary);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 12px;\n    flex-shrink: 0;\n}\n\n.list-card-field {\n    display: flex;\n    justify-content: space-between;\n    padding: 4px 0;\n    font-size: 12px;\n}\n\n.list-card-field .field-label {\n    color: var(--text-secondary);\n    text-transform: uppercase;\n    font-weight: 600;\n    letter-spacing: 0.5px;\n    font-size: 10px;\n}\n\n.list-card-field .field-value {\n    color: var(--text-primary);\n    font-weight: 500;\n    text-align: right;\n    max-width: 60%;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n}\n\n/* ---- Table View ---- */\n.table-view {\n    width: 100%;\n    overflow-x: auto;\n}\n\n.table-view table {\n    width: 100%;\n    border-collapse: collapse;\n    font-size: 13px;\n}\n\n.table-view th {\n    background: var(--bg-main);\n    padding: 10px 16px;\n    text-align: left;\n    font-weight: 600;\n    font-size: 11px;\n    text-transform: uppercase;\n    letter-spacing: 0.5px;\n    color: var(--text-secondary);\n    border-bottom: 1px solid var(--border);\n    white-space: nowrap;\n    position: sticky;\n    top: 0;\n    z-index: 1;\n}\n\n.table-view td {\n    padding: 10px 16px;\n    border-bottom: 1px solid var(--border-light);\n    color: var(--text-primary);\n    white-space: nowrap;\n    max-width: 200px;\n    overflow: hidden;\n    text-overflow: ellipsis;\n}\n\n.table-view tr:hover td {\n    background: var(--primary-light);\n}\n\n.table-view tr:last-child td {\n    border-bottom: none;\n}\n\n/* ---- Kanban View ---- */\n.kanban-view {\n    display: flex;\n    gap: 14px;\n    padding: 16px;\n    overflow-x: auto;\n    min-height: 200px;\n}\n\n.kanban-column {\n    min-width: 220px;\n    max-width: 260px;\n    flex-shrink: 0;\n    background: var(--bg-main);\n    border-radius: var(--radius-sm);\n    display: flex;\n    flex-direction: column;\n}\n\n.kanban-column-header {\n    padding: 10px 14px;\n    font-size: 12px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 0.5px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    border-bottom: 2px solid var(--primary);\n}\n\n.kanban-column-header .col-count {\n    background: var(--primary);\n    color: #fff;\n    width: 22px;\n    height: 22px;\n    border-radius: 50%;\n    font-size: 11px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.kanban-cards {\n    padding: 8px;\n    flex: 1;\n    display: flex;\n    flex-direction: column;\n    gap: 8px;\n}\n\n.kanban-card {\n    background: var(--bg-white);\n    border: 1px solid var(--border);\n    border-radius: var(--radius-sm);\n    padding: 12px;\n    font-size: 13px;\n    transition: all var(--transition);\n    cursor: default;\n}\n\n.kanban-card:hover {\n    box-shadow: var(--shadow-md);\n    transform: translateY(-1px);\n}\n\n.kanban-card-title {\n    font-weight: 600;\n    margin-bottom: 6px;\n}\n\n.kanban-card-meta {\n    font-size: 11px;\n    color: var(--text-secondary);\n}\n\n/* ---- Chart View ---- */\n.chart-view {\n    padding: 20px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-direction: column;\n    min-height: 300px;\n}\n\n.chart-bars {\n    display: flex;\n    align-items: flex-end;\n    gap: 16px;\n    height: 220px;\n    padding: 0 20px;\n    width: 100%;\n    max-width: 600px;\n}\n\n.chart-bar-group {\n    flex: 1;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    height: 100%;\n    justify-content: flex-end;\n}\n\n.chart-bar {\n    width: 100%;\n    max-width: 50px;\n    border-radius: 6px 6px 0 0;\n    transition: all 0.5s ease;\n    position: relative;\n    min-height: 4px;\n}\n\n.chart-bar:hover {\n    filter: brightness(1.1);\n}\n\n.chart-bar-value {\n    position: absolute;\n    top: -20px;\n    left: 50%;\n    transform: translateX(-50%);\n    font-size: 11px;\n    font-weight: 600;\n    color: var(--text-secondary);\n    white-space: nowrap;\n}\n\n.chart-bar-label {\n    margin-top: 8px;\n    font-size: 11px;\n    color: var(--text-secondary);\n    text-align: center;\n    max-width: 70px;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n}\n\n/* ---- Error Message ---- */\n.error-message {\n    padding: 14px 18px;\n    background: #fef2f2;\n    border: 1px solid #fecaca;\n    border-radius: var(--radius-sm);\n    color: #991b1b;\n    font-size: 13px;\n    display: flex;\n    align-items: flex-start;\n    gap: 10px;\n    margin-top: 12px;\n}\n\n.error-message i {\n    color: var(--error);\n    margin-top: 2px;\n    flex-shrink: 0;\n}\n\n/* ---- String Response ---- */\n.string-response {\n    margin-top: 12px;\n    padding: 14px 18px;\n    background: var(--bg-main);\n    border-radius: var(--radius-sm);\n    border: 1px solid var(--border);\n    font-size: 14px;\n    line-height: 1.6;\n    color: var(--text-primary);\n    display: flex;\n    align-items: center;\n}\n\n/* ---- Detail View (single record) ---- */\n.detail-view {\n    padding: 20px;\n}\n\n.detail-header {\n    display: flex;\n    align-items: center;\n    gap: 16px;\n    margin-bottom: 24px;\n    padding-bottom: 16px;\n    border-bottom: 1px solid var(--border);\n}\n\n.detail-avatar {\n    width: 52px;\n    height: 52px;\n    border-radius: 50%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: #fff;\n    font-size: 20px;\n    flex-shrink: 0;\n}\n\n.detail-title-block {\n    flex: 1;\n    min-width: 0;\n}\n\n.detail-name {\n    font-size: 18px;\n    font-weight: 700;\n    color: var(--text-primary);\n    margin: 0;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n}\n\n.detail-subtitle {\n    font-size: 12px;\n    color: var(--text-secondary);\n    text-transform: uppercase;\n    letter-spacing: 0.5px;\n    font-weight: 500;\n}\n\n.detail-fields {\n    display: grid;\n    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));\n    gap: 16px;\n}\n\n.detail-field {\n    padding: 12px 14px;\n    background: var(--bg-main);\n    border-radius: var(--radius-sm);\n    border: 1px solid var(--border-light);\n}\n\n.detail-field-label {\n    font-size: 10px;\n    text-transform: uppercase;\n    letter-spacing: 0.6px;\n    color: var(--text-secondary);\n    font-weight: 600;\n    margin-bottom: 4px;\n}\n\n.detail-field-value {\n    font-size: 14px;\n    font-weight: 500;\n    color: var(--text-primary);\n    word-break: break-word;\n}\n\n.detail-field-value a {\n    color: var(--primary);\n    text-decoration: none;\n}\n\n.detail-field-value a:hover {\n    text-decoration: underline;\n}\n\n/* ---- JSON View ---- */\n.json-view {\n    background: #1a1a2e;\n    color: #e2e8f0;\n    padding: 16px 20px;\n    border-radius: var(--radius-sm);\n    overflow-x: auto;\n    font-size: 13px;\n    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;\n    line-height: 1.55;\n    margin: 0;\n    max-height: 400px;\n}\n\n.json-view code {\n    background: none;\n    padding: 0;\n    color: inherit;\n    font-size: inherit;\n}\n\n/* ---- Text View ---- */\n.text-view {\n    padding: 16px 20px;\n    font-size: 14px;\n    line-height: 1.65;\n    color: var(--text-primary);\n}\n\n/* ---- Simple List View ---- */\n.simple-list-view {\n    padding: 12px 16px;\n}\n\n.simple-list-item {\n    display: flex;\n    align-items: flex-start;\n    gap: 12px;\n    padding: 10px 12px;\n    border-bottom: 1px solid var(--border-light);\n    transition: background var(--transition);\n}\n\n.simple-list-item:last-child {\n    border-bottom: none;\n}\n\n.simple-list-item:hover {\n    background: var(--primary-light);\n}\n\n.simple-list-num {\n    width: 26px;\n    height: 26px;\n    border-radius: 50%;\n    background: var(--primary-light);\n    color: var(--primary);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 12px;\n    font-weight: 600;\n    flex-shrink: 0;\n}\n\n.simple-list-val {\n    font-size: 14px;\n    color: var(--text-primary);\n    line-height: 1.5;\n    padding-top: 2px;\n    word-break: break-word;\n    flex: 1;\n}\n\n/* ---- Stat View (single number / boolean) ---- */\n.stat-view {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    padding: 40px 20px;\n    min-height: 180px;\n}\n\n.stat-icon {\n    font-size: 36px;\n    margin-bottom: 12px;\n    opacity: 0.8;\n}\n\n.stat-value {\n    font-size: 48px;\n    font-weight: 700;\n    line-height: 1;\n    margin-bottom: 8px;\n}\n\n.stat-label {\n    font-size: 12px;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n    color: var(--text-secondary);\n    font-weight: 600;\n}\n\n@media (max-width: 480px) {\n    .suggestions {\n        grid-template-columns: repeat(2, 1fr);\n    }\n\n    .detail-fields {\n        grid-template-columns: 1fr;\n    }\n\n    .detail-header {\n        gap: 12px;\n    }\n\n    .detail-avatar {\n        width: 42px;\n        height: 42px;\n        font-size: 16px;\n    }\n\n    .detail-name {\n        font-size: 16px;\n    }\n\n    .stat-value {\n        font-size: 36px;\n    }\n}\n\n/* ============================================\n   INPUT AREA\n   ============================================ */\n.input-area {\n    padding: 12px 20px 16px;\n    background: var(--bg-main);\n    flex-shrink: 0;\n}\n\n.input-container {\n    max-width: 820px;\n    margin: 0 auto;\n    display: flex;\n    align-items: flex-end;\n    gap: 8px;\n    background: var(--bg-white);\n    border: 1px solid var(--border);\n    border-radius: var(--radius-lg);\n    padding: 8px 8px 8px 18px;\n    transition: all var(--transition);\n    box-shadow: var(--shadow-sm);\n}\n\n.input-container:focus-within {\n    border-color: var(--primary);\n    box-shadow: 0 0 0 3px rgba(31,122,236,0.12);\n}\n\n.input-container textarea {\n    flex: 1;\n    min-height: 24px;\n    max-height: 160px;\n    padding: 6px 0;\n    color: var(--text-primary);\n    line-height: 1.5;\n    background: transparent;\n}\n\n.input-container textarea::placeholder {\n    color: #9ca3af;\n}\n\n.send-btn {\n    width: 36px;\n    height: 36px;\n    border-radius: 50%;\n    background: var(--primary);\n    color: #fff;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 14px;\n    flex-shrink: 0;\n    transition: all var(--transition);\n}\n\n.send-btn:hover {\n    background: var(--primary-hover);\n    transform: scale(1.05);\n}\n\n.send-btn:disabled {\n    background: #d1d5db;\n    cursor: not-allowed;\n    transform: none;\n}\n\n.input-footer {\n    text-align: center;\n    font-size: 11px;\n    color: var(--text-secondary);\n    margin-top: 8px;\n}\n\n/* ============================================\n   VIEW MODAL (expanded view)\n   ============================================ */\n.view-modal-overlay {\n    position: fixed;\n    inset: 0;\n    background: rgba(0,0,0,0.5);\n    z-index: 10000;\n    display: none;\n    align-items: center;\n    justify-content: center;\n    padding: 20px;\n    backdrop-filter: blur(2px);\n}\n\n.view-modal-overlay.active {\n    display: flex;\n}\n\n.view-modal {\n    background: var(--bg-white);\n    border-radius: var(--radius-lg);\n    width: 100%;\n    max-width: 1100px;\n    max-height: 85vh;\n    display: flex;\n    flex-direction: column;\n    box-shadow: var(--shadow-lg);\n    animation: modalIn 0.25s ease;\n}\n\n@keyframes modalIn {\n    from { opacity: 0; transform: scale(0.95) translateY(10px); }\n    to   { opacity: 1; transform: scale(1) translateY(0); }\n}\n\n.view-modal-header {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 16px 24px;\n    border-bottom: 1px solid var(--border);\n}\n\n.view-modal-header h3 {\n    font-size: 16px;\n    font-weight: 600;\n}\n\n.view-modal-close {\n    width: 32px;\n    height: 32px;\n    border-radius: 50%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: var(--text-secondary);\n    transition: all var(--transition);\n}\n\n.view-modal-close:hover {\n    background: var(--bg-main);\n    color: var(--text-primary);\n}\n\n.view-modal-body {\n    flex: 1;\n    overflow: auto;\n    padding: 0;\n}\n\n/* ============================================\n   RESPONSIVE\n   ============================================ */\n@media (max-width: 768px) {\n    .sidebar {\n        position: fixed;\n        left: 0;\n        top: 0;\n        bottom: 0;\n        transform: translateX(-100%);\n    }\n\n    .sidebar.open {\n        transform: translateX(0);\n    }\n\n    .sidebar-toggle {\n        display: flex;\n    }\n\n    .suggestions {\n        grid-template-columns: repeat(2, 1fr);\n    }\n\n    .welcome-screen h1 {\n        font-size: 22px;\n    }\n\n    .list-view {\n        grid-template-columns: 1fr;\n    }\n\n    .kanban-view {\n        padding: 12px;\n        gap: 10px;\n    }\n\n    .kanban-column {\n        min-width: 200px;\n    }\n\n    .view-modal {\n        max-height: 95vh;\n        border-radius: var(--radius-md);\n    }\n}\n\n@media (max-width: 480px) {\n    .input-container {\n        border-radius: var(--radius-md);\n        padding: 6px 6px 6px 14px;\n    }\n\n    .message {\n        gap: 10px;\n    }\n\n    .message-avatar {\n        width: 28px;\n        height: 28px;\n        font-size: 12px;\n    }\n\n    .message.user .message-content,\n    .message.assistant .message-content {\n        padding: 10px 14px;\n    }\n\n    .topbar {\n        padding: 0 12px;\n    }\n\n    .data-view-toolbar {\n        padding: 8px 12px;\n    }\n}\n\n/* Sidebar overlay for mobile */\n.sidebar-overlay {\n    display: none;\n    position: fixed;\n    inset: 0;\n    background: rgba(0,0,0,0.4);\n    z-index: 99;\n}\n\n.sidebar-overlay.active {\n    display: block;\n}\n\n/* Scrollbar for data view body */\n.data-view-body::-webkit-scrollbar {\n    width: 5px;\n    height: 5px;\n}\n\n.data-view-body::-webkit-scrollbar-thumb {\n    background: #d1d5db;\n    border-radius: 5px;\n}\n\n/* Markdown-like content in messages */\n.message-content p {\n    margin-bottom: 8px;\n}\n\n.message-content p:last-child {\n    margin-bottom: 0;\n}\n\n.message-content ul, .message-content ol {\n    margin: 8px 0;\n    padding-left: 20px;\n}\n\n.message-content li {\n    margin-bottom: 4px;\n}\n\n.message-content code {\n    background: #f3f4f6;\n    padding: 2px 6px;\n    border-radius: 4px;\n    font-size: 13px;\n    font-family: 'SF Mono', 'Fira Code', monospace;\n}\n\n.message-content pre {\n    background: #1a1a2e;\n    color: #e2e8f0;\n    padding: 14px 18px;\n    border-radius: var(--radius-sm);\n    overflow-x: auto;\n    margin: 8px 0;\n    font-size: 13px;\n    font-family: 'SF Mono', 'Fira Code', monospace;\n    line-height: 1.5;\n}\n\n.message-content pre code {\n    background: none;\n    padding: 0;\n    color: inherit;\n}\n\n/* ─── CRM View Button ─────────────────────────────────── */\n.crm-view-btn-wrapper {\n    margin-bottom: 10px;\n}\n\n.crm-view-btn {\n    display: inline-flex;\n    align-items: center;\n    gap: 6px;\n    padding: 7px 14px;\n    background: var(--primary);\n    color: #fff;\n    border-radius: var(--radius-sm);\n    font-size: 13px;\n    font-weight: 500;\n    transition: background var(--transition), box-shadow var(--transition);\n    box-shadow: var(--shadow-sm);\n}\n\n.crm-view-btn:hover {\n    background: var(--primary-hover);\n    box-shadow: var(--shadow-md);\n}\n\n.crm-view-btn i {\n    font-size: 12px;\n}\n\n/* ─── CRM Iframe View ─────────────────────────────────── */\n.crm-iframe-wrapper {\n    margin-top: 10px;\n    border-radius: var(--radius-md);\n    overflow: hidden;\n    border: 1px solid var(--border);\n    box-shadow: var(--shadow-sm);\n}\n\n.crm-iframe-wrapper iframe {\n    display: block;\n    border: none;\n    width: 100%;\n    height: 500px;\n}\n\n/* ─── Context Badges (Memory + History indicators in message header) ─── */\n.ctx-badge-row {\n    display: inline-flex;\n    align-items: center;\n    gap: 5px;\n    margin-left: 8px;\n    vertical-align: middle;\n}\n\n.ctx-badge {\n    display: inline-flex;\n    align-items: center;\n    gap: 3px;\n    font-size: 10px;\n    font-weight: 600;\n    letter-spacing: 0.02em;\n    padding: 2px 6px;\n    border-radius: 20px;\n    line-height: 1.4;\n    white-space: nowrap;\n}\n\n.memory-badge {\n    background: rgba(139, 92, 246, 0.12);\n    color: #7c3aed;\n    border: 1px solid rgba(139, 92, 246, 0.25);\n}\n\n.history-badge {\n    background: rgba(59, 130, 246, 0.10);\n    color: #2563eb;\n    border: 1px solid rgba(59, 130, 246, 0.22);\n}\n\n/* ─── Memory Chip (shown below response when new facts are stored) ─── */\n.memory-chip {\n    display: inline-flex;\n    align-items: center;\n    flex-wrap: wrap;\n    gap: 5px;\n    margin-top: 10px;\n    padding: 6px 10px;\n    background: rgba(139, 92, 246, 0.07);\n    border: 1px solid rgba(139, 92, 246, 0.2);\n    border-radius: 8px;\n    font-size: 11.5px;\n    color: #6d28d9;\n    animation: fadeInUp 0.3s ease;\n}\n\n.memory-chip i {\n    font-size: 12px;\n    color: #7c3aed;\n    flex-shrink: 0;\n}\n\n.memory-chip-label {\n    font-weight: 600;\n    color: #5b21b6;\n    flex-shrink: 0;\n}\n\n.memory-fact {\n    background: rgba(139, 92, 246, 0.12);\n    border-radius: 4px;\n    padding: 1px 6px;\n    font-family: 'SF Mono', 'Menlo', monospace;\n    font-size: 10.5px;\n    color: #4c1d95;\n}\n\n/* ============================================\n   FLOATING LAUNCHER\n   ============================================ */\n.chat-launcher {\n    position: fixed;\n    bottom: 28px;\n    right: 28px;\n    z-index: 9000;\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    padding: 14px 20px;\n    border-radius: 50px;\n    background: linear-gradient(135deg, var(--primary), #6366f1);\n    color: #fff;\n    font-size: 14px;\n    font-weight: 600;\n    box-shadow: 0 6px 24px rgba(31,122,236,0.45);\n    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;\n    cursor: pointer;\n    border: none;\n    font-family: inherit;\n}\n\n.chat-launcher:hover {\n    transform: translateY(-2px);\n    box-shadow: 0 10px 32px rgba(31,122,236,0.55);\n}\n\n.chat-launcher-icon {\n    width: 32px;\n    height: 32px;\n    border-radius: 50%;\n    background: rgba(255,255,255,0.2);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 16px;\n    flex-shrink: 0;\n}\n\n.chat-launcher-label {\n    white-space: nowrap;\n}\n\n/* Loading state for launcher */\n.chat-launcher.loading {\n    pointer-events: none;\n    opacity: 0.85;\n}\n\n.chat-launcher.loading .chat-launcher-icon {\n    animation: launcherPulse 1.5s ease-in-out infinite;\n}\n\n@keyframes launcherPulse {\n    0%, 100% { opacity: 1; }\n    50% { opacity: 0.5; }\n}\n\n/* Hide launcher when chat is open */\n.chat-launcher.hidden {\n    opacity: 0;\n    pointer-events: none;\n    transform: translateY(12px) scale(0.9);\n}\n\n/* ============================================\n   CHAT WRAPPER – default hidden\n   ============================================ */\n.chat-wrapper {\n    display: none;\n    position: fixed;\n    z-index: 8999;\n}\n\n.chat-backdrop {\n    display: none;\n    position: absolute;\n    inset: 0;\n    background: rgba(0,0,0,0.45);\n    z-index: 0;\n    animation: backdropFadeIn 0.25s ease;\n}\n\n@keyframes backdropFadeIn {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n.chat-panel {\n    display: flex;\n    flex-direction: column;\n    overflow: hidden;\n    background: var(--bg-white);\n    position: relative;\n    z-index: 8999;\n}\n\n/* ============================================\n   POPUP MODE\n   ============================================ */\n.chat-wrapper.popup {\n    display: block;\n    bottom: 100px;\n    right: 28px;\n    width: 400px;\n    height: 580px;\n    animation: popupSlideIn 0.25s ease;\n}\n\n@keyframes popupSlideIn {\n    from { opacity: 0; transform: translateY(20px) scale(0.96); }\n    to   { opacity: 1; transform: translateY(0) scale(1); }\n}\n\n.chat-wrapper.popup .chat-panel {\n    width: 100%;\n    height: 100%;\n    border-radius: var(--radius-lg);\n    box-shadow: 0 16px 48px rgba(0,0,0,0.22);\n}\n\n/* Hide sidebar in popup mode */\n.chat-wrapper.popup .sidebar {\n    display: none !important;\n}\n\n/* Hide sidebar-toggle (it's a hamburger) in popup — we expose it for the modal */\n.chat-wrapper.popup .sidebar-toggle {\n    display: none !important;\n}\n\n/* Fit app-container fully inside panel */\n.chat-wrapper.popup .app-container,\n.chat-wrapper.modal .app-container {\n    height: 100%;\n}\n\n/* Popup topbar: show expand, hide collapse */\n.chat-wrapper.popup .chat-mode-expand {\n    display: flex;\n}\n.chat-wrapper.popup .chat-mode-collapse {\n    display: none;\n}\n\n/* Shrink welcome screen in popup */\n.chat-wrapper.popup .welcome-screen {\n    min-height: unset;\n    padding: 20px 16px;\n    gap: 12px;\n}\n.chat-wrapper.popup .welcome-screen h1 {\n    font-size: 20px;\n}\n.chat-wrapper.popup .welcome-screen p {\n    font-size: 13px;\n    margin-bottom: 16px;\n}\n.chat-wrapper.popup .suggestions {\n    grid-template-columns: repeat(2, 1fr);\n    gap: 8px;\n    max-width: 100%;\n}\n.chat-wrapper.popup .suggestion-chip {\n    padding: 10px 8px;\n}\n.chat-wrapper.popup .suggestion-chip i {\n    font-size: 16px;\n}\n\n/* ============================================\n   MODAL MODE\n   ============================================ */\n.chat-wrapper.modal {\n    display: block;\n    position: fixed;\n    inset: 0;\n    animation: modalFadeIn 0.25s ease;\n}\n\n@keyframes modalFadeIn {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n.chat-wrapper.modal .chat-backdrop {\n    display: none;\n}\n\n.chat-wrapper.modal .chat-panel {\n    position: fixed;\n    inset: 0;\n    width: 100vw;\n    height: 100vh;\n    max-width: none;\n    border-radius: 0;\n    box-shadow: none;\n    z-index: 9000;\n    animation: modalPanelIn 0.2s ease;\n}\n\n@keyframes modalPanelIn {\n    from { opacity: 0; transform: translateY(8px); }\n    to   { opacity: 1; transform: translateY(0); }\n}\n\n/* Modal topbar: hide expand, show collapse */\n.chat-wrapper.modal .chat-mode-expand {\n    display: none;\n}\n.chat-wrapper.modal .chat-mode-collapse {\n    display: flex;\n}\n\n/* Show sidebar toggle in modal too (for narrow viewports) */\n.chat-wrapper.modal .sidebar-toggle {\n    display: flex;\n}\n\n/* ============================================\n   TOPBAR MODE BUTTONS – base hidden\n   ============================================ */\n.chat-mode-expand,\n.chat-mode-collapse {\n    display: none;\n}\n\n/* ============================================\n   SLYTE RUNTIME OUTLET – isolated sandbox\n   Components rendered here must not inherit\n   the pilotx-chat reset.\n   ============================================ */\n.slyte-runtime-outlet {\n    margin: 12px 0;\n    padding: 0;\n    background: var(--bg-white);\n    border: 1px solid var(--border);\n    border-radius: var(--radius-md);\n    min-height: 200px;\n    width: 100%;\n    overflow: auto;\n    /* CSS containment: isolate layout/style */\n    contain: style;\n    position: relative;\n}\n\n/* Give the direct Lyte custom-element child a block layout so it isn't inline/0×0 */\n.slyte-runtime-outlet > * {\n    display: block;\n    width: 100%;\n    min-height: inherit;\n}\n\n/* Undo the pilotx-chat reset for everything inside the outlet,\n   but DON'T use `all:revert` — that reverts display/width on custom\n   elements to `inline` (0×0). Instead, only undo the specific\n   properties our scoped reset sets. */\n.slyte-runtime-outlet *,\n.slyte-runtime-outlet *::before,\n.slyte-runtime-outlet *::after {\n    /* undo the pilotx-chat * reset */\n    margin: revert;\n    padding: revert;\n    /* keep border-box — it's universally helpful */\n    box-sizing: border-box;\n}\n\n.slyte-runtime-outlet:empty::before {\n    content: 'Loading Slyte component...';\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: var(--text-secondary, #6b7280);\n    font-size: 13px;\n    min-height: 150px;\n    margin: 0;\n    padding: 16px;\n}\n</style>",
 _dynamicNodes : [],
 
 	data : function(){
@@ -508,6 +508,9 @@ _dynamicNodes : [],
                     msg.dataViewList.forEach(function(dv) {
                         if (dv.errorText) {
                             contentEl.insertAdjacentHTML('beforeend', '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(dv.errorText) + '</span></div>');
+                        } else if (dv.slyteHtml && dv.slyteJs) {
+                            // Re-render Slyte component
+                            renderSlyteViewFromSaved(contentEl, dv);
                         } else {
                             var vc = buildMultiViewTabs(dv.viewDataItems || (dv.data ? [dv.data] : []), dv.crmPopupView || null);
                             contentEl.appendChild(vc);
@@ -606,6 +609,9 @@ _dynamicNodes : [],
                 msg.dataViewList.forEach(function(dv) {
                     if (dv.errorText) {
                         contentEl.insertAdjacentHTML('beforeend', '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(dv.errorText) + '</span></div>');
+                    } else if (dv.slyteHtml && dv.slyteJs) {
+                        // Re-render Slyte component
+                        renderSlyteViewFromSaved(contentEl, dv);
                     } else {
                         var viewContainer = buildMultiViewTabs(dv.viewDataItems || (dv.data ? [dv.data] : []), dv.crmPopupView || null);
                         contentEl.appendChild(viewContainer);
@@ -823,11 +829,11 @@ _dynamicNodes : [],
         try {
             if (isInIframe && typeof ZOHO !== 'undefined' && ZOHO.CRM && ZOHO.CRM.HTTP && typeof ZOHO.CRM.HTTP.post === 'function') {
                 // var apiUrl = 'https://crmdx4.localzoho.com/crm/v7/functions/' + CRM_FUNC_NAME + '/actions/execute?auth_type=apikey&zapikey=' + CRM_FUNC_API_KEY;
-                var apiUrl = "http://10.59.3.181:8000/chat";
+                var apiUrl = "http://localhost:8000/chat";
                 var httpData = await ZOHO.CRM.HTTP.post({
                     url: apiUrl,
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ prompt: prompt, history: history || [], model: 'gpt-5.1', mode: 'agent', feature: 'cscript' })
+                    body: JSON.stringify({ prompt: prompt, history: history || [], model: 'gpt-5.1', mode: 'agent', feature: 'cscriptAndSlyteui' })
                 });
                 console.log('prompt', prompt, "response", httpData);
 
@@ -858,6 +864,74 @@ _dynamicNodes : [],
 
         // If both fail, return null to trigger callAPI fallback (mock data)
         return null;
+    }
+
+    // ─── ZIDEX API CALL (fetch-based, no ZOHO dependency) ───────────────────────
+    async function callZidex(prompt, history) {
+        _lastPrompt = prompt;
+        debugger
+        var apiUrl = "http://localhost:8000/chat";
+
+        try {
+            var controller = new AbortController();
+            var timeoutId = setTimeout(function() { controller.abort(); }, 200000);
+
+            var response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    prompt: prompt,
+                    // history: history || [],
+                    model: 'gpt-5.4',
+                    mode: 'agent',
+                    feature: 'cscriptAndSlyteui'
+                }),
+                signal: controller.signal
+            });
+
+            clearTimeout(timeoutId);
+
+            if (!response.ok) {
+                console.log('[WorkPilot] callZidex failed with status:', response.status, response.statusText);
+                return null;
+            }
+
+            var responseText = await response.text();
+            console.log('[WorkPilot] callZidex raw response:', responseText);
+
+            var parsed = null;
+            try {
+                parsed = JSON.parse(responseText);
+            } catch(e) {
+                console.log('[WorkPilot] callZidex: Failed to parse response JSON:', e);
+                return null;
+            }
+
+            console.log('prompt', prompt, 'response', parsed);
+
+            if (parsed) {
+                // Handle wrapper: details.output contains the actual response
+                if (parsed.details && parsed.details.output) {
+                    parsed = typeof parsed.details.output === 'string' ? JSON.parse(parsed.details.output) : parsed.details.output;
+                }
+                var edits = (parsed && Array.isArray(parsed.edits)) ? parsed.edits : [];
+                console.log('response edits', edits);
+                debugger;
+                var hasScript = edits.length > 0 && edits.some(function(e) { return e && e.explanation; });
+                if (hasScript || (parsed.response && parsed.response.content)) {
+                    return parsed;
+                }
+            }
+            console.log('[WorkPilot] callZidex: No usable data in response.');
+            return null;
+        } catch(err) {
+            if (err.name === 'AbortError') {
+                console.log('[WorkPilot] callZidex: Request timed out.');
+            } else {
+                console.log('[WorkPilot] callZidex: Network error:', err.message || err);
+            }
+            return null;
+        }
     }
 
     // ─── FETCH API CALL (backup) ───────────────────────────
@@ -1049,6 +1123,12 @@ _dynamicNodes : [],
         sendBtn.disabled = true;
 
         const session = getActiveSession();
+        const originalSessionId = session.id;   // capture for DOM-write guards
+
+        // Helper: only write to DOM if user is still viewing this session
+        function stillOnThisSession() {
+            return activeSessionId === originalSessionId;
+        }
 
         // Hide welcome
         welcomeScreen.classList.add('hidden');
@@ -1063,7 +1143,7 @@ _dynamicNodes : [],
             session.title = text.trim().substring(0, 50) + (text.length > 50 ? '…' : '');
             currentSessionTitle.textContent = session.title;
             renderSessionList();
-        }
+        }   
 
         saveSessions();
         promptInput.value = '';
@@ -1082,18 +1162,18 @@ _dynamicNodes : [],
                 ? '[Memory context: ' + memorySummary + ']\n\n' + text.trim()
                 : text.trim();
 
-            // 3) Call CRM Function (primary: ZOHO SDK → REST proxy)
-            var apiResult = await callCRMFunction(enrichedPrompt, convHistory);
+            // 3) Call Zidex API (XMLHttpRequest-based, no ZOHO dependency)
+            var apiResult = await callZidex(enrichedPrompt, convHistory);
             if (!apiResult) {
-                console.log("expected results not received from CRM function, using fallback Mockup call");
+                console.log("expected results not received from Zidex, using fallback Mockup call");
                 apiResult = await callAPI(enrichedPrompt, convHistory);
             }
-            removeThinkingLoader();
+            if (stillOnThisSession()) removeThinkingLoader();
 
             // 2) Safely extract response parts
             const responseText = (apiResult && apiResult.response && apiResult.response.content) ? apiResult.response.content : '';
             const edits = (apiResult && Array.isArray(apiResult.edits)) ? apiResult.edits : [];
-            const hasEdits = edits.length > 0 && edits.some(function(e) { return e && e.content; });
+            const hasEdits = edits.length > 0 ;//&& edits.some(function(e) { return e && e.explanation; });
 
             // 3) Create assistant message container
             const assistantMsg = { id: uid(), role: 'assistant', text: '', ts: Date.now(), processing: true };
@@ -1112,27 +1192,35 @@ _dynamicNodes : [],
             }
             var ctxBadgeRowHtml = ctxBadges ? '<div class="ctx-badge-row">' + ctxBadges + '</div>' : '';
 
-            const msgDiv = document.createElement('div');
-            msgDiv.className = 'message assistant';
-            msgDiv.innerHTML = `
-                <div class="message-avatar"><i class="fas fa-robot"></i></div>
-                <div class="message-body">
-                    <div class="message-sender">WorkPilot${ctxBadgeRowHtml}</div>
-                    <div class="message-content" id="msg-${assistantMsg.id}"></div>
-                </div>
-            `;
-            messagesWrapper.appendChild(msgDiv);
-
-            const contentEl = msgDiv.querySelector('.message-content');
+            // Only render to DOM if user is still on this session
+            let contentEl = null;
+            if (stillOnThisSession()) {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = 'message assistant';
+                msgDiv.innerHTML = `
+                    <div class="message-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="message-body">
+                        <div class="message-sender">WorkPilot${ctxBadgeRowHtml}</div>
+                        <div class="message-content" id="msg-${assistantMsg.id}"></div>
+                    </div>
+                `;
+                messagesWrapper.appendChild(msgDiv);
+                contentEl = msgDiv.querySelector('.message-content');
+            }
 
             // ───────────────────────────────────────────────
             // PATH A: No edits → show response.content as readable output
             // ───────────────────────────────────────────────
             if (!hasEdits) {
                 assistantMsg.text = responseText;
-                contentEl.innerHTML = formatMarkdown(responseText);
+                assistantMsg.processing = false;
+                _processingSessionId = null;
+                _processingMsgId = null;
+                if (stillOnThisSession() && contentEl) {
+                    contentEl.innerHTML = formatMarkdown(responseText);
+                }
                 saveSessions();
-                scrollToBottom();
+                if (stillOnThisSession()) scrollToBottom();
                 return;
             }
 
@@ -1144,21 +1232,202 @@ _dynamicNodes : [],
 
             // 4) Show response.content as agent thinking steps
             const steps = parseResponseIntoSteps(responseText);
-            if (steps.length > 0) {
+            if (steps.length > 0 && stillOnThisSession() && contentEl) {
                 const stepsUI = createAgentStepsContainer(contentEl);
                 await animateAgentSteps(stepsUI, steps);
             }
 
-            // 5) Loop through each edit with type replace_file and execute
+            // 5) Loop through each edit and process based on actualCodeType
             var allExecSteps = [];
             var allDataViews = [];
 
+            // ── Collect slyteui edits separately for tabbed rendering ──
+            var slyteEdits = [];
+            var cscriptEdits = [];
+
             for (var ei = 0; ei < edits.length; ei++) {
                 var edit = edits[ei];
-                if (!edit || !edit.content) continue;
+                if (!edit) continue;
+                var actualCodeType = edit.actualCodeType || 'cscript';
+                if (actualCodeType === 'slyteui') {
+                    slyteEdits.push({ edit: edit, idx: ei });
+                } else {
+                    cscriptEdits.push({ edit: edit, idx: ei });
+                }
+            }
+
+            // ───────────────────────────────────────────────
+            // PATH: slyteui → render Slyte components in tabs
+            // ───────────────────────────────────────────────
+            if (slyteEdits.length > 0 && stillOnThisSession() && contentEl) {
+                // Filter valid edits
+                var validSlyteEdits = slyteEdits.filter(function(se) {
+                    return (se.edit.html_content && se.edit.js_content);
+                });
+
+                if (validSlyteEdits.length === 1) {
+                    // Single slyteui → render directly (no tabs)
+                    var sEdit = validSlyteEdits[0].edit;
+                    var sIdx = validSlyteEdits[0].idx;
+                    var slyteOutlet = document.createElement('div');
+                    slyteOutlet.className = 'slyte-runtime-outlet';
+                    slyteOutlet.id = 'slyte-outlet-' + Date.now() + '-' + sIdx;
+                    contentEl.appendChild(slyteOutlet);
+                    scrollToBottom();
+
+                    var slyteClassName = sEdit.js_content.match(/class\s+([A-Za-z_$][\w$]*)/) ? sEdit.js_content.match(/class\s+([A-Za-z_$][\w$]*)/)[1] : 'slyte-comp-' + Date.now() + '-' + sIdx;
+
+                    try {
+                        await renderSlyteRuntime({
+                            html: sEdit.html_content,
+                            js: sEdit.js_content,
+                            css: sEdit.css_content || '',
+                            className: slyteClassName,
+                            outlet: '#' + slyteOutlet.id,
+                            data: null
+                        });
+                        console.log('[WorkPilot] Slyte component rendered successfully');
+                    } catch (slyteErr) {
+                        console.error('[WorkPilot] Slyte runtime render failed:', slyteErr);
+                        slyteOutlet.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>Failed to render Slyte component: ' + escapeHtml(slyteErr.message || String(slyteErr)) + '</span></div>';
+                    }
+
+                    allDataViews.push({
+                        slyteHtml: sEdit.html_content,
+                        slyteJs: sEdit.js_content,
+                        slyteCss: sEdit.css_content || '',
+                        slyteData: null
+                    });
+
+                } else if (validSlyteEdits.length > 1) {
+                    // Multiple slyteui → render as tabbed view
+                    var tabsWrapper = document.createElement('div');
+                    tabsWrapper.className = 'multi-view-tabs-wrapper slyte-tabs-wrapper';
+
+                    var tabHeader = document.createElement('div');
+                    tabHeader.className = 'multi-view-header';
+
+                    var tabStrip = document.createElement('div');
+                    tabStrip.className = 'multi-view-tab-strip view-tabs';
+                    tabHeader.appendChild(tabStrip);
+
+                    var tabPanelsHost = document.createElement('div');
+                    tabPanelsHost.className = 'multi-view-panels-host';
+
+                    var tabPanelRefs = [];
+
+                    validSlyteEdits.forEach(function(se, tabIdx) {
+                        // Short tab label: prefer view_name, then extract "X View" from explanation, fallback to "View N"
+                        var tabLabel = se.edit.view_name || (function(exp) {
+                            if (!exp) return 'View ' + (tabIdx + 1);
+                            // Extract "Timeline View", "Table View", etc. from explanation
+                            var match = exp.match(/(\w+\s+view)/i);
+                            return match ? match[1] : (exp.length > 20 ? exp.substring(0, 20) + '…' : exp);
+                        })(se.edit.explanation);
+
+                        // Tab button
+                        var tabBtn = document.createElement('button');
+                        tabBtn.className = 'view-tab multi-view-tab' + (tabIdx === 0 ? ' active' : '');
+                        tabBtn.innerHTML = '<i class="fas fa-cube"></i><span>' + escapeHtml(tabLabel) + '</span>';
+                        tabStrip.appendChild(tabBtn);
+
+                        // Panel
+                        var panel = document.createElement('div');
+                        panel.className = 'multi-view-panel';
+                        if (tabIdx !== 0) panel.style.display = 'none';
+                        panel._slyteEdit = se.edit;
+                        panel._slyteIdx = se.idx;
+                        panel._rendered = false;
+                        tabPanelsHost.appendChild(panel);
+                        tabPanelRefs.push({ tab: tabBtn, panel: panel });
+
+                        tabBtn.addEventListener('click', function() {
+                            // Deactivate all
+                            tabPanelRefs.forEach(function(ref) {
+                                ref.tab.classList.remove('active');
+                                ref.panel.style.display = 'none';
+                            });
+                            // Activate this one
+                            tabBtn.classList.add('active');
+                            panel.style.display = '';
+                            // Lazy-render on first show
+                            if (!panel._rendered) {
+                                panel._rendered = true;
+                                renderSlytePanel(panel);
+                            }
+                        });
+
+                        // Save to allDataViews
+                        allDataViews.push({
+                            slyteHtml: se.edit.html_content,
+                            slyteJs: se.edit.js_content,
+                            slyteCss: se.edit.css_content || '',
+                            slyteData: null
+                        });
+                    });
+
+                    // Render Slyte inside a panel
+                    async function renderSlytePanel(panel) {
+                        var pEdit = panel._slyteEdit;
+                        var pIdx = panel._slyteIdx;
+                        var outlet = document.createElement('div');
+                        outlet.className = 'slyte-runtime-outlet';
+                        outlet.id = 'slyte-outlet-' + Date.now() + '-' + pIdx;
+                        panel.appendChild(outlet);
+
+                        var cn = pEdit.js_content.match(/class\s+([A-Za-z_$][\w$]*)/) ? pEdit.js_content.match(/class\s+([A-Za-z_$][\w$]*)/)[1] : 'slyte-comp-' + Date.now() + '-' + pIdx;
+
+                        try {
+                            await renderSlyteRuntime({
+                                html: pEdit.html_content,
+                                js: pEdit.js_content,
+                                css: pEdit.css_content || '',
+                                className: cn,
+                                outlet: '#' + outlet.id,
+                                data: null
+                            });
+                            console.log('[WorkPilot] Slyte tab component rendered');
+                        } catch (err) {
+                            console.error('[WorkPilot] Slyte tab render failed:', err);
+                            outlet.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>Failed to render: ' + escapeHtml(err.message || String(err)) + '</span></div>';
+                        }
+                        scrollToBottom();
+                    }
+
+                    tabsWrapper.appendChild(tabHeader);
+                    tabsWrapper.appendChild(tabPanelsHost);
+                    contentEl.appendChild(tabsWrapper);
+                    scrollToBottom();
+
+                    // Eagerly render the first tab
+                    if (tabPanelRefs.length > 0 && !tabPanelRefs[0].panel._rendered) {
+                        tabPanelRefs[0].panel._rendered = true;
+                        await renderSlytePanel(tabPanelRefs[0].panel);
+                    }
+                }
+
+                // Save incrementally
+                assistantMsg.dataViewList = allDataViews.slice();
+                assistantMsg.dataView = allDataViews[0];
+                saveSessions();
+            }
+
+            // ───────────────────────────────────────────────
+            // PATH: cscript edits → execute via CScriptBridge
+            // ───────────────────────────────────────────────
+            for (var ci = 0; ci < cscriptEdits.length; ci++) {
+                var edit = cscriptEdits[ci].edit;
+                var ei = cscriptEdits[ci].idx;
+                if (!edit) continue;
+
+                var explanation = edit.explanation || ('Script ' + (ei + 1));
+
+                if (!edit.content) {
+                    console.warn('[WorkPilot] cscript edit missing content, skipping');
+                    continue;
+                }
 
                 var scriptContent = edit.content;
-                var explanation = edit.explanation || ('Script ' + (ei + 1));
 
                 // Save exec steps metadata
                 var execStepsMeta = parseScriptIntoExecSteps(scriptContent, explanation);
@@ -1172,8 +1441,14 @@ _dynamicNodes : [],
                 var cscriptResult;
                 var execError = null;
                 console.log('Gonna pass cscript content: -- ', scriptContent);
+
+                // Only show stepper animation if user is still viewing this session
+                var stepperPromise = (stillOnThisSession() && contentEl)
+                    ? showExecStepper(contentEl, scriptContent, explanation)
+                    : Promise.resolve();
+
                 await Promise.all([
-                    showExecStepper(contentEl, scriptContent, explanation),
+                    stepperPromise,
                     executeCScript(scriptContent)
                         .then(function(result) { cscriptResult = result; })
                         .catch(function(err) { execError = err; })
@@ -1181,21 +1456,25 @@ _dynamicNodes : [],
 
                 if (execError) {
                     var execErrText = 'Script execution failed: ' + (execError.message || String(execError));
-                    var errorHtml = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(execErrText) + '</span></div>';
-                    contentEl.insertAdjacentHTML('beforeend', errorHtml);
+                    if (stillOnThisSession() && contentEl) {
+                        var errorHtml = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(execErrText) + '</span></div>';
+                        contentEl.insertAdjacentHTML('beforeend', errorHtml);
+                    }
                     allDataViews.push({ errorText: execErrText });
                     continue;
                 }
 
-                // 6) Detect result type and render appropriate Lyte UI view
+                // Detect result type and render appropriate Lyte UI view
                 if (cscriptResult !== null && cscriptResult !== undefined) {
                     console.log('CScript result came', cscriptResult);
 
                     // ─── Error result ───
                     if (cscriptResult.type === 'errors') {
                         var cscriptErrText = cscriptResult.data || 'Unknown error';
-                        var errHtml = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(String(cscriptErrText)) + '</span></div>';
-                        contentEl.insertAdjacentHTML('beforeend', errHtml);
+                        if (stillOnThisSession() && contentEl) {
+                            var errHtml = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>' + escapeHtml(String(cscriptErrText)) + '</span></div>';
+                            contentEl.insertAdjacentHTML('beforeend', errHtml);
+                        }
                         allDataViews.push({ errorText: String(cscriptErrText) });
                         continue;
                     }
@@ -1204,46 +1483,16 @@ _dynamicNodes : [],
                     var crmPopupCode = cscriptResult.crmPopupView || null;
                     var resolvedIframeUrl = cscriptResult.crmIframeView || null;
 
-                    // CRM Popup View button (above response component)
-                    // Render each data item in result.data
                     var viewDataItems = Array.isArray(cscriptResult.data) ? cscriptResult.data : [cscriptResult.data];
                     console.log('[WorkPilot] viewDataItems:', viewDataItems);
-                    var multiTabsContainer = buildMultiViewTabs(viewDataItems, crmPopupCode || null);
-                    contentEl.appendChild(multiTabsContainer);
-
-                    // CRM Iframe View (render below response component)
-                    // resolvedIframeUrl is a script — execute it in the parent CRM to get the actual URL
-                    // if (resolvedIframeUrl && typeof resolvedIframeUrl === 'string') {
-                    //     try {
-                    //         var iframeScriptResult = await executeCScript(resolvedIframeUrl);
-                    //         var actualIframeUrl = null;
-                    //         if (typeof iframeScriptResult === 'string') {
-                    //             actualIframeUrl = iframeScriptResult;
-                    //         } else if (iframeScriptResult && typeof iframeScriptResult === 'object') {
-                    //             actualIframeUrl = iframeScriptResult.url || iframeScriptResult.iframeUrl || iframeScriptResult.link || null;
-                    //         }
-                    //         if (actualIframeUrl) {
-                    //             var iframeWrapper = document.createElement('div');
-                    //             iframeWrapper.className = 'crm-iframe-wrapper';
-                    //             var iframe = document.createElement('iframe');
-                    //             iframe.src = actualIframeUrl;
-                    //             iframe.style.width = '100%';
-                    //             iframe.style.height = '500px';
-                    //             iframeWrapper.appendChild(iframe);
-                    //             contentEl.appendChild(iframeWrapper);
-                    //             resolvedIframeUrl = actualIframeUrl; // store resolved URL for session save
-                    //         } else {
-                    //             console.warn('[WorkPilot] Iframe script did not return a valid URL:', iframeScriptResult);
-                    //             resolvedIframeUrl = null;
-                    //         }
-                    //     } catch (iframeErr) {
-                    //         console.warn('[WorkPilot] Failed to resolve iframe URL via script:', iframeErr);
-                    //         resolvedIframeUrl = null;
-                    //     }
-                    // }
+                    if (stillOnThisSession() && contentEl) {
+                        var multiTabsContainer = buildMultiViewTabs(viewDataItems, crmPopupCode || null);
+                        contentEl.appendChild(multiTabsContainer);
+                    }
 
                     allDataViews.push({ viewDataItems: viewDataItems, crmPopupView: crmPopupCode, iframeUrl: resolvedIframeUrl });
                 }
+
                 // Incrementally save data views
                 assistantMsg.dataViewList = allDataViews.slice();
                 assistantMsg.dataView = allDataViews[0];
@@ -1252,7 +1501,7 @@ _dynamicNodes : [],
 
             // ─── Auto-extract facts from AI response and show memory chip if found ───
             var extractedFacts = Memory.extractAndStore(responseText);
-            if (extractedFacts.length > 0) {
+            if (extractedFacts.length > 0 && stillOnThisSession() && contentEl) {
                 var factsHtml = extractedFacts.map(function(f) {
                     return '<span class="memory-fact">' + escapeHtml(f.key) + ' = \u201c' + escapeHtml(f.value) + '\u201d</span>';
                 }).join('');
@@ -1288,7 +1537,7 @@ _dynamicNodes : [],
             _userSwitchedDuringProcessing = false;
 
         } catch (err) {
-            removeThinkingLoader();
+            if (stillOnThisSession()) removeThinkingLoader();
             // Clear processing flag on the in-progress message if it exists
             if (_processingMsgId) {
                 var procMsg = session.messages.find(function(m) { return m.id === _processingMsgId; });
@@ -1298,15 +1547,257 @@ _dynamicNodes : [],
             _processingMsgId = null;
             var errMsg = { id: uid(), role: 'assistant', text: 'Something went wrong: ' + err.message, error: true, ts: Date.now() };
             session.messages.push(errMsg);
-            appendMessageToDOM(errMsg, true);
+            if (stillOnThisSession()) appendMessageToDOM(errMsg, true);
             saveSessions();
         } finally {
             isProcessing = false;
             sendBtn.disabled = false;
-            scrollToBottom();
+            if (stillOnThisSession()) scrollToBottom();
         }
     }
 
+    // Helper to re-render Slyte views from saved session data
+    function renderSlyteViewFromSaved(containerEl, savedView) {
+        var slyteOutlet = document.createElement('div');
+        slyteOutlet.className = 'slyte-runtime-outlet';
+        slyteOutlet.id = 'slyte-outlet-' + Date.now() + '-' + Math.random().toString(36).substr(2, 5);
+        containerEl.appendChild(slyteOutlet);
+
+        var slyteClassName = 'slyte-comp-' + Date.now();
+
+        // Fire-and-forget async render (we're in a sync forEach)
+        renderSlyteRuntime({
+            html: savedView.slyteHtml,
+            js: savedView.slyteJs,
+            css: savedView.slyteCss || '',
+            className: slyteClassName,
+            outlet: '#' + slyteOutlet.id,
+            data: savedView.slyteData || null
+        }).then(function() {
+            console.log('[WorkPilot] Slyte view re-rendered from saved data');
+        }).catch(function(err) {
+            console.error('[WorkPilot] Failed to re-render Slyte view:', err);
+            slyteOutlet.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i><span>Failed to render Slyte component</span></div>';
+        });
+    }
+
+    async function renderSlyteRuntime(options) {
+        var { html: rawHtml, js: rawJs, css: rawCss, className: cn, outlet } = options;
+
+        if (!window.lyteWidgetFrame) {
+            window.dispatchEvent(new Event("loadWidgetIframe"));
+        }
+
+        var compId   = 'runtime_' + Date.now();
+        var idb_name = compId + '_runtime';
+        var component_record = { class_name: cn, id: compId, source: undefined };
+
+        // ── DUMMY meta_data ──────────────────────────────────────────────────────────
+        var meta_data = {
+        namespace:    cn,
+        lux_filename: cn,
+        components: { [cn]: { compiled: 'widget' } },
+        mixins: {
+            [`${cn}-mixin`]: { compiled: 'mixin' },
+            'lux-default-f141de14-520d-mixin': { compiled: 'mixin' }
+        },
+        helpers: { [`${cn}-helper`]: { compiled: 'helper' } },
+        compiled: {
+            components: { widget: [cn] },
+            mixins:     { mixin: [`${cn}-mixin`, 'lux-default-f141de14-520d-mixin'] },
+            helpers:    { helper: [`${cn}-helper`] }
+        },
+        threshold: { components: 1, mixins: 3, helpers: 3 }
+        };
+
+        // ── WRITE TO IDB ─────────────────────────────────────────────────────────────
+        var idb = await IdbUtil.wrap_idb(idb_name, 1, idb_name, { keyPath: 'filepath' });
+        await Promise.all([
+        idb.update({ key: `/${cn}/${cn}.html`, data: { filepath: `/${cn}/${cn}.html`, data: rawHtml, language: 'html' } }),
+        idb.update({ key: `/${cn}/${cn}.js`,   data: { filepath: `/${cn}/${cn}.js`,   data: rawJs,   language: 'javascript' } }),
+        idb.update({ key: `/${cn}/${cn}.css`,  data: { filepath: `/${cn}/${cn}.css`,  data: rawCss,  language: 'css' } })
+        ]);
+        console.log('IDB written');
+
+        // ── WORKER ───────────────────────────────────────────────────────────────────
+        var urlPrefix    = FingerPrint.isCdnEnabled ? '' : location.origin;
+        var worker       = new Worker('/crm/CRMClient/addons/lux/LuxWorker.js');
+        var req_holder   = {};
+        var req_timeouts = {};
+        var blobIframe;
+
+        function workerRequest(request, toBlobFrame) {
+        return new Promise(function(resolve, reject) {
+            var reqId = crypto.randomUUID();
+            request.reqId = reqId;
+            req_holder[reqId] = { resolve: resolve, reject: reject };
+            req_timeouts[reqId] = setTimeout(function() {
+            delete req_holder[reqId];
+            reject(new Error('Timeout: ' + reqId));
+            }, 30000);
+            if (toBlobFrame) {
+            blobIframe.contentWindow.postMessage(request, '*');
+            } else {
+            worker.postMessage(request);
+            }
+        });
+        }
+
+        worker.onmessage = function(event) {
+        var p = event.data;
+        console.log('worker →', p.action, p);
+        if (p.reqId && req_holder[p.reqId]) {
+            clearTimeout(req_timeouts[p.reqId]);
+            p.error
+            ? req_holder[p.reqId].reject(new Error(JSON.stringify(p.error)))
+            : req_holder[p.reqId].resolve(p);
+            delete req_holder[p.reqId];
+        }
+        };
+        worker.onerror = function(e) { console.error('Worker error', e); };
+
+        worker.postMessage({
+        action: 'init',
+        objStore: idb_name, dbname: idb_name, component_record,
+        __zgid: crmZgid, __token: csrfToken,
+        dependency_files: networkUtils.returnDependencyFiles(['IdbUtil.js', 'lux/lux-browser.js'], ResourceConstants.CRMClient),
+        mixinUrl:  urlPrefix + networkUtils.returnDependencyFiles(['lux/DefaultMixin.js'],  ResourceConstants.CRMClient, ResourceConstants.ADDONS)[0],
+        helperUrl: urlPrefix + networkUtils.returnDependencyFiles(['lux/luxDhHelpers.js'], ResourceConstants.CRMClient)[0]
+        });
+        await new Promise(function(r) { setTimeout(r, 3000); });
+        console.log('Worker ready');
+
+        // ── BLOB IFRAME ──────────────────────────────────────────────────────────────
+        blobIframe = document.createElement('iframe');
+        blobIframe.src = networkUtils.returnDependencyFiles(['lux/LuxBlobholder.html'], ResourceConstants.CRMClient, ResourceConstants.ADDONS)[0];
+        blobIframe.id  = 'runtime-blob-iframe';
+        blobIframe.style.cssText = 'display:none;position:absolute;width:0;height:0;border:0;';
+        document.body.appendChild(blobIframe);
+        await new Promise(function(r) { blobIframe.onload = r; });
+        console.log('Blob iframe ready');
+
+        window.addEventListener('message', function(event) {
+        var p = event.data;
+        if (p && p.reqId && req_holder[p.reqId]) {
+            clearTimeout(req_timeouts[p.reqId]);
+            p.error
+            ? req_holder[p.reqId].reject(new Error(JSON.stringify(p.error)))
+            : req_holder[p.reqId].resolve(p);
+            delete req_holder[p.reqId];
+        }
+        });
+
+        // ── COMPILE ──────────────────────────────────────────────────────────────────
+        console.log('Compiling...');
+        var compileResult = await workerRequest({
+        action:    'idb_compile',
+        meta_data: JSON.stringify(meta_data)
+        });
+        console.log('Compile result:', compileResult);
+
+        var compiled_files = compileResult.compiled_files;
+        var lang_vs_mime = {
+        javascript: 'application/javascript', js: 'application/javascript',
+        css: 'text/css', html: 'text/html', json: 'application/json'
+        };
+        var files = [], components_info = {};
+
+        Object.keys(compiled_files).forEach(function(fileType) {
+        Object.keys(compiled_files[fileType]).forEach(function(basepath) {
+            Object.entries(compiled_files[fileType][basepath])
+            .filter(function(entry) { return entry[0] !== 'intelliSenseObj' && entry[0] !== 'map'; })
+            .forEach(function(entry) {
+                var language = entry[0], content = entry[1];
+                if (language === 'componentsInfo') {
+                if (Object.keys(content).length) components_info = content[cn];
+                return;
+                }
+                files.push({ filepath: basepath + '.' + language, type: lang_vs_mime[language], content: content });
+            });
+        });
+        });
+
+        // ── BLOBS ────────────────────────────────────────────────────────────────────
+        console.log('Creating blobs...');
+        var blobResult = await workerRequest(
+        { type: 'blob_creator', files: files, components_info: components_info, parameter_info: [] },
+        true
+        );
+        console.log('blob_map:', blobResult.blob_map);
+
+        var blob_map       = blobResult.blob_map;
+        var parameter_info = blobResult.parameter_info;
+        Lyte.objectUtils(component_record, 'add', { blob_map: blob_map, components_info: components_info, parameter_info: parameter_info });
+
+        // ── FIX: force bootstrap flags ────────────────────────────────────────────────
+        LuxHandler.__resource_loaded     = true;
+        LuxHandler.__is_allowed_in_route = true;
+
+        // ── RENDER ────────────────────────────────────────────────────────────────────
+        await new Lux()
+        .luxComp(component_record)
+        .parentElement($L(outlet))
+        .blobMap(blob_map)
+        .isPreview(true)
+        .render();
+
+        console.log('Render done!');
+
+    }
+
+    async function loadLuxDependencies() {
+        function getLuxEditorResources() {
+            let editorJs = networkUtils.returnDependencyFiles(['IdbUtil.js', 'lyte-tree.js', 'dx-editor/dx-editor.js', 'crm-lux-editor.js', 'lytecombobox.js','function-model.js','lyte-editor.js','lyte-page-builder.js',"crm-kanban-resources.js"],ResourceConstants.CRMClient);
+            const editor_config = Crm.userDetails.CUSTOMIZE_INFO.cscript_editor && JSON.parse(Crm.userDetails.CUSTOMIZE_INFO.cscript_editor);
+            if(editor_config && editor_config.theme==='vs'){
+                editor_config.theme = 'vs-light';// No I18n
+                Crm.userDetails.CUSTOMIZE_INFO.cscript_editor = JSON.stringify(editor_config);
+            }
+            let editorCss = networkUtils.returnDependencyFiles(['dx-editor/dx-editor-themeing.css'],ResourceConstants.CRMClient,getDxStaticPath(editor_config && editor_config.theme, 'lux'))[0]
+            let editorI18n = networkUtils.returnDependencyFiles([networkUtils.getI18nJSUrl('dxeditor')], ResourceConstants.CRM)[0];
+            let luxEditorCss = networkUtils.returnDependencyFiles(['lux/crm-lux-bundle.css'],ResourceConstants.CRMClient);
+            let luxPreviewSource = networkUtils.returnDependencyFiles(['crm-lux-preview.js'],ResourceConstants.CRMClient).concat(networkUtils.returnDependencyFiles(['lux/crm-lux-preview.css'],ResourceConstants.CRMClient));
+            let jszip = networkUtils.returnDependencyFiles(["zohocrm_detail_canvas_common.js"],ResourceConstants.CRM);
+            var customFunctionJs = networkUtils.returnDependencyFiles(["zcrm_custom_functions.min.js",networkUtils.getI18nJSUrl("customfunctions") ],ResourceConstants.CRM); //NO I18N
+            customFunctionJs = customFunctionJs.concat(networkUtils.returnDependencyFiles(["custom-function-editor.js","crm-functions-helper.js"],ResourceConstants.CRMClient));
+            return customFunctionJs.concat(editorJs).concat(editorCss).concat(editorI18n).concat(luxEditorCss).concat(luxPreviewSource).concat(jszip).concat([
+                ...networkUtils.returnDependencyFiles(["crm-datahub-setup.css", "crm-datahub-setup-list.css", "lyte-json-viewer.css"], ResourceConstants.CRMClient,ResourceConstants.LESSDEFAULT),
+                ...networkUtils.returnDependencyFiles([networkUtils.getI18nJSUrl('data-hub')], ResourceConstants.CRM),
+                ...networkUtils.returnDependencyFiles(["lyte-tree.js", "lyte-progressbar.js", "lyte-resize.js",  "lyte-editor.js","lyte-code-snippet.js", "lyte-scrollspy.js" , "lytecombobox.js","lyte-ui-code-snippet.css", "crm-help-link.js",  "crux-criteria-conditions.js",  "crux-criteria-component.js", "crux-form-component.js","datahub/crm-datahub-global-mixin.js","datahub/crm-datahub-source.js"],ResourceConstants.CRMClient)  //NO I18N
+            ]);
+        }
+        function getDxStaticPath(monaco_theme, feature) {
+            if (feature === 'lux' && !monaco_theme) {
+                return ResourceConstants.LESSDEFAULT; //As of now, for components feature default theme is light.
+            }
+            if(monaco_theme === 'vs-light'){
+                return ResourceConstants.LESSDEFAULT || "default"; //no i18n
+            }else if(monaco_theme === 'vs-blue'){//no i18n
+                return ResourceConstants.LESSFEATUREBlUE || "feature-blue"; //no i18n
+            }else if(monaco_theme === 'vs-darkplus'){// No I18n
+                return ResourceConstants.LESSFEATUREBLACKPLUS || "feature-black-plus"; //no i18n
+            }else{
+                return ResourceConstants.LESSFEATURE || "feature-black"; //no i18n
+            }
+        }
+        return new Promise(function(resolve, reject) {
+            Lyte.injectResources(getLuxEditorResources(), function(event) {
+                if (event.type === "error") {
+                    console.log("Error - lux dependencies Not downloaded");
+                    reject(new Error("Lux dependencies failed to download"));
+                } else {
+                    console.log("Success - lux dependencies downloaded");
+                    resolve(true);
+                }
+            }, function(successFiles, failureFiles) {
+                /* successFiles contains the list of files which were successfully downloaded
+                failureFiles contains the list of files that failed to be downloaded. */
+                if (failureFiles && failureFiles.length > 0) {
+                    console.warn("Some lux dependencies failed:", failureFiles);
+                }
+            });
+        });
+    }
     // ─── DATA TYPE DETECTION ───────────────────────────────
     function detectDataType(data) {
         if (data === null || data === undefined) return 'empty';
@@ -2371,15 +2862,15 @@ _dynamicNodes : [],
         tabStrip.className = 'multi-view-tab-strip view-tabs';
         header.appendChild(tabStrip);
 
-        if (crmPopupCode) {
-            var crmBtn = document.createElement('button');
-            crmBtn.className = 'crm-view-btn';
-            crmBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> CRM View';
-            (function(code) {
-                crmBtn.addEventListener('click', function() { executeCScript(code); });
-            })(crmPopupCode);
-            header.appendChild(crmBtn);
-        }
+        // if (crmPopupCode) {
+        //     var crmBtn = document.createElement('button');
+        //     crmBtn.className = 'crm-view-btn';
+        //     crmBtn.innerHTML = '<i class="fas fa-external-link-alt"></i> CRM View';
+        //     (function(code) {
+        //         crmBtn.addEventListener('click', function() { executeCScript(code); });
+        //     })(crmPopupCode);
+        //     header.appendChild(crmBtn);
+        // }
 
         var panelsHost = document.createElement('div');
         panelsHost.className = 'multi-view-panels-host';
@@ -2998,7 +3489,12 @@ _dynamicNodes : [],
 
         // New chat
         newChatBtn.addEventListener('click', () => {
-            if (isProcessing) return;
+            // Allow creating a new chat even while a message is processing.
+            // Mark that the user switched away so the processing response
+            // gets re-rendered when they come back to that session.
+            if (_processingSessionId && activeSessionId === _processingSessionId) {
+                _userSwitchedDuringProcessing = true;
+            }
             createNewSession();
             closeSidebar();
         });
@@ -3006,10 +3502,12 @@ _dynamicNodes : [],
         // Clear all
         clearAllBtn.addEventListener('click', clearAllSessions);
 
-        // Delete current session
-        deleteSessionBtn.addEventListener('click', () => {
-            if (activeSessionId) deleteSession(activeSessionId);
-        });
+        // Delete current session (button may not exist if removed from template)
+        if (deleteSessionBtn) {
+            deleteSessionBtn.addEventListener('click', () => {
+                if (activeSessionId) deleteSession(activeSessionId);
+            });
+        }
 
         // Sidebar toggle (mobile)
         sidebarToggle.addEventListener('click', toggleSidebar);
@@ -3204,6 +3702,79 @@ _dynamicNodes : [],
         };
     })();
 
+    // ─── FLOATING CHAT LAUNCHER & MODE SWITCHER ────────────────
+    (function() {
+        var launcher     = document.getElementById('chatLauncher');
+        var chatWrapper  = document.getElementById('chatWrapper');
+        var chatBackdrop = document.getElementById('chatBackdrop');
+        var expandBtn    = document.getElementById('expandChatBtn');
+        var collapseBtn  = document.getElementById('collapseChatBtn');
+        var closeBtn     = document.getElementById('closeChatBtn');
+
+        var _luxLoaded = false;
+        var _luxLoading = false;
+
+        function setLauncherLoading(loading) {
+            if (!launcher) return;
+            if (loading) {
+                launcher.classList.add('loading');
+                launcher.querySelector('.chat-launcher-icon').innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                launcher.querySelector('.chat-launcher-label').textContent = 'Loading…';
+            } else {
+                launcher.classList.remove('loading');
+                launcher.querySelector('.chat-launcher-icon').innerHTML = '<i class="fas fa-robot"></i>';
+                launcher.querySelector('.chat-launcher-label').textContent = 'WorkPilot';
+            }
+        }
+
+        async function ensureLuxLoaded() {
+            if (_luxLoaded) return true;
+            if (_luxLoading) return false; // already in progress, ignore duplicate click
+            _luxLoading = true;
+            setLauncherLoading(true);
+            try {
+                await loadLuxDependencies();
+                _luxLoaded = true;
+                console.log('[WorkPilot] Lux dependencies loaded successfully');
+                return true;
+            } catch (err) {
+                console.warn('[WorkPilot] Lux dependencies failed, opening chat anyway:', err.message || err);
+                _luxLoaded = true; // don't block chat on failure
+                return true;
+            } finally {
+                _luxLoading = false;
+                setLauncherLoading(false);
+            }
+        }
+
+        function openPopup() {
+            chatWrapper.classList.remove('modal');
+            chatWrapper.classList.add('popup');
+            launcher.classList.add('hidden');
+        }
+
+        function openModal() {
+            chatWrapper.classList.remove('popup');
+            chatWrapper.classList.add('modal');
+            launcher.classList.add('hidden');
+        }
+
+        function closeChat() {
+            chatWrapper.classList.remove('popup', 'modal');
+            launcher.classList.remove('hidden');
+        }
+
+        async function onLauncherClick() {
+            var loaded =  await ensureLuxLoaded(); //true; //
+            if (loaded) openPopup();
+        }
+
+        if (launcher)     launcher.addEventListener('click', onLauncherClick);
+        if (expandBtn)    expandBtn.addEventListener('click', openModal);
+        if (collapseBtn)  collapseBtn.addEventListener('click', openPopup);
+        if (closeBtn)     closeBtn.addEventListener('click', closeChat);
+        if (chatBackdrop) chatBackdrop.addEventListener('click', closeChat);
+    })();
 
 
 	},
@@ -3214,6 +3785,46 @@ _dynamicNodes : [],
 		// Functions which can be used as callback in the component.
 	}
 });
+
+function pilotx() {
+    'use strict';
+
+    function initPilotXChat() {
+        // Check if Lyte is available
+        if (typeof Lyte === 'undefined' || !Lyte.Component) {
+            console.warn('[PilotX] Lyte framework not found. Make sure Lyte.js is loaded before this script.');
+            return;
+        }
+
+        // Check if pilotx-chat already exists
+        if (document.querySelector('pilotx-chat')) {
+            console.log('[PilotX] pilotx-chat element already exists on page.');
+            return;
+        }
+
+        // Create and insert pilotx-chat element
+        var chatElement = document.createElement('pilotx-chat');
+        document.body.appendChild(chatElement);
+        console.log('[PilotX] pilotx-chat element inserted successfully.');
+
+        // Ensure Font Awesome is available (for icons)
+        if (!document.querySelector('link[href*="font-awesome"], link[href*="fontawesome"]')) {
+            var faLink = document.createElement('link');
+            faLink.rel = 'stylesheet';
+            faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+            document.head.appendChild(faLink);
+            console.log('[PilotX] Font Awesome stylesheet injected.');
+        }
+    }
+
+    // Run when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPilotXChat);
+    } else {
+        // DOM is already ready
+        initPilotXChat();
+    }
+}
 
 Lyte.Component.register("welcome-comp",{
 _template:"<template tag-name=\"welcome-comp\"> <h1>Available features of LYTE</h1> <ul> <template items=\"{{features}}\" item=\"item\" index=\"index\" is=\"for\"><li> <a href=\"{{item.url}}\" target=\"_blank\">{{item.module}}</a> </li></template> </ul> </template>",

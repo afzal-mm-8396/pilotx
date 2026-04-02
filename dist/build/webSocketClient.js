@@ -1,6 +1,6 @@
 var socket;
 function start() {	
-	socket = new WebSocket('ws://localhost:59653');
+	socket = new WebSocket('ws://localhost:58786');
 	socket.onopen = function() {
 		console.log("Connection is established");
 		socket.send("connected");
